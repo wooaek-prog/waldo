@@ -61,3 +61,7 @@ python3 dispatch_order_analysis.py data/sample_generators.csv --output dispatch_
 
 - 실제 급전은 계통 제약, 정비 상태, 연료 계약, 재생에너지 출력, 송전 제약 등 다양한 운영 조건을 반영할 수 있습니다.
 - 이 도구는 입력된 단가와 용량만으로 업체별/발전기별 우선순위를 확인하는 분석용 템플릿입니다.
+
+## 다른 도구
+
+- [재건축 인접 학교 일조권(일영) 계산기](sunlight/README.md): 재건축 신축 매싱이 인접 학교 창문 일조에 미치는 영향을 개략 3D 매싱 기반으로 시뮬레이션합니다 (`sunlight_analysis.py`).

@@ -1,0 +1,98 @@
+{
+  "site": {
+    "name": "여의도 화랑아파트 소규모재건축사업",
+    "parcel": "서울특별시 영등포구 여의도동 40-4",
+    "address": "서울특별시 영등포구 국제금융로7가길 21 일원",
+    "latitude": 37.5222,
+    "longitude": 126.9268,
+    "timezone": "Asia/Seoul",
+    "notes": "본 파일은 언론보도 기준 개요(부지면적 약 9,395㎡, 지상 49층 1개동 285세대, 인접 3개교: 서울여의도초등학교/여의도중학교/여의도여자고등학교)를 참고하여 작성한 '개략 매싱(rough massing)' 예시 데이터입니다. 좌표계는 지역 ENU(동서=X, 남북=Y, 수직=Z, 단위 m) 로컬 좌표이며 원점은 신축동 매싱의 남서측 모서리 부근에 임의로 지정했습니다. 신축동 북측 벽면과 학교 남측 벽면 사이 이격거리는 약 40m로 가정했습니다(도로 폭 및 대지 내 공지 포함 추정치). 실제 인허가/민원 대응용 정밀 분석에는 조합 설계도서(배치도·입면도) 또는 국토교통부 브이월드 3D 건물 데이터, 학교 시설 도면으로 좌표·형상·층고·이격거리를 반드시 실측값으로 대체해야 합니다."
+  },
+  "obstructions": [
+    {
+      "id": "hwarang_new_tower",
+      "name": "화랑아파트 재건축 신축동 (지상 49층, 개략 매싱)",
+      "footprint": [[0, 0], [48, 0], [48, 34], [0, 34]],
+      "base_z": 0.0,
+      "height": 175.0,
+      "floors": 49
+    }
+  ],
+  "schools": [
+    {
+      "id": "yeoui_elem",
+      "name": "서울여의도초등학교",
+      "buildings": [
+        {
+          "id": "yeoui_elem_main",
+          "name": "서울여의도초등학교 본관동 (개략 매싱)",
+          "footprint": [[-30, 74], [30, 74], [30, 89], [-30, 89]],
+          "base_z": 0.0,
+          "height": 14.4,
+          "floors": 4,
+          "facades": [
+            {
+              "name": "남측(신축동 대향)",
+              "wall": [[-30, 74], [30, 74]],
+              "normal": [0, -1],
+              "floor_height": 3.6,
+              "num_floors": 4,
+              "windows_per_floor": 6,
+              "sill_height": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yeoui_middle",
+      "name": "여의도중학교",
+      "buildings": [
+        {
+          "id": "yeoui_middle_main",
+          "name": "여의도중학교 본관동 (개략 매싱)",
+          "footprint": [[40, 74], [100, 74], [100, 89], [40, 89]],
+          "base_z": 0.0,
+          "height": 18.0,
+          "floors": 5,
+          "facades": [
+            {
+              "name": "남측(신축동 대향)",
+              "wall": [[40, 74], [100, 74]],
+              "normal": [0, -1],
+              "floor_height": 3.6,
+              "num_floors": 5,
+              "windows_per_floor": 8,
+              "sill_height": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yeoui_girls_high",
+      "name": "여의도여자고등학교",
+      "buildings": [
+        {
+          "id": "yeoui_girls_high_main",
+          "name": "여의도여자고등학교 본관동 (개략 매싱)",
+          "footprint": [[110, 74], [170, 74], [170, 89], [110, 89]],
+          "base_z": 0.0,
+          "height": 18.0,
+          "floors": 5,
+          "facades": [
+            {
+              "name": "남측(신축동 대향)",
+              "wall": [[110, 74], [170, 74]],
+              "normal": [0, -1],
+              "floor_height": 3.6,
+              "num_floors": 5,
+              "windows_per_floor": 8,
+              "sill_height": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
