@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>시공사 선정 시 건설비 검증 — 재건축조합 대의원 워크북</title>
+<style>
+/* ===================== PRINT SETUP ===================== */
+@page { size: A4; margin: 17mm 15mm 20mm 15mm; }
+@page :first { margin: 0; }
+
+:root{
+  --navy:#16324F; --navy2:#2C5B87; --navy3:#5B85AE;
+  --ink:#191E24; --gray:#5A6570; --gray2:#8A939C;
+  --line:#D5DBE1; --soft:#F3F7FA; --soft2:#E8EFF5;
+  --amber:#B8791F; --amber-bg:#FDF6E7;
+  --red:#B3372C; --red-bg:#FCEFED;
+  --green:#26705A; --green-bg:#EDF6F2;
+  --blue:#1F5C8B; --blue-bg:#EDF4FA;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family:"Noto Sans CJK KR","NanumGothic","Noto Sans KR",sans-serif;
+  font-size:10.2pt; line-height:1.62; color:var(--ink);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+
+/* ===================== COVER ===================== */
+.cover{
+  break-after:page; height:297mm; width:210mm; position:relative;
+  background:var(--navy); color:#fff; overflow:hidden;
+}
+.cover .band{ position:absolute; left:0; top:0; width:100%; height:100%; }
+.cover .inner{ position:absolute; left:22mm; right:22mm; top:44mm; }
+.cover .kicker{ font-size:11pt; letter-spacing:.32em; color:#9FC2DE; margin-bottom:9mm; }
+.cover h1{ font-size:33pt; line-height:1.28; margin:0 0 5mm; font-weight:800; letter-spacing:-.01em;}
+.cover h2{ font-size:14pt; font-weight:500; color:#C9DEEE; margin:0 0 14mm; line-height:1.5;}
+.cover .rule{ width:34mm; height:3px; background:#D8A657; }
+.cover .meta{ position:absolute; left:22mm; right:22mm; bottom:24mm; font-size:10pt; color:#C9DEEE; }
+.cover .meta table{ width:100%; border-collapse:collapse; }
+.cover .meta td{ padding:2.2mm 0; border-top:1px solid rgba(255,255,255,.22); vertical-align:top;}
+.cover .meta td.k{ width:32mm; color:#8FB4D2; }
+.cover .badge{
+  display:inline-block; border:1.6px solid #9FC2DE; color:#fff; border-radius:2mm;
+  padding:2mm 5mm; font-size:10.5pt; letter-spacing:.05em; margin-bottom:12mm;
+}
+
+/* ===================== GENERIC ===================== */
+h2.chap{
+  font-size:19pt; font-weight:800; color:var(--navy);
+  margin:0 0 1mm; letter-spacing:-.01em; padding-top:2mm;
+  break-before:avoid; break-after:avoid;
+}
+.chapnum{ font-size:9.5pt; letter-spacing:.3em; color:var(--navy3); font-weight:700; margin-bottom:1mm;
+  break-before:page; break-after:avoid; }
+.toc .chapnum{ break-before:auto; }
+.chaprule{ break-before:avoid; height:3px; background:var(--navy); width:100%; margin:2.5mm 0 5mm; }
+h3{ font-size:13pt; font-weight:800; color:var(--navy); margin:8mm 0 3mm; padding-left:3mm;
+    border-left:4px solid var(--navy2); line-height:1.35; break-after:avoid; }
+h4{ font-size:11pt; font-weight:700; color:#123; margin:6mm 0 2mm; break-after:avoid;}
+h5{ font-size:10.4pt; font-weight:700; color:var(--navy2); margin:4.5mm 0 1.5mm; break-after:avoid;}
+p{ margin:0 0 2.6mm; }
+ul,ol{ margin:0 0 3mm; padding-left:5.5mm; }
+li{ margin-bottom:1.2mm; }
+strong{ font-weight:700; }
+.small{ font-size:9pt; color:var(--gray); }
+.center{ text-align:center; }
+hr.soft{ border:0; border-top:1px solid var(--line); margin:6mm 0; }
+
+/* ===================== TABLES ===================== */
+table.d{ width:100%; border-collapse:collapse; font-size:8.9pt; margin:3mm 0 4mm;
+         break-inside:avoid; line-height:1.45; }
+table.d th{ background:var(--navy); color:#fff; font-weight:700; padding:2mm 2.2mm;
+            text-align:left; border:1px solid var(--navy); font-size:8.7pt; }
+table.d td{ padding:1.9mm 2.2mm; border:1px solid var(--line); vertical-align:top; }
+table.d tr:nth-child(even) td{ background:#FAFCFD; }
+table.d td.c,table.d th.c{ text-align:center; }
+table.d td.r{ text-align:right; }
+table.d .hi{ background:var(--amber-bg) !important; font-weight:700; }
+table.d .hi2{ background:var(--blue-bg) !important; }
+table.d.big{ font-size:9.4pt; }
+table.d.blank td{ height:8mm; }
+
+/* ===================== BOXES ===================== */
+.box{ break-inside:avoid; border-radius:1.5mm; padding:3.2mm 4mm; margin:3.5mm 0; font-size:9.5pt; }
+.box .bt{ font-weight:800; font-size:9.6pt; margin-bottom:1.5mm; letter-spacing:.02em; }
+.box p:last-child{ margin-bottom:0; }
+.def{ background:var(--soft); border-left:4px solid var(--navy3); }
+.def .bt{ color:var(--navy); }
+.ask{ background:var(--blue-bg); border-left:4px solid var(--blue); }
+.ask .bt{ color:var(--blue); }
+.ask .q{ font-style:normal; color:#123; font-weight:600; }
+.warn{ background:var(--red-bg); border-left:4px solid var(--red); }
+.warn .bt{ color:var(--red); }
+.tip{ background:var(--amber-bg); border-left:4px solid var(--amber); }
+.tip .bt{ color:var(--amber); }
+.key{ background:var(--green-bg); border-left:4px solid var(--green); }
+.key .bt{ color:var(--green); }
+.quote{ border:1.4px solid var(--blue); background:#fff; border-radius:1.5mm;
+        padding:3mm 4mm; margin:3mm 0; font-size:9.6pt; color:#123; break-inside:avoid;}
+.quote:before{ content:"“ "; color:var(--blue); font-weight:800; }
+.quote:after{ content:" ”"; color:var(--blue); font-weight:800; }
+
+/* ===================== CHECKLIST ===================== */
+.ckl{ margin:3mm 0 4mm; }
+.ckl .ck{ display:flex; align-items:flex-start; gap:2.6mm; padding:1.7mm 0;
+          border-bottom:1px dotted var(--line); font-size:9.5pt; break-inside:avoid; }
+.ckl .bx{ flex:0 0 3.6mm; width:3.6mm; height:3.6mm; border:1.4px solid var(--navy2);
+          border-radius:.6mm; margin-top:.7mm; }
+.ckl .bx.red{ border-color:var(--red); }
+.ckl .bx.amb{ border-color:var(--amber); }
+.sev{ display:inline-block; font-weight:800; font-size:8.4pt; padding:.2mm 1.6mm;
+      border-radius:.8mm; color:#fff; margin-right:1.2mm; }
+.sev.r{ background:var(--red); } .sev.a{ background:var(--amber); } .sev.y{ background:#9A8419; }
+
+/* ===================== WORKSHEET ===================== */
+.ws{ break-inside:avoid; border:1.6px solid var(--navy2); border-radius:1.5mm; margin:4mm 0; }
+.ws .wh{ background:var(--navy2); color:#fff; font-weight:800; padding:2.2mm 4mm; font-size:10pt; }
+.ws .wb{ padding:3.5mm 4mm; }
+.lines{ margin-top:2.5mm; }
+.lines div{ border-bottom:1px solid #C9D3DC; height:7.5mm; }
+.qn{ font-weight:700; color:var(--navy); }
+
+/* ===================== FIGURES ===================== */
+figure{ break-inside:avoid; margin:5mm 0 5mm; text-align:center; }
+figure svg{ max-width:100%; height:auto; }
+figcaption{ font-size:8.6pt; color:var(--gray); margin-top:1.8mm; text-align:center; }
+figcaption b{ color:var(--navy); }
+
+/* ===================== TOC ===================== */
+.toc{ break-after:page; }
+.toc h2{ font-size:17pt; color:var(--navy); margin:0 0 4mm; }
+.toc table{ width:100%; border-collapse:collapse; font-size:10pt; }
+.toc td{ padding:2.4mm 1mm; border-bottom:1px dotted var(--line); vertical-align:top; }
+.toc td.n{ width:16mm; font-weight:800; color:var(--navy2); }
+.toc td.t{ font-weight:600; }
+.toc td.s{ color:var(--gray); font-size:9pt; }
+.nobreak{ break-inside:avoid; }
+.pagebreak{ break-before:page; }
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER ==================== -->
+<div class="cover">
+  <svg class="band" viewBox="0 0 210 297" preserveAspectRatio="none">
+    <rect width="210" height="297" fill="#16324F"/>
+    <path d="M0 210 L210 150 L210 297 L0 297 Z" fill="#1D4468"/>
+    <path d="M0 246 L210 200 L210 297 L0 297 Z" fill="#2A5079"/>
+    <g opacity="0.55">
+      <rect x="18" y="196" width="16" height="62" fill="#2E5F8C"/>
+      <rect x="38" y="176" width="20" height="82" fill="#356B9C"/>
+      <rect x="62" y="206" width="14" height="52" fill="#2A5580"/>
+      <rect x="80" y="162" width="22" height="96" fill="#3B76AA"/>
+      <rect x="106" y="188" width="16" height="70" fill="#2E5F8C"/>
+      <rect x="126" y="150" width="24" height="108" fill="#4180B7"/>
+      <rect x="154" y="184" width="18" height="74" fill="#316593"/>
+      <rect x="176" y="204" width="16" height="54" fill="#2A5580"/>
+    </g>
+    <rect x="0" y="256" width="210" height="2" fill="#7FB0D6" opacity="0.5"/>
+  </svg>
+  <div class="inner">
+    <div class="kicker">재건축조합 대의원 교육</div>
+    <div class="badge">PPT · 워크북 겸용 &nbsp;|&nbsp; 인쇄용</div>
+    <h1>시공사 선정 시<br>건설비 검증 실무</h1>
+    <h2>대의원이 시공사 제안 건설비를 스스로 뜯어보고<br>적정성을 판단하기 위한 5개 챕터 · 5개 실습 · 12개 레드플래그</h2>
+  </div>
+  <div class="meta">
+    <table>
+      <tr><td class="k">검증 사례</td><td>대우건설 하이엔드 브랜드 ‘써밋(SUMMIT)’ 적용 정비사업</td></tr>
+      <tr><td class="k">대상</td><td>재건축조합 대의원 (건설·회계 비전공 / 실제 의사결정권자)</td></tr>
+      <tr><td class="k">구성</td><td>CHAPTER 0~5 + 부록 A~D · 삽화 17종 · 질의 40문항</td></tr>
+      <tr><td class="k">작성 기준</td><td>2026년 8월</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== TOC ==================== -->
+<div class="toc">
+  <div class="chapnum">CONTENTS</div>
+  <h2>목차</h2>
+  <div class="chaprule"></div>
+  <table>
+    <tr><td class="n">사용법</td><td class="t">이 교재를 쓰기 전에 — 필독 3가지</td><td class="s">숫자는 자(尺)이지 정답이 아니다</td></tr>
+    <tr><td class="n">CH 0</td><td class="t">오리엔테이션 — 대의원이 지켜야 할 3개의 관문</td><td class="s">공사비는 4번 바뀐다 · 공사비 검증제도</td></tr>
+    <tr><td class="n">CH 1</td><td class="t">건설비 총괄 구조</td><td class="s">총사업비/총공사비/도급공사비 · 평당 단가 5개 함정</td></tr>
+    <tr><td class="n">CH 2</td><td class="t">건설비 구성요소별 스터디</td><td class="s">직접비·간접비·설계감리·특화·금융·에스컬레이션</td></tr>
+    <tr><td class="n">CH 3</td><td class="t">하이엔드 브랜드 검증 시 주의점 — ‘써밋’ 사례</td><td class="s">브랜드 프리미엄 3층 분해법</td></tr>
+    <tr><td class="n">CH 4</td><td class="t">검증 실전 도구</td><td class="s">6단계 정규화 · 내역 대사 · 질의 40문항</td></tr>
+    <tr><td class="n">CH 5</td><td class="t">레드플래그 시그널</td><td class="s">12개 위험신호와 대응 문구</td></tr>
+    <tr><td class="n">부록 A</td><td class="t">용어집</td><td class="s">25개 용어 1줄 정의</td></tr>
+    <tr><td class="n">부록 B</td><td class="t">실습 해설</td><td class="s">실습 1·2·3·5 정답 및 풀이</td></tr>
+    <tr><td class="n">부록 C</td><td class="t">총회 표결 직전 최종 10문항</td><td class="s">찬성표를 던지기 전 자가진단</td></tr>
+    <tr><td class="n">부록 D</td><td class="t">참고자료</td><td class="s">출처 링크</td></tr>
+  </table>
+
+  <h3 style="margin-top:10mm">이 교재를 쓰기 전에 — 필독 3가지</h3>
+
+  <div class="box tip">
+    <div class="bt">1. 이 교재의 숫자는 ‘정답’이 아니라 ‘자(尺)’입니다</div>
+    <p>본문의 모든 단가·요율·비중은 2026년 8월 기준 공개자료와 시장 통례를 정리한 <b>참고 구간</b>입니다.
+    우리 단지의 층수·구조형식·지하층수·대지조건·물가시점에 따라 20~30%는 쉽게 달라집니다.
+    숫자를 외우지 말고 <b>“이 항목은 이 범위를 벗어나면 물어봐야 한다”는 감각</b>을 가져가십시오.</p>
+  </div>
+
+  <div class="box key">
+    <div class="bt">2. 대의원은 원가를 계산하는 사람이 아니라, 질문하는 사람입니다</div>
+    <p>대의원이 적산(도면을 보고 자재 물량과 금액을 계산하는 일)을 직접 할 필요는 없습니다.
+    대의원의 역할은 ① 시공사가 낸 숫자의 <b>기준을 확정시키고</b>, ② 기준이 다른 제안을 <b>같은 기준으로 환산시키고</b>,
+    ③ 설명이 안 되는 항목을 <b>회의록에 남기는 것</b>입니다. 이 세 가지만 해도 조합원 1인당 수천만 원이 지켜집니다.</p>
+  </div>
+
+  <div class="box def">
+    <div class="bt">3. 특정 건설사에 대한 평가 문서가 아닙니다</div>
+    <p>‘써밋’을 사례로 삼은 것은 하이엔드 브랜드 검증 논리를 설명하기 위함이며, 특정 회사의 제안이 부당하다는 판단을 담고 있지 않습니다.
+    같은 논리는 자이 시그니처·디에이치·아크로·오티에르 등 모든 하이엔드 브랜드 검증에 동일하게 적용됩니다.</p>
+  </div>
+</div>
+
+<!-- ==================== CHAPTER 0 ==================== -->
+<div class="chapnum">CHAPTER 0</div>
+<h2 class="chap">오리엔테이션 — 대의원이 지켜야 할 3개의 관문</h2>
+<div class="chaprule"></div>
+
+<h3>0-1. 공사비는 ‘한 번’ 정해지지 않습니다</h3>
+<p>조합원들이 가장 크게 오해하는 지점입니다. 공사비는 <b>최소 4번</b> 바뀝니다.
+그리고 <b>대의원이 개입할 수 있는 힘은 뒤로 갈수록 급격히 약해집니다.</b></p>
+
+<figure>
+<svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+    <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#16324F"/></marker></defs>
+  <line x1="28" y1="58" x2="628" y2="58" stroke="#16324F" stroke-width="2.4" marker-end="url(#ar)"/>
+  <g font-size="11">
+    <g><circle cx="80" cy="58" r="9" fill="#2C5B87"/><text x="80" y="62" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">1</text></g>
+    <g><circle cx="238" cy="58" r="12" fill="#B3372C"/><text x="238" y="62.5" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">2</text></g>
+    <g><circle cx="400" cy="58" r="9" fill="#5B85AE"/><text x="400" y="62" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">3</text></g>
+    <g><circle cx="558" cy="58" r="9" fill="#8A939C"/><text x="558" y="62" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">4</text></g>
+  </g>
+  <g font-size="11.5" font-weight="700" fill="#16324F" text-anchor="middle">
+    <text x="80" y="34">입찰제안 공사비</text>
+    <text x="238" y="30" fill="#B3372C">본계약 공사비</text>
+    <text x="400" y="34">인가·관리처분 반영</text>
+    <text x="558" y="34">착공·준공 정산</text>
+  </g>
+  <g font-size="9.6" fill="#5A6570" text-anchor="middle">
+    <text x="80" y="86">선정 총회 전</text><text x="80" y="99">홍보용 숫자</text>
+    <text x="238" y="86">선정 총회 후</text><text x="238" y="99" font-weight="700" fill="#B3372C">법적 구속력 발생</text>
+    <text x="400" y="86">인허가 확정 후</text><text x="400" y="99">설계변경 반영</text>
+    <text x="558" y="86">착공 이후</text><text x="558" y="99">물가·변경 정산</text>
+  </g>
+  <text x="28" y="130" font-size="10" font-weight="700" fill="#16324F">대의원 개입력</text>
+  <g>
+    <rect x="46" y="140" width="68" height="16" rx="2" fill="#2C5B87"/><text x="80" y="152" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">강함</text>
+    <rect x="196" y="140" width="84" height="16" rx="2" fill="#B3372C"/><text x="238" y="152" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">결정적</text>
+    <rect x="372" y="140" width="56" height="16" rx="2" fill="#8FB2CE"/><text x="400" y="152" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">보통</text>
+    <rect x="540" y="140" width="36" height="16" rx="2" fill="#C6CDD4"/><text x="558" y="152" text-anchor="middle" font-size="9" fill="#4A545E" font-weight="700">약함</text>
+  </g>
+  <rect x="28" y="172" width="600" height="22" rx="2" fill="#FCEFED" stroke="#B3372C" stroke-width="1"/>
+  <text x="328" y="187" text-anchor="middle" font-size="10.2" fill="#B3372C" font-weight="700">
+    ①에서 가장 싸 보였던 제안이 ④에서 가장 비싸지는 것 — 이것이 정비사업 분쟁의 대다수입니다</text>
+</svg>
+<figcaption><b>[그림 0-1]</b> 공사비가 확정되는 4단계와 단계별 대의원 개입력</figcaption>
+</figure>
+
+<div class="box key">
+<div class="bt">핵심</div>
+<p>대의원은 ①(입찰제안)이 아니라 <b>②(본계약 조문)</b>에서 승부를 봐야 합니다.
+입찰제안서의 평당 단가보다 <b>계약서의 조정 조항</b>이 10배 중요합니다.</p>
+</div>
+
+<h3>0-2. 제도적 안전판 — 공사비 검증제도</h3>
+
+<div class="box def">
+<div class="bt">공사비 검증제도</div>
+<p>정비사업에서 공사비를 일정 비율 이상 증액할 때, 조합이 검증기관(한국부동산원 등)에 의뢰해
+공사비 적정성을 검증받는 제도. 2019년 10월 시행.</p>
+</div>
+
+<h4>의무 검증 대상 (도시 및 주거환경정비법)</h4>
+<table class="d big">
+<tr><th style="width:12mm" class="c">#</th><th>요건</th><th style="width:38mm">대의원 활용법</th></tr>
+<tr><td class="c">1</td><td>토지등소유자 또는 조합원의 <b>20% 이상</b>이 요청하는 경우</td><td>대의원회가 조직할 수 있는 카드. 미리 알고 있어야 씁니다</td></tr>
+<tr><td class="c">2</td><td>공사비 증액비율이 <b>사업시행계획인가 이전 시공자 선정 시 10% 이상</b>,<br><b>인가 이후 선정 시 5% 이상</b>인 경우</td><td>선정 시점에 따라 방어선이 다릅니다</td></tr>
+<tr><td class="c">3</td><td>이미 검증을 완료한 뒤 다시 <b>3% 이상</b> 증액되는 경우</td><td>재검증 요구 근거</td></tr>
+</table>
+
+<div class="box warn">
+<div class="bt">대의원이 반드시 알아야 할 한계</div>
+<p>① 검증은 <b>증액 국면에서만</b> 자동으로 작동합니다. <b>최초 계약 단가 자체의 적정성은 조합이 스스로 지켜야 합니다.</b><br>
+② 검증기관은 계약서상 공사비 관련 사항과 <b>공사 물량·단가의 적정성, 각종 보험료</b>를 봅니다.
+즉 <b>내역서가 없으면 검증 자체가 불가능</b>합니다. → 그래서 5장 레드플래그 1번이 ‘내역 미공개’입니다.</p>
+</div>
+
+<h3>0-3. 이 교재의 학습 지도</h3>
+<figure>
+<svg viewBox="0 0 660 150" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="6.4" refY="2.9" orient="auto">
+    <path d="M0,0 L6.4,2.9 L0,5.8 Z" fill="#5B85AE"/></marker></defs>
+  <g>
+    <rect x="10" y="40" width="112" height="58" rx="3" fill="#16324F"/>
+    <text x="66" y="62" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="800">1장 구조 이해</text>
+    <text x="66" y="79" text-anchor="middle" fill="#B7D2E8" font-size="8.8">세 개의 ‘비용’을</text>
+    <text x="66" y="90" text-anchor="middle" fill="#B7D2E8" font-size="8.8">구분한다</text>
+  </g>
+  <line x1="126" y1="69" x2="142" y2="69" stroke="#5B85AE" stroke-width="2" marker-end="url(#ar2)"/>
+  <g>
+    <rect x="146" y="40" width="112" height="58" rx="3" fill="#1D4468"/>
+    <text x="202" y="62" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="800">2장 항목 해부</text>
+    <text x="202" y="79" text-anchor="middle" fill="#B7D2E8" font-size="8.8">6대 구성요소를</text>
+    <text x="202" y="90" text-anchor="middle" fill="#B7D2E8" font-size="8.8">뜯어본다</text>
+  </g>
+  <line x1="262" y1="69" x2="278" y2="69" stroke="#5B85AE" stroke-width="2" marker-end="url(#ar2)"/>
+  <g>
+    <rect x="282" y="40" width="112" height="58" rx="3" fill="#B8791F"/>
+    <text x="338" y="62" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="800">3장 브랜드 검증</text>
+    <text x="338" y="79" text-anchor="middle" fill="#FBEBCF" font-size="8.8">스펙인지 명목인지</text>
+    <text x="338" y="90" text-anchor="middle" fill="#FBEBCF" font-size="8.8">가른다</text>
+  </g>
+  <line x1="398" y1="69" x2="414" y2="69" stroke="#5B85AE" stroke-width="2" marker-end="url(#ar2)"/>
+  <g>
+    <rect x="418" y="40" width="112" height="58" rx="3" fill="#26705A"/>
+    <text x="474" y="62" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="800">4장 실전 도구</text>
+    <text x="474" y="79" text-anchor="middle" fill="#CDE7DC" font-size="8.8">비교표·내역대사</text>
+    <text x="474" y="90" text-anchor="middle" fill="#CDE7DC" font-size="8.8">질의서로 무장</text>
+  </g>
+  <line x1="534" y1="69" x2="550" y2="69" stroke="#5B85AE" stroke-width="2" marker-end="url(#ar2)"/>
+  <g>
+    <rect x="554" y="40" width="96" height="58" rx="3" fill="#B3372C"/>
+    <text x="602" y="62" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="800">5장 방어</text>
+    <text x="602" y="79" text-anchor="middle" fill="#F6D5D1" font-size="8.8">레드플래그 식별</text>
+    <text x="602" y="90" text-anchor="middle" fill="#F6D5D1" font-size="8.8">회의록에 기록</text>
+  </g>
+  <text x="330" y="126" text-anchor="middle" font-size="10" fill="#5A6570">각 장 끝에는 <tspan font-weight="700" fill="#16324F">체크리스트</tspan>와 <tspan font-weight="700" fill="#16324F">실습</tspan>이 있습니다. 실습은 반드시 직접 계산한 뒤 부록 B를 보십시오.</text>
+</svg>
+<figcaption><b>[그림 0-2]</b> 5개 챕터의 학습 흐름</figcaption>
+</figure>
+
+<!-- ==================== CHAPTER 1 ==================== -->
+<div class="chapnum">CHAPTER 1</div>
+<h2 class="chap">건설비 총괄 구조</h2>
+<div class="chaprule"></div>
+
+<div class="box def">
+<div class="bt">학습목표</div>
+<p>① 총사업비 / 총공사비 / 도급공사비를 <b>말로 설명</b>할 수 있다<br>
+② 평당 공사비 숫자를 보고 <b>“기준이 뭐냐”를 반사적으로 되묻는다</b><br>
+③ 기준이 다른 두 제안을 <b>같은 총액으로 환산</b>할 수 있다</p>
+</div>
+
+<h3>1-1. 세 개의 ‘비용’ — 반드시 구분하십시오</h3>
+
+<figure>
+<svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="16" font-size="11.5" font-weight="800" fill="#16324F">■ 총사업비 (Total Project Cost) — 조합이 쓰는 모든 돈 = 100%</text>
+  <rect x="10" y="24" width="640" height="26" rx="2" fill="#16324F"/>
+  <text x="330" y="41" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">총 사 업 비　100%　（조합원 분담금의 모수）</text>
+
+  <!-- level 2 -->
+  <rect x="10" y="58" width="452" height="24" rx="2" fill="#2C5B87"/>
+  <text x="236" y="74" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">① 총공사비　약 65~78%</text>
+  <rect x="466" y="58" width="184" height="24" rx="2" fill="#6E7A85"/>
+  <text x="558" y="74" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">② 사업비　약 22~35%</text>
+
+  <!-- level 3 -->
+  <rect x="10" y="88" width="382" height="24" rx="2" fill="#B3372C"/>
+  <text x="201" y="104" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="800">ⓐ 도급공사비 ← 시공사 선정 경쟁의 대상</text>
+  <rect x="396" y="88" width="66" height="24" rx="2" fill="#C4805A"/>
+  <text x="429" y="104" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">ⓑ 별도</text>
+
+  <!-- detail boxes -->
+  <g font-size="8.6">
+    <rect x="10" y="120" width="382" height="86" rx="2" fill="#FCEFED" stroke="#B3372C"/>
+    <text x="20" y="134" font-size="9.4" font-weight="800" fill="#B3372C">ⓐ 도급공사비 (총공사비의 85~95%)</text>
+    <text x="20" y="150" fill="#333">· 직접공사비 — 골조 · 마감 · 설비 · 전기 · 조경</text>
+    <text x="20" y="164" fill="#333">· 간접공사비 — 현장관리비 · 각종 보험료 · 안전관리비</text>
+    <text x="20" y="178" fill="#333">· 일반관리비 (본사 배부) + 이윤</text>
+    <text x="20" y="196" fill="#B3372C" font-weight="700">▶ 2장에서 이 블록을 6개로 해부합니다</text>
+
+    <rect x="396" y="120" width="66" height="86" rx="2" fill="#FBF1EC" stroke="#C4805A"/>
+    <text x="404" y="134" font-size="8.6" font-weight="800" fill="#A25E38">ⓑ 별도공사비</text>
+    <text x="404" y="148" fill="#333">· 철거·석면</text>
+    <text x="404" y="160" fill="#333">· 지장물 이설</text>
+    <text x="404" y="172" fill="#333">· 문화재 조사</text>
+    <text x="404" y="184" fill="#333">· 미술장식품</text>
+    <text x="404" y="198" fill="#A25E38" font-weight="700">▶ 분쟁 화약고</text>
+
+    <rect x="466" y="120" width="184" height="86" rx="2" fill="#F1F3F5" stroke="#6E7A85"/>
+    <text x="476" y="134" font-size="9.4" font-weight="800" fill="#4A545E">② 사업비</text>
+    <text x="476" y="148" fill="#333">· 용역비 — 설계 · 감리 · 정비업체 · 감정평가</text>
+    <text x="476" y="160" fill="#333">· 금융비용 — 사업비/이주비 대여이자 · PF</text>
+    <text x="476" y="172" fill="#333">· 제세공과 — 취득세 · 보존등기 · 인입분담금</text>
+    <text x="476" y="184" fill="#333">· 부담금 — 학교용지 · 광역교통 · 재초환</text>
+    <text x="476" y="198" fill="#333">· 조합운영비 · 예비비(1~5%)</text>
+  </g>
+
+  <!-- warning strip -->
+  <rect x="10" y="218" width="640" height="34" rx="2" fill="#FDF6E7" stroke="#B8791F"/>
+  <text x="22" y="234" font-size="10" font-weight="800" fill="#B8791F">시공사가 말하는 “평당 830만원”은 ⓐ 도급공사비입니다.</text>
+  <text x="22" y="248" font-size="10" fill="#6B4A12">조합원이 실제 부담하는 것은 <tspan font-weight="800">총사업비</tspan>이며, 도급공사비는 그 중 약 60~70%에 불과합니다.</text>
+
+  <rect x="10" y="260" width="640" height="30" rx="2" fill="#16324F"/>
+  <text x="330" y="279" text-anchor="middle" font-size="10.6" fill="#fff" font-weight="700">
+    도급공사비 평당 830만원　≒　총사업비 평당 1,200~1,350만원</text>
+</svg>
+<figcaption><b>[그림 1-1]</b> 총사업비 → 총공사비 → 도급공사비의 계층 구조와 실제 분담금의 관계</figcaption>
+</figure>
+
+<h4>용어 정의 (첫 등장 1줄 정의)</h4>
+<table class="d big">
+<tr><th style="width:32mm">용어</th><th>1줄 정의</th></tr>
+<tr><td><b>총사업비</b></td><td>조합이 사업 착수부터 청산까지 지출하는 모든 비용의 합계. 조합원 분담금의 모수(母數).</td></tr>
+<tr><td><b>총공사비</b></td><td>건물을 짓는 데 들어가는 비용 전체. 도급공사비 + 별도공사비.</td></tr>
+<tr><td><b>도급공사비</b></td><td>조합이 시공사와 도급계약서로 약정하는 금액. <b>시공사가 책임지는 범위.</b></td></tr>
+<tr><td><b>직접공사비</b></td><td>실제 건물에 물리적으로 들어가는 재료비·노무비·장비비.</td></tr>
+<tr><td><b>간접공사비</b></td><td>현장을 운영하기 위해 드는 비용(현장사무소·보험·안전관리 등). 건물에 남지 않음.</td></tr>
+<tr><td><b>별도공사비</b></td><td>도급 범위 밖이라 조합이 따로 부담하는 공사. <b>여기가 분쟁의 화약고.</b></td></tr>
+</table>
+
+<div class="box warn">
+<div class="bt">대의원이 반드시 붙잡을 포인트</div>
+<p>조합원 설명회에서 <b>“평당 830만원”만 듣고 분담금을 계산하면 전부 틀립니다.</b>
+반드시 <b>총사업비 추정표</b>와 <b>세대당 분담금 추정치</b>를 함께 요구하십시오.</p>
+</div>
+
+<h3>1-2. 평당(3.3㎡당) 공사비 — 산정 방식과 5개의 함정</h3>
+
+<figure>
+<svg viewBox="0 0 660 92" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <rect x="120" y="10" width="420" height="70" rx="3" fill="#F3F7FA" stroke="#5B85AE"/>
+  <text x="185" y="52" text-anchor="middle" font-size="12" font-weight="800" fill="#16324F">평당 공사비 =</text>
+  <line x1="250" y1="45" x2="500" y2="45" stroke="#16324F" stroke-width="1.6"/>
+  <text x="375" y="38" text-anchor="middle" font-size="11.5" font-weight="700" fill="#B3372C">도급공사비 (원)</text>
+  <text x="375" y="62" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1F5C8B">연면적(㎡) ÷ 3.3058</text>
+</svg>
+<figcaption><b>[그림 1-2]</b> 식은 초등학교 수준입니다. 문제는 <b>분자와 분모에 무엇을 넣느냐</b>입니다.</figcaption>
+</figure>
+
+<div class="box def">
+<div class="bt">용어</div>
+<p><b>연면적</b> — 건물 각 층 바닥면적의 합계. 지하층 포함 여부에 따라 값이 크게 달라짐.<br>
+<b>3.3058</b> — 1평 = 3.3058㎡. 편의상 3.3으로 쓰기도 함.</p>
+</div>
+
+<h4>함정 ① 분모 — 지하 포함 연면적이냐, 지상 연면적이냐</h4>
+<p>이것이 <b>가장 흔하고 가장 큰 착시</b>입니다. 요즘 정비사업은 주차장 지하화로 지하 연면적이 전체의 30~40%를 차지합니다.
+지하는 골조 위주라 ㎡당 공사비가 낮지만 면적은 크게 잡히므로, <b>분모에 지하를 포함하면 평당 단가가 30~40% 낮아 보입니다.</b></p>
+
+<figure>
+<svg viewBox="0 0 660 230" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <!-- ground line -->
+  <line x1="20" y1="118" x2="640" y2="118" stroke="#8A939C" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="24" y="114" font-size="8.4" fill="#8A939C">G.L</text>
+
+  <!-- building above -->
+  <g>
+    <rect x="150" y="18" width="150" height="100" fill="#2C5B87"/>
+    <g stroke="#4C7BA8" stroke-width=".8">
+      <line x1="150" y1="38" x2="300" y2="38"/><line x1="150" y1="58" x2="300" y2="58"/>
+      <line x1="150" y1="78" x2="300" y2="78"/><line x1="150" y1="98" x2="300" y2="98"/>
+      <line x1="188" y1="18" x2="188" y2="118"/><line x1="225" y1="18" x2="225" y2="118"/>
+      <line x1="262" y1="18" x2="262" y2="118"/>
+    </g>
+    <text x="225" y="72" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="800">지상 200,000㎡</text>
+    <text x="225" y="12" text-anchor="middle" font-size="9" fill="#16324F" font-weight="700">지상부 (마감·설비 집약)</text>
+  </g>
+  <!-- basement -->
+  <rect x="110" y="118" width="230" height="64" fill="#9AA5AE"/>
+  <g stroke="#B6BFC7" stroke-width=".8">
+    <line x1="110" y1="140" x2="340" y2="140"/><line x1="110" y1="161" x2="340" y2="161"/>
+  </g>
+  <text x="225" y="155" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="800">지하 100,000㎡</text>
+  <text x="225" y="196" text-anchor="middle" font-size="9" fill="#5A6570">지하부 (골조 위주 · 면적은 큼)</text>
+
+  <!-- callouts -->
+  <g>
+    <rect x="368" y="26" width="272" height="60" rx="3" fill="#FCEFED" stroke="#B3372C" stroke-width="1.2"/>
+    <text x="380" y="44" font-size="9.6" font-weight="800" fill="#B3372C">분모 = 지상 연면적 200,000㎡</text>
+    <text x="380" y="60" font-size="9.2" fill="#333">7,500억 ÷ 60,500평 =</text>
+    <text x="380" y="78" font-size="13" font-weight="800" fill="#B3372C">약 1,240만원 / 평</text>
+    <text x="565" y="78" font-size="9" fill="#B3372C">“너무 비싼데?”</text>
+  </g>
+  <g>
+    <rect x="368" y="96" width="272" height="60" rx="3" fill="#EDF4FA" stroke="#1F5C8B" stroke-width="1.2"/>
+    <text x="380" y="114" font-size="9.6" font-weight="800" fill="#1F5C8B">분모 = 총연면적 300,000㎡</text>
+    <text x="380" y="130" font-size="9.2" fill="#333">7,500억 ÷ 90,750평 =</text>
+    <text x="380" y="148" font-size="13" font-weight="800" fill="#1F5C8B">약 826만원 / 평</text>
+    <text x="571" y="148" font-size="9" fill="#1F5C8B">“합리적이네”</text>
+  </g>
+  <rect x="368" y="166" width="272" height="30" rx="3" fill="#16324F"/>
+  <text x="504" y="178" text-anchor="middle" font-size="9.6" fill="#fff" font-weight="700">같은 사업 · 같은 금액 7,500억인데</text>
+  <text x="504" y="191" text-anchor="middle" font-size="10.4" fill="#FFD9A0" font-weight="800">숫자가 1.5배 차이납니다</text>
+
+  <rect x="20" y="206" width="620" height="20" rx="2" fill="#F3F7FA" stroke="#5B85AE"/>
+  <text x="30" y="220" font-size="9.2" fill="#16324F">
+    <tspan font-weight="800">질의 ▶</tspan> “제시하신 3.3㎡당 단가의 분모는 지하층 포함 총연면적입니까, 지상 연면적입니까? 두 기준 모두로 환산한 표를 제출해 주십시오.”</text>
+</svg>
+<figcaption><b>[그림 1-3]</b> 함정 ① — 분모를 바꾸면 같은 금액이 826만원도 되고 1,240만원도 됩니다</figcaption>
+</figure>
+
+<h4>함정 ② 부가가치세(VAT) 별도인가, 포함인가</h4>
+<div class="box def">
+<div class="bt">부가가치세(VAT)</div>
+<p>재화·용역 공급에 붙는 10% 세금. 주택 공사비에서는 <b>국민주택규모(전용 85㎡) 이하는 면제, 85㎡ 초과는 10% 과세</b>됩니다.</p>
+</div>
+<p>정비사업 입찰제안서는 통상 <b>“VAT 별도”</b>로 표기합니다. 그러나 조합원 부담은 세대별 전용면적 구성비에 따른
+<b>혼합세율</b>로 결정됩니다. 85㎡ 초과 세대 비중이 40%인 단지라면 실효 VAT는 도급공사비의 <b>약 4%</b>입니다.</p>
+<div class="box ask">
+<div class="bt">검증 질의</div>
+<p class="q">“VAT 별도 기준 단가와, 우리 단지의 85㎡ 초과 세대 비중을 반영한 실효 VAT 포함 총액을 함께 제시해 주십시오.”</p>
+</div>
+
+<h4>함정 ③ 기준시점 — “언제의 물가로 계산한 금액인가”</h4>
+<p>입찰제안서 단가에는 반드시 <b>기준시점(base date)</b>이 있습니다. 착공까지 통상 2~4년이 걸리고 그 사이 물가상승분이 붙습니다.
+건설공사비지수가 연 3%씩 3년 오르면 <b>약 9.3% 증액</b> — 7,500억이면 <b>약 700억</b>입니다.
+<b>기준시점이 다른 두 제안의 단가 비교는 무의미합니다.</b></p>
+<div class="box ask">
+<div class="bt">검증 질의</div>
+<p class="q">“단가의 물가 기준시점은 언제이며, 착공 시까지 물가변동 조정을 적용하지 않는 기간은 몇 개월입니까?”</p>
+</div>
+
+<h4>함정 ④ 설계변경 여지 — “지금 도면으로 계산한 금액인가”</h4>
+<p>시공사 선정 시점의 설계는 대부분 <b>조합이 만든 계획설계(기본안)</b>입니다. 인허가 과정에서 층수·세대수·주차대수·기부채납이 바뀝니다.
+이때 단가를 어떻게 재산정하는지가 계약서에 없으면 <b>시공사가 부르는 대로</b> 됩니다.</p>
+<table class="d big">
+<tr><th style="width:38mm">방식</th><th>정의</th><th style="width:44mm">조합 리스크</th></tr>
+<tr><td><b>총액도급 (Lump Sum)</b></td><td>총액을 확정, 물량 증감 위험을 시공사가 부담</td><td>낮음. 단, 설계변경 시 분쟁</td></tr>
+<tr><td><b>내역도급 (단가도급)</b></td><td>항목별 단가를 확정, 물량×단가로 정산</td><td>물량 증가 시 그대로 증액</td></tr>
+<tr class="hi"><td><b>혼합형 (현실)</b></td><td>총액 제시 + “설계변경 시 별도 협의”</td><td>★ 가장 위험. 협의가 곧 인상</td></tr>
+</table>
+<div class="box ask">
+<div class="bt">검증 질의</div>
+<p class="q">“본 제안은 총액도급입니까 내역도급입니까? 설계변경 발생 시 단가 재산정 방식(고정단가 적용 / 신규 단가 산출 절차 / 제3자 검증)을 계약 조문 초안으로 제출해 주십시오.”</p>
+</div>
+
+<h4>함정 ⑤ 포함 범위 — 무엇이 도급 안에 있고 무엇이 밖에 있는가</h4>
+<table class="d">
+<tr><th>항목</th><th class="c" style="width:20mm">통상 포함</th><th style="width:62mm">자주 빠지는 항목 (별도 청구 위험)</th></tr>
+<tr><td>기존 건물 철거 · 석면해체</td><td class="c">△</td><td>★ 자주 별도</td></tr>
+<tr><td>지장물 이설 (한전 · 통신 · 상하수도)</td><td class="c">△</td><td>★ 자주 별도</td></tr>
+<tr><td>문화재 지표 · 발굴조사</td><td class="c">✕</td><td>★ 거의 별도</td></tr>
+<tr><td>흙막이 · 터파기 특수공법 추가분</td><td class="c">△</td><td>★ 지질조사 결과에 따라 별도</td></tr>
+<tr class="hi"><td>특화설계비 / 브랜드 특화</td><td class="c">△</td><td>★★ 3장 핵심 쟁점</td></tr>
+<tr><td>미술장식품 (건축물 미술작품)</td><td class="c">✕</td><td>별도</td></tr>
+<tr><td>인입분담금 (전기 · 가스 · 상수도)</td><td class="c">✕</td><td>사업비</td></tr>
+<tr><td>유상옵션 (가전 · 시스템에어컨 등)</td><td class="c">✕</td><td>입주민 부담</td></tr>
+<tr><td>감리비</td><td class="c">✕</td><td>사업비</td></tr>
+</table>
+<div class="box ask">
+<div class="bt">검증 질의</div>
+<p class="q">“도급 범위 포함/불포함 항목을 위 형식의 표로 작성해 제안서에 첨부하고, 불포함 항목의 예상금액을 함께 기재해 주십시오.”</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 660 118" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.5" font-weight="800" fill="#16324F">평당 단가를 보면 반사적으로 확인할 5가지</text>
+  <g>
+    <rect x="10" y="24" width="124" height="76" rx="3" fill="#16324F"/>
+    <text x="72" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#8FB4D2">①</text>
+    <text x="72" y="66" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">분　모</text>
+    <text x="72" y="82" text-anchor="middle" font-size="8.4" fill="#B7D2E8">총연면적 vs 지상</text>
+    <text x="72" y="93" text-anchor="middle" font-size="8.4" fill="#FFD9A0">최대 1.5배 착시</text>
+  </g>
+  <g>
+    <rect x="141" y="24" width="124" height="76" rx="3" fill="#1D4468"/>
+    <text x="203" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#8FB4D2">②</text>
+    <text x="203" y="66" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">V A T</text>
+    <text x="203" y="82" text-anchor="middle" font-size="8.4" fill="#B7D2E8">별도 / 포함</text>
+    <text x="203" y="93" text-anchor="middle" font-size="8.4" fill="#FFD9A0">85㎡ 초과만 과세</text>
+  </g>
+  <g>
+    <rect x="272" y="24" width="124" height="76" rx="3" fill="#2C5B87"/>
+    <text x="334" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#B7D2E8">③</text>
+    <text x="334" y="66" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">기준시점</text>
+    <text x="334" y="82" text-anchor="middle" font-size="8.4" fill="#C9DEEE">언제의 물가인가</text>
+    <text x="334" y="93" text-anchor="middle" font-size="8.4" fill="#FFD9A0">3년이면 +9%</text>
+  </g>
+  <g>
+    <rect x="403" y="24" width="124" height="76" rx="3" fill="#B8791F"/>
+    <text x="465" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#FBEBCF">④</text>
+    <text x="465" y="66" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">설계변경</text>
+    <text x="465" y="82" text-anchor="middle" font-size="8.4" fill="#FBEBCF">총액 / 내역 / 혼합</text>
+    <text x="465" y="93" text-anchor="middle" font-size="8.4" fill="#FFF3D6">‘협의’는 인상</text>
+  </g>
+  <g>
+    <rect x="534" y="24" width="116" height="76" rx="3" fill="#B3372C"/>
+    <text x="592" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#F6D5D1">⑤</text>
+    <text x="592" y="66" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">포함 범위</text>
+    <text x="592" y="82" text-anchor="middle" font-size="8.4" fill="#F6D5D1">철거·지장물·특화</text>
+    <text x="592" y="93" text-anchor="middle" font-size="8.4" fill="#FFD9A0">밖에 있으면 추가</text>
+  </g>
+  <text x="330" y="113" text-anchor="middle" font-size="9" fill="#5A6570">이 5개를 확정하기 전까지 “싸다 / 비싸다”는 판단은 성립하지 않습니다</text>
+</svg>
+<figcaption><b>[그림 1-4]</b> 평당 공사비의 5개 함정 — 제안서를 받으면 이 순서로 확인합니다</figcaption>
+</figure>
+
+<h3>1-3. 실습 1 — 두 제안, 어느 쪽이 싼가?</h3>
+
+<div class="ws">
+<div class="wh">【실습 1】 정규화 계산 연습　·　직접 계산한 뒤 부록 B와 대조하십시오</div>
+<div class="wb">
+<p><b>우리 단지 조건</b> — 지상 연면적 200,000㎡ / 지하 연면적 100,000㎡ / 총연면적 300,000㎡ /
+총 1,000세대 / 전용 85㎡ 초과 세대 비중 40% <span class="small">(단순화를 위해 아래에서는 VAT 10% 전액 과세로 계산)</span></p>
+<table class="d big">
+<tr><th style="width:34mm">구분</th><th class="c">A 건설</th><th class="c">B 건설</th></tr>
+<tr><td>제시 단가</td><td class="c"><b>3.3㎡당 830만원</b></td><td class="c"><b>3.3㎡당 1,180만원</b></td></tr>
+<tr><td>면적 기준</td><td class="c">총연면적 (지하 포함)</td><td class="c">지상 연면적</td></tr>
+<tr><td>VAT</td><td class="c">별도</td><td class="c">포함</td></tr>
+</table>
+<p><span class="qn">Q1.</span> 조합원 대다수는 어느 쪽이 싸다고 생각하겠습니까?</p>
+<div class="lines"><div></div></div>
+<p style="margin-top:3mm"><span class="qn">Q2.</span> 두 제안을 ‘VAT 별도 · 총액’ 기준으로 환산하면 각각 얼마입니까? (계산 과정을 쓰십시오)</p>
+<div class="lines"><div></div><div></div><div></div><div></div></div>
+<p style="margin-top:3mm"><span class="qn">Q3.</span> 차액은 세대당 얼마입니까?</p>
+<div class="lines"><div></div><div></div></div>
+</div>
+</div>
+
+<h3>1-4. 챕터 1 체크리스트</h3>
+<p class="small">시공사 제안서를 받으면 이 9개를 <b>가장 먼저</b> 확정하십시오.</p>
+<div class="ckl">
+<div class="ck"><div class="bx"></div><div>제시 단가의 <b>분모</b>가 총연면적인지 지상 연면적인지 문서로 확인했다</div></div>
+<div class="ck"><div class="bx"></div><div><b>VAT 별도/포함</b> 여부를 확인하고, 85㎡ 초과 비중 반영 실효 VAT를 계산했다</div></div>
+<div class="ck"><div class="bx"></div><div>단가의 <b>물가 기준시점(년·월)</b>이 제안서에 명시되어 있다</div></div>
+<div class="ck"><div class="bx"></div><div><b>총액도급 / 내역도급</b> 방식이 명시되어 있다</div></div>
+<div class="ck"><div class="bx"></div><div><b>도급 포함·불포함 항목표</b>를 제출받았다</div></div>
+<div class="ck"><div class="bx"></div><div>불포함 항목의 <b>예상금액</b>까지 제출받았다</div></div>
+<div class="ck"><div class="bx"></div><div>도급공사비뿐 아니라 <b>총사업비 추정표</b>를 제출받았다</div></div>
+<div class="ck"><div class="bx"></div><div>총사업비 기준 <b>조합원 세대당 분담금 추정치</b>를 제출받았다</div></div>
+<div class="ck"><div class="bx"></div><div>위 모든 항목을 시공사별로 <b>동일 양식</b>에 옮겨 적었다</div></div>
+</div>
+
+<!-- ==================== CHAPTER 2 ==================== -->
+<div class="chapnum">CHAPTER 2</div>
+<h2 class="chap">건설비 구성요소별 스터디</h2>
+<div class="chaprule"></div>
+
+<div class="box def">
+<div class="bt">학습목표</div>
+<p>① 도급공사비를 6개 블록으로 나눠 각각의 <b>정상 범위</b>를 안다<br>
+② 각 블록마다 <b>딱 하나의 결정적 질문</b>을 던질 수 있다</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 660 208" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.6" font-weight="800" fill="#16324F">도급공사비 100%의 해부도 (공동주택 일반)</text>
+  <!-- stacked bar -->
+  <g>
+    <rect x="10" y="24" width="472" height="34" fill="#16324F"/>
+    <rect x="482" y="24" width="102" height="34" fill="#2C5B87"/>
+    <rect x="584" y="24" width="30" height="34" fill="#5B85AE"/>
+    <rect x="614" y="24" width="36" height="34" fill="#B8791F"/>
+    <text x="246" y="46" text-anchor="middle" font-size="11" fill="#fff" font-weight="800">① 직접공사비　72~80%</text>
+    <text x="533" y="46" text-anchor="middle" font-size="9.4" fill="#fff" font-weight="800">② 간접 12~18%</text>
+    <text x="599" y="46" text-anchor="middle" font-size="7.6" fill="#fff" font-weight="700">③관리</text>
+    <text x="632" y="46" text-anchor="middle" font-size="7.6" fill="#fff" font-weight="700">④이윤</text>
+  </g>
+  <g font-size="8.8" fill="#5A6570">
+    <text x="10" y="70">물량 × 단가. 검증 가능</text>
+    <text x="482" y="70">요율 검증. 부풀리기 쉬움</text>
+    <text x="584" y="70">4~6%</text>
+    <text x="614" y="70">6~12%</text>
+  </g>
+
+  <!-- side blocks -->
+  <rect x="10" y="86" width="316" height="46" rx="3" fill="#FDF6E7" stroke="#B8791F"/>
+  <text x="22" y="103" font-size="9.8" font-weight="800" fill="#B8791F">⑤ 특화 · 브랜드 　0~10%</text>
+  <text x="22" y="118" font-size="8.8" fill="#6B4A12">별도 항목으로 분리되어야 함 → 3장에서 3층 분해법으로 해부</text>
+  <text x="22" y="128" font-size="8.8" fill="#6B4A12">10% 초과 시 항목별 증빙 필수</text>
+
+  <rect x="334" y="86" width="316" height="46" rx="3" fill="#EDF4FA" stroke="#1F5C8B"/>
+  <text x="346" y="103" font-size="9.8" font-weight="800" fill="#1F5C8B">⑥ 예비비 · 물가변동 　금액이 아니라 ‘조문’</text>
+  <text x="346" y="118" font-size="8.8" fill="#123">계약서 조항의 문제. 지금은 0원이어도 착공 후 수백억이 됩니다</text>
+  <text x="346" y="128" font-size="8.8" fill="#123">→ 2-6절</text>
+
+  <rect x="10" y="142" width="640" height="26" rx="2" fill="#F3F7FA" stroke="#5B85AE"/>
+  <text x="22" y="159" font-size="9.2" fill="#16324F">
+    <tspan font-weight="800">주의 ▶</tspan> 설계비 · 감리비 · 금융비용은 원칙적으로 <tspan font-weight="700">사업비(도급 밖)</tspan>이나, 시공사 제안에 섞여 들어오는 경우가 많습니다 (2-3, 2-5절)</text>
+
+  <rect x="10" y="176" width="640" height="26" rx="2" fill="#FCEFED" stroke="#B3372C"/>
+  <text x="22" y="193" font-size="9.4" fill="#B3372C">
+    <tspan font-weight="800">증폭 구조 ▶</tspan> 간접비 대부분은 “직접공사비 또는 노무비 × 요율”입니다. <tspan font-weight="800">직접비가 부풀려지면 간접비도 자동으로 함께 부풀려집니다.</tspan></text>
+</svg>
+<figcaption><b>[그림 2-1]</b> 도급공사비 6개 블록과 각 블록의 검증 성격</figcaption>
+</figure>
+
+<h3>2-1. 직접공사비 — 골조 / 마감 / 설비 / 전기</h3>
+<div class="box def">
+<div class="bt">직접공사비</div>
+<p>실제 건축물을 구성하는 데 직접 투입되는 재료비 + 노무비 + 장비비.
+도면과 시방서로 물량을 산출할 수 있으므로 <b>유일하게 객관 검증이 가능한 영역</b>입니다.</p>
+</div>
+
+<h4>시장 참고치 — 공종별 비중 (도급공사비 100% 기준)</h4>
+<figure>
+<svg viewBox="0 0 660 240" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <g font-size="9.2">
+    <!-- scale -->
+    <line x1="150" y1="20" x2="150" y2="216" stroke="#D5DBE1"/>
+    <line x1="250" y1="20" x2="250" y2="216" stroke="#D5DBE1"/>
+    <line x1="350" y1="20" x2="350" y2="216" stroke="#D5DBE1"/>
+    <line x1="450" y1="20" x2="450" y2="216" stroke="#D5DBE1"/>
+    <line x1="550" y1="20" x2="550" y2="216" stroke="#D5DBE1"/>
+    <text x="150" y="16" text-anchor="middle" font-size="8" fill="#8A939C">0%</text>
+    <text x="250" y="16" text-anchor="middle" font-size="8" fill="#8A939C">8%</text>
+    <text x="350" y="16" text-anchor="middle" font-size="8" fill="#8A939C">16%</text>
+    <text x="450" y="16" text-anchor="middle" font-size="8" fill="#8A939C">24%</text>
+    <text x="550" y="16" text-anchor="middle" font-size="8" fill="#8A939C">32%</text>
+  </g>
+  <!-- bars: x=150 + pct*12.5 -->
+  <g font-size="9.4" fill="#191E24">
+    <text x="142" y="34" text-anchor="end">가설공사</text>
+    <rect x="150" y="26" width="87" height="11" fill="#8FB4D2"/><rect x="200" y="26" width="37" height="11" fill="#5B85AE"/>
+    <text x="245" y="35" font-size="8.4" fill="#5A6570">4~7%</text>
+
+    <text x="142" y="54" text-anchor="end">토공 · 흙막이</text>
+    <rect x="150" y="46" width="100" height="11" fill="#8FB4D2"/><rect x="200" y="46" width="50" height="11" fill="#5B85AE"/>
+    <text x="258" y="55" font-size="8.4" fill="#5A6570">4~8%</text>
+
+    <text x="142" y="76" text-anchor="end" font-weight="800" fill="#16324F">골조 (철근콘크리트)</text>
+    <rect x="150" y="66" width="375" height="14" fill="#8FB4D2"/><rect x="150" y="66" width="275" height="14" fill="#16324F"/>
+    <text x="533" y="77" font-size="8.8" fill="#16324F" font-weight="700">22~30%　최대 단일 공종</text>
+
+    <text x="142" y="100" text-anchor="end" font-weight="800" fill="#B8791F">건축마감</text>
+    <rect x="150" y="90" width="400" height="14" fill="#F0D6A4"/><rect x="150" y="90" width="300" height="14" fill="#B8791F"/>
+    <text x="558" y="101" font-size="8.8" fill="#B8791F" font-weight="700">24~32%　하이엔드 차이 발생</text>
+
+    <text x="142" y="120" text-anchor="end">기계설비</text>
+    <rect x="150" y="112" width="137" height="11" fill="#8FB4D2"/><rect x="150" y="112" width="100" height="11" fill="#5B85AE"/>
+    <text x="295" y="121" font-size="8.4" fill="#5A6570">8~11%</text>
+
+    <text x="142" y="140" text-anchor="end">전기 · 통신 · 소방</text>
+    <rect x="150" y="132" width="162" height="11" fill="#8FB4D2"/><rect x="150" y="132" width="112" height="11" fill="#5B85AE"/>
+    <text x="320" y="141" font-size="8.4" fill="#5A6570">9~13%</text>
+
+    <text x="142" y="160" text-anchor="end">승강기</text>
+    <rect x="150" y="152" width="37" height="11" fill="#8FB4D2"/><rect x="150" y="152" width="19" height="11" fill="#5B85AE"/>
+    <text x="195" y="161" font-size="8.4" fill="#5A6570">1.5~3%</text>
+
+    <text x="142" y="180" text-anchor="end" font-weight="700" fill="#26705A">조경</text>
+    <rect x="150" y="172" width="50" height="11" fill="#A8D0BF"/><rect x="150" y="172" width="25" height="11" fill="#26705A"/>
+    <text x="208" y="181" font-size="8.4" fill="#26705A">2~4%　하이엔드 특화</text>
+
+    <text x="142" y="200" text-anchor="end">부대토목</text>
+    <rect x="150" y="192" width="50" height="11" fill="#8FB4D2"/><rect x="150" y="192" width="25" height="11" fill="#5B85AE"/>
+    <text x="208" y="201" font-size="8.4" fill="#5A6570">2~4%</text>
+  </g>
+  <rect x="150" y="218" width="500" height="18" rx="2" fill="#F3F7FA" stroke="#5B85AE"/>
+  <text x="160" y="231" font-size="8.8" fill="#16324F">9개 공종을 전부 검증할 시간은 없습니다. <tspan font-weight="800">표준 범위를 2~3%p 이상 벗어난 공종만</tspan> 집중 질의하십시오.</text>
+</svg>
+<figcaption><b>[그림 2-2]</b> 공종별 금액 비중 표준 범위 — 짙은 색이 하한, 옅은 색이 상한</figcaption>
+</figure>
+
+<h4>시장 참고치 — 골조 물량 원단위 (내역 대사용 핵심 지표)</h4>
+<p class="small">아파트 지상부, 연면적 ㎡당 기준 — 층수·구조형식에 따라 ±20% 변동</p>
+<table class="d big">
+<tr><th style="width:40mm">항목</th><th class="c" style="width:26mm">㎡당</th><th class="c" style="width:28mm">평당 환산</th><th>정상 범위 이탈 신호</th></tr>
+<tr><td>레미콘 (콘크리트)</td><td class="c">0.45 ~ 0.60 ㎥</td><td class="c">1.5 ~ 2.0 ㎥</td><td>0.7㎥/㎡ 초과 시 근거 요구</td></tr>
+<tr><td>철근</td><td class="c">55 ~ 80 kg</td><td class="c">180 ~ 265 kg</td><td>90kg/㎡ 초과 시 근거 요구</td></tr>
+<tr><td>거푸집</td><td class="c">2.8 ~ 3.6 ㎡</td><td class="c">9 ~ 12 ㎡</td><td>4.0㎡/㎡ 초과 시 근거 요구</td></tr>
+<tr class="hi"><td><b>철근 / 콘크리트 비</b></td><td class="c" colspan="2"><b>110 ~ 145 kg/㎥</b></td><td>★ 가장 강력한 단일 검증지표</td></tr>
+</table>
+
+<figure>
+<svg viewBox="0 0 660 150" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.4" font-weight="800" fill="#16324F">왜 ‘철근 / 콘크리트 비’가 가장 강력한가</text>
+  <!-- balance -->
+  <g>
+    <rect x="60" y="46" width="86" height="52" rx="3" fill="#9AA5AE"/>
+    <text x="103" y="70" text-anchor="middle" font-size="10" fill="#fff" font-weight="800">콘크리트</text>
+    <text x="103" y="86" text-anchor="middle" font-size="12" fill="#fff" font-weight="800">1 ㎥</text>
+    <text x="192" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="#16324F">↔</text>
+    <rect x="236" y="46" width="118" height="52" rx="3" fill="#2C5B87"/>
+    <text x="295" y="70" text-anchor="middle" font-size="10" fill="#fff" font-weight="800">철근</text>
+    <text x="295" y="86" text-anchor="middle" font-size="12" fill="#fff" font-weight="800">110 ~ 145 kg</text>
+    <text x="207" y="118" text-anchor="middle" font-size="8.8" fill="#5A6570">구조설계상 물리적으로 정해지는 관계</text>
+  </g>
+  <g>
+    <rect x="386" y="34" width="264" height="34" rx="3" fill="#EDF6F2" stroke="#26705A"/>
+    <text x="398" y="49" font-size="9.4" font-weight="800" fill="#26705A">110~145 kg/㎥ 범위 안</text>
+    <text x="398" y="62" font-size="8.8" fill="#123">→ 물량이 상식 범위. 다른 항목으로 넘어가십시오</text>
+    <rect x="386" y="74" width="264" height="46" rx="3" fill="#FCEFED" stroke="#B3372C"/>
+    <text x="398" y="89" font-size="9.4" font-weight="800" fill="#B3372C">예: 170 kg/㎥ 라면</text>
+    <text x="398" y="102" font-size="8.8" fill="#333">① 정말 초고층·특수구조이거나</text>
+    <text x="398" y="114" font-size="8.8" fill="#333">② <tspan font-weight="800">철근 물량이 부풀려진 것</tspan> — 둘 중 하나입니다</text>
+  </g>
+  <rect x="10" y="128" width="640" height="18" rx="2" fill="#16324F"/>
+  <text x="330" y="141" text-anchor="middle" font-size="9.4" fill="#fff" font-weight="700">둘 중 하나이며, 시공사는 반드시 답해야 합니다 — 답하지 못하면 그 자체가 결론입니다</text>
+</svg>
+<figcaption><b>[그림 2-3]</b> 철근/콘크리트 비 — 대의원이 계산기 하나로 던질 수 있는 가장 날카로운 질문</figcaption>
+</figure>
+
+<h4>검증 포인트</h4>
+<ol>
+<li><b>물량 검증 우선, 단가 검증 나중.</b> 조합원들은 단가(철근 톤당 얼마)에 집착하지만 자재 단가는 시장가라 조작 여지가 작습니다.
+<b>금액 = 물량 × 단가</b>에서 실무상 부풀리기는 <b>물량 쪽</b>에서 일어납니다.</li>
+<li><b>표준 범위를 벗어난 공종만</b> 파고드십시오. 전부 보려다 아무것도 못 봅니다.</li>
+<li><b>마감 공종은 스펙북(마감재 리스트)과 1:1 대사.</b> 금액만 높고 스펙북이 표준과 같으면 → 3장 레드플래그.</li>
+<li><b>단가 출처 요구.</b> 자재 단가는 「물가정보」·「거래가격」·「유통물가」 등 공인 물가지에 근거해야 합니다.</li>
+</ol>
+<div class="box ask">
+<div class="bt">★ 결정적 질문</div>
+<p class="q">“공종별 금액과 주요 물량(콘크리트·철근·거푸집)을 연면적으로 나눈 원단위 표를,
+귀사가 최근 3년간 수주한 유사 단지 2곳과 함께 비교 제출해 주십시오.”</p>
+</div>
+
+<h3>2-2. 간접공사비 — 요율 검증의 영역</h3>
+<div class="box def">
+<div class="bt">간접공사비</div>
+<p>공사를 수행하기 위해 필요하지만 건축물에 물리적으로 남지 않는 비용.
+현장사무소 운영, 관리직원 인건비, 각종 법정보험료, 안전관리비 등.</p>
+</div>
+
+<h4>시장 참고치 — 주요 법정 요율 (2026년 기준)</h4>
+<table class="d">
+<tr><th style="width:38mm">항목</th><th style="width:52mm">정의</th><th style="width:34mm">산정 기준</th><th>2026년 참고 요율</th></tr>
+<tr><td><b>간접노무비</b></td><td>현장소장·관리직원 등 직접 시공하지 않는 인력 인건비</td><td>직접노무비 대비</td><td>8 ~ 13%</td></tr>
+<tr class="hi2"><td><b>산재보험료</b></td><td>산업재해보상보험</td><td>노무비 대비</td><td><b>건설업 3.5%</b> (35/1,000)</td></tr>
+<tr><td><b>고용보험료</b></td><td>실업급여 · 고용안정 재원</td><td>노무비 대비</td><td>약 1.3 ~ 1.6%</td></tr>
+<tr><td><b>국민연금 · 건강보험 · 장기요양</b></td><td>4대보험 중 연금 · 의료</td><td>노무비 대비</td><td>합계 약 9 ~ 11%</td></tr>
+<tr><td><b>퇴직공제부금</b></td><td>건설근로자 퇴직공제 (일당 단위 적립)</td><td>직접노무비 대비</td><td>약 2.3%</td></tr>
+<tr class="hi2"><td><b>산업안전보건관리비</b></td><td>안전시설 · 보호구 · 안전인력 등 법정 의무 비용</td><td><b>대상액</b><br>(재료비+직접노무비)</td><td>일반건축 50억 이상 <b>2.37%</b><br>(공사종류·규모별 1.86~3.43%)</td></tr>
+<tr><td><b>환경보전비</b></td><td>비산먼지 · 소음 · 폐기물 저감</td><td>직접공사비 대비</td><td>0.3 ~ 0.8%</td></tr>
+<tr><td><b>기타경비</b></td><td>수도광열 · 통신 · 복리후생 · 차량 · 안전점검</td><td>(재료비+노무비) 대비</td><td>5 ~ 7%</td></tr>
+<tr><td><b>지급보증수수료 등</b></td><td>하도급대금 · 건설기계대여 지급보증</td><td>계약금액 대비</td><td>0.1 ~ 0.3%</td></tr>
+<tr><td><b>일반관리비</b></td><td>본사 운영비 배부액</td><td>공사원가 대비</td><td>4 ~ 6% (통상 5% 이내)</td></tr>
+<tr><td><b>이윤</b></td><td>시공사 영업이익</td><td>공사원가 대비</td><td>6 ~ 12%</td></tr>
+</table>
+
+<div class="box tip">
+<div class="bt">2026년 변경사항 — 시공사 설명이 사실인 부분</div>
+<p>산업안전보건관리비는 2025년 개정으로 요율이 <b>평균 약 19% 인상</b>되었고, 2026년 1월부터 스마트 안전장비 구입·임대비를
+총 산안비의 20% 한도 내에서 100% 계상할 수 있습니다. 따라서 <b>“안전관리비가 예전보다 올랐다”는 설명 자체는 사실</b>입니다.
+다만 <b>적용 요율표와 대상액 산출근거</b>는 반드시 받아야 합니다.</p>
+</div>
+
+<h4>검증 포인트 — 3대 함정</h4>
+<figure>
+<svg viewBox="0 0 660 174" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <g>
+    <rect x="10" y="10" width="206" height="130" rx="3" fill="#F3F7FA" stroke="#5B85AE"/>
+    <rect x="10" y="10" width="206" height="22" rx="3" fill="#5B85AE"/>
+    <text x="113" y="25" text-anchor="middle" font-size="9.6" fill="#fff" font-weight="800">함정 A. 기준 오해</text>
+    <text x="22" y="48" font-size="8.8" fill="#123">조달청 제비율은 <tspan font-weight="700">공공공사</tspan> 기준.</text>
+    <text x="22" y="61" font-size="8.8" fill="#123">민간 정비사업은 강제 적용 ✕</text>
+    <text x="22" y="79" font-size="8.8" fill="#B3372C" font-weight="700">“민간이라 다르다” → 맞는 말</text>
+    <text x="22" y="95" font-size="8.8" fill="#123">그러나 반드시 되물으십시오:</text>
+    <text x="22" y="110" font-size="8.8" fill="#16324F" font-weight="800">“그렇다면 귀사의 요율 근거는</text>
+    <text x="22" y="122" font-size="8.8" fill="#16324F" font-weight="800">　무엇입니까?”</text>
+    <text x="22" y="135" font-size="8" fill="#5A6570">→ 강제기준 아닌 ‘합리성 잣대’로 사용</text>
+  </g>
+  <g>
+    <rect x="226" y="10" width="206" height="130" rx="3" fill="#FDF6E7" stroke="#B8791F"/>
+    <rect x="226" y="10" width="206" height="22" rx="3" fill="#B8791F"/>
+    <text x="329" y="25" text-anchor="middle" font-size="9.6" fill="#fff" font-weight="800">함정 B. 대상액 부풀리기</text>
+    <text x="238" y="48" font-size="8.8" fill="#123">안전관리비 = <tspan font-weight="700">대상액 × 요율</tspan></text>
+    <text x="238" y="66" font-size="8.8" fill="#26705A" font-weight="700">정상: 재료비 + 직접노무비</text>
+    <text x="238" y="80" font-size="8.8" fill="#B3372C" font-weight="700">오류: 도급공사비 총액</text>
+    <text x="238" y="97" font-size="8.8" fill="#123">요율이 정상이어도 대상액을</text>
+    <text x="238" y="109" font-size="8.8" fill="#123">넓게 잡으면 금액이 커집니다</text>
+    <text x="238" y="127" font-size="8.4" fill="#6B4A12" font-weight="700">▶ 대상액 산출 명세를 요구</text>
+  </g>
+  <g>
+    <rect x="442" y="10" width="208" height="130" rx="3" fill="#FCEFED" stroke="#B3372C"/>
+    <rect x="442" y="10" width="208" height="22" rx="3" fill="#B3372C"/>
+    <text x="546" y="25" text-anchor="middle" font-size="9.6" fill="#fff" font-weight="800">함정 C. 중복 계상</text>
+    <text x="454" y="48" font-size="8.8" fill="#123">· 현장관리비 ↔ 기타경비</text>
+    <text x="454" y="64" font-size="8.8" fill="#123">· 안전관리비(법정) ↔ 안전시설공사</text>
+    <text x="454" y="80" font-size="8.8" fill="#123">· 간접비 ↔ 일반관리비</text>
+    <text x="454" y="100" font-size="8.8" fill="#123">같은 항목이 두 곳에 걸립니다</text>
+    <text x="454" y="122" font-size="8.4" fill="#B3372C" font-weight="700">▶ 직접비와의 중복 대사표를 요구</text>
+  </g>
+  <rect x="10" y="148" width="640" height="20" rx="2" fill="#16324F"/>
+  <text x="330" y="162" text-anchor="middle" font-size="9.6" fill="#fff" font-weight="700">요율 자체보다 “무엇의 몇 %인가(대상액)”가 더 중요합니다</text>
+</svg>
+<figcaption><b>[그림 2-4]</b> 간접비 검증의 3대 함정</figcaption>
+</figure>
+
+<div class="box ask">
+<div class="bt">★ 결정적 질문</div>
+<p class="q">“간접공사비 각 항목의 ‘산정 기준(무엇의 몇 %인지)’과 ‘적용 요율’, ‘근거 법령 또는 사내 기준’을 3열 표로 제출해 주십시오.”</p>
+<p class="small" style="margin-top:1.5mm; color:#1F5C8B">— 이 표를 못 내는 시공사는 간접비를 총액으로 얹은 것입니다.</p>
+</div>
+
+<h3>2-3. 설계비 · 감리비</h3>
+<div class="box def">
+<div class="bt">설계비 / 감리비</div>
+<p><b>설계비</b> — 건축·구조·설비·전기 도면을 작성하는 대가. 정비사업에서는 <b>조합이 설계자를 총회 의결로 직접 선정</b>하는 것이 원칙.<br>
+<b>감리비</b> — 시공이 설계도서대로 이루어지는지 감독·확인하는 대가. 주택법상 <b>사업계획승인권자(지자체)가 감리자를 지정</b>하며, 비용은 조합(사업주체)이 부담.</p>
+</div>
+<table class="d big">
+<tr><th style="width:56mm">항목</th><th class="c" style="width:38mm">총공사비 대비 참고 비율</th><th>비고</th></tr>
+<tr><td>설계비 (기본 + 실시설계)</td><td class="c">1.5 ~ 2.5%</td><td>특화설계 · 초고층 · 해외 설계사 참여 시 상승</td></tr>
+<tr><td>감리비</td><td class="c">0.8 ~ 1.5%</td><td>「주택건설공사 감리비 지급기준」 고시 참조</td></tr>
+<tr><td>인테리어 · 특화 설계 자문</td><td class="c">0.2 ~ 0.6%</td><td>하이엔드에서 별도 계상되는 경우 많음</td></tr>
+</table>
+<ol>
+<li><b>설계비·감리비는 원칙적으로 ‘사업비’입니다. 도급공사비에 들어 있으면 이상합니다.</b>
+시공사 제안서에 설계비가 포함되어 있다면 ① 조합이 이미 설계사와 계약한 금액과 중복인지,
+② 시공사가 자기 설계사를 쓰겠다는 뜻인지 확인해야 합니다. 후자라면 도시정비법상 조합의 설계자 선정 권한과 충돌할 수 있습니다.</li>
+<li><b>“설계비 무상 제공” 제안의 실체.</b> 무상이라면서 단가에 이미 얹혀 있으면 그것은 무상이 아닙니다.</li>
+<li><b>감리비를 시공사가 부담한다는 제안은 신중히.</b> 감리는 시공사를 감독하는 주체입니다.
+감리비를 시공사가 내면 <b>독립성 훼손</b> 소지가 있습니다. 비용 절감보다 감리 독립성이 조합에 이득입니다.</li>
+</ol>
+<div class="box ask">
+<div class="bt">★ 결정적 질문</div>
+<p class="q">“제안서상 설계비·감리비의 부담 주체와 계약 주체를 각각 명시하고, 조합이 기 체결한 설계용역계약과의 관계(승계/병존/해지)를 설명해 주십시오.”</p>
+</div>
+
+<h3>2-4. 특화설계비 · 브랜드 프리미엄</h3>
+<p class="small">이 항목은 하이엔드 브랜드 검증의 핵심이므로 <b>3장 전체를 할애</b>합니다. 여기서는 구조만 정리합니다.</p>
+<div class="box def">
+<div class="bt">특화설계 / 브랜드 프리미엄</div>
+<p><b>특화설계</b> — 표준 설계 대비 추가되는 차별화 요소(외관 디자인, 커뮤니티시설 확대, 조경 고급화, 마감재 상향, 층고 상향 등).<br>
+<b>브랜드 프리미엄</b> — 특정 브랜드 적용에 따른 추가 비용. <b>이 중 얼마가 실제 원가이고 얼마가 명목인지가 쟁점.</b></p>
+</div>
+<ul>
+<li>하이엔드 브랜드 적용 시 표준 브랜드 대비 도급단가 격차: <b>3.3㎡당 약 50만 ~ 150만원</b> 수준으로 관측</li>
+<li>단, 이 격차는 <b>브랜드 이름값이 아니라 특화 물량 차이에서 나오는 것이 정상</b></li>
+<li>총공사비 대비 특화·브랜드 항목 비중: <b>0 ~ 10%</b>. 10% 초과 시 반드시 항목별 증빙 필요</li>
+</ul>
+<div class="box ask">
+<div class="bt">★ 결정적 질문</div>
+<p class="q">“특화설계비 총액을 항목별(외관/커뮤니티/조경/마감/층고/기타)로 분해하고, 각 항목의 물량과 단가를 표준 사양과 대비하여 제출해 주십시오.”</p>
+</div>
+
+<h3>2-5. 금융비용 — 보이지 않는 공사비</h3>
+<div class="box def">
+<div class="bt">PF · 사업비 대여 · 이주비 대여</div>
+<p><b>PF(Project Financing)</b> — 사업 자체의 미래 수익을 담보로 자금을 조달하는 방식. 정비사업에서는 시공사의 신용보강(연대보증·책임준공)이 붙는 것이 일반적.<br>
+<b>조합 사업비 대여</b> — 조합 운영비·용역비를 시공사가 대여해 주고, 준공 후 정산 시 이자와 함께 회수하는 것.<br>
+<b>이주비 대여</b> — 조합원 이주를 위한 자금. 기본이주비(은행 대출, 시공사 보증)와 추가이주비(시공사 직접 대여)로 구분.</p>
+</div>
+<table class="d big">
+<tr><th style="width:52mm">항목</th><th class="c" style="width:32mm">2026년 참고 수준</th><th>비고</th></tr>
+<tr><td>조합 사업비 대여금리</td><td class="c">연 <b>5 ~ 8%</b></td><td>기준금리(CD 91일물 · 금융채 1년) + 가산 2~4%p</td></tr>
+<tr><td>이주비 대여금리</td><td class="c">연 <b>4 ~ 7%</b></td><td>기본이주비는 은행 대출금리에 연동</td></tr>
+<tr><td>PF 조달금리</td><td class="c">연 <b>6 ~ 9%</b></td><td>사업성 · 신용보강 수준에 따라 편차</td></tr>
+<tr class="hi"><td>각종 수수료 (주선 · 보증 · 약정)</td><td class="c">조달액의 <b>1 ~ 3%</b></td><td>★ 금리에 숨어 잘 보이지 않음</td></tr>
+</table>
+
+<h4>검증 포인트 — 금융조건은 ‘평당 단가’로 환산해서 비교하십시오</h4>
+<figure>
+<svg viewBox="0 0 660 216" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.4" font-weight="800" fill="#16324F">계산 예시 — 1,000세대 / 총연면적 30만㎡ (90,750평) 단지</text>
+  <!-- table-ish -->
+  <g font-size="9">
+    <rect x="10" y="22" width="300" height="86" rx="3" fill="#EDF6F2" stroke="#26705A"/>
+    <text x="24" y="38" font-size="10" font-weight="800" fill="#26705A">A 건설 — 이주비 무이자</text>
+    <text x="24" y="55" fill="#123">이주비 3,000억 (세대당 3억) · 3년</text>
+    <text x="24" y="70" fill="#123">조합 부담 이자 총액</text>
+    <text x="290" y="70" text-anchor="end" font-weight="800" fill="#26705A">0 원</text>
+    <text x="24" y="86" fill="#123">평당 환산</text>
+    <text x="290" y="86" text-anchor="end" font-weight="800" fill="#26705A">0 원 / 평</text>
+    <text x="24" y="101" fill="#123">제시 도급단가</text>
+    <text x="290" y="101" text-anchor="end" font-weight="800" fill="#123">870 만원 / 평</text>
+
+    <rect x="350" y="22" width="300" height="86" rx="3" fill="#FCEFED" stroke="#B3372C"/>
+    <text x="364" y="38" font-size="10" font-weight="800" fill="#B3372C">B 건설 — 이주비 연 5%</text>
+    <text x="364" y="55" fill="#123">이주비 3,000억 (세대당 3억) · 3년</text>
+    <text x="364" y="70" fill="#123">조합 부담 이자 총액</text>
+    <text x="630" y="70" text-anchor="end" font-weight="800" fill="#B3372C">450 억원</text>
+    <text x="364" y="86" fill="#123">평당 환산</text>
+    <text x="630" y="86" text-anchor="end" font-weight="800" fill="#B3372C">약 50 만원 / 평</text>
+    <text x="364" y="101" fill="#123">제시 도급단가</text>
+    <text x="630" y="101" text-anchor="end" font-weight="800" fill="#123">830 만원 / 평</text>
+  </g>
+  <!-- bars -->
+  <g>
+    <text x="10" y="130" font-size="9.4" font-weight="800" fill="#16324F">금융조건까지 넣은 실질 부담</text>
+    <text x="120" y="150" font-size="9" text-anchor="end" fill="#123">A 건설</text>
+    <rect x="128" y="140" width="348" height="14" fill="#26705A"/>
+    <text x="484" y="151" font-size="9" font-weight="800" fill="#26705A">870 만원 / 평</text>
+    <text x="120" y="172" font-size="9" text-anchor="end" fill="#123">B 건설</text>
+    <rect x="128" y="162" width="332" height="14" fill="#B3372C"/>
+    <rect x="460" y="162" width="20" height="14" fill="#E4A29B"/>
+    <text x="484" y="173" font-size="9" font-weight="800" fill="#B3372C">830 + 50 = 880 만원 / 평</text>
+    <text x="470" y="188" font-size="7.6" fill="#B3372C" text-anchor="middle">이자</text>
+  </g>
+  <rect x="10" y="192" width="640" height="20" rx="2" fill="#16324F"/>
+  <text x="330" y="206" text-anchor="middle" font-size="9.6" fill="#fff" font-weight="700">
+    평당 40만원 비싸 보이던 A가, 금융조건까지 넣으면 평당 10만원 저렴합니다</text>
+</svg>
+<figcaption><b>[그림 2-5]</b> 금융조건을 평당으로 환산하면 순위가 뒤집힙니다 — 제안 비교에서 가장 자주 놓치는 부분</figcaption>
+</figure>
+
+<div class="box warn">
+<div class="bt">반대 방향의 함정도 있습니다</div>
+<p>“무이자 이주비”는 시공사가 자선사업을 하는 것이 아닙니다. <b>그 이자비용은 이미 도급단가에 선반영</b>되어 있을 가능성이 높습니다.<br>
+▶ <b>질의</b> — “무이자 이주비 제공에 따른 귀사의 예상 금융비용 부담액과, 그 금액이 도급공사비 단가에 반영된 정도를 밝혀 주십시오.”</p>
+</div>
+<h5>그 외 확인 사항</h5>
+<ul>
+<li>대여금리가 <b>고정인지 변동인지</b>, 변동이면 기준금리와 가산금리를 분리 표시했는지</li>
+<li><b>연체이자율</b>과 그 발동 조건 (사업 지연 시 폭탄)</li>
+<li>사업 지연 시 <b>대여 중단 조건</b>이 있는지 (있으면 조합이 인질이 됩니다)</li>
+<li>준공 후 <b>정산 방식과 시점</b></li>
+</ul>
+<div class="box ask">
+<div class="bt">★ 결정적 질문</div>
+<p class="q">“이주비·사업비 대여의 금리·기간·수수료를 모두 반영한 ‘조합 총 금융부담액’을 산출하고, 이를 3.3㎡당 금액으로 환산하여 제출해 주십시오.”</p>
+</div>
+
+<h3>2-6. 예비비 · 물가상승률(에스컬레이션) 조항</h3>
+<div class="box def">
+<div class="bt">예비비 / 에스컬레이션</div>
+<p><b>예비비</b> — 예측하지 못한 비용에 대비한 유보액.<br>
+<b>에스컬레이션(물가변동에 따른 계약금액 조정)</b> — 계약 후 자재비·노무비 상승분을 공사비에 반영하는 것.<br>
+<b>건설공사비지수</b> — 한국건설기술연구원이 발표하는, 건설자재·노무·장비 가격 변동을 종합한 지수. 통상 소비자물가지수보다 변동폭이 큼.</p>
+</div>
+<p><b>두 가지를 혼동하지 마십시오.</b> 조합의 <b>사업비 예비비</b>(관리처분계획상, 총사업비의 1~5%)와
+도급계약상 <b>공사비 예비비(Contingency)</b>는 다릅니다. 도급공사비 안에 예비비가 별도 계상되어 있다면
+<b>어떤 위험에 대한 것인지, 미사용 시 반환되는지</b> 반드시 확인하십시오.</p>
+
+<figure>
+<svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.4" font-weight="800" fill="#16324F">에스컬레이션 조항 — 계약서에서 확인할 6개 요소</text>
+  <!-- graph -->
+  <g>
+    <rect x="10" y="24" width="330" height="140" rx="3" fill="#FAFCFD" stroke="#D5DBE1"/>
+    <line x1="40" y1="146" x2="326" y2="146" stroke="#8A939C"/>
+    <line x1="40" y1="36" x2="40" y2="146" stroke="#8A939C"/>
+    <text x="34" y="42" text-anchor="end" font-size="7.6" fill="#8A939C">지수</text>
+    <text x="330" y="158" text-anchor="end" font-size="7.6" fill="#8A939C">시간</text>
+    <!-- base date -->
+    <line x1="80" y1="36" x2="80" y2="146" stroke="#1F5C8B" stroke-dasharray="3 2"/>
+    <text x="80" y="33" text-anchor="middle" font-size="7.6" fill="#1F5C8B" font-weight="700">기준시점</text>
+    <!-- exclusion -->
+    <rect x="80" y="36" width="86" height="110" fill="#EDF6F2" opacity=".8"/>
+    <text x="123" y="60" text-anchor="middle" font-size="7.6" fill="#26705A" font-weight="700">조정 제외기간</text>
+    <text x="123" y="71" text-anchor="middle" font-size="7.6" fill="#26705A">(착공 후 24~36개월)</text>
+    <!-- curves -->
+    <path d="M80 132 C 140 128, 200 108, 326 62" fill="none" stroke="#B3372C" stroke-width="2"/>
+    <text x="300" y="56" font-size="7.8" fill="#B3372C" font-weight="700">건설공사비지수</text>
+    <path d="M80 132 C 150 130, 220 120, 326 96" fill="none" stroke="#1F5C8B" stroke-width="2"/>
+    <text x="300" y="110" font-size="7.8" fill="#1F5C8B" font-weight="700">소비자물가지수</text>
+    <!-- cap -->
+    <line x1="40" y1="86" x2="326" y2="86" stroke="#B8791F" stroke-width="1.6" stroke-dasharray="5 3"/>
+    <text x="46" y="82" font-size="7.8" fill="#B8791F" font-weight="800">상한(Cap) — 누적 5%</text>
+    <text x="46" y="140" font-size="7.6" fill="#5A6570">계약</text>
+  </g>
+  <!-- 6 elements -->
+  <g font-size="8.6">
+    <rect x="350" y="24" width="300" height="140" rx="3" fill="#F3F7FA" stroke="#5B85AE"/>
+    <text x="362" y="40" font-size="9" font-weight="800" fill="#16324F">조합에 유리한 방향</text>
+    <text x="362" y="57" fill="#123"><tspan font-weight="700">① 기준시점</tspan> — 명시적 날짜. “입찰일” 등 조기 시점</text>
+    <text x="362" y="74" fill="#123"><tspan font-weight="700">② 적용 지수</tspan> — 변동폭 작은 <tspan font-weight="700" fill="#1F5C8B">소비자물가지수</tspan></text>
+    <text x="362" y="91" fill="#123"><tspan font-weight="700">③ 조정 제외기간</tspan> — 착공 후 24~36개월 배제</text>
+    <text x="362" y="108" fill="#123"><tspan font-weight="700">④ 조정 주기</tspan> — 매년보다 일괄 정산 / 긴 주기</text>
+    <text x="362" y="125" fill="#123"><tspan font-weight="700">⑤ 상한(Cap)</tspan> — 총 조정률 상한 (예: 누적 5%)</text>
+    <text x="362" y="142" fill="#123"><tspan font-weight="700">⑥ 조정 대상</tspan> — 이윤·일반관리비는 조정 제외</text>
+    <text x="362" y="157" font-size="8" fill="#B3372C" font-weight="700">▶ 6개 모두 계약 조문으로 받으십시오</text>
+  </g>
+  <rect x="10" y="172" width="640" height="24" rx="2" fill="#FCEFED" stroke="#B3372C"/>
+  <text x="22" y="181" font-size="8.8" fill="#B3372C" font-weight="800">법적 현실 ▶ “물가변동 조정은 하지 않는다”는 조항만 넣으면 안전하다 — 위험한 오해입니다.</text>
+  <text x="22" y="192" font-size="8.6" fill="#333">건설산업기본법상 경제상황 변동에 따른 계약금액 변경을 상당한 이유 없이 배제하면 <tspan font-weight="700">그 부분이 무효</tspan>가 될 수 있습니다.</text>
+</svg>
+<figcaption><b>[그림 2-6]</b> 에스컬레이션 조항의 6개 요소와 지수 선택의 효과</figcaption>
+</figure>
+
+<div class="box key">
+<div class="bt">실무적 결론</div>
+<p>조합의 방어 전략은 <b>“조정 배제”가 아니라 “합리적 산식 + 명확한 상한 + 긴 배제기간”</b>입니다.
+무조건 배제 조항은 법정에서 깨지면 오히려 <b>아무 방어막 없는 상태</b>가 됩니다.
+실제로 2023년 이후 폭등한 공사비를 둘러싸고 물가변동 조정 분쟁이 대폭 증가했습니다.</p>
+</div>
+<div class="box ask">
+<div class="bt">★ 결정적 질문</div>
+<p class="q">“물가변동 조정 조항의 기준시점·적용지수·조정 제외기간·조정 주기·상한을 명시한 계약 조문 초안을 제출하고,
+착공 지연이 각 1년/2년/3년 발생할 경우의 조정 금액 시뮬레이션을 함께 제출해 주십시오.”</p>
+</div>
+
+<h3>2-7. 실습 2 — 요율 이상 탐지</h3>
+<div class="ws">
+<div class="wh">【실습 2】 시공사가 제출한 간접공사비 내역입니다. <b>문제가 있는 3개 항목</b>을 찾고 이유를 쓰십시오</div>
+<div class="wb">
+<table class="d big">
+<tr><th class="c" style="width:10mm">#</th><th style="width:44mm">항목</th><th style="width:40mm">산정 기준</th><th class="c" style="width:22mm">적용 요율</th><th class="c" style="width:20mm">금액</th><th class="c">판정</th></tr>
+<tr><td class="c">①</td><td>간접노무비</td><td>직접노무비</td><td class="c">11%</td><td class="c">88억</td><td></td></tr>
+<tr><td class="c">②</td><td>산재보험료</td><td>노무비</td><td class="c">3.5%</td><td class="c">31억</td><td></td></tr>
+<tr><td class="c">③</td><td>산업안전보건관리비</td><td><b>도급공사비 총액</b></td><td class="c">2.37%</td><td class="c">178억</td><td></td></tr>
+<tr><td class="c">④</td><td>환경보전비</td><td>직접공사비</td><td class="c">0.5%</td><td class="c">30억</td><td></td></tr>
+<tr><td class="c">⑤</td><td>안전시설공사</td><td>총액</td><td class="c">—</td><td class="c">62억</td><td></td></tr>
+<tr><td class="c">⑥</td><td>일반관리비</td><td>공사원가</td><td class="c"><b>9%</b></td><td class="c">540억</td><td></td></tr>
+<tr><td class="c">⑦</td><td>이윤</td><td>공사원가</td><td class="c">10%</td><td class="c">600억</td><td></td></tr>
+</table>
+<p style="margin-top:2mm"><span class="qn">Q.</span> 문제 항목 3개와 그 이유를 쓰십시오.</p>
+<div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+</div>
+
+<h3>2-8. 챕터 2 체크리스트</h3>
+<div class="ckl">
+<div class="ck"><div class="bx"></div><div>공종별 금액 비중표를 받아 <b>표준 범위 이탈 공종</b>을 표시했다</div></div>
+<div class="ck"><div class="bx"></div><div>콘크리트·철근·거푸집 <b>원단위와 철근/콘크리트 비</b>를 계산했다</div></div>
+<div class="ck"><div class="bx"></div><div>간접비 항목별 <b>산정기준·요율·근거 3열 표</b>를 받았다</div></div>
+<div class="ck"><div class="bx"></div><div>안전관리비의 <b>대상액 산출 명세</b>를 받았다</div></div>
+<div class="ck"><div class="bx"></div><div>간접비와 직접비의 <b>중복 계상 대사표</b>를 받았다</div></div>
+<div class="ck"><div class="bx"></div><div>설계비·감리비의 <b>부담 주체와 계약 주체</b>를 확인했다</div></div>
+<div class="ck"><div class="bx"></div><div>금융조건을 <b>평당 금액으로 환산</b>해 시공사별로 비교했다</div></div>
+<div class="ck"><div class="bx"></div><div>물가변동 조항의 <b>6개 요소</b>를 계약 조문 초안으로 받았다</div></div>
+<div class="ck"><div class="bx"></div><div>착공 지연 1/2/3년 <b>시뮬레이션 금액</b>을 받았다</div></div>
+<div class="ck"><div class="bx"></div><div>도급 내 예비비의 <b>성격과 미사용 시 처리</b>를 확인했다</div></div>
+</div>
+
+<!-- ==================== CHAPTER 3 ==================== -->
+<div class="chapnum">CHAPTER 3</div>
+<h2 class="chap">하이엔드 브랜드 검증 시 주의점 — ‘써밋(SUMMIT)’ 사례</h2>
+<div class="chaprule"></div>
+
+<div class="box def">
+<div class="bt">학습목표</div>
+<p>① ‘브랜드 프리미엄’을 <b>3개 층위로 분해</b>해 검증 가능/불가능을 가른다<br>
+② 하이엔드 특화가 <b>실제 스펙 차이로 증빙되는지</b> 판정하는 절차를 익힌다<br>
+③ 브랜드 적용 <b>확약과 강등 리스크</b>를 계약으로 막는다</p>
+</div>
+
+<h3>3-1. 먼저 사실관계부터 — 시장은 지금 어디에 있나</h3>
+
+<figure>
+<svg viewBox="0 0 660 210" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.6" font-weight="800" fill="#16324F">2026년 정비사업 3.3㎡당 공사비 좌표</text>
+  <!-- axis -->
+  <line x1="120" y1="176" x2="640" y2="176" stroke="#8A939C" stroke-width="1.2"/>
+  <g font-size="7.8" fill="#8A939C" text-anchor="middle">
+    <text x="120" y="188">600</text><text x="224" y="188">800</text><text x="328" y="188">1,000</text>
+    <text x="432" y="188">1,200</text><text x="536" y="188">1,400</text><text x="640" y="188">1,600 만원</text>
+  </g>
+  <!-- bars: x=120 + (v-600)*0.52 -->
+  <g font-size="9">
+    <text x="114" y="38" text-anchor="end" fill="#123">2024년 전국 정비사업 평균</text>
+    <rect x="120" y="28" width="125" height="13" fill="#9AA5AE"/>
+    <text x="251" y="38" font-size="8.6" fill="#5A6570" font-weight="700">약 840만원</text>
+
+    <text x="114" y="62" text-anchor="end" fill="#B8791F" font-weight="800">대우건설 상도15구역 (써밋 적용)</text>
+    <rect x="120" y="52" width="135" height="13" fill="#B8791F"/>
+    <text x="261" y="62" font-size="8.6" fill="#B8791F" font-weight="800">약 860만원 (VAT 별도) · 2026.7 수주</text>
+
+    <text x="114" y="86" text-anchor="end" fill="#123">2026년 서울 정비사업 일반</text>
+    <rect x="120" y="76" width="208" height="13" fill="#2C5B87"/>
+    <text x="334" y="86" font-size="8.6" fill="#2C5B87" font-weight="700">1,000만원대 진입 — ‘평당 1,000만원 시대’</text>
+
+    <text x="114" y="110" text-anchor="end" fill="#B3372C" font-weight="700">서울 여의도 초고층 한강변</text>
+    <rect x="120" y="100" width="468" height="13" fill="#B3372C"/>
+    <text x="594" y="110" font-size="8.6" fill="#B3372C" font-weight="800">1,500만원+</text>
+  </g>
+  <!-- callout -->
+  <rect x="120" y="124" width="520" height="44" rx="3" fill="#FDF6E7" stroke="#B8791F"/>
+  <text x="132" y="139" font-size="9.6" font-weight="800" fill="#B8791F">하이엔드 브랜드 = 무조건 초고가가 아닙니다</text>
+  <text x="132" y="153" font-size="8.8" fill="#6B4A12">써밋이 적용된 상도15구역(3,207세대 · 공사비 1조 4,367억)의 약 860만원은 2026년 서울 시장에서 <tspan font-weight="700">평균 이하~중간 수준</tspan>입니다.</text>
+  <text x="132" y="164" font-size="8.8" fill="#B3372C" font-weight="700">→ “하이엔드니까 비싼 게 당연하다”는 논리는 받아들이지 마십시오. 단가는 층수·구조·지하층수·특화 수준이 결정합니다.</text>
+  <text x="10" y="204" font-size="8" fill="#8A939C">※ 공개 보도자료 기준. 단지 조건이 다르므로 직접 비교가 아니라 ‘좌표 감각’ 용도로만 사용하십시오.</text>
+</svg>
+<figcaption><b>[그림 3-1]</b> 2026년 공사비 좌표에서 ‘써밋’ 사례의 위치</figcaption>
+</figure>
+
+<h4>대의원이 여기서 읽어야 할 3가지</h4>
+<table class="d big">
+<tr><th class="c" style="width:10mm">#</th><th style="width:52mm">사실</th><th>대의원의 해석</th></tr>
+<tr><td class="c">1</td><td>써밋 적용 현장의 단가가 시장 평균 수준</td><td><b>브랜드 이름이 곧 단가는 아닙니다.</b> “하이엔드라서 비싸다”는 설명은 근거가 아니라 주장입니다</td></tr>
+<tr><td class="c">2</td><td>대우건설은 써밋을 한강변 중심에서 <b>서울 주요 지역·지방 거점으로 전략적 확대 적용</b> 방침</td><td><b>써밋 적용 가능성 자체가 협상 영역</b>입니다. “기준 미달”이라는 답에 그냥 물러설 필요가 없고, 반대로 “써밋 주는 대신 공사비 인상”도 검증 대상입니다</td></tr>
+<tr><td class="c">3</td><td>2026년 현재 여러 사업장에서 “하이엔드 달라 vs 기준 안 된다” 갈등. 하이엔드·랜드마크 설계 채택 후 <b>분담금 급등 반발</b> 사례 보고</td><td><b>브랜드는 공짜가 아니고 분담금으로 돌아옵니다.</b> 대의원은 이 트레이드오프를 조합원에게 정확히 전달할 책임이 있습니다</td></tr>
+</table>
+
+<h3>3-2. 브랜드 프리미엄 3층 분해법 — 이 교재의 핵심 도구</h3>
+<p><b>“브랜드 프리미엄”이라는 한 덩어리를 그대로 놓고 논쟁하면 절대 결론이 안 납니다.</b>
+반드시 아래 3개 층으로 쪼갠 뒤, <b>층별로 다른 검증 방법</b>을 쓰십시오.</p>
+
+<figure>
+<svg viewBox="0 0 660 268" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <!-- L1 -->
+  <rect x="10" y="10" width="640" height="78" rx="3" fill="#EDF6F2" stroke="#26705A" stroke-width="1.4"/>
+  <rect x="10" y="10" width="122" height="78" rx="3" fill="#26705A"/>
+  <text x="71" y="38" text-anchor="middle" font-size="11" fill="#fff" font-weight="800">LAYER 1</text>
+  <text x="71" y="55" text-anchor="middle" font-size="10.4" fill="#fff" font-weight="800">하드웨어</text>
+  <text x="71" y="72" text-anchor="middle" font-size="8.4" fill="#CDE7DC">물리적으로 남는 것</text>
+  <text x="146" y="30" font-size="9.2" fill="#123">마감재 등급 ↑ · 층고 ↑ · 외장재 고급화 · 커뮤니티 면적 ↑ · 조경 수목 규격 ↑ · 지하주차장 사양 ↑</text>
+  <text x="146" y="50" font-size="9.2" fill="#26705A" font-weight="800">▶ 검증 방법 : 물량 × 단가로 100% 검증 가능</text>
+  <text x="146" y="68" font-size="9.2" fill="#123"><tspan font-weight="800">▶ 판정 :</tspan> 증빙되면 <tspan font-weight="800" fill="#26705A">정당한 원가</tspan>. 지불할 가치가 있습니다</text>
+  <text x="146" y="82" font-size="8.4" fill="#5A6570">→ 3-3절에서 항목별 검증 산식 제공</text>
+
+  <!-- L2 -->
+  <rect x="10" y="94" width="640" height="78" rx="3" fill="#FDF6E7" stroke="#B8791F" stroke-width="1.4"/>
+  <rect x="10" y="94" width="122" height="78" rx="3" fill="#B8791F"/>
+  <text x="71" y="122" text-anchor="middle" font-size="11" fill="#fff" font-weight="800">LAYER 2</text>
+  <text x="71" y="139" text-anchor="middle" font-size="10.4" fill="#fff" font-weight="800">소프트웨어</text>
+  <text x="71" y="156" text-anchor="middle" font-size="8.4" fill="#FBEBCF">서비스 · 운영</text>
+  <text x="146" y="114" font-size="9.2" fill="#123">컨시어지 · 조식 서비스 · 하우스키핑 · 카셰어링 · 운영 위탁</text>
+  <text x="146" y="134" font-size="9.2" fill="#B8791F" font-weight="800">▶ 검증 방법 : 도급공사비가 아니라 ‘운영비’ 문제</text>
+  <text x="146" y="152" font-size="9.2" fill="#B3372C" font-weight="800">▶ 판정 : 준공 후 운영비는 입주민이 매달 부담합니다</text>
+  <text x="146" y="166" font-size="8.8" fill="#123">도급공사비에 계상돼 있으면 <tspan font-weight="700">이중부담 소지</tspan> — 무상 운영기간과 종료 후 관리비를 반드시 확인</text>
+
+  <!-- L3 -->
+  <rect x="10" y="178" width="640" height="76" rx="3" fill="#FCEFED" stroke="#B3372C" stroke-width="1.4"/>
+  <rect x="10" y="178" width="122" height="76" rx="3" fill="#B3372C"/>
+  <text x="71" y="206" text-anchor="middle" font-size="11" fill="#fff" font-weight="800">LAYER 3</text>
+  <text x="71" y="223" text-anchor="middle" font-size="10.4" fill="#fff" font-weight="800">명　목</text>
+  <text x="71" y="240" text-anchor="middle" font-size="8.4" fill="#F6D5D1">이름값</text>
+  <text x="146" y="198" font-size="9.2" fill="#123">브랜드 사용료 · 로열티 · BI 적용료 · ‘하이엔드 가산’</text>
+  <text x="146" y="218" font-size="9.2" fill="#B3372C" font-weight="800">▶ 검증 방법 : 검증 불가 — 원가 근거가 존재하지 않습니다</text>
+  <text x="146" y="238" font-size="10" fill="#B3372C" font-weight="800">▶ 판정 : 내역서에 별도 항목으로 존재하면 삭제 요구 대상</text>
+  <text x="146" y="250" font-size="8.4" fill="#5A6570">→ 이 한 줄을 찾아내는 것만으로 수십~수백억이 정리됩니다</text>
+  <text x="330" y="264" text-anchor="middle" font-size="8.4" fill="#5A6570">같은 논리가 디에이치 · 아크로 · 자이 시그니처 · 오티에르 등 모든 하이엔드 브랜드에 동일하게 적용됩니다</text>
+</svg>
+<figcaption><b>[그림 3-2]</b> 브랜드 프리미엄 3층 분해도 — 층마다 검증 방법과 판정이 다릅니다</figcaption>
+</figure>
+
+<h4>각 층별 대응 스크립트 (그대로 읽으십시오)</h4>
+<div class="quote"><b>Layer 1</b> — 특화 프리미엄 금액을 마감재·층고·외장·커뮤니티·조경 5개 항목으로 분해하고,
+각 항목마다 귀사 표준 브랜드 사양과 써밋 사양의 물량·단가 차이를 표로 제출해 주십시오. 그 합계가 제시하신 프리미엄 금액과 일치하는지 확인하겠습니다.</div>
+<div class="quote"><b>Layer 2</b> — 컨시어지·조식 등 운영 서비스의 ① 무상 운영 기간, ② 무상 기간 종료 후 예상 월 관리비 증가액(세대당),
+③ 해당 비용이 도급공사비에 계상되어 있는지 여부를 명시해 주십시오.</div>
+<div class="quote"><b>Layer 3</b> — 내역서에 브랜드 사용료·로열티·BI 적용료 등 원가 근거 없이 계상된 항목이 있다면 그 금액과 산출 근거를 제시하고,
+근거를 제시할 수 없다면 해당 금액을 도급공사비에서 제외해 주십시오.</div>
+
+<h3>3-3. Layer 1 정밀 검증 — 항목별 판정 기준</h3>
+
+<h4>(1) 커뮤니티시설</h4>
+<div class="box def">
+<div class="bt">주민공동시설</div>
+<p>「주택건설기준 등에 관한 규정」상 100세대 이상 공동주택이 갖춰야 하는 시설. <b>법정 최소 면적은 세대당 2.5㎡</b> 수준.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 660 178" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.4" font-weight="800" fill="#16324F">세대당 커뮤니티 면적 비교</text>
+  <g>
+    <text x="86" y="42" text-anchor="end" font-size="9.2" fill="#123">법정 최소</text>
+    <rect x="94" y="32" width="63" height="14" fill="#C6CDD4"/>
+    <text x="164" y="43" font-size="9" fill="#5A6570" font-weight="700">2.5㎡</text>
+
+    <text x="86" y="68" text-anchor="end" font-size="9.2" fill="#123">일반 브랜드</text>
+    <rect x="94" y="58" width="88" height="14" fill="#5B85AE"/>
+    <text x="189" y="69" font-size="9" fill="#2C5B87" font-weight="700">3 ~ 4㎡　(평당 공사비 800~1,200만원)</text>
+
+    <text x="86" y="94" text-anchor="end" font-size="9.2" fill="#B8791F" font-weight="800">하이엔드</text>
+    <rect x="94" y="84" width="200" height="14" fill="#B8791F"/>
+    <text x="301" y="95" font-size="9" fill="#B8791F" font-weight="700">5 ~ 8㎡　(평당 1,500~2,500만원 · 수영장 · 사우나 · 스카이라운지)</text>
+  </g>
+  <rect x="10" y="108" width="640" height="42" rx="3" fill="#F3F7FA" stroke="#5B85AE"/>
+  <text x="22" y="122" font-size="9.4" font-weight="800" fill="#16324F">검증 산식 — 대의원이 계산기로 직접 하십시오</text>
+  <text x="22" y="136" font-size="9" fill="#123">커뮤니티 특화 금액 = (제안 세대당면적 − 일반 세대당면적) × 세대수 ÷ 3.3058 × 커뮤니티 평당단가</text>
+  <text x="22" y="147" font-size="8.8" fill="#1F5C8B">예) 1,000세대 · 제안 6㎡ · 일반 3.5㎡ · 평당 1,800만원 → (6−3.5)×1,000 = 2,500㎡ = 756평 × 1,800만원 = <tspan font-weight="800">약 136억원</tspan> (전체 평당 약 15만원)</text>
+  <rect x="10" y="156" width="640" height="18" rx="2" fill="#FCEFED" stroke="#B3372C"/>
+  <text x="22" y="169" font-size="8.8" fill="#B3372C" font-weight="700">시공사가 “커뮤니티 특화로 평당 60만원”이라고 하면 위 계산과 4배 차이납니다 — 그 차이를 설명하게 하십시오.</text>
+</svg>
+<figcaption><b>[그림 3-3]</b> 커뮤니티 특화 검증 — 대의원이 직접 검산할 수 있는 유일한 항목</figcaption>
+</figure>
+<p class="small"><b>추가 확인</b> — 수영장·사우나는 준공 후 운영비가 큽니다. 관리비 시뮬레이션을 요구하십시오. (Layer 2 문제)</p>
+
+<h4>(2) 외관 특화</h4>
+<table class="d big">
+<tr><th style="width:66mm">사양</th><th class="c" style="width:44mm">3.3㎡당 외장 공사비 참고</th><th>비고</th></tr>
+<tr><td>일반 (도장 + 부분 타일)</td><td class="c">30 ~ 60만원</td><td></td></tr>
+<tr><td>준하이엔드 (부분 석재/금속)</td><td class="c">60 ~ 120만원</td><td></td></tr>
+<tr class="hi"><td>하이엔드 (석재·금속 커튼월 중심)</td><td class="c">120 ~ 250만원</td><td>커튼월 비율이 결정적</td></tr>
+</table>
+<div class="box def">
+<div class="bt">커튼월(Curtain Wall)</div>
+<p>건물 하중을 받지 않고 외벽만 담당하는 유리·금속 외피. 고급감이 크나 단가가 높고 <b>유지관리비도 높습니다.</b></p>
+</div>
+<div class="box ask">
+<div class="bt">검증 질의</div>
+<p class="q">“외장재 종류별 적용 면적(㎡)과 ㎡당 단가를 제출하고, 표준 사양 대비 증분을 산출해 주십시오.
+아울러 준공 후 외장 유지관리비(청소·실링 교체 주기·비용)를 함께 제시해 주십시오.”</p>
+</div>
+
+<h4>(3) 층고 상향</h4>
+<figure>
+<svg viewBox="0 0 660 168" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <!-- general -->
+  <g>
+    <text x="98" y="20" text-anchor="middle" font-size="9.6" font-weight="800" fill="#5A6570">일반</text>
+    <rect x="30" y="28" width="136" height="6" fill="#9AA5AE"/>
+    <rect x="30" y="34" width="136" height="46" fill="#EEF1F4" stroke="#C6CDD4"/>
+    <rect x="30" y="80" width="136" height="6" fill="#9AA5AE"/>
+    <rect x="30" y="86" width="136" height="46" fill="#EEF1F4" stroke="#C6CDD4"/>
+    <rect x="30" y="132" width="136" height="6" fill="#9AA5AE"/>
+    <line x1="176" y1="34" x2="176" y2="80" stroke="#5A6570"/>
+    <text x="182" y="60" font-size="8.6" fill="#5A6570">층고 2.9m</text>
+    <text x="98" y="62" text-anchor="middle" font-size="8.6" fill="#5A6570">천장고 2.3m</text>
+  </g>
+  <!-- highend -->
+  <g>
+    <text x="380" y="20" text-anchor="middle" font-size="9.6" font-weight="800" fill="#B8791F">하이엔드</text>
+    <rect x="312" y="24" width="136" height="6" fill="#B8791F"/>
+    <rect x="312" y="30" width="136" height="52" fill="#FDF6E7" stroke="#B8791F"/>
+    <rect x="312" y="82" width="136" height="6" fill="#B8791F"/>
+    <rect x="312" y="88" width="136" height="52" fill="#FDF6E7" stroke="#B8791F"/>
+    <rect x="312" y="140" width="136" height="6" fill="#B8791F"/>
+    <line x1="458" y1="30" x2="458" y2="82" stroke="#B8791F"/>
+    <text x="464" y="60" font-size="8.6" fill="#B8791F" font-weight="700">층고 3.1~3.3m</text>
+    <text x="380" y="60" text-anchor="middle" font-size="8.6" fill="#B8791F" font-weight="700">천장고 2.5~2.7m</text>
+  </g>
+  <!-- effect -->
+  <rect x="10" y="150" width="640" height="16" rx="2" fill="#F3F7FA" stroke="#5B85AE"/>
+  <text x="22" y="161" font-size="8.8" fill="#16324F">
+    <tspan font-weight="800">층고 10cm 상향 →</tspan> 골조(벽체·기둥) + 외장 면적 + 설비 배관 물량 증가 → <tspan font-weight="800">3.3㎡당 약 15~30만원 상승</tspan>이 통상 범위</text>
+  <rect x="546" y="86" width="104" height="56" rx="3" fill="#FCEFED" stroke="#B3372C"/>
+  <text x="556" y="100" font-size="8.6" font-weight="800" fill="#B3372C">함께 볼 것</text>
+  <text x="556" y="113" font-size="8" fill="#333">같은 높이 제한 안에서</text>
+  <text x="556" y="124" font-size="8" fill="#333">층수가 줄 수 있습니다</text>
+  <text x="556" y="137" font-size="8" fill="#B3372C" font-weight="700">세대수 ↓ = 사업성 ↓</text>
+</svg>
+<figcaption><b>[그림 3-4]</b> 층고 상향의 원가 영향과 숨은 부작용</figcaption>
+</figure>
+
+<h4>(4) 마감재 — 스펙북 대사 (가장 실효적인 검증)</h4>
+<p><b>대의원이 할 일은 딱 하나: 표준 브랜드 스펙북과 써밋 스펙북을 나란히 놓고 다른 줄을 세는 것입니다.</b></p>
+<table class="d big">
+<tr><th style="width:30mm">부위</th><th style="width:38mm">표준 사양</th><th style="width:44mm">제안(써밋) 사양</th><th class="c" style="width:20mm">차이 있음?</th><th class="c">단가 차이 근거 제출?</th></tr>
+<tr><td>주방가구</td><td>국내 A사</td><td>이탈리아 / 독일산</td><td class="c">☐</td><td class="c">☐</td></tr>
+<tr><td>수전 · 위생도기</td><td>국내산</td><td>수입 프리미엄</td><td class="c">☐</td><td class="c">☐</td></tr>
+<tr><td>거실 바닥재</td><td>강마루</td><td>원목마루 / 대리석</td><td class="c">☐</td><td class="c">☐</td></tr>
+<tr><td>현관 · 욕실 타일</td><td>국산 포세린</td><td>수입 대형타일</td><td class="c">☐</td><td class="c">☐</td></tr>
+<tr><td>창호</td><td>일반 시스템창호</td><td>고단열 시스템창호</td><td class="c">☐</td><td class="c">☐</td></tr>
+<tr><td>빌트인 가전</td><td>미제공 / 일부</td><td>수입 빌트인</td><td class="c">☐</td><td class="c">☐</td></tr>
+<tr><td>홈네트워크</td><td>표준</td><td>고급형</td><td class="c">☐</td><td class="c">☐</td></tr>
+<tr><td>조명</td><td>표준</td><td>디자인 조명</td><td class="c">☐</td><td class="c">☐</td></tr>
+</table>
+<table class="d big">
+<tr><th style="width:52mm">판정</th><th>결론</th></tr>
+<tr><td>차이 항목 <b>8개 중 5개 이상 + 각 항목 단가차 증빙</b></td><td style="color:#26705A"><b>하드웨어 프리미엄으로 인정</b></td></tr>
+<tr><td>차이 항목이 <b>2~3개인데 프리미엄 금액이 큼</b></td><td style="color:#B3372C"><b>명목 프리미엄 의심 — 감액 협상 대상</b></td></tr>
+<tr class="hi"><td>“준공 시점에 <b>동등 이상 자재로 대체 가능</b>” 단서</td><td style="color:#B3372C"><b>★ 사실상 스펙 확약이 아님 — 5장 RF 7 참조</b></td></tr>
+</table>
+
+<h4>(5) 조경</h4>
+<table class="d big">
+<tr><th style="width:34mm">구분</th><th class="c" style="width:34mm">도급공사비 대비</th><th>특징</th></tr>
+<tr><td>일반</td><td class="c">2 ~ 3%</td><td>기성 수목, 표준 포장</td></tr>
+<tr class="hi"><td>하이엔드</td><td class="c">3 ~ 5%</td><td>대형 특수목(R30 이상), 수경시설, 조형물</td></tr>
+</table>
+<p class="small"><b>주의</b> — 대형 수목은 <b>활착 실패(고사) 리스크</b>가 큽니다. <b>하자보수 기간과 고사 시 교체 의무</b>를 계약에 넣으십시오.</p>
+
+<h3>3-4. ‘무상특화’의 함정 — 가장 흔한 실전 사고</h3>
+<figure>
+<svg viewBox="0 0 660 214" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <rect x="200" y="10" width="260" height="30" rx="3" fill="#26705A"/>
+  <text x="330" y="30" text-anchor="middle" font-size="11.5" fill="#fff" font-weight="800">입찰제안 “300억원 상당 무상특화 제공”</text>
+  <!-- funnel -->
+  <path d="M200 46 L460 46 L392 120 L268 120 Z" fill="#EDF6F2" stroke="#26705A"/>
+  <!-- leaks -->
+  <g font-size="8.6">
+    <line x1="212" y1="60" x2="90" y2="72" stroke="#B3372C" stroke-width="1.4"/>
+    <rect x="10" y="52" width="176" height="38" rx="3" fill="#FCEFED" stroke="#B3372C"/>
+    <text x="20" y="66" font-weight="800" fill="#B3372C">경로 1. 단서 조항</text>
+    <text x="20" y="78" fill="#333">“인허가 과정에서 관계기관 요구로</text>
+    <text x="20" y="88" fill="#333">설계 변경 시 별도 협의한다”</text>
+
+    <line x1="448" y1="60" x2="530" y2="66" stroke="#B3372C" stroke-width="1.4"/>
+    <rect x="474" y="46" width="176" height="38" rx="3" fill="#FCEFED" stroke="#B3372C"/>
+    <text x="484" y="60" font-weight="800" fill="#B3372C">경로 2. 금액 · 물량 미특정</text>
+    <text x="484" y="72" fill="#333">“커뮤니티 특화 300억원 <tspan font-weight="700">상당</tspan>”</text>
+    <text x="484" y="82" fill="#333">→ ‘상당’은 금액이 아닙니다</text>
+
+    <line x1="330" y1="122" x2="330" y2="136" stroke="#B3372C" stroke-width="1.4"/>
+    <rect x="216" y="136" width="228" height="40" rx="3" fill="#FCEFED" stroke="#B3372C"/>
+    <text x="226" y="150" font-weight="800" fill="#B3372C">경로 3. 단가 선반영</text>
+    <text x="226" y="162" fill="#333">도급단가에 이미 300억이 녹아 있음</text>
+    <text x="226" y="172" fill="#B3372C" font-weight="700">확인법: “특화 미적용 시 공사비는?”</text>
+  </g>
+  <rect x="10" y="184" width="640" height="26" rx="2" fill="#16324F"/>
+  <text x="330" y="194" text-anchor="middle" font-size="9.4" fill="#fff" font-weight="700">정비사업에서 인허가 중 설계변경은 100% 발생합니다 — 경로 1의 단서 하나가 무상특화 전체를 무력화합니다</text>
+  <text x="330" y="205" text-anchor="middle" font-size="9" fill="#FFD9A0">두 금액(특화 적용 / 미적용)의 차이가 없다면, 그것은 무상이 아닙니다</text>
+</svg>
+<figcaption><b>[그림 3-5]</b> 무상특화가 사라지는 3개의 경로</figcaption>
+</figure>
+
+<h4>무상특화 계약 방어 조항 5종 (본계약에 반드시 삽입)</h4>
+<div class="ckl">
+<div class="ck"><div class="bx"></div><div>무상특화 <b>항목별 명세서</b>(항목 / 사양 / 물량 / 금액)를 계약서 <b>별첨</b>으로 첨부</div></div>
+<div class="ck"><div class="bx"></div><div><b>“본 별첨의 사양은 인허가·설계변경 사유로 감액·삭제되지 아니한다”</b> 명시</div></div>
+<div class="ck"><div class="bx"></div><div>부득이한 변경 시 <b>동등 이상 사양으로 대체</b>하되 <b>조합의 사전 서면동의</b> 필수</div></div>
+<div class="ck"><div class="bx"></div><div>미이행 시 <b>해당 금액을 도급공사비에서 감액</b>한다는 조항</div></div>
+<div class="ck"><div class="bx"></div><div>무상특화 <b>미적용(표준 사양) 시의 도급공사비</b>를 계약서에 병기</div></div>
+</div>
+
+<h3>3-5. 브랜드 확약 — ‘써밋’이라고 썼다고 써밋이 아닙니다</h3>
+<figure>
+<svg viewBox="0 0 660 118" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <defs><marker id="ar3" markerWidth="8" markerHeight="8" refX="6.4" refY="2.9" orient="auto">
+    <path d="M0,0 L6.4,2.9 L0,5.8 Z" fill="#B3372C"/></marker></defs>
+  <rect x="10" y="24" width="190" height="56" rx="3" fill="#EDF6F2" stroke="#26705A"/>
+  <text x="105" y="42" text-anchor="middle" font-size="9.4" font-weight="800" fill="#26705A">입찰제안서</text>
+  <text x="105" y="60" text-anchor="middle" font-size="11" font-weight="800" fill="#123">“써밋 적용”</text>
+  <text x="105" y="73" text-anchor="middle" font-size="8" fill="#5A6570">조합원이 이것을 보고 표를 던집니다</text>
+
+  <line x1="204" y1="52" x2="224" y2="52" stroke="#B3372C" stroke-width="1.8" marker-end="url(#ar3)"/>
+
+  <rect x="232" y="24" width="190" height="56" rx="3" fill="#FDF6E7" stroke="#B8791F"/>
+  <text x="327" y="42" text-anchor="middle" font-size="9.4" font-weight="800" fill="#B8791F">본계약서</text>
+  <text x="327" y="60" text-anchor="middle" font-size="10" font-weight="800" fill="#123">“하이엔드 브랜드 적용을</text>
+  <text x="327" y="73" text-anchor="middle" font-size="10" font-weight="800" fill="#B3372C">　적극 검토한다”</text>
+
+  <line x1="426" y1="52" x2="446" y2="52" stroke="#B3372C" stroke-width="1.8" marker-end="url(#ar3)"/>
+
+  <rect x="454" y="24" width="196" height="56" rx="3" fill="#FCEFED" stroke="#B3372C"/>
+  <text x="552" y="42" text-anchor="middle" font-size="9.4" font-weight="800" fill="#B3372C">착공 직전</text>
+  <text x="552" y="60" text-anchor="middle" font-size="9.6" font-weight="800" fill="#123">“본사 브랜드심의위원회 결과</text>
+  <text x="552" y="73" text-anchor="middle" font-size="9.6" font-weight="800" fill="#123">기준 미충족 → 일반 브랜드”</text>
+
+  <rect x="10" y="90" width="640" height="22" rx="2" fill="#16324F"/>
+  <text x="330" y="105" text-anchor="middle" font-size="9.4" fill="#fff" font-weight="700">
+    브랜드 적용은 대부분 건설사 내부 심의사항입니다 — 조합이 계약으로 묶지 않으면 일방적으로 바뀔 수 있습니다</text>
+</svg>
+<figcaption><b>[그림 3-6]</b> 브랜드가 강등되는 전형적 경로</figcaption>
+</figure>
+
+<h4>브랜드 확약 조항 체크리스트</h4>
+<div class="ckl">
+<div class="ck"><div class="bx red"></div><div>계약서 본문에 <b>“단지명 및 적용 브랜드는 ‘써밋(SUMMIT)’으로 한다”</b>가 <b>확정형</b>으로 기재</div></div>
+<div class="ck"><div class="bx red"></div><div>“검토한다 / 노력한다 / 협의한다” 등 <b>노력 의무 표현이 없음</b></div></div>
+<div class="ck"><div class="bx red"></div><div>브랜드 적용에 대한 <b>내부 심의 조건부 문구가 없음</b> (있다면 심의 시점·기준·결과 통지 의무 명시)</div></div>
+<div class="ck"><div class="bx amb"></div><div>미적용 시 <b>위약금</b>(예: 도급공사비의 ○%) 또는 <b>공사비 감액</b> 조항 존재</div></div>
+<div class="ck"><div class="bx amb"></div><div>미적용 시 조합의 <b>계약 해지권</b> 존재</div></div>
+<div class="ck"><div class="bx amb"></div><div>브랜드 미적용 시 <b>감액될 특화 항목 목록</b>이 미리 특정되어 있음</div></div>
+<div class="ck"><div class="bx amb"></div><div>브랜드 확약을 <b>시공사 본사 명의 확약서</b>로 별도 징구 (현장·수주팀 명의 ✕)</div></div>
+</div>
+
+<h3>3-6. 실습 3 — 브랜드 프리미엄 판정 연습</h3>
+<div class="ws">
+<div class="wh">【실습 3】 시공사가 “써밋 적용 특화 프리미엄 = 3.3㎡당 120만원 (총연면적 30만㎡ 기준 총 1,089억원)”을 제시했습니다</div>
+<div class="wb">
+<table class="d big">
+<tr><th class="c" style="width:8mm">#</th><th style="width:56mm">항목</th><th class="c" style="width:22mm">제시 금액</th><th>제출된 증빙</th><th class="c" style="width:26mm">Layer 판정</th></tr>
+<tr><td class="c">①</td><td>외관 특화 (석재 · 커튼월)</td><td class="c">380억</td><td>외장재별 면적 · 단가표 제출</td><td class="c"></td></tr>
+<tr><td class="c">②</td><td>커뮤니티 확대 (세대당 3.5 → 6㎡)</td><td class="c">140억</td><td>면적표 제출, 평당단가 미제출</td><td class="c"></td></tr>
+<tr><td class="c">③</td><td>조경 고급화</td><td class="c">90억</td><td>“고급 수종 적용” 문구만</td><td class="c"></td></tr>
+<tr><td class="c">④</td><td>마감재 상향</td><td class="c">210억</td><td>스펙북 제출, 8개 항목 중 6개 상향</td><td class="c"></td></tr>
+<tr><td class="c">⑤</td><td>층고 상향 (2.3 → 2.6m)</td><td class="c">160억</td><td>골조 물량 증가표 제출</td><td class="c"></td></tr>
+<tr><td class="c">⑥</td><td>브랜드 적용료</td><td class="c">109억</td><td>근거 없음</td><td class="c"></td></tr>
+</table>
+<p><span class="qn">Q1.</span> 3층 분해법에 따라 ①~⑥을 Layer 1 / 2 / 3으로 분류하십시오. (위 표 마지막 칸에 기입)</p>
+<p><span class="qn">Q2.</span> 즉시 삭제를 요구해야 할 항목은 무엇입니까?</p>
+<div class="lines"><div></div></div>
+<p style="margin-top:3mm"><span class="qn">Q3.</span> 추가 증빙을 요구해야 할 항목 2개는 무엇이며, 각각 어떤 자료를 요구합니까?</p>
+<div class="lines"><div></div><div></div><div></div></div>
+<p style="margin-top:3mm"><span class="qn">Q4.</span> 3-3(1)의 커뮤니티 산식으로 ②를 검산하면 얼마입니까? (1,000세대, 커뮤니티 평당 1,800만원)</p>
+<div class="lines"><div></div><div></div></div>
+</div>
+</div>
+
+<h3>3-7. 챕터 3 체크리스트</h3>
+<div class="ckl">
+<div class="ck"><div class="bx"></div><div>특화 프리미엄을 <b>Layer 1/2/3으로 분해</b>한 표를 받았다</div></div>
+<div class="ck"><div class="bx red"></div><div><b>Layer 3(명목 프리미엄) 항목의 삭제</b>를 서면으로 요구했다</div></div>
+<div class="ck"><div class="bx"></div><div>Layer 2(운영 서비스)의 <b>무상 기간 종료 후 관리비 증가액</b>을 받았다</div></div>
+<div class="ck"><div class="bx"></div><div>커뮤니티 특화를 <b>자체 산식으로 검산</b>했다</div></div>
+<div class="ck"><div class="bx"></div><div><b>스펙북 대사표</b>(표준 vs 써밋)를 작성해 상향 항목 수를 세었다</div></div>
+<div class="ck"><div class="bx amb"></div><div>“동등 이상 자재로 대체 가능” 단서의 <b>삭제 또는 사전동의 조건화</b>를 요구했다</div></div>
+<div class="ck"><div class="bx amb"></div><div><b>무상특화 항목별 명세서</b>를 계약 별첨으로 요구했다</div></div>
+<div class="ck"><div class="bx"></div><div><b>특화 미적용 시 도급공사비</b>를 별도로 제출받았다</div></div>
+<div class="ck"><div class="bx red"></div><div><b>브랜드 확약이 확정형 문구</b>인지 확인했다</div></div>
+<div class="ck"><div class="bx amb"></div><div>브랜드 미적용 시 <b>위약 · 감액 · 해지 조항</b>을 확보했다</div></div>
+</div>
+
+<!-- ==================== CHAPTER 4 ==================== -->
+<div class="chapnum">CHAPTER 4</div>
+<h2 class="chap">검증 실전 도구</h2>
+<div class="chaprule"></div>
+
+<div class="box def">
+<div class="bt">학습목표</div>
+<p>① 기준이 제각각인 제안을 <b>하나의 표로 정규화</b>한다　②
+내역서를 <b>완독하지 않고도</b> 이상 신호를 잡는다　③ 검증위원회가 쓸 <b>질의서를 그대로 복사해 쓴다</b></p>
+</div>
+
+<h3>4-1. 도구 ① — 타 현장 낙찰 단가 비교표 작성법</h3>
+<p><b>정규화(Normalization) 없이 비교하면 반드시 틀립니다.</b>
+시공사 A의 830만원과 B의 1,180만원은 <b>단위가 다른 숫자</b>입니다.</p>
+
+<figure>
+<svg viewBox="0 0 660 214" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.6" font-weight="800" fill="#16324F">6단계 정규화 절차 — 이 계단을 다 올라간 뒤에만 비교합니다</text>
+  <g font-size="8.8">
+    <rect x="10" y="150" width="104" height="46" rx="2" fill="#C9DCEB"/>
+    <text x="62" y="168" text-anchor="middle" font-size="9.6" font-weight="800" fill="#16324F">1. 면적 기준</text>
+    <text x="62" y="181" text-anchor="middle" fill="#123">전부 ‘총연면적</text>
+    <text x="62" y="191" text-anchor="middle" fill="#123">(지하 포함)’으로</text>
+
+    <rect x="118" y="126" width="104" height="70" rx="2" fill="#A9C8DF"/>
+    <text x="170" y="144" text-anchor="middle" font-size="9.6" font-weight="800" fill="#16324F">2. VAT 기준</text>
+    <text x="170" y="157" text-anchor="middle" fill="#123">전부 ‘VAT 별도’</text>
+    <text x="170" y="167" text-anchor="middle" fill="#123">총액으로 환산</text>
+
+    <rect x="226" y="102" width="104" height="94" rx="2" fill="#87B0D0"/>
+    <text x="278" y="120" text-anchor="middle" font-size="9.6" font-weight="800" fill="#16324F">3. 도급 범위</text>
+    <text x="278" y="133" text-anchor="middle" fill="#123">철거·지장물·문화재</text>
+    <text x="278" y="143" text-anchor="middle" fill="#123">불포함분 추정액을</text>
+    <text x="278" y="153" text-anchor="middle" fill="#123">더해 범위 통일</text>
+
+    <rect x="334" y="78" width="104" height="118" rx="2" fill="#5B85AE"/>
+    <text x="386" y="96" text-anchor="middle" font-size="9.6" font-weight="800" fill="#fff">4. 무상분 차감</text>
+    <text x="386" y="109" text-anchor="middle" fill="#EAF2F8">검증된 금액만</text>
+    <text x="386" y="119" text-anchor="middle" fill="#EAF2F8">총액에서 차감</text>
+    <text x="386" y="132" text-anchor="middle" fill="#FFD9A0" font-weight="700">미특정 무상은 0</text>
+
+    <rect x="442" y="54" width="104" height="142" rx="2" fill="#2C5B87"/>
+    <text x="494" y="72" text-anchor="middle" font-size="9.6" font-weight="800" fill="#fff">5. 금융조건</text>
+    <text x="494" y="85" text-anchor="middle" fill="#C9DEEE">이주비·사업비</text>
+    <text x="494" y="95" text-anchor="middle" fill="#C9DEEE">대여 이자 총액을</text>
+    <text x="494" y="105" text-anchor="middle" fill="#C9DEEE">산출해 가산</text>
+
+    <rect x="550" y="30" width="100" height="166" rx="2" fill="#16324F"/>
+    <text x="600" y="48" text-anchor="middle" font-size="9.6" font-weight="800" fill="#fff">6. 물가 · 공기</text>
+    <text x="600" y="61" text-anchor="middle" fill="#C9DEEE">기준시점 차이를</text>
+    <text x="600" y="71" text-anchor="middle" fill="#C9DEEE">지수로 보정</text>
+    <text x="600" y="84" text-anchor="middle" fill="#C9DEEE">공기 차이에 따른</text>
+    <text x="600" y="94" text-anchor="middle" fill="#C9DEEE">간접비 반영</text>
+  </g>
+  <rect x="10" y="200" width="640" height="12" fill="#B8791F"/>
+  <text x="330" y="209.5" text-anchor="middle" font-size="8.6" fill="#fff" font-weight="700">▶ 정규화 총액 — 오직 이 숫자만 비교합니다</text>
+</svg>
+<figcaption><b>[그림 4-1]</b> 6단계 정규화 — 한 단계라도 건너뛰면 순위가 뒤집힙니다</figcaption>
+</figure>
+
+<h4>비교표 양식 (그대로 쓰십시오)</h4>
+<table class="d">
+<tr><th style="width:60mm">항목</th><th class="c">A 건설</th><th class="c">B 건설</th><th class="c">C 건설</th><th style="width:34mm">비고</th></tr>
+<tr><td>[제시치] 3.3㎡당 단가</td><td></td><td></td><td></td><td>홍보용 숫자</td></tr>
+<tr><td>면적 기준 (총 / 지상)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>VAT (별도 / 포함)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>물가 기준시점 (년 · 월)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>[1단계]</b> 총연면적 기준 환산 총액</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>[2단계]</b> VAT 별도 총액</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>[3단계]</b> + 불포함 항목 추정액</td><td></td><td></td><td></td><td>철거 / 지장물 / 문화재</td></tr>
+<tr><td><b>[4단계]</b> − 검증된 무상 제공액</td><td></td><td></td><td></td><td>미특정 무상은 0 처리</td></tr>
+<tr><td><b>[5단계]</b> + 금융비용 총액</td><td></td><td></td><td></td><td>이주비 + 사업비 이자</td></tr>
+<tr><td><b>[6단계]</b> 물가 · 공기 보정</td><td></td><td></td><td></td><td>착공 3년 지연 가정</td></tr>
+<tr class="hi"><td><b>▶ 정규화 총액</b></td><td></td><td></td><td></td><td>★ 이것만 비교</td></tr>
+<tr class="hi"><td><b>▶ 정규화 3.3㎡당 단가</b></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>세대당 분담금 영향</td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h4>외부 비교군(벤치마크) 확보법</h4>
+<ul>
+<li>한국부동산원 정비사업 접수시스템 / 도시정비포털 공개자료</li>
+<li><b>인근 조합 상호 정보교류</b> — 같은 자치구 최근 3년 시공사 선정 조합의 도급계약서 사본</li>
+<li>언론에 공개된 수주 공사비 — <b>세대수·연면적이 함께 보도된 건만</b> 사용</li>
+</ul>
+<div class="box warn">
+<div class="bt">비교군은 조건이 맞아야 의미가 있습니다</div>
+<p>① 계약 연도 ② 총 세대수 ③ 최고 층수 ④ 지하 층수 — 이 4가지가 유사하지 않으면 단가 비교는 성립하지 않습니다.
+특히 <b>35층 초과</b>와 <b>지하 1개층 추가</b>는 단가를 크게 밀어 올립니다.</p>
+</div>
+<table class="d big">
+<tr><th style="width:34mm">비교 요소</th><th class="c">우리 단지</th><th class="c">비교현장 1</th><th class="c">비교현장 2</th><th style="width:38mm">차이 · 보정</th></tr>
+<tr><td>계약 연도</td><td></td><td></td><td></td><td>1년당 물가보정 필요</td></tr>
+<tr><td>총 세대수</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>최고 층수</td><td></td><td></td><td></td><td>35층 초과 시 급증</td></tr>
+<tr><td>지하 층수</td><td></td><td></td><td></td><td>1개층당 상승</td></tr>
+<tr><td>총연면적</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>브랜드 등급</td><td></td><td></td><td></td><td>하이엔드 여부</td></tr>
+<tr class="hi"><td>3.3㎡당 단가(정규화)</td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h3>4-2. 도구 ② — 물량산출서(내역서) 대사 체크리스트</h3>
+<div class="box def">
+<div class="bt">내역서 / 물량산출서 / 일위대가</div>
+<p><b>내역서</b> — 공종별로 ‘항목 / 규격 / 단위 / 수량 / 재료비 / 노무비 / 경비 / 합계’를 나열한 문서. 통상 수천~수만 행.<br>
+<b>물량산출서</b> — 도면에서 각 항목의 수량을 어떻게 뽑았는지 계산 과정을 담은 문서.<br>
+<b>일위대가(一位代價)</b> — ‘콘크리트 타설 1㎥’ 같은 단위작업 하나에 들어가는 재료·노무·장비를 분해해 단가를 만든 표.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.6" font-weight="800" fill="#16324F">대의원이 수만 행을 다 볼 수는 없습니다 — 4STEP 샘플링 검증으로 충분합니다</text>
+  <g>
+    <rect x="10" y="24" width="640" height="36" rx="3" fill="#16324F"/>
+    <text x="26" y="41" font-size="10" fill="#fff" font-weight="800">STEP 1 · 형식 요건 검사</text>
+    <text x="26" y="54" font-size="8.6" fill="#C9DEEE">엑셀 원본(수식 포함)인가 · ‘1식’ 항목 비율 · 집계표와 세부 합계 일치 · 물량산출서 · 일위대가 첨부</text>
+    <text x="636" y="46" text-anchor="end" font-size="9.4" fill="#FFD9A0" font-weight="800">10분</text>
+
+    <rect x="10" y="64" width="640" height="36" rx="3" fill="#2C5B87"/>
+    <text x="26" y="81" font-size="10" fill="#fff" font-weight="800">STEP 2 · 원단위 검산　★ 가장 효율적</text>
+    <text x="26" y="94" font-size="8.6" fill="#C9DEEE">콘크리트 · 철근 · 거푸집 원단위 / 철근·콘크리트 비 / 공종별 비중 / 간접비율 / 이윤율 — 7개 지표</text>
+    <text x="636" y="86" text-anchor="end" font-size="9.4" fill="#FFD9A0" font-weight="800">30분</text>
+
+    <rect x="10" y="104" width="640" height="42" rx="3" fill="#5B85AE"/>
+    <text x="26" y="121" font-size="10" fill="#fff" font-weight="800">STEP 3 · 샘플 심층 검증　→ 외부 적산 전문가 위탁</text>
+    <text x="26" y="134" font-size="8.6" fill="#EAF2F8">금액 상위 10개 공종(총액 80% 커버) + STEP 2 이상 항목 전부 + ‘1식’ 상위 10개 + 특화·브랜드 항목 전부</text>
+    <text x="26" y="144" font-size="8.6" fill="#FFD9A0" font-weight="700">★ 절대 시공사가 추천한 검증업체를 쓰지 마십시오. 조합이 독자 선정하고 조합이 직접 대금을 지급합니다</text>
+
+    <rect x="10" y="150" width="640" height="34" rx="3" fill="#B8791F"/>
+    <text x="26" y="167" font-size="10" fill="#fff" font-weight="800">STEP 4 · 대사 결과 기록표</text>
+    <text x="26" y="180" font-size="8.6" fill="#FBEBCF">공종 / 이상 내용 / 시공사 답변 / 조치 / 감액 — 반드시 대의원회 회의록에 첨부 (법적 분쟁 시 결정적 증거)</text>
+  </g>
+  <text x="330" y="196" text-anchor="middle" font-size="8.6" fill="#5A6570">STEP 2에서 범위를 벗어난 항목이 <tspan font-weight="700" fill="#26705A">3개 이내면 정상적인 사업</tspan>입니다</text>
+</svg>
+<figcaption><b>[그림 4-2]</b> 내역서 검증 4STEP — 대의원의 시간을 어디에 쓸지 정하는 지도</figcaption>
+</figure>
+
+<h4>STEP 1. 형식 요건 검사 (10분)</h4>
+<div class="ckl">
+<div class="ck"><div class="bx red"></div><div>내역서가 <b>엑셀 원본 파일(수식 포함)</b>로 제출되었는가 <span class="small">(PDF · 이미지만 제출 = 레드플래그)</span></div></div>
+<div class="ck"><div class="bx"></div><div>모든 행에 <b>수량과 단가가 분리</b>되어 있는가 (‘1식’으로 뭉뚱그린 행 개수를 세십시오)</div></div>
+<div class="ck"><div class="bx amb"></div><div><b>‘1식’ 항목의 금액 합계가 총액의 몇 %</b>인가 → <b>10% 초과 시 위험</b></div></div>
+<div class="ck"><div class="bx"></div><div>공종별 <b>집계표(요약)와 세부 내역의 합계가 일치</b>하는가</div></div>
+<div class="ck"><div class="bx red"></div><div><b>물량산출서가 함께 제출</b>되었는가 <span class="small">(내역서만 있고 산출서가 없으면 검증 불가)</span></div></div>
+<div class="ck"><div class="bx"></div><div>단가산출서(일위대가)가 첨부되었는가</div></div>
+</div>
+
+<h4>STEP 2. 원단위 검산 (30분) — 우리 단지 값을 직접 채우십시오</h4>
+<table class="d big">
+<tr><th style="width:44mm">검산 항목</th><th style="width:52mm">계산식</th><th class="c" style="width:32mm">정상 범위</th><th class="c" style="width:26mm">우리 값</th><th class="c">판정</th></tr>
+<tr><td>콘크리트 원단위</td><td>총 레미콘(㎥) ÷ 연면적(㎡)</td><td class="c">0.45 ~ 0.60</td><td></td><td></td></tr>
+<tr><td>철근 원단위</td><td>총 철근(ton)×1,000 ÷ 연면적(㎡)</td><td class="c">55 ~ 80 kg</td><td></td><td></td></tr>
+<tr><td>거푸집 원단위</td><td>총 거푸집(㎡) ÷ 연면적(㎡)</td><td class="c">2.8 ~ 3.6</td><td></td><td></td></tr>
+<tr class="hi"><td><b>철근 / 콘크리트 비</b></td><td>철근(kg) ÷ 콘크리트(㎥)</td><td class="c"><b>110 ~ 145 kg/㎥</b></td><td></td><td></td></tr>
+<tr><td>공종별 비중</td><td>공종금액 ÷ 도급공사비</td><td class="c">[그림 2-2] 참조</td><td></td><td></td></tr>
+<tr><td>간접비 비율</td><td>간접공사비 ÷ 도급공사비</td><td class="c">12 ~ 18%</td><td></td><td></td></tr>
+<tr><td>이윤율</td><td>이윤 ÷ 공사원가</td><td class="c">6 ~ 12%</td><td></td><td></td></tr>
+</table>
+
+<h4>STEP 4. 대사 결과 기록표</h4>
+<table class="d blank">
+<tr><th class="c" style="width:10mm">#</th><th style="width:34mm">공종 / 항목</th><th style="width:44mm">이상 내용</th><th style="width:44mm">시공사 답변</th><th style="width:30mm">조치</th><th class="c">감액(억)</th></tr>
+<tr><td class="c">1</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="c">2</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="c">3</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="c">4</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h3>4-3. 도구 ③ — 조합 검증위원회 질의 항목 40문항</h3>
+<div class="box key">
+<div class="bt">사용법</div>
+<p>이 페이지를 <b>그대로 출력해 시공사 설명회에 들고 들어가십시오.</b>
+한 사람이 다 물을 필요 없습니다. <b>대의원 5명이 A~E를 나눠 맡으십시오.</b></p>
+</div>
+
+<h5>[A] 총괄 구조 — 8문항</h5>
+<table class="d">
+<tr><th class="c" style="width:9mm">#</th><th>질의 내용</th><th class="c" style="width:22mm">답변 확보</th></tr>
+<tr><td class="c">1</td><td>제시하신 3.3㎡당 단가의 분모는 총연면적입니까, 지상 연면적입니까? 두 기준 모두로 환산해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">2</td><td>VAT 별도입니까 포함입니까? 우리 단지 85㎡ 초과 세대 비중을 반영한 실효 VAT 포함 총액은 얼마입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">3</td><td>단가의 물가 기준시점(년 · 월)은 언제입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">4</td><td>총액도급입니까, 내역도급입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">5</td><td>도급 포함 항목과 불포함 항목을 표로 제시하고, 불포함 항목의 예상금액을 기재해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">6</td><td>도급공사비 외에 조합이 부담해야 할 총사업비 항목과 그 추정액을 제시해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">7</td><td>본 제안 기준 조합원 세대당 예상 분담금은 얼마입니까? 산출 근거를 제시해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">8</td><td>위 분담금이 20% 증가하는 시나리오와 그 발생 조건은 무엇입니까?</td><td class="c">☐</td></tr>
+</table>
+
+<h5>[B] 직접공사비 — 8문항</h5>
+<table class="d">
+<tr><th class="c" style="width:9mm">#</th><th>질의 내용</th><th class="c" style="width:22mm">답변 확보</th></tr>
+<tr><td class="c">9</td><td>공종별 금액과 도급공사비 대비 비중을 표로 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">10</td><td>콘크리트 · 철근 · 거푸집의 총 물량과 연면적 대비 원단위를 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">11</td><td>철근/콘크리트 비(kg/㎥)는 얼마이며, 그 값의 구조적 근거는 무엇입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">12</td><td>주요 자재 30개 항목의 적용단가와 공인 물가지 게재단가 대비표를 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">13</td><td>최근 3년간 귀사가 수주한 유사 규모 단지 2곳의 공종별 원단위와 비교해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">14</td><td>물량산출서와 일위대가표를 엑셀 원본(수식 포함)으로 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">15</td><td>내역서상 ‘1식’으로 계상된 항목의 총 금액과 도급공사비 대비 비율은 얼마입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">16</td><td>골조 공법(RC / PC / 기타)과 그 선택이 공사비 · 공기에 미치는 영향을 설명해 주십시오.</td><td class="c">☐</td></tr>
+</table>
+
+<h5>[C] 간접비 · 요율 — 6문항</h5>
+<table class="d">
+<tr><th class="c" style="width:9mm">#</th><th>질의 내용</th><th class="c" style="width:22mm">답변 확보</th></tr>
+<tr><td class="c">17</td><td>간접공사비 각 항목의 산정기준 · 적용요율 · 근거를 3열 표로 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">18</td><td>산업안전보건관리비의 대상액(재료비 / 직접노무비) 산출 명세를 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">19</td><td>간접공사비와 직접공사비 간 중복 계상이 없음을 확인한 대사표를 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">20</td><td>일반관리비율과 이윤율은 각각 몇 %이며, 귀사의 타 정비사업 현장과 비교해 어떤 수준입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">21</td><td>현장 간접비는 공사기간에 비례합니다. 공기가 6개월 연장될 경우 증가액은 얼마입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">22</td><td>공기 연장의 귀책이 조합 / 시공사 / 불가항력인 경우 각각 비용 부담 주체는 누구입니까?</td><td class="c">☐</td></tr>
+</table>
+
+<h5>[D] 하이엔드 · 특화 — 8문항</h5>
+<table class="d">
+<tr><th class="c" style="width:9mm">#</th><th>질의 내용</th><th class="c" style="width:22mm">답변 확보</th></tr>
+<tr><td class="c">23</td><td>‘써밋’ 적용이 계약서에 확정형으로 기재됩니까? 내부 심의 조건부입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">24</td><td>브랜드 미적용 시 위약금 · 감액 · 해지 조항을 제시해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">25</td><td>특화 프리미엄 총액을 외관 / 커뮤니티 / 조경 / 마감 / 층고 / 기타로 분해해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">26</td><td>각 특화 항목의 표준 사양 대비 물량 · 단가 차이를 표로 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">27</td><td>내역서에 브랜드 사용료 · 로열티 성격의 항목이 있습니까? 있다면 산출 근거는 무엇입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">28</td><td>표준 사양(특화 미적용) 시 도급공사비는 얼마입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">29</td><td>무상특화 항목별 명세서(항목 / 사양 / 물량 / 금액)를 계약 별첨으로 제출할 수 있습니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">30</td><td>컨시어지 · 조식 등 운영 서비스의 무상 기간과, 종료 후 세대당 월 관리비 증가 추정액은 얼마입니까?</td><td class="c">☐</td></tr>
+</table>
+
+<h5>[E] 금융 · 계약조항 — 10문항</h5>
+<table class="d">
+<tr><th class="c" style="width:9mm">#</th><th>질의 내용</th><th class="c" style="width:22mm">답변 확보</th></tr>
+<tr><td class="c">31</td><td>이주비 · 사업비 대여의 금리 · 기간 · 수수료를 모두 반영한 조합 총 금융부담액은 얼마입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">32</td><td>그 금액을 3.3㎡당으로 환산하면 얼마입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">33</td><td>대여금리는 고정입니까 변동입니까? 변동이면 기준금리와 가산금리를 분리 제시해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">34</td><td>연체이자율과 그 발동 조건은 무엇입니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">35</td><td>사업 지연 시 대여 중단 조건이 있습니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">36</td><td>물가변동 조정의 기준시점 · 적용지수 · 조정 제외기간 · 조정 주기 · 상한을 명시해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">37</td><td>착공이 1년 / 2년 / 3년 지연될 경우 조정 금액 시뮬레이션을 제출해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">38</td><td>설계변경 시 단가 재산정 방식(고정단가 적용 여부 · 신규단가 산출 절차 · 제3자 검증)을 조문으로 제시해 주십시오.</td><td class="c">☐</td></tr>
+<tr><td class="c">39</td><td>공사비 증액이 필요할 때 조합의 사전 서면동의 및 총회 의결을 거치도록 하는 조항을 넣을 수 있습니까?</td><td class="c">☐</td></tr>
+<tr><td class="c">40</td><td>도급공사비 증액 시 검증기관의 공사비 검증을 조합 요청만으로 받도록 하는 조항에 동의하십니까?</td><td class="c">☐</td></tr>
+</table>
+
+<h3>4-4. 실습 4 — 우리 대의원회 역할 분담표</h3>
+<div class="ws">
+<div class="wh">【실습 4】 아래 표를 채우고, 다음 시공사 설명회 전까지 각자 담당 문항을 숙지하십시오</div>
+<div class="wb">
+<table class="d big blank">
+<tr><th style="width:30mm">담당</th><th style="width:34mm">대의원 성명</th><th class="c" style="width:24mm">질의 범위</th><th class="c" style="width:24mm">사전학습</th><th>제출받을 자료</th></tr>
+<tr><td>A 총괄구조</td><td></td><td class="c">1~8번</td><td class="c">1장</td><td>포함/불포함 항목표, 총사업비 추정표</td></tr>
+<tr><td>B 직접공사비</td><td></td><td class="c">9~16번</td><td class="c">2-1절</td><td>원단위표, 내역서 엑셀 원본</td></tr>
+<tr><td>C 간접비</td><td></td><td class="c">17~22번</td><td class="c">2-2절</td><td>요율 3열표, 대상액 산출명세</td></tr>
+<tr><td>D 하이엔드</td><td></td><td class="c">23~30번</td><td class="c">3장</td><td>스펙북, 특화 분해표, 브랜드 확약서</td></tr>
+<tr><td>E 금융 · 계약</td><td></td><td class="c">31~40번</td><td class="c">2-5, 2-6절</td><td>계약 조문 초안, 금융부담 환산표</td></tr>
+</table>
+</div>
+</div>
+
+<h3>4-5. 챕터 4 체크리스트</h3>
+<div class="ckl">
+<div class="ck"><div class="bx"></div><div>시공사별 제안을 <b>6단계 정규화 표</b>에 옮겼다</div></div>
+<div class="ck"><div class="bx"></div><div>정규화 <b>총액 기준</b>으로만 순위를 매겼다</div></div>
+<div class="ck"><div class="bx"></div><div>유사 조건 <b>비교현장 2곳 이상</b>의 단가를 확보했다</div></div>
+<div class="ck"><div class="bx"></div><div>비교현장의 <b>연도 · 층수 · 지하층수 · 세대수 정합성</b>을 확인했다</div></div>
+<div class="ck"><div class="bx red"></div><div>내역서를 <b>엑셀 원본(수식 포함)</b>으로 받았다</div></div>
+<div class="ck"><div class="bx amb"></div><div><b>‘1식’ 항목 비율</b>을 계산했다 (10% 초과 여부)</div></div>
+<div class="ck"><div class="bx"></div><div><b>원단위 7개 지표</b>를 검산했다</div></div>
+<div class="ck"><div class="bx"></div><div><b>조합이 독자 선정한</b> 적산 전문가에게 샘플 검증을 위탁했다</div></div>
+<div class="ck"><div class="bx"></div><div>40개 질의를 <b>대의원 5명에게 분담</b>했다</div></div>
+<div class="ck"><div class="bx"></div><div>질의와 답변을 <b>회의록에 기록</b>했다</div></div>
+</div>
+
+<!-- ==================== CHAPTER 5 ==================== -->
+<div class="chapnum">CHAPTER 5</div>
+<h2 class="chap">레드플래그 시그널</h2>
+<div class="chaprule"></div>
+
+<div class="box def">
+<div class="bt">학습목표</div>
+<p>① 위험 신호를 <b>즉시 식별</b>하고, <b>그 자리에서 쓸 대응 문구</b>를 갖는다　② 위험을 <b>회의록에 남기는 습관</b>을 만든다</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 660 258" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, sans-serif">
+  <text x="10" y="14" font-size="10.6" font-weight="800" fill="#16324F">12개 레드플래그 한눈에 보기</text>
+  <!-- legend -->
+  <g font-size="8.4">
+    <rect x="430" y="4" width="10" height="10" fill="#B3372C"/><text x="444" y="13" fill="#B3372C" font-weight="700">치명 — 계약 보류 + 총회 안건화</text>
+    <rect x="430" y="16" width="10" height="10" fill="#B8791F"/><text x="444" y="25" fill="#B8791F" font-weight="700">경고 — 서면 보완 + 회의록 기록</text>
+  </g>
+  <!-- grid 4x3 -->
+  <g font-size="8.8">
+    <rect x="10" y="26" width="156" height="70" rx="3" fill="#B3372C"/>
+    <text x="20" y="44" font-size="9.6" fill="#fff" font-weight="800">RF 1　내역 미공개</text>
+    <text x="20" y="60" fill="#F6D5D1">총액만 제시, 공종별 내역 ✕</text>
+    <text x="20" y="74" fill="#FFD9A0" font-weight="700">→ 공사비 검증 자체가 불가능</text>
+    <text x="20" y="88" fill="#F6D5D1">“영업비밀” “본계약 후 제출”</text>
+
+    <rect x="174" y="26" width="156" height="70" rx="3" fill="#B3372C"/>
+    <text x="184" y="44" font-size="9.6" fill="#fff" font-weight="800">RF 2　설계변경 불명확</text>
+    <text x="184" y="60" fill="#F6D5D1">“상호 협의하여 정한다”</text>
+    <text x="184" y="74" fill="#FFD9A0" font-weight="700">→ 착공 후엔 협상력이 없습니다</text>
+    <text x="184" y="88" fill="#F6D5D1">설계변경은 예외가 아닌 기본값</text>
+
+    <rect x="338" y="26" width="156" height="70" rx="3" fill="#B3372C"/>
+    <text x="348" y="44" font-size="9.6" fill="#fff" font-weight="800">RF 3　특화비 뭉뚱그림</text>
+    <text x="348" y="60" fill="#F6D5D1">“특화설계 포함 평당 ○○만원”</text>
+    <text x="348" y="74" fill="#FFD9A0" font-weight="700">→ 검증 · 감액 · 강등대응 모두 불가</text>
+    <text x="348" y="88" fill="#F6D5D1">‘상당’ 표현도 동일</text>
+
+    <rect x="502" y="26" width="148" height="70" rx="3" fill="#B8791F"/>
+    <text x="512" y="44" font-size="9.6" fill="#fff" font-weight="800">RF 4　물가조항 일방적</text>
+    <text x="512" y="60" fill="#FBEBCF">상승만 반영, 하락 감액 ✕</text>
+    <text x="512" y="74" fill="#FFF3D6" font-weight="700">→ 상한 · 양방향 조정 요구</text>
+    <text x="512" y="88" fill="#FBEBCF">배제 조항은 무효 위험</text>
+
+    <rect x="10" y="102" width="156" height="70" rx="3" fill="#B8791F"/>
+    <text x="20" y="120" font-size="9.6" fill="#fff" font-weight="800">RF 5　‘1식’ 남발</text>
+    <text x="20" y="136" fill="#FBEBCF">1식 · 일식 · LS 표기</text>
+    <text x="20" y="150" fill="#FFF3D6" font-weight="700">→ 총액의 10% 초과 시 위험</text>
+    <text x="20" y="164" fill="#FBEBCF">수량 · 단가 미분리 = 검증 불가</text>
+
+    <rect x="174" y="102" width="156" height="70" rx="3" fill="#B8791F"/>
+    <text x="184" y="120" font-size="9.6" fill="#fff" font-weight="800">RF 6　무상에 단서</text>
+    <text x="184" y="136" fill="#FBEBCF">“인허가 변경 시 별도 협의”</text>
+    <text x="184" y="150" fill="#FFF3D6" font-weight="700">→ 무상특화 전체가 무력화</text>
+    <text x="184" y="164" fill="#FBEBCF">방어 조항 5종으로 대응</text>
+
+    <rect x="338" y="102" width="156" height="70" rx="3" fill="#B8791F"/>
+    <text x="348" y="120" font-size="9.6" fill="#fff" font-weight="800">RF 7　“동등 이상 대체”</text>
+    <text x="348" y="136" fill="#FBEBCF">누가 ‘동등’을 판정하는가?</text>
+    <text x="348" y="150" fill="#FFF3D6" font-weight="700">→ 사실상 시공사가 판정합니다</text>
+    <text x="348" y="164" fill="#FBEBCF">사전 서면동의 요건화</text>
+
+    <rect x="502" y="102" width="148" height="70" rx="3" fill="#B8791F"/>
+    <text x="512" y="120" font-size="9.6" fill="#fff" font-weight="800">RF 8　브랜드 ‘노력 의무’</text>
+    <text x="512" y="136" fill="#FBEBCF">“적극 검토 / 노력한다”</text>
+    <text x="512" y="150" fill="#FFF3D6" font-weight="700">→ 확정형 + 위약 조항 필요</text>
+    <text x="512" y="164" fill="#FBEBCF">본사 명의 확약서 징구</text>
+
+    <rect x="10" y="178" width="156" height="70" rx="3" fill="#B8791F"/>
+    <text x="20" y="196" font-size="9.6" fill="#fff" font-weight="800">RF 9　금융조건 조건부</text>
+    <text x="20" y="212" fill="#FBEBCF">“시장 상황에 따라 변동”</text>
+    <text x="20" y="226" fill="#FFF3D6" font-weight="700">→ 확정형 + 미이행 시 해지권</text>
+    <text x="20" y="240" fill="#FBEBCF">연체이자율 15%↑ 주의</text>
+
+    <rect x="174" y="178" width="156" height="70" rx="3" fill="#9A8419"/>
+    <text x="184" y="196" font-size="9.6" fill="#fff" font-weight="800">RF 10　비교 불가 형태</text>
+    <text x="184" y="212" fill="#F3EBC8">기준이 시공사마다 제각각</text>
+    <text x="184" y="226" fill="#FFF3D6" font-weight="700">→ 조합의 준비 부족 문제</text>
+    <text x="184" y="240" fill="#F3EBC8">입찰지침서에 양식 첨부</text>
+
+    <rect x="338" y="178" width="156" height="70" rx="3" fill="#9A8419"/>
+    <text x="348" y="196" font-size="9.6" fill="#fff" font-weight="800">RF 11　검증업체 추천</text>
+    <text x="348" y="212" fill="#F3EBC8">“신뢰할 업체를 소개하겠다”</text>
+    <text x="348" y="226" fill="#FFF3D6" font-weight="700">→ 누가 돈을 내느냐가 편을 정함</text>
+    <text x="348" y="240" fill="#F3EBC8">조합 독자 선정 · 조합이 지급</text>
+
+    <rect x="502" y="178" width="148" height="70" rx="3" fill="#9A8419"/>
+    <text x="512" y="196" font-size="9.6" fill="#fff" font-weight="800">RF 12　시간 압박</text>
+    <text x="512" y="212" fill="#F3EBC8">“이번 총회에서 결정 안 하면…”</text>
+    <text x="512" y="226" fill="#FFF3D6" font-weight="700">→ 검증을 막는 가장 값싼 수단</text>
+    <text x="512" y="240" fill="#F3EBC8">21일 검토기간을 요구</text>
+  </g>
+</svg>
+<figcaption><b>[그림 5-1]</b> 12개 레드플래그 — 붉은색 3개 중 하나라도 해소되지 않으면 총회 상정에 반대하십시오</figcaption>
+</figure>
+
+<h3>RF 1 <span class="sev r">치명</span> 총액 공사비만 제시하고 항목별 내역 미공개</h3>
+<h5>증상</h5>
+<ul>
+<li>“평당 ○○○만원, 총 ○조 ○천억” 숫자만 있고 공종별 내역이 없음</li>
+<li>“영업비밀”, “본계약 시 제출”, “선정 후 협의” 등의 사유로 거부</li>
+<li>PDF 요약본만 제공, 엑셀 원본 거부</li>
+</ul>
+<h5>왜 치명적인가</h5>
+<ol>
+<li><b>공사비 검증제도 자체가 무력화됩니다.</b> 검증기관은 <b>물량·단가의 적정성</b>을 봅니다. 내역이 없으면 검증할 대상이 없습니다.</li>
+<li>향후 증액 시 <b>비교 기준선(baseline)이 존재하지 않아</b> 증액이 정당한지 판단할 수 없습니다.</li>
+<li>설계변경 정산 시 <b>적용할 단가가 없어</b> 시공사가 새로 만드는 단가를 받아들일 수밖에 없습니다.</li>
+</ol>
+<div class="quote">공사비 내역서와 물량산출서를 엑셀 원본으로 제출하지 않으시면, 본 제안은 도시정비법상 공사비 검증이 불가능한 제안으로 판단됩니다.
+대의원회는 내역 미제출을 사유로 본 안건의 총회 상정 보류를 요청합니다.</div>
+<div class="box tip">
+<div class="bt">보완책 — 영업비밀 우려가 실제로 있다면</div>
+<p>· 검증기관 · 조합 선임 전문가에게만 열람 제공 + <b>비밀유지약정(NDA)</b> 체결<br>
+· 조합 사무실 내 <b>열람 전용 제공</b>(반출 금지)<br>
+· 단, <b>“공종별 집계표는 조합원에게 공개”가 최소선</b>입니다. 이것마저 거부하면 치명 등급 유지.</p>
+</div>
+
+<h3>RF 2 <span class="sev r">치명</span> 설계변경 시 단가 재산정 조항 불명확</h3>
+<h5>이 표현이 보이면 즉시 표시하십시오</h5>
+<table class="d big">
+<tr><th style="width:60mm">증상 문구</th><th>실제 의미</th></tr>
+<tr><td>“설계변경 시 <b>상호 협의</b>하여 정한다”</td><td>조합에 협상력이 없는 시점(착공 후)에 협의한다는 뜻</td></tr>
+<tr><td>“변경된 부분은 <b>별도 산정</b>한다”</td><td>누가, 어떤 기준으로 산정하는지 없음</td></tr>
+<tr><td>“<b>시공사가 제시하는 단가</b>를 기준으로 한다”</td><td>사실상 백지위임</td></tr>
+<tr><td>“물가 및 시장 상황을 <b>고려하여 조정</b>한다”</td><td>조정 방향이 한쪽뿐</td></tr>
+</table>
+<div class="box warn">
+<div class="bt">계약에 반드시 들어가야 할 4단 구조</div>
+<p><b>①</b> 기존 내역서에 있는 항목 → <b>계약 단가 그대로 적용</b> (재협상 없음)<br>
+<b>②</b> 없는 항목 → <b>공인 물가지 게재단가</b> → 없으면 <b>3사 견적 평균</b><br>
+<b>③</b> 위로 산정 불가 시 → 조합·시공사 각 1인 + 합의 선정 <b>제3 전문가의 산정</b>에 따름<br>
+<b>④</b> 모든 설계변경 증액은 <b>조합 사전 서면동의</b> + 일정 금액 초과 시 <b>총회 의결</b></p>
+</div>
+<div class="quote">‘협의’는 산정 기준이 아닙니다. 설계변경 단가 적용 순서를 ① 기존 계약단가 ② 공인 물가지 ③ 3사 견적 ④ 제3자 산정의 4단계로 계약 조문에 명기해 주십시오.</div>
+
+<h3>RF 3 <span class="sev r">치명</span> 특화설계비를 총공사비에 뭉뚱그려 포함</h3>
+<h5>왜 치명적인가</h5>
+<ol>
+<li><b>검증 불가</b> — 특화 금액이 분리되지 않으면 3장의 3층 분해법을 적용할 수 없습니다. 명목 프리미엄이 그대로 숨습니다.</li>
+<li><b>감액 협상 불가</b> — 조합이 “이 특화는 빼겠다”고 결정해도 <b>얼마를 빼야 하는지 근거가 없습니다.</b></li>
+<li><b>브랜드 강등 시 대응 불가</b> — 써밋이 아닌 일반 브랜드로 바뀌어도 <b>감액할 금액을 특정할 수 없습니다.</b></li>
+</ol>
+<div class="quote">특화설계비를 도급공사비 내 별도 항목으로 분리 계상하고, 항목별 물량·단가를 제출해 주십시오. 아울러 특화 미적용(표준 사양) 시의 도급공사비를 병기해 주십시오.</div>
+
+<h3>RF 4~9 <span class="sev a">경고</span> 요약 대응표</h3>
+<table class="d">
+<tr><th class="c" style="width:12mm">RF</th><th style="width:44mm">증상</th><th style="width:52mm">왜 위험한가</th><th>대응</th></tr>
+<tr><td class="c"><b>4</b><br>물가조항</td><td>상승 시 증액하되 하락 시 감액 조항 없음 · 건설공사비지수만 사용하고 상한 없음 · 조정 제외기간 6개월 이내 · 이윤/일반관리비까지 조정 대상</td><td>착공 지연 3년이면 수백억 증액. 지수 선택 하나로 금액이 갈림</td><td>2-6절 6개 요소 조문화. 특히 <b>상한(Cap)</b>과 <b>양방향 조정</b> 요구.<br><span class="small">단, “조정 배제” 조항만 넣는 것은 건산법상 무효 위험이 있어 실효적 방어가 아닙니다</span></td></tr>
+<tr><td class="c"><b>5</b><br>‘1식’ 남발</td><td>‘1식 · 일식 · LS’ 표기 항목의 금액 합계가 총액의 10% 초과</td><td>수량과 단가가 분리되지 않아 검증할 방법이 원천적으로 없음</td><td>“‘1식’ 계상 항목 중 금액 상위 10개에 대해 수량 · 규격 · 단가로 분해한 세부 내역을 제출해 주십시오.”</td></tr>
+<tr><td class="c"><b>6</b><br>무상 단서</td><td>“인허가 과정에서 변경될 경우 별도 협의” · “관계기관 요구 시 조정될 수 있다”</td><td>설계변경은 100% 발생 → 무상특화 전체 무력화</td><td>3-4절 방어 조항 5종. 단서 삭제가 어렵다면 최소한 <b>“조합 사전 서면동의 없이는 감액·삭제 불가”</b>로 전환</td></tr>
+<tr><td class="c"><b>7</b><br>동등 이상</td><td>“시공 시점의 수급 상황에 따라 동등 이상 자재로 대체할 수 있다”</td><td>‘동등 이상’을 누가 판정하는지 없으면 사실상 시공사가 판정 → 스펙 확약이 확약이 아니게 됨</td><td>① 조합 사전 서면동의 ② 대체 자재 단가가 원 사양 이상임을 증빙 ③ 단가 하락 시 차액 감액 — 3개 요건 명기</td></tr>
+<tr><td class="c"><b>8</b><br>노력 의무</td><td>“적극 검토한다 / 협의한다 / 노력한다 / 본사 심의를 거쳐 결정한다”</td><td>브랜드 적용이 건설사 내부 심의사항이라 일방적으로 바뀔 수 있음</td><td>3-5절 확약 체크리스트 전 항목. 특히 <b>본사 명의 확약서</b>와 <b>미적용 시 감액 항목 사전 특정</b></td></tr>
+<tr><td class="c"><b>9</b><br>금융 조건부</td><td>“시장 상황에 따라 금리 변동” · “금융기관 심사 결과에 따름” · “무이자 ○년 (이후 미기재)” · 연체이자율 연 15% 이상</td><td>확정되지 않은 금융조건은 제안이 아니라 희망사항</td><td>2-5절 결정적 질문 + <b>“금융조건 미이행 시 조합의 계약 해지권”</b> 조항 요구</td></tr>
+</table>
+
+<h3>RF 10~12 <span class="sev y">주의</span> 조합 스스로 막을 수 있는 것들</h3>
+<table class="d">
+<tr><th class="c" style="width:12mm">RF</th><th style="width:52mm">증상</th><th>대응</th></tr>
+<tr><td class="c"><b>10</b><br>비교 불가</td><td>시공사마다 면적 기준 · VAT · 범위가 제각각이고, 조합이 통일 양식을 제시하지 않음</td><td><b>조합이 먼저 제안서 양식(4-1절 비교표)을 확정해 입찰지침서에 첨부.</b> 이것은 시공사 문제가 아니라 조합의 준비 부족입니다 — 대의원회가 사전에 조치할 수 있습니다</td></tr>
+<tr><td class="c"><b>11</b><br>검증업체 추천</td><td>“저희가 신뢰할 만한 검증업체를 소개해 드리겠습니다”</td><td>검증업체는 <b>조합이 독자 선정 + 조합이 직접 대금 지급</b>. 예외 없습니다. 비용을 시공사가 부담하겠다는 제안도 거절하십시오 — <b>누가 돈을 내느냐가 누구 편이냐를 결정합니다</b></td></tr>
+<tr><td class="c"><b>12</b><br>시간 압박</td><td>“이번 총회에서 결정하지 않으면 조건이 불리해집니다” · “타 조합은 이미 결정했습니다” · 자료를 총회 3일 전에 제공</td><td>“대의원회는 자료 제공일로부터 <b>최소 21일의 검토기간</b>을 요구합니다. 검토기간이 확보되지 않은 안건은 총회 상정에 반대합니다.”<br><b>진짜 좋은 조건은 3주를 기다려도 사라지지 않습니다.</b></td></tr>
+</table>
+
+<h3>5-1. 실습 5 — 레드플래그 스캔 훈련</h3>
+<div class="ws">
+<div class="wh">【실습 5】 실제 제안서에서 자주 보이는 문장들입니다. RF 번호와 등급을 적으십시오</div>
+<div class="wb">
+<table class="d big blank">
+<tr><th class="c" style="width:9mm">#</th><th>제안서 문구</th><th class="c" style="width:24mm">RF 번호</th><th class="c" style="width:22mm">등급</th></tr>
+<tr><td class="c">1</td><td>“특화설계 포함 3.3㎡당 950만원(VAT 별도)”</td><td></td><td></td></tr>
+<tr><td class="c">2</td><td>“설계변경으로 인한 공사비는 상호 협의하여 정한다”</td><td></td><td></td></tr>
+<tr><td class="c">3</td><td>“커뮤니티 특화 250억원 상당을 무상 제공하며, 인허가 과정에서 변경 시 별도 협의한다”</td><td></td><td></td></tr>
+<tr><td class="c">4</td><td>“당사 하이엔드 브랜드 적용을 적극 검토하겠습니다”</td><td></td><td></td></tr>
+<tr><td class="c">5</td><td>“마감재는 제시 사양 또는 동등 이상으로 시공한다”</td><td></td><td></td></tr>
+<tr><td class="c">6</td><td>“내역서는 영업비밀에 해당하여 본계약 체결 후 제공 가능합니다”</td><td></td><td></td></tr>
+<tr><td class="c">7</td><td>“이주비 무이자(3년), 이후 조건은 추후 협의”</td><td></td><td></td></tr>
+<tr><td class="c">8</td><td>“차기 총회에서 결정하지 않으면 제시 조건은 철회됩니다”</td><td></td><td></td></tr>
+</table>
+<p><span class="qn">Q.</span> 이 제안에 <b>치명(🔴) 등급이 몇 개</b> 포함되어 있습니까? 총회 상정에 찬성하시겠습니까?</p>
+<div class="lines"><div></div><div></div></div>
+</div>
+</div>
+
+<h3>5-2. 챕터 5 체크리스트 — 총회 상정 전 최종 관문</h3>
+<div class="box warn">
+<div class="bt">아래 12개 중 ‘치명’ 하나라도 해소되지 않으면 총회 상정에 반대하십시오</div>
+</div>
+<div class="ckl">
+<div class="ck"><div class="bx red"></div><div><span class="sev r">치명</span> 공종별 내역서 · 물량산출서를 <b>엑셀 원본</b>으로 확보했다</div></div>
+<div class="ck"><div class="bx red"></div><div><span class="sev r">치명</span> <b>설계변경 단가 적용 4단계</b>가 계약 조문으로 확정됐다</div></div>
+<div class="ck"><div class="bx red"></div><div><span class="sev r">치명</span> <b>특화설계비가 별도 항목으로 분리</b>되고, 표준 사양 시 공사비가 병기됐다</div></div>
+<div class="ck"><div class="bx amb"></div><div><span class="sev a">경고</span> 물가변동 조항에 <b>상한과 양방향 조정</b>이 들어갔다</div></div>
+<div class="ck"><div class="bx amb"></div><div><span class="sev a">경고</span> <b>‘1식’ 항목 비율이 10% 이하</b>이거나, 상위 10개가 분해 제출됐다</div></div>
+<div class="ck"><div class="bx amb"></div><div><span class="sev a">경고</span> 무상 제공 항목에 <b>감액 · 삭제 금지 조항</b>이 들어갔다</div></div>
+<div class="ck"><div class="bx amb"></div><div><span class="sev a">경고</span> 자재 대체 시 <b>조합 사전 서면동의</b> 조항이 들어갔다</div></div>
+<div class="ck"><div class="bx amb"></div><div><span class="sev a">경고</span> <b>브랜드 확약이 확정형</b>이고 위약 · 감액 · 해지 조항이 있다</div></div>
+<div class="ck"><div class="bx amb"></div><div><span class="sev a">경고</span> <b>금융조건이 확정형</b>이고 미이행 시 해지권이 있다</div></div>
+<div class="ck"><div class="bx"></div><div><span class="sev y">주의</span> 모든 시공사 제안이 <b>조합 통일 양식으로 정규화</b>됐다</div></div>
+<div class="ck"><div class="bx"></div><div><span class="sev y">주의</span> 검증업체를 <b>조합이 독자 선정</b>하고 조합이 대금을 지급했다</div></div>
+<div class="ck"><div class="bx"></div><div><span class="sev y">주의</span> 자료 제공일로부터 <b>21일 이상 검토기간</b>을 확보했다</div></div>
+</div>
+
+<!-- ==================== 부록 ==================== -->
+<div class="chapnum">APPENDIX A</div>
+<h2 class="chap">부록 A. 용어집</h2>
+<div class="chaprule"></div>
+<table class="d big">
+<tr><th style="width:44mm">용어</th><th>1줄 정의</th></tr>
+<tr><td><b>간접공사비</b></td><td>공사 수행에 필요하나 건축물에 남지 않는 비용(현장운영 · 보험 · 안전).</td></tr>
+<tr><td><b>감리</b></td><td>시공이 설계도서대로 이루어지는지 감독 · 확인하는 업무. 주택법상 지자체가 감리자 지정.</td></tr>
+<tr><td><b>건설공사비지수</b></td><td>한국건설기술연구원 발표. 건설 자재 · 노무 · 장비 가격 변동 종합지수. 소비자물가지수보다 변동폭이 큼.</td></tr>
+<tr><td><b>공사비 검증제도</b></td><td>정비사업 공사비를 일정비율 이상 증액할 때 검증기관에 적정성 검증을 받는 제도(2019.10 시행).</td></tr>
+<tr><td><b>관리처분계획</b></td><td>조합원별 분양 대상과 분담금을 확정하는 계획. 총사업비가 여기서 확정됨.</td></tr>
+<tr><td><b>내역도급(단가도급)</b></td><td>항목별 단가를 확정하고 실제 물량으로 정산하는 계약 방식.</td></tr>
+<tr><td><b>내역서</b></td><td>공종별 항목 · 규격 · 수량 · 단가 · 금액을 나열한 문서.</td></tr>
+<tr><td><b>도급공사비</b></td><td>조합이 시공사와 도급계약으로 약정하는 금액. 시공사 책임 범위.</td></tr>
+<tr><td><b>물가지(물가정보 · 거래가격 등)</b></td><td>자재 시장가격을 공표하는 공인 간행물. 단가 검증의 기준.</td></tr>
+<tr><td><b>별도공사비</b></td><td>도급 범위 밖이라 조합이 따로 부담하는 공사(철거 · 지장물 · 문화재 등).</td></tr>
+<tr><td><b>부가가치세(VAT)</b></td><td>10% 세금. 국민주택규모(전용 85㎡) 이하 면제, 초과분 과세.</td></tr>
+<tr><td><b>에스컬레이션</b></td><td>물가변동에 따른 계약금액 조정.</td></tr>
+<tr><td><b>연면적</b></td><td>각 층 바닥면적의 합계. 지하 포함 여부에 따라 값이 크게 달라짐.</td></tr>
+<tr><td><b>원단위</b></td><td>면적 1㎡당 자재 소요량 등 비교용 기준값. 내역 검증의 핵심 도구.</td></tr>
+<tr><td><b>일반관리비</b></td><td>본사 운영비를 현장에 배부한 금액.</td></tr>
+<tr><td><b>일위대가</b></td><td>단위작업 1개(예: 콘크리트 1㎥)의 재료 · 노무 · 장비를 분해한 단가표.</td></tr>
+<tr><td><b>적산</b></td><td>도면을 근거로 자재 물량과 공사비를 산출하는 일.</td></tr>
+<tr><td><b>주민공동시설</b></td><td>공동주택 필수 부대복리시설. 법정 최소 기준 세대당 2.5㎡ 수준.</td></tr>
+<tr><td><b>직접공사비</b></td><td>건축물에 물리적으로 투입되는 재료비 · 노무비 · 장비비.</td></tr>
+<tr><td><b>총사업비</b></td><td>조합이 사업 전 기간에 지출하는 모든 비용. 분담금의 모수.</td></tr>
+<tr><td><b>총액도급(Lump Sum)</b></td><td>총액을 확정하고 물량 증감 위험을 시공사가 부담하는 계약 방식.</td></tr>
+<tr><td><b>커튼월</b></td><td>하중을 받지 않고 외피만 담당하는 유리 · 금속 외벽. 고급감 높으나 단가 · 유지비 높음.</td></tr>
+<tr><td><b>특화설계</b></td><td>표준 설계 대비 추가되는 차별화 요소.</td></tr>
+<tr><td><b>PF(프로젝트 파이낸싱)</b></td><td>사업의 미래 수익을 담보로 한 자금 조달. 정비사업은 시공사 신용보강이 일반적.</td></tr>
+<tr><td><b>1식(一式, LS)</b></td><td>수량 · 단가를 분해하지 않고 묶어 계상한 표기. 검증 불가 항목.</td></tr>
+</table>
+
+<div class="chapnum">APPENDIX B</div>
+<h2 class="chap">부록 B. 실습 해설</h2>
+<div class="chaprule"></div>
+
+<h3>【실습 1】 두 제안, 어느 쪽이 싼가?</h3>
+<p><b>A1.</b> 대다수는 <b>A 건설(830만원)이 싸다</b>고 판단합니다. — 이것이 함정입니다.</p>
+<h5>A2. 정규화 계산</h5>
+<table class="d big">
+<tr><th style="width:22mm">구분</th><th>A 건설</th><th>B 건설</th></tr>
+<tr><td>면적 환산</td><td>총연면적 300,000㎡ ÷ 3.3058 = <b>90,750평</b></td><td>지상연면적 200,000㎡ ÷ 3.3058 = <b>60,500평</b></td></tr>
+<tr><td>총액 산출</td><td>90,750평 × 830만원 = <b>약 7,532억원</b> (VAT 별도)</td><td>60,500평 × 1,180만원 = 약 7,139억원 (VAT 포함)<br>→ ÷ 1.1 = <b>약 6,490억원</b> (VAT 별도)</td></tr>
+</table>
+<table class="d big">
+<tr><th style="width:52mm">구분</th><th class="c">A 건설</th><th class="c">B 건설</th></tr>
+<tr><td>겉보기 단가</td><td class="c">830만원 <span class="small">(싸 보임)</span></td><td class="c">1,180만원 <span class="small">(비싸 보임)</span></td></tr>
+<tr class="hi"><td><b>정규화 총액 (VAT 별도)</b></td><td class="c"><b>7,532억</b></td><td class="c"><b>6,490억</b></td></tr>
+<tr><td>총연면적 기준 환산 단가</td><td class="c">830만원</td><td class="c"><b>약 715만원</b></td></tr>
+</table>
+<p><b>A3.</b> 차액 = 7,532 − 6,490 = <b>약 1,042억원</b> → 1,000세대 기준 <b>세대당 약 1억 400만원</b></p>
+<div class="box key">
+<div class="bt">교훈</div>
+<p>평당 단가는 <b>기준을 통일하기 전까지 아무 의미가 없습니다.</b>
+대의원 한 사람이 이 계산을 했느냐 안 했느냐가 세대당 1억 원을 가릅니다.<br>
+<span class="small">※ 실제로는 85㎡ 초과 세대 비중에 따라 실효 VAT가 4% 내외이므로 차액은 더 커집니다.</span></p>
+</div>
+
+<h3>【실습 2】 요율 이상 탐지</h3>
+<table class="d big">
+<tr><th class="c" style="width:10mm">#</th><th style="width:44mm">문제</th><th>해설 및 조치</th></tr>
+<tr><td class="c">③</td><td><b>산업안전보건관리비 — 대상액 오류</b> <span class="sev r">치명</span></td>
+<td>안전관리비의 대상액은 <b>재료비 + 직접노무비</b>입니다. <b>도급공사비 총액</b>에 요율을 곱하면 간접비 · 일반관리비 · 이윤까지 대상에 포함되어 <b>금액이 과다 산정</b>됩니다.<br>▶ 대상액 산출 명세(재료비 · 직접노무비 각각의 금액) 제출 요구.</td></tr>
+<tr><td class="c">⑤</td><td><b>안전시설공사 — 중복 계상 의심</b> <span class="sev a">경고</span></td>
+<td>③의 산업안전보건관리비로 이미 안전시설 · 보호구 · 안전인력 비용이 계상됩니다. ⑤가 별도로 62억 있다면 <b>동일 항목의 이중 계상</b> 가능성이 큽니다.<br>▶ ③과 ⑤의 사용 항목 대비표를 요구하여 중복 여부 확인.</td></tr>
+<tr><td class="c">⑥</td><td><b>일반관리비 9% — 요율 과다</b> <span class="sev a">경고</span></td>
+<td>일반관리비는 통상 공사원가의 <b>4~6%(5% 이내)</b> 수준입니다. 9%는 과다합니다.<br>▶ “9% 적용 근거와, 귀사의 최근 3년 정비사업 현장 평균 일반관리비율을 제출해 주십시오.”<br>▶ 5%로 낮추면 <b>540억 → 300억, 약 240억 절감</b>.</td></tr>
+</table>
+<p class="small"><b>정상 항목</b> — ① 11%(8~13% 범위 내), ② 3.5%(2026년 건설업 산재보험료율), ④ 0.5%(0.3~0.8% 범위 내), ⑦ 10%(6~12% 범위 내)</p>
+<div class="box key">
+<div class="bt">교훈</div>
+<p>요율 자체보다 <b>“무엇의 몇 %인가(대상액)”</b>가 더 중요합니다.</p>
+</div>
+
+<h3>【실습 3】 브랜드 프리미엄 판정</h3>
+<h5>A1. 3층 분해</h5>
+<table class="d big">
+<tr><th class="c" style="width:10mm">#</th><th style="width:52mm">항목</th><th class="c" style="width:22mm">Layer</th><th>판정</th></tr>
+<tr><td class="c">①</td><td>외관 특화 380억</td><td class="c">Layer 1</td><td>증빙 있음 → 검증 후 인정 가능</td></tr>
+<tr><td class="c">②</td><td>커뮤니티 확대 140억</td><td class="c">Layer 1</td><td>증빙 불충분 (평당단가 미제출)</td></tr>
+<tr><td class="c">③</td><td>조경 고급화 90억</td><td class="c">Layer 1</td><td>증빙 없음 (문구뿐)</td></tr>
+<tr><td class="c">④</td><td>마감재 상향 210억</td><td class="c">Layer 1</td><td>8개 중 6개 상향 → 인정 가능</td></tr>
+<tr><td class="c">⑤</td><td>층고 상향 160억</td><td class="c">Layer 1</td><td>증빙 있음 → 인정 가능</td></tr>
+<tr class="hi"><td class="c">⑥</td><td>브랜드 적용료 109억</td><td class="c"><b>Layer 3</b></td><td><b>★ 원가 근거 없음</b></td></tr>
+</table>
+<p><b>A2. 즉시 삭제 요구</b> — <b>⑥ 브랜드 적용료 109억원.</b> 브랜드 적용료는 원가가 아니라 <b>명목</b>입니다.
+3-2절 Layer 3 대응 스크립트를 그대로 사용하십시오. → 삭제 시 평당 120만원 → <b>약 108만원</b>으로 하락.</p>
+<p><b>A3. 추가 증빙 요구 2개</b></p>
+<ul>
+<li><b>② 커뮤니티 140억</b> → 커뮤니티 시설별 면적표 + 3.3㎡당 공사비 단가 + 표준 사양 대비 증분</li>
+<li><b>③ 조경 90억</b> → 수종 · 규격 · 수량 · 단가가 기재된 수목 수량표와 표준 사양 대비 증분표</li>
+</ul>
+<p><b>A4. 커뮤니티 검산</b></p>
+<ul>
+<li>(6 − 3.5)㎡ × 1,000세대 = 2,500㎡ = 2,500 ÷ 3.3058 = <b>약 756평</b></li>
+<li>756평 × 1,800만원 = <b>약 136억원</b></li>
+<li>제시 금액 140억 → <b>검산치와 근접(차이 약 3%)</b> → <b>합리적 범위</b></li>
+<li>단, 이는 평당 1,800만원 가정 하의 결과이므로 시공사에 <b>실제 적용 평당단가</b>를 받아 재검산해야 확정됩니다.</li>
+</ul>
+<div class="box key">
+<div class="bt">교훈</div>
+<p>6개 항목 중 <b>명확히 삭제 대상인 것은 1개(109억)</b>입니다. 나머지는 “비싸다/싸다”의 문제가 아니라
+<b>증빙이 있느냐 없느냐</b>의 문제입니다. 대의원은 가격을 깎는 사람이 아니라, <b>증빙을 받아내는 사람</b>입니다.</p>
+</div>
+
+<h3>【실습 5】 레드플래그 스캔</h3>
+<table class="d big">
+<tr><th class="c" style="width:9mm">#</th><th style="width:62mm">문구</th><th class="c" style="width:22mm">RF</th><th class="c" style="width:18mm">등급</th><th>핵심</th></tr>
+<tr><td class="c">1</td><td>“특화설계 포함 3.3㎡당 950만원”</td><td class="c"><b>RF 3</b></td><td class="c"><span class="sev r">치명</span></td><td>특화 금액 미분리 → 검증 · 감액 불가</td></tr>
+<tr><td class="c">2</td><td>“설계변경 시 상호 협의하여 정한다”</td><td class="c"><b>RF 2</b></td><td class="c"><span class="sev r">치명</span></td><td>협의는 기준이 아님 → 4단계 조문화</td></tr>
+<tr><td class="c">3</td><td>“250억 상당 무상, 변경 시 별도 협의”</td><td class="c"><b>RF 6</b> (+RF 3)</td><td class="c"><span class="sev a">경고</span></td><td>‘상당’ + 단서 = 무상 아님</td></tr>
+<tr><td class="c">4</td><td>“하이엔드 브랜드 적용 적극 검토”</td><td class="c"><b>RF 8</b></td><td class="c"><span class="sev a">경고</span></td><td>노력 의무 → 확정형 + 위약 조항 요구</td></tr>
+<tr><td class="c">5</td><td>“제시 사양 또는 동등 이상”</td><td class="c"><b>RF 7</b></td><td class="c"><span class="sev a">경고</span></td><td>판정 주체 부재 → 사전 서면동의 요건화</td></tr>
+<tr><td class="c">6</td><td>“내역서는 본계약 후 제공”</td><td class="c"><b>RF 1</b></td><td class="c"><span class="sev r">치명</span></td><td>공사비 검증 자체가 불가능</td></tr>
+<tr><td class="c">7</td><td>“이주비 무이자 3년, 이후 추후 협의”</td><td class="c"><b>RF 9</b></td><td class="c"><span class="sev a">경고</span></td><td>조건부 금융 → 확정형 + 해지권</td></tr>
+<tr><td class="c">8</td><td>“차기 총회 미결정 시 조건 철회”</td><td class="c"><b>RF 12</b></td><td class="c"><span class="sev y">주의</span></td><td>시간 압박 → 21일 검토기간 요구</td></tr>
+</table>
+<div class="box warn">
+<div class="bt">총평</div>
+<p><b>치명 등급 3개가 포함된 제안입니다. 이 상태로는 총회 상정에 반대</b>해야 합니다.</p>
+</div>
+
+<div class="chapnum">APPENDIX C</div>
+<h2 class="chap">부록 C. 총회 표결 직전 최종 10문항</h2>
+<div class="chaprule"></div>
+<p><b>대의원 각자가 아래 10개에 ‘예’라고 답할 수 있을 때만 찬성표를 던지십시오.</b></p>
+<div class="ckl">
+<div class="ck"><div class="bx"></div><div><b>1.</b> 나는 이 제안의 <b>3.3㎡당 단가의 분모와 VAT 기준</b>을 말할 수 있다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>2.</b> 나는 이 제안의 <b>정규화 총액</b>(6단계 보정 후)을 알고 있다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>3.</b> 나는 도급공사비 외에 조합이 부담할 <b>총사업비 항목</b>을 알고 있다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>4.</b> 나는 <b>세대당 예상 분담금</b>과, 그것이 어떤 조건에서 늘어나는지 알고 있다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>5.</b> 나는 <b>공종별 내역서를 조합이 확보</b>했음을 확인했다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>6.</b> 나는 <b>설계변경 시 단가 적용 방식</b>이 계약 조문에 있음을 확인했다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>7.</b> 나는 <b>물가변동 조정의 상한</b>이 계약에 있음을 확인했다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>8.</b> 나는 <b>특화설계비가 분리 계상</b>되어 있고, 브랜드 적용이 <b>확정형</b>임을 확인했다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>9.</b> 나는 <b>금융조건을 평당 금액으로 환산</b>한 값을 알고 있다.</div></div>
+<div class="ck"><div class="bx"></div><div><b>10.</b> 나는 이 제안의 <b>가장 큰 리스크 3가지</b>를 조합원에게 설명할 수 있다.</div></div>
+</div>
+<div class="box warn">
+<div class="bt">하나라도 ‘아니오’가 있다면</div>
+<p>그것은 시공사의 문제가 아니라 <b>우리가 아직 준비되지 않았다는 뜻</b>입니다.
+준비되지 않은 상태의 찬성표는, 조합원 전체의 재산을 근거 없이 처분하는 것과 같습니다.</p>
+</div>
+
+<h4>표결 전 메모란</h4>
+<div class="ws"><div class="wb">
+<p class="small">이 제안의 가장 큰 리스크 3가지 (조합원에게 설명할 수 있는 언어로)</p>
+<div class="lines"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div></div>
+
+<div class="chapnum">APPENDIX D</div>
+<h2 class="chap">부록 D. 참고자료</h2>
+<div class="chaprule"></div>
+<table class="d">
+<tr><th style="width:22mm">구분</th><th style="width:74mm">자료</th><th>URL</th></tr>
+<tr><td rowspan="4"><b>제도 · 검증</b></td><td>한국부동산원 정비사업 공사비 검증 안내</td><td class="small">reb.or.kr/reb/cm/cntnts/cntntsView.do?mi=9886&amp;cntntsId=1253</td></tr>
+<tr><td>한국부동산원 검증 신청 및 제출서류</td><td class="small">reb.or.kr/reb/cm/cntnts/cntntsView.do?mi=9887&amp;cntntsId=1254</td></tr>
+<tr><td>정비사업 접수시스템</td><td class="small">reb.or.kr/ccv/</td></tr>
+<tr><td>도시정비포털 — 공사비 검증 목적 및 대상</td><td class="small">i-sh.co.kr/city/m_518/wpge/verification_purpose.do</td></tr>
+<tr><td rowspan="3"><b>요율 · 원가</b></td><td>2026년도 사업종류별 산재보험료율 (국가법령정보센터)</td><td class="small">law.go.kr/LSW/flDownload.do?flSeq=160837293</td></tr>
+<tr><td>고용노동부 사업종류별 산재보험요율 (공공데이터포털)</td><td class="small">data.go.kr/data/15068737/fileData.do</td></tr>
+<tr><td>조달청 공사원가계산 제비율 적용기준 (2026.01.01)</td><td class="small">data.cmpi.or.kr/program/board/</td></tr>
+<tr><td rowspan="2"><b>계약 · 분쟁</b></td><td>물가변동에 따른 계약금액 조정 분쟁 동향과 대응 (법률신문)</td><td class="small">lawtimes.co.kr/news/articleView.html?idxno=181472</td></tr>
+<tr><td>계약금액 조정 제도 안내 (찾기쉬운 생활법령정보)</td><td class="small">easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=519&amp;cnpClsNo=1</td></tr>
+<tr><td rowspan="3"><b>‘써밋’ 사례</b></td><td>대우건설 상도15구역 재개발 수주 (공사비 1조 4,367억)</td><td class="small">fnnews.com/news/202607200821588139</td></tr>
+<tr><td>상도 써밋 3,207세대 조성 (한국NGO신문)</td><td class="small">ngonews.kr/news/articleView.html?idxno=233279</td></tr>
+<tr><td>대우건설 천호동 공공재개발 써밋 적용 (한국경제)</td><td class="small">hankyung.com/article/2026051842771</td></tr>
+<tr><td rowspan="3"><b>시장 동향</b></td><td>서울 정비사업 평당 1,500만원 시대 (더구루)</td><td class="small">theguru.co.kr/news/article.html?no=103580</td></tr>
+<tr><td>하이엔드 브랜드 · 랜드마크 설계와 분담금 상승 (더퍼블릭)</td><td class="small">thepublic.kr/news/articleView.html?idxno=295958</td></tr>
+<tr><td>정비사업 하이엔드 브랜드 갈등 (아주경제)</td><td class="small">ajunews.com/view/20260629135656841</td></tr>
+</table>
+
+<div class="box def" style="margin-top:8mm">
+<div class="bt">본 교재 사용에 관한 고지</div>
+<p>본 교재의 수치는 <b>2026년 8월 기준 공개자료와 시장 통례를 정리한 참고치</b>이며, 개별 사업의 조건(층수 · 구조형식 · 지하층수 · 대지조건 · 물가시점)에
+따라 달라집니다. 실제 계약 체결 전에는 반드시 <b>조합이 독자 선임한 적산 · 법률 전문가의 검토</b>를 거치십시오.
+본 교재는 특정 건설사의 제안에 대한 평가나 권유를 담고 있지 않습니다.</p>
+</div>
+
+</body>
+</html>
