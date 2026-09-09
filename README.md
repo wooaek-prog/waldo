@@ -1,3 +1,12 @@
+# 분석 도구 모음
+
+| 도구 | 설명 | 문서 |
+| --- | --- | --- |
+| `dispatch_order_analysis.py` | 한국 발전소 업체별 급전순위(merit order) 분석 | 아래 참조 |
+| `daegyo_site_polygons.py` | 여의도 대교아파트 신축 배치도 → QGIS 일조권 분석용 건물 폴리곤 생성 | [docs/daegyo_qgis_guide.md](docs/daegyo_qgis_guide.md) |
+
+---
+
 # 한국 발전소 업체별 급전순위 분석
 
 한국 발전소/발전기 목록을 입력하면 단가를 감안한 급전순위(merit order)를 산출하고, 업체별 누계용량을 함께 확인할 수 있는 간단한 CSV 기반 분석 도구입니다.
@@ -61,3 +70,20 @@ python3 dispatch_order_analysis.py data/sample_generators.csv --output dispatch_
 
 - 실제 급전은 계통 제약, 정비 상태, 연료 계약, 재생에너지 출력, 송전 제약 등 다양한 운영 조건을 반영할 수 있습니다.
 - 이 도구는 입력된 단가와 용량만으로 업체별/발전기별 우선순위를 확인하는 분석용 템플릿입니다.
+
+---
+
+# 여의도 대교아파트 신축안 – QGIS 일조권 분석용 폴리곤 생성
+
+사업시행계획인가 제원(대지면적 26,869.5㎡ / 건폐율 57.02% / 용적률 469.99% / 4개동 912세대)과
+첨부 단지배치도를 근거로, 101~104동 타워·저층부 건물 폴리곤을 실좌표(EPSG:5186)로 생성합니다.
+
+```bash
+pip install pyproj shapely
+python3 daegyo_site_polygons.py
+```
+
+출력: `outputs/daegyo/` (GeoJSON 5186·WGS84, CSV+WKT, 트레이싱 검수 SVG, 인가제원 검증 리포트)
+
+자세한 사용법·위치 보정 방법·QGIS 그림자 분석 절차는
+[docs/daegyo_qgis_guide.md](docs/daegyo_qgis_guide.md) 를 참고하십시오.
