@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1152" viewBox="0 0 1500 1152">
+<rect width="100%" height="100%" fill="none"/>
+<polygon points="262.0,313.0 1310.0,313.0 1310.0,770.0 178.0,770.0 178.0,578.0 262.0,578.0 262.0,313.0" fill="none" stroke="#e63946" stroke-width="3" stroke-dasharray="10 6"/>
+<polygon points="265.0,675.0 350.0,675.0 350.0,750.0 265.0,750.0 265.0,675.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="308" y="712" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">101-A / 48F</text>
+<polygon points="350.0,700.0 405.0,700.0 405.0,750.0 350.0,750.0 350.0,700.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="378" y="725" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">101-B / 43F</text>
+<polygon points="350.0,645.0 405.0,645.0 405.0,700.0 350.0,700.0 350.0,645.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="378" y="672" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">101-C / 34F</text>
+<polygon points="570.0,470.0 650.0,470.0 650.0,545.0 570.0,545.0 570.0,470.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="610" y="508" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">102-A / 48F</text>
+<polygon points="650.0,470.0 700.0,470.0 700.0,530.0 650.0,530.0 650.0,470.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="675" y="500" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">102-B / 46F</text>
+<polygon points="575.0,545.0 635.0,545.0 635.0,595.0 575.0,595.0 575.0,545.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="605" y="570" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">102-C / 34F</text>
+<polygon points="855.0,660.0 930.0,660.0 930.0,745.0 855.0,745.0 855.0,660.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="892" y="702" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">103-A / 42F</text>
+<polygon points="930.0,690.0 985.0,690.0 985.0,745.0 930.0,745.0 930.0,690.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="958" y="718" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">103-B / 42F</text>
+<polygon points="930.0,635.0 985.0,635.0 985.0,690.0 930.0,690.0 930.0,635.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="958" y="662" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">103-C / 34F</text>
+<polygon points="1080.0,470.0 1160.0,470.0 1160.0,545.0 1080.0,545.0 1080.0,470.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="1120" y="508" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">104-A / 43F</text>
+<polygon points="1160.0,470.0 1210.0,470.0 1210.0,530.0 1160.0,530.0 1160.0,470.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="1185" y="500" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">104-B / 43F</text>
+<polygon points="1080.0,545.0 1140.0,545.0 1140.0,595.0 1080.0,595.0 1080.0,545.0" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="1.5"/>
+<text x="1110" y="570" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">104-C / 34F</text>
+<polygon points="300.0,325.0 1240.0,325.0 1240.0,420.0 300.0,420.0 300.0,325.0" fill="#4c956c" fill-opacity="0.55" stroke="#4c956c" stroke-width="1.5"/>
+<text x="770" y="372" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">P-N1 / 1F</text>
+<polygon points="290.0,415.0 570.0,415.0 570.0,505.0 290.0,505.0 290.0,415.0" fill="#4c956c" fill-opacity="0.55" stroke="#4c956c" stroke-width="1.5"/>
+<text x="430" y="460" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">P-N2 / 1F</text>
+<polygon points="690.0,555.0 1010.0,555.0 1010.0,665.0 690.0,665.0 690.0,555.0" fill="#4c956c" fill-opacity="0.55" stroke="#4c956c" stroke-width="1.5"/>
+<text x="850" y="610" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">P-C1 / 1F</text>
+<polygon points="1030.0,595.0 1245.0,595.0 1245.0,690.0 1030.0,690.0 1030.0,595.0" fill="#4c956c" fill-opacity="0.55" stroke="#4c956c" stroke-width="1.5"/>
+<text x="1138" y="642" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">P-E1 / 2F</text>
+<polygon points="290.0,688.0 1245.0,688.0 1245.0,775.0 290.0,775.0 290.0,688.0" fill="#4c956c" fill-opacity="0.55" stroke="#4c956c" stroke-width="1.5"/>
+<text x="768" y="732" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">P-S1 / 1F</text>
+<polygon points="20.0,590.0 150.0,590.0 150.0,900.0 20.0,900.0 20.0,590.0" fill="#8d99ae" fill-opacity="0.3" stroke="#8d99ae" stroke-width="1.5"/>
+<text x="85" y="745" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">CTX-SAMBU / 12F</text>
+<polygon points="230.0,30.0 560.0,30.0 560.0,130.0 230.0,130.0 230.0,30.0" fill="#8d99ae" fill-opacity="0.3" stroke="#8d99ae" stroke-width="1.5"/>
+<text x="395" y="80" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">CTX-JANGMI / 13F</text>
+<polygon points="700.0,30.0 960.0,30.0 960.0,170.0 700.0,170.0 700.0,30.0" fill="#8d99ae" fill-opacity="0.3" stroke="#8d99ae" stroke-width="1.5"/>
+<text x="830" y="100" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">CTX-YEOGO / 5F</text>
+<polygon points="1060.0,30.0 1330.0,30.0 1330.0,140.0 1060.0,140.0 1060.0,30.0" fill="#8d99ae" fill-opacity="0.3" stroke="#8d99ae" stroke-width="1.5"/>
+<text x="1195" y="85" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">CTX-HWARANG / 12F</text>
+<polygon points="760.0,940.0 1050.0,940.0 1050.0,1120.0 760.0,1120.0 760.0,940.0" fill="#8d99ae" fill-opacity="0.3" stroke="#8d99ae" stroke-width="1.5"/>
+<text x="905" y="1030" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">CTX-HANYANG / 12F</text>
+<polygon points="520.0,950.0 700.0,950.0 700.0,1090.0 520.0,1090.0 520.0,950.0" fill="#8d99ae" fill-opacity="0.3" stroke="#8d99ae" stroke-width="1.5"/>
+<text x="610" y="1020" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">CTX-HANYANG-102 / 54F</text>
+<polygon points="1070.0,900.0 1250.0,900.0 1250.0,1120.0 1070.0,1120.0 1070.0,900.0" fill="#8d99ae" fill-opacity="0.3" stroke="#8d99ae" stroke-width="1.5"/>
+<text x="1160" y="1010" font-size="13" font-family="sans-serif" fill="#111111" text-anchor="middle">CTX-HANYANG-103 / 51F</text>
+</svg>

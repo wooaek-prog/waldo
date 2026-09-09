@@ -122,6 +122,14 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--keep-area-scale",
+        action="store_true",
+        help=(
+            "기준점에서는 회전·위치만 취하고 축척은 인가 대지면적 기준값을 유지한다. "
+            "기준점 판독 오차로 대지면적이 틀어지는 것을 막는다."
+        ),
+    )
+    parser.add_argument(
         "--list-reference-points",
         action="store_true",
         help="기준점으로 쓸 배치도 식별점의 픽셀좌표 목록을 출력하고 종료",
@@ -235,7 +243,13 @@ def build_transform(config: dict[str, Any], args: argparse.Namespace) -> tuple[P
         if z1 == z2:
             raise ValueError("기준점 2점의 픽셀좌표가 동일합니다.")
         a = (w2 - w1) / (z2 - z1)
-        t = w1 - a * z1
+        if args.keep_area_scale:
+            # 회전 방향만 취하고 크기는 대지면적 기준 축척으로 고정한다.
+            # 평행이동은 두 기준점의 중점을 맞추어 양쪽 오차를 균등하게 나눈다.
+            a = area_scale * a / abs(a)
+            t = (w1 + w2) / 2 - a * (z1 + z2) / 2
+        else:
+            t = w1 - a * z1
         return PlanTransform(a=a, t=t, epsg=epsg), area_scale
 
     azimuth = args.plan_up_azimuth

@@ -34,11 +34,24 @@
 
   "georeference": {
     "target_epsg": 5186,
-    "plan_up_azimuth_deg": 35.0,
+    "plan_up_azimuth_deg": 51.2051,
     "anchor_mode": "site_centroid",
-    "anchor_lat": 37.5222,
-    "anchor_lon": 126.9291,
-    "anchor_comment": "개략 앵커값. 정확한 위치는 --control-points 옵션(배치도 픽셀 2점 ↔ 실좌표 2점)으로 보정할 것."
+    "anchor_lat": 37.522129,
+    "anchor_lon": 126.933810,
+    "anchor_comment": "사용자가 QGIS에서 실측한 기준점 2점으로 보정된 값(2026-09 반영). 축척은 인가 대지면적 기준값을 유지하고 회전·위치만 기준점에서 취함.",
+    "calibration": {
+      "method": "control_points_2 (--keep-area-scale)",
+      "control_points": [
+        { "label": "대지경계선 북서 코너", "pixel": [262, 313], "epsg5186": [194114.76, 547091.16] },
+        { "label": "대지경계선 북동 코너", "pixel": [1310, 313], "epsg5186": [194272.85, 546894.50] }
+      ],
+      "measured_distance_m": 252.32,
+      "scale_from_control_points_m_per_px": 0.24077,
+      "scale_from_site_area_m_per_px": 0.23297,
+      "scale_difference_pct": 3.35,
+      "corner_residual_m": 4.09,
+      "note": "기준점 축척이 대지면적 기준값보다 3.35% 큼. 대지경계선 코너의 픽셀좌표 판독 오차로 판단하여 축척은 인가 대지면적 기준값을 채택하였다. 기준점에 완전 정합시키려면 --control-points 만 사용(--keep-area-scale 제외)한다."
+    }
   },
 
   "site_boundary_px": [
