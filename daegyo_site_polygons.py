@@ -107,10 +107,24 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         type=str,
         default=None,
         help=(
-            "기준점 2점으로 정밀 보정. 형식: 'px1,py1,E1,N1;px2,py2,E2,N2' "
-            "(px,py=배치도 픽셀좌표, E,N=--epsg 좌표계의 실좌표). "
+            "기준점 2점으로 정밀 보정. 형식: 'px1,py1,X1,Y1;px2,py2,X2,Y2' "
+            "(px,py=배치도 픽셀좌표, X,Y=실좌표). "
             "지정 시 축척·회전·위치를 모두 기준점에서 산출한다."
         ),
+    )
+    parser.add_argument(
+        "--control-points-crs",
+        type=int,
+        default=None,
+        help=(
+            "기준점 실좌표의 좌표계 EPSG. 기본은 --epsg와 동일(5186). "
+            "4326을 주면 경도,위도(도 단위)로 입력한다."
+        ),
+    )
+    parser.add_argument(
+        "--list-reference-points",
+        action="store_true",
+        help="기준점으로 쓸 배치도 식별점의 픽셀좌표 목록을 출력하고 종료",
     )
     parser.add_argument(
         "--no-context",
@@ -140,6 +154,45 @@ def parse_control_points(raw: str) -> list[tuple[float, float, float, float]]:
     return points
 
 
+def normalize_lonlat(x: float, y: float) -> tuple[float, float]:
+    """경도,위도 순서로 정규화한다(위도,경도로 입력한 경우 자동 교정)."""
+    if 33.0 <= x <= 39.0 and 124.0 <= y <= 132.0:
+        print(f"[알림] 기준점 ({x}, {y})를 위도,경도로 판단하여 경도,위도로 교정합니다.")
+        return y, x
+    return x, y
+
+
+def print_reference_points(config: dict[str, Any]) -> None:
+    """기준점으로 쓰기 좋은 배치도 식별점의 픽셀좌표를 출력한다."""
+    width, height = config.get("image_size_px", [1500, 1152])
+    print(f"배치도 이미지 크기: {width} x {height} px (좌상단 원점, x 우측 / y 하단 방향)")
+    print("")
+    print("아래 점의 실좌표를 QGIS에서 읽어 --control-points 에 입력하십시오.")
+    print("가장 멀리 떨어진 2점(예: NW-NE 또는 NW-SE)을 쓰면 회전 오차가 작아집니다.")
+    print("")
+    print(f"{'식별점':<28} {'픽셀좌표':>14}   비고")
+    print("-" * 78)
+    for name, (px, py), note in reference_point_table(config):
+        print(f"{name:<28} {f'{px},{py}':>14}   {note}")
+
+
+def reference_point_table(config: dict[str, Any]) -> list[tuple[str, tuple[int, int], str]]:
+    ring = config["site_boundary_px"]
+    labels = [
+        ("대지경계선 북서 코너", "국제금융로7길 남측선과 만나는 점"),
+        ("대지경계선 북동 코너", "동측 대로 서측선과 만나는 점 (권장)"),
+        ("대지경계선 남동 코너", "신설도로(20m) 북측선과 만나는 점 (권장)"),
+        ("대지경계선 남서 코너", "서측 돌출부 남서단"),
+        ("대지경계선 서측 꺾임점", "서측 돌출부 북서단"),
+        ("대지경계선 서측 안쪽 꺾임점", "돌출부 안쪽 모서리"),
+    ]
+    rows: list[tuple[str, tuple[int, int], str]] = []
+    for idx, (px, py) in enumerate(ring):
+        name, note = labels[idx] if idx < len(labels) else (f"대지경계선 절점 {idx + 1}", "")
+        rows.append((name, (int(px), int(py)), note))
+    return rows
+
+
 # --------------------------------------------------------------------------- #
 # 기하 생성
 # --------------------------------------------------------------------------- #
@@ -167,6 +220,16 @@ def build_transform(config: dict[str, Any], args: argparse.Namespace) -> tuple[P
 
     if args.control_points:
         (px1, py1, e1, n1), (px2, py2, e2, n2) = parse_control_points(args.control_points)
+        cp_crs = args.control_points_crs or epsg
+        if cp_crs != epsg:
+            if cp_crs == 4326:
+                (e1, n1) = normalize_lonlat(e1, n1)
+                (e2, n2) = normalize_lonlat(e2, n2)
+            cp_to_map = Transformer.from_crs(
+                CRS.from_epsg(cp_crs), CRS.from_epsg(epsg), always_xy=True
+            )
+            e1, n1 = cp_to_map.transform(e1, n1)
+            e2, n2 = cp_to_map.transform(e2, n2)
         z1, z2 = complex(px1, -py1), complex(px2, -py2)
         w1, w2 = complex(e1, n1), complex(e2, n2)
         if z1 == z2:
@@ -439,6 +502,14 @@ def build_report(
     lines.append(f"- 도면 축척: {transform.scale_m_per_px:.5f} m/px "
                  f"(대지면적 기준 산정값 {area_scale:.5f} m/px)")
     lines.append(f"- 배치도 상단 방향 방위각: {transform.plan_up_azimuth_deg:.2f}°")
+    lines.append(f"- 계획 지반고: EL(+){config['levels']['planned_ground_elev_m']:.1f} m")
+    scale_dev = abs(transform.scale_m_per_px - area_scale) / area_scale * 100.0
+    if scale_dev > 3.0:
+        lines.append("")
+        lines.append(
+            f"> **경고**: 기준점에서 산출된 축척이 대지면적 기준값과 {scale_dev:.1f}% 차이납니다. "
+            "기준점 픽셀좌표 또는 실좌표 입력을 다시 확인하십시오."
+        )
     lines.append("")
     lines.append("## 인가 제원 대비 검증")
     lines.append("")
@@ -461,18 +532,56 @@ def build_report(
         f"| {validation.gfa_m2:,.0f} ㎡ | - |"
     )
     lines.append("")
-    lines.append("## 동별 제원")
+    lines.append("## 건물별 상세 높이표 (신축)")
     lines.append("")
-    lines.append("| 동 | 존 | 층수 | 건축면적(㎡) | 높이(m, G.L.기준) | 최고고(EL, m) |")
-    lines.append("| --- | --- | ---: | ---: | ---: | ---: |")
+    lines.append(
+        "| ID | 동 | 존 | 용도 | 층수 | 층고(m) | 옥탑(m) | 높이 H(m) | 지반고 EL(m) | "
+        "최고고 EL(m) | 건축면적(㎡) | 연면적(㎡) |"
+    )
+    lines.append("| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |")
+    for layer in ("tower", "podium"):
+        for feature in features:
+            if feature.layer != layer:
+                continue
+            attrs = feature.attributes
+            lines.append(
+                f"| {attrs['id']} | {attrs['dong']} | {attrs['part']} | {attrs['use']} | "
+                f"{attrs['floors']} | {attrs['floor_h_m']:.2f} | {attrs['roof_m']:.1f} | "
+                f"{attrs['height_m']:,.2f} | {attrs['base_elev_m']:.1f} | "
+                f"{attrs['top_elev_m']:,.2f} | {feature.polygon_map.area:,.0f} | "
+                f"{feature.polygon_map.area * int(attrs['floors']):,.0f} |"
+            )
+    lines.append("")
+    lines.append("### 동별 요약 (최고 제원)")
+    lines.append("")
+    lines.append("| 동 | 최고 층수 | 최고 높이 H(m) | 최고고 EL(m) | 건축면적 합(㎡) | 연면적 합(㎡) |")
+    lines.append("| --- | ---: | ---: | ---: | ---: | ---: |")
+    dongs: dict[str, list[Feature]] = {}
     for feature in features:
         if feature.layer != "tower":
             continue
-        attrs = feature.attributes
+        dongs.setdefault(feature.attributes["dong"], []).append(feature)
+    for dong, group in dongs.items():
+        top = max(group, key=lambda f: f.attributes["height_m"])
         lines.append(
-            f"| {attrs['dong']} | {attrs['part']} | {attrs['floors']} | "
-            f"{feature.polygon_map.area:,.0f} | {attrs['height_m']:,.1f} | {attrs['top_elev_m']:,.1f} |"
+            f"| {dong} | {top.attributes['floors']} | {top.attributes['height_m']:,.2f} | "
+            f"{top.attributes['top_elev_m']:,.2f} | "
+            f"{sum(f.polygon_map.area for f in group):,.0f} | "
+            f"{sum(f.polygon_map.area * int(f.attributes['floors']) for f in group):,.0f} |"
         )
+    context = [f for f in features if f.layer == "context"]
+    if context:
+        lines.append("")
+        lines.append("## 주변 참고 건물 (개략값 - 실측 데이터 대체 권장)")
+        lines.append("")
+        lines.append("| ID | 명칭 | 층수 | 높이 H(m) | 최고고 EL(m) |")
+        lines.append("| --- | --- | ---: | ---: | ---: |")
+        for feature in context:
+            attrs = feature.attributes
+            lines.append(
+                f"| {attrs['id']} | {attrs['dong']} | {attrs['floors']} | "
+                f"{attrs['height_m']:,.2f} | {attrs['top_elev_m']:,.2f} |"
+            )
     lines.append("")
     lines.append("## 유의사항")
     lines.append("")
@@ -494,6 +603,10 @@ def build_report(
 def main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
     config = load_config(args.config)
+
+    if args.list_reference_points:
+        print_reference_points(config)
+        return 0
 
     transform, area_scale = build_transform(config, args)
     site_map = transform_polygon(Polygon(config["site_boundary_px"]), transform)
