@@ -3,7 +3,7 @@
 | 도구 | 설명 | 문서 |
 | --- | --- | --- |
 | `dispatch_order_analysis.py` | 한국 발전소 업체별 급전순위(merit order) 분석 | 아래 참조 |
-| `daegyo_site_polygons.py` | 여의도 대교아파트 신축 배치도 → QGIS 일조권 분석용 건물 폴리곤 생성 | [docs/daegyo_qgis_guide.md](docs/daegyo_qgis_guide.md) |
+| `daegyo_site_polygons.py` | 여의도 대교아파트 신축 배치도 → QGIS 일조권 분석용 건물 폴리곤 생성 | [초보자 매뉴얼](docs/daegyo_beginner_manual.md) · [실무 가이드](docs/daegyo_qgis_guide.md) |
 
 ---
 
@@ -85,5 +85,6 @@ python3 daegyo_site_polygons.py
 
 출력: `outputs/daegyo/` (GeoJSON 5186·WGS84, CSV+WKT, 트레이싱 검수 SVG, 인가제원 검증 리포트)
 
-자세한 사용법·위치 보정 방법·QGIS 그림자 분석 절차는
-[docs/daegyo_qgis_guide.md](docs/daegyo_qgis_guide.md) 를 참고하십시오.
+- **파이썬·QGIS를 처음 쓰신다면** → [docs/daegyo_beginner_manual.md](docs/daegyo_beginner_manual.md)
+  (설치부터 메뉴 클릭 단위로 설명. 파이썬 없이 QGIS만으로 하는 방법 포함)
+- 옵션·좌표 보정·분석 절차 요약 → [docs/daegyo_qgis_guide.md](docs/daegyo_qgis_guide.md)
