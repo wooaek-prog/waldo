@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+
+# 뉴스 모니터가 저장하는 수집 상태(로컬 전용)
+news/.state.json
+news/.state.tmp

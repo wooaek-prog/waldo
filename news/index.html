@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>계열사 뉴스 실시간 · CJ / HDC / 현대엘리베이터</title>
+<link id="favicon" rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2303c75a'/%3E%3Cpath d='M10 23V9h4l4 7V9h4v14h-4l-4-7v7z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --panel: #ffffff;
+    --panel-2: #f0f2f5;
+    --line: #dfe3e8;
+    --text: #16191d;
+    --muted: #6a7280;
+    --accent: #2f6fed;
+    --new: #e8534f;
+    --naver: #03c75a;
+    --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 8px 24px rgba(16, 24, 40, .06);
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1216;
+      --panel: #171b21;
+      --panel-2: #1e242c;
+      --line: #2a313b;
+      --text: #e8ecf1;
+      --muted: #98a2b3;
+      --accent: #6ea0ff;
+      --new: #ff6b66;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1216;
+    --panel: #171b21;
+    --panel-2: #1e242c;
+    --line: #2a313b;
+    --text: #e8ecf1;
+    --muted: #98a2b3;
+    --accent: #6ea0ff;
+    --new: #ff6b66;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo",
+          "Malgun Gothic", "Noto Sans KR", Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  button, input, select { font: inherit; color: inherit; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- 상단바 ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 30;
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+    padding: 12px 20px;
+    background: color-mix(in srgb, var(--panel) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .brand h1 { font-size: 17px; font-weight: 700; margin: 0; letter-spacing: -.2px; white-space: nowrap; }
+  .brand .sub { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dot {
+    width: 9px; height: 9px; border-radius: 50%; background: var(--muted);
+    flex: none; box-shadow: 0 0 0 0 currentColor;
+  }
+  .dot.live { background: var(--naver); animation: pulse 2s infinite; }
+  .dot.warn { background: #f0a020; }
+  .dot.down { background: var(--new); }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(3, 199, 90, .5); }
+    70%  { box-shadow: 0 0 0 8px rgba(3, 199, 90, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(3, 199, 90, 0); }
+  }
+
+  .actions { display: flex; gap: 8px; align-items: center; margin-left: auto; flex-wrap: wrap; }
+  .search {
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 999px;
+    padding: 7px 14px; width: 200px; outline: none;
+  }
+  .search:focus { border-color: var(--accent); }
+  .tbtn {
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 999px;
+    padding: 7px 13px; cursor: pointer; white-space: nowrap; transition: .15s;
+  }
+  .tbtn:hover { border-color: var(--accent); }
+  .tbtn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* ---------- 그룹 칩 ---------- */
+  .chips {
+    display: flex; gap: 8px; padding: 12px 20px 0; flex-wrap: wrap;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 14px; cursor: pointer; transition: .15s;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip[aria-pressed="true"] { border-color: currentColor; box-shadow: inset 0 0 0 1px currentColor; }
+  .chip .swatch { width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none; }
+  .chip .count {
+    font-size: 12px; color: var(--muted); background: var(--panel-2);
+    border-radius: 999px; padding: 1px 7px; min-width: 20px; text-align: center;
+  }
+  .chip .count.hot { background: var(--new); color: #fff; }
+
+  /* ---------- 레이아웃 ---------- */
+  .layout {
+    display: grid; grid-template-columns: 240px minmax(0, 1fr);
+    gap: 20px; padding: 16px 20px 60px; align-items: start;
+  }
+  /* 좁은 화면에서는 뉴스가 먼저 오고, 계열사 목록은 접어서 아래로 내린다. */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: minmax(0, 1fr); }
+    .feedcol { order: 1; }
+    .side { order: 2; }
+  }
+
+  .side {
+    position: sticky; top: 78px;
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 8px; box-shadow: var(--shadow);
+    max-height: calc(100vh - 100px); overflow-y: auto;
+  }
+  @media (max-width: 900px) { .side { position: static; max-height: 320px; } }
+  .side h2 {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--muted); margin: 12px 10px 6px;
+  }
+  .side h2:first-child { margin-top: 6px; }
+  .co {
+    display: flex; align-items: center; gap: 8px; width: 100%;
+    background: none; border: 0; border-radius: 8px; padding: 6px 10px;
+    cursor: pointer; text-align: left;
+  }
+  .co:hover { background: var(--panel-2); }
+  .co[aria-pressed="true"] { background: var(--panel-2); font-weight: 600; }
+  .co .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .co .n { font-size: 12px; color: var(--muted); }
+  .co .n.hot { color: var(--new); font-weight: 700; }
+
+  /* ---------- 피드 ---------- */
+  .feed { display: flex; flex-direction: column; gap: 10px; }
+  .card {
+    position: relative; display: block;
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 14px 16px 13px 18px;
+    box-shadow: var(--shadow); transition: transform .12s, border-color .12s;
+  }
+  .card { cursor: pointer; }
+  .card:hover { transform: translateY(-1px); border-color: var(--accent); }
+  .card h3 a { color: inherit; }
+  .card h3 a:hover { text-decoration: underline; }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px;
+    border-radius: 3px; background: var(--bar, transparent);
+  }
+  .card.unread { border-color: color-mix(in srgb, var(--new) 55%, var(--line)); }
+  .card.flash { animation: flash 1.6s ease-out; }
+  @keyframes flash {
+    from { background: color-mix(in srgb, var(--new) 16%, var(--panel)); }
+    to   { background: var(--panel); }
+  }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); }
+  .tag {
+    border-radius: 999px; padding: 1px 8px; font-size: 11px; font-weight: 600;
+    border: 1px solid currentColor;
+  }
+  .tag.corp { background: color-mix(in srgb, currentColor 12%, transparent); }
+  .tag.naver { color: var(--naver); }
+  .tag.new { color: #fff; background: var(--new); border-color: var(--new); }
+  .meta .dim { color: var(--muted); }
+  .card h3 { margin: 7px 0 5px; font-size: 16px; line-height: 1.45; font-weight: 600; letter-spacing: -.2px; }
+  .card p { margin: 0; color: var(--muted); font-size: 13.5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .card .links { margin-top: 9px; display: flex; gap: 12px; font-size: 12px; }
+  .card .links a { color: var(--accent); }
+
+  .empty { text-align: center; color: var(--muted); padding: 60px 20px; }
+  .empty b { display: block; font-size: 16px; color: var(--text); margin-bottom: 6px; }
+
+  /* ---------- 배너 / 토스트 ---------- */
+  .banner {
+    margin: 12px 20px 0; padding: 12px 16px; border-radius: var(--radius);
+    background: color-mix(in srgb, #f0a020 14%, var(--panel));
+    border: 1px solid color-mix(in srgb, #f0a020 45%, var(--line));
+    font-size: 13.5px;
+  }
+  .banner code {
+    display: inline-block; background: var(--panel-2); border: 1px solid var(--line);
+    border-radius: 6px; padding: 2px 7px; font-size: 12.5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  .banner pre {
+    margin: 8px 0 0; padding: 10px 12px; background: var(--panel-2);
+    border: 1px solid var(--line); border-radius: 8px; overflow-x: auto;
+    font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  .toasts {
+    position: fixed; right: 16px; bottom: 16px; z-index: 60;
+    display: flex; flex-direction: column-reverse; gap: 8px; max-width: min(360px, calc(100vw - 32px));
+  }
+  .toast {
+    background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--new);
+    border-radius: 10px; padding: 10px 14px; box-shadow: var(--shadow);
+    animation: slide .25s ease-out;
+  }
+  .toast .t { font-size: 11px; color: var(--muted); }
+  .toast .b { font-weight: 600; font-size: 13.5px; margin-top: 2px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  @keyframes slide { from { opacity: 0; transform: translateX(20px); } }
+
+  .jump {
+    position: fixed; left: 50%; transform: translateX(-50%); bottom: 22px; z-index: 50;
+    background: var(--new); color: #fff; border: 0; border-radius: 999px;
+    padding: 9px 18px; font-weight: 600; cursor: pointer; box-shadow: var(--shadow);
+  }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot" id="liveDot" title="연결 상태"></span>
+    <h1>계열사 뉴스 실시간</h1>
+    <span class="sub" id="statusLine">연결 중…</span>
+  </div>
+  <div class="actions">
+    <input class="search" id="search" type="search" placeholder="제목·요약 검색" autocomplete="off">
+    <button class="tbtn" id="btnNaver" aria-pressed="false" title="네이버뉴스에 등록된 기사만 보기">네이버뉴스만</button>
+    <button class="tbtn" id="btnSound" aria-pressed="false" title="새 기사 알림음">🔔 소리</button>
+    <button class="tbtn" id="btnNotify" aria-pressed="false" title="데스크톱 알림">🖥 알림</button>
+    <button class="tbtn" id="btnTheme" title="밝게/어둡게">🌓</button>
+  </div>
+</header>
+
+<div class="banner" id="banner" hidden></div>
+<div class="chips" id="chips"></div>
+
+<div class="layout">
+  <aside class="side" id="side"></aside>
+  <section class="feedcol">
+    <div class="feed" id="feed"></div>
+  </section>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+<button class="jump" id="jump" hidden>↑ 새 기사 <span id="jumpCount">0</span>건</button>
+
+<script>
+(() => {
+  "use strict";
+
+  const MAX_RENDER = 300;
+  const LS_KEY = "waldo-news-settings-v1";
+
+  const state = {
+    items: new Map(),          // id -> item
+    unread: new Set(),         // 아직 읽지 않은 기사 id
+    group: "all",
+    company: null,
+    query: "",
+    groups: [],
+    connected: false,
+    lastSeen: 0,               // 폴링 폴백용 커서
+    seeding: false,
+  };
+
+  const settings = Object.assign(
+    { naverOnly: false, sound: false, notify: false, theme: "auto" },
+    readJSON(LS_KEY) || {}
+  );
+
+  const $ = (id) => document.getElementById(id);
+  const el = { dot: $("liveDot"), status: $("statusLine"), banner: $("banner"), chips: $("chips"),
+               side: $("side"), feed: $("feed"), toasts: $("toasts"), jump: $("jump"),
+               jumpCount: $("jumpCount"), search: $("search") };
+
+  function readJSON(key) {
+    try { return JSON.parse(localStorage.getItem(key) || "null"); } catch { return null; }
+  }
+  function saveSettings() {
+    try { localStorage.setItem(LS_KEY, JSON.stringify(settings)); } catch { /* 사생활 보호 모드 등 */ }
+  }
+
+  // ---------- 테마 ----------
+  function applyTheme() {
+    const root = document.documentElement;
+    if (settings.theme === "auto") root.removeAttribute("data-theme");
+    else root.setAttribute("data-theme", settings.theme);
+  }
+
+  // ---------- 시간 표기 ----------
+  function timeAgo(ts) {
+    const diff = (Date.now() - ts * 1000) / 1000;
+    if (diff < 60) return "방금";
+    if (diff < 3600) return `${Math.floor(diff / 60)}분 전`;
+    if (diff < 86400) return `${Math.floor(diff / 3600)}시간 전`;
+    const d = new Date(ts * 1000);
+    return `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+  }
+
+  // ---------- 렌더 ----------
+  const companiesOf = (item) => item.companies || (item.company ? [item.company] : []);
+  const groupsOf = (item) => item.groupIds || (item.groupId ? [item.groupId] : []);
+
+  function visible(item) {
+    if (settings.naverOnly && !item.onNaver) return false;
+    if (state.group !== "all" && !groupsOf(item).includes(state.group)) return false;
+    if (state.company && !companiesOf(item).includes(state.company)) return false;
+    if (state.query) {
+      const hay = `${item.title} ${item.summary} ${companiesOf(item).join(" ")} ${item.press}`.toLowerCase();
+      if (!hay.includes(state.query)) return false;
+    }
+    return true;
+  }
+
+  /** 발행시각 내림차순. 같은 시각이면 나중에 들어온(=방금 뜬) 기사를 위로. */
+  const arrivedAt = (i) => Math.max(i.naverRegisteredAt || 0, i.firstSeen || 0);
+  function sortedItems() {
+    return [...state.items.values()].sort((a, b) => (b.pubTs - a.pubTs) || (arrivedAt(b) - arrivedAt(a)));
+  }
+
+  function renderChips() {
+    const counts = countBy(groupsOf);
+    const unread = countBy(groupsOf, true);
+    const total = [...state.items.values()].filter(passesNaverFilter).length;
+    const totalUnread = [...state.unread].filter((id) => {
+      const it = state.items.get(id); return it && passesNaverFilter(it);
+    }).length;
+
+    const chips = [{ id: "all", name: "전체", color: "var(--accent)", n: total, u: totalUnread }].concat(
+      state.groups.map((g) => ({ id: g.id, name: g.name, color: g.color, n: counts[g.id] || 0, u: unread[g.id] || 0 }))
+    );
+
+    el.chips.replaceChildren(...chips.map((c) => {
+      const b = document.createElement("button");
+      b.className = "chip";
+      b.style.color = c.color;
+      b.setAttribute("aria-pressed", String(state.group === c.id));
+      b.innerHTML = `<span class="swatch"></span><span style="color:var(--text)">${escapeHTML(c.name)}</span>`;
+      const n = document.createElement("span");
+      n.className = "count" + (c.u ? " hot" : "");
+      n.textContent = c.u ? `+${c.u}` : c.n;
+      b.append(n);
+      b.onclick = () => { state.group = c.id; state.company = null; render(); };
+      return b;
+    }));
+  }
+
+  function passesNaverFilter(item) { return !settings.naverOnly || item.onNaver; }
+
+  /** keysOf 는 기사 하나가 속한 키 목록을 돌려준다(한 기사가 여러 계열사에 걸릴 수 있다). */
+  function countBy(keysOf, unreadOnly) {
+    const out = {};
+    for (const item of state.items.values()) {
+      if (!passesNaverFilter(item)) continue;
+      if (unreadOnly && !state.unread.has(item.id)) continue;
+      for (const key of keysOf(item)) out[key] = (out[key] || 0) + 1;
+    }
+    return out;
+  }
+
+  function renderSide() {
+    const counts = countBy(companiesOf);
+    const unread = countBy(companiesOf, true);
+    const nodes = [];
+    for (const g of state.groups) {
+      if (state.group !== "all" && state.group !== g.id) continue;
+      const h = document.createElement("h2");
+      h.textContent = g.name;
+      nodes.push(h);
+      for (const name of g.companies) {
+        const b = document.createElement("button");
+        b.className = "co";
+        b.setAttribute("aria-pressed", String(state.company === name));
+        const u = unread[name] || 0;
+        b.innerHTML = `<span class="swatch" style="width:6px;height:6px;border-radius:50%;background:${g.color};flex:none"></span>`
+          + `<span class="nm">${escapeHTML(name)}</span>`
+          + `<span class="n${u ? " hot" : ""}">${u ? "+" + u : (counts[name] || 0)}</span>`;
+        b.onclick = () => {
+          state.company = state.company === name ? null : name;
+          if (state.company) state.group = g.id;
+          render();
+        };
+        nodes.push(b);
+      }
+    }
+    el.side.replaceChildren(...nodes);
+  }
+
+  function renderFeed() {
+    const items = sortedItems().filter(visible).slice(0, MAX_RENDER);
+    if (!items.length) {
+      el.feed.innerHTML = `<div class="empty"><b>${state.items.size ? "조건에 맞는 기사가 없습니다" : "아직 수집된 기사가 없습니다"}</b>`
+        + `${state.items.size ? "필터를 바꿔보세요." : "서버가 계열사 키워드를 한 바퀴 도는 동안 잠시 기다려 주세요."}</div>`;
+      return;
+    }
+    el.feed.replaceChildren(...items.map(card));
+  }
+
+  /** javascript: 같은 스킴이 href 로 들어오지 않도록 막는다. */
+  function safeURL(raw) {
+    try {
+      const u = new URL(raw, location.href);
+      return (u.protocol === "http:" || u.protocol === "https:") ? u.href : "";
+    } catch { return ""; }
+  }
+
+  function openItem(item) {
+    const href = safeURL(item.link);
+    if (href) window.open(href, "_blank", "noopener");
+    markRead(item.id);
+  }
+
+  function card(item) {
+    const box = document.createElement("article");
+    box.className = "card" + (state.unread.has(item.id) ? " unread" : "") + (item._flash ? " flash" : "");
+    box.style.setProperty("--bar", item.groupColor || "transparent");
+    box.dataset.id = item.id;
+    item._flash = false;
+
+    // 배지는 그대로 나열하고, 글자 정보만 가운뎃점으로 잇는다.
+    const badges = [];
+    if (state.unread.has(item.id)) badges.push(`<span class="tag new">NEW</span>`);
+    for (const name of companiesOf(item)) {
+      badges.push(`<span class="tag corp" style="color:${escapeHTML(item.groupColor)}">${escapeHTML(name)}</span>`);
+    }
+    if (item.onNaver) badges.push(`<span class="tag naver">네이버뉴스</span>`);
+
+    const texts = [];
+    if (item.press) texts.push(escapeHTML(item.press));
+    texts.push(`<time datetime="${escapeHTML(item.pubDate)}" data-ts="${item.pubTs}">${timeAgo(item.pubTs)}</time>`);
+
+    const main = safeURL(item.link);
+    box.innerHTML = `<div class="meta">${badges.join("")}`
+      + `<span class="dim">${texts.join('<span aria-hidden="true"> · </span>')}</span></div>`
+      + `<h3><a href="${escapeHTML(main)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a></h3>`
+      + (item.summary ? `<p>${escapeHTML(item.summary)}</p>` : "");
+
+    const original = safeURL(item.originalLink);
+    if (original && original !== main) {
+      box.insertAdjacentHTML(
+        "beforeend",
+        `<div class="links"><a href="${escapeHTML(original)}" target="_blank" rel="noopener noreferrer">원문 보기 ↗</a></div>`
+      );
+    }
+
+    box.addEventListener("click", (ev) => {
+      if (ev.target.closest("a")) { markRead(item.id); return; }  // 링크는 브라우저에 맡긴다
+      openItem(item);
+    });
+    return box;
+  }
+
+  function render() {
+    renderChips();
+    renderSide();
+    renderFeed();
+    updateTitle();
+  }
+
+  function markRead(id) {
+    if (!state.unread.delete(id)) return;
+    updateTitle();
+    renderChips();
+    renderSide();
+    const node = el.feed.querySelector(`[data-id="${CSS.escape(id)}"]`);
+    if (node) { node.classList.remove("unread"); node.querySelector(".tag.new")?.remove(); }
+  }
+
+  const FAVICON = (bg) =>
+    `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E`
+    + `%3Crect width='32' height='32' rx='8' fill='%23${bg}'/%3E`
+    + `%3Cpath d='M10 23V9h4l4 7V9h4v14h-4l-4-7v7z' fill='%23fff'/%3E%3C/svg%3E`;
+
+  function updateTitle() {
+    const n = state.unread.size;
+    document.title = (n ? `(${n}) ` : "") + "계열사 뉴스 실시간 · CJ / HDC / 현대엘리베이터";
+    const icon = $("favicon");
+    const wanted = FAVICON(n ? "e8534f" : "03c75a");
+    if (icon && icon.getAttribute("href") !== wanted) icon.setAttribute("href", wanted);
+    el.jump.hidden = !(n && window.scrollY > 400);
+    el.jumpCount.textContent = n;
+  }
+
+  function escapeHTML(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  // ---------- 새 기사 처리 ----------
+  function ingest(items, { alert }) {
+    if (!items.length) return;
+    for (const item of items) {
+      item._flash = alert;
+      state.items.set(item.id, item);
+      state.lastSeen = Math.max(state.lastSeen, item.firstSeen || 0, item.naverRegisteredAt || 0);
+      if (alert) state.unread.add(item.id);
+    }
+    if (alert) {
+      items.slice(0, 3).forEach((item) => toast(item));
+      notify(items);
+      beep();
+    }
+    render();
+  }
+
+  function toast(item) {
+    const box = document.createElement("div");
+    box.className = "toast";
+    const label = item.kind === "naver" ? "네이버뉴스 등록" : "새 기사";
+    box.innerHTML = `<div class="t">${escapeHTML(companiesOf(item).join(" · ") || "계열사")} · ${label}</div>`
+      + `<div class="b">${escapeHTML(item.title)}</div>`;
+    box.onclick = () => { openItem(item); box.remove(); };
+    el.toasts.append(box);
+    setTimeout(() => box.remove(), 9000);
+    while (el.toasts.children.length > 4) el.toasts.firstChild.remove();
+  }
+
+  const notificationsSupported = () => typeof Notification !== "undefined";
+  const notificationsGranted = () => notificationsSupported() && Notification.permission === "granted";
+
+  function notify(items) {
+    if (!settings.notify || !notificationsGranted()) return;
+    const head = items[0];
+    const body = items.length > 1
+      ? `${head.title}\n외 ${items.length - 1}건`
+      : head.title;
+    try {
+      const n = new Notification(`[${companiesOf(head).join(" · ")}] ${head.onNaver ? "네이버뉴스" : "뉴스"}`, {
+        body, tag: "waldo-news", renotify: true,
+      });
+      n.onclick = () => { window.focus(); openItem(head); };
+    } catch { /* 일부 브라우저는 서비스워커를 요구한다 */ }
+  }
+
+  let audioCtx = null;
+  function beep() {
+    if (!settings.sound) return;
+    try {
+      audioCtx ||= new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === "suspended") audioCtx.resume();
+      const t = audioCtx.currentTime;
+      [880, 1320].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.0001, t + i * 0.11);
+        gain.gain.exponentialRampToValueAtTime(0.16, t + i * 0.11 + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.11 + 0.16);
+        osc.connect(gain).connect(audioCtx.destination);
+        osc.start(t + i * 0.11);
+        osc.stop(t + i * 0.11 + 0.18);
+      });
+    } catch { /* 오디오 사용 불가 */ }
+  }
+
+  // ---------- 상태 표시 ----------
+  function applyStatus(status) {
+    if (!status) return;
+    state.seeding = status.seeded === false;
+    const src = status.source === "naver" ? "네이버 검색 API"
+              : status.source === "google" ? "구글 뉴스 RSS(폴백)" : "대기";
+    const parts = [`소스: ${src}`, `보관 ${status.items ?? 0}건`];
+    if (state.seeding) parts.push("초기 수집 중");
+    if (status.currentTarget) parts.push(`조회: ${status.currentTarget}`);
+    if (status.lastError) parts.push(`⚠ ${status.lastError}`);
+    el.status.textContent = parts.join(" · ");
+    el.dot.className = "dot " + (!state.connected ? "down" : status.lastError ? "warn" : "live");
+    el.dot.title = state.connected ? "실시간 연결됨" : "연결 끊김";
+  }
+
+  function showBanner(html) { el.banner.innerHTML = html; el.banner.hidden = false; }
+
+  // ---------- 서버 연결 ----------
+  async function loadConfig() {
+    const res = await fetch("api/config", { cache: "no-store" });
+    if (!res.ok) throw new Error("config " + res.status);
+    const data = await res.json();
+    state.groups = data.groups || [];
+    applyStatus(data.status);
+  }
+
+  function connectStream() {
+    const es = new EventSource("api/stream");
+
+    es.addEventListener("snapshot", (ev) => {
+      const data = JSON.parse(ev.data);
+      state.connected = true;
+      ingest(data.items || [], { alert: false });
+      applyStatus(data.status);
+    });
+    es.addEventListener("news", (ev) => {
+      ingest(JSON.parse(ev.data) || [], { alert: true });
+    });
+    es.addEventListener("update", (ev) => {
+      // 계열사 태그 추가 등 조용한 갱신 — 알림 없이 카드만 다시 그린다.
+      ingest(JSON.parse(ev.data) || [], { alert: false });
+    });
+    es.addEventListener("status", (ev) => {
+      state.connected = true;
+      applyStatus(JSON.parse(ev.data));
+    });
+    es.onopen = () => { state.connected = true; applyStatus({ source: null }); };
+    es.onerror = () => {
+      state.connected = false;
+      el.dot.className = "dot down";
+      el.status.textContent = "연결 끊김 — 재접속 중…";
+      // EventSource 가 알아서 재접속하므로 닫지 않는다.
+    };
+    return es;
+  }
+
+  async function pollOnce() {
+    try {
+      const res = await fetch(`api/news?since=${encodeURIComponent(state.lastSeen)}`, { cache: "no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+      state.connected = true;
+      ingest(data.items || [], { alert: state.lastSeen > 0 });
+      applyStatus(data.status);
+    } catch { state.connected = false; }
+  }
+
+  function offlineBanner(reason) {
+    showBanner(
+      `<b>데이터 서버에 연결하지 못했습니다.</b> (${escapeHTML(reason)})<br>`
+      + `브라우저만으로는 네이버가 CORS 로 차단하기 때문에, 함께 들어 있는 파이썬 서버를 통해 열어야 합니다. `
+      + `터미널에서 아래를 실행한 뒤 <code>http://127.0.0.1:8765</code> 로 접속하세요.`
+      + `<pre>export NAVER_CLIENT_ID=발급받은_ID\n`
+      + `export NAVER_CLIENT_SECRET=발급받은_SECRET\n`
+      + `python3 news/server.py</pre>`
+      + `<div style="margin-top:8px;color:var(--muted)">API 키가 없으면 구글 뉴스 RSS 폴백으로도 동작합니다(네이버 등록 여부는 표시되지 않음).</div>`
+    );
+  }
+
+  // ---------- 이벤트 바인딩 ----------
+  function bindUI() {
+    const btnNaver = $("btnNaver"), btnSound = $("btnSound"), btnNotify = $("btnNotify"), btnTheme = $("btnTheme");
+
+    btnNaver.setAttribute("aria-pressed", String(settings.naverOnly));
+    btnSound.setAttribute("aria-pressed", String(settings.sound));
+    settings.notify = settings.notify && notificationsGranted();
+    btnNotify.setAttribute("aria-pressed", String(settings.notify));
+
+    btnNaver.onclick = () => {
+      settings.naverOnly = !settings.naverOnly;
+      btnNaver.setAttribute("aria-pressed", String(settings.naverOnly));
+      saveSettings(); render();
+    };
+    btnSound.onclick = () => {
+      settings.sound = !settings.sound;
+      btnSound.setAttribute("aria-pressed", String(settings.sound));
+      saveSettings();
+      if (settings.sound) beep();   // 사용자 제스처로 오디오 잠금 해제
+    };
+    btnNotify.onclick = async () => {
+      if (!notificationsSupported()) { alert("이 브라우저는 데스크톱 알림을 지원하지 않습니다."); return; }
+      if (settings.notify) {
+        settings.notify = false;
+      } else {
+        const perm = await Notification.requestPermission();
+        settings.notify = perm === "granted";
+        if (!settings.notify) alert("브라우저에서 알림 권한이 거부되어 있습니다. 주소창 왼쪽 자물쇠에서 허용해 주세요.");
+      }
+      btnNotify.setAttribute("aria-pressed", String(settings.notify));
+      saveSettings();
+    };
+    btnTheme.onclick = () => {
+      settings.theme = settings.theme === "auto" ? "light" : settings.theme === "light" ? "dark" : "auto";
+      btnTheme.title = `테마: ${settings.theme}`;
+      applyTheme(); saveSettings();
+    };
+
+    let debounce;
+    el.search.oninput = () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => { state.query = el.search.value.trim().toLowerCase(); renderFeed(); }, 180);
+    };
+
+    el.jump.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    window.addEventListener("scroll", updateTitle, { passive: true });
+
+    // 화면을 다시 보면 보이는 기사를 읽음 처리
+    window.addEventListener("focus", () => {
+      if (window.scrollY < 80) setTimeout(() => { state.unread.clear(); render(); }, 2500);
+    });
+
+    // 상대 시간 갱신
+    setInterval(() => {
+      for (const t of el.feed.querySelectorAll("time[data-ts]")) {
+        t.textContent = timeAgo(Number(t.dataset.ts));
+      }
+    }, 30000);
+  }
+
+  // ---------- 시작 ----------
+  async function main() {
+    applyTheme();
+    bindUI();
+    render();
+
+    if (location.protocol === "file:") {
+      offlineBanner("file:// 로 직접 연 상태");
+      return;
+    }
+    try {
+      await loadConfig();
+    } catch (err) {
+      offlineBanner(err.message || String(err));
+      return;
+    }
+    if ("EventSource" in window) {
+      connectStream();
+    } else {
+      await pollOnce();
+      setInterval(pollOnce, 20000);
+    }
+  }
+
+  main();
+})();
+</script>
+</body>
+</html>

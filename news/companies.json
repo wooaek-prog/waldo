@@ -1,0 +1,58 @@
+{
+  "_comment": "감시 대상 계열사 목록. 이 파일만 고치면 서버/페이지 코드를 건드릴 필요가 없습니다. keyword=네이버 뉴스 검색어, aliases=본문/제목에 포함되어야 하는 표현(하나라도 있으면 통과), exclude=포함되면 버리는 표현.",
+  "groups": [
+    {
+      "id": "cj",
+      "name": "CJ그룹",
+      "color": "#e8534f",
+      "companies": [
+        { "keyword": "CJ제일제당", "aliases": ["CJ제일제당"] },
+        { "keyword": "CJ대한통운", "aliases": ["CJ대한통운"] },
+        { "keyword": "CJ ENM", "aliases": ["CJ ENM", "CJENM", "CJ이앤엠"] },
+        { "keyword": "CJ올리브영", "aliases": ["CJ올리브영", "올리브영"] },
+        { "keyword": "CJ올리브네트웍스", "aliases": ["CJ올리브네트웍스", "올리브네트웍스"] },
+        { "keyword": "CJ프레시웨이", "aliases": ["CJ프레시웨이", "프레시웨이"] },
+        { "keyword": "CJ CGV", "aliases": ["CJ CGV", "CJCGV", "CGV"] },
+        { "keyword": "CJ푸드빌", "aliases": ["CJ푸드빌", "푸드빌"] },
+        { "keyword": "CJ바이오사이언스", "aliases": ["CJ바이오사이언스"] },
+        { "keyword": "CJ씨푸드", "aliases": ["CJ씨푸드"] },
+        { "keyword": "CJ4DPLEX", "aliases": ["CJ 4DPLEX", "CJ4DPLEX", "4DX"] },
+        { "keyword": "CJ라이브시티", "aliases": ["CJ라이브시티"] },
+        { "keyword": "스튜디오드래곤", "aliases": ["스튜디오드래곤"] },
+        { "keyword": "티빙 CJ", "aliases": ["티빙"] },
+        { "keyword": "CJ지주", "aliases": ["CJ주식회사", "CJ㈜", "CJ지주"] }
+      ]
+    },
+    {
+      "id": "hdc",
+      "name": "HDC그룹",
+      "color": "#4f7fe8",
+      "companies": [
+        { "keyword": "HDC현대산업개발", "aliases": ["HDC현대산업개발", "현대산업개발"] },
+        { "keyword": "HDC현대EP", "aliases": ["HDC현대EP", "현대EP"] },
+        { "keyword": "HDC랩스", "aliases": ["HDC랩스", "HDC아이콘트롤스", "HDC아이서비스"] },
+        { "keyword": "HDC신라면세점", "aliases": ["HDC신라면세점", "신라아이파크면세점"] },
+        { "keyword": "HDC아이파크몰", "aliases": ["HDC아이파크몰", "아이파크몰"] },
+        { "keyword": "HDC영창", "aliases": ["HDC영창", "영창뮤직"] },
+        { "keyword": "HDC자산운용", "aliases": ["HDC자산운용"] },
+        { "keyword": "HDC리조트", "aliases": ["HDC리조트", "오크밸리"] },
+        { "keyword": "HDC 지주회사", "aliases": ["HDC"], "exclude": ["HDD", "HDC현대산업개발"] },
+        { "keyword": "아이파크 아파트", "aliases": ["아이파크"], "exclude": ["아이파크몰"] }
+      ]
+    },
+    {
+      "id": "hyundai-elevator",
+      "name": "현대엘리베이터 계열(현대그룹)",
+      "color": "#2fae7a",
+      "companies": [
+        { "keyword": "현대엘리베이터", "aliases": ["현대엘리베이터", "현대엘리베이"] },
+        { "keyword": "현대무벡스", "aliases": ["현대무벡스"] },
+        { "keyword": "현대아산", "aliases": ["현대아산"] },
+        { "keyword": "현대엘앤알", "aliases": ["현대엘앤알", "현대L&R"] },
+        { "keyword": "현대글로벌 현대그룹", "aliases": ["현대글로벌"] },
+        { "keyword": "현대네트워크 현대그룹", "aliases": ["현대네트워크"] },
+        { "keyword": "현대투자파트너스", "aliases": ["현대투자파트너스"] }
+      ]
+    }
+  ]
+}
