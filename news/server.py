@@ -9,7 +9,10 @@
 등록되는 즉시 SSE(Server-Sent Events)로 브라우저에 밀어 넣습니다.
 
 데이터 소스
-  1) 네이버 검색 API (권장) - NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 환경변수
+  1) 네이버 검색 API (권장)
+     - NAVER API HUB (네이버 클라우드). 2026년 이관 후 신규 발급처입니다.
+     - 옛 개발자센터 키도 그대로 받습니다(이관 신청한 기존 사용자, 2027-06-30 까지).
+     - 두 창구는 시작할 때 자동으로 판별합니다. --api 로 지정할 수도 있습니다.
   2) 키가 없을 때 - 구글 뉴스 RSS 한국어 폴백 (키 없이 동작, 정확도는 낮음)
 """
 
@@ -48,8 +51,18 @@ KEY_RESET_HINT = (
     "news 폴더의 .naver_key.json 파일을 지우고 다시 실행하세요."
 )
 
+KEY_ISSUE_HINT = (
+    "네이버 클라우드 콘솔 → All Services → Application Services → NAVER API HUB → "
+    "Application 선택 → API 관리의 [인증 정보] 에서 Client ID / Client Secret 을 복사하세요. "
+    "'계정관리 → 인증키 관리' 의 ncp_iam_ 로 시작하는 Access Key 가 아닙니다."
+)
+
 KST = timezone(timedelta(hours=9))
-NAVER_API = "https://openapi.naver.com/v1/search/news.json"
+# 2026년 네이버가 검색 API 를 개발자센터에서 NAVER API HUB(네이버 클라우드)로 이관했습니다.
+# 신규 발급은 API HUB 뿐이고, 이관 신청을 해 둔 기존 사용자만 개발자센터 주소를
+# 2027-06-30 까지 쓸 수 있습니다.
+APIHUB_NEWS = "https://naverapihub.apigw.ntruss.com/search/v1/news"
+DEVCENTER_NEWS = "https://openapi.naver.com/v1/search/news.json"
 GOOGLE_RSS = "https://news.google.com/rss/search"
 USER_AGENT = "waldo-news-monitor/1.0 (+https://github.com/wooaek-prog/waldo)"
 
@@ -327,25 +340,52 @@ def load_targets(path: Path) -> tuple[list[Target], list[dict]]:
 # 데이터 소스
 # --------------------------------------------------------------------------
 class NaverSource:
-    name = "naver"
+    """네이버 뉴스 검색 API.
 
-    def __init__(self, client_id: str, client_secret: str, display: int = 30):
+    2026년 네이버가 검색 API 를 개발자센터에서 NAVER API HUB(네이버 클라우드)로
+    이관했습니다. 주소와 인증 헤더만 다르고 응답 형식은 같아서, 두 창구를
+    variant 로 구분해 같은 코드로 다룹니다.
+
+      hub    - NAVER API HUB. 신규 발급은 이쪽뿐입니다.
+      legacy - 기존 개발자센터. 이관 신청을 해 둔 기존 사용자만, 2027-06-30 까지.
+    """
+
+    name = "naver"
+    VARIANTS = {
+        "hub": {
+            "url": APIHUB_NEWS,
+            "label": "NAVER API HUB",
+            "headers": lambda cid, sec: {"X-NCP-APIGW-API-KEY-ID": cid, "X-NCP-APIGW-API-KEY": sec},
+        },
+        "legacy": {
+            "url": DEVCENTER_NEWS,
+            "label": "개발자센터(구)",
+            "headers": lambda cid, sec: {"X-Naver-Client-Id": cid, "X-Naver-Client-Secret": sec},
+        },
+    }
+
+    def __init__(self, client_id: str, client_secret: str, display: int = 30, variant: str = "hub"):
+        if variant not in self.VARIANTS:
+            raise ValueError(f"알 수 없는 창구: {variant}")
         self.client_id = client_id
         self.client_secret = client_secret
         self.display = max(10, min(100, display))
+        self.variant = variant
+
+    @property
+    def label(self) -> str:
+        return self.VARIANTS[self.variant]["label"]
+
+    def request(self, query: str, display: int) -> dict:
+        spec = self.VARIANTS[self.variant]
+        url = f"{spec['url']}?" + urllib.parse.urlencode(
+            {"query": query, "display": display, "start": 1, "sort": "date"}
+        )
+        body = http_get(url, headers=spec["headers"](self.client_id, self.client_secret))
+        return json.loads(body.decode("utf-8"))
 
     def fetch(self, target: Target) -> list[dict]:
-        url = f"{NAVER_API}?" + urllib.parse.urlencode(
-            {"query": target.keyword, "display": self.display, "start": 1, "sort": "date"}
-        )
-        body = http_get(
-            url,
-            headers={
-                "X-Naver-Client-Id": self.client_id,
-                "X-Naver-Client-Secret": self.client_secret,
-            },
-        )
-        payload = json.loads(body.decode("utf-8"))
+        payload = self.request(target.keyword, self.display)
         items = []
         for raw in payload.get("items", []):
             naver_link = raw.get("link") or ""
@@ -686,7 +726,7 @@ class Poller(threading.Thread):
 
     # 원인별 한 줄 안내. 같은 오류가 반복될 때 화면을 채우지 않도록 한 번만 띄운다.
     HINTS = {
-        401: "네이버 API 키가 맞지 않습니다. " + KEY_RESET_HINT,
+        401: "네이버 API 키가 맞지 않습니다. " + KEY_ISSUE_HINT + " " + KEY_RESET_HINT,
         403: "네이버 API 사용 권한이 없습니다. 개발자센터에서 이 앱에 '검색' API 가 추가되어 있는지 확인해 주세요.",
         429: "오늘 API 호출 한도를 다 썼습니다. 내일 자동으로 풀립니다. (companies.json 에서 계열사를 줄이면 여유가 생깁니다)",
     }
@@ -843,27 +883,20 @@ def clean_key(raw: str) -> str:
     return (raw or "").strip().strip("'\"").strip()
 
 
-def check_key_shape(client_id: str, client_secret: str) -> tuple[str, bool] | None:
-    """형식이 뻔히 이상하면 (안내문, 치명적인지) 를 돌려준다.
+def check_key_shape(client_id: str, client_secret: str) -> str | None:
+    """넣기 전에 눈에 띄는 문제만 짚어 준다(막지는 않는다).
 
-    치명적 = 그대로 진행해도 절대 동작할 수 없는 경우(다른 서비스의 키).
+    어느 창구의 키인지는 생김새로 단정할 수 없어, 최종 판정은 실제 호출로 합니다
+    (resolve_naver_source). 여기서는 흔한 착오만 알려 줍니다.
     """
-    # 네이버 클라우드 플랫폼(console.ncloud.com)의 IAM 키를 가져오는 혼동이 잦다.
-    # NCP 는 검색 API 를 제공하지 않고 인증 방식도 달라서, 넣어 봐야 401 만 난다.
-    for label, value in (("Client ID", client_id), ("Client Secret", client_secret)):
-        if value.lower().startswith("ncp_"):
-            return (
-                f"{label} 가 네이버 클라우드 플랫폼(NCP)의 인증키입니다(`ncp_iam_...`). "
-                "이 프로그램에 필요한 건 네이버 개발자센터의 '검색' API 키로, 서로 다른 서비스입니다. "
-                "https://developers.naver.com/apps/#/register 에서 따로 발급받으세요. "
-                "그리고 NCP 콘솔에서 방금 만든 인증키는 삭제해 두시는 편이 안전합니다."
-            ), True
     if " " in client_id or " " in client_secret:
-        return "키 안에 공백이 들어 있습니다. 앞뒤 공백까지 복사되지 않았는지 확인해 주세요.", False
-    # 개발자센터 키는 ID 가 20자 안팎, Secret 이 10자 안팎이라 길이가 뒤집히면 바꿔 넣은 것이다.
-    if len(client_id) < len(client_secret):
-        return ("Client ID 와 Client Secret 이 바뀐 것 같습니다. "
-                "네이버 개발자센터에서는 ID 가 Secret 보다 깁니다."), False
+        return "키 안에 공백이 들어 있습니다. 앞뒤 공백까지 복사되지 않았는지 확인해 주세요."
+    # 'ncp_iam_' 은 계정 전체용 Access Key 라서 검색 API 인증에는 쓰이지 않는다.
+    # API HUB 의 [인증 정보] 에서 주는 Client ID/Secret 과 헷갈리기 쉽다.
+    for label, value in (("Client ID", client_id), ("Client Secret", client_secret)):
+        if value.lower().startswith("ncp_iam_"):
+            return (f"{label} 가 '계정관리 → 인증키 관리' 의 Access Key(ncp_iam_...) 로 보입니다. "
+                    f"검색 API 에는 이 키가 아니라 API HUB 의 인증 정보를 씁니다. {KEY_ISSUE_HINT}")
     return None
 
 
@@ -898,13 +931,16 @@ def prompt_for_key() -> tuple[str, str]:
     print(" 키를 넣으면: 네이버뉴스 등록 여부까지 정확하게 실시간으로 확인됩니다.")
     print(" 키가 없으면: 구글 뉴스 RSS로 대신 동작합니다(네이버 등록 여부는 표시 안 됨).")
     print()
-    print(" 키 받는 법 (2~3분, 무료)")
-    print("   ※ '네이버 클라우드 플랫폼(ncloud.com)'이 아닙니다. 거기 키는 여기서 쓸 수 없습니다.")
-    print("   1. https://developers.naver.com/apps/#/register 접속 후 네이버 로그인")
-    print("   2. 애플리케이션 이름은 아무거나 (예: 계열사뉴스)")
-    print("   3. '사용 API' 에서 [검색] 선택")
-    print("   4. '환경 추가' 에서 [WEB 설정] 선택, 주소는 http://127.0.0.1:8765 입력")
-    print("   5. 등록하면 나오는 Client ID / Client Secret 를 아래에 붙여넣기")
+    print(" 키 받는 법 (몇 분, 현재 무료)")
+    print("   네이버가 2026년에 검색 API 를 개발자센터에서 NAVER API HUB 로 옮겼습니다.")
+    print("   신규 발급은 아래 경로뿐입니다.")
+    print("   1. https://www.ncloud.com 접속 후 로그인 (네이버 클라우드 플랫폼)")
+    print("   2. 콘솔 → All Services → Application Services → NAVER API HUB")
+    print("   3. Application 을 만들고, 쓸 API 로 [검색] 을 선택")
+    print("   4. API 관리의 [인증 정보] 버튼 → Client ID / Client Secret 복사")
+    print("   ※ '계정관리 → 인증키 관리' 의 ncp_iam_ 로 시작하는 Access Key 가 아닙니다.")
+    print("     그건 클라우드 전체용 키라 검색 API 인증에는 쓰이지 않습니다.")
+    print("   ※ 예전 개발자센터 키를 이미 쓰고 계셨다면 그대로 넣으셔도 됩니다(2027-06-30 까지).")
     print()
     print(" ※ 그냥 Enter 를 누르면 키 없이 시작합니다. 나중에 넣어도 됩니다.")
     print("=" * 66)
@@ -919,14 +955,9 @@ def prompt_for_key() -> tuple[str, str]:
     if not client_secret:
         return "", ""
 
-    problem = check_key_shape(client_id, client_secret)
-    if problem:
-        message, fatal = problem
-        print(f"\n [!] {message}")
-        if fatal:
-            # 이 키로는 어차피 인증이 안 된다. 저장하지 않고 키 없이 시작한다.
-            print("     이 키는 저장하지 않습니다. 올바른 키를 받은 뒤 다시 넣어 주세요.")
-            return "", ""
+    warning = check_key_shape(client_id, client_secret)
+    if warning:
+        print(f"\n [!] {warning}")
         print("     그래도 이대로 진행하려면 Enter, 다시 입력하려면 아무 글자나 치고 Enter.")
         try:
             if input("     > ").strip():
@@ -938,6 +969,40 @@ def prompt_for_key() -> tuple[str, str]:
     return client_id, client_secret
 
 
+def resolve_naver_source(client_id: str, client_secret: str, display: int, api: str) -> NaverSource | None:
+    """이 키가 어느 창구의 것인지 실제로 한 번 물어보고 정한다.
+
+    API HUB 키와 개발자센터 키는 생김새로 구분할 수 없어서, 짧은 조회를 한 번씩
+    보내 보고 통과하는 쪽을 씁니다. 둘 다 인증에 실패하면 None(=구글 뉴스로 시작).
+    네트워크 문제로 판별을 못 하면 신규 발급처인 API HUB 를 택하고, 이후 401 이
+    반복되면 폴러가 알아서 구글 뉴스로 넘깁니다.
+    """
+    if api != "auto":
+        return NaverSource(client_id, client_secret, display, variant=api)
+
+    candidates = list(NaverSource.VARIANTS)
+    rejected: list[str] = []
+    for variant in candidates:
+        source = NaverSource(client_id, client_secret, display, variant=variant)
+        try:
+            source.request("현대엘리베이터", 1)
+        except urllib.error.HTTPError as exc:
+            if exc.code in (401, 403):
+                rejected.append(source.label)
+                continue
+            return source  # 인증은 통과했고 다른 문제(한도 등)이므로 이 창구가 맞다
+        except Exception as exc:  # noqa: BLE001 - 네트워크 문제면 판별을 포기한다
+            print(f"[warn] 어느 API 창구인지 확인하지 못했습니다({type(exc).__name__}). "
+                  f"{NaverSource.VARIANTS['hub']['label']} 로 시작합니다.", file=sys.stderr)
+            return NaverSource(client_id, client_secret, display, variant="hub")
+        else:
+            return source
+
+    print(f"[warn] 넣어 두신 키가 {' 와 '.join(rejected)} 양쪽 모두에서 거부되었습니다.", file=sys.stderr)
+    print(f"       → {KEY_ISSUE_HINT}", file=sys.stderr)
+    return None
+
+
 def build_source(args) -> object:
     client_id = clean_key(args.client_id or os.environ.get("NAVER_CLIENT_ID", ""))
     client_secret = clean_key(args.client_secret or os.environ.get("NAVER_CLIENT_SECRET", ""))
@@ -947,15 +1012,10 @@ def build_source(args) -> object:
         client_id, client_secret = prompt_for_key()
 
     if client_id and client_secret:
-        # 저장 파일이나 환경변수로 들어온 키도 검사한다. 다른 서비스의 키면 401 만
-        # 반복하므로, 아예 시도하지 않고 구글 뉴스로 시작하는 편이 낫다.
-        problem = check_key_shape(client_id, client_secret)
-        if problem and problem[1]:
-            print(f"[warn] {problem[0]}", file=sys.stderr)
-            print(f"       → {KEY_RESET_HINT}", file=sys.stderr)
-        else:
-            print("[info] 데이터 소스: 네이버 검색 API")
-            return NaverSource(client_id, client_secret, args.display)
+        source = resolve_naver_source(client_id, client_secret, args.display, args.api)
+        if source is not None:
+            print(f"[info] 데이터 소스: 네이버 검색 API ({source.label})")
+            return source
     print(
         "[info] 데이터 소스: 구글 뉴스 RSS (키 없이 동작하는 대체 경로)\n"
         "       네이버뉴스 등록 여부까지 보려면 네이버 API 키가 필요합니다.\n"
@@ -979,6 +1039,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--set-key", action="store_true", help="네이버 API 키를 새로 입력해서 저장")
     parser.add_argument("--no-open", action="store_true", help="시작할 때 브라우저를 자동으로 열지 않음")
     parser.add_argument("--ca-bundle", default="", help="HTTPS 검증에 쓸 인증서 파일(.pem/.crt) 경로")
+    parser.add_argument("--api", choices=["auto", "hub", "legacy"], default="auto",
+                        help="검색 API 창구: auto(자동 판별), hub(NAVER API HUB), legacy(구 개발자센터)")
     parser.add_argument("--doctor", action="store_true", help="연결 상태를 점검하고 문제 원인을 알려 줍니다")
     return parser.parse_args(argv)
 
@@ -1023,11 +1085,13 @@ def run_doctor(args) -> int:
         ("구글 뉴스 RSS", f"{GOOGLE_RSS}?q=test&hl=ko&gl=KR&ceid=KR:ko", {}),
     ]
     if client_id and client_secret:
-        checks.append((
-            "네이버 검색 API",
-            f"{NAVER_API}?" + urllib.parse.urlencode({"query": "현대엘리베이터", "display": 1}),
-            {"X-Naver-Client-Id": client_id, "X-Naver-Client-Secret": client_secret},
-        ))
+        # 어느 창구의 키인지 모르니 둘 다 시험한다. 하나만 되면 그게 답이다.
+        for variant, spec in NaverSource.VARIANTS.items():
+            checks.append((
+                f"네이버 검색 API · {spec['label']}",
+                f"{spec['url']}?" + urllib.parse.urlencode({"query": "현대엘리베이터", "display": 1}),
+                spec["headers"](client_id, client_secret),
+            ))
 
     failures = 0
     for label, url, headers in checks:
