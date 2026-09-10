@@ -189,6 +189,98 @@
   .empty { text-align: center; color: var(--muted); padding: 60px 20px; }
   .empty b { display: block; font-size: 16px; color: var(--text); margin-bottom: 6px; }
 
+  /* ---------- 환율 스트립 ---------- */
+  .fx {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    padding: 8px 20px; border-bottom: 1px solid var(--line);
+    background: var(--panel); font-size: 13px;
+  }
+  .fx .lead { color: var(--muted); font-size: 11.5px; white-space: nowrap; }
+  .fx .rate {
+    display: inline-flex; align-items: baseline; gap: 6px;
+    background: var(--panel-2); border: 1px solid var(--line);
+    border-radius: 8px; padding: 4px 10px; white-space: nowrap;
+  }
+  .fx .rate b { font-weight: 600; font-size: 11.5px; color: var(--muted); }
+  .fx .rate .v { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .fx .rate .d { font-size: 11.5px; font-variant-numeric: tabular-nums; }
+  .fx .rate .d.up { color: #e8534f; }
+  .fx .rate .d.down { color: #2f6fed; }
+  :root[data-theme="dark"] .fx .rate .d.down { color: #6ea0ff; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .fx .rate .d.down { color: #6ea0ff; }
+  }
+  .fx .fxbtn {
+    margin-left: auto; background: none; border: 1px solid var(--line);
+    border-radius: 8px; padding: 4px 10px; cursor: pointer; color: var(--muted); font-size: 12px;
+  }
+  .fx .fxbtn:hover { border-color: var(--accent); color: var(--text); }
+  .fx .stamp { color: var(--muted); font-size: 11.5px; white-space: nowrap; }
+
+  /* ---------- 모달 ---------- */
+  .modal {
+    position: fixed; inset: 0; z-index: 80; display: flex;
+    align-items: center; justify-content: center; padding: 16px;
+    background: rgba(0, 0, 0, .45);
+  }
+  .modal .sheet {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: var(--shadow); width: min(760px, 100%); max-height: 88vh;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .modal header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 18px; border-bottom: 1px solid var(--line);
+  }
+  .modal header h2 { margin: 0; font-size: 16px; flex: 1; }
+  .modal .body { padding: 14px 18px; overflow-y: auto; }
+  .modal footer {
+    display: flex; gap: 8px; justify-content: flex-end; align-items: center;
+    padding: 12px 18px; border-top: 1px solid var(--line);
+  }
+  .modal .err { color: var(--new); font-size: 13px; margin-right: auto; }
+  .btn {
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px;
+    padding: 7px 14px; cursor: pointer;
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.danger { color: var(--new); }
+  .btn:disabled { opacity: .5; cursor: default; }
+
+  .grp { margin-bottom: 18px; }
+  .grp > h3 {
+    display: flex; align-items: center; gap: 8px;
+    margin: 0 0 8px; font-size: 13px; color: var(--muted);
+  }
+  .grp > h3 .swatch { width: 9px; height: 9px; border-radius: 50%; }
+  .row {
+    display: grid; grid-template-columns: 1.1fr 1.3fr 1fr auto; gap: 6px;
+    margin-bottom: 6px; align-items: center;
+  }
+  .row.head { color: var(--muted); font-size: 11.5px; margin-bottom: 4px; }
+  @media (max-width: 640px) {
+    .row { grid-template-columns: 1fr auto; }
+    .row.head { display: none; }
+    .row input { min-width: 0; }
+  }
+  .row input {
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 7px;
+    padding: 6px 9px; width: 100%; outline: none; font-size: 13px;
+  }
+  .row input:focus { border-color: var(--accent); }
+  .row .del {
+    background: none; border: 1px solid var(--line); border-radius: 7px;
+    padding: 5px 9px; cursor: pointer; color: var(--muted); line-height: 1;
+  }
+  .row .del:hover { border-color: var(--new); color: var(--new); }
+  .fxlist { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 6px; }
+  .fxlist label {
+    display: flex; align-items: center; gap: 8px; padding: 7px 10px;
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; cursor: pointer;
+  }
+  .hint { color: var(--muted); font-size: 12.5px; margin: 0 0 12px; }
+
   /* ---------- 배너 / 토스트 ---------- */
   .banner {
     margin: 12px 20px 0; padding: 12px 16px; border-radius: var(--radius);
@@ -241,10 +333,12 @@
     <button class="tbtn" id="btnNaver" aria-pressed="false" title="네이버뉴스에 등록된 기사만 보기">네이버뉴스만</button>
     <button class="tbtn" id="btnSound" aria-pressed="false" title="새 기사 알림음">🔔 소리</button>
     <button class="tbtn" id="btnNotify" aria-pressed="false" title="데스크톱 알림">🖥 알림</button>
+    <button class="tbtn" id="btnEdit" title="감시할 계열사 목록 편집">✏️ 계열사</button>
     <button class="tbtn" id="btnTheme" title="밝게/어둡게">🌓</button>
   </div>
 </header>
 
+<div class="fx" id="fx" hidden></div>
 <div class="banner" id="banner" hidden></div>
 <div class="chips" id="chips"></div>
 
@@ -253,6 +347,46 @@
   <section class="feedcol">
     <div class="feed" id="feed"></div>
   </section>
+</div>
+
+<!-- 계열사 편집 -->
+<div class="modal" id="editModal" hidden role="dialog" aria-modal="true" aria-labelledby="editTitle">
+  <div class="sheet">
+    <header>
+      <h2 id="editTitle">감시할 계열사 편집</h2>
+      <button class="btn" id="editClose" aria-label="닫기">✕</button>
+    </header>
+    <div class="body">
+      <p class="hint">
+        <b>검색어</b>는 네이버에 실제로 던지는 말이고, <b>별칭</b>은 제목·요약에 이 중 하나라도 있어야
+        통과시키는 조건입니다(엉뚱한 기사 거르기). <b>제외어</b>가 들어 있으면 버립니다.
+        별칭과 제외어는 쉼표로 여러 개를 넣을 수 있습니다. 비워 두면 검색어를 별칭으로 씁니다.
+      </p>
+      <div id="editGroups"></div>
+    </div>
+    <footer>
+      <span class="err" id="editError"></span>
+      <button class="btn" id="editCancel">취소</button>
+      <button class="btn primary" id="editSave">저장</button>
+    </footer>
+  </div>
+</div>
+
+<!-- 환율 표시 선택 -->
+<div class="modal" id="fxModal" hidden role="dialog" aria-modal="true" aria-labelledby="fxTitle">
+  <div class="sheet">
+    <header>
+      <h2 id="fxTitle">환율 표시 설정</h2>
+      <button class="btn" id="fxClose" aria-label="닫기">✕</button>
+    </header>
+    <div class="body">
+      <p class="hint" id="fxSourceNote"></p>
+      <div class="fxlist" id="fxList"></div>
+    </div>
+    <footer>
+      <button class="btn primary" id="fxDone">닫기</button>
+    </footer>
+  </div>
 </div>
 
 <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
@@ -276,10 +410,12 @@
     lastSeen: 0,               // 폴링 폴백용 커서
     seeding: false,
     bannerKind: null,          // "offline" | "error" | null
+    fx: null,                  // 최신 환율 스냅샷
+    editConfig: null,          // 편집 모달이 불러온 companies.json 원본
   };
 
   const settings = Object.assign(
-    { naverOnly: false, sound: false, notify: false, theme: "auto" },
+    { naverOnly: false, sound: false, notify: false, theme: "auto", fxCodes: null },
     readJSON(LS_KEY) || {}
   );
 
@@ -615,6 +751,237 @@
     state.bannerKind = kind || null;
   }
 
+  // ---------- 환율 ----------
+  function renderRates(snap) {
+    if (snap) state.fx = snap;
+    const fx = state.fx;
+    const host = $("fx");
+    if (!fx) { host.hidden = true; return; }
+
+    const pairs = fx.pairs || [];
+    const chosen = settings.fxCodes || fx.defaultCodes || pairs.map((p) => p.code);
+    const rates = fx.rates || {};
+    const shown = pairs.filter((p) => chosen.includes(p.code) && rates[p.code]);
+
+    host.hidden = false;
+    const nodes = [];
+    const lead = document.createElement("span");
+    lead.className = "lead";
+    lead.textContent = "환율";
+    nodes.push(lead);
+
+    if (fx.error && !shown.length) {
+      const err = document.createElement("span");
+      err.className = "stamp";
+      err.textContent = fx.error;
+      nodes.push(err);
+    } else if (!shown.length) {
+      const wait = document.createElement("span");
+      wait.className = "stamp";
+      wait.textContent = rates && Object.keys(rates).length ? "표시할 통화를 골라 주세요." : "불러오는 중…";
+      nodes.push(wait);
+    }
+
+    for (const pair of shown) {
+      const row = rates[pair.code];
+      const box = document.createElement("span");
+      box.className = "rate";
+      const value = Number(row.value).toLocaleString("ko-KR", {
+        minimumFractionDigits: pair.digits, maximumFractionDigits: pair.digits,
+      });
+      let delta = "";
+      if (typeof row.change === "number" && isFinite(row.change)) {
+        const dir = row.change > 0 ? "up" : row.change < 0 ? "down" : "";
+        const arrow = row.change > 0 ? "▲" : row.change < 0 ? "▼" : "–";
+        delta = `<span class="d ${dir}">${arrow} ${Math.abs(row.change).toFixed(pair.digits)}</span>`;
+      }
+      const label = pair.code === "JPYKRW" ? `${pair.label} <span style="font-weight:400">(100엔)</span>` : pair.label;
+      box.innerHTML = `<b>${label}</b><span class="v">${value}</span>${delta}`;
+      box.title = row.asOf ? `기준: ${row.asOf}` : "";
+      nodes.push(box);
+    }
+
+    if (shown.length) {
+      const stamp = document.createElement("span");
+      stamp.className = "stamp";
+      const when = fx.updatedAt ? timeAgo(fx.updatedAt) : "";
+      stamp.textContent = `${fx.sourceLabel || ""}${when ? " · " + when : ""}`;
+      stamp.title = fx.realtime ? "실시간에 가까운 값입니다." : "하루 한 번 고시되는 값이라 실시간이 아닙니다.";
+      nodes.push(stamp);
+    }
+
+    const btn = document.createElement("button");
+    btn.className = "fxbtn";
+    btn.textContent = "통화 선택";
+    btn.onclick = openFxModal;
+    nodes.push(btn);
+
+    host.replaceChildren(...nodes);
+  }
+
+  function openFxModal() {
+    const fx = state.fx;
+    if (!fx) return;
+    const chosen = new Set(settings.fxCodes || fx.defaultCodes || []);
+    $("fxSourceNote").textContent = fx.realtime
+      ? `출처: ${fx.sourceLabel}. 실시간에 가까운 값입니다.`
+      : `출처: ${fx.sourceLabel || "확인 중"}. 무료로 쓸 수 있는 환율은 대개 하루 한 번 고시되므로 실시간이 아닙니다.`;
+
+    $("fxList").replaceChildren(...(fx.pairs || []).map((pair) => {
+      const label = document.createElement("label");
+      const box = document.createElement("input");
+      box.type = "checkbox";
+      box.checked = chosen.has(pair.code);
+      box.onchange = () => {
+        box.checked ? chosen.add(pair.code) : chosen.delete(pair.code);
+        settings.fxCodes = [...chosen];
+        saveSettings();
+        renderRates();
+      };
+      label.append(box, document.createTextNode(
+        pair.code === "JPYKRW" ? `${pair.label} (100엔)` : pair.label));
+      return label;
+    }));
+    $("fxModal").hidden = false;
+  }
+
+  // ---------- 계열사 편집 ----------
+  const splitList = (text) =>
+    String(text || "").split(",").map((s) => s.trim()).filter(Boolean);
+
+  function companyRow(company, onRemove) {
+    const row = document.createElement("div");
+    row.className = "row";
+    const mk = (key, placeholder, value) => {
+      const input = document.createElement("input");
+      input.placeholder = placeholder;
+      input.value = value;
+      input.dataset.key = key;
+      return input;
+    };
+    row.append(
+      mk("keyword", "검색어 (예: 현대무벡스)", company.keyword || ""),
+      mk("aliases", "별칭 (쉼표로 구분)", (company.aliases || []).join(", ")),
+      mk("exclude", "제외어 (쉼표로 구분)", (company.exclude || []).join(", ")),
+    );
+    const del = document.createElement("button");
+    del.className = "del";
+    del.type = "button";
+    del.textContent = "삭제";
+    del.onclick = () => { row.remove(); onRemove?.(); };
+    row.append(del);
+    return row;
+  }
+
+  async function openEditModal() {
+    $("editError").textContent = "";
+    const host = $("editGroups");
+    host.textContent = "불러오는 중…";
+    $("editModal").hidden = false;
+
+    let config;
+    try {
+      const res = await fetch("api/companies", { cache: "no-store" });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || res.status);
+      config = data.config;
+    } catch (err) {
+      host.textContent = "";
+      $("editError").textContent = `목록을 불러오지 못했습니다: ${err.message || err}`;
+      return;
+    }
+
+    state.editConfig = config;
+    host.replaceChildren(...(config.groups || []).map((group) => {
+      const box = document.createElement("section");
+      box.className = "grp";
+      box.dataset.groupId = group.id;
+
+      const title = document.createElement("h3");
+      title.innerHTML = `<span class="swatch" style="background:${escapeHTML(group.color || "#888")}"></span>`
+        + `${escapeHTML(group.name)}`;
+      const count = document.createElement("span");
+      count.style.marginLeft = "auto";
+      title.append(count);
+      box.append(title);
+
+      const head = document.createElement("div");
+      head.className = "row head";
+      head.append(...["검색어", "별칭", "제외어", ""].map((t) => {
+        const s = document.createElement("span"); s.textContent = t; return s;
+      }));
+      box.append(head);
+
+      const rows = document.createElement("div");
+      const refresh = () => { count.textContent = `${rows.children.length}개`; };
+      rows.append(...(group.companies || []).map((c) => companyRow(c, refresh)));
+      box.append(rows);
+      refresh();
+
+      const add = document.createElement("button");
+      add.className = "btn";
+      add.type = "button";
+      add.textContent = "+ 계열사 추가";
+      add.onclick = () => {
+        const row = companyRow({}, refresh);
+        rows.append(row);
+        refresh();
+        row.querySelector("input").focus();
+      };
+      box.append(add);
+      return box;
+    }));
+  }
+
+  function collectEditedConfig() {
+    const config = JSON.parse(JSON.stringify(state.editConfig || {}));
+    const byId = Object.fromEntries((config.groups || []).map((g) => [g.id, g]));
+    for (const box of $("editGroups").querySelectorAll(".grp")) {
+      const group = byId[box.dataset.groupId];
+      if (!group) continue;
+      group.companies = [...box.querySelectorAll(".row:not(.head)")].map((row) => {
+        const get = (key) => row.querySelector(`input[data-key="${key}"]`).value;
+        const keyword = get("keyword").trim();
+        const aliases = splitList(get("aliases"));
+        const company = { keyword, aliases: aliases.length ? aliases : [keyword] };
+        const exclude = splitList(get("exclude"));
+        if (exclude.length) company.exclude = exclude;
+        return company;
+      }).filter((c) => c.keyword);
+    }
+    return config;
+  }
+
+  async function saveEdits() {
+    const btn = $("editSave");
+    const err = $("editError");
+    err.textContent = "";
+    btn.disabled = true;
+    btn.textContent = "저장 중…";
+    try {
+      const res = await fetch("api/companies", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(collectEditedConfig()),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+      state.groups = data.groups || state.groups;
+      $("editModal").hidden = true;
+      render();
+      toast({
+        id: "cfg", companies: ["설정"], kind: "new",
+        title: `계열사 ${data.companies}곳으로 저장했습니다. 새로 추가한 곳은 한 바퀴 뒤부터 알립니다.`,
+        link: "",
+      });
+    } catch (e) {
+      err.textContent = e.message || String(e);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "저장";
+    }
+  }
+
   // ---------- 서버 연결 ----------
   async function loadConfig() {
     const res = await fetch("api/config", { cache: "no-store" });
@@ -622,6 +989,10 @@
     const data = await res.json();
     state.groups = data.groups || [];
     applyStatus(data.status);
+    try {
+      const res2 = await fetch("api/rates", { cache: "no-store" });
+      if (res2.ok) renderRates(await res2.json());
+    } catch { /* 환율은 없어도 뉴스는 봐야 한다 */ }
   }
 
   function connectStream() {
@@ -630,8 +1001,16 @@
     es.addEventListener("snapshot", (ev) => {
       const data = JSON.parse(ev.data);
       state.connected = true;
+      if (data.groups) state.groups = data.groups;
+      if (data.rates) renderRates(data.rates);
       ingest(data.items || [], { alert: false });
       applyStatus(data.status);
+    });
+    es.addEventListener("rates", (ev) => renderRates(JSON.parse(ev.data)));
+    es.addEventListener("config", (ev) => {
+      // 다른 탭에서 계열사 목록을 고쳤을 때도 따라간다.
+      const data = JSON.parse(ev.data);
+      if (data.groups) { state.groups = data.groups; render(); }
     });
     es.addEventListener("news", (ev) => {
       ingest(JSON.parse(ev.data) || [], { alert: true });
@@ -710,6 +1089,19 @@
       btnNotify.setAttribute("aria-pressed", String(settings.notify));
       saveSettings();
     };
+    $("btnEdit").onclick = openEditModal;
+    $("editClose").onclick = $("editCancel").onclick = () => { $("editModal").hidden = true; };
+    $("editSave").onclick = saveEdits;
+    $("fxClose").onclick = $("fxDone").onclick = () => { $("fxModal").hidden = true; };
+    for (const id of ["editModal", "fxModal"]) {
+      $(id).addEventListener("click", (ev) => { if (ev.target === $(id)) $(id).hidden = true; });
+    }
+    window.addEventListener("keydown", (ev) => {
+      if (ev.key !== "Escape") return;
+      $("editModal").hidden = true;
+      $("fxModal").hidden = true;
+    });
+
     btnTheme.onclick = () => {
       settings.theme = settings.theme === "auto" ? "light" : settings.theme === "light" ? "dark" : "auto";
       btnTheme.title = `테마: ${settings.theme}`;
@@ -735,6 +1127,7 @@
       for (const t of el.feed.querySelectorAll("time[data-ts]")) {
         t.textContent = timeAgo(Number(t.dataset.ts));
       }
+      if (state.fx) renderRates();
     }, 30000);
   }
 

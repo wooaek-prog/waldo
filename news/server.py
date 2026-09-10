@@ -40,9 +40,11 @@ from email.utils import parsedate_to_datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+import exchange
+
 # 화면과 로그에 찍어 두면 "새 코드를 받으셨는지"를 물어볼 필요가 없습니다.
-VERSION = "2026.09.10"      # NAVER API HUB 지원
-VERSION_NOTE = "NAVER API HUB / 개발자센터 자동 판별"
+VERSION = "2026.09.11"      # 계열사 화면 편집 + 환율 표시
+VERSION_NOTE = "계열사 편집 · 환율 표시"
 
 BASE_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = BASE_DIR / "companies.json"
@@ -320,8 +322,49 @@ class Target:
         return any(alias in norm for alias in self.aliases)
 
 
-def load_targets(path: Path) -> tuple[list[Target], list[dict]]:
-    config = json.loads(path.read_text(encoding="utf-8"))
+def validate_config(config) -> None:
+    """화면에서 넘어온 계열사 설정이 쓸 수 있는 모양인지 확인한다.
+
+    잘못된 설정을 저장하면 다음 실행 때 프로그램이 아예 안 켜지므로,
+    저장 전에 여기서 걸러 사람이 읽을 수 있는 이유를 돌려줍니다.
+    """
+    if not isinstance(config, dict) or not isinstance(config.get("groups"), list):
+        raise ValueError("groups 목록이 필요합니다.")
+    if not config["groups"]:
+        raise ValueError("그룹이 최소 하나는 있어야 합니다.")
+
+    seen_groups = set()
+    total = 0
+    for index, group in enumerate(config["groups"], 1):
+        if not isinstance(group, dict):
+            raise ValueError(f"{index}번째 그룹의 형식이 잘못되었습니다.")
+        gid, name = str(group.get("id", "")).strip(), str(group.get("name", "")).strip()
+        if not gid or not name:
+            raise ValueError(f"{index}번째 그룹에 id 와 이름이 필요합니다.")
+        if gid in seen_groups:
+            raise ValueError(f"그룹 id 가 중복됩니다: {gid}")
+        seen_groups.add(gid)
+
+        companies = group.get("companies")
+        if not isinstance(companies, list):
+            raise ValueError(f"'{name}' 그룹의 계열사 목록이 잘못되었습니다.")
+        for company in companies:
+            if not isinstance(company, dict):
+                raise ValueError(f"'{name}' 그룹에 형식이 잘못된 항목이 있습니다.")
+            if not str(company.get("keyword", "")).strip():
+                raise ValueError(f"'{name}' 그룹에 검색어가 비어 있는 항목이 있습니다.")
+            for field in ("aliases", "exclude"):
+                if field in company and not isinstance(company[field], list):
+                    raise ValueError(f"'{company['keyword']}' 의 {field} 는 목록이어야 합니다.")
+            total += 1
+
+    if total == 0:
+        raise ValueError("감시할 계열사가 하나도 없습니다.")
+    if total > 300:
+        raise ValueError(f"계열사가 너무 많습니다({total}개). API 호출 한도를 넘길 수 있습니다.")
+
+
+def parse_config(config) -> tuple[list[Target], list[dict]]:
     targets: list[Target] = []
     groups: list[dict] = []
     for group in config["groups"]:
@@ -338,6 +381,24 @@ def load_targets(path: Path) -> tuple[list[Target], list[dict]]:
         for company in group["companies"]:
             targets.append(Target(group, company))
     return targets, groups
+
+
+def save_config(config, path: Path = None) -> None:
+    """검증을 통과한 설정을 파일에 쓴다. 직전 내용은 .bak 으로 남긴다."""
+    path = path or CONFIG_PATH
+    validate_config(config)
+    try:
+        if path.exists():
+            path.with_suffix(".json.bak").write_text(path.read_text(encoding="utf-8"), encoding="utf-8")
+    except OSError as exc:
+        print(f"[warn] 백업을 만들지 못했습니다: {exc}", file=sys.stderr)
+    tmp = path.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.replace(path)
+
+
+def load_targets(path: Path) -> tuple[list[Target], list[dict]]:
+    return parse_config(json.loads(path.read_text(encoding="utf-8")))
 
 
 # --------------------------------------------------------------------------
@@ -638,25 +699,48 @@ class Poller(threading.Thread):
         self._error_key: str | None = None
         self._error_streak = 0
         self._auth_failures = 0
+        self.targets_lock = threading.Lock()
+        # 이미 한 바퀴 훑은 계열사. 새로 추가된 곳은 첫 조회를 조용히 넘겨야
+        # 기존 기사가 몽땅 "새 기사" 알림으로 터지지 않는다.
+        self.seen_targets: set[str] = set()
 
     @property
     def spacing(self) -> float:
         """API 일일 한도를 넘지 않도록 계산한 요청 간격(초)."""
         budget = max(1, self.args.daily_budget)
         by_budget = 86400.0 / budget
-        by_cycle = self.args.min_cycle / max(1, len(self.targets))
+        by_cycle = self.args.min_cycle / max(1, len(self.current_targets()))
         return max(by_budget, by_cycle, 0.2)
+
+    def current_targets(self) -> list[Target]:
+        with self.targets_lock:
+            return self.targets
+
+    def set_targets(self, targets: list[Target]) -> None:
+        """화면에서 계열사 목록을 고쳤을 때 재시작 없이 갈아끼운다."""
+        with self.targets_lock:
+            self.targets = targets
+            live = {t.name for t in targets}
+            # 사라진 계열사는 기억에서 지운다. 나중에 다시 추가되면 그때 또
+            # 조용히 한 바퀴 모으고 시작하는 편이 맞다.
+            self.seen_targets &= live
+        print(f"[info] 감시 대상을 {len(targets)}개로 갱신했습니다.")
 
     def run(self) -> None:
         self.store.set_status(source=self.source.name, seeded=self.seeded)
         index = 0
         last_save = time.time()
         while not self.stop_event.is_set():
-            target = self.targets[index % len(self.targets)]
+            targets = self.current_targets()
+            if not targets:
+                self.wake_event.wait(5)
+                self.wake_event.clear()
+                continue
+            target = targets[index % len(targets)]
             index += 1
             self.poll_one(target)
 
-            if index % len(self.targets) == 0 and not self.seeded:
+            if index % len(targets) == 0 and not self.seeded:
                 # 첫 한 바퀴는 "이미 있던 기사" 수집 구간이라 알림을 띄우지 않는다.
                 self.seeded = True
                 self.store.set_status(seeded=True)
@@ -689,6 +773,9 @@ class Poller(threading.Thread):
             return
 
         cutoff = datetime.now(KST) - self.max_age
+        # 이번이 이 계열사의 첫 조회라면 기존 기사를 조용히 모으기만 한다.
+        alert = self.seeded and target.name in self.seen_targets
+        self.seen_targets.add(target.name)
         fresh: list[dict] = []
         updates: list[dict] = []
         for item in items:
@@ -700,7 +787,7 @@ class Poller(threading.Thread):
                 continue
             if not target.matches(f"{item['title']} {item['summary']}"):
                 continue
-            record = self.store.add(item, target, alert=self.seeded)
+            record = self.store.add(item, target, alert=alert)
             if not record:
                 continue
             (fresh if record["alert"] else updates).append(record)
@@ -781,8 +868,11 @@ class Handler(BaseHTTPRequestHandler):
     server_version = "waldo-news/1.0"
 
     store: FeedStore
-    groups: list[dict]
+    groups: list[dict]      # 계열사 목록이 바뀌면 제자리에서 갈아끼운다
     poller: Poller
+    # 환율은 없을 수도 있는 기능이라 기본값을 둔다. 이게 없으면 rates 를 넣지 않고
+    # 만든 핸들러에서 SSE 가 통째로 죽는다.
+    rates: "exchange.RateService | None" = None
 
     def log_message(self, fmt, *args):  # 요청 로그는 조용히
         pass
@@ -819,6 +909,10 @@ class Handler(BaseHTTPRequestHandler):
                     "now": time.time(),
                 }
             )
+        elif route == "/api/companies":
+            self.serve_companies()
+        elif route == "/api/rates":
+            self.send_json(self.rates.get() if self.rates else {"rates": {}, "error": "환율 표시가 꺼져 있습니다."})
         elif route == "/api/status":
             self.send_json(self.store.get_status())
         elif route == "/api/refresh":
@@ -828,6 +922,49 @@ class Handler(BaseHTTPRequestHandler):
             self.serve_stream()
         else:
             self.send_json({"error": "not found"}, 404)
+
+    # -- 계열사 목록 편집 ----------------------------------------------------
+    def serve_companies(self) -> None:
+        try:
+            config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            self.send_json({"error": f"companies.json 을 읽지 못했습니다: {exc}"}, 500)
+            return
+        self.send_json({"config": config})
+
+    def do_PUT(self) -> None:  # noqa: N802
+        if urllib.parse.urlsplit(self.path).path != "/api/companies":
+            self.send_json({"error": "not found"}, 404)
+            return
+        try:
+            length = int(self.headers.get("Content-Length") or 0)
+        except ValueError:
+            length = 0
+        if not 0 < length <= 1_000_000:
+            self.send_json({"error": "본문 크기가 올바르지 않습니다."}, 400)
+            return
+
+        try:
+            config = json.loads(self.rfile.read(length).decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            self.send_json({"error": f"JSON 을 읽지 못했습니다: {exc}"}, 400)
+            return
+
+        try:
+            save_config(config)
+            targets, groups = parse_config(config)
+        except ValueError as exc:
+            self.send_json({"error": str(exc)}, 400)
+            return
+        except OSError as exc:
+            self.send_json({"error": f"저장하지 못했습니다: {exc}"}, 500)
+            return
+
+        self.groups[:] = groups          # Handler 가 들고 있는 목록을 제자리에서 교체
+        self.poller.set_targets(targets)
+        self.poller.wake_event.set()     # 새 목록으로 곧바로 한 번 돌게 한다
+        self.store.broadcast("config", {"groups": groups})
+        self.send_json({"ok": True, "groups": groups, "companies": len(targets)})
 
     def serve_index(self) -> None:
         try:
@@ -850,7 +987,13 @@ class Handler(BaseHTTPRequestHandler):
         q = self.store.subscribe()
         try:
             self.wfile.write(b"retry: 3000\n\n")
-            self.write_event("snapshot", {"items": self.store.snapshot(), "status": self.store.get_status(), "now": time.time()})
+            self.write_event("snapshot", {
+                "items": self.store.snapshot(),
+                "status": self.store.get_status(),
+                "groups": self.groups,
+                "rates": self.rates.get() if self.rates else None,
+                "now": time.time(),
+            })
             while True:
                 try:
                     event, data = q.get(timeout=15)
@@ -1044,6 +1187,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--set-key", action="store_true", help="네이버 API 키를 새로 입력해서 저장")
     parser.add_argument("--no-open", action="store_true", help="시작할 때 브라우저를 자동으로 열지 않음")
     parser.add_argument("--ca-bundle", default="", help="HTTPS 검증에 쓸 인증서 파일(.pem/.crt) 경로")
+    parser.add_argument("--no-rates", action="store_true", help="환율 표시를 끕니다")
+    parser.add_argument("--rate-interval", type=float, default=60.0, help="환율 갱신 주기(초, 최소 20)")
     parser.add_argument("--api", choices=["auto", "hub", "legacy"], default="auto",
                         help="검색 API 창구: auto(자동 판별), hub(NAVER API HUB), legacy(구 개발자센터)")
     parser.add_argument("--doctor", action="store_true", help="연결 상태를 점검하고 문제 원인을 알려 줍니다")
@@ -1161,11 +1306,22 @@ def main(argv: list[str] | None = None) -> int:
     source = build_source(args)
     poller = Poller(store, targets, source, args, seeded)
 
-    handler = type("BoundHandler", (Handler,), {"store": store, "groups": groups, "poller": poller})
+    rates = None
+    if not args.no_rates:
+        rates = exchange.RateService(
+            http_get,
+            interval=args.rate_interval,
+            on_update=lambda snap: store.broadcast("rates", snap),
+        )
+
+    handler = type("BoundHandler", (Handler,),
+                   {"store": store, "groups": groups, "poller": poller, "rates": rates})
     httpd = ThreadingHTTPServer((args.host, args.port), handler)
     httpd.daemon_threads = True
 
     poller.start()
+    if rates:
+        rates.start()
     url = f"http://{args.host}:{args.port}/"
     print(f"[info] 감시 대상 {len(targets)}개 계열사 / 요청 간격 {poller.spacing:.1f}초 "
           f"(한 바퀴 약 {poller.spacing * len(targets):.0f}초)")
@@ -1190,6 +1346,8 @@ def main(argv: list[str] | None = None) -> int:
     finally:
         poller.stop_event.set()
         poller.wake_event.set()
+        if rates:
+            rates.stop_event.set()
         store.save(STATE_PATH)
         httpd.shutdown()
     return 0
