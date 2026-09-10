@@ -254,7 +254,66 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     write_outputs(args, site, envelope, rows, now, vacant, now_school,
                   long_side, short, height_m)
+    export_placement_svg(
+        args.outdir, site, envelope, rows[0]["tower"], ctx["schools"], context,
+        f"화랑아파트 권장 입지 – {long_side:.1f}×{short:.1f}m 장변 {args.long_azimuth:g}° "
+        f"{args.floors}층 · 기준A {rows[0]['stats']['pass_pct']:.1f}% · 이격 "
+        f"{rows[0]['setback']['min_setback_m']:.1f}m (상단이 북)")
     return 0
+
+
+
+def export_placement_svg(outdir: Path, site: Polygon, envelope: Polygon,
+                         tower: Polygon, schools: Sequence[dict[str, Any]],
+                         context: Sequence[H.Prism], label: str) -> Path:
+    """대지·이격선·권장 타워·학교를 한 장의 SVG 배치도로 그린다(상단이 북)."""
+    from shapely.ops import unary_union
+    layers = [site, envelope, tower, *(s["geom"] for s in schools)]
+    minx, miny, maxx, maxy = unary_union(layers).buffer(25.0).bounds
+    width, height = maxx - minx, maxy - miny
+    px_w = 900.0
+    k = px_w / width
+
+    def path(geom) -> str:
+        polys = geom.geoms if geom.geom_type == "MultiPolygon" else [geom]
+        return "".join(
+            '<polygon points="%s" />' % " ".join(
+                f"{(x - minx) * k:.1f},{(maxy - y) * k:.1f}"
+                for x, y in poly.exterior.coords)
+            for poly in polys)
+
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{px_w:.0f}" '
+           f'height="{height * k + 40:.0f}" viewBox="0 0 {px_w:.0f} {height * k + 40:.0f}">',
+           '<rect width="100%" height="100%" fill="#fbfbf9"/>',
+           f'<g transform="translate(0,40)">']
+    for prism in context:
+        if prism.footprint.distance(site) < 220:
+            out.append(f'<g fill="#d5d5d0" fill-opacity="0.55" stroke="none">'
+                       f'{path(prism.footprint)}</g>')
+    for school in schools:
+        out.append(f'<g fill="#2a6f97" fill-opacity="0.8" stroke="#14425c" '
+                   f'stroke-width="1">{path(school["geom"])}</g>')
+    out.append(f'<g fill="none" stroke="#e63946" stroke-width="2.5" '
+               f'stroke-dasharray="10 6">{path(site)}</g>')
+    out.append(f'<g fill="none" stroke="#f4a261" stroke-width="1.8" '
+               f'stroke-dasharray="4 4">{path(envelope)}</g>')
+    out.append(f'<g fill="#1d3557" fill-opacity="0.92" stroke="#0b1c30" '
+               f'stroke-width="2">{path(tower)}</g>')
+    out.append("</g>")
+    out.append(f'<text x="12" y="24" font-family="sans-serif" font-size="16" '
+               f'font-weight="bold" fill="#111">{label}</text>')
+    legend = [("#1d3557", "권장 타워"), ("#e63946", "대지경계선"),
+              ("#f4a261", "법정 이격선"), ("#2a6f97", "주변 학교")]
+    x = px_w - 430
+    for colour, text in legend:
+        out.append(f'<rect x="{x}" y="12" width="13" height="12" fill="{colour}"/>'
+                   f'<text x="{x + 18}" y="23" font-family="sans-serif" font-size="12.5" '
+                   f'fill="#333">{text}</text>')
+        x += 108
+    out.append("</svg>")
+    path_out = outdir / "hwarang_placement_preview.svg"
+    path_out.write_text("\n".join(out), encoding="utf-8")
+    return path_out
 
 
 def write_outputs(args, site, envelope, rows, now, vacant, now_school,
