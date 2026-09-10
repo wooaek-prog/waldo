@@ -88,3 +88,4 @@ python3 daegyo_site_polygons.py
 - **파이썬·QGIS를 처음 쓰신다면** → [docs/daegyo_beginner_manual.md](docs/daegyo_beginner_manual.md)
   (설치부터 메뉴 클릭 단위로 설명. 파이썬 없이 QGIS만으로 하는 방법 포함)
 - 옵션·좌표 보정·분석 절차 요약 → [docs/daegyo_qgis_guide.md](docs/daegyo_qgis_guide.md)
+- 인접 화랑아파트 일조권 분석용 파일 추출 → [docs/hwarang_sunlight_analysis.md](docs/hwarang_sunlight_analysis.md)

@@ -111,7 +111,7 @@
       "rect_px": [230, 30, 560, 130] },
     { "id": "CTX-YEOGO", "name": "여의도여자고등학교", "floors": 5,
       "rect_px": [700, 30, 960, 170] },
-    { "id": "CTX-HWARANG", "name": "화랑아파트(기존)", "floors": 12,
+    { "id": "CTX-HWARANG", "name": "화랑아파트(기존, 여의도동 40-4)", "floors": 10,
       "rect_px": [1060, 30, 1330, 140] },
     { "id": "CTX-HANYANG", "name": "한양아파트(기존)", "floors": 12,
       "rect_px": [760, 940, 1050, 1120] },

@@ -135,6 +135,20 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         help="기준점으로 쓸 배치도 식별점의 픽셀좌표 목록을 출력하고 종료",
     )
     parser.add_argument(
+        "--sun-table",
+        action="store_true",
+        help=(
+            "시각별 태양 위치·그림자 방위/길이와 주변 건물 방위각을 출력하고 종료. "
+            "어느 건물이 몇 시에 영향을 받는지 판단하는 데 쓴다."
+        ),
+    )
+    parser.add_argument(
+        "--sun-date",
+        type=str,
+        default="12-22",
+        help="--sun-table 기준일 (MM-DD, 기본 12-22 동지)",
+    )
+    parser.add_argument(
         "--no-context",
         action="store_true",
         help="주변 기존 건물(삼부·장미·화랑·한양·여의도여고) 참고 레이어를 생성하지 않음",
@@ -500,6 +514,104 @@ def write_preview_svg(path: Path, config: dict[str, Any], features: Sequence[Fea
     return path
 
 
+COMPASS_16 = [
+    "북", "북북동", "북동", "동북동", "동", "동남동", "남동", "남남동",
+    "남", "남남서", "남서", "서남서", "서", "서북서", "북서", "북북서",
+]
+
+
+def compass_name(azimuth_deg: float) -> str:
+    return COMPASS_16[round(azimuth_deg / 22.5) % 16]
+
+
+def solar_position(
+    lat_deg: float, lon_deg: float, month: int, day: int, clock_hour: float
+) -> tuple[float, float]:
+    """한국표준시(KST) 기준 태양 고도·방위각(도)을 반환한다.
+
+    적위는 Cooper 식, 균시차는 표준 근사식을 쓰고 표준자오선 135°E 기준으로
+    경도 보정을 적용한다. 일조 검토용 개략값(오차 1° 내외)이다.
+    """
+    n = (
+        sum([31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][: month - 1]) + day
+    )
+    dec = math.radians(23.45 * math.sin(math.radians(360.0 * (284 + n) / 365.0)))
+    b = math.radians(360.0 * (n - 81) / 364.0)
+    eot = 9.87 * math.sin(2 * b) - 7.53 * math.cos(b) - 1.5 * math.sin(b)
+    solar_hour = clock_hour + (4.0 * (lon_deg - 135.0) + eot) / 60.0
+    hour_angle = math.radians(15.0 * (solar_hour - 12.0))
+    phi = math.radians(lat_deg)
+    altitude = math.asin(
+        math.sin(phi) * math.sin(dec) + math.cos(phi) * math.cos(dec) * math.cos(hour_angle)
+    )
+    cos_az = (math.sin(dec) - math.sin(altitude) * math.sin(phi)) / (
+        math.cos(altitude) * math.cos(phi)
+    )
+    azimuth = math.degrees(math.acos(max(-1.0, min(1.0, cos_az))))
+    if hour_angle > 0:
+        azimuth = 360.0 - azimuth
+    return math.degrees(altitude), azimuth
+
+
+def print_sun_table(
+    config: dict[str, Any],
+    transform: PlanTransform,
+    features: Sequence[Feature],
+    site_map: Polygon,
+    sun_date: str,
+) -> None:
+    """시각별 태양 위치·그림자 방위와 주변 건물 방위각을 출력한다."""
+    month, day = (int(v) for v in sun_date.split("-"))
+    to_wgs84 = Transformer.from_crs(
+        CRS.from_epsg(transform.epsg), CRS.from_epsg(4326), always_xy=True
+    )
+    centroid = site_map.centroid
+    lon, lat = to_wgs84.transform(centroid.x, centroid.y)
+
+    towers = [f for f in features if f.layer == "tower"]
+    tallest = max(towers, key=lambda f: f.attributes["height_m"])
+    height = float(tallest.attributes["height_m"])
+
+    print(f"기준일 {month:02d}월 {day:02d}일 · 대지 중심 위도 {lat:.5f} / 경도 {lon:.5f}")
+    print(f"그림자 길이는 최고 주동 {tallest.attributes['dong']} "
+          f"({tallest.attributes['floors']}F, H={height:.1f} m) 기준\n")
+    print(f"{'시각(KST)':>9}{'태양고도':>9}{'태양방위':>9}{'그림자방위':>11}{'그림자길이':>11}")
+    print("-" * 50)
+    rows: list[tuple[float, float, float]] = []
+    for step in range(16, 35):
+        clock = step * 0.5
+        altitude, azimuth = solar_position(lat, lon, month, day, clock)
+        if altitude <= 0.5:
+            continue
+        shadow_az = (azimuth + 180.0) % 360.0
+        length = height / math.tan(math.radians(altitude))
+        rows.append((clock, shadow_az, altitude))
+        print(f"{int(clock):5d}:{int(round((clock % 1) * 60)):02d}{altitude:8.1f}°"
+              f"{azimuth:8.1f}°{shadow_az:10.1f}°{length:10.0f} m")
+
+    context = [f for f in features if f.layer == "context"]
+    if not context:
+        return
+    print(f"\n대지 중심에서 본 주변 건물 (그림자가 그 방향으로 지는 시간대)")
+    print("-" * 66)
+    print(f"{'건물':<26}{'방위각':>8}{'방향':>6}{'거리':>8}   영향 시간대")
+    print("-" * 66)
+    for feature in context:
+        target = feature.polygon_map.centroid
+        d_e, d_n = target.x - centroid.x, target.y - centroid.y
+        azimuth = math.degrees(math.atan2(d_e, d_n)) % 360.0
+        hits = [
+            f"{int(c)}:{int(round((c % 1) * 60)):02d}"
+            for c, shadow_az, _ in rows
+            if min(abs(shadow_az - azimuth), 360 - abs(shadow_az - azimuth)) <= 20.0
+        ]
+        window = f"{hits[0]}~{hits[-1]}" if len(hits) > 1 else (hits[0] if hits else "해당 없음")
+        print(f"{feature.attributes['dong']:<24}{azimuth:8.1f}°{compass_name(azimuth):>6}"
+              f"{math.hypot(d_e, d_n):7.0f}m   {window}")
+    print("\n* '영향 시간대'는 대지 중심에서 본 방위 ±20° 안에 그림자가 드는 시각대입니다.")
+    print("  실제 영향 여부는 건물 실제 범위·높이로 그림자 분석을 수행해 확인하십시오.")
+
+
 def build_report(
     config: dict[str, Any],
     transform: PlanTransform,
@@ -629,6 +741,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     for feature in features:
         feature.polygon_map = transform_polygon(feature.polygon_px, transform)
 
+    if args.sun_table:
+        print_sun_table(config, transform, features, site_map, args.sun_date)
+        return 0
+
     validation = validate(config, features, site_map)
     written = write_outputs(args.outdir, features, site_map, transform)
 
@@ -649,4 +765,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except BrokenPipeError:  # `| head` 등으로 출력이 잘린 경우
+        raise SystemExit(0) from None

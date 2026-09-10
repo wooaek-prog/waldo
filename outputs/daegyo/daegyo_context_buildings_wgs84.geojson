@@ -167,18 +167,18 @@
    },
    "properties": {
     "id": "CTX-HWARANG",
-    "dong": "화랑아파트(기존)",
+    "dong": "화랑아파트(기존, 여의도동 40-4)",
     "part": "주변 참고 건물",
     "use": "참고(주변현황)",
-    "floors": 12,
+    "floors": 10,
     "floor_h_m": 2.95,
     "roof_m": 4.0,
-    "height_m": 39.4,
+    "height_m": 33.5,
     "base_elev_m": 13.3,
-    "top_elev_m": 52.7,
+    "top_elev_m": 46.8,
     "source": "배치도 참고표기(개략) - 실측 대체 필요",
     "area_m2": 1612.0,
-    "gfa_m2": 19343.5
+    "gfa_m2": 16119.6
    }
   },
   {
