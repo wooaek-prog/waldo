@@ -843,17 +843,27 @@ def clean_key(raw: str) -> str:
     return (raw or "").strip().strip("'\"").strip()
 
 
-def check_key_shape(client_id: str, client_secret: str) -> str | None:
-    """형식이 뻔히 이상하면 한 줄로 알려 준다(막지는 않는다).
+def check_key_shape(client_id: str, client_secret: str) -> tuple[str, bool] | None:
+    """형식이 뻔히 이상하면 (안내문, 치명적인지) 를 돌려준다.
 
-    네이버 Client ID 는 Secret 보다 훨씬 깁니다(대략 20자 vs 10자). 두 칸을
-    바꿔 넣는 실수가 잦아 그것만 짚어 줍니다.
+    치명적 = 그대로 진행해도 절대 동작할 수 없는 경우(다른 서비스의 키).
     """
+    # 네이버 클라우드 플랫폼(console.ncloud.com)의 IAM 키를 가져오는 혼동이 잦다.
+    # NCP 는 검색 API 를 제공하지 않고 인증 방식도 달라서, 넣어 봐야 401 만 난다.
+    for label, value in (("Client ID", client_id), ("Client Secret", client_secret)):
+        if value.lower().startswith("ncp_"):
+            return (
+                f"{label} 가 네이버 클라우드 플랫폼(NCP)의 인증키입니다(`ncp_iam_...`). "
+                "이 프로그램에 필요한 건 네이버 개발자센터의 '검색' API 키로, 서로 다른 서비스입니다. "
+                "https://developers.naver.com/apps/#/register 에서 따로 발급받으세요. "
+                "그리고 NCP 콘솔에서 방금 만든 인증키는 삭제해 두시는 편이 안전합니다."
+            ), True
     if " " in client_id or " " in client_secret:
-        return "키 안에 공백이 들어 있습니다. 앞뒤 공백까지 복사되지 않았는지 확인해 주세요."
+        return "키 안에 공백이 들어 있습니다. 앞뒤 공백까지 복사되지 않았는지 확인해 주세요.", False
+    # 개발자센터 키는 ID 가 20자 안팎, Secret 이 10자 안팎이라 길이가 뒤집히면 바꿔 넣은 것이다.
     if len(client_id) < len(client_secret):
         return ("Client ID 와 Client Secret 이 바뀐 것 같습니다. "
-                "네이버에서 ID 가 Secret 보다 깁니다.")
+                "네이버 개발자센터에서는 ID 가 Secret 보다 깁니다."), False
     return None
 
 
@@ -889,6 +899,7 @@ def prompt_for_key() -> tuple[str, str]:
     print(" 키가 없으면: 구글 뉴스 RSS로 대신 동작합니다(네이버 등록 여부는 표시 안 됨).")
     print()
     print(" 키 받는 법 (2~3분, 무료)")
+    print("   ※ '네이버 클라우드 플랫폼(ncloud.com)'이 아닙니다. 거기 키는 여기서 쓸 수 없습니다.")
     print("   1. https://developers.naver.com/apps/#/register 접속 후 네이버 로그인")
     print("   2. 애플리케이션 이름은 아무거나 (예: 계열사뉴스)")
     print("   3. '사용 API' 에서 [검색] 선택")
@@ -908,9 +919,14 @@ def prompt_for_key() -> tuple[str, str]:
     if not client_secret:
         return "", ""
 
-    warning = check_key_shape(client_id, client_secret)
-    if warning:
-        print(f"\n [!] {warning}")
+    problem = check_key_shape(client_id, client_secret)
+    if problem:
+        message, fatal = problem
+        print(f"\n [!] {message}")
+        if fatal:
+            # 이 키로는 어차피 인증이 안 된다. 저장하지 않고 키 없이 시작한다.
+            print("     이 키는 저장하지 않습니다. 올바른 키를 받은 뒤 다시 넣어 주세요.")
+            return "", ""
         print("     그래도 이대로 진행하려면 Enter, 다시 입력하려면 아무 글자나 치고 Enter.")
         try:
             if input("     > ").strip():
@@ -931,8 +947,15 @@ def build_source(args) -> object:
         client_id, client_secret = prompt_for_key()
 
     if client_id and client_secret:
-        print("[info] 데이터 소스: 네이버 검색 API")
-        return NaverSource(client_id, client_secret, args.display)
+        # 저장 파일이나 환경변수로 들어온 키도 검사한다. 다른 서비스의 키면 401 만
+        # 반복하므로, 아예 시도하지 않고 구글 뉴스로 시작하는 편이 낫다.
+        problem = check_key_shape(client_id, client_secret)
+        if problem and problem[1]:
+            print(f"[warn] {problem[0]}", file=sys.stderr)
+            print(f"       → {KEY_RESET_HINT}", file=sys.stderr)
+        else:
+            print("[info] 데이터 소스: 네이버 검색 API")
+            return NaverSource(client_id, client_secret, args.display)
     print(
         "[info] 데이터 소스: 구글 뉴스 RSS (키 없이 동작하는 대체 경로)\n"
         "       네이버뉴스 등록 여부까지 보려면 네이버 API 키가 필요합니다.\n"
