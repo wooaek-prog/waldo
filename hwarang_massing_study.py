@@ -602,17 +602,15 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def main(argv: Sequence[str] | None = None) -> int:
-    args = parse_args(argv)
-    month, day = (int(v) for v in args.date.split("-"))
-    args.outdir.mkdir(parents=True, exist_ok=True)
+def prepare_analysis(args) -> dict[str, Any]:
+    """대상지·수광점·차폐물·태양궤적을 준비한다(형상 검토 스크립트와 공용)."""
+    from pyproj import CRS, Transformer
 
+    month, day = (int(v) for v in args.date.split("-"))
     buildings = load_buildings(args.buildings)
     site = build_site(buildings, args.site_area)
     long_az, long_len = site_axes(site)
     centre = site.centroid
-
-    from pyproj import CRS, Transformer
     lon, lat = Transformer.from_crs(
         CRS.from_epsg(5186), CRS.from_epsg(4326), always_xy=True
     ).transform(centre.x, centre.y)
@@ -652,12 +650,29 @@ def main(argv: Sequence[str] | None = None) -> int:
               f"화랑 기존 {b['name']}")
         for b in buildings if b["jibun"] == HWARANG_JIBUN
     ]
+    times = sun_track(month, day, lat, lon, step_min=args.step_min)
+    school_az = (math.degrees(math.atan2(vx, vy)) + (0 if school_side > 0 else 180)) % 360
+    return {
+        "buildings": buildings, "site": site, "long_az": long_az, "long_len": long_len,
+        "centre": centre, "lat": lat, "lon": lon, "schools": schools,
+        "receptors": receptors, "school_side": school_side, "school_az": school_az,
+        "context": context, "existing_hwarang": existing_hwarang, "times": times,
+    }
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    args = parse_args(argv)
+    args.outdir.mkdir(parents=True, exist_ok=True)
+
+    ctx = prepare_analysis(args)
+    site, long_az, long_len = ctx["site"], ctx["long_az"], ctx["long_len"]
+    schools, receptors = ctx["schools"], ctx["receptors"]
+    school_side, school_az = ctx["school_side"], ctx["school_az"]
+    context, existing_hwarang, times = ctx["context"], ctx["existing_hwarang"], ctx["times"]
 
     gfa_target = args.site_area * args.far / 100.0
     max_footprint = args.site_area * args.bcr / 100.0
-    times = sun_track(month, day, lat, lon, step_min=args.step_min)
 
-    school_az = (math.degrees(math.atan2(vx, vy)) + (0 if school_side > 0 else 180)) % 360
     print(f"대상지: 화랑아파트 여의도동 40-4  대지 {args.site_area:,.0f}㎡ "
           f"({long_len:.0f} × {site.area / long_len:.0f} m, 장변 방위 {long_az:.1f}°)")
     print(f"허용: 용적률 {args.far:.0f}% → 지상연면적 {gfa_target:,.0f}㎡ / "
