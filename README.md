@@ -5,6 +5,7 @@
 | `dispatch_order_analysis.py` | 한국 발전소 업체별 급전순위(merit order) 분석 | 아래 참조 |
 | `daegyo_site_polygons.py` | 여의도 대교아파트 신축 배치도 → QGIS 일조권 분석용 건물 폴리곤 생성 | [초보자 매뉴얼](docs/daegyo_beginner_manual.md) · [실무 가이드](docs/daegyo_qgis_guide.md) |
 | `hwarang_massing_study.py` | 여의도 화랑아파트 재건축 – 주변 학교 일조영향 최소화 배치안 도출 | [설계안 보고서](docs/hwarang_massing_design.md) |
+| `hwarang_tower_shape_study.py` | 화랑아파트 1개동 – 최적 평면 형상(직사각형 방위) 도출 | [형상 검토 보고서](docs/hwarang_tower_shape.md) |
 
 ---
 
@@ -106,3 +107,6 @@ python3 hwarang_massing_study.py --buildings <AL_D010.gpkg> --outdir outputs/hwa
 **결론**: 탑상형 1개동 · 55층 · 기준층 683㎡ · 대지 남동측 배치 (용적률 400% 충족).
 가장 가까운 학교의 일조 충족률이 현황 64.9% → 84.8%로 **개선**됩니다.
 근거와 대안 비교는 [docs/hwarang_massing_design.md](docs/hwarang_massing_design.md) 참조.
+
+평면 형상은 **직사각형 29.2 × 23.4 m, 장변 방위 345°** 가 최적입니다(198개 형상 비교).
+[docs/hwarang_tower_shape.md](docs/hwarang_tower_shape.md) 참조.
