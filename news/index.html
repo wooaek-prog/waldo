@@ -575,7 +575,9 @@
     state.seeding = status.seeded === false;
     const src = status.source === "naver" ? "네이버 검색 API"
               : status.source === "google" ? "구글 뉴스 RSS(폴백)" : "대기";
-    const parts = [`소스: ${src}`, `보관 ${status.items ?? 0}건`];
+    const parts = [];
+    if (status.version) parts.push(`v${status.version}`);
+    parts.push(`소스: ${src}`, `보관 ${status.items ?? 0}건`);
     if (state.seeding) parts.push("초기 수집 중");
     if (status.currentTarget) parts.push(`조회: ${status.currentTarget}`);
     if (status.lastError) parts.push(`⚠ ${status.lastError}`);

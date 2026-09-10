@@ -40,6 +40,10 @@ from email.utils import parsedate_to_datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+# 화면과 로그에 찍어 두면 "새 코드를 받으셨는지"를 물어볼 필요가 없습니다.
+VERSION = "2026.09.10"      # NAVER API HUB 지원
+VERSION_NOTE = "NAVER API HUB / 개발자센터 자동 판별"
+
 BASE_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = BASE_DIR / "companies.json"
 INDEX_PATH = BASE_DIR / "index.html"
@@ -449,6 +453,7 @@ class FeedStore:
         self.max_seen = max_seen
         self.subscribers: set[queue.Queue] = set()
         self.status: dict = {
+            "version": VERSION,
             "startedAt": time.time(),
             "source": None,
             "lastPollAt": None,
@@ -1052,6 +1057,7 @@ def run_doctor(args) -> int:
     print("=" * 66)
     print(" 연결 점검")
     print("=" * 66)
+    print(f" 프로그램: v{VERSION} ({VERSION_NOTE})")
     print(f" 파이썬  : {sys.version.split()[0]} ({platform.python_implementation()})")
     print(f" 실행파일: {sys.executable}")
     print("           ↑ certifi 를 설치했다면 이 경로의 파이썬에 설치했는지 확인하세요.")
@@ -1133,6 +1139,7 @@ def run_doctor(args) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    print(f"[info] 계열사 뉴스 모니터 v{VERSION} ({VERSION_NOTE})")
     if args.doctor:
         return run_doctor(args)
 

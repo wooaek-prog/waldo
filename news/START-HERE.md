@@ -11,6 +11,14 @@
 
 ## 1단계 — 파일 내려받기
 
+가장 빠른 방법은 이 주소를 브라우저에 넣는 것입니다. 최신 파일이 바로 받아집니다.
+
+```
+https://github.com/wooaek-prog/waldo/archive/refs/heads/claude/hyundai-elevator-news-realtime-ebcsxp.zip
+```
+
+직접 찾아가려면:
+
 1. https://github.com/wooaek-prog/waldo 에 들어갑니다.
 2. 브랜치를 `claude/hyundai-elevator-news-realtime-ebcsxp` 로 바꿉니다.
    (페이지 왼쪽 위 `main` 이라고 적힌 버튼을 누르면 목록이 나옵니다.)
@@ -180,6 +188,11 @@
 ---
 
 ## 문제가 생겼을 때
+
+> **먼저 버전부터 확인하세요.** 검은 창 맨 윗줄과 웹 화면 왼쪽 위 회색 글씨에
+> `v2026.09.10` 같은 버전이 찍힙니다. 안내와 다른 문구가 나온다면 예전 파일이
+> 남아 있는 것이니, 1단계의 ZIP 주소로 **새로 받아 덮어쓰세요.**
+> (압축을 푼 새 폴더를 쓰는 편이 가장 확실합니다.)
 
 > **뭐가 문제인지 모르겠을 때는 점검 기능을 쓰세요.**
 > 실행 파일에 ` --doctor` 를 붙여 돌리면 파이썬 버전, 인증서 상태, 인터넷 연결,
