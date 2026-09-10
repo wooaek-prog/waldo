@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 
-# 뉴스 모니터가 저장하는 수집 상태(로컬 전용)
+# 뉴스 모니터가 이 컴퓨터에만 저장하는 파일 (절대 커밋하지 말 것)
 news/.state.json
 news/.state.tmp
+news/.naver_key.json

@@ -2,7 +2,8 @@
 >
 > - **급전순위 분석** (아래 내용) — `dispatch_order_analysis.py`
 > - **계열사 뉴스 실시간 모니터** — CJ / HDC / 현대엘리베이터 계열사 뉴스가 네이버뉴스에 등록되면
->   실시간으로 띄워 주는 HTML 대시보드. [`news/README.md`](news/README.md) 참고.
+>   실시간으로 띄워 주는 HTML 대시보드.
+>   처음 쓰신다면 [`news/START-HERE.md`](news/START-HERE.md), 설정은 [`news/README.md`](news/README.md).
 
 # 한국 발전소 업체별 급전순위 분석
 

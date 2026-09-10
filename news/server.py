@@ -40,6 +40,7 @@ BASE_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = BASE_DIR / "companies.json"
 INDEX_PATH = BASE_DIR / "index.html"
 STATE_PATH = BASE_DIR / ".state.json"
+KEY_PATH = BASE_DIR / ".naver_key.json"  # 한 번 입력한 API 키를 이 컴퓨터에만 저장
 
 KST = timezone(timedelta(hours=9))
 NAVER_API = "https://openapi.naver.com/v1/search/news.json"
@@ -482,6 +483,8 @@ class Poller(threading.Thread):
         self.stop_event = threading.Event()
         self.wake_event = threading.Event()
         self.max_age = timedelta(hours=args.max_age_hours)
+        self._error_key: str | None = None
+        self._error_streak = 0
 
     @property
     def spacing(self) -> float:
@@ -521,10 +524,10 @@ class Poller(threading.Thread):
             items = self.source.fetch(target)
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", "replace")[:200] if exc.fp else ""
-            self.note_error(f"HTTP {exc.code} ({target.keyword}) {detail}")
+            self.note_error(f"http{exc.code}", f"HTTP {exc.code} ({target.keyword}) {detail}", exc.code)
             return
         except (urllib.error.URLError, socket.timeout, ET.ParseError, json.JSONDecodeError, OSError) as exc:
-            self.note_error(f"{type(exc).__name__} ({target.keyword}): {exc}")
+            self.note_error(type(exc).__name__, f"{type(exc).__name__} ({target.keyword}): {exc}")
             return
 
         cutoff = datetime.now(KST) - self.max_age
@@ -544,6 +547,7 @@ class Poller(threading.Thread):
                 continue
             (fresh if record["alert"] else updates).append(record)
 
+        self._error_key, self._error_streak = None, 0
         self.store.set_status(
             lastPollAt=time.time(),
             lastError=None,
@@ -565,14 +569,34 @@ class Poller(threading.Thread):
             self.store.broadcast("update", updates)
         self.store.broadcast("status", self.store.get_status())
 
-    def note_error(self, message: str) -> None:
+    # 원인별 한 줄 안내. 같은 오류가 반복될 때 화면을 채우지 않도록 한 번만 띄운다.
+    HINTS = {
+        401: "네이버 API 키가 잘못되었습니다. 창을 닫고 다시 실행할 때 `--set-key` 를 붙여 키를 새로 넣어 주세요.",
+        403: "네이버 API 사용 권한이 없습니다. 개발자센터에서 이 앱에 '검색' API 가 추가되어 있는지 확인해 주세요.",
+        429: "오늘 API 호출 한도를 다 썼습니다. 내일 자동으로 풀립니다. (companies.json 에서 계열사를 줄이면 여유가 생깁니다)",
+    }
+
+    def note_error(self, key: str, message: str, code: int | None = None) -> None:
         status = self.store.get_status()
         self.store.set_status(
             lastError=message,
             lastPollAt=time.time(),
             errorCount=status["errorCount"] + 1,
         )
-        print(f"[warn] {message}", file=sys.stderr)
+
+        # 같은 종류의 오류는 처음 한 번과 그 뒤 20번에 한 번만 출력한다.
+        repeat = self._error_streak + 1 if key == self._error_key else 1
+        self._error_key, self._error_streak = key, repeat
+        if repeat == 1:
+            print(f"[warn] {message}", file=sys.stderr)
+            hint = self.HINTS.get(code)
+            if hint:
+                print(f"       → {hint}", file=sys.stderr)
+        elif repeat % 20 == 0:
+            print(f"[warn] 같은 오류가 {repeat}번째 이어지고 있습니다: {key}", file=sys.stderr)
+            if code is None:
+                print("       → 인터넷 연결을 확인해 주세요.", file=sys.stderr)
+
         self.store.broadcast("status", self.store.get_status())
 
 
@@ -676,16 +700,85 @@ class Handler(BaseHTTPRequestHandler):
 # --------------------------------------------------------------------------
 # 엔트리포인트
 # --------------------------------------------------------------------------
+def _open_browser(url: str) -> None:
+    """기본 브라우저로 화면을 띄운다. 실패해도 서버는 그대로 돈다."""
+    try:
+        import webbrowser
+
+        webbrowser.open(url)
+    except Exception as exc:  # noqa: BLE001 - 브라우저가 없거나 열 수 없는 환경
+        print(f"[info] 브라우저를 자동으로 열지 못했습니다({exc}). 주소를 직접 입력해 주세요.")
+
+
+def load_saved_key() -> tuple[str, str]:
+    """이 컴퓨터에 저장해 둔 API 키를 읽는다."""
+    try:
+        data = json.loads(KEY_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return "", ""
+    return str(data.get("client_id", "")), str(data.get("client_secret", ""))
+
+
+def save_key(client_id: str, client_secret: str) -> None:
+    try:
+        KEY_PATH.write_text(
+            json.dumps({"client_id": client_id, "client_secret": client_secret}, indent=2),
+            encoding="utf-8",
+        )
+        os.chmod(KEY_PATH, 0o600)  # 다른 사용자 계정에서 못 읽게
+    except OSError as exc:
+        print(f"[warn] 키를 저장하지 못했습니다: {exc}", file=sys.stderr)
+    else:
+        print(f"[info] 키를 저장했습니다. 다음부터는 안 물어봅니다. ({KEY_PATH.name})")
+
+
+def prompt_for_key() -> tuple[str, str]:
+    """처음 실행이면 화면에서 직접 키를 받는다. 그냥 Enter 를 치면 건너뛴다."""
+    print()
+    print("=" * 66)
+    print(" 네이버 검색 API 키가 아직 없습니다.")
+    print()
+    print(" 키를 넣으면: 네이버뉴스 등록 여부까지 정확하게 실시간으로 확인됩니다.")
+    print(" 키가 없으면: 구글 뉴스 RSS로 대신 동작합니다(네이버 등록 여부는 표시 안 됨).")
+    print()
+    print(" 키 받는 법 (2~3분, 무료)")
+    print("   1. https://developers.naver.com/apps/#/register 접속 후 네이버 로그인")
+    print("   2. 애플리케이션 이름은 아무거나 (예: 계열사뉴스)")
+    print("   3. '사용 API' 에서 [검색] 선택")
+    print("   4. '환경 추가' 에서 [WEB 설정] 선택, 주소는 http://127.0.0.1:8765 입력")
+    print("   5. 등록하면 나오는 Client ID / Client Secret 를 아래에 붙여넣기")
+    print()
+    print(" ※ 그냥 Enter 를 누르면 키 없이 시작합니다. 나중에 넣어도 됩니다.")
+    print("=" * 66)
+    try:
+        client_id = input(" Client ID     : ").strip()
+        if not client_id:
+            return "", ""
+        client_secret = input(" Client Secret : ").strip()
+    except (EOFError, KeyboardInterrupt):
+        print()
+        return "", ""
+    if not client_secret:
+        return "", ""
+    save_key(client_id, client_secret)
+    return client_id, client_secret
+
+
 def build_source(args) -> object:
     client_id = args.client_id or os.environ.get("NAVER_CLIENT_ID", "")
     client_secret = args.client_secret or os.environ.get("NAVER_CLIENT_SECRET", "")
+    if not (client_id and client_secret):
+        client_id, client_secret = load_saved_key()
+    if not (client_id and client_secret) and sys.stdin and sys.stdin.isatty():
+        client_id, client_secret = prompt_for_key()
+
     if client_id and client_secret:
         print("[info] 데이터 소스: 네이버 검색 API")
         return NaverSource(client_id, client_secret, args.display)
     print(
-        "[info] 데이터 소스: 구글 뉴스 RSS (폴백)\n"
-        "       네이버 뉴스 등록 여부까지 정확히 보려면 https://developers.naver.com 에서\n"
-        "       애플리케이션을 등록하고 NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 를 설정하세요."
+        "[info] 데이터 소스: 구글 뉴스 RSS (키 없이 동작하는 대체 경로)\n"
+        "       네이버뉴스 등록 여부까지 보려면 네이버 API 키가 필요합니다.\n"
+        "       넣는 방법은 news/START-HERE.md 의 '4단계'를 보세요."
     )
     return GoogleNewsSource()
 
@@ -702,6 +795,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--max-age-hours", type=float, default=48.0, help="이 시간보다 오래된 기사는 무시")
     parser.add_argument("--naver-only", action="store_true", help="네이버뉴스에 등록된 기사만 수집")
     parser.add_argument("--reset", action="store_true", help="저장된 상태를 지우고 처음부터 시작")
+    parser.add_argument("--set-key", action="store_true", help="네이버 API 키를 새로 입력해서 저장")
+    parser.add_argument("--no-open", action="store_true", help="시작할 때 브라우저를 자동으로 열지 않음")
     return parser.parse_args(argv)
 
 
@@ -714,6 +809,8 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.reset:
         STATE_PATH.unlink(missing_ok=True)
+    if args.set_key:
+        KEY_PATH.unlink(missing_ok=True)
 
     store = FeedStore()
     seeded = store.load(STATE_PATH)
@@ -730,7 +827,18 @@ def main(argv: list[str] | None = None) -> int:
           f"(한 바퀴 약 {poller.spacing * len(targets):.0f}초)")
     if not seeded:
         print("[info] 첫 한 바퀴는 기존 기사를 모으는 중이라 알림이 뜨지 않습니다.")
-    print(f"[info] 브라우저에서 열기 → {url}")
+    print()
+    print("=" * 66)
+    print(f" 준비 끝! 브라우저에서 이 주소를 여세요 →  {url}")
+    print()
+    print(" · 이 창을 닫으면 뉴스 수집도 멈춥니다. 켜 둔 채로 두세요.")
+    print(" · 끝내려면 이 창에서 Ctrl+C 를 누르거나 창을 닫으면 됩니다.")
+    print(f" · 이 주소는 이 컴퓨터에서만 열립니다({args.host}). 인터넷에 공개되지 않습니다.")
+    print("=" * 66)
+
+    if not args.no_open:
+        threading.Timer(1.0, lambda: _open_browser(url)).start()
+
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
