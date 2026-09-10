@@ -4,6 +4,7 @@
 | --- | --- | --- |
 | `dispatch_order_analysis.py` | 한국 발전소 업체별 급전순위(merit order) 분석 | 아래 참조 |
 | `daegyo_site_polygons.py` | 여의도 대교아파트 신축 배치도 → QGIS 일조권 분석용 건물 폴리곤 생성 | [초보자 매뉴얼](docs/daegyo_beginner_manual.md) · [실무 가이드](docs/daegyo_qgis_guide.md) |
+| `hwarang_massing_study.py` | 여의도 화랑아파트 재건축 – 주변 학교 일조영향 최소화 배치안 도출 | [설계안 보고서](docs/hwarang_massing_design.md) |
 
 ---
 
@@ -89,3 +90,19 @@ python3 daegyo_site_polygons.py
   (설치부터 메뉴 클릭 단위로 설명. 파이썬 없이 QGIS만으로 하는 방법 포함)
 - 옵션·좌표 보정·분석 절차 요약 → [docs/daegyo_qgis_guide.md](docs/daegyo_qgis_guide.md)
 - 인접 화랑아파트 일조권 분석용 파일 추출 → [docs/hwarang_sunlight_analysis.md](docs/hwarang_sunlight_analysis.md)
+
+---
+
+# 여의도 화랑아파트 재건축 – 학교 일조영향 최소화 배치안
+
+GIS건물통합정보(AL_D010)와 대교아파트 신축 폴리곤을 조합하여, 준주거 용적률 400% /
+건폐율 60% 범위에서 주변 학교 교실 창면의 동지일 일조를 최대로 확보하는 배치안을
+정량 비교합니다.
+
+```bash
+python3 hwarang_massing_study.py --buildings <AL_D010.gpkg> --outdir outputs/hwarang
+```
+
+**결론**: 탑상형 1개동 · 55층 · 기준층 683㎡ · 대지 남동측 배치 (용적률 400% 충족).
+가장 가까운 학교의 일조 충족률이 현황 64.9% → 84.8%로 **개선**됩니다.
+근거와 대안 비교는 [docs/hwarang_massing_design.md](docs/hwarang_massing_design.md) 참조.
