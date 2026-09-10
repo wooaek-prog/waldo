@@ -195,11 +195,12 @@ def build_ssl_context(ca_bundle: str = "", quiet: bool = False) -> ssl.SSLContex
 
     context = ssl.create_default_context()
     if context.cert_store_stats().get("x509_ca", 0) > 0:
+        # 저장소가 차 있어도 실제 검증은 실패할 수 있다. 그건 http_get 이 certifi 로
+        # 재시도하며 처리한다.
         return context
 
-    try:
-        import certifi
-    except ImportError:
+    alternative = certifi_context()
+    if alternative is None:
         if not quiet:
             print("[warn] 신뢰할 루트 인증서를 찾지 못했습니다. HTTPS 연결이 실패할 수 있습니다.", file=sys.stderr)
             print(f"       → {ssl_fix_hint()}", file=sys.stderr)
@@ -207,7 +208,7 @@ def build_ssl_context(ca_bundle: str = "", quiet: bool = False) -> ssl.SSLContex
 
     if not quiet:
         print("[info] 시스템 인증서가 비어 있어 certifi 번들을 대신 사용합니다.")
-    return ssl.create_default_context(cafile=certifi.where())
+    return alternative
 
 
 def ssl_fix_hint() -> str:
@@ -217,16 +218,15 @@ def ssl_fix_hint() -> str:
             "Finder → 응용 프로그램 → 'Python 3.x' 폴더 → 'Install Certificates.command' 를 "
             "더블클릭한 뒤 다시 실행해 주세요. (자세한 내용은 news/START-HERE.md 의 '문제가 생겼을 때')"
         )
+    # 파이썬이 여러 개 깔린 컴퓨터에서 엉뚱한 곳에 설치하는 일이 잦아 실행 파일 경로를 그대로 적어 준다.
+    install = f'"{sys.executable}" -m pip install --upgrade certifi'
     if os.name == "nt":
         return (
-            "회사 네트워크의 보안 프로그램이 통신을 검사하는 경우일 수 있습니다. "
-            "명령 프롬프트에서 `pip install --upgrade certifi` 를 실행해 보시고, 그래도 안 되면 "
-            "회사에서 받은 인증서 파일을 `--ca-bundle 파일경로` 로 지정해 주세요."
+            f"명령 프롬프트에서 `{install}` 를 실행해 보세요. 그래도 안 되면 회사 네트워크의 "
+            "보안 프로그램이 통신을 검사하는 경우이니, 전산팀에서 받은 인증서 파일을 "
+            "`--ca-bundle 파일경로` 로 지정해 주세요."
         )
-    return (
-        "`pip install --upgrade certifi` 를 실행하거나, 인증서 파일을 `--ca-bundle 파일경로` 로 "
-        "지정해 주세요."
-    )
+    return f"`{install}` 를 실행하거나, 인증서 파일을 `--ca-bundle 파일경로` 로 지정해 주세요."
 
 
 def is_ssl_error(exc: BaseException) -> bool:
@@ -234,10 +234,43 @@ def is_ssl_error(exc: BaseException) -> bool:
     return isinstance(exc, ssl.SSLError) or isinstance(reason, ssl.SSLError)
 
 
+def certifi_context() -> ssl.SSLContext | None:
+    """certifi 번들을 쓰는 컨텍스트. 설치돼 있지 않으면 None."""
+    try:
+        import certifi
+    except ImportError:
+        return None
+    try:
+        return ssl.create_default_context(cafile=certifi.where())
+    except (OSError, ssl.SSLError):
+        return None
+
+
 def http_get(url: str, headers: dict[str, str] | None = None, timeout: float = 12.0) -> bytes:
+    """HTTPS GET.
+
+    윈도우는 시스템 인증서 저장소가 비어 있지 않아도 발급기관을 못 찾는 경우가
+    있습니다(사내 보안 프로그램, 루트 인증서 자동 업데이트 차단 등). 그래서
+    인증서 검증에 실패하면 certifi 번들로 한 번 더 시도하고, 그게 되면 이후로는
+    계속 certifi 를 씁니다. 검증 자체를 건너뛰지는 않습니다.
+    """
+    global SSL_CONTEXT
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=timeout, context=SSL_CONTEXT) as resp:
-        return resp.read()
+    try:
+        with urllib.request.urlopen(req, timeout=timeout, context=SSL_CONTEXT) as resp:
+            return resp.read()
+    except urllib.error.URLError as exc:
+        if not is_ssl_error(exc):
+            raise
+        alternative = certifi_context()
+        if alternative is None or SSL_CONTEXT is alternative:
+            raise
+        with urllib.request.urlopen(req, timeout=timeout, context=alternative) as resp:
+            body = resp.read()
+        if SSL_CONTEXT is not alternative:
+            SSL_CONTEXT = alternative
+            print("[info] 시스템 인증서로는 검증에 실패해 certifi 번들로 전환했습니다.")
+        return body
 
 
 # --------------------------------------------------------------------------
@@ -882,17 +915,21 @@ def run_doctor(args) -> int:
     print(" 연결 점검")
     print("=" * 66)
     print(f" 파이썬  : {sys.version.split()[0]} ({platform.python_implementation()})")
+    print(f" 실행파일: {sys.executable}")
+    print("           ↑ certifi 를 설치했다면 이 경로의 파이썬에 설치했는지 확인하세요.")
     print(f" 운영체제: {platform.system()} {platform.release()}")
 
     context = build_ssl_context(args.ca_bundle, quiet=True)
     ca_count = context.cert_store_stats().get("x509_ca", 0)
-    print(f" 인증서  : {ca_count}개 보유", end="")
+    print(f" 인증서  : 시스템 저장소 {ca_count}개", end="")
     if args.ca_bundle:
-        print(f" (지정한 파일: {args.ca_bundle})")
+        print(f" / 지정한 파일 사용: {args.ca_bundle}")
     elif ca_count == 0:
         print(" ← 비어 있습니다. 이게 원인일 가능성이 큽니다.")
     else:
         print()
+    alternative = certifi_context()
+    print(f" certifi : {'설치됨' if alternative else '없음 (pip install certifi 로 설치 가능)'}")
 
     client_id, client_secret = (
         args.client_id or os.environ.get("NAVER_CLIENT_ID", ""),
@@ -931,11 +968,19 @@ def run_doctor(args) -> int:
             print("실패")
             print(f"    {type(exc).__name__}: {exc}")
             if is_ssl_error(exc):
+                if alternative is None:
+                    print("    → certifi 가 설치되어 있지 않습니다. 먼저 이걸 해보세요:")
+                    print(f"       {sys.executable} -m pip install --upgrade certifi")
+                else:
+                    print("    → certifi 로도 검증에 실패했습니다. 사내 보안 프로그램이 통신을")
+                    print("       가로채는 환경으로 보입니다. 전산팀에서 인증서 파일(.crt/.pem)을 받아")
+                    print("       `--ca-bundle 파일경로` 로 지정해 주세요.")
                 print(f"    → {ssl_fix_hint()}")
             else:
                 print("    → 인터넷 연결을 확인해 주세요. 회사 네트워크라면 방화벽일 수 있습니다.")
         else:
-            print(f"성공 ({len(body):,} 바이트)")
+            note = " (certifi 번들로 성공)" if SSL_CONTEXT is not context else ""
+            print(f"성공 ({len(body):,} 바이트){note}")
 
     print()
     if failures:
