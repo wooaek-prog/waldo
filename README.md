@@ -7,6 +7,7 @@
 | `hwarang_massing_study.py` | 여의도 화랑아파트 재건축 – 주변 학교 일조영향 최소화 배치안 도출 | [설계안 보고서](docs/hwarang_massing_design.md) |
 | `hwarang_tower_shape_study.py` | 화랑아파트 1개동 – 최적 평면 형상(직사각형 방위) 도출 | [형상 검토 보고서](docs/hwarang_tower_shape.md) |
 | `hwarang_site_placement.py` | 화랑아파트 1개동 – 법정 이격 내 최적 입지 도출 | [입지 검토 보고서](docs/hwarang_placement.md) |
+| `hwarang_final_massing.py` | 화랑아파트 – 발코니 반영 최종 형상·배치도 산출 | [최종 배치 보고서](docs/hwarang_final_massing.md) |
 
 ---
 
@@ -114,3 +115,7 @@ python3 hwarang_massing_study.py --buildings <AL_D010.gpkg> --outdir outputs/hwa
 
 입지는 **E194,319.2 / N546,962.7**(대지 중심에서 동측 16.4m, 경계 이격 12.0m)이 최적입니다.
 [docs/hwarang_placement.md](docs/hwarang_placement.md) 참조.
+
+발코니 1.5m를 반영한 **최종안은 직사각형 2:1(내부 36.97 × 18.48m), 장변 방위 345°, 55층**입니다.
+용적률 400.0% · 건폐율 7.67% · 서비스면적 6,100㎡ · 학교 일조 현황 대비 +3.1%p.
+[docs/hwarang_final_massing.md](docs/hwarang_final_massing.md) 참조.
