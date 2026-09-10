@@ -132,8 +132,8 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--long-azimuth", type=float, default=345.0, help="장변 방위각")
     parser.add_argument("--setback", type=float, default=3.0,
                         help="법정 이격거리(대지 안의 공지, 아파트 기준 m)")
-    parser.add_argument("--coarse-step", type=float, default=4.0, help="1차 탐색 격자(m)")
-    parser.add_argument("--fine-step", type=float, default=1.0, help="2차 정밀 격자(m)")
+    parser.add_argument("--coarse-step", type=float, default=6.0, help="1차 탐색 격자(m)")
+    parser.add_argument("--fine-step", type=float, default=2.0, help="2차 정밀 격자(m)")
     parser.add_argument("--river-from", type=float, default=340.0, help="한강 조망 시작 방위")
     parser.add_argument("--river-to", type=float, default=110.0, help="한강 조망 종료 방위")
     parser.add_argument("--view-reach", type=float, default=600.0, help="조망 판정 거리(m)")
@@ -177,33 +177,31 @@ def main(argv: Sequence[str] | None = None) -> int:
           f"({len(azimuths)}방향, 판정거리 {args.view_reach:.0f} m)")
     print(f"기준선: 현황 10층 3개동 {now['pass_pct']:.1f}% / 부지 공지 {vacant['pass_pct']:.1f}%\n")
 
-    coarse_rec = [r for r in receptors if r.floor <= 2][::2]
-    coarse_times = times[::2]
-    coarse_masks = H.build_context_masks(context, coarse_rec, coarse_times)
-
+    # 1단계: 이격선 안쪽 전역을 전 층 수광점으로 훑는다.
+    # (저층 수광점만 쓰면 상층 영향이 빠져 최적 지점이 어긋나므로 전 층을 쓴다)
     positions = grid_positions(envelope, shape, args.coarse_step)
-    print(f"1단계 격자탐색: 후보 위치 {len(positions)}개 "
-          f"({args.coarse_step:g} m 격자, 저층 수광점 {len(coarse_rec)}점)")
+    print(f"1단계 전역탐색: 후보 위치 {len(positions)}개 "
+          f"({args.coarse_step:g} m 격자, 전 층 수광점 {len(receptors)}점)", flush=True)
     scored = []
     for x, y in positions:
         tower = make_tower(shape, x, y)
-        stats = H.summarize(H.evaluate(coarse_rec, [H.Prism(tower, height_m, "T")],
-                                       coarse_times, coarse_masks, args.step_min * 2))
+        stats = H.summarize(H.evaluate(receptors, [H.Prism(tower, height_m, "T")],
+                                       times, masks, args.step_min))
         scored.append((stats["pass_pct"], x, y))
     scored.sort(reverse=True)
-    best_coarse = scored[0]
-    print(f"   1차 최적 {best_coarse[0]:.1f}% @ E{best_coarse[1]:,.1f} N{best_coarse[2]:,.1f}\n")
+    print(f"   1차 최적 {scored[0][0]:.1f}% @ E{scored[0][1]:,.1f} N{scored[0][2]:,.1f}\n",
+          flush=True)
 
-    # 2단계: 1차 상위 지점 주변을 정밀 격자로 재탐색
-    seeds = [(x, y) for _p, x, y in scored[:6]]
+    # 2단계: 상위 지점 주변을 정밀 격자로 재탐색
+    seeds = [(x, y) for _p, x, y in scored[:5]]
     refined: set[tuple[float, float]] = set()
     for sx, sy in seeds:
-        for i in range(-3, 4):
-            for j in range(-3, 4):
+        for i in range(-2, 3):
+            for j in range(-2, 3):
                 x, y = sx + i * args.fine_step, sy + j * args.fine_step
                 if envelope.contains(make_tower(shape, x, y)):
                     refined.add((round(x, 2), round(y, 2)))
-    print(f"2단계 정밀평가: {len(refined)}개 위치 (전 층 수광점 {len(receptors)}점)")
+    print(f"2단계 정밀평가: {len(refined)}개 위치", flush=True)
 
     rows: list[dict[str, Any]] = []
     for x, y in sorted(refined):
@@ -222,16 +220,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         })
 
     # ① 일조(0.2%p 밴드 – 그 이하는 모델 오차) ② 한강 조망 ③ 일조 정밀값
-    rows.sort(key=lambda r: (-round(r["stats"]["pass_pct"] * 5) / 5,
+    # ① 전체 일조(0.5%p 밴드 – 그 이하는 수광점 표본 오차) ② 학교별 최악 저하폭
+    # ③ 한강 조망 저층 개방률 ④ 일조 정밀값
+    rows.sort(key=lambda r: (-round(r["stats"]["pass_pct"] * 2) / 2,
+                             -round(r["delta_min"] * 2) / 2,
                              -round(r["view_low"], 1),
                              -r["stats"]["pass_pct"]))
 
     print(f"\n{'순위':>3}{'중심 E':>12}{'중심 N':>12}{'기준A':>8}{'현황대비':>9}"
-          f"{'조망전층':>9}{'조망저층':>9}{'이격':>7}")
-    print("-" * 72)
+          f"{'학교최악':>9}{'조망전층':>9}{'조망저층':>9}{'이격':>7}")
+    print("-" * 82)
     for rank, row in enumerate(rows[:args.top_n], 1):
         print(f"{rank:>3}{row['x']:>12,.1f}{row['y']:>12,.1f}"
               f"{row['stats']['pass_pct']:>7.1f}%{row['delta_all']:>+8.1f}%p"
+              f"{row['delta_min']:>+8.1f}%p"
               f"{row['view_all']:>8.1f}%{row['view_low']:>8.1f}%"
               f"{row['setback']['min_setback_m']:>6.1f}m")
 
