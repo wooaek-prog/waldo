@@ -23,6 +23,7 @@ import os
 import queue
 import re
 import socket
+import ssl
 import sys
 import threading
 import time
@@ -168,9 +169,74 @@ def parse_pubdate(raw: str) -> datetime:
     return dt.astimezone(KST)
 
 
+# --------------------------------------------------------------------------
+# HTTPS 인증서
+# --------------------------------------------------------------------------
+SSL_CONTEXT: ssl.SSLContext | None = None
+
+
+def build_ssl_context(ca_bundle: str = "", quiet: bool = False) -> ssl.SSLContext:
+    """HTTPS 검증에 쓸 인증서 저장소를 준비한다.
+
+    파이썬을 python.org 설치본으로 깔면(특히 맥) 루트 인증서가 비어 있어
+    CERTIFICATE_VERIFY_FAILED 가 납니다. 그럴 때 pip 로 함께 깔리는 certifi
+    번들이 있으면 그걸 대신 씁니다. 검증을 끄지는 않습니다.
+    """
+    if ca_bundle:
+        try:
+            context = ssl.create_default_context(cafile=ca_bundle)
+        except (OSError, ssl.SSLError) as exc:
+            print(f"[warn] --ca-bundle 파일을 읽지 못했습니다: {ca_bundle}\n       {exc}", file=sys.stderr)
+            print("       경로가 맞는지, 인증서 파일(.pem/.crt)이 맞는지 확인해 주세요.", file=sys.stderr)
+        else:
+            if not quiet:
+                print(f"[info] 지정한 인증서 번들을 사용합니다: {ca_bundle}")
+            return context
+
+    context = ssl.create_default_context()
+    if context.cert_store_stats().get("x509_ca", 0) > 0:
+        return context
+
+    try:
+        import certifi
+    except ImportError:
+        if not quiet:
+            print("[warn] 신뢰할 루트 인증서를 찾지 못했습니다. HTTPS 연결이 실패할 수 있습니다.", file=sys.stderr)
+            print(f"       → {ssl_fix_hint()}", file=sys.stderr)
+        return context
+
+    if not quiet:
+        print("[info] 시스템 인증서가 비어 있어 certifi 번들을 대신 사용합니다.")
+    return ssl.create_default_context(cafile=certifi.where())
+
+
+def ssl_fix_hint() -> str:
+    """SSL 검증 실패를 어떻게 고치는지 운영체제에 맞춰 한 줄로 알려 준다."""
+    if sys.platform == "darwin":
+        return (
+            "Finder → 응용 프로그램 → 'Python 3.x' 폴더 → 'Install Certificates.command' 를 "
+            "더블클릭한 뒤 다시 실행해 주세요. (자세한 내용은 news/START-HERE.md 의 '문제가 생겼을 때')"
+        )
+    if os.name == "nt":
+        return (
+            "회사 네트워크의 보안 프로그램이 통신을 검사하는 경우일 수 있습니다. "
+            "명령 프롬프트에서 `pip install --upgrade certifi` 를 실행해 보시고, 그래도 안 되면 "
+            "회사에서 받은 인증서 파일을 `--ca-bundle 파일경로` 로 지정해 주세요."
+        )
+    return (
+        "`pip install --upgrade certifi` 를 실행하거나, 인증서 파일을 `--ca-bundle 파일경로` 로 "
+        "지정해 주세요."
+    )
+
+
+def is_ssl_error(exc: BaseException) -> bool:
+    reason = getattr(exc, "reason", None)
+    return isinstance(exc, ssl.SSLError) or isinstance(reason, ssl.SSLError)
+
+
 def http_get(url: str, headers: dict[str, str] | None = None, timeout: float = 12.0) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
+    with urllib.request.urlopen(req, timeout=timeout, context=SSL_CONTEXT) as resp:
         return resp.read()
 
 
@@ -309,6 +375,7 @@ class FeedStore:
             "source": None,
             "lastPollAt": None,
             "lastError": None,
+            "lastHint": None,
             "pollCount": 0,
             "errorCount": 0,
             "currentTarget": None,
@@ -524,10 +591,14 @@ class Poller(threading.Thread):
             items = self.source.fetch(target)
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", "replace")[:200] if exc.fp else ""
-            self.note_error(f"http{exc.code}", f"HTTP {exc.code} ({target.keyword}) {detail}", exc.code)
+            self.note_error(f"http{exc.code}", f"HTTP {exc.code} ({target.keyword}) {detail}", self.HINTS.get(exc.code))
             return
         except (urllib.error.URLError, socket.timeout, ET.ParseError, json.JSONDecodeError, OSError) as exc:
-            self.note_error(type(exc).__name__, f"{type(exc).__name__} ({target.keyword}): {exc}")
+            if is_ssl_error(exc):
+                self.note_error("ssl", f"HTTPS 인증서를 확인하지 못했습니다 ({target.keyword}): {exc}", ssl_fix_hint())
+            else:
+                self.note_error(type(exc).__name__, f"{type(exc).__name__} ({target.keyword}): {exc}",
+                                "인터넷 연결을 확인해 주세요.")
             return
 
         cutoff = datetime.now(KST) - self.max_age
@@ -551,6 +622,7 @@ class Poller(threading.Thread):
         self.store.set_status(
             lastPollAt=time.time(),
             lastError=None,
+            lastHint=None,
             pollCount=self.store.get_status()["pollCount"] + 1,
         )
         if fresh:
@@ -576,10 +648,11 @@ class Poller(threading.Thread):
         429: "오늘 API 호출 한도를 다 썼습니다. 내일 자동으로 풀립니다. (companies.json 에서 계열사를 줄이면 여유가 생깁니다)",
     }
 
-    def note_error(self, key: str, message: str, code: int | None = None) -> None:
+    def note_error(self, key: str, message: str, hint: str | None = None) -> None:
         status = self.store.get_status()
         self.store.set_status(
             lastError=message,
+            lastHint=hint,
             lastPollAt=time.time(),
             errorCount=status["errorCount"] + 1,
         )
@@ -589,13 +662,12 @@ class Poller(threading.Thread):
         self._error_key, self._error_streak = key, repeat
         if repeat == 1:
             print(f"[warn] {message}", file=sys.stderr)
-            hint = self.HINTS.get(code)
             if hint:
                 print(f"       → {hint}", file=sys.stderr)
         elif repeat % 20 == 0:
             print(f"[warn] 같은 오류가 {repeat}번째 이어지고 있습니다: {key}", file=sys.stderr)
-            if code is None:
-                print("       → 인터넷 연결을 확인해 주세요.", file=sys.stderr)
+            if hint:
+                print(f"       → {hint}", file=sys.stderr)
 
         self.store.broadcast("status", self.store.get_status())
 
@@ -797,11 +869,91 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--reset", action="store_true", help="저장된 상태를 지우고 처음부터 시작")
     parser.add_argument("--set-key", action="store_true", help="네이버 API 키를 새로 입력해서 저장")
     parser.add_argument("--no-open", action="store_true", help="시작할 때 브라우저를 자동으로 열지 않음")
+    parser.add_argument("--ca-bundle", default="", help="HTTPS 검증에 쓸 인증서 파일(.pem/.crt) 경로")
+    parser.add_argument("--doctor", action="store_true", help="연결 상태를 점검하고 문제 원인을 알려 줍니다")
     return parser.parse_args(argv)
+
+
+def run_doctor(args) -> int:
+    """뉴스를 못 가져올 때 원인을 짚어 준다. 초보자용 자가 진단."""
+    import platform
+
+    print("=" * 66)
+    print(" 연결 점검")
+    print("=" * 66)
+    print(f" 파이썬  : {sys.version.split()[0]} ({platform.python_implementation()})")
+    print(f" 운영체제: {platform.system()} {platform.release()}")
+
+    context = build_ssl_context(args.ca_bundle, quiet=True)
+    ca_count = context.cert_store_stats().get("x509_ca", 0)
+    print(f" 인증서  : {ca_count}개 보유", end="")
+    if args.ca_bundle:
+        print(f" (지정한 파일: {args.ca_bundle})")
+    elif ca_count == 0:
+        print(" ← 비어 있습니다. 이게 원인일 가능성이 큽니다.")
+    else:
+        print()
+
+    client_id, client_secret = (
+        args.client_id or os.environ.get("NAVER_CLIENT_ID", ""),
+        args.client_secret or os.environ.get("NAVER_CLIENT_SECRET", ""),
+    )
+    if not (client_id and client_secret):
+        client_id, client_secret = load_saved_key()
+    print(f" API 키  : {'있음' if client_id and client_secret else '없음 (구글 뉴스로 동작)'}")
+    print()
+
+    global SSL_CONTEXT
+    SSL_CONTEXT = context
+
+    checks: list[tuple[str, str, dict[str, str]]] = [
+        ("구글 뉴스 RSS", f"{GOOGLE_RSS}?q=test&hl=ko&gl=KR&ceid=KR:ko", {}),
+    ]
+    if client_id and client_secret:
+        checks.append((
+            "네이버 검색 API",
+            f"{NAVER_API}?" + urllib.parse.urlencode({"query": "현대엘리베이터", "display": 1}),
+            {"X-Naver-Client-Id": client_id, "X-Naver-Client-Secret": client_secret},
+        ))
+
+    failures = 0
+    for label, url, headers in checks:
+        print(f" [{label}] 확인 중...", end=" ", flush=True)
+        try:
+            body = http_get(url, headers=headers, timeout=15.0)
+        except urllib.error.HTTPError as exc:
+            failures += 1
+            print(f"실패 (HTTP {exc.code})")
+            hint = Poller.HINTS.get(exc.code)
+            print(f"    → {hint}" if hint else f"    → 응답: {exc.read()[:200].decode('utf-8', 'replace')}")
+        except Exception as exc:  # noqa: BLE001 - 무엇이 나오든 원인을 알려 주는 게 목적
+            failures += 1
+            print("실패")
+            print(f"    {type(exc).__name__}: {exc}")
+            if is_ssl_error(exc):
+                print(f"    → {ssl_fix_hint()}")
+            else:
+                print("    → 인터넷 연결을 확인해 주세요. 회사 네트워크라면 방화벽일 수 있습니다.")
+        else:
+            print(f"성공 ({len(body):,} 바이트)")
+
+    print()
+    if failures:
+        print(f" 점검 결과: {failures}건 실패. 위 '→' 안내를 먼저 해보세요.")
+    else:
+        print(" 점검 결과: 이상 없습니다. 그냥 실행하시면 됩니다.")
+    print("=" * 66)
+    return 1 if failures else 0
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    if args.doctor:
+        return run_doctor(args)
+
+    global SSL_CONTEXT
+    SSL_CONTEXT = build_ssl_context(args.ca_bundle)
+
     targets, groups = load_targets(CONFIG_PATH)
     if not targets:
         print("[error] companies.json 에 감시 대상이 없습니다.", file=sys.stderr)

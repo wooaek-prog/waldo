@@ -275,6 +275,7 @@
     connected: false,
     lastSeen: 0,               // 폴링 폴백용 커서
     seeding: false,
+    bannerKind: null,          // "offline" | "error" | null
   };
 
   const settings = Object.assign(
@@ -581,9 +582,28 @@
     el.status.textContent = parts.join(" · ");
     el.dot.className = "dot " + (!state.connected ? "down" : status.lastError ? "warn" : "live");
     el.dot.title = state.connected ? "실시간 연결됨" : "연결 끊김";
+
+    // 서버가 원인을 짚어 준 경우에만 배너로 크게 띄운다(검은 창을 안 보는 사람을 위해).
+    if (status.lastError && status.lastHint) {
+      showBanner(
+        `<b>뉴스를 가져오지 못하고 있습니다.</b><br>`
+        + `<span style="color:var(--muted)">${escapeHTML(status.lastError)}</span>`
+        + `<div style="margin-top:8px">→ ${escapeHTML(status.lastHint)}</div>`,
+        "error"
+      );
+    } else if (!status.lastError && state.bannerKind === "error") {
+      el.banner.hidden = true;
+      state.bannerKind = null;
+    }
   }
 
-  function showBanner(html) { el.banner.innerHTML = html; el.banner.hidden = false; }
+  function showBanner(html, kind) {
+    // 오프라인 안내가 떠 있으면 그게 더 근본적인 문제이므로 덮어쓰지 않는다.
+    if (state.bannerKind === "offline" && kind !== "offline") return;
+    el.banner.innerHTML = html;
+    el.banner.hidden = false;
+    state.bannerKind = kind || null;
+  }
 
   // ---------- 서버 연결 ----------
   async function loadConfig() {
@@ -643,7 +663,8 @@
       + `<pre>export NAVER_CLIENT_ID=발급받은_ID\n`
       + `export NAVER_CLIENT_SECRET=발급받은_SECRET\n`
       + `python3 news/server.py</pre>`
-      + `<div style="margin-top:8px;color:var(--muted)">API 키가 없으면 구글 뉴스 RSS 폴백으로도 동작합니다(네이버 등록 여부는 표시되지 않음).</div>`
+      + `<div style="margin-top:8px;color:var(--muted)">API 키가 없으면 구글 뉴스 RSS 폴백으로도 동작합니다(네이버 등록 여부는 표시되지 않음).</div>`,
+      "offline"
     );
   }
 
