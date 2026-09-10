@@ -8,6 +8,7 @@
 | `hwarang_tower_shape_study.py` | 화랑아파트 1개동 – 최적 평면 형상(직사각형 방위) 도출 | [형상 검토 보고서](docs/hwarang_tower_shape.md) |
 | `hwarang_site_placement.py` | 화랑아파트 1개동 – 법정 이격 내 최적 입지 도출 | [입지 검토 보고서](docs/hwarang_placement.md) |
 | `hwarang_final_massing.py` | 화랑아파트 – 발코니 반영 최종 형상·배치도 산출 | [최종 배치 보고서](docs/hwarang_final_massing.md) |
+| `hwarang_unit_blocks.py` | 화랑아파트 – 평형별 단위세대 평면 블럭(조합 최적화 준비) | [블럭 라이브러리](docs/hwarang_unit_blocks.md) |
 
 ---
 
@@ -119,3 +120,7 @@ python3 hwarang_massing_study.py --buildings <AL_D010.gpkg> --outdir outputs/hwa
 발코니 1.5m를 반영한 **최종안은 직사각형 2:1(내부 36.97 × 18.48m), 장변 방위 345°, 55층**입니다.
 용적률 400.0% · 건폐율 7.67% · 서비스면적 6,100㎡ · 학교 일조 현황 대비 +3.1%p.
 [docs/hwarang_final_massing.md](docs/hwarang_final_massing.md) 참조.
+
+평형별 단위세대 블럭(84A·84B·88A·93A·102A·105A·116A)은 단위세대 평면도 치수열에서
+생성했습니다. 기준층 조합 최적화의 입력으로 쓰며, 실좌표 캔버스는 확정 연면적선과
+99.97% 일치합니다. [docs/hwarang_unit_blocks.md](docs/hwarang_unit_blocks.md) 참조.

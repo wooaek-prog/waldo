@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="646" viewBox="0 0 1200 646">
+<rect width="100%" height="100%" fill="#fbfbf9"/>
+<text x="14" y="27" font-family="sans-serif" font-size="17" font-weight="bold" fill="#111">화랑아파트 평형별 단위세대 블럭 (발코니 1500mm, 상단이 배면)</text>
+<rect x="4.0" y="48.0" width="292.0" height="292.0" fill="#fff" stroke="#ddd"/>
+<g fill="#8ecae6" fill-opacity="0.55" stroke="#457b9d" stroke-width="1"><polygon points="256.0,280.5 44.0,280.5 44.0,257.5 44.0,174.8 66.0,145.0 99.3,145.0 99.3,139.5 168.4,139.5 168.4,177.6 209.9,177.6 256.0,177.6 256.0,257.5 256.0,280.5" /></g>
+<g fill="#1d3557" fill-opacity="0.88" stroke="#0b1c30" stroke-width="1.5"><polygon points="256.0,177.6 256.0,257.5 209.9,257.5 168.4,257.5 99.3,257.5 44.0,257.5 44.0,174.8 66.0,145.0 99.3,145.0 99.3,139.5 168.4,139.5 168.4,177.6 209.9,177.6 256.0,177.6" /></g>
+<polyline points="99.3,257.5 99.3,145.0" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="168.4,257.5 168.4,139.5" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="209.9,257.5 209.9,177.6" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="14.0" y="72.0" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#111">84A · 전용 84㎡</text>
+<text x="14.0" y="314.0" font-family="sans-serif" font-size="11.5" fill="#333">전면 13.80 m · 깊이 7.68 m</text>
+<text x="14.0" y="329.0" font-family="sans-serif" font-size="11.5" fill="#555">골조 89.2㎡ · 발코니 20.7㎡ · 판상4베이+코너사선</text>
+<rect x="304.0" y="48.0" width="292.0" height="292.0" fill="#fff" stroke="#ddd"/>
+<g fill="#8ecae6" fill-opacity="0.55" stroke="#457b9d" stroke-width="1"><polygon points="556.0,277.8 344.0,277.8 344.0,254.8 344.0,174.8 390.1,174.8 431.6,174.8 431.6,142.2 500.7,142.2 556.0,142.2 556.0,254.8 556.0,277.8" /></g>
+<g fill="#1d3557" fill-opacity="0.88" stroke="#0b1c30" stroke-width="1.5"><polygon points="344.0,174.8 390.1,174.8 431.6,174.8 431.6,142.2 500.7,142.2 556.0,142.2 556.0,254.8 500.7,254.8 431.6,254.8 390.1,254.8 344.0,254.8 344.0,174.8" /></g>
+<polyline points="390.1,254.8 390.1,174.8" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="431.6,254.8 431.6,174.8" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="500.7,254.8 500.7,142.2" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="314.0" y="72.0" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#111">84B · 전용 84㎡</text>
+<text x="314.0" y="314.0" font-family="sans-serif" font-size="11.5" fill="#333">전면 13.80 m · 깊이 7.33 m</text>
+<text x="314.0" y="329.0" font-family="sans-serif" font-size="11.5" fill="#555">골조 89.0㎡ · 발코니 20.7㎡ · 판상4베이</text>
+<rect x="604.0" y="48.0" width="292.0" height="292.0" fill="#fff" stroke="#ddd"/>
+<g fill="#8ecae6" fill-opacity="0.55" stroke="#457b9d" stroke-width="1"><polygon points="856.0,281.4 644.0,281.4 644.0,258.4 644.0,177.3 690.1,177.3 731.6,177.3 731.6,138.6 800.7,138.6 856.0,138.6 856.0,258.4 856.0,281.4" /></g>
+<g fill="#1d3557" fill-opacity="0.88" stroke="#0b1c30" stroke-width="1.5"><polygon points="644.0,177.3 690.1,177.3 731.6,177.3 731.6,138.6 800.7,138.6 856.0,138.6 856.0,258.4 800.7,258.4 731.6,258.4 690.1,258.4 644.0,258.4 644.0,177.3" /></g>
+<polyline points="690.1,258.4 690.1,177.3" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="731.6,258.4 731.6,177.3" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="800.7,258.4 800.7,138.6" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="614.0" y="72.0" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#111">88A · 전용 88㎡</text>
+<text x="614.0" y="314.0" font-family="sans-serif" font-size="11.5" fill="#333">전면 13.80 m · 깊이 7.80 m</text>
+<text x="614.0" y="329.0" font-family="sans-serif" font-size="11.5" fill="#555">골조 93.3㎡ · 발코니 20.7㎡ · 판상4베이</text>
+<rect x="904.0" y="48.0" width="292.0" height="292.0" fill="#fff" stroke="#ddd"/>
+<g fill="#8ecae6" fill-opacity="0.55" stroke="#457b9d" stroke-width="1"><polygon points="1156.0,267.0 944.0,267.0 944.0,247.3 944.0,183.5 983.3,183.5 1018.6,183.5 1018.6,153.0 1077.5,153.0 1077.5,183.5 1105.0,183.5 1105.0,153.0 1156.0,153.0 1156.0,247.3 1156.0,267.0" /></g>
+<g fill="#1d3557" fill-opacity="0.88" stroke="#0b1c30" stroke-width="1.5"><polygon points="944.0,183.5 983.3,183.5 1018.6,183.5 1018.6,153.0 1077.5,153.0 1077.5,183.5 1105.0,183.5 1105.0,153.0 1156.0,153.0 1156.0,247.3 1105.0,247.3 1077.5,247.3 1018.6,247.3 983.3,247.3 944.0,247.3 944.0,183.5" /></g>
+<polyline points="983.3,247.3 983.3,183.5" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="1018.6,247.3 1018.6,183.5" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="1077.5,247.3 1077.5,153.0" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="1105.0,247.3 1105.0,183.5" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="914.0" y="72.0" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#111">93A · 전용 93㎡</text>
+<text x="914.0" y="314.0" font-family="sans-serif" font-size="11.5" fill="#333">전면 16.20 m · 깊이 7.21 m</text>
+<text x="914.0" y="329.0" font-family="sans-serif" font-size="11.5" fill="#555">골조 98.6㎡ · 발코니 24.3㎡ · 판상4베이+서재</text>
+<rect x="4.0" y="348.0" width="292.0" height="292.0" fill="#fff" stroke="#ddd"/>
+<g fill="#8ecae6" fill-opacity="0.55" stroke="#457b9d" stroke-width="1"><polygon points="256.0,562.0 44.0,562.0 44.0,544.0 44.0,485.8 79.9,485.8 112.3,485.8 112.3,458.0 166.2,458.0 166.2,485.8 196.1,485.8 196.1,458.0 256.0,458.0 256.0,544.0 256.0,562.0" /></g>
+<g fill="#1d3557" fill-opacity="0.88" stroke="#0b1c30" stroke-width="1.5"><polygon points="44.0,485.8 79.9,485.8 112.3,485.8 112.3,458.0 166.2,458.0 166.2,485.8 196.1,485.8 196.1,458.0 256.0,458.0 256.0,544.0 196.1,544.0 166.2,544.0 112.3,544.0 79.9,544.0 44.0,544.0 44.0,485.8" /></g>
+<polyline points="79.9,544.0 79.9,485.8" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="112.3,544.0 112.3,485.8" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="166.2,544.0 166.2,458.0" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="196.1,544.0 196.1,485.8" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="14.0" y="372.0" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#111">102A · 전용 102㎡</text>
+<text x="14.0" y="614.0" font-family="sans-serif" font-size="11.5" fill="#333">전면 17.70 m · 깊이 7.18 m</text>
+<text x="14.0" y="629.0" font-family="sans-serif" font-size="11.5" fill="#555">골조 108.1㎡ · 발코니 26.5㎡ · 판상4베이+서재</text>
+<rect x="304.0" y="348.0" width="292.0" height="292.0" fill="#fff" stroke="#ddd"/>
+<g fill="#8ecae6" fill-opacity="0.55" stroke="#457b9d" stroke-width="1"><polygon points="556.0,592.4 344.0,592.4 344.0,570.0 344.0,482.9 406.7,482.9 441.0,482.9 441.0,427.6 508.2,427.6 556.0,427.6 556.0,570.0 556.0,592.4" /></g>
+<g fill="#1d3557" fill-opacity="0.88" stroke="#0b1c30" stroke-width="1.5"><polygon points="344.0,482.9 406.7,482.9 441.0,482.9 441.0,427.6 508.2,427.6 556.0,427.6 556.0,570.0 508.2,570.0 441.0,570.0 406.7,570.0 344.0,570.0 344.0,482.9" /></g>
+<polyline points="406.7,570.0 406.7,482.9" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="441.0,570.0 441.0,482.9" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="508.2,570.0 508.2,427.6" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="314.0" y="372.0" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#111">105A · 전용 105㎡</text>
+<text x="314.0" y="614.0" font-family="sans-serif" font-size="11.5" fill="#333">전면 14.20 m · 깊이 9.53 m</text>
+<text x="314.0" y="629.0" font-family="sans-serif" font-size="11.5" fill="#555">골조 111.3㎡ · 발코니 21.3㎡ · 타워형(L)</text>
+<rect x="604.0" y="348.0" width="292.0" height="292.0" fill="#fff" stroke="#ddd"/>
+<g fill="#8ecae6" fill-opacity="0.55" stroke="#457b9d" stroke-width="1"><polygon points="856.0,603.0 644.0,603.0 644.0,582.3 644.0,417.0 701.0,417.0 701.0,491.1 768.8,491.1 810.3,491.1 856.0,491.1 856.0,582.3 856.0,603.0" /></g>
+<g fill="#1d3557" fill-opacity="0.88" stroke="#0b1c30" stroke-width="1.5"><polygon points="768.8,491.1 810.3,491.1 856.0,491.1 856.0,582.3 810.3,582.3 768.8,582.3 701.0,582.3 644.0,582.3 644.0,417.0 701.0,417.0 701.0,491.1 768.8,491.1" /></g>
+<polyline points="701.0,582.3 701.0,417.0" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="768.8,582.3 768.8,491.1" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<polyline points="810.3,582.3 810.3,491.1" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="614.0" y="372.0" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#111">116A · 전용 116㎡</text>
+<text x="614.0" y="614.0" font-family="sans-serif" font-size="11.5" fill="#333">전면 15.32 m · 깊이 11.94 m</text>
+<text x="614.0" y="629.0" font-family="sans-serif" font-size="11.5" fill="#555">골조 123.0㎡ · 발코니 23.0㎡ · 타워형(대L)</text>
+</svg>
