@@ -43,6 +43,11 @@ INDEX_PATH = BASE_DIR / "index.html"
 STATE_PATH = BASE_DIR / ".state.json"
 KEY_PATH = BASE_DIR / ".naver_key.json"  # 한 번 입력한 API 키를 이 컴퓨터에만 저장
 
+KEY_RESET_HINT = (
+    "키를 다시 넣으려면 news 폴더의 set-key-windows.bat(맥은 set-key-mac.command)를 더블클릭하거나, "
+    "news 폴더의 .naver_key.json 파일을 지우고 다시 실행하세요."
+)
+
 KST = timezone(timedelta(hours=9))
 NAVER_API = "https://openapi.naver.com/v1/search/news.json"
 GOOGLE_RSS = "https://news.google.com/rss/search"
@@ -409,6 +414,8 @@ class FeedStore:
             "lastPollAt": None,
             "lastError": None,
             "lastHint": None,
+            "notice": None,
+            "noticeHint": None,
             "pollCount": 0,
             "errorCount": 0,
             "currentTarget": None,
@@ -585,6 +592,7 @@ class Poller(threading.Thread):
         self.max_age = timedelta(hours=args.max_age_hours)
         self._error_key: str | None = None
         self._error_streak = 0
+        self._auth_failures = 0
 
     @property
     def spacing(self) -> float:
@@ -625,6 +633,7 @@ class Poller(threading.Thread):
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", "replace")[:200] if exc.fp else ""
             self.note_error(f"http{exc.code}", f"HTTP {exc.code} ({target.keyword}) {detail}", self.HINTS.get(exc.code))
+            self.handle_auth_failure(exc.code)
             return
         except (urllib.error.URLError, socket.timeout, ET.ParseError, json.JSONDecodeError, OSError) as exc:
             if is_ssl_error(exc):
@@ -652,6 +661,7 @@ class Poller(threading.Thread):
             (fresh if record["alert"] else updates).append(record)
 
         self._error_key, self._error_streak = None, 0
+        self._auth_failures = 0
         self.store.set_status(
             lastPollAt=time.time(),
             lastError=None,
@@ -676,10 +686,23 @@ class Poller(threading.Thread):
 
     # 원인별 한 줄 안내. 같은 오류가 반복될 때 화면을 채우지 않도록 한 번만 띄운다.
     HINTS = {
-        401: "네이버 API 키가 잘못되었습니다. 창을 닫고 다시 실행할 때 `--set-key` 를 붙여 키를 새로 넣어 주세요.",
+        401: "네이버 API 키가 맞지 않습니다. " + KEY_RESET_HINT,
         403: "네이버 API 사용 권한이 없습니다. 개발자센터에서 이 앱에 '검색' API 가 추가되어 있는지 확인해 주세요.",
         429: "오늘 API 호출 한도를 다 썼습니다. 내일 자동으로 풀립니다. (companies.json 에서 계열사를 줄이면 여유가 생깁니다)",
     }
+
+    def handle_auth_failure(self, code: int) -> None:
+        """키가 틀린 채로 하루 종일 두드리지 않도록, 몇 번 실패하면 구글 뉴스로 전환한다."""
+        if code not in (401, 403) or not isinstance(self.source, NaverSource):
+            return
+        self._auth_failures += 1
+        if self._auth_failures < 3:
+            return
+        self.source = GoogleNewsSource()
+        notice = ("네이버 API 키 인증에 실패해 구글 뉴스로 전환했습니다. "
+                  "기사는 계속 모이지만 네이버뉴스 등록 여부는 표시되지 않습니다.")
+        self.store.set_status(source=self.source.name, notice=notice, noticeHint=KEY_RESET_HINT)
+        print(f"\n[info] {notice}\n       → {KEY_RESET_HINT}\n")
 
     def note_error(self, key: str, message: str, hint: str | None = None) -> None:
         status = self.store.get_status()
@@ -815,13 +838,32 @@ def _open_browser(url: str) -> None:
         print(f"[info] 브라우저를 자동으로 열지 못했습니다({exc}). 주소를 직접 입력해 주세요.")
 
 
+def clean_key(raw: str) -> str:
+    """붙여넣기 사고를 정리한다: 앞뒤 공백/줄바꿈, 실수로 딸려온 따옴표."""
+    return (raw or "").strip().strip("'\"").strip()
+
+
+def check_key_shape(client_id: str, client_secret: str) -> str | None:
+    """형식이 뻔히 이상하면 한 줄로 알려 준다(막지는 않는다).
+
+    네이버 Client ID 는 Secret 보다 훨씬 깁니다(대략 20자 vs 10자). 두 칸을
+    바꿔 넣는 실수가 잦아 그것만 짚어 줍니다.
+    """
+    if " " in client_id or " " in client_secret:
+        return "키 안에 공백이 들어 있습니다. 앞뒤 공백까지 복사되지 않았는지 확인해 주세요."
+    if len(client_id) < len(client_secret):
+        return ("Client ID 와 Client Secret 이 바뀐 것 같습니다. "
+                "네이버에서 ID 가 Secret 보다 깁니다.")
+    return None
+
+
 def load_saved_key() -> tuple[str, str]:
     """이 컴퓨터에 저장해 둔 API 키를 읽는다."""
     try:
         data = json.loads(KEY_PATH.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return "", ""
-    return str(data.get("client_id", "")), str(data.get("client_secret", ""))
+    return clean_key(str(data.get("client_id", ""))), clean_key(str(data.get("client_secret", "")))
 
 
 def save_key(client_id: str, client_secret: str) -> None:
@@ -856,22 +898,33 @@ def prompt_for_key() -> tuple[str, str]:
     print(" ※ 그냥 Enter 를 누르면 키 없이 시작합니다. 나중에 넣어도 됩니다.")
     print("=" * 66)
     try:
-        client_id = input(" Client ID     : ").strip()
+        client_id = clean_key(input(" Client ID     : "))
         if not client_id:
             return "", ""
-        client_secret = input(" Client Secret : ").strip()
+        client_secret = clean_key(input(" Client Secret : "))
     except (EOFError, KeyboardInterrupt):
         print()
         return "", ""
     if not client_secret:
         return "", ""
+
+    warning = check_key_shape(client_id, client_secret)
+    if warning:
+        print(f"\n [!] {warning}")
+        print("     그래도 이대로 진행하려면 Enter, 다시 입력하려면 아무 글자나 치고 Enter.")
+        try:
+            if input("     > ").strip():
+                return prompt_for_key()
+        except (EOFError, KeyboardInterrupt):
+            print()
+
     save_key(client_id, client_secret)
     return client_id, client_secret
 
 
 def build_source(args) -> object:
-    client_id = args.client_id or os.environ.get("NAVER_CLIENT_ID", "")
-    client_secret = args.client_secret or os.environ.get("NAVER_CLIENT_SECRET", "")
+    client_id = clean_key(args.client_id or os.environ.get("NAVER_CLIENT_ID", ""))
+    client_secret = clean_key(args.client_secret or os.environ.get("NAVER_CLIENT_SECRET", ""))
     if not (client_id and client_secret):
         client_id, client_secret = load_saved_key()
     if not (client_id and client_secret) and sys.stdin and sys.stdin.isatty():
