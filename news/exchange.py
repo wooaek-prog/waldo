@@ -3,9 +3,14 @@
 환율 소스는 갱신 주기와 기준이 제각각이라 여러 곳을 순서대로 시도합니다.
 
   1) 한국수출입은행 - 매매기준율. 영업일 11시경 하루 한 번 고시. 인증키 필요
-  2) 네이버 금융    - 실시간에 가깝고 전일 대비도 주지만 비공식 경로라 언제든 막힐 수 있음
-  3) Frankfurter    - 유럽중앙은행 고시. 평일 하루 한 번(16:00 CET). 전일 대비 계산 가능
-  4) ExchangeRate-API - 하루 한 번. 앞이 모두 안 될 때의 마지막 보루
+  2) 우리은행      - 고시 화면을 읽습니다. 하루에도 여러 회차로 바뀌어 자주 갱신됩니다
+  3) 네이버 금융    - 실시간에 가깝고 전일 대비도 주지만 비공식 경로라 언제든 막힐 수 있음
+  4) Frankfurter    - 유럽중앙은행 고시. 평일 하루 한 번(16:00 CET). 전일 대비 계산 가능
+  5) ExchangeRate-API - 하루 한 번. 앞이 모두 안 될 때의 마지막 보루
+
+2번은 공개 API 가 아니라 화면을 읽는 방식이라 페이지가 바뀌면 깨질 수 있습니다.
+그래서 태그 구조에 기대지 않고 표 머리글에서 '매매기준율' 칸을 찾아 읽고,
+값이 상식 범위를 벗어나면 버립니다. 실패하면 조용히 다음 소스로 넘어갑니다.
 
 어느 소스에서 몇 시 기준으로 받은 값인지 항상 함께 돌려주므로, 화면에서 "실시간"인지
 "일 고시"인지 구분해 보여 줄 수 있습니다.
@@ -13,7 +18,9 @@
 
 from __future__ import annotations
 
+import html
 import json
+import re
 import sys
 import threading
 import time
@@ -55,6 +62,10 @@ NAVER_CODES = {
 }
 
 
+TAG_RE = re.compile(r"<[^>]+>")
+WS_RE = re.compile(r"\s+")
+
+
 def _cross(table: dict[str, float], base: str, quote: str, unit: int) -> float | None:
     """USD 기준 환율표에서 임의의 통화쌍을 계산한다."""
     b, q = table.get(base), table.get(quote)
@@ -72,6 +83,147 @@ def _to_float(value) -> float | None:
         except ValueError:
             return None
     return None
+
+
+class WooriBankRates:
+    """우리은행 환율조회 페이지에서 매매기준율을 읽어 온다.
+
+    공개 API 가 아니라 화면을 읽는 방식이라, 페이지가 바뀌면 깨질 수 있습니다.
+    그래서 특정 태그·클래스에 기대지 않고 **표 머리글에서 '매매기준율' 칸을 찾아**
+    그 열의 숫자를 가져옵니다. 실패하면 조용히 다음 소스로 넘어갑니다.
+
+    수출입은행이 영업일 11시경 하루 한 번 고시하는 것과 달리, 은행 고시환율은
+    하루에도 여러 차례(회차별) 바뀝니다. 그래서 10분마다 확인하는 것이 실제로
+    의미가 있습니다.
+    """
+
+    name = "woori"
+    label = "우리은행 매매기준율"
+    realtime = False       # 실시간 체결가는 아니고 은행 고시환율이다
+
+    URL = "https://spot.wooribank.com/pot/Dream?withyou=FXXRT0011"
+    HEADERS = {
+        "Accept": "text/html,application/xhtml+xml",
+        "Accept-Language": "ko-KR,ko;q=0.9",
+    }
+
+    ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
+    CELL_RE = re.compile(r"<t[dh][^>]*>(.*?)</t[dh]>", re.S | re.I)
+    STAMP_RE = re.compile(r"(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})[^0-9]{0,12}(\d{1,2}):(\d{2})")
+    ROUND_RE = re.compile(r"(\d+)\s*회\s*차")
+
+    # 표에 통화가 어떻게 적혀 있든 알아보도록 코드와 한글 이름을 모두 둔다.
+    CURRENCIES = {
+        "USD": ("USD", ("미국",)),
+        "JPY": ("JPY", ("일본",)),
+        "EUR": ("EUR", ("유로", "유럽")),
+        "CNY": ("CNY", ("중국", "위안")),
+        "CNH": ("CNY", ()),
+        "GBP": ("GBP", ("영국",)),
+        "AUD": ("AUD", ("호주",)),
+    }
+    # 파싱이 엉뚱하게 됐는지 걸러내는 상식 범위(1단위당 원화)
+    SANE_RANGE = {
+        "USD": (500, 3000), "JPY": (5, 30), "EUR": (600, 3500),
+        "CNY": (80, 400), "GBP": (700, 4000), "AUD": (400, 2000),
+    }
+
+    def __init__(self, http_get):
+        self.http_get = http_get
+
+    @staticmethod
+    def _decode(body: bytes) -> str:
+        """한국 은행 페이지는 UTF-8 일 수도, EUC-KR(CP949) 일 수도 있다."""
+        head = body[:2048].lower()
+        order = ["utf-8", "cp949"]
+        if b"euc-kr" in head or b"ks_c_5601" in head:
+            order = ["cp949", "utf-8"]
+        for encoding in order:
+            try:
+                return body.decode(encoding)
+            except UnicodeDecodeError:
+                continue
+        return body.decode("utf-8", "replace")
+
+    @classmethod
+    def _cells(cls, row_html: str) -> list[str]:
+        out = []
+        for cell in cls.CELL_RE.findall(row_html):
+            text = html.unescape(TAG_RE.sub(" ", cell))
+            out.append(WS_RE.sub(" ", text).strip())
+        return out
+
+    @classmethod
+    def _currency_of(cls, cells: list[str]) -> tuple[str, int] | None:
+        """행의 앞쪽 칸에서 통화를 알아내고, 엔화처럼 100단위면 그 단위도 돌려준다."""
+        head = " ".join(cells[:2]).upper()
+        for token, (code, names) in cls.CURRENCIES.items():
+            if re.search(rf"\b{token}\b", head) or any(name in head for name in names):
+                unit = 100 if re.search(r"\b100\b", head) else (100 if code == "JPY" else 1)
+                return code, unit
+        return None
+
+    @classmethod
+    def parse(cls, text: str) -> tuple[dict[str, float], str]:
+        """페이지 HTML 에서 '1단위당 원화' 표와 기준 시각을 뽑는다."""
+        krw: dict[str, float] = {}
+        column: int | None = None
+
+        for row_html in cls.ROW_RE.findall(text):
+            cells = cls._cells(row_html)
+            if not cells:
+                continue
+
+            # 머리글에서 매매기준율 칸의 위치를 기억한다.
+            for index, cell in enumerate(cells):
+                if "매매" in cell and "기준" in cell:
+                    column = index
+                    break
+            else:
+                found = cls._currency_of(cells)
+                if not found:
+                    continue
+                code, unit = found
+                numbers = [(i, _to_float(c)) for i, c in enumerate(cells)]
+                numbers = [(i, v) for i, v in numbers if v]
+                if not numbers:
+                    continue
+                # 머리글을 찾았으면 그 칸을, 못 찾았으면 첫 숫자를 쓴다.
+                value = next((v for i, v in numbers if i == column), None) if column is not None else None
+                if value is None:
+                    value = numbers[0][1]
+                per_unit = value / unit
+                low, high = cls.SANE_RANGE.get(code, (0, float("inf")))
+                if low <= per_unit <= high:
+                    krw.setdefault(code, per_unit)
+
+        stamp = ""
+        match = cls.STAMP_RE.search(TAG_RE.sub(" ", text))
+        if match:
+            y, mo, d, h, mi = match.groups()
+            stamp = f"{y}-{int(mo):02d}-{int(d):02d} {int(h):02d}:{mi}"
+        turn = cls.ROUND_RE.search(TAG_RE.sub(" ", text))
+        if turn:
+            stamp = f"{stamp} {turn.group(1)}회차".strip()
+        return krw, stamp
+
+    def fetch(self, pairs: list[dict]) -> dict:
+        body = self.http_get(self.URL, headers=self.HEADERS, timeout=15.0)
+        krw, stamp = self.parse(self._decode(body))
+        if "USD" not in krw:
+            raise ValueError("페이지에서 매매기준율을 찾지 못했습니다(화면 구조가 바뀌었을 수 있습니다).")
+
+        krw["KRW"] = 1.0
+        usd_krw = krw["USD"]
+        table = {code: usd_krw / value for code, value in krw.items() if value}
+        table["USD"] = 1.0
+
+        out = {}
+        for pair in pairs:
+            value = _cross(table, pair["base"], pair["quote"], pair["unit"])
+            if value is not None:
+                out[pair["code"]] = {"value": value, "change": None, "asOf": stamp or "우리은행 고시"}
+        return out
 
 
 class KoreaEximRates:
@@ -369,8 +521,11 @@ class RateService(threading.Thread):
 
     daemon = True
 
+    # --rate-source 로 고를 수 있는 이름
+    SOURCE_NAMES = ("exim", "woori", "naver", "frankfurter", "open-er-api")
+
     def __init__(self, http_get, interval: float = 600.0, on_update=None,
-                 enabled: bool = True, exim_key: str = ""):
+                 enabled: bool = True, exim_key: str = "", prefer: str = "auto"):
         super().__init__(name="rates")
         self.http_get = http_get
         self.interval = max(20.0, interval)
@@ -378,15 +533,32 @@ class RateService(threading.Thread):
         self.enabled = enabled
         self.stop_event = threading.Event()
         self.lock = threading.Lock()
-        self.sources = []
-        # 수출입은행 키가 있으면 이게 1순위. 은행 고시 매매기준율이라 기준이 분명합니다.
+        available = {
+            "woori": WooriBankRates(http_get),
+            "naver": NaverFinanceRates(http_get),
+            "frankfurter": FrankfurterRates(http_get),
+            "open-er-api": OpenErApiRates(http_get),
+        }
+        # 수출입은행은 인증키가 있을 때만 쓸 수 있다.
         if exim_key:
-            self.sources.append(KoreaEximRates(http_get, exim_key))
-        self.sources += [
-            NaverFinanceRates(http_get),
-            FrankfurterRates(http_get),
-            OpenErApiRates(http_get),
-        ]
+            available["exim"] = KoreaEximRates(http_get, exim_key)
+
+        if prefer and prefer != "auto":
+            chosen = available.get(prefer)
+            if chosen is None:
+                print(f"[warn] 환율 소스 '{prefer}' 를 쓸 수 없어 자동 선택으로 돌립니다.", file=sys.stderr)
+            else:
+                # 지정한 소스를 맨 앞에 두되, 그것이 실패하면 나머지로 내려간다.
+                self.sources = [chosen] + [s for k, s in available.items() if k != prefer]
+                self._init_snapshot()
+                return
+
+        # 기본 순서: 수출입은행(키 있을 때) → 우리은행 → 네이버 금융 → ECB → 폴백
+        order = ["exim", "woori", "naver", "frankfurter", "open-er-api"]
+        self.sources = [available[k] for k in order if k in available]
+        self._init_snapshot()
+
+    def _init_snapshot(self) -> None:
         self.snapshot: dict = {
             "pairs": [{k: p[k] for k in ("code", "label", "digits")} for p in PAIRS],
             "defaultCodes": DEFAULT_CODES,

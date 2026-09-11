@@ -43,8 +43,8 @@ from pathlib import Path
 import exchange
 
 # 화면과 로그에 찍어 두면 "새 코드를 받으셨는지"를 물어볼 필요가 없습니다.
-VERSION = "2026.09.11d"     # 환율 키 입력 흐름 수정
-VERSION_NOTE = "계열사 편집 · 수출입은행 매매기준율"
+VERSION = "2026.09.11e"     # 우리은행 고시 화면 읽기 추가
+VERSION_NOTE = "계열사 편집 · 환율(우리은행/수출입은행)"
 
 BASE_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = BASE_DIR / "companies.json"
@@ -1275,6 +1275,9 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
                         help="환율 갱신 주기(초, 최소 20). 기본 600초=10분")
     parser.add_argument("--exim-key", default="", help="한국수출입은행 환율 API 인증키(한 번 넣으면 저장됨)")
     parser.add_argument("--set-exim-key", action="store_true", help="수출입은행 환율 API 키를 새로 입력해서 저장")
+    parser.add_argument("--rate-source", default="auto",
+                        choices=["auto", *exchange.RateService.SOURCE_NAMES],
+                        help="환율 소스를 지정합니다. 기본 auto (수출입은행→우리은행→네이버→ECB 순)")
     parser.add_argument("--api", choices=["auto", "hub", "legacy"], default="auto",
                         help="검색 API 창구: auto(자동 판별), hub(NAVER API HUB), legacy(구 개발자센터)")
     parser.add_argument("--doctor", action="store_true", help="연결 상태를 점검하고 문제 원인을 알려 줍니다")
@@ -1381,6 +1384,29 @@ def run_doctor(args) -> int:
             print(f"성공 ({len(rates)}개 통화쌍)")
             print(f"    달러/원 {usd.get('value', 0):,.2f} · {usd.get('asOf', '')}")
 
+    print(" [환율] 우리은행 고시 화면 확인 중...", end=" ", flush=True)
+    woori = exchange.WooriBankRates(http_get)
+    try:
+        body = http_get(woori.URL, headers=woori.HEADERS, timeout=15.0)
+        krw, stamp = woori.parse(woori._decode(body))
+    except Exception as exc:  # noqa: BLE001 - 원인을 알려 주는 게 목적
+        failures += 1
+        print("실패")
+        print(f"    {type(exc).__name__}: {exc}")
+        if is_ssl_error(exc):
+            print(f"    → {ssl_fix_hint()}")
+        else:
+            print("    → 우리은행 페이지에 접속하지 못했습니다. 회사 방화벽일 수 있습니다.")
+    else:
+        if krw.get("USD"):
+            print(f"성공 ({len(krw)}개 통화)")
+            print(f"    달러/원 {krw['USD']:,.2f} · {stamp or '기준 시각 미표기'}")
+        else:
+            failures += 1
+            print("실패 (표에서 매매기준율을 찾지 못함)")
+            print(f"    받은 내용 {len(body):,} 바이트, 표 행 {len(woori.ROW_RE.findall(woori._decode(body)))}개")
+            print("    → 페이지 구조가 바뀐 것으로 보입니다. 이 줄을 그대로 알려 주시면 맞춰 고치겠습니다.")
+
     print()
     if failures:
         print(f" 점검 결과: {failures}건 실패. 위 '→' 안내를 먼저 해보세요.")
@@ -1422,14 +1448,16 @@ def main(argv: list[str] | None = None) -> int:
         if exim_key:
             print(f"[info] 환율: 수출입은행 매매기준율 ({args.rate_interval / 60:.0f}분마다 확인)")
         else:
-            print("[info] 환율: 인증키가 없어 다른 무료 소스를 씁니다. "
-                  "매매기준율을 쓰려면 set-exim-key-windows.bat(맥은 set-exim-key-mac.command)")
+            print("[info] 환율: 수출입은행 인증키 없음 → 우리은행 고시 화면에서 읽어 옵니다. "
+                  "(수출입은행을 쓰려면 set-exim-key-windows.bat)")
         rates = exchange.RateService(
             http_get,
             interval=args.rate_interval,
             on_update=lambda snap: store.broadcast("rates", snap),
             exim_key=exim_key,
+            prefer=args.rate_source,
         )
+        print(f"[info] 환율 소스 순서: {' → '.join(s.label for s in rates.sources)}")
 
     handler = type("BoundHandler", (Handler,),
                    {"store": store, "groups": groups, "poller": poller, "rates": rates})
