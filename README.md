@@ -10,6 +10,7 @@
 | `hwarang_final_massing.py` | 화랑아파트 – 발코니 반영 최종 형상·배치도 산출 | [최종 배치 보고서](docs/hwarang_final_massing.md) |
 | `hwarang_unit_blocks.py` | 화랑아파트 – 평형별 단위세대 평면 블럭(조합 최적화 준비) | [블럭 라이브러리](docs/hwarang_unit_blocks.md) |
 | `hwarang_floor_plan_optimizer.py` | 화랑아파트 – 확정 배치도 내 세대 구성 최적화(최종 배치평면) | [최종 배치평면 보고서](docs/hwarang_floorplan.md) |
+| `hwarang_stepped_height_study.py` | 화랑아파트 – 대교식 계단형(저층/고층 분할) 매싱의 일조권 효과 검증 | [계단형 매싱 검토 보고서](docs/hwarang_stepped_height.md) |
 
 ---
 
@@ -129,3 +130,8 @@ python3 hwarang_massing_study.py --buildings <AL_D010.gpkg> --outdir outputs/hwa
 확정 배치도(683.3㎡) 안에 평형 블럭을 채우는 최적화 결과: **1개층 102A×4세대**가
 전용면적 비율(59.7%)을 최대화하는 해입니다(무제한 배낭 알고리즘 + 전수열거로 검증).
 [docs/hwarang_floorplan.md](docs/hwarang_floorplan.md) 참조.
+
+대교아파트식 "동별 계단형(저층/고층 분할)" 매싱을 검토한 결과, **1개동인
+화랑아파트에는 유의미한 일조권 개선 효과가 없습니다**(분할비·저층수·방향
+92가지 조합 전수 검증, 균일 55층 대비 최대 ±0.1%p). 확정 균일 55층안을
+그대로 유지할 것을 권장합니다. [docs/hwarang_stepped_height.md](docs/hwarang_stepped_height.md) 참조.

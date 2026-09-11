@@ -335,11 +335,7 @@ def export_step_svg(path: Path, plate, best, uniform_prism, uniform_floors) -> N
                f'font-size="12" text-anchor="middle" fill="#111">{label}</text>')
 
     is_plus_low = best.p_end.startswith("+u")
-    u_split = -L / 2 + best.split * L
-    if is_plus_low:
-        low_span, high_span = (u_split, L / 2), (-L / 2, u_split)
-    else:
-        low_span, high_span = (-L / 2, u_split), (u_split, L / 2)
+    low_span, high_span = compute_spans(L, is_plus_low, best.split)
 
     out = ['<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" '
           'viewBox="0 0 960 430">',
