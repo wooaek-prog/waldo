@@ -63,17 +63,25 @@ class Step:
         return self.area_low * self.floors_low + self.area_high * self.floors_high
 
 
+def compute_spans(L: float, p_low_is_plus: bool,
+                  split: float) -> tuple[tuple[float, float], tuple[float, float]]:
+    """저층부/고층부 각각의 (u0,u1) 구간. split = 저층부가 차지하는 길이 비율(0~1).
+
+    저층부는 지정된 쪽 끝(+u 또는 -u)에서부터 split*L 만큼을 차지한다.
+    """
+    if p_low_is_plus:
+        boundary = L / 2 - split * L
+        return (boundary, L / 2), (-L / 2, boundary)
+    boundary = -L / 2 + split * L
+    return (-L / 2, boundary), (boundary, L / 2)
+
+
 def build_step(centre, ux, uy, vx, vy, L, half_w, p_low_is_plus: bool,
               split: float, floors_low: int, floors_high: int) -> Step:
     """split = 저층부가 차지하는 길이 비율(0~1). 저층부는 지정된 쪽 끝에 붙인다."""
-    u_split_lo = -L / 2 + split * L
-    if p_low_is_plus:
-        # +u측(끝 u=+L/2)이 저층, -u측이 고층
-        low_rect = segment_rect(centre, ux, uy, vx, vy, u_split_lo, L / 2, half_w)
-        high_rect = segment_rect(centre, ux, uy, vx, vy, -L / 2, u_split_lo, half_w)
-    else:
-        low_rect = segment_rect(centre, ux, uy, vx, vy, -L / 2, u_split_lo, half_w)
-        high_rect = segment_rect(centre, ux, uy, vx, vy, u_split_lo, L / 2, half_w)
+    low_span, high_span = compute_spans(L, p_low_is_plus, split)
+    low_rect = segment_rect(centre, ux, uy, vx, vy, *low_span, half_w)
+    high_rect = segment_rect(centre, ux, uy, vx, vy, *high_span, half_w)
     area_low = low_rect.area
     area_high = high_rect.area
     low_prism = H.Prism(low_rect, floors_low * RESI_FLOOR_H + ROOFTOP_M,
@@ -160,15 +168,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     # ── 1단계: 굵은 격자 탐색 (양방향 × 분할비 × 저층수) ───────────────────
     coarse_results: list[dict[str, Any]] = []
     for p_low_is_plus in (True, False):
-        for split in (0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80):
+        for split in (0.05, 0.10, 0.15, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90):
             for floors_low in range(args.min_floors, args.floors, 5):
-                u_split_lo = -L / 2 + split * L
-                area_a = (L / 2 - u_split_lo) * W       # +u측 길이×폭
-                area_b = (u_split_lo + L / 2) * W        # -u측 길이×폭
-                if p_low_is_plus:
-                    area_low, area_high = area_a, area_b
-                else:
-                    area_low, area_high = area_b, area_a
+                low_span, high_span = compute_spans(L, p_low_is_plus, split)
+                area_low = (low_span[1] - low_span[0]) * W
+                area_high = (high_span[1] - high_span[0]) * W
                 floors_high = floors_high_for_target(area_low, floors_low, area_high, target_gfa)
                 if not (args.min_floors <= floors_high <= args.max_floors):
                     continue
@@ -203,10 +207,9 @@ def main(argv: Sequence[str] | None = None) -> int:
                 if key in seen:
                     continue
                 seen.add(key)
-                u_split_lo = -L / 2 + split * L
-                area_a = (L / 2 - u_split_lo) * W
-                area_b = (u_split_lo + L / 2) * W
-                area_low, area_high = (area_a, area_b) if p_low_is_plus else (area_b, area_a)
+                low_span, high_span = compute_spans(L, p_low_is_plus, split)
+                area_low = (low_span[1] - low_span[0]) * W
+                area_high = (high_span[1] - high_span[0]) * W
                 floors_high = floors_high_for_target(area_low, floors_low, area_high, target_gfa)
                 if not (args.min_floors <= floors_high <= args.max_floors):
                     continue
