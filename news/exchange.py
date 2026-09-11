@@ -37,6 +37,8 @@ PAIRS: list[dict] = [
     {"code": "CNYKRW", "label": "위안/원", "base": "CNY", "quote": "KRW", "unit": 1, "digits": 2},
     {"code": "GBPKRW", "label": "파운드/원", "base": "GBP", "quote": "KRW", "unit": 1, "digits": 2},
     {"code": "AUDKRW", "label": "호주달러/원", "base": "AUD", "quote": "KRW", "unit": 1, "digits": 2},
+    {"code": "CADKRW", "label": "캐나다달러/원", "base": "CAD", "quote": "KRW", "unit": 1, "digits": 2},
+    {"code": "CHFKRW", "label": "스위스프랑/원", "base": "CHF", "quote": "KRW", "unit": 1, "digits": 2},
     {"code": "USDJPY", "label": "달러/엔", "base": "USD", "quote": "JPY", "unit": 1, "digits": 2},
     {"code": "EURUSD", "label": "유로/달러", "base": "EUR", "quote": "USD", "unit": 1, "digits": 4},
 ]
@@ -57,6 +59,8 @@ NAVER_CODES = {
     "CNYKRW": "FX_CNYKRW",
     "GBPKRW": "FX_GBPKRW",
     "AUDKRW": "FX_AUDKRW",
+    "CADKRW": "FX_CADKRW",
+    "CHFKRW": "FX_CHFKRW",
     "USDJPY": "FX_USDJPY",
     "EURUSD": "FX_EURUSD",
 }
@@ -108,7 +112,8 @@ class WooriBankRates:
     }
 
     ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
-    CELL_RE = re.compile(r"<t[dh][^>]*>(.*?)</t[dh]>", re.S | re.I)
+    CELL_RE = re.compile(r"<(t[dh])([^>]*)>(.*?)</\1\s*>", re.S | re.I)
+    COLSPAN_RE = re.compile(r"colspan\s*=\s*[\"']?(\d+)", re.I)
     STAMP_RE = re.compile(r"(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})[^0-9]{0,12}(\d{1,2}):(\d{2})")
     ROUND_RE = re.compile(r"(\d+)\s*회\s*차")
 
@@ -121,11 +126,14 @@ class WooriBankRates:
         "CNH": ("CNY", ()),
         "GBP": ("GBP", ("영국",)),
         "AUD": ("AUD", ("호주",)),
+        "CAD": ("CAD", ("캐나다",)),
+        "CHF": ("CHF", ("스위스",)),
     }
     # 파싱이 엉뚱하게 됐는지 걸러내는 상식 범위(1단위당 원화)
     SANE_RANGE = {
         "USD": (500, 3000), "JPY": (5, 30), "EUR": (600, 3500),
         "CNY": (80, 400), "GBP": (700, 4000), "AUD": (400, 2000),
+        "CAD": (400, 2000), "CHF": (600, 3000),
     }
 
     def __init__(self, http_get):
@@ -147,10 +155,19 @@ class WooriBankRates:
 
     @classmethod
     def _cells(cls, row_html: str) -> list[str]:
+        """행의 칸들을 뽑되, colspan 은 그만큼 자리를 차지하도록 펼친다.
+
+        우리은행 표는 머리글이 2단입니다. 1행에 '송금'(colspan=2), '현찰'(colspan=4),
+        '매매기준율'(rowspan=2) 이 나오므로, colspan 을 펼쳐야 머리글의 칸 위치가
+        데이터 행의 칸 위치와 맞습니다. 펼치지 않으면 '매매기준율' 을 5번째로 보고
+        엉뚱하게 현찰 값을 집습니다.
+        """
         out = []
-        for cell in cls.CELL_RE.findall(row_html):
-            text = html.unescape(TAG_RE.sub(" ", cell))
-            out.append(WS_RE.sub(" ", text).strip())
+        for _tag, attrs, inner in cls.CELL_RE.findall(row_html):
+            text = WS_RE.sub(" ", html.unescape(TAG_RE.sub(" ", inner))).strip()
+            span = cls.COLSPAN_RE.search(attrs or "")
+            width = max(1, min(int(span.group(1)), 20)) if span else 1
+            out.extend([text] * width)
         return out
 
     @classmethod
@@ -159,7 +176,9 @@ class WooriBankRates:
         head = " ".join(cells[:2]).upper()
         for token, (code, names) in cls.CURRENCIES.items():
             if re.search(rf"\b{token}\b", head) or any(name in head for name in names):
-                unit = 100 if re.search(r"\b100\b", head) else (100 if code == "JPY" else 1)
+                # '일본 100엔' 처럼 단위가 적혀 있으면 그대로 쓴다. 한글이 붙어 있어
+                # 단어 경계(\b)로는 못 잡으므로 그냥 포함 여부로 본다.
+                unit = 100 if "100" in head else (100 if code == "JPY" else 1)
                 return code, unit
         return None
 
@@ -184,7 +203,8 @@ class WooriBankRates:
                 if not found:
                     continue
                 code, unit = found
-                numbers = [(i, _to_float(c)) for i, c in enumerate(cells)]
+                # '1.750%' 같은 스프레드율 칸은 환율이 아니므로 후보에서 뺀다.
+                numbers = [(i, _to_float(c)) for i, c in enumerate(cells) if "%" not in c]
                 numbers = [(i, v) for i, v in numbers if v]
                 if not numbers:
                     continue

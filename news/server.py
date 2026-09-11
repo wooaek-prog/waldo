@@ -43,7 +43,7 @@ from pathlib import Path
 import exchange
 
 # 화면과 로그에 찍어 두면 "새 코드를 받으셨는지"를 물어볼 필요가 없습니다.
-VERSION = "2026.09.11e"     # 우리은행 고시 화면 읽기 추가
+VERSION = "2026.09.11f"     # 우리은행 고시 화면 읽기(2단 머리글 대응) · 캐나다달러/스위스프랑 추가
 VERSION_NOTE = "계열사 편집 · 환율(우리은행/수출입은행)"
 
 BASE_DIR = Path(__file__).resolve().parent
