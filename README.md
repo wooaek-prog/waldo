@@ -9,6 +9,7 @@
 | `hwarang_site_placement.py` | 화랑아파트 1개동 – 법정 이격 내 최적 입지 도출 | [입지 검토 보고서](docs/hwarang_placement.md) |
 | `hwarang_final_massing.py` | 화랑아파트 – 발코니 반영 최종 형상·배치도 산출 | [최종 배치 보고서](docs/hwarang_final_massing.md) |
 | `hwarang_unit_blocks.py` | 화랑아파트 – 평형별 단위세대 평면 블럭(조합 최적화 준비) | [블럭 라이브러리](docs/hwarang_unit_blocks.md) |
+| `hwarang_floor_plan_optimizer.py` | 화랑아파트 – 확정 배치도 내 세대 구성 최적화(최종 배치평면) | [최종 배치평면 보고서](docs/hwarang_floorplan.md) |
 
 ---
 
@@ -124,3 +125,7 @@ python3 hwarang_massing_study.py --buildings <AL_D010.gpkg> --outdir outputs/hwa
 평형별 단위세대 블럭(84A·84B·88A·93A·102A·105A·116A)은 단위세대 평면도 치수열에서
 생성했습니다. 기준층 조합 최적화의 입력으로 쓰며, 실좌표 캔버스는 확정 연면적선과
 99.97% 일치합니다. [docs/hwarang_unit_blocks.md](docs/hwarang_unit_blocks.md) 참조.
+
+확정 배치도(683.3㎡) 안에 평형 블럭을 채우는 최적화 결과: **1개층 102A×4세대**가
+전용면적 비율(59.7%)을 최대화하는 해입니다(무제한 배낭 알고리즘 + 전수열거로 검증).
+[docs/hwarang_floorplan.md](docs/hwarang_floorplan.md) 참조.
