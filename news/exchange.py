@@ -14,8 +14,10 @@
 from __future__ import annotations
 
 import json
+import sys
 import threading
 import time
+import urllib.parse
 from datetime import date, datetime, timedelta, timezone
 
 KST = timezone(timedelta(hours=9))
@@ -93,11 +95,13 @@ class KoreaEximRates:
         "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON",
     )
     # 응답의 cur_unit → 우리 통화 코드와 표기 단위
+    # cur_unit 은 대문자로 비교합니다. 위안화는 CNH 로 옵니다.
     UNITS = {
         "USD": ("USD", 1),
         "JPY(100)": ("JPY", 100),
         "EUR": ("EUR", 1),
         "CNH": ("CNY", 1),
+        "CNY": ("CNY", 1),
         "GBP": ("GBP", 1),
         "AUD": ("AUD", 1),
     }
@@ -117,7 +121,11 @@ class KoreaEximRates:
         self._cache: dict[str, dict[str, float] | None] = {}
 
     def _request(self, day: date) -> list:
-        query = f"?authkey={self.auth_key}&searchdate={day.strftime('%Y%m%d')}&data=AP01"
+        query = "?" + urllib.parse.urlencode({
+            "authkey": self.auth_key,
+            "searchdate": day.strftime("%Y%m%d"),
+            "data": "AP01",
+        })
         last_error = None
         # 첫 호출에서 통하는 주소를 찾으면 그다음부터는 그것만 쓴다.
         hosts = [self.host] + [h for h in self.HOSTS if h != self.host]
@@ -131,6 +139,15 @@ class KoreaEximRates:
             payload = json.loads(body.decode("utf-8-sig"))
             return payload if isinstance(payload, list) else []
         raise last_error or OSError("수출입은행 API 에 연결하지 못했습니다.")
+
+    @staticmethod
+    def _normalize_row(row: dict) -> dict:
+        """응답 키를 소문자로 맞춘다.
+
+        수출입은행 문서는 RESULT / CUR_UNIT / DEAL_BAS_R 처럼 대문자로 적혀 있고
+        실제 응답은 소문자로 오기도 합니다. 어느 쪽이든 읽히도록 맞춰 둡니다.
+        """
+        return {str(key).strip().lower(): value for key, value in row.items()}
 
     def _table_for(self, day: date, today: date) -> dict[str, float] | None:
         """그 날짜의 고시가 있으면 '통화 1단위당 원화' 표를 돌려준다."""
@@ -147,11 +164,15 @@ class KoreaEximRates:
             return None
 
         krw: dict[str, float] = {"KRW": 1.0}
-        for row in rows:
-            result = row.get("result")
-            if isinstance(result, int) and result != 1:
-                raise ValueError(self.RESULT_MESSAGES.get(result, f"수출입은행 응답 코드 {result}"))
-            mapped = self.UNITS.get(str(row.get("cur_unit", "")).strip())
+        for raw in rows:
+            if not isinstance(raw, dict):
+                continue
+            row = self._normalize_row(raw)
+            result = _to_float(row.get("result"))
+            if result is not None and int(result) != 1:
+                code = int(result)
+                raise ValueError(self.RESULT_MESSAGES.get(code, f"수출입은행 응답 코드 {code}"))
+            mapped = self.UNITS.get(str(row.get("cur_unit", "")).strip().upper())
             if not mapped:
                 continue
             code, unit = mapped
@@ -387,7 +408,8 @@ class RateService(threading.Thread):
             try:
                 rates = source.fetch(PAIRS)
             except Exception as exc:  # noqa: BLE001 - 어떤 실패든 다음 소스로 넘어간다
-                errors.append(f"{source.name}: {type(exc).__name__}")
+                detail = str(exc).strip() or type(exc).__name__
+                errors.append(f"{source.name}: {detail[:120]}")
                 continue
             if not rates:
                 errors.append(f"{source.name}: 빈 응답")
@@ -403,8 +425,12 @@ class RateService(threading.Thread):
                 )
             return True
 
+        message = "환율을 가져오지 못했습니다 (" + ", ".join(errors) + ")"
         with self.lock:
-            self.snapshot["error"] = "환율을 가져오지 못했습니다 (" + ", ".join(errors) + ")"
+            first = self.snapshot.get("error") != message
+            self.snapshot["error"] = message
+        if first:
+            print(f"[warn] {message}", file=sys.stderr)
         return False
 
     def run(self) -> None:

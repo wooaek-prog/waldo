@@ -43,7 +43,7 @@ from pathlib import Path
 import exchange
 
 # 화면과 로그에 찍어 두면 "새 코드를 받으셨는지"를 물어볼 필요가 없습니다.
-VERSION = "2026.09.11b"     # 수출입은행 매매기준율
+VERSION = "2026.09.11c"     # 수출입은행 응답 필드 대소문자 대응
 VERSION_NOTE = "계열사 편집 · 수출입은행 매매기준율"
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -1321,6 +1321,28 @@ def run_doctor(args) -> int:
         else:
             note = " (certifi 번들로 성공)" if SSL_CONTEXT is not context else ""
             print(f"성공 ({len(body):,} 바이트){note}")
+
+    # 환율: 키가 있으면 실제로 한 번 받아 본다. 원인을 눈으로 보는 게 가장 빠르다.
+    exim_key = load_exim_key(args)
+    print(f" [환율] 수출입은행 인증키: {'있음' if exim_key else '없음 (다른 무료 소스 사용)'}")
+    if exim_key:
+        print(" [환율] 매매기준율 확인 중...", end=" ", flush=True)
+        source = exchange.KoreaEximRates(http_get, exim_key)
+        try:
+            rates = source.fetch(exchange.PAIRS)
+        except Exception as exc:  # noqa: BLE001 - 원인을 알려 주는 게 목적
+            failures += 1
+            print("실패")
+            print(f"    {type(exc).__name__}: {exc}")
+            if is_ssl_error(exc):
+                print(f"    → {ssl_fix_hint()}")
+            else:
+                print("    → 인증키가 맞는지, 수출입은행 사이트에서 승인이 끝났는지 확인해 주세요.")
+                print(f"    → 사용한 주소: {source.host}")
+        else:
+            usd = rates.get("USDKRW", {})
+            print(f"성공 ({len(rates)}개 통화쌍)")
+            print(f"    달러/원 {usd.get('value', 0):,.2f} · {usd.get('asOf', '')}")
 
     print()
     if failures:
