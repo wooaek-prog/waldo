@@ -5,6 +5,7 @@ __pycache__/
 news/.state.json
 news/.state.tmp
 news/.naver_key.json
+news/.exim_key.json
 
 # 편집 기능이 남기는 백업
 news/companies.json.bak

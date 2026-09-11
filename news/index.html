@@ -804,9 +804,13 @@
     if (shown.length) {
       const stamp = document.createElement("span");
       stamp.className = "stamp";
+      // 하루 한 번 고시되는 값이면 "언제 확인했는지"보다 "언제 고시분인지"가 중요하다.
+      const basis = rates[shown[0].code]?.asOf || "";
       const when = fx.updatedAt ? timeAgo(fx.updatedAt) : "";
-      stamp.textContent = `${fx.sourceLabel || ""}${when ? " · " + when : ""}`;
-      stamp.title = fx.realtime ? "실시간에 가까운 값입니다." : "하루 한 번 고시되는 값이라 실시간이 아닙니다.";
+      stamp.textContent = [fx.sourceLabel, basis, when && `확인 ${when}`].filter(Boolean).join(" · ");
+      stamp.title = fx.realtime
+        ? "실시간에 가까운 값입니다."
+        : "하루 한 번 고시되는 값입니다. 자주 확인해도 고시 전까지는 같은 값입니다.";
       nodes.push(stamp);
     }
 

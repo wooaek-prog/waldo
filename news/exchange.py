@@ -1,10 +1,11 @@
 """환율 수집.
 
-무료로 쓸 수 있는 환율 소스는 갱신 주기가 제각각이라 여러 곳을 순서대로 시도합니다.
+환율 소스는 갱신 주기와 기준이 제각각이라 여러 곳을 순서대로 시도합니다.
 
-  1) 네이버 금융  - 실시간에 가깝고 전일 대비도 주지만 비공식 경로라 언제든 막힐 수 있음
-  2) Frankfurter - 유럽중앙은행 고시. 평일 하루 한 번(16:00 CET). 전일 대비 계산 가능
-  3) ExchangeRate-API - 하루 한 번. 위 둘이 모두 안 될 때의 마지막 보루
+  1) 한국수출입은행 - 매매기준율. 영업일 11시경 하루 한 번 고시. 인증키 필요
+  2) 네이버 금융    - 실시간에 가깝고 전일 대비도 주지만 비공식 경로라 언제든 막힐 수 있음
+  3) Frankfurter    - 유럽중앙은행 고시. 평일 하루 한 번(16:00 CET). 전일 대비 계산 가능
+  4) ExchangeRate-API - 하루 한 번. 앞이 모두 안 될 때의 마지막 보루
 
 어느 소스에서 몇 시 기준으로 받은 값인지 항상 함께 돌려주므로, 화면에서 "실시간"인지
 "일 고시"인지 구분해 보여 줄 수 있습니다.
@@ -69,6 +70,153 @@ def _to_float(value) -> float | None:
         except ValueError:
             return None
     return None
+
+
+class KoreaEximRates:
+    """한국수출입은행 현재환율 API. 매매기준율(deal_bas_r)을 씁니다.
+
+    은행이 **영업일 오전 11시경에 하루 한 번 고시**하는 값입니다. 자주 조회해도
+    고시 시각 전까지는 같은 값이 돌아옵니다. 그래서 조회 주기와 별개로 화면에는
+    '고시일자'를 함께 보여 줍니다.
+
+    주말·공휴일이나 11시 이전에는 빈 배열이 오므로, 값이 나올 때까지 하루씩
+    거슬러 올라가며 가장 최근 고시분을 찾습니다.
+    """
+
+    name = "koreaexim"
+    label = "수출입은행 매매기준율"
+    realtime = False
+
+    # 2026-04-30 부터 oapi 도메인으로 옮겨졌습니다. 구 주소도 남겨 두고 순서대로 시도합니다.
+    HOSTS = (
+        "https://oapi.koreaexim.go.kr/site/program/financial/exchangeJSON",
+        "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON",
+    )
+    # 응답의 cur_unit → 우리 통화 코드와 표기 단위
+    UNITS = {
+        "USD": ("USD", 1),
+        "JPY(100)": ("JPY", 100),
+        "EUR": ("EUR", 1),
+        "CNH": ("CNY", 1),
+        "GBP": ("GBP", 1),
+        "AUD": ("AUD", 1),
+    }
+    RESULT_MESSAGES = {
+        2: "DATA 코드 오류입니다.",
+        3: "인증키가 올바르지 않거나 만료되었습니다. 수출입은행에서 다시 발급받아 주세요.",
+        4: "오늘 조회 한도를 모두 썼습니다. 내일 다시 시도됩니다.",
+    }
+    LOOKBACK_DAYS = 10          # 연휴가 길어도 최근 고시분을 찾도록
+    MAX_CALLS_PER_FETCH = 4     # 한 번의 갱신에서 이 이상은 호출하지 않는다
+
+    def __init__(self, http_get, auth_key: str):
+        self.http_get = http_get
+        self.auth_key = auth_key
+        self.host = self.HOSTS[0]
+        # 같은 고시일자를 반복해서 다시 받지 않도록 기억해 둔다.
+        self._cache: dict[str, dict[str, float] | None] = {}
+
+    def _request(self, day: date) -> list:
+        query = f"?authkey={self.auth_key}&searchdate={day.strftime('%Y%m%d')}&data=AP01"
+        last_error = None
+        # 첫 호출에서 통하는 주소를 찾으면 그다음부터는 그것만 쓴다.
+        hosts = [self.host] + [h for h in self.HOSTS if h != self.host]
+        for host in hosts:
+            try:
+                body = self.http_get(host + query, timeout=12.0)
+            except Exception as exc:  # noqa: BLE001 - 다음 주소로 넘어간다
+                last_error = exc
+                continue
+            self.host = host
+            payload = json.loads(body.decode("utf-8-sig"))
+            return payload if isinstance(payload, list) else []
+        raise last_error or OSError("수출입은행 API 에 연결하지 못했습니다.")
+
+    def _table_for(self, day: date, today: date) -> dict[str, float] | None:
+        """그 날짜의 고시가 있으면 '통화 1단위당 원화' 표를 돌려준다."""
+        key = day.isoformat()
+        if key in self._cache:
+            return self._cache[key]
+
+        rows = self._request(day)
+        if not rows:
+            # 주말·공휴일이거나 아직 고시 전. 지난 날짜는 앞으로도 안 바뀌니 기억해 두고,
+            # 오늘치는 11시 고시를 기다려야 하므로 기억하지 않는다.
+            if day < today:
+                self._cache[key] = None
+            return None
+
+        krw: dict[str, float] = {"KRW": 1.0}
+        for row in rows:
+            result = row.get("result")
+            if isinstance(result, int) and result != 1:
+                raise ValueError(self.RESULT_MESSAGES.get(result, f"수출입은행 응답 코드 {result}"))
+            mapped = self.UNITS.get(str(row.get("cur_unit", "")).strip())
+            if not mapped:
+                continue
+            code, unit = mapped
+            value = _to_float(row.get("deal_bas_r"))
+            if value:
+                krw[code] = value / unit      # 1단위당 원화로 환산
+
+        if "USD" not in krw:
+            return None
+        self._cache[key] = krw
+        return krw
+
+    @staticmethod
+    def _as_usd_table(krw: dict[str, float]) -> dict[str, float]:
+        """'1단위당 원화' 표를 USD 기준 표로 바꿔 교차계산에 태운다."""
+        usd_krw = krw["USD"]
+        table = {code: usd_krw / value for code, value in krw.items() if value}
+        table["USD"] = 1.0
+        return table
+
+    def fetch(self, pairs: list[dict]) -> dict:
+        today = datetime.now(KST).date()
+        calls = 0
+        latest = latest_day = None
+        for back in range(self.LOOKBACK_DAYS):
+            day = today - timedelta(days=back)
+            if day.isoformat() not in self._cache:
+                if calls >= self.MAX_CALLS_PER_FETCH:
+                    break
+                calls += 1
+            table = self._table_for(day, today)
+            if table:
+                latest, latest_day = table, day
+                break
+        if latest is None:
+            raise ValueError("최근 고시 환율을 찾지 못했습니다.")
+
+        previous = None
+        for back in range(1, self.LOOKBACK_DAYS):
+            day = latest_day - timedelta(days=back)
+            if day.isoformat() not in self._cache:
+                if calls >= self.MAX_CALLS_PER_FETCH:
+                    break
+                calls += 1
+            found = self._table_for(day, today)
+            if found:
+                previous = found
+                break
+
+        now_table = self._as_usd_table(latest)
+        prev_table = self._as_usd_table(previous) if previous else None
+        as_of = f"{latest_day.isoformat()} 고시"
+
+        out = {}
+        for pair in pairs:
+            value = _cross(now_table, pair["base"], pair["quote"], pair["unit"])
+            if value is None:
+                continue
+            before = _cross(prev_table, pair["base"], pair["quote"], pair["unit"]) if prev_table else None
+            out[pair["code"]] = {
+                "value": value,
+                "change": (value - before) if before else None,
+                "asOf": as_of,
+            }
+        return out
 
 
 class FrankfurterRates:
@@ -200,7 +348,8 @@ class RateService(threading.Thread):
 
     daemon = True
 
-    def __init__(self, http_get, interval: float = 60.0, on_update=None, enabled: bool = True):
+    def __init__(self, http_get, interval: float = 600.0, on_update=None,
+                 enabled: bool = True, exim_key: str = ""):
         super().__init__(name="rates")
         self.http_get = http_get
         self.interval = max(20.0, interval)
@@ -208,7 +357,11 @@ class RateService(threading.Thread):
         self.enabled = enabled
         self.stop_event = threading.Event()
         self.lock = threading.Lock()
-        self.sources = [
+        self.sources = []
+        # 수출입은행 키가 있으면 이게 1순위. 은행 고시 매매기준율이라 기준이 분명합니다.
+        if exim_key:
+            self.sources.append(KoreaEximRates(http_get, exim_key))
+        self.sources += [
             NaverFinanceRates(http_get),
             FrankfurterRates(http_get),
             OpenErApiRates(http_get),

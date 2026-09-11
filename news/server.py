@@ -43,14 +43,15 @@ from pathlib import Path
 import exchange
 
 # 화면과 로그에 찍어 두면 "새 코드를 받으셨는지"를 물어볼 필요가 없습니다.
-VERSION = "2026.09.11"      # 계열사 화면 편집 + 환율 표시
-VERSION_NOTE = "계열사 편집 · 환율 표시"
+VERSION = "2026.09.11b"     # 수출입은행 매매기준율
+VERSION_NOTE = "계열사 편집 · 수출입은행 매매기준율"
 
 BASE_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = BASE_DIR / "companies.json"
 INDEX_PATH = BASE_DIR / "index.html"
 STATE_PATH = BASE_DIR / ".state.json"
 KEY_PATH = BASE_DIR / ".naver_key.json"  # 한 번 입력한 API 키를 이 컴퓨터에만 저장
+EXIM_KEY_PATH = BASE_DIR / ".exim_key.json"  # 한국수출입은행 환율 API 키(역시 이 컴퓨터에만)
 
 KEY_RESET_HINT = (
     "키를 다시 넣으려면 news 폴더의 set-key-windows.bat(맥은 set-key-mac.command)를 더블클릭하거나, "
@@ -1070,6 +1071,51 @@ def save_key(client_id: str, client_secret: str) -> None:
         print(f"[info] 키를 저장했습니다. 다음부터는 안 물어봅니다. ({KEY_PATH.name})")
 
 
+def load_exim_key(args) -> str:
+    """수출입은행 환율 API 키를 찾는다. 인자 > 환경변수 > 저장 파일 순.
+
+    키는 저장소에 올라가면 안 되므로 코드에 넣지 않고 이 컴퓨터의 파일에만 둡니다.
+    """
+    key = clean_key(getattr(args, "exim_key", "") or os.environ.get("EXIM_API_KEY", ""))
+    if key:
+        save_exim_key(key)
+        return key
+    try:
+        data = json.loads(EXIM_KEY_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ""
+    return clean_key(str(data.get("auth_key", "")))
+
+
+def save_exim_key(key: str) -> None:
+    try:
+        EXIM_KEY_PATH.write_text(json.dumps({"auth_key": key}, indent=2), encoding="utf-8")
+        os.chmod(EXIM_KEY_PATH, 0o600)
+    except OSError as exc:
+        print(f"[warn] 환율 API 키를 저장하지 못했습니다: {exc}", file=sys.stderr)
+    else:
+        print(f"[info] 환율 API 키를 저장했습니다. 다음부터는 안 물어봅니다. ({EXIM_KEY_PATH.name})")
+
+
+def prompt_for_exim_key() -> str:
+    print()
+    print("=" * 66)
+    print(" 한국수출입은행 환율 API 키를 넣어 주세요.")
+    print()
+    print(" 받는 곳: https://www.koreaexim.go.kr/ir/HPHKIR020M01?apino=2&viewtype=C")
+    print(" 이 키를 넣으면 은행이 고시하는 '매매기준율'을 그대로 보여 줍니다.")
+    print(" 그냥 Enter 를 누르면 키 없이 다른 환율 소스를 씁니다.")
+    print("=" * 66)
+    try:
+        key = clean_key(input(" 인증키 : "))
+    except (EOFError, KeyboardInterrupt):
+        print()
+        return ""
+    if key:
+        save_exim_key(key)
+    return key
+
+
 def prompt_for_key() -> tuple[str, str]:
     """처음 실행이면 화면에서 직접 키를 받는다. 그냥 Enter 를 치면 건너뛴다."""
     print()
@@ -1188,7 +1234,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--no-open", action="store_true", help="시작할 때 브라우저를 자동으로 열지 않음")
     parser.add_argument("--ca-bundle", default="", help="HTTPS 검증에 쓸 인증서 파일(.pem/.crt) 경로")
     parser.add_argument("--no-rates", action="store_true", help="환율 표시를 끕니다")
-    parser.add_argument("--rate-interval", type=float, default=60.0, help="환율 갱신 주기(초, 최소 20)")
+    parser.add_argument("--rate-interval", type=float, default=600.0,
+                        help="환율 갱신 주기(초, 최소 20). 기본 600초=10분")
+    parser.add_argument("--exim-key", default="", help="한국수출입은행 환율 API 인증키(한 번 넣으면 저장됨)")
+    parser.add_argument("--set-exim-key", action="store_true", help="수출입은행 환율 API 키를 새로 입력해서 저장")
     parser.add_argument("--api", choices=["auto", "hub", "legacy"], default="auto",
                         help="검색 API 창구: auto(자동 판별), hub(NAVER API HUB), legacy(구 개발자센터)")
     parser.add_argument("--doctor", action="store_true", help="연결 상태를 점검하고 문제 원인을 알려 줍니다")
@@ -1300,6 +1349,8 @@ def main(argv: list[str] | None = None) -> int:
         STATE_PATH.unlink(missing_ok=True)
     if args.set_key:
         KEY_PATH.unlink(missing_ok=True)
+    if args.set_exim_key:
+        EXIM_KEY_PATH.unlink(missing_ok=True)
 
     store = FeedStore()
     seeded = store.load(STATE_PATH)
@@ -1308,10 +1359,16 @@ def main(argv: list[str] | None = None) -> int:
 
     rates = None
     if not args.no_rates:
+        exim_key = load_exim_key(args)
+        if not exim_key and args.set_exim_key and sys.stdin and sys.stdin.isatty():
+            exim_key = prompt_for_exim_key()
+        if exim_key:
+            print("[info] 환율 소스: 한국수출입은행 매매기준율")
         rates = exchange.RateService(
             http_get,
             interval=args.rate_interval,
             on_update=lambda snap: store.broadcast("rates", snap),
+            exim_key=exim_key,
         )
 
     handler = type("BoundHandler", (Handler,),
