@@ -173,10 +173,15 @@ https://github.com/wooaek-prog/waldo/archive/refs/heads/claude/hyundai-elevator-
 사내에서 쓰기 좋습니다.
 
 1. https://www.koreaexim.go.kr/ir/HPHKIR020M01?apino=2&viewtype=C 에서 인증키를 신청합니다.
-2. `news` 폴더의 **`set-exim-key-windows.bat`**(맥은 `set-exim-key-mac.command`)를 더블클릭합니다.
-3. 받은 인증키를 붙여넣고 `Enter`.
+2. `start-windows.bat`(맥은 `start-mac.command`)를 실행하면 **네이버 키를 물어본 다음
+   환율 인증키도 물어봅니다.** 받은 키를 붙여넣고 `Enter`.
 
 한 번 넣으면 저장되어 다음부터는 안 물어봅니다.
+**그냥 `Enter` 를 눌러 건너뛰어도 됩니다** — 다른 무료 소스로 환율은 그대로 나오고,
+건너뛴 선택을 기억해 다시 묻지 않습니다.
+
+나중에 넣고 싶어지면 `news` 폴더의 **`set-exim-key-windows.bat`**
+(맥은 `set-exim-key-mac.command`)를 더블클릭하세요.
 
 > ⚠️ **"10분마다 갱신"이 무슨 뜻인가**
 > 수출입은행 고시는 **영업일 오전 11시경에 하루 한 번**입니다. 10분마다 확인하지만,
@@ -248,7 +253,7 @@ https://github.com/wooaek-prog/waldo/archive/refs/heads/claude/hyundai-elevator-
 ## 문제가 생겼을 때
 
 > **먼저 버전부터 확인하세요.** 검은 창 맨 윗줄과 웹 화면 왼쪽 위 회색 글씨에
-> `v2026.09.11c` 같은 버전이 찍힙니다. 안내와 다른 문구가 나온다면 예전 파일이
+> `v2026.09.11d` 같은 버전이 찍힙니다. 안내와 다른 문구가 나온다면 예전 파일이
 > 남아 있는 것이니, 1단계의 ZIP 주소로 **새로 받아 덮어쓰세요.**
 > (압축을 푼 새 폴더를 쓰는 편이 가장 확실합니다.)
 

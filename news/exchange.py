@@ -436,12 +436,21 @@ class RateService(threading.Thread):
     def run(self) -> None:
         if not self.enabled:
             return
+        failures = 0
         while not self.stop_event.is_set():
-            changed = self.refresh_once()
+            ok = self.refresh_once()
             if self.on_update:
                 try:
                     self.on_update(self.get())
                 except Exception:  # noqa: BLE001 - 구독자 문제로 폴러가 멈추면 안 된다
                     pass
-            # 실패했으면 조금 더 길게 쉬었다가 다시 시도한다
-            self.stop_event.wait(self.interval if changed else self.interval * 3)
+
+            if ok:
+                failures = 0
+                delay = self.interval
+            else:
+                # 실패하면 30초부터 조금씩 늘려 가며 다시 시도한다. 처음부터 길게
+                # 쉬면 시작 직후 한 번 실패했을 때 한참 동안 빈 화면이 된다.
+                failures += 1
+                delay = min(30.0 * (2 ** min(failures - 1, 5)), self.interval * 3)
+            self.stop_event.wait(delay)

@@ -43,7 +43,7 @@ from pathlib import Path
 import exchange
 
 # 화면과 로그에 찍어 두면 "새 코드를 받으셨는지"를 물어볼 필요가 없습니다.
-VERSION = "2026.09.11c"     # 수출입은행 응답 필드 대소문자 대응
+VERSION = "2026.09.11d"     # 환율 키 입력 흐름 수정
 VERSION_NOTE = "계열사 편집 · 수출입은행 매매기준율"
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -1071,6 +1071,14 @@ def save_key(client_id: str, client_secret: str) -> None:
         print(f"[info] 키를 저장했습니다. 다음부터는 안 물어봅니다. ({KEY_PATH.name})")
 
 
+def read_exim_file() -> dict:
+    try:
+        data = json.loads(EXIM_KEY_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
 def load_exim_key(args) -> str:
     """수출입은행 환율 API 키를 찾는다. 인자 > 환경변수 > 저장 파일 순.
 
@@ -1080,31 +1088,43 @@ def load_exim_key(args) -> str:
     if key:
         save_exim_key(key)
         return key
-    try:
-        data = json.loads(EXIM_KEY_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return ""
-    return clean_key(str(data.get("auth_key", "")))
+    return clean_key(str(read_exim_file().get("auth_key", "")))
 
 
 def save_exim_key(key: str) -> None:
+    _write_exim_file({"auth_key": key})
+    print(f"[info] 환율 API 키를 저장했습니다. 다음부터는 안 물어봅니다. ({EXIM_KEY_PATH.name})")
+
+
+def save_exim_skip() -> None:
+    """키 없이 쓰기로 한 선택을 기억한다. 매번 물어보면 성가시다."""
+    _write_exim_file({"auth_key": "", "skipped": True})
+
+
+def exim_key_skipped() -> bool:
+    return bool(read_exim_file().get("skipped"))
+
+
+def _write_exim_file(data: dict) -> None:
     try:
-        EXIM_KEY_PATH.write_text(json.dumps({"auth_key": key}, indent=2), encoding="utf-8")
+        EXIM_KEY_PATH.write_text(json.dumps(data, indent=2), encoding="utf-8")
         os.chmod(EXIM_KEY_PATH, 0o600)
     except OSError as exc:
-        print(f"[warn] 환율 API 키를 저장하지 못했습니다: {exc}", file=sys.stderr)
-    else:
-        print(f"[info] 환율 API 키를 저장했습니다. 다음부터는 안 물어봅니다. ({EXIM_KEY_PATH.name})")
+        print(f"[warn] 환율 API 키 설정을 저장하지 못했습니다: {exc}", file=sys.stderr)
 
 
 def prompt_for_exim_key() -> str:
     print()
     print("=" * 66)
-    print(" 한국수출입은행 환율 API 키를 넣어 주세요.")
+    print(" 환율 표시 — 한국수출입은행 인증키 (선택)")
+    print()
+    print(" 키를 넣으면: 은행이 고시하는 '매매기준율'을 그대로 보여 줍니다.")
+    print(" 키가 없으면: 다른 무료 환율 소스를 씁니다. 환율은 어차피 나옵니다.")
     print()
     print(" 받는 곳: https://www.koreaexim.go.kr/ir/HPHKIR020M01?apino=2&viewtype=C")
-    print(" 이 키를 넣으면 은행이 고시하는 '매매기준율'을 그대로 보여 줍니다.")
-    print(" 그냥 Enter 를 누르면 키 없이 다른 환율 소스를 씁니다.")
+    print()
+    print(" ※ 그냥 Enter 를 누르면 건너뜁니다. 다음부터 다시 묻지 않습니다.")
+    print("   나중에 넣으려면 set-exim-key-windows.bat (맥은 set-exim-key-mac.command)")
     print("=" * 66)
     try:
         key = clean_key(input(" 인증키 : "))
@@ -1113,7 +1133,24 @@ def prompt_for_exim_key() -> str:
         return ""
     if key:
         save_exim_key(key)
+    else:
+        save_exim_skip()
+        print("[info] 키 없이 시작합니다. 환율은 다른 무료 소스로 표시됩니다.")
     return key
+
+
+def resolve_exim_key(args) -> str:
+    """저장된 키를 쓰거나, 없으면 화면에서 한 번 물어본다.
+
+    예전에는 --set-exim-key 를 줄 때만 물어봐서, 더블클릭으로 실행하면 키를 넣을
+    방법이 없었습니다. 네이버 키와 같은 흐름으로 맞춥니다.
+    """
+    key = load_exim_key(args)
+    if key or exim_key_skipped():
+        return key
+    if sys.stdin and sys.stdin.isatty():
+        return prompt_for_exim_key()
+    return ""
 
 
 def prompt_for_key() -> tuple[str, str]:
@@ -1381,11 +1418,12 @@ def main(argv: list[str] | None = None) -> int:
 
     rates = None
     if not args.no_rates:
-        exim_key = load_exim_key(args)
-        if not exim_key and args.set_exim_key and sys.stdin and sys.stdin.isatty():
-            exim_key = prompt_for_exim_key()
+        exim_key = resolve_exim_key(args)
         if exim_key:
-            print("[info] 환율 소스: 한국수출입은행 매매기준율")
+            print(f"[info] 환율: 수출입은행 매매기준율 ({args.rate_interval / 60:.0f}분마다 확인)")
+        else:
+            print("[info] 환율: 인증키가 없어 다른 무료 소스를 씁니다. "
+                  "매매기준율을 쓰려면 set-exim-key-windows.bat(맥은 set-exim-key-mac.command)")
         rates = exchange.RateService(
             http_get,
             interval=args.rate_interval,
