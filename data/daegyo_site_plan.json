@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "project": "여의도 대교아파트 주택재건축정비사업 (래미안 Y+Z)",
+    "address": "서울특별시 영등포구 여의도동 41 (국제금융로7길 20)",
+    "source_drawing": "단지배치도 (축척 1/1000, A1 1/500) - 사업시행계획인가 첨부 배치도 이미지",
+    "digitized_by": "배치도 래스터 이미지 육안 트레이싱 (형상 정밀도 ±2~3m 수준, 사용 전 검수 필요)",
+    "note": [
+      "픽셀좌표계는 첨부 배치도 이미지 기준(좌상단 원점, x 우측, y 하단 방향).",
+      "축척은 인가 대지면적(26,869.5㎡)에 대지경계선 폴리곤 면적을 맞추어 자동 산정한다.",
+      "동별 타워는 배치도상 층수 표기(48F/46F/43F/42F/34F)에 따라 존(zone)으로 분할하였다.",
+      "타워/저층부 면적은 인가 건폐율 57.02%, 용적률 469.99%에 수렴하도록 보정하였다."
+    ]
+  },
+
+  "image_size_px": [1500, 1152],
+
+  "approval": {
+    "label": "사업시행계획인가 제원",
+    "site_area_m2": 26869.5,
+    "building_coverage_ratio_pct": 57.02,
+    "floor_area_ratio_pct": 469.99,
+    "dong_count": 4,
+    "household_count": 912,
+    "max_floors_approved": 49,
+    "basement_floors": 5
+  },
+
+  "levels": {
+    "planned_ground_elev_m": 13.3,
+    "residential_floor_height_m": 2.95,
+    "podium_floor_height_m": 4.5,
+    "rooftop_structure_m": 4.0
+  },
+
+  "georeference": {
+    "target_epsg": 5186,
+    "plan_up_azimuth_deg": 51.2051,
+    "anchor_mode": "site_centroid",
+    "anchor_lat": 37.522129,
+    "anchor_lon": 126.933810,
+    "anchor_comment": "사용자가 QGIS에서 실측한 기준점 2점으로 보정된 값(2026-09 반영). 축척은 인가 대지면적 기준값을 유지하고 회전·위치만 기준점에서 취함.",
+    "calibration": {
+      "method": "control_points_2 (--keep-area-scale)",
+      "control_points": [
+        { "label": "대지경계선 북서 코너", "pixel": [262, 313], "epsg5186": [194114.76, 547091.16] },
+        { "label": "대지경계선 북동 코너", "pixel": [1310, 313], "epsg5186": [194272.85, 546894.50] }
+      ],
+      "measured_distance_m": 252.32,
+      "scale_from_control_points_m_per_px": 0.24077,
+      "scale_from_site_area_m_per_px": 0.23297,
+      "scale_difference_pct": 3.35,
+      "corner_residual_m": 4.09,
+      "note": "기준점 축척이 대지면적 기준값보다 3.35% 큼. 대지경계선 코너의 픽셀좌표 판독 오차로 판단하여 축척은 인가 대지면적 기준값을 채택하였다. 기준점에 완전 정합시키려면 --control-points 만 사용(--keep-area-scale 제외)한다."
+    }
+  },
+
+  "site_boundary_px": [
+    [262, 313], [1310, 313], [1310, 770], [178, 770], [178, 578], [262, 578]
+  ],
+
+  "buildings": [
+    { "id": "101-A", "dong": "101동", "part": "A(주동 서측)", "use": "공동주택",
+      "floors": 48, "rect_px": [265, 675, 350, 750] },
+    { "id": "101-B", "dong": "101동", "part": "B(주동 동측)", "use": "공동주택",
+      "floors": 43, "rect_px": [350, 700, 405, 750] },
+    { "id": "101-C", "dong": "101동", "part": "C(저층 연결부)", "use": "공동주택",
+      "floors": 34, "rect_px": [350, 645, 405, 700] },
+
+    { "id": "102-A", "dong": "102동", "part": "A(주동 서측)", "use": "공동주택",
+      "floors": 48, "rect_px": [570, 470, 650, 545] },
+    { "id": "102-B", "dong": "102동", "part": "B(주동 동측)", "use": "공동주택",
+      "floors": 46, "rect_px": [650, 470, 700, 530] },
+    { "id": "102-C", "dong": "102동", "part": "C(저층 연결부)", "use": "공동주택",
+      "floors": 34, "rect_px": [575, 545, 635, 595] },
+
+    { "id": "103-A", "dong": "103동", "part": "A(주동 서측)", "use": "공동주택",
+      "floors": 42, "rect_px": [855, 660, 930, 745] },
+    { "id": "103-B", "dong": "103동", "part": "B(주동 동측)", "use": "공동주택",
+      "floors": 42, "rect_px": [930, 690, 985, 745] },
+    { "id": "103-C", "dong": "103동", "part": "C(저층 연결부)", "use": "공동주택",
+      "floors": 34, "rect_px": [930, 635, 985, 690] },
+
+    { "id": "104-A", "dong": "104동", "part": "A(주동 서측)", "use": "공동주택",
+      "floors": 43, "rect_px": [1080, 470, 1160, 545] },
+    { "id": "104-B", "dong": "104동", "part": "B(주동 동측)", "use": "공동주택",
+      "floors": 43, "rect_px": [1160, 470, 1210, 530] },
+    { "id": "104-C", "dong": "104동", "part": "C(저층 연결부)", "use": "공동주택",
+      "floors": 34, "rect_px": [1080, 545, 1140, 595] },
+
+    { "id": "P-N1", "dong": "저층부", "part": "북측 저층부(키즈카페·돌봄센터·경로당·공공기여)",
+      "use": "근린생활시설/공공시설", "floors": 1, "podium": true,
+      "rect_px": [300, 325, 1240, 420] },
+    { "id": "P-N2", "dong": "저층부", "part": "북서측 저층부(어린이집·유아돌봄)",
+      "use": "주민공동시설", "floors": 1, "podium": true,
+      "rect_px": [290, 415, 570, 505] },
+    { "id": "P-C1", "dong": "저층부", "part": "중앙 저층부(작은도서관·피트니스·공유주방)",
+      "use": "주민공동시설", "floors": 1, "podium": true,
+      "rect_px": [690, 555, 1010, 665] },
+    { "id": "P-E1", "dong": "저층부", "part": "동측 저층부(복합문화체육센터·노인복지시설)",
+      "use": "공공기여시설", "floors": 2, "podium": true,
+      "rect_px": [1030, 595, 1245, 690] },
+    { "id": "P-S1", "dong": "저층부", "part": "남측 저층부(근린생활시설)",
+      "use": "근린생활시설", "floors": 1, "podium": true,
+      "rect_px": [290, 688, 1245, 775] }
+  ],
+
+  "context_buildings": [
+    { "id": "CTX-SAMBU", "name": "삼부아파트(기존)", "floors": 12,
+      "rect_px": [20, 590, 150, 900] },
+    { "id": "CTX-JANGMI", "name": "장미아파트(기존)", "floors": 13,
+      "rect_px": [230, 30, 560, 130] },
+    { "id": "CTX-YEOGO", "name": "여의도여자고등학교", "floors": 5,
+      "rect_px": [700, 30, 960, 170] },
+    { "id": "CTX-HWARANG", "name": "화랑아파트(기존, 여의도동 40-4)", "floors": 10,
+      "rect_px": [1060, 30, 1330, 140] },
+    { "id": "CTX-HANYANG", "name": "한양아파트(기존)", "floors": 12,
+      "rect_px": [760, 940, 1050, 1120] },
+    { "id": "CTX-HANYANG-102", "name": "한양아파트 재건축(안) 102동", "floors": 54,
+      "rect_px": [520, 950, 700, 1090] },
+    { "id": "CTX-HANYANG-103", "name": "한양아파트 재건축(안) 103동", "floors": 51,
+      "rect_px": [1070, 900, 1250, 1120] }
+  ]
+}

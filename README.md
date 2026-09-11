@@ -1,3 +1,19 @@
+# 분석 도구 모음
+
+| 도구 | 설명 | 문서 |
+| --- | --- | --- |
+| `dispatch_order_analysis.py` | 한국 발전소 업체별 급전순위(merit order) 분석 | 아래 참조 |
+| `daegyo_site_polygons.py` | 여의도 대교아파트 신축 배치도 → QGIS 일조권 분석용 건물 폴리곤 생성 | [초보자 매뉴얼](docs/daegyo_beginner_manual.md) · [실무 가이드](docs/daegyo_qgis_guide.md) |
+| `hwarang_massing_study.py` | 여의도 화랑아파트 재건축 – 주변 학교 일조영향 최소화 배치안 도출 | [설계안 보고서](docs/hwarang_massing_design.md) |
+| `hwarang_tower_shape_study.py` | 화랑아파트 1개동 – 최적 평면 형상(직사각형 방위) 도출 | [형상 검토 보고서](docs/hwarang_tower_shape.md) |
+| `hwarang_site_placement.py` | 화랑아파트 1개동 – 법정 이격 내 최적 입지 도출 | [입지 검토 보고서](docs/hwarang_placement.md) |
+| `hwarang_final_massing.py` | 화랑아파트 – 발코니 반영 최종 형상·배치도 산출 | [최종 배치 보고서](docs/hwarang_final_massing.md) |
+| `hwarang_unit_blocks.py` | 화랑아파트 – 평형별 단위세대 평면 블럭(조합 최적화 준비) | [블럭 라이브러리](docs/hwarang_unit_blocks.md) |
+| `hwarang_floor_plan_optimizer.py` | 화랑아파트 – 확정 배치도 내 세대 구성 최적화(최종 배치평면) | [최종 배치평면 보고서](docs/hwarang_floorplan.md) |
+| `hwarang_stepped_height_study.py` | 화랑아파트 – 대교식 계단형(저층/고층 분할) 매싱의 일조권 효과 검증 | [계단형 매싱 검토 보고서](docs/hwarang_stepped_height.md) |
+
+---
+
 # 한국 발전소 업체별 급전순위 분석
 
 한국 발전소/발전기 목록을 입력하면 단가를 감안한 급전순위(merit order)를 산출하고, 업체별 누계용량을 함께 확인할 수 있는 간단한 CSV 기반 분석 도구입니다.
@@ -61,3 +77,61 @@ python3 dispatch_order_analysis.py data/sample_generators.csv --output dispatch_
 
 - 실제 급전은 계통 제약, 정비 상태, 연료 계약, 재생에너지 출력, 송전 제약 등 다양한 운영 조건을 반영할 수 있습니다.
 - 이 도구는 입력된 단가와 용량만으로 업체별/발전기별 우선순위를 확인하는 분석용 템플릿입니다.
+
+---
+
+# 여의도 대교아파트 신축안 – QGIS 일조권 분석용 폴리곤 생성
+
+사업시행계획인가 제원(대지면적 26,869.5㎡ / 건폐율 57.02% / 용적률 469.99% / 4개동 912세대)과
+첨부 단지배치도를 근거로, 101~104동 타워·저층부 건물 폴리곤을 실좌표(EPSG:5186)로 생성합니다.
+
+```bash
+pip install pyproj shapely
+python3 daegyo_site_polygons.py
+```
+
+출력: `outputs/daegyo/` (GeoJSON 5186·WGS84, CSV+WKT, 트레이싱 검수 SVG, 인가제원 검증 리포트)
+
+- **파이썬·QGIS를 처음 쓰신다면** → [docs/daegyo_beginner_manual.md](docs/daegyo_beginner_manual.md)
+  (설치부터 메뉴 클릭 단위로 설명. 파이썬 없이 QGIS만으로 하는 방법 포함)
+- 옵션·좌표 보정·분석 절차 요약 → [docs/daegyo_qgis_guide.md](docs/daegyo_qgis_guide.md)
+- 인접 화랑아파트 일조권 분석용 파일 추출 → [docs/hwarang_sunlight_analysis.md](docs/hwarang_sunlight_analysis.md)
+
+---
+
+# 여의도 화랑아파트 재건축 – 학교 일조영향 최소화 배치안
+
+GIS건물통합정보(AL_D010)와 대교아파트 신축 폴리곤을 조합하여, 준주거 용적률 400% /
+건폐율 60% 범위에서 주변 학교 교실 창면의 동지일 일조를 최대로 확보하는 배치안을
+정량 비교합니다.
+
+```bash
+python3 hwarang_massing_study.py --buildings <AL_D010.gpkg> --outdir outputs/hwarang
+```
+
+**결론**: 탑상형 1개동 · 55층 · 기준층 683㎡ · 대지 남동측 배치 (용적률 400% 충족).
+가장 가까운 학교의 일조 충족률이 현황 64.9% → 84.8%로 **개선**됩니다.
+근거와 대안 비교는 [docs/hwarang_massing_design.md](docs/hwarang_massing_design.md) 참조.
+
+평면 형상은 **직사각형 29.2 × 23.4 m, 장변 방위 345°** 가 최적입니다(198개 형상 비교).
+[docs/hwarang_tower_shape.md](docs/hwarang_tower_shape.md) 참조.
+
+입지는 **E194,319.2 / N546,962.7**(대지 중심에서 동측 16.4m, 경계 이격 12.0m)이 최적입니다.
+[docs/hwarang_placement.md](docs/hwarang_placement.md) 참조.
+
+발코니 1.5m를 반영한 **최종안은 직사각형 2:1(내부 36.97 × 18.48m), 장변 방위 345°, 55층**입니다.
+용적률 400.0% · 건폐율 7.67% · 서비스면적 6,100㎡ · 학교 일조 현황 대비 +3.1%p.
+[docs/hwarang_final_massing.md](docs/hwarang_final_massing.md) 참조.
+
+평형별 단위세대 블럭(84A·84B·88A·93A·102A·105A·116A)은 단위세대 평면도 치수열에서
+생성했습니다. 기준층 조합 최적화의 입력으로 쓰며, 실좌표 캔버스는 확정 연면적선과
+99.97% 일치합니다. [docs/hwarang_unit_blocks.md](docs/hwarang_unit_blocks.md) 참조.
+
+확정 배치도(683.3㎡) 안에 평형 블럭을 채우는 최적화 결과: **1개층 102A×4세대**가
+전용면적 비율(59.7%)을 최대화하는 해입니다(무제한 배낭 알고리즘 + 전수열거로 검증).
+[docs/hwarang_floorplan.md](docs/hwarang_floorplan.md) 참조.
+
+대교아파트식 "동별 계단형(저층/고층 분할)" 매싱을 검토한 결과, **1개동인
+화랑아파트에는 유의미한 일조권 개선 효과가 없습니다**(분할비·저층수·방향
+92가지 조합 전수 검증, 균일 55층 대비 최대 ±0.1%p). 확정 균일 55층안을
+그대로 유지할 것을 권장합니다. [docs/hwarang_stepped_height.md](docs/hwarang_stepped_height.md) 참조.
