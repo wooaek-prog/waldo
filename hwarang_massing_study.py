@@ -73,7 +73,7 @@ class Prism:
 
 @dataclass(frozen=True)
 class Receptor:
-    """학교 교실 창면 수광점."""
+    """학교 교실 창면(수직) 또는 운동장 지반(수평) 수광점."""
 
     x: float
     y: float
@@ -81,6 +81,7 @@ class Receptor:
     normal_az: float       # 창면 바깥 방향 방위각
     building: str
     floor: int
+    horizontal: bool = False   # True면 수평면(운동장) – 창면 방위 제약 없음
 
 
 @dataclass
@@ -363,10 +364,12 @@ def sunlit_flags(
             own = shadow_mask(towers, height, azimuth, altitude, cloud)
             for idx in by_height[height]:
                 receptor = receptors[idx]
-                # 창면 자체 향에 따른 자기그늘(태양이 벽 뒤쪽이면 일조 없음)
-                delta = abs((azimuth - receptor.normal_az + 180) % 360 - 180)
-                if delta >= 88.0:
-                    continue
+                # 창면 자체 향에 따른 자기그늘(태양이 벽 뒤쪽이면 일조 없음).
+                # 운동장 지반(수평면)은 방위 제약을 받지 않는다.
+                if not receptor.horizontal:
+                    delta = abs((azimuth - receptor.normal_az + 180) % 360 - 180)
+                    if delta >= 88.0:
+                        continue
                 point = Point(receptor.x, receptor.y)
                 if ctx is not None and ctx.contains(point):
                     continue
