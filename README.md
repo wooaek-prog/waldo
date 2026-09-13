@@ -13,6 +13,7 @@
 | `hwarang_stepped_height_study.py` | 화랑아파트 – 대교식 계단형(저층/고층 분할) 매싱의 일조권 효과 검증 | [계단형 매싱 검토 보고서](docs/hwarang_stepped_height.md) |
 | `daegyo_school_sunlight.py` | 대교아파트 재건축 인가안 – 주변 학교 일조영향 정량 분석 | [학교 일조영향 보고서](docs/daegyo_school_sunlight.md) |
 | `daegyo_school_hours.py` | 학교별·교사동별·운동장별 **일조시간(h)** 분석 (충족률 착시 정정) | [일조시간 기준 분석](docs/daegyo_school_hours.md) |
+| `daegyo_hwarang_final.py` | **[최종 종합]** 4개 시나리오 × 학교별 일조시간 × 아파트별 영향도 + 교사동 배치도 | [최종 종합 보고서](docs/daegyo_hwarang_final_report.md) |
 
 ---
 
@@ -104,6 +105,13 @@ python3 daegyo_site_polygons.py
 수광점의 시간 손실"을 놓칩니다. 시간으로 보면 교사동 최대 피해는 여의도여고
 ①동 **−2.00시간**(4.91h→2.91h)이고, 화랑과 동시 재건축해도 **−0.39시간**으로
 완화되지 않습니다. [docs/daegyo_school_hours.md](docs/daegyo_school_hours.md) 참조.
+
+**최종 종합(4개 시나리오 × 아파트별 영향도)**: 동시 재건축 시 학교별 일조시간은
+여의도중 **−0.74h**, 여의도고 **−0.49h**, 여의도여고 −0.06h입니다. 대교 재건축은
+모든 학교에 새 그림자를 만들고(여의도고 0.00h→0.33h), 화랑 재건축은 여의도여고엔
+이롭지만(1.35h→0.96h) 북쪽 여의도중·여의도고엔 해롭습니다 — **피해를 없앤 게
+아니라 옮긴 것**입니다. 교사동 배치도 포함 →
+[docs/daegyo_hwarang_final_report.md](docs/daegyo_hwarang_final_report.md)
 
 - **파이썬·QGIS를 처음 쓰신다면** → [docs/daegyo_beginner_manual.md](docs/daegyo_beginner_manual.md)
   (설치부터 메뉴 클릭 단위로 설명. 파이썬 없이 QGIS만으로 하는 방법 포함)
