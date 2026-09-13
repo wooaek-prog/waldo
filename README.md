@@ -11,6 +11,7 @@
 | `hwarang_unit_blocks.py` | 화랑아파트 – 평형별 단위세대 평면 블럭(조합 최적화 준비) | [블럭 라이브러리](docs/hwarang_unit_blocks.md) |
 | `hwarang_floor_plan_optimizer.py` | 화랑아파트 – 확정 배치도 내 세대 구성 최적화(최종 배치평면) | [최종 배치평면 보고서](docs/hwarang_floorplan.md) |
 | `hwarang_stepped_height_study.py` | 화랑아파트 – 대교식 계단형(저층/고층 분할) 매싱의 일조권 효과 검증 | [계단형 매싱 검토 보고서](docs/hwarang_stepped_height.md) |
+| `daegyo_school_sunlight.py` | 대교아파트 재건축 인가안 – 주변 학교 일조영향 정량 분석 | [학교 일조영향 보고서](docs/daegyo_school_sunlight.md) |
 
 ---
 
@@ -91,6 +92,12 @@ python3 daegyo_site_polygons.py
 ```
 
 출력: `outputs/daegyo/` (GeoJSON 5186·WGS84, CSV+WKT, 트레이싱 검수 SVG, 인가제원 검증 리포트)
+
+**재건축안의 학교 일조영향**: 인가안(최고 48층) 신축 시 주변 4개 학교의 동지일
+일조 충족률이 **88.4% → 82.8%(−5.6%p)**, 교실 창면 38개소가 신규 불충족으로
+전환됩니다. 최대 피해는 여의도여자고등학교(−9.3%p)이며, 주원인은 가장 높은
+101·102동(48층)이 아니라 **학교와 남남서 방위선상에 놓인 104·103동**입니다.
+[docs/daegyo_school_sunlight.md](docs/daegyo_school_sunlight.md) 참조.
 
 - **파이썬·QGIS를 처음 쓰신다면** → [docs/daegyo_beginner_manual.md](docs/daegyo_beginner_manual.md)
   (설치부터 메뉴 클릭 단위로 설명. 파이썬 없이 QGIS만으로 하는 방법 포함)

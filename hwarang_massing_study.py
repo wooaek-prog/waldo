@@ -338,14 +338,17 @@ def build_context_masks(
     return masks
 
 
-def evaluate(
+def sunlit_flags(
     receptors: Sequence[Receptor],
     towers: Sequence[Prism],
     times: Sequence[tuple[float, float, float]],
     context_masks: dict[tuple[int, float], Any],
-    step_min: int = 10,
-) -> list[dict[str, Any]]:
-    """수광점별 동지일 일조시간을 계산한다."""
+) -> list[list[bool]]:
+    """수광점 × 시각별 일조 여부 행렬.
+
+    evaluate()가 내부에서 쓰는 계산이며, 시간대별 프로파일이 필요한
+    분석(대교 학교 일조영향 등)에서 동일 로직을 재사용하도록 분리했다.
+    """
     heights = sorted({round(r.z, 2) for r in receptors})
     by_height: dict[float, list[int]] = {h: [] for h in heights}
     for idx, receptor in enumerate(receptors):
@@ -370,7 +373,18 @@ def evaluate(
                 if own is not None and own.contains(point):
                     continue
                 sunlit[idx][t_index] = True
+    return sunlit
 
+
+def evaluate(
+    receptors: Sequence[Receptor],
+    towers: Sequence[Prism],
+    times: Sequence[tuple[float, float, float]],
+    context_masks: dict[tuple[int, float], Any],
+    step_min: int = 10,
+) -> list[dict[str, Any]]:
+    """수광점별 동지일 일조시간을 계산한다."""
+    sunlit = sunlit_flags(receptors, towers, times, context_masks)
     hour_step = step_min / 60.0
 
     def longest_run(flags: Sequence[bool], lo: float, hi: float) -> float:
