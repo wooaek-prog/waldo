@@ -34,7 +34,8 @@ from shapely.prepared import prep
 import hwarang_massing_study as H
 from daegyo_school_sunlight import (
     APT_FLOOR_H, APT_ROOF_M, DAEGYO_JIBUN, HWARANG_JIBUN, TOWER_MIN_H,
-    apartment_prisms, load_hwarang_plan, load_named_buildings, school_label,
+    apartment_prisms, load_hwarang_plan, load_named_buildings,
+    resolved_height, school_label, school_parcel_rows,
 )
 
 GROUND_Z = 0.0          # 운동장 지반 수광 높이
@@ -168,11 +169,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     times = H.sun_track(month, day, lat, lon, step_min=args.step_min)
     all_buildings = unary_union([r["geom"] for r in buildings])
 
-    groups: dict[str, list[dict]] = defaultdict(list)
-    for row in buildings:
-        if (row["use"] == H.SCHOOL_USE and row["floors"] > 0
-                and row["geom"].centroid.distance(centre) <= args.school_radius):
-            groups[row["jibun"]].append(row)
+    groups = school_parcel_rows(buildings, centre, args.school_radius)
 
     # ── 수광점: 교사동별 창면 + 운동장 지반 ────────────────────────────────
     user_pg = {}
@@ -187,7 +184,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     unit_info: dict[str, dict[str, Any]] = {}
     for jibun, rows in groups.items():
         school = school_label(jibun, rows).split(" ", 1)[1]
-        for label, row in dong_labels(rows, school):
+        for label, row in dong_labels([r for r in rows if r["classroom"]], school):
             rec = building_receptors([row], label)
             receptors += rec
             unit_kind[label] = "교사동"
@@ -213,14 +210,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     # ── 차폐물 ────────────────────────────────────────────────────────────
     context: list[H.Prism] = []
     for row in buildings:
-        if row["jibun"] in (DAEGYO_JIBUN, HWARANG_JIBUN) or row["floors"] <= 0:
+        if row["jibun"] in (DAEGYO_JIBUN, HWARANG_JIBUN):
             continue
         if row["geom"].centroid.distance(centre) > args.context_radius:
+            continue
+        height = resolved_height(row)
+        if height <= 0.0:
             continue
         geom = row["geom"]
         polys = geom.geoms if geom.geom_type == "MultiPolygon" else [geom]
         for poly in polys:
-            context.append(H.Prism(poly, H.building_height(row), "기존건물"))
+            context.append(H.Prism(poly, height, "기존건물"))
     masks = H.build_context_masks(context, receptors, times)
 
     daegyo_now = apartment_prisms(buildings, DAEGYO_JIBUN, "대교 기존")

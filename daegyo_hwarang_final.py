@@ -34,7 +34,8 @@ from shapely.ops import unary_union
 import hwarang_massing_study as H
 from daegyo_school_sunlight import (
     DAEGYO_JIBUN, HWARANG_JIBUN, TOWER_MIN_H,
-    apartment_prisms, load_hwarang_plan, load_named_buildings, school_label,
+    apartment_prisms, load_hwarang_plan, load_named_buildings,
+    resolved_height, school_label, school_parcel_rows,
 )
 from daegyo_school_hours import (
     building_receptors, dong_labels, ground_receptors, playground_area,
@@ -118,11 +119,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     times = H.sun_track(month, day, lat, lon, step_min=args.step_min)
     all_buildings = unary_union([r["geom"] for r in buildings])
 
-    schools: dict[str, list[dict]] = defaultdict(list)
-    for row in buildings:
-        if (row["use"] == H.SCHOOL_USE and row["floors"] > 0
-                and row["geom"].centroid.distance(centre) <= args.school_radius):
-            schools[row["jibun"]].append(row)
+    schools = school_parcel_rows(buildings, centre, args.school_radius)
+    print("■ 학교 부지 건물 인식 결과 (용도·층수 누락분을 A16 높이로 복구)")
+    for jibun, rows in sorted(schools.items()):
+        cls = [r for r in rows if r["classroom"]]
+        rec = [r for r in rows if not r["use"]]
+        print(f"   {school_label(jibun, rows):<24} 전체 {len(rows):2d}동 "
+              f"(교실동 {len(cls):2d} / 부속·차폐만 {len(rows)-len(cls):2d}) "
+              f"· 속성누락 복구 {len(rec):2d}동")
+    print()
 
     user_pg: dict[str, Polygon] = {}
     if args.playground and args.playground.exists():
@@ -136,7 +141,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     receptors: list[H.Receptor] = []
     for jibun, rows in sorted(schools.items()):
         school = school_label(jibun, rows).split(" ", 1)[1]
-        for label, row in dong_labels(rows, school):
+        # 교실동만 수광점 대상(부속동·창고는 차폐물로만 작용)
+        classrooms = [r for r in rows if r["classroom"]]
+        for label, row in dong_labels(classrooms, school):
             rec = building_receptors([row], label)
             receptors += rec
             units[label] = Unit(label, "교사동", jibun, school, row["floors"],
@@ -156,15 +163,25 @@ def main(argv: Sequence[str] | None = None) -> int:
           f"{len(times)}개 시점\n")
 
     # ── 차폐물 ────────────────────────────────────────────────────────────
+    # 차폐물: 대교·화랑 대지 외 모든 기존 건물(학교 부속동 포함).
+    # 높이는 A16 실측 우선 → 없으면 층수 환산(resolved_height)
     context: list[H.Prism] = []
+    n_by_height = 0
     for row in buildings:
-        if row["jibun"] in (DAEGYO_JIBUN, HWARANG_JIBUN) or row["floors"] <= 0:
+        if row["jibun"] in (DAEGYO_JIBUN, HWARANG_JIBUN):
             continue
         if row["geom"].centroid.distance(centre) > args.context_radius:
             continue
+        height = resolved_height(row)
+        if height <= 0.0:
+            continue
+        if row["floors"] <= 0:
+            n_by_height += 1
         geom = row["geom"]
         for poly in (geom.geoms if geom.geom_type == "MultiPolygon" else [geom]):
-            context.append(H.Prism(poly, H.building_height(row), "기존건물"))
+            context.append(H.Prism(poly, height, "기존건물"))
+    print(f"주변 차폐물 {len(context)}개 "
+          f"(이 중 {n_by_height}개는 층수 누락분을 A16 높이로 복구)")
     masks = H.build_context_masks(context, receptors, times)
 
     d_now = apartment_prisms(buildings, DAEGYO_JIBUN, "대교 기존")

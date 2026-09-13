@@ -51,14 +51,19 @@ TOWER_MIN_H = 50.0
 # 입력
 # --------------------------------------------------------------------------- #
 def load_named_buildings(path: Path) -> list[dict[str, Any]]:
-    """AL_D010을 읽되 건물명(A24)까지 가져온다(학교명 식별용)."""
+    """AL_D010을 읽되 건물명(A24)과 높이(A16)까지 가져온다.
+
+    A9(용도)·A26(층수)가 비어 있는 행이 상당수 있는데, 그중 다수는 A16(높이)만
+    가지고 있다. 층수만으로 걸러내면 실재하는 건물이 분석에서 통째로 빠지므로
+    높이를 함께 읽어 복구한다(resolved_height 참조).
+    """
     conn = sqlite3.connect(path)
     table = conn.execute(
         "select table_name from gpkg_contents where data_type='features'"
     ).fetchone()[0]
     rows: list[dict[str, Any]] = []
-    for blob, jibun, use, name, dong, floors, area in conn.execute(
-        f'select geom, A5, A9, A24, A25, A26, A12 from "{table}"'
+    for blob, jibun, use, name, dong, floors, area, height in conn.execute(
+        f'select geom, A5, A9, A24, A25, A26, A12, A16 from "{table}"'
     ):
         if blob is None:
             continue
@@ -73,9 +78,33 @@ def load_named_buildings(path: Path) -> list[dict[str, Any]]:
             "dong": (dong or "").strip(),
             "floors": int(floors or 0),
             "build_area": float(area or 0.0),
+            "height": float(height or 0.0),     # A16 실측 높이(m), 없으면 0
         })
     conn.close()
     return rows
+
+
+def resolved_height(row: dict[str, Any]) -> float:
+    """건물 높이(m). A16 실측값을 우선하고, 없으면 층수×용도별 층고로 추정."""
+    if row.get("height", 0.0) > 0.0:
+        return row["height"]
+    if row["floors"] > 0:
+        return H.building_height(row)
+    return 0.0
+
+
+def resolved_floors(row: dict[str, Any]) -> int:
+    """지상 층수. A26이 비어 있으면 높이에서 역산한다.
+
+    역산식 round((H − 창높이)/층고)은 사용자가 확인해 준 두 건물
+    (17.00m·19.95m = 각 5층)을 정확히 재현한다.
+    """
+    if row["floors"] > 0:
+        return row["floors"]
+    height = row.get("height", 0.0)
+    if height <= 0.0:
+        return 0
+    return max(1, round((height - H.SCHOOL_WINDOW_H) / H.SCHOOL_FLOOR_H))
 
 
 def load_hwarang_plan(path: Path) -> list[H.Prism]:
@@ -107,12 +136,55 @@ def apartment_prisms(buildings: Sequence[dict[str, Any]], jibun: str,
     return prisms
 
 
+# AL_D010에 건물명이 비어 있어 식별되지 않는 학교 – 사용자 확인값
+SCHOOL_NAME_OVERRIDES = {"40-3": "여의도초등학교"}
+
+# 교실동(수광점 부여 대상) 최소 규모 – 이보다 작으면 차폐물로만 취급
+CLASSROOM_MIN_H = 7.0      # m (2층 이상)
+CLASSROOM_MIN_AREA = 100.0  # ㎡
+
+
+def school_parcel_rows(buildings: Sequence[dict[str, Any]], centre,
+                       radius: float) -> dict[str, list[dict[str, Any]]]:
+    """학교 지번별 건물 목록.
+
+    용도코드(A9)가 '교육연구시설'인 행이 하나라도 있는 지번을 '학교 부지'로 보고,
+    **그 지번 위의 모든 건물**을 반환한다. AL_D010에는 용도·층수가 비어 있는
+    학교 건물이 다수 있어(여의도여고 19.95m동, 여의도초 17.0m동 등) 용도코드로만
+    거르면 실재하는 교사동이 통째로 누락된다.
+
+    각 행에는 resolved_floors()로 채운 'floors'와, 교실동 여부를 나타내는
+    'classroom' 키를 넣어 돌려준다.
+    """
+    parcels = {
+        r["jibun"] for r in buildings
+        if r["use"] == H.SCHOOL_USE and r["jibun"]
+        and r["geom"].centroid.distance(centre) <= radius
+    }
+    out: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in buildings:
+        if row["jibun"] not in parcels:
+            continue
+        height = resolved_height(row)
+        if height <= 0.0:
+            continue                      # 층수·높이 모두 없어 복원 불가
+        floors = resolved_floors(row)
+        out[row["jibun"]].append({
+            **row, "floors": floors, "height_m": height,
+            "classroom": (height >= CLASSROOM_MIN_H
+                          and row["geom"].area >= CLASSROOM_MIN_AREA),
+        })
+    return out
+
+
 def school_label(jibun: str, rows: Sequence[dict[str, Any]]) -> str:
     """지번 + 대표 학교명.
 
     한 지번에 교사동과 부속시설(예: 정보화센타)이 섞여 있으므로
     '학교'가 들어간 이름을 우선하고, 없으면 연면적이 큰 이름을 택한다.
     """
+    if jibun in SCHOOL_NAME_OVERRIDES:
+        return f"{jibun} {SCHOOL_NAME_OVERRIDES[jibun]}"
     area: dict[str, float] = defaultdict(float)
     for row in rows:
         if row["name"]:
@@ -195,11 +267,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     ).transform(centre.x, centre.y)
 
     # ── 학교·수광점 ────────────────────────────────────────────────────────
-    groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for row in buildings:
-        if (row["use"] == H.SCHOOL_USE and row["floors"] > 0
-                and row["geom"].centroid.distance(centre) <= args.school_radius):
-            groups[row["jibun"]].append(row)
+    groups = school_parcel_rows(buildings, centre, args.school_radius)
+    groups = {j: [r for r in rows if r["classroom"]] for j, rows in groups.items()}
     if not groups:
         raise SystemExit("반경 내 학교(교육연구시설)를 찾지 못했습니다.")
 
@@ -229,14 +298,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     # ── 차폐물: 대교·화랑 대지 밖의 기존 건물(시나리오 무관) ────────────────
     context: list[H.Prism] = []
     for row in buildings:
-        if row["jibun"] in (DAEGYO_JIBUN, HWARANG_JIBUN) or row["floors"] <= 0:
+        if row["jibun"] in (DAEGYO_JIBUN, HWARANG_JIBUN):
             continue
         if row["geom"].centroid.distance(centre) > args.context_radius:
+            continue
+        height = resolved_height(row)
+        if height <= 0.0:
             continue
         geom = row["geom"]
         polys = geom.geoms if geom.geom_type == "MultiPolygon" else [geom]
         for poly in polys:
-            context.append(H.Prism(poly, H.building_height(row),
+            context.append(H.Prism(poly, height,
                                    f"기존 {row['jibun']} {row['name'] or row['dong']}".strip()))
     print(f"\n주변 고정 차폐물 {len(context)}개(반경 {args.context_radius:.0f}m, "
           f"대교·화랑 대지 제외)")
