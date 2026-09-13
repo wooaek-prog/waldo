@@ -238,6 +238,12 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     p.add_argument("--sample", type=int, default=3, help="스크리닝 표본 간격")
     p.add_argument("--top-n", type=int, default=8)
     p.add_argument("--timing", action="store_true", help="1회 평가 소요시간만 측정")
+    # 탐색을 건너뛰고 지정한 설계안만 평가(시공 가능성까지 반영한 확정안 출력용)
+    p.add_argument("--fix-floors", type=int)
+    p.add_argument("--fix-aspect", type=float)
+    p.add_argument("--fix-azimuth", type=float)
+    p.add_argument("--fix-x", type=float)
+    p.add_argument("--fix-y", type=float)
     return p.parse_args(argv)
 
 
@@ -370,6 +376,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     print(f"   (화랑 기존동이 학교에서 빼앗는 몫 = "
           f"{base_none['pass_pct']-base_now['pass_pct']:+.1f}%p, "
           f"교실 평균 {base_none['mean_total_h']-base_now['mean_total_h']:+.2f}h)\n")
+
+    # 지정 설계안만 평가하는 경로(탐색 생략)
+    if args.fix_floors:
+        d = build_design(1, args.fix_floors, args.fix_aspect, args.fix_azimuth,
+                         [(args.fix_x, args.fix_y)], gfa)
+        m, v = full(d)
+        best = {"design": d, "m": m, "view": v, "key": rank_key(m, d, v)}
+        print(f"지정 설계안 평가: {d.label()}")
+        report(args, ctx, best, [best], base_now, base_none, view)
+        return 0
 
     results: list[dict[str, Any]] = []
 
