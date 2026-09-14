@@ -1,0 +1,44 @@
+{
+  "_note": [
+    "학교 교사동의 '실제 창면' 수광점 정의. 값이 없는 학교는 기존 일반식",
+    "(외벽 5m 균등 + 남향계열 전체 + 층고 3.5m + 창중심 1.2m)으로 생성한다.",
+    "facade_azimuth : 수광 대상 파사드의 바깥 법선 방위(도). 이 값 ±tol_deg 안의",
+    "                 외벽 구간에만 수광점을 둔다(단부벽·북측벽 제외).",
+    "floor_height_m : 정면도에서 읽은 층고. window_sill_m/window_head_m 은 각 층",
+    "                 바닥 기준 창 하단/상단이며, 수광 높이는 그 중앙을 쓴다.",
+    "exclude_spans  : 파사드 시작점(0m)부터의 거리 구간 [시작,끝]. 계단실·벽체 등",
+    "                 교실창이 없는 구간을 뺀다."
+  ],
+  "40-3": {
+    "school": "여의도초등학교",
+    "source": "사용자 제공 본관·별관 정면도(2026-09-14)",
+    "buildings": [
+      {
+        "id": "본관(4층)",
+        "match_floors": 4,
+        "facade_azimuth": 142.0,
+        "tol_deg": 30.0,
+        "n_floors": 4,
+        "floor_height_m": 3.6,
+        "window_sill_m": 0.9,
+        "window_head_m": 3.3,
+        "spacing_m": 2.5,
+        "exclude_spans": [],
+        "note": "정면도상 전 4개층 연속 리본창. 옥탑 2개소와 1층 계단실 출입구 2개소가 있으나 창면 자체는 거의 전 길이에 걸쳐 연속."
+      },
+      {
+        "id": "별관(5층)",
+        "match_floors": 5,
+        "facade_azimuth": 231.9,
+        "tol_deg": 30.0,
+        "n_floors": 5,
+        "floor_height_m": 3.2,
+        "window_sill_m": 0.9,
+        "window_head_m": 3.0,
+        "spacing_m": 2.5,
+        "exclude_spans": [[26.0, 31.0], [57.0, 62.0]],
+        "note": "정면도상 전 5개층 연속 리본창. 지붕 위로 솟은 계단실 2개소는 교실창이 없어 제외(파사드 시작점 기준 26~31m, 57~62m 추정)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="507" height="860" viewBox="0 0 507 860">
+<rect width="100%" height="100%" fill="#fcfcfa"/>
+<text x="18" y="32" font-family="sans-serif" font-size="19" font-weight="bold" fill="#111">여의도초등학교 – 수광 대상 파사드(남측)와 수광점 평면</text>
+<text x="18" y="56" font-family="sans-serif" font-size="12.5" fill="#555">굵은 청색 = 수광점을 두는 남측 외벽 / 회색 = 대상 외 외벽(북측·단부벽). 상단이 북.</text>
+<text x="18" y="76" font-family="sans-serif" font-size="12.5" fill="#555">붉은 점은 각 층 수광점이 평면상 겹쳐 보이는 위치입니다.</text>
+<polygon points="189.4,173.2 278.0,287.8 291.7,277.1 318.1,311.2 305.8,320.7 393.7,434.4 352.5,467.1 321.1,427.2 312.0,415.5 147.4,205.8 189.4,173.2" fill="#eceae4" stroke="#9b9b93" stroke-width="1.4"/>
+<line x1="312.0" y1="415.5" x2="147.4" y2="205.8" stroke="#1d3557" stroke-width="5" stroke-linecap="round"/>
+<line x1="321.1" y1="427.2" x2="312.0" y2="415.5" stroke="#1d3557" stroke-width="5" stroke-linecap="round"/>
+<line x1="352.5" y1="467.1" x2="321.1" y2="427.2" stroke="#1d3557" stroke-width="5" stroke-linecap="round"/>
+<text x="271.9" y="319.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">별관(5층)</text>
+<polygon points="409.8,539.0 131.1,756.7 97.3,713.5 376.8,495.0 409.8,539.0" fill="#eceae4" stroke="#9b9b93" stroke-width="1.4"/>
+<line x1="409.8" y1="539.0" x2="131.1" y2="756.7" stroke="#1d3557" stroke-width="5" stroke-linecap="round"/>
+<text x="253.7" y="626.0" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">본관(4층)</text>
+<circle cx="307.0" cy="412.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="299.9" cy="403.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="292.9" cy="394.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="285.8" cy="385.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="278.7" cy="376.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="271.7" cy="367.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="264.6" cy="358.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="257.5" cy="349.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="250.4" cy="340.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="243.4" cy="331.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="236.3" cy="322.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="215.1" cy="295.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="208.0" cy="286.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="201.0" cy="277.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="193.9" cy="268.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="186.8" cy="259.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="179.8" cy="250.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="172.7" cy="241.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="165.6" cy="232.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="158.6" cy="223.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="151.5" cy="213.9" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="347.5" cy="463.7" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="340.4" cy="454.7" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="333.3" cy="445.7" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="326.3" cy="436.7" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="406.4" cy="544.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="397.4" cy="551.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="388.4" cy="558.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="379.3" cy="565.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="370.3" cy="572.2" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="361.3" cy="579.2" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="352.3" cy="586.3" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="343.3" cy="593.3" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="334.2" cy="600.4" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="325.2" cy="607.4" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="316.2" cy="614.5" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="307.2" cy="621.5" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="298.1" cy="628.6" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="289.1" cy="635.6" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="280.1" cy="642.7" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="271.1" cy="649.7" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="262.0" cy="656.8" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="253.0" cy="663.8" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="244.0" cy="670.9" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="235.0" cy="677.9" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="226.0" cy="685.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="216.9" cy="692.0" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="207.9" cy="699.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="198.9" cy="706.1" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="189.9" cy="713.2" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="180.8" cy="720.2" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="171.8" cy="727.3" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="162.8" cy="734.3" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="153.8" cy="741.4" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="144.8" cy="748.4" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<circle cx="135.7" cy="755.5" r="2.6" fill="#c1121f" stroke="#fff" stroke-width="0.6"/>
+<g transform="translate(443,104)"><line x1="0" y1="40" x2="0" y2="6" stroke="#111" stroke-width="2"/><polygon points="0,0 -6,12 6,12" fill="#111"/><text x="0" y="56" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#111">N</text></g>
+</svg>
