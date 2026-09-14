@@ -18,7 +18,7 @@ from typing import Sequence
 
 import hwarang_massing_study as H
 from hwarang_redesign import (
-    ViewModel, build_design, metrics_of, plate_polygon, river_azimuths, setup,
+    ViewModel, build_design, metrics_of, outline_polygon, river_azimuths, setup,
 )
 
 
@@ -77,7 +77,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         plate = gfa / F
         if plate > ctx["max_footprint"]:
             continue
-        poly = plate_polygon(plate, args.aspect, args.azimuth, args.x, args.y)
+        poly = outline_polygon(plate, args.aspect, args.azimuth, args.x, args.y)
         fits = envelope.contains(poly)
         d = build_design(1, F, args.aspect, args.azimuth, [(args.x, args.y)], gfa)
         m = metrics_of(H.evaluate(receptors, d.prisms, times, masks, args.step_min),
