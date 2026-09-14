@@ -1194,6 +1194,600 @@
     "z_m": 16.8,
     "normal_az": 141.8
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194281.0503474531,
+     547027.3743902874
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194281.0503474531,
+     547027.3743902874
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194283.81583899807,
+     547023.8244524205
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194283.81583899807,
+     547023.8244524205
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194286.58133054303,
+     547020.2745145536
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194286.58133054303,
+     547020.2745145536
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194289.34682208797,
+     547016.7245766866
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194289.34682208797,
+     547016.7245766866
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194292.11231363294,
+     547013.1746388198
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194292.11231363294,
+     547013.1746388198
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194282.03363333576,
+     547026.112190157
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194286.765696646,
+     547020.0378520291
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194291.49775995628,
+     547013.9635139013
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남서면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 232.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194296.17434108286,
+     547012.2723328151
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194296.17434108286,
+     547012.2723328151
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194299.72485503316,
+     547015.0370843484
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194299.72485503316,
+     547015.0370843484
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194303.27536898348,
+     547017.8018358815
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194303.27536898348,
+     547017.8018358815
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194306.82588293377,
+     547020.5665874148
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194306.82588293377,
+     547020.5665874148
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194310.37639688406,
+     547023.3313389481
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194310.37639688406,
+     547023.3313389481
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194313.9269108344,
+     547026.0960904814
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194313.9269108344,
+     547026.0960904814
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194317.47742478468,
+     547028.8608420147
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 1,
+    "z_m": 2.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194317.47742478468,
+     547028.8608420147
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 2,
+    "z_m": 6.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194296.68719309793,
+     547012.6716858144
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194301.2634110783,
+     547016.2351433461
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194305.8396290587,
+     547019.7986008779
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194310.41584703908,
+     547023.3620584096
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194314.99206501947,
+     547026.9255159413
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 142.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194319.56828299986,
+     547030.4889734731
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "A동(3층)",
+    "facade": "A동 남동면",
+    "floor": 3,
+    "z_m": 10.3,
+    "normal_az": 142.1
+   }
   }
  ]
 }

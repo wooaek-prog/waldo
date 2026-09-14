@@ -329,6 +329,19 @@ def bay_positions(spec: dict[str, Any], facade: dict[str, Any],
     return out
 
 
+def mode_note(spec: dict[str, Any], facade: dict[str, Any],
+              receptors: Sequence[H.Receptor] = ()) -> str:
+    """도면 머리글에 쓸 배치 규칙 설명."""
+    if spec.get("point_mode") == "uniform":
+        return f'{spec.get("spacing_m", 2.5):g}m 등간격'
+    bay = facade.get("bay_m", spec.get("bay_m", DEFAULT_BAY_M))
+    offs = facade.get("bay_offsets_m",
+                      spec.get("bay_offsets_m", list(DEFAULT_BAY_OFFSETS)))
+    floors = facade.get("floors")
+    scope = f'{",".join(str(f) for f in floors)}층 ' if floors else ""
+    return f'{scope}교실 모듈 {bay:g}m·창 {len(offs)}개소'
+
+
 def receptors_from_facade(row: dict[str, Any], spec: dict[str, Any],
                           facade: dict[str, Any], label: str) -> list[H.Receptor]:
     """정면도·분석지점도 정의 1건으로 파사드 1면의 수광점을 만든다."""
@@ -340,6 +353,7 @@ def receptors_from_facade(row: dict[str, Any], spec: dict[str, Any],
     z_mid = (sill + head) / 2.0
     levels = floor_levels(spec)
     skip = set(spec.get("skip_floors", []))
+    only = set(facade["floors"]) if facade.get("floors") else None
     excl = excluded_spans(facade)
 
     out: list[H.Receptor] = []
@@ -352,7 +366,7 @@ def receptors_from_facade(row: dict[str, Any], spec: dict[str, Any],
         ny = math.cos(math.radians(normal_az))
         px, py = wx + nx * 0.4, wy + ny * 0.4
         for f, z0 in enumerate(levels, start=1):
-            if f in skip:
+            if f in skip or (only is not None and f not in only):
                 continue
             if any(a <= s <= b and (fl is None or f in fl) for a, b, fl in excl):
                 continue

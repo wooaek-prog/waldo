@@ -33,7 +33,7 @@ def slug(text: str) -> str:
 
 def elevation_svg(path: Path, row: dict[str, Any], spec: dict[str, Any],
                   facade: dict[str, Any], receptors: Sequence[H.Receptor],
-                  school: str, title: str) -> None:
+                  school: str, title: str, mode_txt: str = "") -> None:
     """파사드 전개 입면 + 수광점."""
     frame = SF.facade_frame(row, facade)
     total = SF.frame_total(frame)
@@ -43,13 +43,7 @@ def elevation_svg(path: Path, row: dict[str, Any], spec: dict[str, Any],
     top = max(SF.building_top(row, spec), levels[-1] + head + 0.4)
     az_txt = (f'{facade["azimuth_range"][0]:.0f}~{facade["azimuth_range"][1]:.0f}°'
               if facade.get("azimuth_range") else f'{facade["azimuth"]:.1f}°')
-    if spec.get("point_mode") == "uniform":
-        mode_txt = f'{spec.get("spacing_m", 2.5):g}m 등간격'
-    else:
-        bay = facade.get("bay_m", spec.get("bay_m", SF.DEFAULT_BAY_M))
-        offs = facade.get("bay_offsets_m",
-                          spec.get("bay_offsets_m", list(SF.DEFAULT_BAY_OFFSETS)))
-        mode_txt = f'교실 모듈 {bay:g}m · 교실당 창 {len(offs)}개소'
+    mode_txt = mode_txt or SF.mode_note(spec, facade, receptors)
 
     px_w = 1500.0
     pad_l, pad_r, pad_t, pad_b = 92.0, 40.0, 96.0, 96.0
@@ -81,20 +75,23 @@ def elevation_svg(path: Path, row: dict[str, Any], spec: dict[str, Any],
                f'width="{total*scale:.1f}" height="{top*scale:.1f}" '
                f'fill="#ffffff" stroke="#333" stroke-width="1.6"/>')
     skip = set(spec.get("skip_floors", []))
+    active = {r.floor for r in receptors}
     # 층선 + 층 라벨
     for f, z0 in enumerate(levels, start=1):
         svg.append(f'<line x1="{X(0):.1f}" y1="{Y(z0):.1f}" '
                    f'x2="{X(total):.1f}" y2="{Y(z0):.1f}" stroke="#bbb" '
                    f'stroke-width="0.9" stroke-dasharray="5 4"/>')
-        if f in skip:
+        if f not in active:
             z1 = levels[f] if f < nf else z0 + head + 0.4
+            why = ("교실 없음(필로티 등)으로 제외" if f in skip
+                   else "이 면에는 수광점 없음")
             svg.append(f'<rect x="{X(0):.1f}" y="{Y(z1):.1f}" '
                        f'width="{total*scale:.1f}" height="{(z1-z0)*scale:.1f}" '
                        f'fill="#8a8a82" fill-opacity="0.18"/>')
             svg.append(f'<text x="{X(total/2):.1f}" '
                        f'y="{Y(z0+(z1-z0)/2)+4:.1f}" font-family="sans-serif" '
                        f'font-size="12" text-anchor="middle" fill="#777">'
-                       f'{f}층 – 교실 없음(필로티 등)으로 제외</text>')
+                       f'{f}층 – {why}</text>')
         svg.append(f'<text x="{X(0)-10:.1f}" y="{Y(z0+(sill+head)/2)+4:.1f}" '
                    f'font-family="sans-serif" font-size="11.5" text-anchor="end" '
                    f'fill="#111">{f}층</text>')
@@ -259,15 +256,31 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(f"   {spec['id']}: 대응하는 건물 폴리곤을 찾지 못함 – 건너뜀")
             continue
         pairs.append((row, spec))
+        # 같은 외벽면을 층별로 나눠 정의한 경우(모듈이 층마다 다른 동) 한 장으로 합친다
+        groups: dict[str, dict[str, Any]] = {}
         for i, facade in enumerate(SF.spec_facades(spec)):
             fid = SF.facade_id(spec, facade, i)
             rec = SF.receptors_from_facade(row, spec, facade, fid)
             if not rec:
                 print(f"   {fid}: 해당 방위의 외벽 없음 – 건너뜀")
                 continue
+            key = facade.get("group") or (
+                f'{facade.get("azimuth", facade.get("azimuth_range"))}'
+                f'/{facade.get("tol_deg", 30.0)}/{facade.get("bay_origin_m", 0.0)}')
+            g = groups.setdefault(key, {"facade": facade, "id": fid, "rec": [],
+                                        "excl": [], "modes": []})
+            g["rec"] += rec
+            g["excl"] += facade.get("exclude_spans", [])
+            g["modes"].append(SF.mode_note(spec, facade, rec))
+            if facade.get("group"):
+                g["id"] = facade["group"]
+        for g in groups.values():
+            facade, fid, rec = g["facade"], g["id"], g["rec"]
+            draw_facade = {**facade, "exclude_spans": g["excl"]}
             all_rec += rec
             out = args.outdir / f"{args.jibun}_{slug(fid)}_elevation.svg"
-            elevation_svg(out, row, spec, facade, rec, school, fid)
+            elevation_svg(out, row, spec, draw_facade, rec, school, fid,
+                          " / ".join(dict.fromkeys(g["modes"])))
             per = Counter(r.floor for r in rec)
             detail = " ".join(f"{f}층 {per[f]}" for f in sorted(per))
             print(f"   {fid}: 수광점 {len(rec)}개 ({detail}) → {out.name}")
