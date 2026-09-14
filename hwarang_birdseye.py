@@ -66,7 +66,14 @@ class Camera:
         return -(x * math.sin(self.a) + y * math.cos(self.a))
 
     def project(self, x: float, y: float, z: float) -> tuple[float, float]:
-        sx = x * math.cos(self.a) - y * math.sin(self.a)
+        """직교 축측투영.
+
+        화면 오른쪽 벡터는 r = d × up 이며, 시선 d = −(sinA, cosA, 0),
+        up = (0,0,1) 이므로 r = (−cosA, sinA, 0).
+        따라서 screen_x = −x·cosA + y·sinA 이다.
+        (부호를 반대로 쓰면 도면이 좌우 반전된다 – 실제로 그 오류가 있었다.)
+        """
+        sx = -x * math.cos(self.a) + y * math.sin(self.a)
         up = z * math.cos(self.e) + self.depth(x, y) * math.sin(self.e)
         return sx * self.scale, -up * self.scale
 
