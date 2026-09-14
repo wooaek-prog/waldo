@@ -30,6 +30,16 @@ from hwarang_redesign import (
     plate_polygon, rank_key, river_azimuths, setup, stride_sample,
 )
 
+# 세대 배치 가능성(양면복도형) – 연면적선 단변 기준.
+# 발코니는 연면적에서 제외되므로 세대 깊이는 '연면적선' 안에서 확보해야 한다.
+UNIT_DEPTH_M = 7.184      # 102A 골조 깊이(도면 치수 기반)
+MIN_CORE_M = 3.8          # 승강기·계단 코어 최소 대역
+
+
+def core_width(plate_area: float, aspect: float) -> float:
+    """중앙 코어로 남는 폭 = 연면적선 단변 − 세대깊이×2."""
+    return math.sqrt(plate_area / aspect) - 2 * UNIT_DEPTH_M
+
 
 def facade_gap(site, plate_area: float, aspect: float, azimuth: float,
                cx: float, cy: float, samples: int = 11,
@@ -159,8 +169,8 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     print(f"\n■ 전체 수광점 정밀 재평가")
     print(f"{'층수':>5}{'종횡비':>7}{'방위':>6}{'기준층㎡':>9}{'장×단(m)':>15}"
-          f"{'교사동A':>9}{'불충족h':>9}{'조망':>7}{'이격':>7}")
-    print("-" * 78)
+          f"{'교사동A':>9}{'불충족h':>9}{'조망':>7}{'이격':>7}{'코어':>7}{'시공':>6}")
+    print("-" * 92)
     final = []
     for r in rows:
         d = r["design"]
@@ -171,19 +181,34 @@ def main(argv: Sequence[str] | None = None) -> int:
         short = math.sqrt(d.plate_m2 / d.aspect)
         final.append({"design": d, "m": m, "view": v, "gap": gap,
                       "key": rank_key(m, d, v)})
+        cw = core_width(d.plate_m2, d.aspect)
         print(f"{d.floors:>5}{d.aspect:>7g}{d.azimuth:>6g}{d.plate_m2:>9.0f}"
               f"{short*d.aspect:>9.1f}×{short:>5.1f}{m['pass_pct']:>8.1f}%"
-              f"{m['fail_mean_h']:>9.2f}{v:>6.1f}%{gap:>6.1f}m")
+              f"{m['fail_mean_h']:>9.2f}{v:>6.1f}%{gap:>6.1f}m{cw:>6.2f}m"
+              f"{('가능' if cw >= MIN_CORE_M else '불가'):>6}")
 
     final.sort(key=lambda r: r["key"])
-    b = final[0]
+    buildable = [r for r in final
+                 if core_width(r["design"].plate_m2, r["design"].aspect) >= MIN_CORE_M]
+    if not buildable:
+        print("\n※ 이격을 만족하는 후보 중 세대 배치가 가능한 것이 없습니다.")
+        buildable = final
+    else:
+        skipped = len(final) - len(buildable)
+        if skipped:
+            print(f"\n※ 이격은 만족하나 세대 배치 불가(코어 < {MIN_CORE_M}m)로 "
+                  f"제외한 후보 {skipped}개")
+    b = buildable[0]
     d = b["design"]
     short = math.sqrt(d.plate_m2 / d.aspect)
-    print(f"\n■ 법적 이격을 만족하는 최적안: {d.label()}")
+    print(f"\n■ 법적 이격 + 세대배치를 모두 만족하는 최적안: {d.label()}")
     print(f"   기준층 {d.plate_m2:,.0f}㎡ ({short*d.aspect:.2f}×{short:.2f}m) · "
           f"높이 {d.height_m:.1f}m")
     print(f"   중심 E{d.positions[0][0]:,.1f} / N{d.positions[0][1]:,.1f} · "
           f"장변직각 이격 {b['gap']:.1f}m (필요 {d.height_m/args.multiple:.1f}m)")
+    print(f"   중앙 코어 폭 {core_width(d.plate_m2, d.aspect):.2f}m "
+          f"(최소 {MIN_CORE_M}m) · 외형선 {d.outline_m2:,.0f}㎡ · "
+          f"서비스면적 {d.service_m2:,.0f}㎡")
     print(f"   교사동 기준A {b['m']['pass_pct']:.1f}% "
           f"(기존 {base_now['pass_pct']:.1f}% 대비 "
           f"{b['m']['pass_pct']-base_now['pass_pct']:+.1f}%p) · "
@@ -193,13 +218,17 @@ def main(argv: Sequence[str] | None = None) -> int:
             "w", encoding="utf-8-sig", newline="") as fp:
         w = csv.writer(fp)
         w.writerow(["층수", "종횡비", "방위", "기준층㎡", "장변m", "단변m", "높이m",
-                    "장변직각이격m", "필요이격m", "교사동기준A%", "불충족평균h",
-                    "교실평균h", "운동장기준A%", "한강조망%", "중심X", "중심Y"])
+                    "외형선㎡", "코어폭m", "시공가능", "장변직각이격m", "필요이격m",
+                    "교사동기준A%", "불충족평균h", "교실평균h", "운동장기준A%",
+                    "한강조망%", "중심X", "중심Y"])
         for r in final:
             dd = r["design"]
             s = math.sqrt(dd.plate_m2 / dd.aspect)
+            cw = core_width(dd.plate_m2, dd.aspect)
             w.writerow([dd.floors, dd.aspect, dd.azimuth, round(dd.plate_m2, 1),
                         round(s * dd.aspect, 2), round(s, 2), round(dd.height_m, 1),
+                        round(dd.outline_m2, 1), round(cw, 2),
+                        "예" if cw >= MIN_CORE_M else "아니오",
                         round(r["gap"], 1), round(dd.height_m / args.multiple, 1),
                         round(r["m"]["pass_pct"], 1), round(r["m"]["fail_mean_h"], 2),
                         round(r["m"]["mean_total_h"], 2),
