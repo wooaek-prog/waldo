@@ -26,19 +26,22 @@ from shapely.geometry import LineString, Point
 
 import hwarang_massing_study as H
 from hwarang_redesign import (
-    ViewModel, build_design, metrics_of, plate_polygon, rank_key,
-    river_azimuths, setup, stride_sample,
+    BALCONY_M, ViewModel, build_design, metrics_of, outline_polygon,
+    plate_polygon, rank_key, river_azimuths, setup, stride_sample,
 )
 
 
 def facade_gap(site, plate_area: float, aspect: float, azimuth: float,
-               cx: float, cy: float, samples: int = 11) -> float:
+               cx: float, cy: float, samples: int = 11,
+               balcony: float = BALCONY_M) -> float:
     """장변(채광창면) 직각 방향으로 대지경계선까지의 수평거리(양쪽 중 최소).
 
+    기준면은 **외형선(발코니 끝)** 이다. 발코니가 있으면 채광창면이 그만큼
+    대지경계선 쪽으로 나오므로 이격이 발코니 깊이만큼 줄어든다.
     단변(측벽)은 채광창이 없는 것으로 보아 규정 대상에서 제외한다.
     """
-    short = math.sqrt(plate_area / aspect)
-    lng = plate_area / short
+    short = math.sqrt(plate_area / aspect) + 2 * balcony
+    lng = plate_area / math.sqrt(plate_area / aspect) + 2 * balcony
     ux, uy = math.sin(math.radians(azimuth)), math.cos(math.radians(azimuth))
     worst = float("inf")
     for sign in (1, -1):
@@ -126,7 +129,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 while y <= by1:
                     x = bx0
                     while x <= bx1:
-                        poly = plate_polygon(plate, asp, az, x, y)
+                        poly = outline_polygon(plate, asp, az, x, y)
                         if envelope.contains(poly):
                             if facade_gap(site, plate, asp, az, x, y) >= need:
                                 n_ok += 1

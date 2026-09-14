@@ -51,16 +51,30 @@ ROOFTOP_M = H.ROOFTOP_M
 
 
 # --------------------------------------------------------------------------- #
+# 발코니(서비스면적) – 외벽에서 1.5m. 연면적에서는 제외되지만
+# 그림자를 만드는 실제 외형선은 발코니 끝이고, 건축면적은 발코니 끝에서
+# 1m 후퇴한 선까지 산입한다(건축법 시행령 제119조 제1항 제2호).
+BALCONY_M = 1.5
+COVERAGE_INSET_M = 1.0
+
+
 @dataclass
 class Design:
-    """화랑 설계안 후보."""
+    """화랑 설계안 후보.
+
+    세 개의 선을 구분한다.
+        plate    연면적선(내부 골조) – 용적률 산정 기준
+        outline  외형선(발코니 끝)   – 실제 그림자·이격 판정 기준
+        coverage 건축면적선(발코니 끝 −1m) – 건폐율 산정 기준
+    """
     n_towers: int
     floors: int
-    aspect: float               # 장변:단변
+    aspect: float               # 장변:단변 (연면적선 기준)
     azimuth: float              # 장변 방위각
     positions: list[tuple[float, float]]
-    plate_m2: float             # 1개동 기준층 면적
+    plate_m2: float             # 1개동 기준층 연면적선 면적
     prisms: list[H.Prism] = field(default_factory=list)
+    balcony_m: float = BALCONY_M
 
     @property
     def height_m(self) -> float:
@@ -71,35 +85,77 @@ class Design:
         return self.plate_m2 * self.floors * self.n_towers
 
     @property
+    def plate_dims(self) -> tuple[float, float]:
+        short = math.sqrt(self.plate_m2 / self.aspect)
+        return self.plate_m2 / short, short
+
+    @property
+    def outline_m2(self) -> float:
+        lng, sht = self.plate_dims
+        b = self.balcony_m
+        return (lng + 2 * b) * (sht + 2 * b)
+
+    @property
+    def coverage_m2(self) -> float:
+        lng, sht = self.plate_dims
+        d = self.balcony_m - COVERAGE_INSET_M
+        return (lng + 2 * d) * (sht + 2 * d)
+
+    @property
     def footprint_m2(self) -> float:
-        return self.plate_m2 * self.n_towers
+        """건폐율 산정용 건축면적 합."""
+        return self.coverage_m2 * self.n_towers
+
+    @property
+    def service_m2(self) -> float:
+        """발코니(서비스) 면적 합 – 연면적 제외분."""
+        return (self.outline_m2 - self.plate_m2) * self.floors * self.n_towers
 
     def label(self) -> str:
         return (f"{self.n_towers}개동·{self.floors}층·{self.aspect:g}:1·"
                 f"방위{self.azimuth:g}°")
 
 
-def plate_polygon(area: float, aspect: float, azimuth: float,
-                  cx: float, cy: float) -> Polygon:
-    """면적·종횡비·방위가 주어진 직사각형 판을 (cx,cy) 중심으로 만든다.
+def rect_polygon(long_m: float, short_m: float, azimuth: float,
+                 cx: float, cy: float) -> Polygon:
+    """장변×단변 직사각형을 (cx,cy) 중심·장변 방위각으로 놓는다.
 
     로컬 +x가 방위각을 향하도록 (90°−방위) 회전한다.
     """
-    short = math.sqrt(area / aspect)
-    long = area / short
-    rect = box(-long / 2, -short / 2, long / 2, short / 2)
+    rect = box(-long_m / 2, -short_m / 2, long_m / 2, short_m / 2)
     rect = rotate(rect, 90.0 - azimuth, origin=(0, 0))
     return translate(rect, cx, cy)
 
 
+def plate_polygon(area: float, aspect: float, azimuth: float,
+                  cx: float, cy: float, expand: float = 0.0) -> Polygon:
+    """연면적선 기준 판. expand를 주면 사방으로 그만큼 키운다.
+
+    expand=BALCONY_M      → 외형선(발코니 끝, 그림자·이격 판정)
+    expand=BALCONY_M−1.0  → 건축면적선(건폐율 산정)
+    """
+    short = math.sqrt(area / aspect)
+    long = area / short
+    return rect_polygon(long + 2 * expand, short + 2 * expand, azimuth, cx, cy)
+
+
+def outline_polygon(area: float, aspect: float, azimuth: float,
+                    cx: float, cy: float, balcony: float = BALCONY_M) -> Polygon:
+    """외형선(발코니 끝) – 실제로 그림자를 만드는 형상."""
+    return plate_polygon(area, aspect, azimuth, cx, cy, balcony)
+
+
 def build_design(n_towers: int, floors: int, aspect: float, azimuth: float,
-                 positions: Sequence[tuple[float, float]], gfa: float) -> Design:
+                 positions: Sequence[tuple[float, float]], gfa: float,
+                 balcony: float = BALCONY_M) -> Design:
     plate = gfa / (floors * n_towers)
     top = floors * RESI_FLOOR_H + ROOFTOP_M
-    prisms = [H.Prism(plate_polygon(plate, aspect, azimuth, x, y), top,
+    # 그림자는 발코니 끝(외형선)이 만든다
+    prisms = [H.Prism(outline_polygon(plate, aspect, azimuth, x, y, balcony), top,
                       f"화랑 {i+1}동")
               for i, (x, y) in enumerate(positions)]
-    return Design(n_towers, floors, aspect, azimuth, list(positions), plate, prisms)
+    return Design(n_towers, floors, aspect, azimuth, list(positions), plate,
+                  prisms, balcony)
 
 
 # --------------------------------------------------------------------------- #
@@ -208,7 +264,7 @@ def grid_centres(envelope: Polygon, area: float, aspect: float, azimuth: float,
     while y <= maxy:
         x = minx
         while x <= maxx:
-            if envelope.contains(plate_polygon(area, aspect, azimuth, x, y)):
+            if envelope.contains(outline_polygon(area, aspect, azimuth, x, y)):
                 out.append((x, y))
             x += step
         y += step
@@ -235,6 +291,8 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     p.add_argument("--river-from", type=float, default=340.0)
     p.add_argument("--river-to", type=float, default=110.0)
     p.add_argument("--view-reach", type=float, default=600.0)
+    p.add_argument("--balcony", type=float, default=BALCONY_M,
+                   help="발코니(서비스) 깊이 m – 연면적 제외, 그림자는 발생")
     p.add_argument("--sample", type=int, default=3, help="스크리닝 표본 간격")
     p.add_argument("--top-n", type=int, default=8)
     p.add_argument("--timing", action="store_true", help="1회 평가 소요시간만 측정")
@@ -418,7 +476,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     for pos in top_pos:
         for az in range(0, 180, 15):
             for asp in (1.5, 2.0, 2.5, 3.0):
-                if not envelope.contains(plate_polygon(plate0, asp, az, *pos)):
+                if not envelope.contains(outline_polygon(plate0, asp, az, *pos)):
                     continue
                 d = build_design(1, F0, asp, float(az), [pos], gfa)
                 m, v = screen(d)
@@ -439,7 +497,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             plate = gfa / F
             if plate > ctx["max_footprint"]:
                 continue
-            if not envelope.contains(plate_polygon(plate, asp, az, *pos)):
+            if not envelope.contains(outline_polygon(plate, asp, az, *pos)):
                 continue
             d = build_design(1, F, asp, az, [pos], gfa)
             m, v = screen(d)
@@ -483,8 +541,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 for cx, cy in grid_centres(envelope, plate, 2.0, az, 8.0):
                     p1 = (cx + ux, cy + uy)
                     p2 = (cx - ux, cy - uy)
-                    t1 = plate_polygon(plate, 2.0, az, *p1)
-                    t2 = plate_polygon(plate, 2.0, az, *p2)
+                    t1 = outline_polygon(plate, 2.0, az, *p1)
+                    t2 = outline_polygon(plate, 2.0, az, *p2)
                     if not (envelope.contains(t1) and envelope.contains(t2)):
                         continue
                     if t1.intersects(t2):
@@ -549,9 +607,14 @@ def report(args, ctx, best, final, base_now, base_none, view) -> None:
     h_now = by_unit(ctx["existing"])
     h_new = by_unit(d.prisms)
 
+    lng, sht = d.plate_dims
+    b = d.balcony_m
     print(f"\n■ 확정 설계안: {d.label()}")
-    print(f"   기준층 {d.plate_m2:,.1f}㎡ ({math.sqrt(d.plate_m2/d.aspect)*d.aspect:.2f}"
-          f"×{math.sqrt(d.plate_m2/d.aspect):.2f}m) · 높이 {d.height_m:.1f}m")
+    print(f"   연면적선(내부 골조) {d.plate_m2:,.1f}㎡ ({lng:.2f}×{sht:.2f}m)")
+    print(f"   외형선(발코니 끝)   {d.outline_m2:,.1f}㎡ "
+          f"({lng+2*b:.2f}×{sht+2*b:.2f}m) ← 그림자·이격 기준")
+    print(f"   건축면적선(발코니끝−1m) {d.coverage_m2:,.1f}㎡ · "
+          f"서비스면적 {d.service_m2:,.0f}㎡ · 높이 {d.height_m:.1f}m")
     print(f"   연면적 {d.gfa_m2:,.0f}㎡ (용적률 {d.gfa_m2/args.site_area*100:.1f}%) · "
           f"건축면적 {d.footprint_m2:,.1f}㎡ (건폐율 "
           f"{d.footprint_m2/args.site_area*100:.2f}%)")
