@@ -1,0 +1,1199 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:EPSG::5186"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194201.91261079838,
+     547016.172118857
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194201.91261079838,
+     547016.172118857
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194204.74622518773,
+     547018.3926211868
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194204.74622518773,
+     547018.3926211868
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194208.9966467718,
+     547021.7233746814
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194208.9966467718,
+     547021.7233746814
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194208.9966467718,
+     547021.7233746814
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194211.83026116114,
+     547023.9438770112
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194211.83026116114,
+     547023.9438770112
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194211.83026116114,
+     547023.9438770112
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194216.0806827452,
+     547027.2746305058
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194216.0806827452,
+     547027.2746305058
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194216.0806827452,
+     547027.2746305058
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194218.91429713456,
+     547029.4951328355
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194218.91429713456,
+     547029.4951328355
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194218.91429713456,
+     547029.4951328355
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 저층부(4층)",
+    "facade": "본관동 저층부(4층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194222.963420466,
+     547033.317683701
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194222.963420466,
+     547033.317683701
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194222.963420466,
+     547033.317683701
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194222.963420466,
+     547033.317683701
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194222.963420466,
+     547033.317683701
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194225.79521240757,
+     547035.5405137807
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194225.79521240757,
+     547035.5405137807
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194225.79521240757,
+     547035.5405137807
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194225.79521240757,
+     547035.5405137807
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194225.79521240757,
+     547035.5405137807
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194230.0416274068,
+     547038.8768068757
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194230.0416274068,
+     547038.8768068757
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194230.0416274068,
+     547038.8768068757
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194230.0416274068,
+     547038.8768068757
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194230.0416274068,
+     547038.8768068757
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194232.87193799857,
+     547041.1015194152
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194232.87193799857,
+     547041.1015194152
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194232.87193799857,
+     547041.1015194152
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194232.87193799857,
+     547041.1015194152
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194232.87193799857,
+     547041.1015194152
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194237.11740388622,
+     547044.4385882242
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194237.11740388622,
+     547044.4385882242
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194237.11740388622,
+     547044.4385882242
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194237.11740388622,
+     547044.4385882242
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194237.11740388622,
+     547044.4385882242
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194239.94771447798,
+     547046.6633007637
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194239.94771447798,
+     547046.6633007637
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194239.94771447798,
+     547046.6633007637
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194239.94771447798,
+     547046.6633007637
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194239.94771447798,
+     547046.6633007637
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194244.19318036563,
+     547050.0003695728
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194244.19318036563,
+     547050.0003695728
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194244.19318036563,
+     547050.0003695728
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194244.19318036563,
+     547050.0003695728
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194244.19318036563,
+     547050.0003695728
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194247.0234909574,
+     547052.2250821122
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194247.0234909574,
+     547052.2250821122
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194247.0234909574,
+     547052.2250821122
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194247.0234909574,
+     547052.2250821122
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194247.0234909574,
+     547052.2250821122
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194251.26895684504,
+     547055.5621509213
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194251.26895684504,
+     547055.5621509213
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194251.26895684504,
+     547055.5621509213
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194251.26895684504,
+     547055.5621509213
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194251.26895684504,
+     547055.5621509213
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194254.0992674368,
+     547057.7868634608
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 1,
+    "z_m": 2.0,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194254.0992674368,
+     547057.7868634608
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194254.0992674368,
+     547057.7868634608
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 3,
+    "z_m": 9.4,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194254.0992674368,
+     547057.7868634608
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 4,
+    "z_m": 13.1,
+    "normal_az": 141.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194254.0992674368,
+     547057.7868634608
+    ]
+   },
+   "properties": {
+    "school": "여의도여자고등학교",
+    "building": "본관동 고층부(5층)",
+    "facade": "본관동 고층부(5층)",
+    "floor": 5,
+    "z_m": 16.8,
+    "normal_az": 141.8
+   }
+  }
+ ]
+}

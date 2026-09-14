@@ -194,20 +194,20 @@ def facade_frame(row: dict[str, Any], facade: dict[str, Any]):
     """
     segs = facade_segments(row["geom"], facade)
     if not segs:
-        return ("proj", 0.0, 0.0, 0.0, 0.0)
+        return ("proj", 0.0, 0.0, 0.0, 0.0, [])
     if facade.get("azimuth_range"):
         total = sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in segs)
         return ("arc", segs, total)
     ang = math.radians(facade_azimuth_ref(facade) - 90.0)
     ux, uy = math.sin(ang), math.cos(ang)
     proj = [p[0] * ux + p[1] * uy for seg in segs for p in seg]
-    return ("proj", ux, uy, min(proj), max(proj) - min(proj))
+    return ("proj", ux, uy, min(proj), max(proj) - min(proj), segs)
 
 
 def frame_distance(frame, x: float, y: float) -> float:
     """전개 좌표계 위의 거리 s."""
     if frame[0] == "proj":
-        _, ux, uy, s0, _ = frame
+        _, ux, uy, s0, _total, _segs = frame
         return x * ux + y * uy - s0
     _, segs, _ = frame
     run = 0.0
@@ -228,6 +228,47 @@ def frame_distance(frame, x: float, y: float) -> float:
 
 def frame_total(frame) -> float:
     return frame[4] if frame[0] == "proj" else frame[2]
+
+
+def outward_normal(geom, x0: float, y0: float, x1: float, y1: float) -> float:
+    polys = geom.geoms if geom.geom_type == "MultiPolygon" else [geom]
+    seg_len = math.hypot(x1 - x0, y1 - y0)
+    ex, ey = (x1 - x0) / seg_len, (y1 - y0) / seg_len
+    nx, ny = ey, -ex
+    mx, my = (x0 + x1) / 2, (y0 + y1) / 2
+    if any(p.contains(Point(mx + nx * 0.3, my + ny * 0.3)) for p in polys):
+        nx, ny = -nx, -ny
+    return math.degrees(math.atan2(nx, ny)) % 360
+
+
+def frame_point(frame, geom, s: float):
+    """전개 거리 s 위의 벽면 점. 반환 (x, y, 바깥법선 방위) 또는 None.
+
+    frame_distance() 의 역함수다. 교실 모듈(bay) 자리를 먼저 정하고 그 위치의
+    벽면 좌표를 찾는 방식이라, 벽면을 훑으며 등간격으로 찍는 방식보다
+    분석지점도의 점 위치를 그대로 재현하기 쉽다.
+    """
+    if frame[0] == "arc":
+        _, segs, _total = frame
+        run = 0.0
+        for (x0, y0), (x1, y1) in segs:
+            seg_len = math.hypot(x1 - x0, y1 - y0)
+            if run + seg_len >= s - 1e-9:
+                t = min(1.0, max(0.0, (s - run) / seg_len))
+                return (x0 + (x1 - x0) * t, y0 + (y1 - y0) * t,
+                        outward_normal(geom, x0, y0, x1, y1))
+            run += seg_len
+        return None
+    _, ux, uy, s0, _total, segs = frame
+    for (x0, y0), (x1, y1) in segs:
+        sa, sb = x0 * ux + y0 * uy - s0, x1 * ux + y1 * uy - s0
+        lo, hi = (sa, sb) if sa <= sb else (sb, sa)
+        if abs(sb - sa) < 1e-6 or not (lo - 1e-6 <= s <= hi + 1e-6):
+            continue
+        t = (s - sa) / (sb - sa)
+        return (x0 + (x1 - x0) * t, y0 + (y1 - y0) * t,
+                outward_normal(geom, x0, y0, x1, y1))
+    return None
 
 
 # ---------------------------------------------------------------- 제외 구간
@@ -252,44 +293,70 @@ def excluded_spans(facade: dict[str, Any]) -> list[tuple[float, float, set[int] 
 
 # ---------------------------------------------------------------- 수광점 생성
 
+# 교육환경평가 분석지점도의 표준 배치: 교실 1칸(모듈 9.0m)에 창 2개소,
+# 교실 중심에서 ±1.8m. 여의도여고 본관동 분석지점도(저층부 3칸 6점 /
+# 고층부 5칸 10점)를 그대로 재현하는 값이다.
+DEFAULT_BAY_M = 9.0
+DEFAULT_BAY_OFFSETS = (-1.8, 1.8)
+
+
+def bay_positions(spec: dict[str, Any], facade: dict[str, Any],
+                  total: float) -> list[float]:
+    """파사드 전개 위의 수광점 s 좌표 – 교실 모듈 기준.
+
+    uniform 모드(point_mode="uniform")를 쓰면 종전처럼 spacing_m 등간격으로
+    찍는다. 기본은 교실 모듈(bay) 방식이다.
+    """
+    if spec.get("point_mode") == "uniform":
+        spacing = spec.get("spacing_m", 2.5)
+        out, k = [], 0
+        while (k + 0.5) * spacing <= total:
+            out.append((k + 0.5) * spacing)
+            k += 1
+        return out
+    bay = float(facade.get("bay_m", spec.get("bay_m", DEFAULT_BAY_M)))
+    offs = facade.get("bay_offsets_m", spec.get("bay_offsets_m",
+                                                list(DEFAULT_BAY_OFFSETS)))
+    origin = float(facade.get("bay_origin_m", 0.0))
+    out, k = [], 0
+    while origin + (k + 1) * bay <= total + 0.5:      # 온전히 들어가는 칸만
+        centre = origin + (k + 0.5) * bay
+        for off in offs:
+            s = centre + float(off)
+            if 0.0 <= s <= total:
+                out.append(s)
+        k += 1
+    return out
+
+
 def receptors_from_facade(row: dict[str, Any], spec: dict[str, Any],
                           facade: dict[str, Any], label: str) -> list[H.Receptor]:
-    """정면도 정의 1건으로 파사드 1면의 수광점을 만든다."""
-    segs = facade_segments(row["geom"], facade)
-    if not segs:
+    """정면도·분석지점도 정의 1건으로 파사드 1면의 수광점을 만든다."""
+    frame = facade_frame(row, facade)
+    total = frame_total(frame)
+    if total <= 0.0:
         return []
-    spacing = spec.get("spacing_m", 2.5)
     sill, head = spec["window_sill_m"], spec["window_head_m"]
     z_mid = (sill + head) / 2.0
     levels = floor_levels(spec)
+    skip = set(spec.get("skip_floors", []))
     excl = excluded_spans(facade)
-    frame = facade_frame(row, facade)
 
-    polys = (row["geom"].geoms if row["geom"].geom_type == "MultiPolygon"
-             else [row["geom"]])
     out: list[H.Receptor] = []
-    for (x0, y0), (x1, y1) in segs:
-        seg_len = math.hypot(x1 - x0, y1 - y0)
-        ex, ey = (x1 - x0) / seg_len, (y1 - y0) / seg_len
-        nx, ny = ey, -ex
-        mx, my = (x0 + x1) / 2, (y0 + y1) / 2
-        if any(p.contains(Point(mx + nx * 0.3, my + ny * 0.3)) for p in polys):
-            nx, ny = -nx, -ny
-        normal_az = math.degrees(math.atan2(nx, ny)) % 360
-
-        k = 0
-        while True:
-            d = (k + 0.5) * spacing
-            if d > seg_len:
-                break
-            k += 1
-            wx, wy = x0 + ex * d, y0 + ey * d
-            s = frame_distance(frame, wx, wy)
-            px, py = wx + nx * 0.4, wy + ny * 0.4
-            for f, z0 in enumerate(levels, start=1):
-                if any(a <= s <= b and (fl is None or f in fl) for a, b, fl in excl):
-                    continue
-                out.append(H.Receptor(px, py, z0 + z_mid, normal_az, label, f))
+    for s in bay_positions(spec, facade, total):
+        pt = frame_point(frame, row["geom"], s)
+        if pt is None:
+            continue
+        wx, wy, normal_az = pt
+        nx = math.sin(math.radians(normal_az))
+        ny = math.cos(math.radians(normal_az))
+        px, py = wx + nx * 0.4, wy + ny * 0.4
+        for f, z0 in enumerate(levels, start=1):
+            if f in skip:
+                continue
+            if any(a <= s <= b and (fl is None or f in fl) for a, b, fl in excl):
+                continue
+            out.append(H.Receptor(px, py, z0 + z_mid, normal_az, label, f))
     return out
 
 

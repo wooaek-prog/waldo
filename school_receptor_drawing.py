@@ -14,6 +14,7 @@ import csv
 import json
 import math
 import re
+from collections import Counter
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -42,6 +43,13 @@ def elevation_svg(path: Path, row: dict[str, Any], spec: dict[str, Any],
     top = max(SF.building_top(row, spec), levels[-1] + head + 0.4)
     az_txt = (f'{facade["azimuth_range"][0]:.0f}~{facade["azimuth_range"][1]:.0f}°'
               if facade.get("azimuth_range") else f'{facade["azimuth"]:.1f}°')
+    if spec.get("point_mode") == "uniform":
+        mode_txt = f'{spec.get("spacing_m", 2.5):g}m 등간격'
+    else:
+        bay = facade.get("bay_m", spec.get("bay_m", SF.DEFAULT_BAY_M))
+        offs = facade.get("bay_offsets_m",
+                          spec.get("bay_offsets_m", list(SF.DEFAULT_BAY_OFFSETS)))
+        mode_txt = f'교실 모듈 {bay:g}m · 교실당 창 {len(offs)}개소'
 
     px_w = 1500.0
     pad_l, pad_r, pad_t, pad_b = 92.0, 40.0, 96.0, 96.0
@@ -63,7 +71,7 @@ def elevation_svg(path: Path, row: dict[str, Any], spec: dict[str, Any],
            f'<text x="18" y="56" font-family="sans-serif" font-size="12.5" '
            f'fill="#555">파사드 길이 {total:.1f}m · 높이 {top:.2f}m · '
            f'창 {sill:g}~{head:g}m(중앙 {(sill+head)/2:g}m) · 파사드 방위 '
-           f'{az_txt} · 수광점 {len(receptors)}개</text>',
+           f'{az_txt} · {mode_txt} · 수광점 {len(receptors)}개</text>',
            f'<text x="18" y="76" font-family="sans-serif" font-size="12.5" '
            f'fill="#555">붉은 점 = 일조 계산 수광점(창 중앙 높이). '
            f'회색 빗금 = 교실창 없음으로 제외한 구간</text>']
@@ -72,21 +80,36 @@ def elevation_svg(path: Path, row: dict[str, Any], spec: dict[str, Any],
     svg.append(f'<rect x="{X(0):.1f}" y="{Y(top):.1f}" '
                f'width="{total*scale:.1f}" height="{top*scale:.1f}" '
                f'fill="#ffffff" stroke="#333" stroke-width="1.6"/>')
-    # 층선 + 창 띠
+    skip = set(spec.get("skip_floors", []))
+    # 층선 + 층 라벨
     for f, z0 in enumerate(levels, start=1):
         svg.append(f'<line x1="{X(0):.1f}" y1="{Y(z0):.1f}" '
                    f'x2="{X(total):.1f}" y2="{Y(z0):.1f}" stroke="#bbb" '
                    f'stroke-width="0.9" stroke-dasharray="5 4"/>')
-        svg.append(f'<rect x="{X(0):.1f}" y="{Y(z0+head):.1f}" '
-                   f'width="{total*scale:.1f}" height="{(head-sill)*scale:.1f}" '
-                   f'fill="#cfe0f0" fill-opacity="0.75" stroke="#5d7fa3" '
-                   f'stroke-width="0.8"/>')
+        if f in skip:
+            z1 = levels[f] if f < nf else z0 + head + 0.4
+            svg.append(f'<rect x="{X(0):.1f}" y="{Y(z1):.1f}" '
+                       f'width="{total*scale:.1f}" height="{(z1-z0)*scale:.1f}" '
+                       f'fill="#8a8a82" fill-opacity="0.18"/>')
+            svg.append(f'<text x="{X(total/2):.1f}" '
+                       f'y="{Y(z0+(z1-z0)/2)+4:.1f}" font-family="sans-serif" '
+                       f'font-size="12" text-anchor="middle" fill="#777">'
+                       f'{f}층 – 교실 없음(필로티 등)으로 제외</text>')
         svg.append(f'<text x="{X(0)-10:.1f}" y="{Y(z0+(sill+head)/2)+4:.1f}" '
                    f'font-family="sans-serif" font-size="11.5" text-anchor="end" '
                    f'fill="#111">{f}층</text>')
         svg.append(f'<text x="{X(0)-10:.1f}" y="{Y(z0)+4:.1f}" '
                    f'font-family="sans-serif" font-size="9.5" text-anchor="end" '
                    f'fill="#999">{z0:.1f}m</text>')
+    # 창 – 수광점 1개당 창 1개소로 그린다(분석지점도와 같은 표기)
+    win_w = float(spec.get("window_width_m", 2.4))
+    for r in receptors:
+        d = SF.frame_distance(frame, r.x, r.y)
+        z0 = levels[r.floor - 1]
+        svg.append(f'<rect x="{X(max(0.0, d-win_w/2)):.1f}" y="{Y(z0+head):.1f}" '
+                   f'width="{win_w*scale:.1f}" height="{(head-sill)*scale:.1f}" '
+                   f'fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" '
+                   f'stroke-width="0.8"/>')
     # 제외 구간 – 지정한 층만 덮는다
     for a, bnd, floors in SF.excluded_spans(facade):
         rng = range(1, nf + 1) if floors is None else sorted(floors)
@@ -245,8 +268,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             all_rec += rec
             out = args.outdir / f"{args.jibun}_{slug(fid)}_elevation.svg"
             elevation_svg(out, row, spec, facade, rec, school, fid)
-            print(f"   {fid}: 수광점 {len(rec)}개 "
-                  f"({len(rec)//len(SF.floor_levels(spec))}개/층) → {out.name}")
+            per = Counter(r.floor for r in rec)
+            detail = " ".join(f"{f}층 {per[f]}" for f in sorted(per))
+            print(f"   {fid}: 수광점 {len(rec)}개 ({detail}) → {out.name}")
             for r in rec:
                 feats.append({"type": "Feature",
                               "geometry": {"type": "Point",
