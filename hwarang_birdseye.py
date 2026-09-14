@@ -29,6 +29,11 @@ from daegyo_school_sunlight import (
 from hwarang_redesign import build_design, outline_polygon
 
 
+def explode(geom):
+    """MultiPolygon을 단일 Polygon 목록으로 분해한다."""
+    return list(geom.geoms) if geom.geom_type == "MultiPolygon" else [geom]
+
+
 @dataclass
 class Solid:
     """조감도에 그릴 입체."""
@@ -106,7 +111,7 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
     minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
     pad = 30.0
     scale = (width - 2 * pad) / (maxx - minx)
-    height = (maxy - miny) * scale + 2 * pad + 86
+    height = (maxy - miny) * scale + 2 * pad + 128
 
     def proj(x: float, y: float, z: float) -> tuple[float, float]:
         px, py = cam.project(x, y, z)
@@ -128,8 +133,8 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
         for poly in gg:
             pts = " ".join(f"{proj(x, y, 0)[0]:.1f},{proj(x, y, 0)[1]:.1f}"
                            for x, y in poly.exterior.coords)
-            svg.append(f'<polygon points="{pts}" fill="#6b7280" '
-                       f'fill-opacity="0.22" stroke="none"/>')
+            svg.append(f'<polygon points="{pts}" fill="#5b6472" '
+                       f'fill-opacity="0.30" stroke="none"/>')
 
     # 지면(각 입체의 바닥 윤곽)
     for s in sorted(solids, key=lambda s: -cam.depth(s.footprint.centroid.x,
@@ -186,7 +191,7 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
               ("school", "학교 교사동"), ("context", "기존 건물")]
     for i, (kind, text) in enumerate(legend):
         x = 18 + i * 240
-        y = height - 22
+        y = height - 30
         svg.append(f'<rect x="{x}" y="{y - 11}" width="15" height="15" '
                    f'fill="{PALETTE[kind][0]}" stroke="#333" stroke-width="0.6"/>')
         svg.append(f'<text x="{x + 22}" y="{y + 1}" font-family="sans-serif" '
@@ -234,13 +239,19 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     solids: list[Solid] = []
     for p in design.prisms:
-        solids.append(Solid(p.footprint, p.top_m, "hwarang",
-                            f"화랑 {args.floors}F"))
+        for poly in explode(p.footprint):
+            solids.append(Solid(poly, p.top_m, "hwarang",
+                                f"화랑 {args.floors}F"))
     for p in daegyo:
         if p.footprint.centroid.distance(centre) > args.radius:
             continue
-        solids.append(Solid(p.footprint, p.top_m, "daegyo",
-                            "대교" if p.top_m > 100 else ""))
+        for poly in explode(p.footprint):
+            solids.append(Solid(poly, p.top_m, "daegyo", ""))
+    tallest = max((s for s in solids if s.kind == "daegyo"),
+                  key=lambda s: (s.top_m, s.footprint.area), default=None)
+    if tallest is not None:
+        tallest.label = "대교 신축"
+
     school_ids = set()
     for jibun, rows in schools.items():
         for r in rows:
@@ -248,7 +259,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 continue
             if r["geom"].centroid.distance(centre) > args.radius:
                 continue
-            solids.append(Solid(r["geom"], r["height_m"], "school", ""))
+            for poly in explode(r["geom"]):
+                solids.append(Solid(poly, r["height_m"], "school", ""))
             school_ids.add(id(r["geom"]))
     for row in buildings:
         if row["jibun"] == HWARANG_JIBUN or id(row["geom"]) in school_ids:
@@ -271,10 +283,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         if not cls:
             continue
         big = max(cls, key=lambda r: r["geom"].area)
-        for s in solids:
-            if s.kind == "school" and s.footprint.equals(big["geom"]):
-                s.label = school_labels[jibun].split(" ", 1)[1]
-                break
+        cand = [s for s in solids
+                if s.kind == "school" and big["geom"].contains(s.footprint.centroid)]
+        if cand:
+            max(cand, key=lambda s: s.footprint.area).label = \
+                school_labels[jibun].split(" ", 1)[1]
 
     lon, lat = Transformer.from_crs(
         CRS.from_epsg(5186), CRS.from_epsg(4326), always_xy=True
