@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430">
+<rect width="100%" height="100%" fill="#fbfbf9"/>
+<text x="12" y="22" font-family="sans-serif" font-size="16" font-weight="bold" fill="#111">화랑아파트 계단형 매싱 – 장변 입면 비교 (좌측 =방위165°/남측, 우측=방위345°/학교측)</text>
+<g transform="translate(20,30)">
+<text x="450" y="16" font-family="sans-serif" font-size="13" fill="#555" text-anchor="middle">① 현재 확정안(균일 55층)</text>
+<rect x="0.0" y="47.3" width="900.0" height="312.7" fill="#8d99ae" fill-opacity="0.85" stroke="#111" stroke-width="1.2"/><text x="450.0" y="41.3" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#111">55F</text>
+</g>
+<g transform="translate(20,220)">
+<text x="450" y="16" font-family="sans-serif" font-size="13" fill="#555" text-anchor="middle">② 계단형 대안</text>
+<rect x="0.0" y="36.2" width="855.0" height="323.8" fill="#1d3557" fill-opacity="0.85" stroke="#111" stroke-width="1.2"/><text x="427.5" y="30.2" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#111">57F</text>
+<rect x="855.0" y="269.2" width="45.0" height="90.8" fill="#e63946" fill-opacity="0.85" stroke="#111" stroke-width="1.2"/><text x="877.5" y="263.2" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#111">15F(학교측 저감)</text>
+</g>
+</svg>
