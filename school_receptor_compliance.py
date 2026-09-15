@@ -36,10 +36,13 @@ from daegyo_school_sunlight import (
     DAEGYO_JIBUN, HWARANG_JIBUN, apartment_prisms, load_named_buildings,
     resolved_height, school_label, school_parcel_rows,
 )
-from daegyo_school_hours import dong_labels
+from daegyo_school_hours import dong_labels, ground_receptors
 
 SCEN = {"S1": "대교 신축 + 화랑 기존", "S2": "대교 신축 + 화랑 신축(트랙B)"}
 DEFAULT_HWARANG = Path("outputs/hwarang_trackB/hwarang_redesign_best.geojson")
+
+CHANGE_CODE = {"유지 충족": "keep_ok", "신규 불충족": "new_fail",
+               "신규 충족": "new_ok", "유지 불충족": "keep_fail"}
 
 
 @dataclass
@@ -53,6 +56,7 @@ class Point:
     floor: int
     idx: int                      # 같은 (동·면·층) 안에서의 번호
     source: str                   # 도면기준 / 일반식
+    kind: str                     # 교사동 창면 / 운동장 지반
     x: float
     y: float
     z: float
@@ -94,26 +98,87 @@ def load_plan_prisms(path: Path, label: str) -> list[H.Prism]:
     return [H.Prism(Polygon(p.exterior), height, label) for p in polys]
 
 
+def school_grounds(sites: dict[str, Any], all_buildings, non_school,
+                   apron_m: float, step_m: float,
+                   ) -> dict[str, tuple[Any, list[tuple[float, float]]]]:
+    """학교별 운동장(옥외지반) 근사 — 지번별로 겹치지 않게 나눈다.
+
+    단순히 '교사동 버퍼 − 건물'로 잡으면 여의도의 네 학교가 서로 붙어 있어
+    같은 땅이 여러 학교에 중복으로 잡히고(최대 1.2ha) 도로까지 삼킨다.
+    여기서는 격자점 단위로
+
+      · 어느 건물 안에도 들지 않고
+      · 가장 가까운 학교까지 apron_m 이내이며
+      · **그 학교가 다른 어떤 건물보다 가까운** 점
+
+    만 남겨 가장 가까운 학교에 배정한다. 도로 건너편과 이웃 단지 마당이
+    빠지고 학교끼리 중복도 사라진다. 실제 운동장 폴리곤을 --playground 로
+    주면 이 근사 대신 그것을 쓴다.
+    """
+    from shapely.prepared import prep
+    from shapely.geometry import Point as ShPoint, box
+
+    region = unary_union([g.buffer(apron_m) for g in sites.values()])
+    blocked = prep(all_buildings.buffer(1.0))
+    minx, miny, maxx, maxy = region.bounds
+    out: dict[str, tuple[Any, list[tuple[float, float]]]] = {
+        j: (None, []) for j in sites}
+    cells: dict[str, list[Any]] = {j: [] for j in sites}
+
+    y = miny + step_m / 2
+    while y <= maxy:
+        x = minx + step_m / 2
+        while x <= maxx:
+            pt = ShPoint(x, y)
+            if not blocked.contains(pt):
+                best, best_d = None, apron_m
+                for jibun, site in sites.items():
+                    d = site.distance(pt)
+                    if d < best_d:
+                        best, best_d = jibun, d
+                if best is not None and non_school.distance(pt) >= best_d:
+                    out[best][1].append((x, y))
+                    cells[best].append(box(x - step_m / 2, y - step_m / 2,
+                                           x + step_m / 2, y + step_m / 2))
+            x += step_m
+        y += step_m
+    return {j: (unary_union(cells[j]) if cells[j] else None, pts)
+            for j, (_g, pts) in out.items()}
+
+
 def build_points(schools: dict[str, list[dict[str, Any]]],
                  buildings: Sequence[dict[str, Any]], spec_all: dict[str, Any],
-                 ) -> tuple[list[Point], list[H.Receptor]]:
-    """학교별 수광점 — 도면 정의가 있으면 그것, 없으면 일반식."""
+                 all_buildings, apron_m: float, user_pg: dict[str, Polygon],
+                 pg_step_m: float,
+                 ) -> tuple[list[Point], list[H.Receptor], dict[str, Polygon]]:
+    """학교별 수광점 — 교사동 창면 + 운동장 지반."""
     points: list[Point] = []
     receptors: list[H.Receptor] = []
+    grounds: dict[str, Polygon] = {}
     counter: Counter = Counter()
 
     def add(rec: Sequence[H.Receptor], school: str, jibun: str, dong: str,
-            facade: str, source: str) -> None:
+            facade: str, source: str, kind: str) -> None:
         for r in rec:
             key = (dong, facade, r.floor)
             counter[key] += 1
-            face = "" if facade in (dong, "남향외벽") else f" {facade}"
+            if kind == "운동장 지반":
+                pid = f"{dong}-{counter[key]}"
+            else:
+                face = "" if facade in (dong, "남향외벽") else f" {facade}"
+                pid = f"{dong}{face} {r.floor}층-{counter[key]}"
             points.append(Point(
-                pid=f"{dong}{face} {r.floor}층-{counter[key]}", school=school,
-                jibun=jibun, dong=dong, facade=facade, floor=r.floor,
-                idx=counter[key], source=source, x=r.x, y=r.y, z=r.z,
-                normal_az=r.normal_az))
+                pid=pid, school=school, jibun=jibun, dong=dong, facade=facade,
+                floor=r.floor, idx=counter[key], source=source, kind=kind,
+                x=r.x, y=r.y, z=r.z, normal_az=r.normal_az))
             receptors.append(r)
+
+    # 운동장 근사는 학교끼리 겹치지 않게 한 번에 나눈다
+    sites = {j: unary_union([r["geom"] for r in rows])
+             for j, rows in schools.items()}
+    non_school = unary_union([r["geom"] for r in buildings
+                              if r["jibun"] not in schools])
+    approx = school_grounds(sites, all_buildings, non_school, apron_m, pg_step_m)
 
     for jibun, rows in sorted(schools.items()):
         school = school_label(jibun, rows).split(" ", 1)[1]
@@ -131,12 +196,27 @@ def build_points(schools: dict[str, list[dict[str, Any]]],
                     rec = SF.receptors_from_facade(row, spec, facade, fid)
                     if rec:
                         add(rec, school, jibun, spec["id"],
-                            facade.get("group") or fid, "도면기준")
+                            facade.get("group") or fid, "도면기준", "교사동 창면")
         rest = [r for r in rows2 if id(r) not in claimed and r["classroom"]]
         for label, row in dong_labels(rest, school):
             rec = H.make_receptors([{**row, "jibun": label}])
-            add(rec, school, jibun, label, "남향외벽", "일반식")
-    return points, receptors
+            add(rec, school, jibun, label, "남향외벽", "일반식", "교사동 창면")
+
+        # 운동장 지반(수평면)
+        label = f"{school} 운동장"
+        if jibun in user_pg:
+            pg = user_pg[jibun]
+            rec = ground_receptors(pg, label, pg_step_m)
+            src = "사용자 폴리곤"
+        else:
+            pg, xy = approx[jibun]
+            rec = [H.Receptor(x, y, 0.0, 180.0, label, 0, True) for x, y in xy]
+            src = "옥외지반 근사"
+        if pg is None or not rec:
+            continue
+        grounds[label] = pg
+        add(rec, school, jibun, label, "지반", src, "운동장 지반")
+    return points, receptors, grounds
 
 
 def build_context(buildings: Sequence[dict[str, Any]], centre, radius: float,
@@ -177,8 +257,8 @@ def build_context(buildings: Sequence[dict[str, Any]], centre, radius: float,
 # --------------------------------------------------------------------------- #
 # 출력
 # --------------------------------------------------------------------------- #
-DETAIL_COLS = ["수광점ID", "학교", "지번", "교사동", "수광면", "층", "번호",
-               "수광점정의", "X", "Y", "Z", "창면방위",
+DETAIL_COLS = ["수광점ID", "학교", "지번", "종류", "교사동/운동장", "수광면", "층",
+               "번호", "수광점정의", "X", "Y", "Z", "창면방위",
                "총일조h", "연속h_08_16", "연속h_09_15", "기준A", "기준B"]
 
 
@@ -188,8 +268,8 @@ def write_detail(path: Path, points: Sequence[Point], code: str) -> None:
         w.writerow(DETAIL_COLS)
         for p in points:
             r = p.res[code]
-            w.writerow([p.pid, p.school, p.jibun, p.dong, p.facade, p.floor,
-                        p.idx, p.source, round(p.x, 2), round(p.y, 2),
+            w.writerow([p.pid, p.school, p.jibun, p.kind, p.dong, p.facade,
+                        p.floor, p.idx, p.source, round(p.x, 2), round(p.y, 2),
                         round(p.z, 2), round(p.normal_az, 1),
                         r["total_h_08_16"], r["cont_h_08_16"], r["cont_h_09_15"],
                         "충족" if pass_a(r) else "불충족",
@@ -210,15 +290,16 @@ def change_class(p: Point) -> str:
 def write_compare(path: Path, points: Sequence[Point]) -> None:
     with path.open("w", encoding="utf-8-sig", newline="") as fp:
         w = csv.writer(fp)
-        w.writerow(["수광점ID", "학교", "교사동", "수광면", "층", "번호",
-                    "수광점정의", "X", "Y", "Z",
+        w.writerow(["수광점ID", "학교", "종류", "교사동/운동장", "수광면", "층",
+                    "번호", "수광점정의", "X", "Y", "Z",
                     "S1_총일조h", "S1_연속h", "S1_기준A",
                     "S2_총일조h", "S2_연속h", "S2_기준A",
                     "Δ총일조h", "Δ연속h", "변화"])
         for p in points:
             s1, s2 = p.res["S1"], p.res["S2"]
-            w.writerow([p.pid, p.school, p.dong, p.facade, p.floor, p.idx,
-                        p.source, round(p.x, 2), round(p.y, 2), round(p.z, 2),
+            w.writerow([p.pid, p.school, p.kind, p.dong, p.facade, p.floor,
+                        p.idx, p.source, round(p.x, 2), round(p.y, 2),
+                        round(p.z, 2),
                         s1["total_h_08_16"], s1["cont_h_08_16"],
                         "충족" if pass_a(s1) else "불충족",
                         s2["total_h_08_16"], s2["cont_h_08_16"],
@@ -312,6 +393,161 @@ def print_compare(points: Sequence[Point]) -> None:
                   f"{s2['total_h_08_16']-s1['total_h_08_16']:>+7.2f}h")
 
 
+# --------------------------------------------------------------------------- #
+# QGIS 산출물
+# --------------------------------------------------------------------------- #
+CRS_5186 = {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::5186"}}
+
+QML_CATEGORIES = [
+    ("new_fail", "신규 불충족", "214,40,40,255", 3.6),
+    ("keep_fail", "유지 불충족", "150,150,150,255", 2.0),
+    ("new_ok", "신규 충족", "29,101,181,255", 2.8),
+    ("keep_ok", "유지 충족", "120,170,120,255", 1.8),
+]
+
+
+def qml_style(attr: str) -> str:
+    """QGIS 3 레이어 스타일(.qml) — 변화 구분 기준 분류 심볼."""
+    cats, syms = [], []
+    for i, (value, label, color, size) in enumerate(QML_CATEGORIES):
+        cats.append(f'      <category value="{value}" symbol="{i}" '
+                    f'label="{label}" render="true"/>')
+        syms.append(
+            f'      <symbol type="marker" name="{i}" alpha="1" '
+            f'clip_to_extent="1" force_rhr="0">\n'
+            f'        <layer class="SimpleMarker" enabled="1" locked="0" pass="0">\n'
+            f'          <Option type="Map">\n'
+            f'            <Option name="name" type="QString" value="circle"/>\n'
+            f'            <Option name="color" type="QString" value="{color}"/>\n'
+            f'            <Option name="outline_color" type="QString" '
+            f'value="30,30,30,255"/>\n'
+            f'            <Option name="outline_width" type="QString" value="0.2"/>\n'
+            f'            <Option name="outline_width_unit" type="QString" '
+            f'value="MM"/>\n'
+            f'            <Option name="size" type="QString" value="{size}"/>\n'
+            f'            <Option name="size_unit" type="QString" value="MM"/>\n'
+            f'            <Option name="scale_method" type="QString" '
+            f'value="diameter"/>\n'
+            f'            <Option name="offset" type="QString" value="0,0"/>\n'
+            f'            <Option name="angle" type="QString" value="0"/>\n'
+            f'          </Option>\n'
+            f'        </layer>\n'
+            f'      </symbol>')
+    return ("<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>\n"
+            '<qgis version="3.28.0" styleCategories="Symbology">\n'
+            f'  <renderer-v2 type="categorizedSymbol" attr="{attr}" '
+            'forceraster="0" symbollevels="0" enableorderby="0">\n'
+            "    <categories>\n" + "\n".join(cats) + "\n    </categories>\n"
+            "    <symbols>\n" + "\n".join(syms) + "\n    </symbols>\n"
+            "  </renderer-v2>\n</qgis>\n")
+
+
+def point_feature(p: Point) -> dict[str, Any]:
+    s1, s2 = p.res["S1"], p.res["S2"]
+    chg = change_class(p)
+    return {
+        "type": "Feature",
+        "geometry": {"type": "Point", "coordinates": [round(p.x, 3),
+                                                      round(p.y, 3)]},
+        "properties": {
+            "pid": p.pid, "school": p.school, "jibun": p.jibun, "kind": p.kind,
+            "dong": p.dong, "facade": p.facade, "floor": p.floor,
+            "source": p.source, "z_m": round(p.z, 2),
+            "normal_az": round(p.normal_az, 1),
+            "s1_total_h": s1["total_h_08_16"], "s1_cont_h": s1["cont_h_08_16"],
+            "s1_pass_a": bool(pass_a(s1)), "s1_pass_b": bool(pass_b(s1)),
+            "s2_total_h": s2["total_h_08_16"], "s2_cont_h": s2["cont_h_08_16"],
+            "s2_pass_a": bool(pass_a(s2)), "s2_pass_b": bool(pass_b(s2)),
+            "d_total_h": round(s2["total_h_08_16"] - s1["total_h_08_16"], 2),
+            "d_cont_h": round(s2["cont_h_08_16"] - s1["cont_h_08_16"], 2),
+            "change_cd": CHANGE_CODE[chg], "변화": chg,
+        },
+    }
+
+
+def write_geojson(path: Path, features: Sequence[dict[str, Any]],
+                  to_wgs84=None) -> None:
+    feats = features
+    if to_wgs84 is not None:
+        feats = []
+        for f in features:
+            g = dict(f["geometry"])
+            if g["type"] == "Point":
+                g["coordinates"] = [round(v, 8) for v in
+                                    to_wgs84.transform(*g["coordinates"])]
+            else:
+                g["coordinates"] = [
+                    [[round(v, 8) for v in to_wgs84.transform(x, y)]
+                     for x, y in ring] for ring in g["coordinates"]]
+            feats.append({**f, "geometry": g})
+    doc: dict[str, Any] = {"type": "FeatureCollection", "features": feats}
+    if to_wgs84 is None:
+        doc["crs"] = CRS_5186
+    path.write_text(json.dumps(doc, ensure_ascii=False, indent=1),
+                    encoding="utf-8")
+
+
+def polygon_features(items: Sequence[tuple[str, Any, dict[str, Any]]]
+                     ) -> list[dict[str, Any]]:
+    out = []
+    for label, geom, props in items:
+        for poly in (geom.geoms if geom.geom_type == "MultiPolygon" else [geom]):
+            rings = [[[round(x, 3), round(y, 3)] for x, y in poly.exterior.coords]]
+            rings += [[[round(x, 3), round(y, 3)] for x, y in i.coords]
+                      for i in poly.interiors]
+            out.append({"type": "Feature",
+                        "geometry": {"type": "Polygon", "coordinates": rings},
+                        "properties": {"label": label, **props}})
+    return out
+
+
+def write_qgis(outdir: Path, points: Sequence[Point], grounds: dict[str, Polygon],
+               daegyo_new, hwarang_now, hwarang_new, context) -> list[Path]:
+    """QGIS 에서 바로 열어 볼 수 있는 레이어 일체."""
+    from pyproj import CRS, Transformer
+    to_wgs = Transformer.from_crs(CRS.from_epsg(5186), CRS.from_epsg(4326),
+                                  always_xy=True)
+    outdir.mkdir(parents=True, exist_ok=True)
+    written: list[Path] = []
+
+    def emit(stem: str, feats, style_attr: str | None = None) -> None:
+        a = outdir / f"{stem}_epsg5186.geojson"
+        b = outdir / f"{stem}_wgs84.geojson"
+        write_geojson(a, feats)
+        write_geojson(b, feats, to_wgs)
+        written.extend([a, b])
+        if style_attr:
+            for target in (a, b):
+                qml = target.with_suffix(".qml")
+                qml.write_text(qml_style(style_attr), encoding="utf-8")
+                written.append(qml)
+
+    feats = [point_feature(p) for p in points]
+    emit("수광점_전체", feats, "change_cd")
+    emit("수광점_신규불충족",
+         [f for f in feats if f["properties"]["change_cd"] == "new_fail"],
+         "change_cd")
+    emit("수광점_신규충족",
+         [f for f in feats if f["properties"]["change_cd"] == "new_ok"],
+         "change_cd")
+    emit("운동장_지반", polygon_features(
+        [(k, v, {"kind": "운동장(옥외지반 근사)"}) for k, v in grounds.items()]))
+    emit("매싱", polygon_features(
+        [(p.label, p.footprint, {"group": "대교 신축안",
+                                 "height_m": round(p.top_m, 2)})
+         for p in daegyo_new]
+        + [(p.label, p.footprint, {"group": "화랑 기존",
+                                   "height_m": round(p.top_m, 2)})
+           for p in hwarang_now]
+        + [(p.label, p.footprint, {"group": "화랑 신축안(트랙B)",
+                                   "height_m": round(p.top_m, 2)})
+           for p in hwarang_new]))
+    emit("차폐물_기존건물", polygon_features(
+        [(p.label, p.footprint, {"height_m": round(p.top_m, 2)})
+         for p in context]))
+    return written
+
+
 def md_table(points: Sequence[Point], code: str | None) -> list[str]:
     """학교·교사동별 표 — code 가 None 이면 전후 비교표."""
     if code:
@@ -349,6 +585,7 @@ def write_report(path: Path, points: Sequence[Point], args,
                  n_times: int, n_context: int, n_recovered: int,
                  hwarang_new: Sequence[H.Prism]) -> None:
     src = Counter(p.source for p in points)
+    kinds = Counter(p.kind for p in points)
     flips = sorted((p for p in points if change_class(p) == "신규 불충족"),
                    key=lambda q: q.res["S2"]["total_h_08_16"])
     gains = [p for p in points if change_class(p) == "신규 충족"]
@@ -366,8 +603,11 @@ def write_report(path: Path, points: Sequence[Point], args,
         f"{n_times}개 시점 |",
         "| 기준A | 연속 2시간 이상 **또는** 총 4시간 이상 (교육환경평가 일반) |",
         "| 기준B | 09~15시 연속 2시간 이상 (강화) |",
-        f"| 수광점 | **{len(points)}개** (도면기준 {src['도면기준']} / "
-        f"일반식 {src['일반식']}) |",
+        f"| 수광점 | **{len(points)}개** = 교사동 창면 {kinds['교사동 창면']} + "
+        f"운동장 지반 {kinds['운동장 지반']} |",
+        f"| 교사동 창면 | 도면기준 {src['도면기준']} / 일반식 {src['일반식']} |",
+        f"| 운동장 지반 | {args.pg_step:g}m 격자 · 수평면(창면 방위 제약 없음) · "
+        f"{'사용자 폴리곤' if src['사용자 폴리곤'] else f'옥외지반 근사(apron {args.apron:g}m)'} |",
         f"| 주변 차폐물 | {n_context}개 (이 중 {n_recovered}개는 AL_D010 속성 "
         f"결측분을 도면 높이로 복원) |",
         "",
@@ -432,10 +672,38 @@ def write_report(path: Path, points: Sequence[Point], args,
         f"- **{src['일반식']}개 수광점은 아직 일반식**이다(여의도고 전체, 여의도여고",
         "  B동·②동). 도면을 받으면 위치·층고·창높이가 달라져 수치가 바뀐다.",
         "  특히 여의도고는 전체 수광점의 약 1/4을 차지해 영향이 크다.",
-        "- 이번 분석은 **교사동 창면 수광점만** 대상이다. 운동장 지반은 들어 있지 않다.",
+        "- **운동장은 실제 폴리곤이 아니라 근사다.** 교사동에서 apron 이내의",
+        "  옥외지반 중, 어느 건물에도 들지 않고 그 학교가 다른 어떤 건물보다 가까운",
+        "  격자점만 남겨 가장 가까운 학교에 배정했다(학교끼리 중복 없음). 실제",
+        "  운동장 경계를 `--playground` 로 주면 그것을 쓴다.",
         "- 여의도중 **체육관동 부속(원형부) 787.5㎡** 는 AL_D010 에 용도·층수·높이가",
         "  모두 비어 종전 분석에서 빠져 있던 동이다. 이번에는 수광점으로도,",
         "  그림자를 만드는 차폐물로도 함께 넣었다.",
+        "",
+        "---",
+        "",
+        "## 5. QGIS 산출물",
+        "",
+        "`outputs/school_compliance/qgis/` 에 레이어를 넣었다. 파일마다",
+        "`_epsg5186`(원본 좌표계)와 `_wgs84`(경위도) 두 벌이 있다.",
+        "",
+        "| 레이어 | 내용 |",
+        "|---|---|",
+        "| `수광점_전체` | 수광점 전량. S1·S2 일조시간·충족여부와 변화 구분이 속성 |",
+        "| `수광점_신규불충족` | **충족 → 불충족으로 바뀌는 점만** |",
+        "| `수광점_신규충족` | 불충족 → 충족으로 바뀌는 점만 |",
+        "| `운동장_지반` | 실제로 평가에 쓴 운동장 근사 폴리곤 |",
+        "| `매싱` | 대교 신축안 · 화랑 기존 · 화랑 신축안 외형선 |",
+        "| `차폐물_기존건물` | 그림자를 만드는 주변 기존 건물 |",
+        "",
+        "수광점 레이어에는 같은 이름의 `.qml` 이 함께 있어, QGIS 에서 열면",
+        "`change_cd` 기준으로 색이 자동 적용된다(신규 불충족 = 빨강·큰 점).",
+        "속성 주요 필드:",
+        "",
+        "`pid` 수광점ID · `school` 학교 · `kind` 창면/지반 · `dong` 동 ·",
+        "`floor` 층 · `source` 수광점 정의 · `s1_total_h`/`s1_cont_h`/`s1_pass_a` ·",
+        "`s2_total_h`/`s2_cont_h`/`s2_pass_a` · `d_total_h`/`d_cont_h` 변화량 ·",
+        "`change_cd`(keep_ok/new_fail/new_ok/keep_fail) · `변화`(한글)",
         "",
     ]
     path.write_text("\n".join(lines), encoding="utf-8")
@@ -452,6 +720,13 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     p.add_argument("--school-radius", type=float, default=350.0)
     p.add_argument("--context-radius", type=float, default=500.0)
     p.add_argument("--step-min", type=int, default=10)
+    p.add_argument("--playground", type=Path, default=None,
+                   help="실제 운동장 폴리곤 GeoJSON(properties.jibun 필요). "
+                        "없으면 교사동 주변 옥외지반으로 근사한다.")
+    p.add_argument("--apron", type=float, default=60.0,
+                   help="운동장 근사 시 교사동에서 띄우는 거리(m)")
+    p.add_argument("--pg-step", type=float, default=8.0,
+                   help="운동장 지반 격자 간격(m)")
     p.add_argument("--steps", type=str, default="1,2,3",
                    help="실행할 단계(1=화랑 기존, 2=화랑 신축, 3=비교)")
     return p.parse_args(argv)
@@ -474,7 +749,17 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     spec_all = SF.load_spec()
     schools = school_parcel_rows(buildings, centre, args.school_radius)
-    points, receptors = build_points(schools, buildings, spec_all)
+    all_buildings = unary_union([r["geom"] for r in buildings])
+    user_pg: dict[str, Polygon] = {}
+    if args.playground and args.playground.exists():
+        data = json.loads(args.playground.read_text(encoding="utf-8"))
+        for f in data["features"]:
+            key = str(f["properties"].get("jibun")
+                      or f["properties"].get("school"))
+            user_pg[key] = shape(f["geometry"])
+    points, receptors, grounds = build_points(
+        schools, buildings, spec_all, all_buildings, args.apron, user_pg,
+        args.pg_step)
 
     hwarang_now = apartment_prisms(buildings, HWARANG_JIBUN, "화랑 기존")
     hwarang_new = load_plan_prisms(args.hwarang, "화랑 신축(트랙B)")
@@ -493,11 +778,16 @@ def main(argv: Sequence[str] | None = None) -> int:
           f"footprint {sum(p.footprint.area for p in hwarang_new):.0f}㎡ = 외형선)")
     print(f"   주변 차폐물  {len(context)}개 "
           f"(이 중 {n_recovered}개는 AL_D010 속성 결측분을 도면 높이로 복원)")
+    kinds = Counter(p.kind for p in points)
     src = Counter(p.source for p in points)
     print(f"   수광점       {len(points)}개 "
-          f"(도면기준 {src['도면기준']} / 일반식 {src['일반식']})")
+          f"(교사동 창면 {kinds['교사동 창면']} / 운동장 지반 "
+          f"{kinds['운동장 지반']}) · 도면기준 {src['도면기준']} / "
+          f"일반식 {src['일반식']}")
     for jibun, pts in group_rows(points, lambda p: (p.jibun, p.school)):
-        print(f"      {jibun[0]} {jibun[1]:<14} {len(pts):>4}개")
+        k = Counter(q.kind for q in pts)
+        print(f"      {jibun[0]} {jibun[1]:<14} {len(pts):>4}개 "
+              f"(창면 {k['교사동 창면']:>3} / 지반 {k['운동장 지반']:>3})")
 
     masks = H.build_context_masks(context, receptors, times)
 
@@ -528,6 +818,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         write_report(rep, points, args, len(times), len(context), n_recovered,
                      hwarang_new)
         print(f"   → {rep}")
+        qdir = args.outdir / "qgis"
+        files = write_qgis(qdir, points, grounds, daegyo_new, hwarang_now,
+                           hwarang_new, context)
+        print(f"\n■ QGIS 레이어 {len(files)}개 → {qdir}")
+        for f in sorted({x.stem for x in files if x.suffix == ".geojson"}):
+            print(f"   {f}.geojson")
+        print("   * _epsg5186 = 좌표계 EPSG:5186(원본), _wgs84 = 경위도")
+        print("   * 같은 이름의 .qml 이 있으면 QGIS 가 '변화' 구분 색을 자동 적용")
     return 0
 
 
