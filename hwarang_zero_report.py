@@ -41,8 +41,12 @@ def load_design(args, gfa: float) -> Design:
     pf = int(data["podium_floors"])
     return Design(int(data["floors"]), float(data["aspect"]),
                   float(data["azimuth"]), float(data["x"]), float(data["y"]),
-                  float(data["tower_plate"]), pf, float(data["podium_plate"]),
-                  2.2, 0.0, 0.0)
+                  float(data["tower_plate"]), pf,
+                  float(data.get("podium_plate", 0.0)),
+                  float(data.get("podium_aspect", 2.2)),
+                  float(data.get("podium_x", 0.0)),
+                  float(data.get("podium_y", 0.0)),
+                  float(data.get("podium_az", 0.0)))
 
 
 def plan_svg(path: Path, ctx: dict[str, Any], design: Design,
