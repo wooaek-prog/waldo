@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="858" height="980" viewBox="0 0 858 980">
 <rect width="100%" height="100%" fill="#fcfcfa"/>
-<text x="18" y="34" font-family="sans-serif" font-size="20" font-weight="bold" fill="#111">화랑 신규 불충족 0 설계안 – 39층·3.125:1·방위165°·기준층 330㎡(32.1×10.3m) + 저층부 10층 2800㎡(66.9×41.8m)</text>
+<text x="18" y="34" font-family="sans-serif" font-size="20" font-weight="bold" fill="#111">화랑 신규 불충족 0 설계안 – 42층·3.906:1·방위166.5°·기준층 299㎡(34.2×8.8m) + 저층부 10층 2800㎡(66.9×41.8m)</text>
 <text x="18" y="58" font-family="sans-serif" font-size="12.5" fill="#555">붉은 점 = 신규 불충족(충족→불충족) · 파란 점 = 신규 충족 · 회색 점 = 그 밖의 수광점. 상단이 북.</text>
 <text x="18" y="78" font-family="sans-serif" font-size="12.5" fill="#555">진한 파랑 = 화랑 타워 외형선(발코니 끝) · 연한 파랑 = 저층부 · 노랑 = 대교 신축안</text>
 <polygon points="444.4,840.3 454.2,853.4 453.8,853.8 454.1,854.2 445.0,861.0 448.1,865.2 443.8,868.3 440.4,863.7 440.5,863.6 438.8,861.4 438.4,861.7 432.1,853.2 433.2,852.5 432.5,851.5 431.8,852.2 430.7,850.9 434.8,847.7 434.5,847.3 443.6,840.5 443.8,840.8 444.4,840.3" fill="#e4e2dc" stroke="#a8a8a2" stroke-width="0.7"/>
@@ -182,7 +182,7 @@
 <polygon points="595.8,459.1 602.2,459.1 608.7,459.1 608.7,465.5 602.2,465.5 595.8,465.5 589.4,465.5 589.4,471.9 583.0,471.9 576.6,471.9 570.2,471.9 570.2,465.5 576.6,465.5 576.6,459.1 570.2,459.1 570.2,452.7 576.6,452.7 583.0,452.7 589.4,452.7 595.8,452.7 595.8,459.1" fill="#2a9d8f" fill-opacity="0.13" stroke="#2a9d8f" stroke-width="0.6"/>
 <polygon points="608.7,504.0 608.7,497.6 608.7,491.2 602.2,491.2 602.2,484.8 602.2,478.4 602.2,471.9 602.2,465.5 608.7,465.5 608.7,459.1 615.1,459.1 615.1,452.7 615.1,446.3 615.1,439.9 615.1,433.5 608.7,433.5 608.7,427.1 608.7,420.7 608.7,414.2 608.7,407.8 615.1,407.8 615.1,414.2 621.5,414.2 621.5,407.8 621.5,401.4 627.9,401.4 627.9,395.0 627.9,388.6 627.9,382.2 627.9,375.8 634.3,375.8 634.3,369.4 640.7,369.4 647.1,369.4 653.5,369.4 659.9,369.4 666.4,369.4 672.8,369.4 672.8,375.8 679.2,375.8 679.2,382.2 685.6,382.2 685.6,388.6 692.0,388.6 692.0,395.0 692.0,401.4 692.0,407.8 692.0,414.2 698.4,414.2 698.4,420.7 698.4,427.1 704.8,427.1 704.8,433.5 711.2,433.5 711.2,439.9 711.2,446.3 717.6,446.3 717.6,452.7 717.6,459.1 711.2,459.1 711.2,465.5 704.8,465.5 704.8,471.9 698.4,471.9 698.4,478.4 692.0,478.4 692.0,484.8 685.6,484.8 679.2,484.8 672.8,484.8 672.8,491.2 666.4,491.2 659.9,491.2 659.9,497.6 653.5,497.6 653.5,504.0 653.5,510.4 647.1,510.4 640.7,510.4 640.7,516.8 634.3,516.8 627.9,516.8 627.9,523.2 621.5,523.2 621.5,516.8 621.5,510.4 615.1,510.4 615.1,504.0 608.7,504.0" fill="#2a9d8f" fill-opacity="0.13" stroke="#2a9d8f" stroke-width="0.6"/>
 <polygon points="540.0,575.8 502.2,527.5 579.8,467.0 617.5,515.3 540.0,575.8" fill="none" stroke="#c1121f" stroke-width="1.6" stroke-dasharray="7 5"/>
-<polygon points="565.0,536.2 575.3,533.4 568.0,506.2 557.7,509.0 565.0,536.2" fill="#1d3557" fill-opacity="0.85" stroke="#0b1d33" stroke-width="1.2"/>
+<polygon points="563.8,535.2 573.0,533.0 566.0,504.0 556.9,506.2 563.8,535.2" fill="#1d3557" fill-opacity="0.85" stroke="#0b1d33" stroke-width="1.2"/>
 <polygon points="586.8,530.9 564.7,502.6 520.6,537.1 542.7,565.4 586.8,530.9" fill="#8ecae6" fill-opacity="0.85" stroke="#0b1d33" stroke-width="1.2"/>
 <circle cx="409.6" cy="210.8" r="1.3" fill="#b9b9b3"/>
 <circle cx="409.6" cy="210.8" r="1.3" fill="#b9b9b3"/>
@@ -1054,6 +1054,10 @@
 <circle cx="549.2" cy="419.2" r="1.3" fill="#b9b9b3"/>
 <circle cx="551.0" cy="423.2" r="1.3" fill="#b9b9b3"/>
 <circle cx="551.0" cy="423.2" r="1.3" fill="#b9b9b3"/>
+<circle cx="552.7" cy="425.6" r="1.3" fill="#b9b9b3"/>
+<circle cx="552.7" cy="425.6" r="1.3" fill="#b9b9b3"/>
+<circle cx="552.7" cy="425.6" r="1.3" fill="#b9b9b3"/>
+<circle cx="552.7" cy="425.6" r="1.3" fill="#b9b9b3"/>
 <circle cx="555.4" cy="428.9" r="1.3" fill="#b9b9b3"/>
 <circle cx="555.4" cy="428.9" r="1.3" fill="#b9b9b3"/>
 <circle cx="555.4" cy="428.9" r="1.3" fill="#b9b9b3"/>
@@ -1138,6 +1142,7 @@
 <circle cx="592.6" cy="391.8" r="1.3" fill="#b9b9b3"/>
 <circle cx="599.0" cy="391.8" r="1.3" fill="#b9b9b3"/>
 <circle cx="618.3" cy="391.8" r="1.3" fill="#b9b9b3"/>
+<circle cx="624.7" cy="391.8" r="1.3" fill="#b9b9b3"/>
 <circle cx="547.7" cy="385.4" r="1.3" fill="#b9b9b3"/>
 <circle cx="554.2" cy="385.4" r="1.3" fill="#b9b9b3"/>
 <circle cx="567.0" cy="385.4" r="1.3" fill="#b9b9b3"/>
@@ -1410,7 +1415,6 @@
 <circle cx="555.5" cy="452.8" r="1.3" fill="#b9b9b3"/>
 <circle cx="555.5" cy="452.8" r="1.3" fill="#b9b9b3"/>
 <circle cx="555.5" cy="452.8" r="1.3" fill="#b9b9b3"/>
-<circle cx="552.3" cy="455.3" r="1.3" fill="#b9b9b3"/>
 <circle cx="552.3" cy="455.3" r="1.3" fill="#b9b9b3"/>
 <circle cx="552.3" cy="455.3" r="1.3" fill="#b9b9b3"/>
 <circle cx="552.3" cy="455.3" r="1.3" fill="#b9b9b3"/>
@@ -1809,7 +1813,6 @@
 <circle cx="631.1" cy="449.5" r="1.3" fill="#b9b9b3"/>
 <circle cx="637.5" cy="449.5" r="1.3" fill="#b9b9b3"/>
 <circle cx="643.9" cy="449.5" r="1.3" fill="#b9b9b3"/>
-<circle cx="650.3" cy="449.5" r="1.3" fill="#b9b9b3"/>
 <circle cx="669.6" cy="449.5" r="1.3" fill="#b9b9b3"/>
 <circle cx="676.0" cy="449.5" r="1.3" fill="#b9b9b3"/>
 <circle cx="688.8" cy="449.5" r="1.3" fill="#b9b9b3"/>
@@ -1938,6 +1941,7 @@
 <circle cx="663.1" cy="372.6" r="1.3" fill="#b9b9b3"/>
 <circle cx="669.6" cy="372.6" r="1.3" fill="#b9b9b3"/>
 <circle cx="631.1" cy="462.3" r="3.0" fill="#1d65b5" stroke="#fff" stroke-width="0.7"/>
+<circle cx="650.3" cy="449.5" r="3.0" fill="#1d65b5" stroke="#fff" stroke-width="0.7"/>
 <circle cx="542.4" cy="467.7" r="3.0" fill="#1d65b5" stroke="#fff" stroke-width="0.7"/>
 <circle cx="542.4" cy="467.7" r="3.0" fill="#1d65b5" stroke="#fff" stroke-width="0.7"/>
 <circle cx="544.6" cy="470.6" r="3.0" fill="#1d65b5" stroke="#fff" stroke-width="0.7"/>
@@ -1992,7 +1996,6 @@
 <circle cx="528.5" cy="481.6" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
 <circle cx="541.3" cy="481.6" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
 <circle cx="547.7" cy="481.6" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
-<circle cx="624.7" cy="391.8" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
 <circle cx="560.6" cy="385.4" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
 <circle cx="541.3" cy="475.2" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
 <circle cx="624.7" cy="385.4" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
@@ -2003,9 +2006,6 @@
 <circle cx="549.2" cy="419.2" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
 <circle cx="551.0" cy="423.2" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
 <circle cx="551.0" cy="423.2" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
-<circle cx="552.7" cy="425.6" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
-<circle cx="552.7" cy="425.6" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
-<circle cx="552.7" cy="425.6" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
-<circle cx="552.7" cy="425.6" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
+<circle cx="552.3" cy="455.3" r="3.6" fill="#d62828" stroke="#fff" stroke-width="0.8"/>
 <g transform="translate(802,120)"><line x1="0" y1="40" x2="0" y2="6" stroke="#111" stroke-width="2"/><polygon points="0,0 -6,12 6,12" fill="#111"/><text x="0" y="56" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#111">N</text></g>
 </svg>

@@ -38,7 +38,8 @@ def load_design(args, gfa: float) -> Design:
                       args.fix_y, tower, pf, pod, args.fix_podium_aspect,
                       args.fix_podium_x, args.fix_podium_y)
     data = json.loads((args.outdir / "best.json").read_text(encoding="utf-8"))
-    pf = int(data["podium_floors"])
+    pf = int(data.get("podium_floors",
+                      PODIUM_FLOORS if data.get("podium_plate") else 0))
     return Design(int(data["floors"]), float(data["aspect"]),
                   float(data["azimuth"]), float(data["x"]), float(data["y"]),
                   float(data["tower_plate"]), pf,

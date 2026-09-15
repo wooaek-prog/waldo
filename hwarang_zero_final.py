@@ -86,6 +86,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                "azimuth": d.azimuth, "x": round(d.cx, 1), "y": round(d.cy, 1),
                "tower_plate": round(d.tower_plate, 1),
                "tower_long": round(lng, 2), "tower_short": round(sht, 2),
+               "podium_floors": d.podium_floors,
                "podium_plate": round(d.podium_plate, 1),
                "podium_aspect": d.podium_aspect,
                "podium_x": round(d.podium_cx, 1),
