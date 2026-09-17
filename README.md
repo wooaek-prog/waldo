@@ -272,6 +272,24 @@ python3 school_receptor_compliance.py --buildings <AL_D010.gpkg>
 충족률만 보면 −0.8%p지만 **평균 총일조는 4.33h → 4.08h(−0.25h)** 로, 문턱을
 넘은 채 시간을 잃는 수광점이 훨씬 많습니다.
 
+**수광점 자료 근거 등급**: 1,823개가 모두 같은 근거가 아닙니다 —
+**1,301개(71%)는 도면 없이 추정**한 것입니다(일반식 341 + 운동장 근사 960).
+어디가 추정분인지 QGIS 에서 따로 볼 수 있게 레이어를 나눴습니다.
+
+```bash
+python3 school_receptor_provenance.py --buildings <AL_D010.gpkg>
+# → outputs/school_compliance/qgis_provenance/  수광점_추정만, 수광점_근거등급_전체 …
+```
+
+| 등급 | 뜻 | 수광점 |
+| --- | --- | ---: |
+| A 도면기준 | 정면도·분석지점도에서 층고·창높이를 읽음 | 441 |
+| A− 도면기준(추론 포함) | 폴리곤 대응이나 제원을 추론 | 81 |
+| **B 일반식** | 도면 없음 — 층고·창높이·수평배치 전부 가정 | **341** |
+| **C 운동장 근사** | 실제 운동장 경계가 아님 | **960** |
+
+[docs/school_receptor_provenance.md](docs/school_receptor_provenance.md) 참조.
+
 **QGIS**: `outputs/school_compliance/qgis/` 에 수광점 전체 / **신규 불충족** /
 신규 충족 / 운동장 / 매싱 / 차폐물 레이어를 EPSG:5186·WGS84 두 벌로 넣었습니다.
 수광점 레이어는 `.qml` 이 함께 있어 QGIS 에서 열면 변화 구분 색이 자동 적용됩니다.
