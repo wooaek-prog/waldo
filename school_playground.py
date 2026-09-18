@@ -85,20 +85,33 @@ def inscribed_rect(open_area, azimuth: float, aspect: float,
 
 
 def grid_points(rect: Polygon, grid: Sequence[int], azimuth: float,
+                reverse_i: bool = False, reverse_j: bool = False,
+                exclude: Sequence[Sequence[int]] = (),
                 ) -> list[tuple[int, int, float, float]]:
-    """사각형을 grid[0]×grid[1] 칸으로 나눈 각 칸의 중앙점. (i, j, x, y)."""
+    """사각형을 grid[0]×grid[1] 칸으로 나눈 각 칸의 중앙점. (i, j, x, y).
+
+    i 는 `azimuth` 방향, j 는 `azimuth − 90°` 방향으로 번호가 늘어난다.
+    분석지점도의 번호 방향에 맞추려면 reverse_i / reverse_j 를 쓴다.
+    exclude 는 도면에 없는 칸([i, j] 목록) — 경계가 잘려 나간 모서리다.
+    """
     centre = rect.centroid
     rot = affinity.rotate(rect, -(90.0 - azimuth), origin=centre)
     minx, miny, maxx, maxy = rot.bounds
     ni, nj = int(grid[0]), int(grid[1])
     dx, dy = (maxx - minx) / ni, (maxy - miny) / nj
+    skip = {tuple(e) for e in exclude}
     out = []
-    for i in range(ni):
-        for j in range(nj):
+    for a in range(ni):
+        for b in range(nj):
+            i = ni - a if reverse_i else a + 1
+            j = nj - b if reverse_j else b + 1
+            if (i, j) in skip:
+                continue
             p = affinity.rotate(
-                Point(minx + (i + 0.5) * dx, miny + (j + 0.5) * dy),
+                Point(minx + (a + 0.5) * dx, miny + (b + 0.5) * dy),
                 (90.0 - azimuth), origin=centre)
-            out.append((i + 1, j + 1, p.x, p.y))
+            out.append((i, j, p.x, p.y))
+    out.sort(key=lambda t: (t[0], t[1]))
     return out
 
 
@@ -138,8 +151,15 @@ def build(jibun: str, open_area, spec_all: dict[str, Any], label: str,
             rect = open_area
         basis = "분석지점도 격자(경계는 최대 내접 사각형으로 추정)"
     pts = [H.Receptor(x, y, GROUND_Z, 180.0, label, 0, True)
-           for _i, _j, x, y in grid_points(rect, grid, az)]
+           for _i, _j, x, y in cells(rect, entry)]
     return rect, pts, basis, True
+
+
+def cells(rect: Polygon, entry: dict[str, Any]
+          ) -> list[tuple[int, int, float, float]]:
+    return grid_points(rect, entry["grid"], float(entry.get("azimuth", 52.0)),
+                       bool(entry.get("reverse_i")), bool(entry.get("reverse_j")),
+                       entry.get("exclude", ()))
 
 
 def cell_index(jibun: str, rect: Polygon, spec_all: dict[str, Any]
@@ -147,5 +167,4 @@ def cell_index(jibun: str, rect: Polygon, spec_all: dict[str, Any]
     entry = spec_all.get(jibun)
     if not entry:
         return []
-    return [(i, j) for i, j, _x, _y in
-            grid_points(rect, entry["grid"], float(entry.get("azimuth", 52.0)))]
+    return [(i, j) for i, j, _x, _y in cells(rect, entry)]

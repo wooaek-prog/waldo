@@ -1672,12 +1672,12 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194365.06,
-     547023.169
+     194376.233,
+     547008.869
     ]
    },
    "properties": {
-    "pid": "여의도초등학교 운동장-42",
+    "pid": "여의도초등학교 운동장-49",
     "school": "여의도초등학교",
     "jibun": "40-3",
     "kind": "운동장 지반",
@@ -1687,16 +1687,16 @@
     "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 1.83,
-    "s1_cont_h": 1.83,
+    "s1_total_h": 1.33,
+    "s1_cont_h": 1.33,
     "s1_pass_a": false,
     "s1_pass_b": false,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 3.0,
+    "s2_total_h": 2.17,
+    "s2_cont_h": 2.17,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 1.17,
-    "d_cont_h": 1.17,
+    "d_total_h": 0.84,
+    "d_cont_h": 0.84,
     "change_cd": "new_ok",
     "변화": "신규 충족"
    }
@@ -1740,12 +1740,12 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194376.233,
-     547008.869
+     194365.06,
+     547023.169
     ]
    },
    "properties": {
-    "pid": "여의도초등학교 운동장-58",
+    "pid": "여의도초등학교 운동장-51",
     "school": "여의도초등학교",
     "jibun": "40-3",
     "kind": "운동장 지반",
@@ -1755,16 +1755,16 @@
     "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 1.33,
-    "s1_cont_h": 1.33,
+    "s1_total_h": 1.83,
+    "s1_cont_h": 1.83,
     "s1_pass_a": false,
     "s1_pass_b": false,
-    "s2_total_h": 2.17,
-    "s2_cont_h": 2.17,
+    "s2_total_h": 3.0,
+    "s2_cont_h": 3.0,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.84,
-    "d_cont_h": 0.84,
+    "d_total_h": 1.17,
+    "d_cont_h": 1.17,
     "change_cd": "new_ok",
     "변화": "신규 충족"
    }
