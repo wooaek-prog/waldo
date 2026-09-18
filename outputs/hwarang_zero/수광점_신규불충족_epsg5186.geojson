@@ -6,6 +6,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
+     194111.773,
+     547253.388
+    ]
+   },
+   "properties": {
+    "pid": "여의도고등학교 운동장-54",
+    "school": "여의도고등학교",
+    "kind": "운동장 지반",
+    "dong": "여의도고등학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "s2_total_h": 3.33,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
+    "s1_pass_a": true,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
      194314.754,
      547105.787
     ]

@@ -6156,8 +6156,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194143.777,
-     547186.132
+     194172.86,
+     547263.348
     ]
    },
    "properties": {
@@ -6166,14 +6166,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 5.17,
+    "s2_cont_h": 3.33,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -6181,8 +6181,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194151.777,
-     547186.132
+     194166.752,
+     547271.165
     ]
    },
    "properties": {
@@ -6191,14 +6191,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 4.83,
+    "s2_cont_h": 3.33,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -6206,8 +6206,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194159.777,
-     547186.132
+     194160.645,
+     547278.982
     ]
    },
    "properties": {
@@ -6216,14 +6216,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 1.83,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 4.83,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -6231,8 +6231,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194167.777,
-     547186.132
+     194154.537,
+     547286.8
     ]
    },
    "properties": {
@@ -6241,14 +6241,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 1.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 4.83,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -6256,8 +6256,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194175.777,
-     547186.132
+     194148.429,
+     547294.617
     ]
    },
    "properties": {
@@ -6266,14 +6266,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 2.33,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 5.33,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -6281,8 +6281,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194223.777,
-     547186.132
+     194142.322,
+     547302.434
     ]
    },
    "properties": {
@@ -6291,10 +6291,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.5,
+    "s2_total_h": 5.67,
+    "s2_cont_h": 4.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6306,8 +6306,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194231.777,
-     547186.132
+     194136.214,
+     547310.252
     ]
    },
    "properties": {
@@ -6316,10 +6316,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.33,
+    "s2_total_h": 6.5,
+    "s2_cont_h": 6.5,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6331,8 +6331,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194135.777,
-     547194.132
+     194130.107,
+     547318.069
     ]
    },
    "properties": {
@@ -6341,10 +6341,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.0,
-    "s2_cont_h": 1.83,
+    "s2_total_h": 6.5,
+    "s2_cont_h": 6.5,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6356,8 +6356,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194143.777,
-     547194.132
+     194123.999,
+     547325.886
     ]
    },
    "properties": {
@@ -6366,10 +6366,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 2.17,
+    "s2_total_h": 6.5,
+    "s2_cont_h": 6.5,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6381,8 +6381,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194151.777,
-     547194.132
+     194117.892,
+     547333.704
     ]
    },
    "properties": {
@@ -6391,10 +6391,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.0,
-    "s2_cont_h": 2.17,
+    "s2_total_h": 6.33,
+    "s2_cont_h": 6.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6406,8 +6406,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194159.777,
-     547194.132
+     194164.307,
+     547256.665
     ]
    },
    "properties": {
@@ -6416,14 +6416,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 1.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 5.17,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -6431,8 +6431,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194167.777,
-     547194.132
+     194158.199,
+     547264.483
     ]
    },
    "properties": {
@@ -6441,14 +6441,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 5.5,
+    "s2_cont_h": 4.0,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -6456,8 +6456,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194175.777,
-     547194.132
+     194152.092,
+     547272.3
     ]
    },
    "properties": {
@@ -6466,10 +6466,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 2.0,
+    "s2_total_h": 5.33,
+    "s2_cont_h": 4.83,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6481,8 +6481,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194183.777,
-     547194.132
+     194145.984,
+     547280.117
     ]
    },
    "properties": {
@@ -6491,10 +6491,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 2.0,
+    "s2_total_h": 4.83,
+    "s2_cont_h": 4.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6506,8 +6506,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194191.777,
-     547194.132
+     194139.877,
+     547287.935
     ]
    },
    "properties": {
@@ -6516,10 +6516,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 2.17,
+    "s2_total_h": 5.5,
+    "s2_cont_h": 4.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6531,8 +6531,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194199.777,
-     547194.132
+     194133.769,
+     547295.752
     ]
    },
    "properties": {
@@ -6541,10 +6541,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 2.33,
+    "s2_total_h": 5.67,
+    "s2_cont_h": 4.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6556,8 +6556,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194207.777,
-     547194.132
+     194127.661,
+     547303.569
     ]
    },
    "properties": {
@@ -6566,10 +6566,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 2.17,
+    "s2_total_h": 6.33,
+    "s2_cont_h": 5.17,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6581,8 +6581,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194215.777,
-     547194.132
+     194121.554,
+     547311.387
     ]
    },
    "properties": {
@@ -6591,10 +6591,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 2.33,
+    "s2_total_h": 6.5,
+    "s2_cont_h": 6.5,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6606,8 +6606,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194223.777,
-     547194.132
+     194115.446,
+     547319.204
     ]
    },
    "properties": {
@@ -6616,10 +6616,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.0,
-    "s2_cont_h": 2.5,
+    "s2_total_h": 6.67,
+    "s2_cont_h": 6.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6631,8 +6631,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194231.777,
-     547194.132
+     194109.339,
+     547327.021
     ]
    },
    "properties": {
@@ -6641,10 +6641,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 2.67,
+    "s2_total_h": 6.5,
+    "s2_cont_h": 6.5,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6656,8 +6656,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194135.777,
-     547202.132
+     194155.754,
+     547249.983
     ]
    },
    "properties": {
@@ -6666,14 +6666,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 2.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s2_total_h": 3.33,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
+    "s1_pass_a": false,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   },
   {
@@ -6681,8 +6681,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194143.777,
-     547202.132
+     194149.646,
+     547257.8
     ]
    },
    "properties": {
@@ -6691,10 +6691,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 2.0,
+    "s2_total_h": 4.17,
+    "s2_cont_h": 2.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6706,8 +6706,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194151.777,
-     547202.132
+     194143.539,
+     547265.618
     ]
    },
    "properties": {
@@ -6716,10 +6716,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 1.83,
+    "s2_total_h": 4.83,
+    "s2_cont_h": 3.17,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6731,8 +6731,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194159.777,
-     547202.132
+     194137.431,
+     547273.435
     ]
    },
    "properties": {
@@ -6741,10 +6741,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 1.83,
+    "s2_total_h": 5.5,
+    "s2_cont_h": 5.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6756,8 +6756,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194167.777,
-     547202.132
+     194131.324,
+     547281.252
     ]
    },
    "properties": {
@@ -6766,10 +6766,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 2.0,
+    "s2_total_h": 5.67,
+    "s2_cont_h": 5.0,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6781,8 +6781,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194175.777,
-     547202.132
+     194125.216,
+     547289.07
     ]
    },
    "properties": {
@@ -6791,10 +6791,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.0,
+    "s2_total_h": 5.67,
+    "s2_cont_h": 4.83,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6806,8 +6806,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194183.777,
-     547202.132
+     194119.109,
+     547296.887
     ]
    },
    "properties": {
@@ -6816,10 +6816,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 2.17,
+    "s2_total_h": 5.33,
+    "s2_cont_h": 4.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6831,8 +6831,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194191.777,
-     547202.132
+     194113.001,
+     547304.704
     ]
    },
    "properties": {
@@ -6841,10 +6841,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.17,
+    "s2_total_h": 6.33,
+    "s2_cont_h": 6.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6856,8 +6856,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194199.777,
-     547202.132
+     194106.893,
+     547312.522
     ]
    },
    "properties": {
@@ -6866,10 +6866,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 2.33,
+    "s2_total_h": 6.67,
+    "s2_cont_h": 6.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6881,8 +6881,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194207.777,
-     547202.132
+     194100.786,
+     547320.339
     ]
    },
    "properties": {
@@ -6891,10 +6891,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 2.5,
+    "s2_total_h": 6.33,
+    "s2_cont_h": 6.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6906,8 +6906,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194215.777,
-     547202.132
+     194147.201,
+     547243.301
     ]
    },
    "properties": {
@@ -6916,14 +6916,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s2_total_h": 3.17,
+    "s2_cont_h": 1.5,
+    "s2_pass_a": false,
+    "s1_pass_a": false,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   },
   {
@@ -6931,8 +6931,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194223.777,
-     547202.132
+     194141.094,
+     547251.118
     ]
    },
    "properties": {
@@ -6941,9 +6941,9 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.17,
+    "s2_total_h": 3.83,
     "s2_cont_h": 2.5,
     "s2_pass_a": true,
     "s1_pass_a": true,
@@ -6956,8 +6956,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194231.777,
-     547202.132
+     194134.986,
+     547258.935
     ]
    },
    "properties": {
@@ -6966,10 +6966,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 2.83,
+    "s2_total_h": 4.0,
+    "s2_cont_h": 3.0,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -6981,8 +6981,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194239.777,
-     547202.132
+     194128.878,
+     547266.753
     ]
    },
    "properties": {
@@ -6991,10 +6991,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 2.83,
+    "s2_total_h": 4.5,
+    "s2_cont_h": 3.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7006,8 +7006,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194135.777,
-     547210.132
+     194122.771,
+     547274.57
     ]
    },
    "properties": {
@@ -7016,10 +7016,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 2.0,
+    "s2_total_h": 5.17,
+    "s2_cont_h": 4.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7031,8 +7031,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194143.777,
-     547210.132
+     194116.663,
+     547282.387
     ]
    },
    "properties": {
@@ -7041,10 +7041,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 1.83,
+    "s2_total_h": 5.5,
+    "s2_cont_h": 4.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7056,8 +7056,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194151.777,
-     547210.132
+     194110.556,
+     547290.205
     ]
    },
    "properties": {
@@ -7066,10 +7066,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 1.5,
+    "s2_total_h": 5.67,
+    "s2_cont_h": 4.83,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7081,8 +7081,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194183.777,
-     547210.132
+     194104.448,
+     547298.022
     ]
    },
    "properties": {
@@ -7091,10 +7091,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 2.17,
+    "s2_total_h": 6.17,
+    "s2_cont_h": 4.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7106,8 +7106,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194191.777,
-     547210.132
+     194098.341,
+     547305.839
     ]
    },
    "properties": {
@@ -7116,10 +7116,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 2.33,
+    "s2_total_h": 6.5,
+    "s2_cont_h": 6.5,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7131,8 +7131,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194199.777,
-     547210.132
+     194092.233,
+     547313.657
     ]
    },
    "properties": {
@@ -7141,10 +7141,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 2.33,
+    "s2_total_h": 6.17,
+    "s2_cont_h": 6.17,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7156,8 +7156,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194207.777,
-     547210.132
+     194138.648,
+     547236.619
     ]
    },
    "properties": {
@@ -7166,14 +7166,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s2_total_h": 2.83,
+    "s2_cont_h": 1.33,
+    "s2_pass_a": false,
+    "s1_pass_a": false,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   },
   {
@@ -7181,8 +7181,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194215.777,
-     547210.132
+     194132.541,
+     547244.436
     ]
    },
    "properties": {
@@ -7191,14 +7191,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 2.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s2_total_h": 3.0,
+    "s2_cont_h": 1.5,
+    "s2_pass_a": false,
+    "s1_pass_a": false,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   },
   {
@@ -7206,8 +7206,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194223.777,
-     547210.132
+     194126.433,
+     547252.253
     ]
    },
    "properties": {
@@ -7216,14 +7216,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 2.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s2_total_h": 3.5,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
+    "s1_pass_a": false,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   },
   {
@@ -7231,8 +7231,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194231.777,
-     547210.132
+     194120.326,
+     547260.071
     ]
    },
    "properties": {
@@ -7241,10 +7241,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 2.83,
+    "s2_total_h": 4.17,
+    "s2_cont_h": 3.17,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7256,8 +7256,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194239.777,
-     547210.132
+     194114.218,
+     547267.888
     ]
    },
    "properties": {
@@ -7266,10 +7266,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 2.83,
+    "s2_total_h": 4.83,
+    "s2_cont_h": 3.83,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7281,8 +7281,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194127.777,
-     547218.132
+     194108.11,
+     547275.705
     ]
    },
    "properties": {
@@ -7291,10 +7291,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "s2_total_h": 4.67,
-    "s2_cont_h": 1.83,
+    "s2_cont_h": 3.67,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7306,8 +7306,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194135.777,
-     547218.132
+     194102.003,
+     547283.523
     ]
    },
    "properties": {
@@ -7316,10 +7316,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 1.83,
+    "s2_total_h": 4.67,
+    "s2_cont_h": 3.83,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7331,8 +7331,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194143.777,
-     547218.132
+     194095.895,
+     547291.34
     ]
    },
    "properties": {
@@ -7341,10 +7341,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 1.67,
+    "s2_total_h": 5.17,
+    "s2_cont_h": 3.83,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7356,8 +7356,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194151.777,
-     547218.132
+     194089.788,
+     547299.157
     ]
    },
    "properties": {
@@ -7366,14 +7366,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 1.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 6.33,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -7381,8 +7381,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194191.777,
-     547218.132
+     194083.68,
+     547306.975
     ]
    },
    "properties": {
@@ -7391,10 +7391,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 2.33,
+    "s2_total_h": 6.17,
+    "s2_cont_h": 6.17,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7406,8 +7406,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194199.777,
-     547218.132
+     194130.095,
+     547229.936
     ]
    },
    "properties": {
@@ -7416,10 +7416,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 2.67,
+    "s2_total_h": 4.0,
+    "s2_cont_h": 1.83,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7431,8 +7431,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194207.777,
-     547218.132
+     194123.988,
+     547237.754
     ]
    },
    "properties": {
@@ -7441,14 +7441,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s2_total_h": 3.0,
+    "s2_cont_h": 1.67,
+    "s2_pass_a": false,
+    "s1_pass_a": false,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   },
   {
@@ -7456,8 +7456,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194215.777,
-     547218.132
+     194117.88,
+     547245.571
     ]
    },
    "properties": {
@@ -7466,14 +7466,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 2.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s2_total_h": 3.33,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
+    "s1_pass_a": false,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   },
   {
@@ -7481,8 +7481,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194223.777,
-     547218.132
+     194111.773,
+     547253.388
     ]
    },
    "properties": {
@@ -7491,14 +7491,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 2.83,
-    "s2_pass_a": true,
+    "s2_total_h": 3.33,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
     "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
    }
   },
   {
@@ -7506,8 +7506,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194231.777,
-     547218.132
+     194105.665,
+     547261.206
     ]
    },
    "properties": {
@@ -7516,10 +7516,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 2.67,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 2.17,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7531,8 +7531,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194239.777,
-     547218.132
+     194099.558,
+     547269.023
     ]
    },
    "properties": {
@@ -7541,10 +7541,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 2.83,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 3.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7556,8 +7556,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194127.777,
-     547226.132
+     194093.45,
+     547276.84
     ]
    },
    "properties": {
@@ -7566,10 +7566,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 1.83,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 3.33,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7581,8 +7581,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194135.777,
-     547226.132
+     194087.342,
+     547284.658
     ]
    },
    "properties": {
@@ -7591,10 +7591,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "s2_total_h": 4.17,
-    "s2_cont_h": 1.67,
+    "s2_cont_h": 3.17,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
@@ -7606,8 +7606,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194143.777,
-     547226.132
+     194081.235,
+     547292.475
     ]
    },
    "properties": {
@@ -7616,14 +7616,14 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_total_h": 5.0,
+    "s2_cont_h": 3.33,
+    "s2_pass_a": true,
+    "s1_pass_a": true,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -7631,8 +7631,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194151.777,
-     547226.132
+     194075.127,
+     547300.292
     ]
    },
    "properties": {
@@ -7641,8085 +7641,10 @@
     "kind": "운동장 지반",
     "dong": "여의도고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.67,
-    "s2_cont_h": 1.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547226.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-61",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.33,
-    "s2_cont_h": 1.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547226.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-62",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547226.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-63",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547226.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-64",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547226.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-65",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547226.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-66",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547226.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-67",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-68",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-69",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-70",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 1.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-71",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.33,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-72",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.33,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-73",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.17,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-74",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.33,
-    "s2_cont_h": 2.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-75",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-76",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-77",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-78",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "s2_total_h": 5.33,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547234.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-79",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-80",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-81",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-82",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 1.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-83",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-84",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.17,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-85",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.33,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-86",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.67,
-    "s2_cont_h": 1.83,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-87",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 3.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-88",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.33,
     "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-89",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-90",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-91",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547242.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-92",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-93",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 1.83,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-94",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 2.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-95",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-96",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-97",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-98",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-99",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-100",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 2.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-101",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.17,
-    "s2_cont_h": 2.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-102",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.0,
-    "s2_cont_h": 0.0,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-103",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 4.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-104",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547250.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-105",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-106",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 3.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-107",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 3.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-108",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 2.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-109",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-110",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 2.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-111",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 1.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-112",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 3.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-113",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 2.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-114",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-115",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 3.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-116",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 3.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547258.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-117",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-118",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-119",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-120",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-121",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-122",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 3.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-123",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 3.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-124",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-125",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 2.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-126",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.67,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-127",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 3.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-128",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-129",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194271.777,
-     547266.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-130",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-131",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-132",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-133",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-134",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-135",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-136",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-137",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-138",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 3.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-139",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-140",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.0,
-    "s2_cont_h": 0.0,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-141",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.0,
-    "s2_cont_h": 0.0,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-142",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-143",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-144",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-145",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194271.777,
-     547274.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-146",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-147",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 4.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-148",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-149",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-150",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-151",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-152",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-153",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-154",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-155",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 4.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-156",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 3.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-157",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.0,
-    "s2_cont_h": 0.0,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-158",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.0,
-    "s2_cont_h": 0.0,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-159",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.5,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-160",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-161",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-162",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-163",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-164",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194271.777,
-     547282.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-165",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 5.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194087.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-166",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 3.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194095.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-167",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 3.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-168",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-169",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-170",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-171",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-172",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-173",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-174",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-175",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-176",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-177",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.0,
-    "s2_cont_h": 0.0,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-178",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.0,
-    "s2_cont_h": 0.0,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-179",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.17,
-    "s2_cont_h": 0.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-180",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 2.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-181",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 3.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-182",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.0,
-    "s2_cont_h": 4.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-183",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-184",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-185",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-186",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 5.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194271.777,
-     547290.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-187",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 5.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194071.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-188",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194079.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-189",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 3.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194087.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-190",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 4.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194095.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-191",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-192",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-193",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-194",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-195",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-196",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-197",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-198",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-199",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.33,
-    "s2_cont_h": 0.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-200",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.17,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-201",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 2.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-202",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 2.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-203",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 3.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-204",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-205",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 5.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-206",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-207",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-208",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194271.777,
-     547298.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-209",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194063.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-210",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194071.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-211",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194079.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-212",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194087.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-213",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194095.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-214",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-215",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-216",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-217",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-218",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-219",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-220",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-221",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-222",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.33,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-223",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-224",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-225",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-226",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-227",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-228",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-229",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-230",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194271.777,
-     547306.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-231",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194063.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-232",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194071.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-233",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194079.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-234",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 5.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194087.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-235",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194095.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-236",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-237",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-238",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-239",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-240",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-241",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-242",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-243",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-244",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 2.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-245",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-246",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-247",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-248",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-249",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-250",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-251",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-252",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-253",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-254",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.83,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194271.777,
-     547314.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-255",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.83,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194063.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-256",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194071.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-257",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194079.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-258",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194087.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-259",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194095.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-260",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-261",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-262",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-263",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-264",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-265",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-266",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-267",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.5,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-268",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-269",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-270",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-271",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-272",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-273",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-274",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-275",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-276",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194255.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-277",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547322.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-278",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194063.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-279",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194071.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-280",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194079.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-281",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194095.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-282",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-283",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-284",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-285",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-286",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-287",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-288",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.17,
-    "s2_cont_h": 2.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-289",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-290",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-291",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-292",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-293",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-294",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 7.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-295",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 7.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-296",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-297",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194247.777,
-     547330.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-298",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194071.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-299",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194079.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-300",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.17,
-    "s2_cont_h": 0.83,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-301",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-302",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-303",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-304",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-305",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.83,
-    "s2_cont_h": 1.83,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-306",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.67,
-    "s2_cont_h": 2.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-307",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 3.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-308",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-309",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 5.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-310",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-311",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-312",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 7.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-313",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 7.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547338.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-314",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.83,
-    "s2_cont_h": 7.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194071.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-315",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194079.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-316",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.5,
-    "s2_cont_h": 1.0,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-317",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 5.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-318",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-319",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.67,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-320",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.67,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-321",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-322",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-323",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-324",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-325",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-326",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-327",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 7.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547346.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-328",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 7.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194087.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-329",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.33,
-    "s2_cont_h": 0.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194095.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-330",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.33,
-    "s2_cont_h": 0.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-331",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 5.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-332",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.83,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-333",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-334",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-335",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.33,
-    "s2_cont_h": 5.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-336",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-337",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-338",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-339",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-340",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 7.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-341",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 7.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547354.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-342",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 7.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194103.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-343",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.17,
-    "s2_cont_h": 0.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-344",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.33,
-    "s2_cont_h": 1.33,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-345",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.17,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-346",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.67,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-347",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 3.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-348",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.0,
-    "s2_cont_h": 4.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-349",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-350",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-351",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-352",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-353",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 7.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-354",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 7.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-355",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 7.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547362.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-356",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 7.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194111.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-357",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.67,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-358",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 0.5,
-    "s2_cont_h": 0.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-359",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 1.5,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-360",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.67,
-    "s2_cont_h": 2.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-361",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 3.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-362",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-363",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-364",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-365",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-366",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 7.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-367",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 7.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547370.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-368",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 7.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-369",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.17,
-    "s2_cont_h": 1.5,
-    "s2_pass_a": false,
-    "s1_pass_a": false,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-370",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.33,
-    "s2_cont_h": 2.33,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-371",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-372",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 4.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194151.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-373",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194159.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-374",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.0,
-    "s2_cont_h": 6.0,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194167.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-375",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194175.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-376",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 7.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-377",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.5,
-    "s2_cont_h": 7.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-378",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.67,
-    "s2_cont_h": 7.67,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547378.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-379",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 7.83,
-    "s2_cont_h": 7.83,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194119.777,
-     547386.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-380",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 2.17,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194127.777,
-     547386.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-381",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 3.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194135.777,
-     547386.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-382",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 4.5,
-    "s2_pass_a": true,
-    "s1_pass_a": true,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194143.777,
-     547386.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도고등학교 운동장-383",
-    "school": "여의도고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.5,
     "s2_pass_a": true,
     "s1_pass_a": true,
     "change_cd": "keep_ok",
