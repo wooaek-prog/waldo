@@ -1,0 +1,23 @@
+{
+ "stage": "F 정밀 미세조정",
+ "floors": 42,
+ "aspect": 3.906,
+ "azimuth": 166.5,
+ "x": 194309.2,
+ "y": 546962.7,
+ "tower_plate": 299.4,
+ "tower_long": 34.2,
+ "tower_short": 8.75,
+ "podium_plate": 2800.0,
+ "podium_aspect": 1.6,
+ "podium_x": 194295.2,
+ "podium_y": 546944.7,
+ "podium_az": 52.0,
+ "new_fail": 23,
+ "new_ok": 44,
+ "coverage_m2": 2909.8,
+ "bcr_pct": 30.97,
+ "gfa_m2": 37580,
+ "far_pct": 400.0,
+ "height_m": 127.9
+}

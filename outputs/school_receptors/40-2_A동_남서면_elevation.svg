@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="963" viewBox="0 0 1500 963">
+<rect width="100%" height="100%" fill="#fcfcfa"/>
+<text x="18" y="32" font-family="sans-serif" font-size="19" font-weight="bold" fill="#111">여의도여자고등학교 A동 남서면 – 파사드 전개 입면과 수광점</text>
+<text x="18" y="56" font-family="sans-serif" font-size="12.5" fill="#555">파사드 길이 23.1m · 높이 13.00m · 창 1.5~3.1m(중앙 2.3m) · 파사드 방위 232.1° · 1,2층 교실 모듈 4.5m·창 1개소 / 3층 교실 모듈 7.7m·창 1개소 · 수광점 13개</text>
+<text x="18" y="76" font-family="sans-serif" font-size="12.5" fill="#555">붉은 점 = 일조 계산 수광점(창 중앙 높이). 회색 빗금 = 교실창 없음으로 제외한 구간</text>
+<rect x="92.0" y="96.0" width="1368.0" height="771.3" fill="#ffffff" stroke="#333" stroke-width="1.6"/>
+<line x1="92.0" y1="867.3" x2="1460.0" y2="867.3" stroke="#bbb" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="82.0" y="734.8" font-family="sans-serif" font-size="11.5" text-anchor="end" fill="#111">1층</text>
+<text x="82.0" y="871.3" font-family="sans-serif" font-size="9.5" text-anchor="end" fill="#999">0.0m</text>
+<line x1="92.0" y1="630.0" x2="1460.0" y2="630.0" stroke="#bbb" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="82.0" y="497.5" font-family="sans-serif" font-size="11.5" text-anchor="end" fill="#111">2층</text>
+<text x="82.0" y="634.0" font-family="sans-serif" font-size="9.5" text-anchor="end" fill="#999">4.0m</text>
+<line x1="92.0" y1="392.6" x2="1460.0" y2="392.6" stroke="#bbb" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="82.0" y="260.2" font-family="sans-serif" font-size="11.5" text-anchor="end" fill="#111">3층</text>
+<text x="82.0" y="396.6" font-family="sans-serif" font-size="9.5" text-anchor="end" fill="#999">8.0m</text>
+<rect x="154.3" y="683.4" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="154.3" y="446.0" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="421.3" y="683.4" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="421.3" y="446.0" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="688.3" y="683.4" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="688.3" y="446.0" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="955.3" y="683.4" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="955.3" y="446.0" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="1222.2" y="683.4" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="1222.2" y="446.0" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="249.2" y="208.7" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="706.1" y="208.7" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<rect x="1162.9" y="208.7" width="142.4" height="94.9" fill="#cfe0f0" fill-opacity="0.85" stroke="#5d7fa3" stroke-width="0.8"/>
+<circle cx="225.5" cy="730.8" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="225.5" cy="493.5" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="492.5" cy="730.8" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="492.5" cy="493.5" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="759.5" cy="730.8" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="759.5" cy="493.5" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="1026.4" cy="730.8" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="1026.4" cy="493.5" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="1293.4" cy="730.8" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="1293.4" cy="493.5" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="320.4" cy="256.2" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="777.3" cy="256.2" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<circle cx="1234.1" cy="256.2" r="2.9" fill="#c1121f" stroke="#fff" stroke-width="0.7"/>
+<line x1="92.0" y1="893.3" x2="1460.0" y2="893.3" stroke="#111" stroke-width="1"/>
+<line x1="92.0" y1="889.3" x2="92.0" y2="897.3" stroke="#111" stroke-width="1"/>
+<text x="92.0" y="911.3" font-family="sans-serif" font-size="10.5" text-anchor="middle" fill="#111">0</text>
+<line x1="685.3" y1="889.3" x2="685.3" y2="897.3" stroke="#111" stroke-width="1"/>
+<text x="685.3" y="911.3" font-family="sans-serif" font-size="10.5" text-anchor="middle" fill="#111">10</text>
+<line x1="1278.6" y1="889.3" x2="1278.6" y2="897.3" stroke="#111" stroke-width="1"/>
+<text x="1278.6" y="911.3" font-family="sans-serif" font-size="10.5" text-anchor="middle" fill="#111">20</text>
+<text x="776.0" y="931.3" font-family="sans-serif" font-size="11.5" text-anchor="middle" fill="#555">파사드 전개 거리 (m)</text>
+</svg>

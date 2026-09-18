@@ -1,0 +1,2423 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:EPSG::5186"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194385.35690589462,
+     546987.4622643826
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194385.35690589462,
+     546987.4622643826
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194385.35690589462,
+     546987.4622643826
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194385.35690589462,
+     546987.4622643826
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194388.19375453083,
+     546989.6786329927
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194388.19375453083,
+     546989.6786329927
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194388.19375453083,
+     546989.6786329927
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194388.19375453083,
+     546989.6786329927
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194392.44902748513,
+     546993.0031859077
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194392.44902748513,
+     546993.0031859077
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194392.44902748513,
+     546993.0031859077
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194392.44902748513,
+     546993.0031859077
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.28587612134,
+     546995.2195545178
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.28587612134,
+     546995.2195545178
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.28587612134,
+     546995.2195545178
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.28587612134,
+     546995.2195545178
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.54114907564,
+     546998.5441074327
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.54114907564,
+     546998.5441074327
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.54114907564,
+     546998.5441074327
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.54114907564,
+     546998.5441074327
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194402.37799771185,
+     547000.7604760427
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194402.37799771185,
+     547000.7604760427
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194402.37799771185,
+     547000.7604760427
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194402.37799771185,
+     547000.7604760427
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.63327066618,
+     547004.0850289578
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.63327066618,
+     547004.0850289578
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.63327066618,
+     547004.0850289578
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.63327066618,
+     547004.0850289578
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194409.47011930236,
+     547006.3013975678
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194409.47011930236,
+     547006.3013975678
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194409.47011930236,
+     547006.3013975678
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194409.47011930236,
+     547006.3013975678
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194413.7253922567,
+     547009.6259504829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194413.7253922567,
+     547009.6259504829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194413.7253922567,
+     547009.6259504829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194413.7253922567,
+     547009.6259504829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194416.56224089288,
+     547011.842319093
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194416.56224089288,
+     547011.842319093
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194416.56224089288,
+     547011.842319093
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194416.56224089288,
+     547011.842319093
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194420.8175138472,
+     547015.166872008
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194420.8175138472,
+     547015.166872008
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194420.8175138472,
+     547015.166872008
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194420.8175138472,
+     547015.166872008
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194423.6543624834,
+     547017.3832406179
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194423.6543624834,
+     547017.3832406179
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194423.6543624834,
+     547017.3832406179
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194423.6543624834,
+     547017.3832406179
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194427.9096354377,
+     547020.707793533
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194427.9096354377,
+     547020.707793533
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194427.9096354377,
+     547020.707793533
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194427.9096354377,
+     547020.707793533
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194430.7464840739,
+     547022.924162143
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194430.7464840739,
+     547022.924162143
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194430.7464840739,
+     547022.924162143
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194430.7464840739,
+     547022.924162143
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194435.00175702822,
+     547026.2487150581
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194435.00175702822,
+     547026.2487150581
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194435.00175702822,
+     547026.2487150581
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194435.00175702822,
+     547026.2487150581
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194437.83860566444,
+     547028.4650836681
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 1,
+    "z_m": 2.1,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194437.83860566444,
+     547028.4650836681
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 2,
+    "z_m": 5.7,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194437.83860566444,
+     547028.4650836681
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 3,
+    "z_m": 9.3,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194437.83860566444,
+     547028.4650836681
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "본관(4층)",
+    "facade": "본관(4층)",
+    "floor": 4,
+    "z_m": 12.9,
+    "normal_az": 142.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194387.89503159293,
+     547104.0441579577
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194387.89503159293,
+     547104.0441579577
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194387.89503159293,
+     547104.0441579577
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194387.89503159293,
+     547104.0441579577
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194387.89503159293,
+     547104.0441579577
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194390.1172758872,
+     547101.2119094429
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194390.1172758872,
+     547101.2119094429
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194390.1172758872,
+     547101.2119094429
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194390.1172758872,
+     547101.2119094429
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194390.1172758872,
+     547101.2119094429
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194393.45064232862,
+     547096.9635366709
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194393.45064232862,
+     547096.9635366709
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194393.45064232862,
+     547096.9635366709
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194393.45064232862,
+     547096.9635366709
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194393.45064232862,
+     547096.9635366709
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.6728866229,
+     547094.1312881563
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.6728866229,
+     547094.1312881563
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.6728866229,
+     547094.1312881563
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.6728866229,
+     547094.1312881563
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194395.6728866229,
+     547094.1312881563
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.00625306432,
+     547089.8829153843
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.00625306432,
+     547089.8829153843
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.00625306432,
+     547089.8829153843
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.00625306432,
+     547089.8829153843
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194399.00625306432,
+     547089.8829153843
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194401.2284973586,
+     547087.0506668695
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194401.2284973586,
+     547087.0506668695
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194401.2284973586,
+     547087.0506668695
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194401.2284973586,
+     547087.0506668695
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194401.2284973586,
+     547087.0506668695
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.7841080943,
+     547079.9700455829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.7841080943,
+     547079.9700455829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.7841080943,
+     547079.9700455829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.7841080943,
+     547079.9700455829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194406.7841080943,
+     547079.9700455829
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194410.11747453568,
+     547075.7216728108
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194410.11747453568,
+     547075.7216728108
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194410.11747453568,
+     547075.7216728108
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194410.11747453568,
+     547075.7216728108
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194410.11747453568,
+     547075.7216728108
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194412.33971882996,
+     547072.8894242961
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194412.33971882996,
+     547072.8894242961
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194412.33971882996,
+     547072.8894242961
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194412.33971882996,
+     547072.8894242961
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194412.33971882996,
+     547072.8894242961
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194415.67308527138,
+     547068.6410515241
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194415.67308527138,
+     547068.6410515241
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194415.67308527138,
+     547068.6410515241
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194415.67308527138,
+     547068.6410515241
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194415.67308527138,
+     547068.6410515241
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194417.89532956565,
+     547065.8088030095
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194417.89532956565,
+     547065.8088030095
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194417.89532956565,
+     547065.8088030095
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194417.89532956565,
+     547065.8088030095
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194417.89532956565,
+     547065.8088030095
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194421.22869600708,
+     547061.5604302373
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194421.22869600708,
+     547061.5604302373
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194421.22869600708,
+     547061.5604302373
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194421.22869600708,
+     547061.5604302373
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194421.22869600708,
+     547061.5604302373
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194426.78419786354,
+     547054.4797635329
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194426.78419786354,
+     547054.4797635329
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194426.78419786354,
+     547054.4797635329
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194426.78419786354,
+     547054.4797635329
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194426.78419786354,
+     547054.4797635329
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194429.0062194752,
+     547051.6473404127
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 1,
+    "z_m": 1.95,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194429.0062194752,
+     547051.6473404127
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 2,
+    "z_m": 5.15,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194429.0062194752,
+     547051.6473404127
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 3,
+    "z_m": 8.35,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194429.0062194752,
+     547051.6473404127
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 4,
+    "z_m": 11.55,
+    "normal_az": 231.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194429.0062194752,
+     547051.6473404127
+    ]
+   },
+   "properties": {
+    "school": "여의도초등학교",
+    "building": "별관(5층)",
+    "facade": "별관(5층)",
+    "floor": 5,
+    "z_m": 14.75,
+    "normal_az": 231.9
+   }
+  }
+ ]
+}
