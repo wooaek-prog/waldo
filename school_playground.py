@@ -8,6 +8,9 @@
 경계 좌표를 받은 학교는 그 폴리곤을 쓰고, 아직 못 받은 학교는 옥외지반 안에
 들어가는 **최대 내접 사각형**(블록 장축 정렬)에 격자를 얹는다 — 격자 수·방위는
 도면대로지만 위치·크기는 추정이라 근거등급 C 로 남는다.
+
+경계를 배치도 래스터에서 계측한 경우(`boundary: "raster"`, `school_site_map.py`
+참조)는 근거등급 A− 다 — 위치는 도면대로지만 화소 계측 오차 ±3m 가 남는다.
 """
 
 from __future__ import annotations
@@ -125,7 +128,9 @@ def build(jibun: str, open_area, spec_all: dict[str, Any], label: str,
     az = float(entry.get("azimuth", 52.0))
     if entry.get("polygon"):
         rect = Polygon(entry["polygon"])
-        basis = "도면 경계 + 분석지점도 격자"
+        basis = ("배치도 경계(래스터 계측) + 분석지점도 격자"
+                 if entry.get("boundary") == "raster"
+                 else "도면 경계 + 분석지점도 격자")
     else:
         aspect = float(entry.get("aspect") or (max(grid) / min(grid)))
         rect = inscribed_rect(open_area, az, aspect)

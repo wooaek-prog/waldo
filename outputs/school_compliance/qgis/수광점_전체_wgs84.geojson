@@ -54236,8 +54236,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93700324,
-     37.52324231
+     126.93586019,
+     37.52295224
     ]
    },
    "properties": {
@@ -54248,21 +54248,21 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 1.67,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
+    "s1_total_h": 3.17,
+    "s1_cont_h": 3.0,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
     "s2_total_h": 3.33,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s2_pass_b": false,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_fail",
-    "변화": "유지 불충족"
+    "s2_cont_h": 3.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.16,
+    "d_cont_h": 0.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
    }
   },
   {
@@ -54270,8 +54270,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93695967,
-     37.52328667
+     126.93593915,
+     37.52300145
     ]
    },
    "properties": {
@@ -54282,19 +54282,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 3.33,
+    "s1_total_h": 4.33,
+    "s1_cont_h": 3.83,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 3.33,
+    "s2_total_h": 3.5,
+    "s2_cont_h": 3.5,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -0.83,
+    "d_cont_h": -0.33,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54304,8 +54304,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.9369161,
-     37.52333102
+     126.93601812,
+     37.52305066
     ]
    },
    "properties": {
@@ -54316,19 +54316,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 3.33,
+    "s1_total_h": 5.0,
+    "s1_cont_h": 4.5,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 3.33,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.67,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -1.17,
+    "d_cont_h": -0.83,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54338,8 +54338,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93687253,
-     37.52337537
+     126.93609708,
+     37.52309986
     ]
    },
    "properties": {
@@ -54350,19 +54350,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 3.33,
+    "s1_total_h": 5.0,
+    "s1_cont_h": 4.67,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 3.33,
+    "s2_total_h": 3.67,
+    "s2_cont_h": 3.67,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -1.33,
+    "d_cont_h": -1.0,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54372,8 +54372,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93682898,
-     37.52341972
+     126.93617604,
+     37.52314906
     ]
    },
    "properties": {
@@ -54384,19 +54384,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 3.33,
+    "s1_total_h": 5.67,
+    "s1_cont_h": 5.0,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 3.33,
+    "s2_total_h": 4.17,
+    "s2_cont_h": 3.83,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -1.5,
+    "d_cont_h": -1.17,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54406,8 +54406,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93678541,
-     37.52346407
+     126.936255,
+     37.52319827
     ]
    },
    "properties": {
@@ -54418,19 +54418,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.0,
-    "s1_cont_h": 3.0,
+    "s1_total_h": 6.17,
+    "s1_cont_h": 6.0,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 3.0,
+    "s2_total_h": 4.5,
+    "s2_cont_h": 4.33,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -1.67,
+    "d_cont_h": -1.67,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54440,8 +54440,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93674184,
-     37.52350842
+     126.93633396,
+     37.52324747
     ]
    },
    "properties": {
@@ -54452,19 +54452,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 2.83,
-    "s1_cont_h": 2.83,
+    "s1_total_h": 6.17,
+    "s1_cont_h": 6.0,
     "s1_pass_a": true,
-    "s1_pass_b": false,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 2.83,
+    "s1_pass_b": true,
+    "s2_total_h": 4.67,
+    "s2_cont_h": 4.5,
     "s2_pass_a": true,
-    "s2_pass_b": false,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "s2_pass_b": true,
+    "d_total_h": -1.5,
+    "d_cont_h": -1.5,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54474,8 +54474,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93669827,
-     37.52355277
+     126.93641293,
+     37.52329667
     ]
    },
    "properties": {
@@ -54486,19 +54486,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 2.83,
-    "s1_cont_h": 2.83,
+    "s1_total_h": 6.0,
+    "s1_cont_h": 5.83,
     "s1_pass_a": true,
-    "s1_pass_b": false,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 2.83,
+    "s1_pass_b": true,
+    "s2_total_h": 4.5,
+    "s2_cont_h": 4.33,
     "s2_pass_a": true,
-    "s2_pass_b": false,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "s2_pass_b": true,
+    "d_total_h": -1.5,
+    "d_cont_h": -1.5,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54508,8 +54508,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93705669,
-     37.52327562
+     126.93592345,
+     37.52288786
     ]
    },
    "properties": {
@@ -54520,19 +54520,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 4.33,
-    "s1_cont_h": 4.33,
+    "s1_total_h": 3.0,
+    "s1_cont_h": 2.83,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 4.33,
+    "s2_total_h": 3.33,
+    "s2_cont_h": 3.33,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": 0.33,
+    "d_cont_h": 0.5,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54542,8 +54542,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93701313,
-     37.52331997
+     126.9360024,
+     37.52293706
     ]
    },
    "properties": {
@@ -54554,19 +54554,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 4.33,
-    "s1_cont_h": 4.33,
+    "s1_total_h": 4.0,
+    "s1_cont_h": 3.67,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 4.33,
+    "s2_total_h": 3.5,
+    "s2_cont_h": 3.5,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -0.5,
+    "d_cont_h": -0.17,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54576,8 +54576,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93696956,
-     37.52336433
+     126.93608136,
+     37.52298627
     ]
    },
    "properties": {
@@ -54588,19 +54588,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
     "s1_total_h": 4.33,
     "s1_cont_h": 4.33,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 4.33,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.83,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -0.5,
+    "d_cont_h": -0.5,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54610,8 +54610,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.936926,
-     37.52340868
+     126.93616033,
+     37.52303547
     ]
    },
    "properties": {
@@ -54622,19 +54622,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 4.33,
-    "s1_cont_h": 4.33,
+    "s1_total_h": 4.67,
+    "s1_cont_h": 4.67,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 4.33,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.83,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -0.84,
+    "d_cont_h": -0.84,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54644,8 +54644,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93688243,
-     37.52345303
+     126.93623929,
+     37.52308467
     ]
    },
    "properties": {
@@ -54656,19 +54656,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 4.17,
-    "s1_cont_h": 4.17,
+    "s1_total_h": 4.83,
+    "s1_cont_h": 4.83,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 4.17,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.83,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -1.0,
+    "d_cont_h": -1.0,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54678,8 +54678,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93683887,
-     37.52349738
+     126.93631825,
+     37.52313387
     ]
    },
    "properties": {
@@ -54690,19 +54690,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.83,
-    "s1_cont_h": 3.83,
+    "s1_total_h": 5.5,
+    "s1_cont_h": 5.5,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 3.83,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 4.33,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -1.17,
+    "d_cont_h": -1.17,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -54712,8 +54712,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.9367953,
-     37.52354173
+     126.93639721,
+     37.52318308
     ]
    },
    "properties": {
@@ -54724,7 +54724,415 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 5.67,
+    "s1_cont_h": 5.67,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -1.34,
+    "d_cont_h": -1.34,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93647617,
+     37.52323228
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-16",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 5.83,
+    "s1_cont_h": 5.83,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.5,
+    "s2_cont_h": 4.5,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -1.33,
+    "d_cont_h": -1.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93598669,
+     37.52282347
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-17",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.5,
+    "s1_cont_h": 2.5,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.17,
+    "s2_cont_h": 3.17,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.67,
+    "d_cont_h": 0.67,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93606566,
+     37.52287267
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-18",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.33,
+    "s1_cont_h": 3.33,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.5,
+    "s2_cont_h": 3.5,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.17,
+    "d_cont_h": 0.17,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93614461,
+     37.52292188
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-19",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 4.0,
+    "s1_cont_h": 4.0,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.67,
+    "s2_cont_h": 3.67,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.33,
+    "d_cont_h": -0.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93622357,
+     37.52297108
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-20",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 4.5,
+    "s1_cont_h": 4.5,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.67,
+    "d_cont_h": -0.67,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93630254,
+     37.52302028
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-21",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 4.83,
+    "s1_cont_h": 4.83,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.0,
+    "s2_cont_h": 4.0,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.83,
+    "d_cont_h": -0.83,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9363815,
+     37.52306949
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-22",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 5.0,
+    "s1_cont_h": 5.0,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.0,
+    "s2_cont_h": 4.0,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -1.0,
+    "d_cont_h": -1.0,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93646046,
+     37.5231187
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-23",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 5.5,
+    "s1_cont_h": 5.5,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -1.17,
+    "d_cont_h": -1.17,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93653942,
+     37.5231679
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-24",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 5.67,
+    "s1_cont_h": 5.67,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.5,
+    "s2_cont_h": 4.5,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -1.17,
+    "d_cont_h": -1.17,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93604994,
+     37.52275908
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-25",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.17,
+    "s1_cont_h": 2.17,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.17,
+    "s2_cont_h": 3.17,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.0,
+    "d_cont_h": 1.0,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9361289,
+     37.52280828
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-26",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.0,
+    "s1_cont_h": 3.0,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.33,
+    "s2_cont_h": 3.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.33,
+    "d_cont_h": 0.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93620787,
+     37.52285749
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-27",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
     "s1_total_h": 3.67,
@@ -54746,416 +55154,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93675173,
-     37.52358608
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-16",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 4.33,
-    "s1_cont_h": 4.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 4.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93711015,
-     37.52330893
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-17",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.17,
-    "s1_cont_h": 5.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93706658,
-     37.52335328
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-18",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.17,
-    "s1_cont_h": 5.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93702302,
-     37.52339764
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-19",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.17,
-    "s1_cont_h": 5.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93697946,
-     37.52344199
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-20",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.17,
-    "s1_cont_h": 5.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93693589,
-     37.52348634
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-21",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 4.83,
-    "s1_cont_h": 4.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93689232,
-     37.52353069
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-22",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 4.67,
-    "s1_cont_h": 4.67,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 4.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93684876,
-     37.52357505
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-23",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.17,
-    "s1_cont_h": 5.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93680519,
-     37.5236194
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-24",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.17,
-    "s1_cont_h": 5.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.17,
-    "s2_cont_h": 5.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93716361,
-     37.52334224
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-25",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.83,
-    "s1_cont_h": 5.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93712004,
-     37.52338659
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-26",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.83,
-    "s1_cont_h": 5.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93707648,
-     37.52343094
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-27",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.83,
-    "s1_cont_h": 5.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93703292,
-     37.5234753
+     126.93628682,
+     37.5229067
     ]
    },
    "properties": {
@@ -55166,19 +55166,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 5.83,
-    "s1_cont_h": 5.83,
+    "s1_total_h": 4.17,
+    "s1_cont_h": 4.17,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.83,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -0.34,
+    "d_cont_h": -0.34,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -55188,8 +55188,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93698935,
-     37.52351965
+     126.93636578,
+     37.5229559
     ]
    },
    "properties": {
@@ -55200,19 +55200,19 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 5.5,
-    "s1_cont_h": 5.5,
+    "s1_total_h": 4.5,
+    "s1_cont_h": 4.5,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 5.5,
-    "s2_cont_h": 5.5,
+    "s2_total_h": 4.0,
+    "s2_cont_h": 4.0,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
+    "d_total_h": -0.5,
+    "d_cont_h": -0.5,
     "change_cd": "keep_ok",
     "변화": "유지 충족"
    }
@@ -55222,8 +55222,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93694578,
-     37.52356401
+     126.93644475,
+     37.5230051
     ]
    },
    "properties": {
@@ -55234,1103 +55234,15 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 5.67,
-    "s1_cont_h": 5.5,
+    "s1_total_h": 4.83,
+    "s1_cont_h": 4.83,
     "s1_pass_a": true,
     "s1_pass_b": true,
-    "s2_total_h": 5.67,
-    "s2_cont_h": 5.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93690221,
-     37.52360836
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-31",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.83,
-    "s1_cont_h": 5.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93685865,
-     37.52365271
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-32",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 5.83,
-    "s1_cont_h": 5.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 5.83,
-    "s2_cont_h": 5.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93721707,
-     37.52337555
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-33",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.33,
-    "s1_cont_h": 6.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.9371735,
-     37.5234199
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-34",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.33,
-    "s1_cont_h": 6.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93712994,
-     37.52346426
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-35",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.33,
-    "s1_cont_h": 6.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93708637,
-     37.52350862
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-36",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.33,
-    "s1_cont_h": 6.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93704281,
-     37.52355297
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-37",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.17,
-    "s1_cont_h": 6.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.17,
-    "s2_cont_h": 6.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93699924,
-     37.52359732
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-38",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.5,
-    "s1_cont_h": 6.5,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93695567,
-     37.52364167
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-39",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.5,
-    "s1_cont_h": 6.5,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.17,
-    "d_cont_h": -0.17,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.9369121,
-     37.52368602
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-40",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.5,
-    "s1_cont_h": 6.5,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.17,
-    "d_cont_h": -0.17,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93727052,
-     37.52340886
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-41",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.83,
-    "s1_cont_h": 6.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93722697,
-     37.52345322
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-42",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.83,
-    "s1_cont_h": 6.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.9371834,
-     37.52349757
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-43",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.83,
-    "s1_cont_h": 6.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93713983,
-     37.52354193
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-44",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.67,
-    "s1_cont_h": 6.67,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93709626,
-     37.52358628
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-45",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.67,
-    "s1_cont_h": 6.67,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.9370527,
-     37.52363063
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-46",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.83,
-    "s1_cont_h": 6.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.16,
-    "d_cont_h": -0.16,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93700913,
-     37.52367498
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-47",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.83,
-    "s1_cont_h": 6.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.33,
-    "d_cont_h": -0.33,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93696556,
-     37.52371933
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-48",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 6.83,
-    "s1_cont_h": 6.83,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.5,
-    "d_cont_h": -0.5,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93732398,
-     37.52344218
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-49",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.17,
-    "s1_cont_h": 7.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 7.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93728043,
-     37.52348653
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-50",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.17,
-    "s1_cont_h": 7.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 7.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93723686,
-     37.52353088
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-51",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.17,
-    "s1_cont_h": 7.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.17,
-    "d_cont_h": -0.17,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93719329,
-     37.52357523
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-52",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.0,
-    "s1_cont_h": 7.0,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.17,
-    "d_cont_h": -0.17,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93714972,
-     37.52361959
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-53",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.0,
-    "s1_cont_h": 7.0,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.33,
-    "d_cont_h": -0.33,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93710615,
-     37.52366394
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-54",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.17,
-    "s1_cont_h": 7.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.5,
-    "d_cont_h": -0.5,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93706259,
-     37.52370829
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-55",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.17,
-    "s1_cont_h": 7.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.67,
-    "d_cont_h": -0.67,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93701902,
-     37.52375264
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-56",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.17,
-    "s1_cont_h": 7.17,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.33,
-    "s2_cont_h": 6.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.84,
-    "d_cont_h": -0.84,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93737745,
-     37.52347549
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-57",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.33,
-    "s1_cont_h": 7.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 7.33,
-    "s2_cont_h": 7.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.0,
-    "d_cont_h": 0.0,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93733388,
-     37.52351984
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-58",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.33,
-    "s1_cont_h": 7.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 7.17,
-    "s2_cont_h": 7.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.16,
-    "d_cont_h": -0.16,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93729032,
-     37.52356419
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-59",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.33,
-    "s1_cont_h": 7.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 7.0,
-    "s2_cont_h": 7.0,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.33,
-    "d_cont_h": -0.33,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93724675,
-     37.52360854
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-60",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.33,
-    "s1_cont_h": 7.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.5,
-    "d_cont_h": -0.5,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93720318,
-     37.5236529
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-61",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.33,
-    "s1_cont_h": 7.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.83,
-    "s2_cont_h": 6.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.5,
-    "d_cont_h": -0.5,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     126.93715961,
-     37.52369725
-    ]
-   },
-   "properties": {
-    "pid": "여의도초등학교 운동장-62",
-    "school": "여의도초등학교",
-    "jibun": "40-3",
-    "kind": "운동장 지반",
-    "dong": "여의도초등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 7.33,
-    "s1_cont_h": 7.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.67,
-    "s2_cont_h": 6.67,
+    "s2_total_h": 4.17,
+    "s2_cont_h": 4.17,
     "s2_pass_a": true,
     "s2_pass_b": true,
     "d_total_h": -0.66,
@@ -56344,8 +55256,1096 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93711604,
-     37.5237416
+     126.9365237,
+     37.52305431
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-31",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 5.17,
+    "s1_cont_h": 5.17,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.84,
+    "d_cont_h": -0.84,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93660267,
+     37.52310351
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-32",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 5.17,
+    "s1_cont_h": 5.17,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.17,
+    "s2_cont_h": 4.17,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -1.0,
+    "d_cont_h": -1.0,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93611319,
+     37.52269469
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-33",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.17,
+    "s1_cont_h": 2.17,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.5,
+    "s2_cont_h": 3.5,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.33,
+    "d_cont_h": 1.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93619215,
+     37.5227439
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-34",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.33,
+    "s1_cont_h": 2.33,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.0,
+    "s2_cont_h": 3.0,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.67,
+    "d_cont_h": 0.67,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93627111,
+     37.52279311
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-35",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.0,
+    "s1_cont_h": 3.0,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.33,
+    "s2_cont_h": 3.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.33,
+    "d_cont_h": 0.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93635007,
+     37.52284231
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-36",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.5,
+    "s1_cont_h": 3.5,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.5,
+    "s2_cont_h": 3.5,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.0,
+    "d_cont_h": 0.0,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93642903,
+     37.52289151
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-37",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.83,
+    "s1_cont_h": 3.83,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.67,
+    "s2_cont_h": 3.67,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.16,
+    "d_cont_h": -0.16,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93650799,
+     37.52294071
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-38",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 4.17,
+    "s1_cont_h": 4.17,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.34,
+    "d_cont_h": -0.34,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93658696,
+     37.52298992
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-39",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 4.5,
+    "s1_cont_h": 4.5,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.67,
+    "d_cont_h": -0.67,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93666591,
+     37.52303912
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-40",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 4.67,
+    "s1_cont_h": 4.67,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.0,
+    "s2_cont_h": 4.0,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.67,
+    "d_cont_h": -0.67,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93617644,
+     37.52263031
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-41",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.5,
+    "s1_cont_h": 2.5,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.83,
+    "s2_cont_h": 3.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.33,
+    "d_cont_h": 1.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9362554,
+     37.52267951
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-42",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 1.83,
+    "s1_cont_h": 1.83,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 3.0,
+    "s2_cont_h": 3.0,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.17,
+    "d_cont_h": 1.17,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93633436,
+     37.52272872
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-43",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.0,
+    "s1_cont_h": 2.0,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 2.67,
+    "s2_cont_h": 2.67,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.67,
+    "d_cont_h": 0.67,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93641332,
+     37.52277792
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-44",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.5,
+    "s1_cont_h": 2.5,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 2.83,
+    "s2_cont_h": 2.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.33,
+    "d_cont_h": 0.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93649228,
+     37.52282712
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-45",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.83,
+    "s1_cont_h": 2.83,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.0,
+    "s2_cont_h": 3.0,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.17,
+    "d_cont_h": 0.17,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93657124,
+     37.52287632
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-46",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.17,
+    "s1_cont_h": 3.17,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.0,
+    "s2_cont_h": 3.0,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.17,
+    "d_cont_h": -0.17,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9366502,
+     37.52292553
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-47",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.5,
+    "s1_cont_h": 3.5,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.17,
+    "s2_cont_h": 3.17,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.33,
+    "d_cont_h": -0.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93672917,
+     37.52297473
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-48",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.67,
+    "s1_cont_h": 3.67,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 3.33,
+    "s2_cont_h": 3.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.34,
+    "d_cont_h": -0.34,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93623969,
+     37.52256592
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-49",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.0,
+    "s1_cont_h": 3.0,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.33,
+    "d_cont_h": 1.33,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93631864,
+     37.52261512
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-50",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 1.83,
+    "s1_cont_h": 1.83,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 2.83,
+    "s2_cont_h": 2.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.0,
+    "d_cont_h": 1.0,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93639761,
+     37.52266432
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-51",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 1.17,
+    "s1_cont_h": 1.17,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 1.83,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.66,
+    "d_cont_h": 0.66,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93647657,
+     37.52271353
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-52",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 0.83,
+    "s1_cont_h": 0.83,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 1.5,
+    "s2_cont_h": 1.5,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.67,
+    "d_cont_h": 0.67,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93655553,
+     37.52276273
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-53",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 1.17,
+    "s1_cont_h": 1.17,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 1.67,
+    "s2_cont_h": 1.67,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.5,
+    "d_cont_h": 0.5,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93663449,
+     37.52281193
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-54",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 1.5,
+    "s1_cont_h": 1.5,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 1.83,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.33,
+    "d_cont_h": 0.33,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93671345,
+     37.52286114
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-55",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 1.83,
+    "s1_cont_h": 1.83,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 1.83,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.0,
+    "d_cont_h": 0.0,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93679241,
+     37.52291035
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-56",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.0,
+    "s1_cont_h": 2.0,
+    "s1_pass_a": true,
+    "s1_pass_b": false,
+    "s2_total_h": 2.0,
+    "s2_cont_h": 2.0,
+    "s2_pass_a": true,
+    "s2_pass_b": false,
+    "d_total_h": 0.0,
+    "d_cont_h": 0.0,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93630293,
+     37.52250153
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-57",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.83,
+    "s1_cont_h": 3.83,
+    "s1_pass_a": true,
+    "s1_pass_b": true,
+    "s2_total_h": 4.83,
+    "s2_cont_h": 4.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.0,
+    "d_cont_h": 1.0,
+    "change_cd": "keep_ok",
+    "변화": "유지 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9363819,
+     37.52255073
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-58",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 1.33,
+    "s1_cont_h": 1.33,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 2.17,
+    "s2_cont_h": 2.17,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.84,
+    "d_cont_h": 0.84,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93646085,
+     37.52259993
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-59",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 0.67,
+    "s1_cont_h": 0.67,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 1.17,
+    "s2_cont_h": 1.17,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.5,
+    "d_cont_h": 0.5,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93653981,
+     37.52264914
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-60",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 0.17,
+    "s1_cont_h": 0.17,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 0.67,
+    "s2_cont_h": 0.67,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.5,
+    "d_cont_h": 0.5,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93661878,
+     37.52269835
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-61",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 0.0,
+    "s1_cont_h": 0.0,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 0.17,
+    "s2_cont_h": 0.17,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.17,
+    "d_cont_h": 0.17,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93669774,
+     37.52274755
+    ]
+   },
+   "properties": {
+    "pid": "여의도초등학교 운동장-62",
+    "school": "여의도초등학교",
+    "jibun": "40-3",
+    "kind": "운동장 지반",
+    "dong": "여의도초등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 0.0,
+    "s1_cont_h": 0.0,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 0.17,
+    "s2_cont_h": 0.17,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.17,
+    "d_cont_h": 0.17,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9367767,
+     37.52279676
     ]
    },
    "properties": {
@@ -56356,21 +56356,21 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 7.33,
-    "s1_cont_h": 7.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.83,
-    "d_cont_h": -0.83,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s1_total_h": 0.0,
+    "s1_cont_h": 0.0,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 0.0,
+    "s2_cont_h": 0.0,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.0,
+    "d_cont_h": 0.0,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   },
   {
@@ -56378,8 +56378,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93707248,
-     37.52378595
+     126.93685566,
+     37.52284596
     ]
    },
    "properties": {
@@ -56390,21 +56390,21 @@
     "dong": "여의도초등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "분석지점도 격자(경계는 최대 내접 사각형으로 추정)",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 7.33,
-    "s1_cont_h": 7.33,
-    "s1_pass_a": true,
-    "s1_pass_b": true,
-    "s2_total_h": 6.5,
-    "s2_cont_h": 6.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.83,
-    "d_cont_h": -0.83,
-    "change_cd": "keep_ok",
-    "변화": "유지 충족"
+    "s1_total_h": 0.0,
+    "s1_cont_h": 0.0,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 0.17,
+    "s2_cont_h": 0.17,
+    "s2_pass_a": false,
+    "s2_pass_b": false,
+    "d_total_h": 0.17,
+    "d_cont_h": 0.17,
+    "change_cd": "keep_fail",
+    "변화": "유지 불충족"
    }
   }
  ]

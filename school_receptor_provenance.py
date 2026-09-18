@@ -91,6 +91,11 @@ GROUND_GRID_NOTE = (
     "실제 운동장 경계를 받으면 확정된다")
 GROUND_EXACT_NOTE = (
     "실제 운동장 경계 폴리곤 + 분석지점도 격자로 확정")
+GROUND_RASTER_NOTE = (
+    "격자 수·방위는 옥외체육장 분석지점도대로(칸마다 1점), **경계는 학교 위치 "
+    "배치도에서 계측**했다. 배치도는 운동장을 해치로 칠하므로 AL_D010 건물 "
+    "선화에 맞춰 축척·평행이동을 역산(1.270 m/화소)한 뒤 해치영역을 실좌표로 "
+    "읽었다. 위치는 도면대로지만 **래스터 계측 오차 ±3m** 가 남는다")
 
 GRADE_LABEL = {
     "A": "A 도면기준", "A-": "A− 도면기준(대응·제원 추론 포함)",
@@ -146,6 +151,8 @@ def classify(p) -> tuple[str, str, str]:
     if p.kind == "운동장 지반":
         if p.source.startswith("도면 경계"):
             return "A", "운동장 도면 경계 + 분석지점도 격자", GROUND_EXACT_NOTE
+        if p.source.startswith("배치도 경계"):
+            return "A-", "배치도 경계(래스터 계측) + 분석지점도 격자", GROUND_RASTER_NOTE
         if p.source.startswith("분석지점도 격자"):
             return "C+", "분석지점도 격자(경계는 추정)", GROUND_GRID_NOTE
         return "C", "옥외지반 근사", GROUND_NOTE
