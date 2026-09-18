@@ -22,6 +22,7 @@ from typing import Any, Iterable, Sequence
 from shapely import wkb
 from shapely.affinity import rotate, scale, translate
 from shapely.geometry import MultiPoint, Point, Polygon, mapping
+from shapely.geometry.polygon import orient
 from shapely.ops import unary_union
 from shapely.prepared import prep
 
@@ -209,12 +210,23 @@ def site_axes(site: Polygon) -> tuple[float, float]:
     return best_az, best_len
 
 
+MIN_WALL_SEG_M = 1.5   # 이보다 짧은 변은 벽면이 아니라 요철 모서리 연결부로 본다
+
+
 def make_receptors(
     schools: Sequence[dict[str, Any]], step_m: float = 5.0
 ) -> list[Receptor]:
     """학교 외벽을 따라 층별 교실 창면 수광점을 생성한다.
 
     겨울철 일조가 가능한 남향 계열(동향~남향~서향) 창면만 대상으로 한다.
+
+    바깥 법선은 외곽선 진행 방향(반시계로 통일)에서 기하학적으로 정한다 —
+    변 벡터를 -90° 돌리면 반시계 링에서는 항상 바깥이다(오목 요철이어도
+    성립하는 사실이다). 예전에는 '접선 0.5m 앞 지점이 폴리곤 안인가'로
+    판정했는데, 톱니처럼 짧은 변이 이어지는 학교 교사동(예: 여의도고 본관,
+    이빨 폭 3.45m)에서 그 탐침이 옆 이빨 속으로 떨어져 수광점이 통째로
+    건물 안에 박히는 사례가 있었다(49점, school_receptor_compliance 점검).
+    변 단위로 접선을 구하면 그런 옆 이빨 간섭이 애초에 없다.
     """
     receptors: list[Receptor] = []
     for row in schools:
@@ -223,32 +235,29 @@ def make_receptors(
         floors = max(1, row["floors"])
         label = f"{row['jibun']}"
         for polygon in polygons:
-            boundary = polygon.exterior
-            n_steps = max(4, int(boundary.length // step_m))
-            for k in range(n_steps):
-                distance = (k + 0.5) * boundary.length / n_steps
-                point = boundary.interpolate(distance)
-                ahead = boundary.interpolate(
-                    (distance + 0.5) % boundary.length
-                )
-                # 외벽 접선의 법선 중 폴리곤 바깥을 향하는 쪽
-                tx, ty = ahead.x - point.x, ahead.y - point.y
-                norm = math.hypot(tx, ty) or 1.0
-                nx, ny = ty / norm, -tx / norm
-                probe = Point(point.x + nx * 0.5, point.y + ny * 0.5)
-                if polygon.contains(probe):
-                    nx, ny = -nx, -ny
+            coords = list(orient(polygon, sign=1.0).exterior.coords)
+            for (x0, y0), (x1, y1) in zip(coords, coords[1:]):
+                ex, ey = x1 - x0, y1 - y0
+                seg_len = math.hypot(ex, ey)
+                if seg_len < MIN_WALL_SEG_M:
+                    continue
+                ex, ey = ex / seg_len, ey / seg_len
+                nx, ny = ey, -ex          # 반시계 링의 변을 -90° 돌리면 바깥
                 normal_az = math.degrees(math.atan2(nx, ny)) % 360
                 # 남향 계열(방위 90~270°)만 채택
                 if not 90.0 <= normal_az <= 270.0:
                     continue
-                px, py = point.x + nx * 0.4, point.y + ny * 0.4
-                for floor in range(1, floors + 1):
-                    receptors.append(Receptor(
-                        px, py,
-                        (floor - 1) * SCHOOL_FLOOR_H + SCHOOL_WINDOW_H,
-                        normal_az, label, floor,
-                    ))
+                n_pts = max(1, round(seg_len / step_m))
+                for k in range(n_pts):
+                    t = (k + 0.5) / n_pts * seg_len
+                    px = x0 + ex * t + nx * 0.4
+                    py = y0 + ey * t + ny * 0.4
+                    for floor in range(1, floors + 1):
+                        receptors.append(Receptor(
+                            px, py,
+                            (floor - 1) * SCHOOL_FLOOR_H + SCHOOL_WINDOW_H,
+                            normal_az, label, floor,
+                        ))
     return receptors
 
 

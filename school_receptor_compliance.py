@@ -27,8 +27,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Sequence
 
-from shapely.geometry import Polygon, shape
+from shapely.geometry import Point as ShPoint, Polygon, shape
 from shapely.ops import unary_union
+from shapely.prepared import prep
 
 import hwarang_massing_study as H
 import school_facade_receptors as SF
@@ -147,12 +148,37 @@ def school_grounds(sites: dict[str, Any], all_buildings, non_school,
             for j, (_g, pts) in out.items()}
 
 
+def drop_embedded(points: list[Point], receptors: list[H.Receptor],
+                  all_buildings) -> tuple[list[Point], list[H.Receptor], list[Point]]:
+    """건물 폴리곤 안에 박힌 창면 점을 골라낸다.
+
+    창면 점은 벽에서 0.4m 띄워 만든다 — 제 건물이든 남의 건물이든, 그 위치가
+    어떤 건물 안이라면 뜬 방향이 막혔거나(요철 이빨 옆으로 빠짐) 실제로는
+    창이 아니라 계단실·옥탑 같은 부속 구조물 자리라는 뜻이다(정면도가 없는
+    일반식 학교, 또는 부속 구조물이 AL_D010에 별도 필지로 잡혀 정면도 판독이
+    놓친 경우에 나온다). 운동장 지반 점은 벽 기준이 아니라 대상이 아니다.
+    """
+    blocked = prep(all_buildings)
+    kept_p, kept_r, dropped = [], [], []
+    for p, r in zip(points, receptors):
+        if p.kind == "교사동 창면" and blocked.contains(ShPoint(p.x, p.y)):
+            dropped.append(p)
+            continue
+        kept_p.append(p)
+        kept_r.append(r)
+    return kept_p, kept_r, dropped
+
+
 def build_points(schools: dict[str, list[dict[str, Any]]],
                  buildings: Sequence[dict[str, Any]], spec_all: dict[str, Any],
                  all_buildings, apron_m: float, user_pg: dict[str, Polygon],
                  pg_step_m: float,
-                 ) -> tuple[list[Point], list[H.Receptor], dict[str, Polygon]]:
-    """학교별 수광점 — 교사동 창면 + 운동장 지반."""
+                 ) -> tuple[list[Point], list[H.Receptor], dict[str, Polygon], list[Point]]:
+    """학교별 수광점 — 교사동 창면 + 운동장 지반.
+
+    반환값 네 번째가 `drop_embedded()` 로 걸러낸 무효점이다 — 몇 개가 어디서
+    빠졌는지 호출자가 보고할 수 있도록 남겨 둔다.
+    """
     points: list[Point] = []
     receptors: list[H.Receptor] = []
     grounds: dict[str, Polygon] = {}
@@ -225,7 +251,9 @@ def build_points(schools: dict[str, list[dict[str, Any]]],
             continue
         grounds[label] = pg
         add(rec, school, jibun, label, "지반", src, "운동장 지반")
-    return points, receptors, grounds
+
+    points, receptors, dropped = drop_embedded(points, receptors, all_buildings)
+    return points, receptors, grounds, dropped
 
 
 def build_context(buildings: Sequence[dict[str, Any]], centre, radius: float,
@@ -766,9 +794,15 @@ def main(argv: Sequence[str] | None = None) -> int:
             key = str(f["properties"].get("jibun")
                       or f["properties"].get("school"))
             user_pg[key] = shape(f["geometry"])
-    points, receptors, grounds = build_points(
+    points, receptors, grounds, dropped = build_points(
         schools, buildings, spec_all, all_buildings, args.apron, user_pg,
         args.pg_step)
+    if dropped:
+        print(f"■ 건물 폴리곤 안에 박혀 제외한 창면 점 {len(dropped)}개 "
+              "(요철 이빨 간섭 또는 부속 구조물 자리 — 정면도 확인 권장)")
+        for jibun, group in group_rows(dropped, lambda p: (p.jibun, p.dong)):
+            print(f"   {jibun[0]} {jibun[1]:<22} {len(group)}개")
+        print()
 
     hwarang_now = apartment_prisms(buildings, HWARANG_JIBUN, "화랑 기존")
     hwarang_new = load_plan_prisms(args.hwarang, "화랑 신축(트랙B)")

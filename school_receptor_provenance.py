@@ -193,9 +193,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         data = json.loads(args.playground.read_text(encoding="utf-8"))
         for f in data["features"]:
             user_pg[str(f["properties"].get("jibun"))] = shape(f["geometry"])
-    points, _rec, grounds = build_points(schools, buildings, SF.load_spec(),
-                                         all_b, args.apron, user_pg,
-                                         args.pg_step)
+    points, _rec, grounds, dropped = build_points(schools, buildings, SF.load_spec(),
+                                                  all_b, args.apron, user_pg,
+                                                  args.pg_step)
+    if dropped:
+        print(f"[알림] 건물 폴리곤 안에 박혀 제외한 창면 점 {len(dropped)}개 "
+              "(school_receptor_compliance.drop_embedded)")
 
     feats: list[dict[str, Any]] = []
     for p in points:

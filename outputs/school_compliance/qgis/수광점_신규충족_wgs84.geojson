@@ -618,12 +618,12 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     126.93542478,
-     37.52298815
+     126.93542819,
+     37.52299028
     ]
    },
    "properties": {
-    "pid": "여의도여자고등학교 ②(5층) 4층-1",
+    "pid": "여의도여자고등학교 ②(5층) 4층-13",
     "school": "여의도여자고등학교",
     "jibun": "40-2",
     "kind": "교사동 창면",
@@ -633,16 +633,16 @@
     "source": "일반식",
     "z_m": 11.7,
     "normal_az": 141.8,
-    "s1_total_h": 1.83,
+    "s1_total_h": 2.0,
     "s1_cont_h": 1.5,
     "s1_pass_a": false,
     "s1_pass_b": false,
-    "s2_total_h": 2.0,
-    "s2_cont_h": 2.0,
+    "s2_total_h": 2.17,
+    "s2_cont_h": 2.17,
     "s2_pass_a": true,
     "s2_pass_b": false,
     "d_total_h": 0.17,
-    "d_cont_h": 0.5,
+    "d_cont_h": 0.67,
     "change_cd": "new_ok",
     "변화": "신규 충족"
    }

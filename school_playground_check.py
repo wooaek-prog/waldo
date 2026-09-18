@@ -71,8 +71,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     centre = unary_union([q.footprint for q in daegyo]).centroid
     schools = school_parcel_rows(buildings, centre, 600.0)
     all_b = unary_union([r["geom"] for r in buildings])
-    pts, _rec, _g = build_points(schools, buildings, SF.load_spec(), all_b,
-                                 60.0, {}, 8.0)
+    pts, _rec, _g, _dropped = build_points(schools, buildings, SF.load_spec(), all_b,
+                                           60.0, {}, 8.0)
     face = [p for p in pts if p.jibun == args.jibun and p.kind != "운동장 지반"]
 
     near_box = rect.buffer(55)

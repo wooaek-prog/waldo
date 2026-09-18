@@ -255,7 +255,7 @@ def setup(args) -> dict[str, Any]:
         data = json.loads(args.playground.read_text(encoding="utf-8"))
         for f in data["features"]:
             user_pg[str(f["properties"].get("jibun"))] = shape(f["geometry"])
-    points, receptors, grounds = build_points(
+    points, receptors, grounds, _dropped = build_points(
         schools, buildings, spec_all, all_b, args.apron, user_pg, args.pg_step)
 
     context, n_rec = build_context(buildings, d_centre, args.context_radius,
