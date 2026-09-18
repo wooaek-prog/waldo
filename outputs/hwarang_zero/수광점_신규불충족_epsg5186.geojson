@@ -406,44 +406,19 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194295.777,
-     547002.132
+     194286.417,
+     547010.449
     ]
    },
    "properties": {
-    "pid": "여의도여자고등학교 운동장-13",
+    "pid": "여의도여자고등학교 운동장-1",
     "school": "여의도여자고등학교",
     "kind": "운동장 지반",
     "dong": "여의도여자고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 1.83,
-    "s2_cont_h": 1.83,
-    "s2_pass_a": false,
-    "s1_pass_a": true,
-    "change_cd": "new_fail",
-    "변화": "신규 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194263.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-24",
-    "school": "여의도여자고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.17,
+    "s2_total_h": 2.67,
     "s2_cont_h": 1.67,
     "s2_pass_a": false,
     "s1_pass_a": true,
@@ -456,67 +431,17 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194279.777,
-     547010.132
+     194280.809,
+     547017.626
     ]
    },
    "properties": {
-    "pid": "여의도여자고등학교 운동장-26",
+    "pid": "여의도여자고등학교 운동장-2",
     "school": "여의도여자고등학교",
     "kind": "운동장 지반",
     "dong": "여의도여자고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.33,
-    "s2_cont_h": 1.17,
-    "s2_pass_a": false,
-    "s1_pass_a": true,
-    "change_cd": "new_fail",
-    "변화": "신규 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194287.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-27",
-    "school": "여의도여자고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "s2_total_h": 2.5,
-    "s2_cont_h": 1.67,
-    "s2_pass_a": false,
-    "s1_pass_a": true,
-    "change_cd": "new_fail",
-    "변화": "신규 불충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194279.777,
-     547018.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-40",
-    "school": "여의도여자고등학교",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "s2_total_h": 3.83,
     "s2_cont_h": 1.83,
@@ -531,19 +456,144 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194255.777,
-     547066.132
+     194265.244,
+     547005.465
     ]
    },
    "properties": {
-    "pid": "여의도여자고등학교 운동장-105",
+    "pid": "여의도여자고등학교 운동장-14",
     "school": "여의도여자고등학교",
     "kind": "운동장 지반",
     "dong": "여의도여자고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 1.33,
+    "s2_total_h": 1.83,
+    "s2_cont_h": 1.5,
+    "s2_pass_a": false,
+    "s1_pass_a": true,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194263.069,
+     546992.208
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-19",
+    "school": "여의도여자고등학교",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "s2_total_h": 0.83,
+    "s2_cont_h": 0.5,
+    "s2_pass_a": false,
+    "s1_pass_a": true,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194257.462,
+     546999.385
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-20",
+    "school": "여의도여자고등학교",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "s2_total_h": 1.83,
+    "s2_cont_h": 1.33,
+    "s2_pass_a": false,
+    "s1_pass_a": true,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194251.855,
+     547006.562
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-21",
+    "school": "여의도여자고등학교",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "s2_total_h": 2.67,
+    "s2_cont_h": 1.83,
+    "s2_pass_a": false,
+    "s1_pass_a": true,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194255.287,
+     546986.128
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-25",
+    "school": "여의도여자고등학교",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "s2_total_h": 1.17,
+    "s2_cont_h": 1.0,
+    "s2_pass_a": false,
+    "s1_pass_a": true,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194249.679,
+     546993.305
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-26",
+    "school": "여의도여자고등학교",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "s2_total_h": 1.67,
     "s2_cont_h": 1.17,
     "s2_pass_a": false,
     "s1_pass_a": true,
@@ -556,20 +606,20 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194263.777,
-     547138.132
+     194244.072,
+     547000.481
     ]
    },
    "properties": {
-    "pid": "여의도여자고등학교 운동장-139",
+    "pid": "여의도여자고등학교 운동장-27",
     "school": "여의도여자고등학교",
     "kind": "운동장 지반",
     "dong": "여의도여자고등학교 운동장",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 1.5,
+    "s2_total_h": 2.33,
+    "s2_cont_h": 1.67,
     "s2_pass_a": false,
     "s1_pass_a": true,
     "change_cd": "new_fail",

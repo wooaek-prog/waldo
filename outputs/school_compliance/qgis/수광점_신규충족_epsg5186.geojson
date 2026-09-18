@@ -652,31 +652,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194215.777,
-     546994.132
+     194278.634,
+     547004.369
     ]
    },
    "properties": {
-    "pid": "여의도여자고등학교 운동장-2",
+    "pid": "여의도여자고등학교 운동장-7",
     "school": "여의도여자고등학교",
     "jibun": "40-2",
     "kind": "운동장 지반",
     "dong": "여의도여자고등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.0,
-    "s1_cont_h": 1.83,
+    "s1_total_h": 2.67,
+    "s1_cont_h": 1.17,
     "s1_pass_a": false,
     "s1_pass_b": false,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 3.5,
+    "s2_total_h": 3.33,
+    "s2_cont_h": 3.17,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 1.5,
-    "d_cont_h": 1.67,
+    "d_total_h": 0.66,
+    "d_cont_h": 2.0,
     "change_cd": "new_ok",
     "변화": "신규 충족"
    }
@@ -686,19 +686,427 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194223.777,
-     546994.132
+     194273.027,
+     547011.546
     ]
    },
    "properties": {
-    "pid": "여의도여자고등학교 운동장-3",
+    "pid": "여의도여자고등학교 운동장-8",
     "school": "여의도여자고등학교",
     "jibun": "40-2",
     "kind": "운동장 지반",
     "dong": "여의도여자고등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.83,
+    "s1_cont_h": 1.67,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 3.5,
+    "s2_cont_h": 3.17,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": -0.33,
+    "d_cont_h": 1.5,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194270.852,
+     546998.289
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-13",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.0,
+    "s1_cont_h": 1.83,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 4.0,
+    "s2_cont_h": 3.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 2.0,
+    "d_cont_h": 2.0,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194238.465,
+     547007.658
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-28",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.33,
+    "s1_cont_h": 1.83,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 4.67,
+    "s2_cont_h": 3.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.34,
+    "d_cont_h": 2.0,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194247.504,
+     546980.048
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-31",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.17,
+    "s1_cont_h": 1.5,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 5.0,
+    "s2_cont_h": 4.67,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 2.83,
+    "d_cont_h": 3.17,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194241.897,
+     546987.224
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-32",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.0,
+    "s1_cont_h": 1.5,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 5.0,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 2.0,
+    "d_cont_h": 2.83,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194236.29,
+     546994.401
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-33",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.33,
+    "s1_cont_h": 1.5,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 5.0,
+    "s2_cont_h": 4.17,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.67,
+    "d_cont_h": 2.67,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194230.683,
+     547001.578
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-34",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.33,
+    "s1_cont_h": 1.5,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 4.67,
+    "s2_cont_h": 3.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.34,
+    "d_cont_h": 2.33,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194225.076,
+     547008.755
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-35",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.33,
+    "s1_cont_h": 1.33,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 4.5,
+    "s2_cont_h": 3.67,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.17,
+    "d_cont_h": 2.34,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194219.468,
+     547015.931
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-36",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.5,
+    "s1_cont_h": 1.33,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 4.33,
+    "s2_cont_h": 3.5,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 0.83,
+    "d_cont_h": 2.17,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194239.722,
+     546973.967
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-37",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 1.83,
+    "s1_cont_h": 1.33,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 4.83,
+    "s2_cont_h": 4.33,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 3.0,
+    "d_cont_h": 3.0,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194234.114,
+     546981.144
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-38",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 2.67,
+    "s1_cont_h": 1.5,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 4.67,
+    "s2_cont_h": 4.0,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 2.0,
+    "d_cont_h": 2.5,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194228.507,
+     546988.321
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-39",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "normal_az": 180.0,
+    "s1_total_h": 3.33,
+    "s1_cont_h": 1.67,
+    "s1_pass_a": false,
+    "s1_pass_b": false,
+    "s2_total_h": 4.83,
+    "s2_cont_h": 3.83,
+    "s2_pass_a": true,
+    "s2_pass_b": true,
+    "d_total_h": 1.5,
+    "d_cont_h": 2.16,
+    "change_cd": "new_ok",
+    "변화": "신규 충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     194222.9,
+     546995.498
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 운동장-40",
+    "school": "여의도여자고등학교",
+    "jibun": "40-2",
+    "kind": "운동장 지반",
+    "dong": "여의도여자고등학교 운동장",
+    "facade": "지반",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
     "s1_total_h": 3.33,
@@ -720,722 +1128,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194231.777,
-     546994.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-4",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.67,
-    "s1_cont_h": 1.33,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 5.0,
-    "s2_cont_h": 4.0,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.33,
-    "d_cont_h": 2.67,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547002.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-6",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 2.67,
-    "s1_cont_h": 1.83,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 3.0,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.16,
-    "d_cont_h": 1.17,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547002.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-7",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.17,
-    "s1_cont_h": 1.83,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.16,
-    "d_cont_h": 1.5,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547002.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-8",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.0,
-    "s1_cont_h": 1.5,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.17,
-    "d_cont_h": 1.83,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547002.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-9",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 1.33,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 3.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.17,
-    "d_cont_h": 2.34,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547002.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-10",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.67,
-    "s1_cont_h": 1.5,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 3.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.16,
-    "d_cont_h": 2.33,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547002.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-11",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 1.83,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.83,
-    "s2_cont_h": 4.0,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.5,
-    "d_cont_h": 2.17,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194287.777,
-     547002.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-12",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 2.0,
-    "s1_cont_h": 1.33,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.17,
-    "d_cont_h": 1.84,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-14",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 2.33,
-    "s1_cont_h": 1.83,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 2.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.84,
-    "d_cont_h": 0.84,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194191.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-15",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 2.67,
-    "s1_cont_h": 1.83,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.0,
-    "d_cont_h": 1.0,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194199.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-16",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.0,
-    "s1_cont_h": 1.83,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.0,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.0,
-    "d_cont_h": 1.34,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-17",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.0,
-    "s1_cont_h": 1.5,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.0,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.0,
-    "d_cont_h": 1.67,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-18",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 1.5,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.17,
-    "s2_cont_h": 3.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.84,
-    "d_cont_h": 2.0,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-19",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.33,
-    "s1_cont_h": 1.33,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 3.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.17,
-    "d_cont_h": 2.34,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194231.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-20",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.67,
-    "s1_cont_h": 1.67,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.67,
-    "s2_cont_h": 3.83,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.0,
-    "d_cont_h": 2.16,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194239.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-21",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.5,
-    "s1_cont_h": 1.83,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.5,
-    "s2_cont_h": 3.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 1.0,
-    "d_cont_h": 1.84,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194271.777,
-     547010.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-25",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.5,
-    "s1_cont_h": 1.67,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.17,
-    "d_cont_h": 1.66,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547018.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-30",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 2.83,
-    "s1_cont_h": 1.67,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.67,
-    "s2_cont_h": 2.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.84,
-    "d_cont_h": 1.0,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194207.777,
-     547018.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-31",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.17,
-    "s1_cont_h": 1.5,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.83,
-    "s2_cont_h": 3.17,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.66,
-    "d_cont_h": 1.67,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194215.777,
-     547018.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-32",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.67,
-    "s1_cont_h": 1.5,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.33,
-    "s2_cont_h": 3.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.66,
-    "d_cont_h": 2.0,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194223.777,
-     547018.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-33",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.67,
-    "s1_cont_h": 1.5,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 4.0,
-    "s2_cont_h": 3.33,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.33,
-    "d_cont_h": 1.83,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194311.777,
-     547018.132
+     194217.293,
+     547002.674
     ]
    },
    "properties": {
@@ -1446,19 +1140,19 @@
     "dong": "여의도여자고등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 1.0,
-    "s1_cont_h": 1.0,
+    "s1_total_h": 3.5,
+    "s1_cont_h": 1.67,
     "s1_pass_a": false,
     "s1_pass_b": false,
-    "s2_total_h": 3.0,
-    "s2_cont_h": 2.5,
+    "s2_total_h": 4.5,
+    "s2_cont_h": 3.5,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 2.0,
-    "d_cont_h": 1.5,
+    "d_total_h": 1.0,
+    "d_cont_h": 1.83,
     "change_cd": "new_ok",
     "변화": "신규 충족"
    }
@@ -1468,8 +1162,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194175.777,
-     547026.132
+     194211.686,
+     547009.851
     ]
    },
    "properties": {
@@ -1480,121 +1174,19 @@
     "dong": "여의도여자고등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 2.67,
+    "s1_total_h": 3.17,
     "s1_cont_h": 1.5,
     "s1_pass_a": false,
     "s1_pass_b": false,
-    "s2_total_h": 3.5,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.83,
-    "d_cont_h": 1.0,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194183.777,
-     547026.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-43",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.0,
-    "s1_cont_h": 1.67,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.33,
-    "s2_cont_h": 2.0,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": 0.33,
-    "d_cont_h": 0.33,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194279.777,
-     547026.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-52",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 3.5,
-    "s1_cont_h": 1.67,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 2.67,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.33,
-    "d_cont_h": 1.0,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194319.777,
-     547026.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-53",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 1.67,
-    "s1_cont_h": 1.67,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.5,
+    "s2_total_h": 4.17,
     "s2_cont_h": 3.33,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 1.83,
-    "d_cont_h": 1.66,
+    "d_total_h": 1.0,
+    "d_cont_h": 1.83,
     "change_cd": "new_ok",
     "변화": "신규 충족"
    }
@@ -1604,65 +1196,31 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     194271.777,
-     547034.132
+     194203.903,
+     547003.771
     ]
    },
    "properties": {
-    "pid": "여의도여자고등학교 운동장-64",
+    "pid": "여의도여자고등학교 운동장-48",
     "school": "여의도여자고등학교",
     "jibun": "40-2",
     "kind": "운동장 지반",
     "dong": "여의도여자고등학교 운동장",
     "facade": "지반",
     "floor": 0,
-    "source": "옥외지반 근사",
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
     "z_m": 0.0,
     "normal_az": 180.0,
-    "s1_total_h": 3.67,
-    "s1_cont_h": 1.5,
-    "s1_pass_a": false,
-    "s1_pass_b": false,
-    "s2_total_h": 3.17,
-    "s2_cont_h": 2.5,
-    "s2_pass_a": true,
-    "s2_pass_b": true,
-    "d_total_h": -0.5,
-    "d_cont_h": 1.0,
-    "change_cd": "new_ok",
-    "변화": "신규 충족"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     194319.777,
-     547042.132
-    ]
-   },
-   "properties": {
-    "pid": "여의도여자고등학교 운동장-80",
-    "school": "여의도여자고등학교",
-    "jibun": "40-2",
-    "kind": "운동장 지반",
-    "dong": "여의도여자고등학교 운동장",
-    "facade": "지반",
-    "floor": 0,
-    "source": "옥외지반 근사",
-    "z_m": 0.0,
-    "normal_az": 180.0,
-    "s1_total_h": 1.83,
+    "s1_total_h": 3.0,
     "s1_cont_h": 1.83,
     "s1_pass_a": false,
     "s1_pass_b": false,
-    "s2_total_h": 2.83,
-    "s2_cont_h": 2.83,
+    "s2_total_h": 4.17,
+    "s2_cont_h": 3.17,
     "s2_pass_a": true,
     "s2_pass_b": true,
-    "d_total_h": 1.0,
-    "d_cont_h": 1.0,
+    "d_total_h": 1.17,
+    "d_cont_h": 1.34,
     "change_cd": "new_ok",
     "변화": "신규 충족"
    }
