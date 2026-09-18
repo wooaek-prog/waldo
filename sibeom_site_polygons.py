@@ -59,16 +59,24 @@ class Transform:
         return [self(x, y) for x, y in pts]
 
 
+MIN_PART_M2 = 5.0           # 이보다 작은 조각은 위상 부스러기로 본다
+
+
 def parts(geom) -> list[Polygon]:
     """조각난 매스를 낱개로 편다.
 
     모델링 배치도의 윙은 한 화소짜리 목으로 이어질 때가 있다. 외곽선을 8방향
     으로 따면 그 목이 한 점에서만 닿아 `buffer(0)` 이 MultiPolygon 을 낸다.
-    조각은 수십 ㎡ 짜리 실제 건물이므로 버리지 않고 각각 낸다.
+    조각은 39~96㎡ 짜리 실제 건물이므로 버리지 않고 각각 낸다. 다만 링이 제
+    자신과 스치는 자리에서 생기는 1㎡ 미만짜리는 건물이 아니라 부스러기다.
     """
     if geom.geom_type == "MultiPolygon":
-        return sorted(geom.geoms, key=lambda g: -g.area)
+        return [g for g in sorted(geom.geoms, key=lambda g: -g.area)
+                if g.area >= MIN_PART_M2]
     return [geom]
+
+
+TYPICAL_STOREY_M = 3.20     # 기준층 층고. 감층분을 뺄 때 쓴다
 
 
 def height_table(spec: dict[str, Any], dongs: dict[str, Any],
@@ -84,6 +92,24 @@ def height_table(spec: dict[str, Any], dongs: dict[str, Any],
         for f, h in tbl.items():
             out.setdefault((dong, int(f)), (float(h), "층고규칙 산정"))
     return out
+
+
+def lookup_height(heights: dict[tuple[str, int], tuple[float, str]],
+                  dong: str, floors: int, max_cut: int = 4,
+                  ) -> tuple[float | None, str]:
+    """감층된 층수는 제원표 값에서 기준층고를 빼서 낸다.
+
+    층고 규칙으로 새로 계산하지 않는다. 제원표 행마다 +0.20m 짜리 편차가
+    있어서, 빼기로 해야 그 동의 편차가 그대로 보존된다.
+    """
+    if (dong, floors) in heights:
+        return heights[(dong, floors)]
+    for k in range(1, max_cut + 1):
+        if (dong, floors + k) in heights:
+            h, src = heights[(dong, floors + k)]
+            return (round(h - TYPICAL_STOREY_M * k, 2),
+                    f"{src} {floors + k}층 −{TYPICAL_STOREY_M * k:.2f}m(감층)")
+    return None, "없음"
 
 
 def write_geojson(path: Path, feats: list[dict[str, Any]], to_wgs=None) -> None:
@@ -136,17 +162,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         from sibeom_model_plan import ModelTransform
         M = ModelTransform(plan)
         for b in plan["buildings"]:
-            key = (b["dong"], int(b["floors"]))
-            h, src = heights.get(key, (None, "없음"))
+            h, src = lookup_height(heights, b["dong"], int(b["floors"]))
             if h is None:
-                missing.append(key)
+                missing.append((b["dong"], int(b["floors"])))
             for poly in parts(Polygon(M.ring(b["ring_px"])).buffer(0)):
                 b_feats.append({"geometry": mapping(poly), "properties": {
                     "layer": "신축동", "dong": b["dong"],
                     "zone": "+".join(f"{n}F" for n in b["labels"])
                             if "labels" in b else f"{b['floors']}F",
-                    "floors": b["floors"], "height_m": h, "height_source": src,
-                    "ground_m": gl,
+                    "floors": b["floors"],
+                    "floors_drawn": b.get("floors_drawn", b["floors"]),
+                    "height_m": h, "height_source": src, "ground_m": gl,
                     "top_elev_m": None if h is None else round(gl + h, 2),
                     "area_m2": round(poly.area, 1)}})
     feats += b_feats
@@ -167,12 +193,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     with (args.outdir / "sibeom_buildings.csv").open(
             "w", encoding="utf-8-sig", newline="") as fp:
         w = csv.writer(fp)
-        w.writerow(["레이어", "동", "구간", "층수", "건축물높이_m", "지반고_m",
-                    "최고표고_m", "건축면적_m2", "WKT_EPSG5186"])
+        w.writerow(["레이어", "동", "구간", "층수", "감층전_층수", "건축물높이_m",
+                    "높이출처", "지반고_m", "최고표고_m", "건축면적_m2",
+                    "WKT_EPSG5186"])
         for f, g in ((f, Polygon(f["geometry"]["coordinates"][0])) for f in feats):
             q = f["properties"]
             w.writerow([q["layer"], q.get("dong", ""), q.get("zone", ""),
-                        q.get("floors", ""), q.get("height_m", ""),
+                        q.get("floors", ""), q.get("floors_drawn", ""),
+                        q.get("height_m", ""), q.get("height_source", ""),
                         q.get("ground_m", ""), q.get("top_elev_m", ""),
                         q.get("area_m2", ""), g.wkt])
 
@@ -217,6 +245,36 @@ def main(argv: Sequence[str] | None = None) -> int:
             "치수선이 없어 배치도(그림 6-2) 선화에 등방 닮음으로 맞춰 축척을 얻었다.",
             "등방(가로·세로 같은 배율)으로 일치도 0.699 가 나온다는 사실 자체가",
             "도면이 늘어나 있지 않다는 증거다.",
+            "",
+        ]
+
+    cut = [q for q in b_feats
+           if q["properties"]["floors"] != q["properties"]["floors_drawn"]]
+    if cut:
+        fa = dongs.get("_floor_adjust", {})
+        lines += [
+            "## 감층 지시 반영 (-1F / -2F)",
+            "",
+            "주기 판의 빨간 점선 타원을 **적용**했다(2026-09-18 사용자 확정).",
+            "타원은 반투명 분홍으로 안을 칠하므로 밑에 깔린 색이 물든다 — 그 색조로",
+            "타원 내부를 화소 단위로 검출해, 어느 윙이 안에 드는지 눈대중 없이 갈랐다.",
+            "",
+            "| 동 | 감층 | 적용 범위 | 층수 | 건축물높이(m) |", "|---|---:|---|---|---:|",
+        ]
+        for d in sorted({q["properties"]["dong"] for q in cut}):
+            rr = [q["properties"] for q in cut if q["properties"]["dong"] == d]
+            lines.append(
+                f"| {d} | {fa['by_dong'][d]:+d}F | {fa['scope'][d]} | "
+                + " · ".join(f"{r['floors_drawn']}→{r['floors']}F" for r in rr)
+                + " | " + " · ".join(f"{r['height_m']:.2f}" for r in rr) + " |")
+        lines += [
+            "",
+            "감층 후 높이는 제원표 값에서 기준층고 3.20m 씩 뺐다. 층고 규칙으로 새로",
+            "계산하지 않은 이유는 제원표 행마다 +0.20m 짜리 편차가 있어서다 — 빼기로",
+            "하면 그 편차가 그대로 보존된다.",
+            "",
+            "제외 — " + ", ".join(fa.get("no_adjust", []))
+            + ". " + fa.get("no_adjust_reason", ""),
             "",
         ]
 

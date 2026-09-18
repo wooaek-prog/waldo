@@ -60,10 +60,18 @@ SNAP_PX = 2.0           # 판독표 at_px 와 성분 중심의 허용 거리. at
                         # 반올림한 값이라 0.71화소 안에 들어온다. 가장 가까운
                         # 두 성분이 6화소 떨어져 있어 2.0 이면 섞이지 않는다.
 
-# 사슬 정합 계수. 재계산은 --refit 으로 하고, 평소엔 이 값을 쓴다.
+# 사슬 정합 계수. 짙은 선화를 서로 맞춰 얻은 값이다.
 FIT_13_TO_15 = (1.5700, -58.00, -29.00)     # 축척, 평행이동 x, y
 FIT_15_TO_7 = (0.7200, 123.45, 15.25)       # 15.webp 를 90° 회전한 뒤
+FIT_14_TO_13 = (0.9375, -6.38, 6.00)        # 주기 판 → 주기 없는 판 (일치도 0.587)
 PLAN15_WIDTH = 853
+
+# 감층 지시 타원. 주기 판(14.png)에서 빨간 점선 타원은 반투명 분홍으로 안을
+# 칠하므로 밑에 깔린 색이 물든다. 그 색조를 잡으면 타원 안팎이 정확히 갈린다.
+TINT = ((255, 166, 124), (252, 211, 207))   # 물든 주황, 물든 흰색
+TINT_TOL = 16
+MIN_ELLIPSE_PX = 400
+IN_ELLIPSE_FRAC = 0.5       # 매스의 이만큼이 타원 안이면 '안'으로 본다
 
 
 # ── 화소 연산 (scipy 없이) ────────────────────────────────────────────────
@@ -252,6 +260,68 @@ def extract(im: Image.Image) -> tuple[np.ndarray, np.ndarray]:
     return district, fill_holes(keep)
 
 
+def ellipses(notes: Path) -> list[Any]:
+    """주기 판에서 감층 지시 타원을 찾아 폴리곤으로 돌려준다(14.png 화소).
+
+    타원은 볼록하므로 물든 화소 덩어리의 볼록껍질을 그대로 쓴다. 타원 안의
+    빨간 매스는 물들지 않아 구멍으로 남는데(빨강 위에는 분홍이 안 보인다),
+    그 구멍이 타원 테두리에 닿으면 구멍 메우기로는 못 채운다 — 볼록껍질은
+    그 문제를 통째로 피한다.
+    """
+    from shapely.geometry import MultiPoint
+    a = np.array(Image.open(notes).convert("RGB")).astype(int)
+    tint = np.zeros(a.shape[:2], bool)
+    for c in TINT:
+        tint |= np.abs(a - np.array(c)).max(2) <= TINT_TOL
+    m = erode(dilate(tint, 3), 3)
+    out = []
+    for c in components(m):
+        if len(c) >= MIN_ELLIPSE_PX:
+            out.append(MultiPoint([(int(x), int(y))
+                                   for y, x in c]).convex_hull)
+    return out
+
+
+def mark_ellipse(rows: list[dict[str, Any]], notes: Path) -> int:
+    """매스마다 감층 타원 안인지 표시하고, 타원 개수를 돌려준다."""
+    from shapely.geometry import Point
+    ells = ellipses(notes)
+    s, tx, ty = FIT_14_TO_13
+    for r in rows:
+        # 외곽선 화소가 아니라 링 꼭짓점으로 판정한다. 매스가 작아도 꼭짓점은
+        # 늘 여러 개라 과반 판정이 안정적이다.
+        pts = [Point((x - tx) / s, (y - ty) / s) for x, y in r["ring_px"]]
+        r["in_ellipse"] = any(
+            sum(1 for p in pts if e.contains(p)) >= len(pts) * IN_ELLIPSE_FRAC
+            for e in ells)
+    return len(ells)
+
+
+def apply_adjust(rows: list[dict[str, Any]], adj: dict[str, Any]) -> None:
+    """감층 지시를 층수에 반영한다. 지시와 도면이 어긋나면 중단한다."""
+    by_dong = adj.get("by_dong", {})
+    no_adjust = set(adj.get("no_adjust", []))
+    seen: dict[str, int] = {}
+    for r in rows:
+        r["floors_drawn"] = r["floors"]
+        if not r.get("in_ellipse"):
+            continue
+        if r["dong"] in no_adjust:
+            continue
+        if r["dong"] not in by_dong:
+            raise SystemExit(
+                f"{r['dong']} 매스가 감층 타원 안인데 _floor_adjust 에 없다. "
+                "by_dong 에 감층 층수를 적거나 no_adjust 에 넣어야 한다.")
+        d = int(by_dong[r["dong"]])
+        r["floors"] = r["floors"] + d
+        if "labels" in r:
+            r["labels"] = [n + d for n in r["labels"]]
+        seen[r["dong"]] = seen.get(r["dong"], 0) + 1
+    miss = sorted(set(by_dong) - set(seen))
+    if miss:
+        raise SystemExit(f"_floor_adjust 에 있으나 타원 안 매스가 없는 동: {miss}")
+
+
 def snap(blocks: list[dict[str, Any]], table: Sequence[dict[str, Any]],
          ) -> list[dict[str, Any]]:
     """판독표의 at_px 에 성분을 붙인다. 애매하면 즉시 중단한다."""
@@ -293,6 +363,9 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     p.add_argument("--check", type=Path, default=None,
                    help="배치도(15.webp). 주면 그 위에 추출 외곽선을 얹은 "
                         "검수도를 낸다 — 정합이 맞는지 눈으로 볼 수 있다")
+    p.add_argument("--notes", type=Path, default=None,
+                   help="주기 판(14.png). 주면 감층 지시 타원을 검출해 "
+                        "해당 매스의 층수를 내린다")
     return p.parse_args(argv)
 
 
@@ -332,6 +405,21 @@ def main(argv: Sequence[str] | None = None) -> int:
                        "cx": float(c[:, 1].mean()), "cy": float(c[:, 0].mean())})
     rows = snap(blocks, dongs["blocks"])
 
+    adj = dongs.get("_floor_adjust", {})
+    if args.notes:
+        n_ell = mark_ellipse(rows, args.notes)
+        apply_adjust(rows, adj)
+        cut = [r for r in rows if r["floors"] != r["floors_drawn"]]
+        print(f"   감층 타원 {n_ell}개 검출 · 층수를 내린 매스 {len(cut)}개")
+        for d in sorted({r["dong"] for r in cut}):
+            rr = [r for r in cut if r["dong"] == d]
+            print(f"      {d} {adj['by_dong'][d]:+d}F  "
+                  + " · ".join(f"{r['floors_drawn']}F→{r['floors']}F" for r in rr))
+    elif adj.get("applied"):
+        raise SystemExit(
+            "_floor_adjust.applied 가 켜져 있는데 --notes 를 안 줬다. "
+            "감층 지시를 반영하려면 주기 판(14.png)이 있어야 한다.")
+
     from shapely.geometry import Polygon
     from shapely.ops import unary_union
     site = Polygon(T.ring(simplify(outline(district), 1.2))).buffer(0)
@@ -363,6 +451,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.write:
         plan["buildings"] = [
             {"dong": r["dong"], "floors": r["floors"], "ring_px": r["ring_px"],
+             **({"floors_drawn": r["floors_drawn"]}
+                if r.get("floors_drawn", r["floors"]) != r["floors"] else {}),
              **({"labels": r["labels"]} if "labels" in r else {}),
              **({"merged": r["merged"]} if "merged" in r else {})}
             for r in rows]
