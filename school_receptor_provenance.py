@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """수광점의 **자료 근거 등급** – 도면 실측분과 추정분을 갈라 QGIS 로 낸다.
 
-수광점 1,823개가 모두 같은 근거로 만들어진 것이 아니다.
+수광점 1,659개가 모두 같은 근거로 만들어진 것이 아니다.
 
-    A 도면기준   사용자가 준 정면도·분석지점도에서 층고와 창 높이를 읽었다.
-    B 일반식     도면을 못 받아 층고 3.5m·창중심 1.2m·외벽 5m 등간격으로
-                 전부 가정했다.
-    C 운동장 근사 실제 운동장 경계가 아니라 옥외지반을 격자로 근사했다.
+    A 도면기준    사용자가 준 정면도·분석지점도에서 층고와 창 높이를 읽었다.
+    B 일반식      도면을 못 받아 층고 3.5m·창중심 1.2m·외벽 5m 등간격으로
+                  전부 가정했다.
+    C+ 운동장 격자 옥외체육장 분석지점도의 칸 수·방위는 도면대로지만 경계의
+                  위치·크기는 추정이다.
+    C 운동장 근사  분석지점도도 없어 옥외지반을 8m 격자로 근사했다.
 
 A 안에도 도면에서 읽은 값과 계측·추정한 값이 섞여 있어, 무엇을 추정했는지
 동별로 `추정항목` 에 적어 둔다. 결과를 QGIS 에서 등급별 색으로 볼 수 있게
@@ -82,16 +84,25 @@ GROUND_NOTE = (
     "실제 운동장 경계가 아님. 교사동에서 60m 이내 옥외지반 중 어느 건물에도 "
     "들지 않고 그 학교가 다른 어떤 건물보다 가까운 8m 격자점만 남겨 배정한 "
     "**근사 영역**이다. 실제 운동장 폴리곤을 주면 교체 가능")
+GROUND_GRID_NOTE = (
+    "분석지점도의 **격자 수·방위·배치는 도면대로** 재현했다(칸마다 1점). "
+    "다만 도면이 치수·좌표 없는 3D 뷰라 **경계 위치와 크기는 도면에서 읽을 수 "
+    "없어**, 그 학교 옥외지반에 들어가는 최대 내접 사각형으로 추정했다. "
+    "실제 운동장 경계를 받으면 확정된다")
+GROUND_EXACT_NOTE = (
+    "실제 운동장 경계 폴리곤 + 분석지점도 격자로 확정")
 
 GRADE_LABEL = {
     "A": "A 도면기준", "A-": "A− 도면기준(대응·제원 추론 포함)",
-    "B": "B 일반식(전부 추정)", "C": "C 운동장 근사",
+    "B": "B 일반식(전부 추정)",
+    "C+": "C+ 운동장 격자 도면·경계 추정", "C": "C 운동장 근사(격자도 추정)",
 }
 
 QML_CATS = [
     ("B", "B 일반식(전부 추정)", "214,40,40,255", 3.4),
     ("A-", "A− 도면기준(추론 포함)", "244,162,97,255", 3.0),
-    ("C", "C 운동장 근사", "150,150,150,255", 2.0),
+    ("C", "C 운동장 근사(격자도 추정)", "150,150,150,255", 2.0),
+    ("C+", "C+ 운동장 격자 도면·경계 추정", "233,196,106,255", 2.8),
     ("A", "A 도면기준", "42,157,143,255", 2.4),
 ]
 
@@ -133,6 +144,10 @@ def qml_style(attr: str, cats: Sequence[tuple[str, str, str, float]]) -> str:
 
 def classify(p) -> tuple[str, str, str]:
     if p.kind == "운동장 지반":
+        if p.source.startswith("도면 경계"):
+            return "A", "운동장 도면 경계 + 분석지점도 격자", GROUND_EXACT_NOTE
+        if p.source.startswith("분석지점도 격자"):
+            return "C+", "분석지점도 격자(경계는 추정)", GROUND_GRID_NOTE
         return "C", "옥외지반 근사", GROUND_NOTE
     if p.source == "일반식":
         return "B", "일반식(도면 없음)", GENERIC_NOTE
@@ -188,7 +203,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "z_m": round(p.z, 2), "normal_az": round(p.normal_az, 1),
                 "grade": grade, "근거등급": GRADE_LABEL[grade],
                 "근거": basis, "추정항목": note,
-                "estimated": grade in ("B", "C"),
+                "estimated": grade in ("B", "C", "C+"),
             }})
 
     def emit(stem: str, sel) -> int:
@@ -204,9 +219,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         return len(sub)
 
     n_all = emit("수광점_근거등급_전체", lambda q: True)
-    n_est = emit("수광점_추정만", lambda q: q["grade"] in ("B", "C"))
+    n_est = emit("수광점_추정만", lambda q: q["grade"] in ("B", "C", "C+"))
     n_b = emit("수광점_추정_일반식", lambda q: q["grade"] == "B")
-    n_c = emit("수광점_추정_운동장근사", lambda q: q["grade"] == "C")
+    n_c = emit("수광점_추정_운동장근사", lambda q: q["grade"].startswith("C"))
     n_a2 = emit("수광점_도면기준_추론포함", lambda q: q["grade"] == "A-")
 
     pg = polygon_features([(k, v, {"kind": "운동장(근사 영역)"})
@@ -228,11 +243,12 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     print("■ 수광점 자료 근거 등급")
     by = Counter((f["properties"]["grade"]) for f in feats)
-    for g in ("A", "A-", "B", "C"):
+    for g in ("A", "A-", "B", "C+", "C"):
         if by[g]:
             print(f"   {GRADE_LABEL[g]:<28} {by[g]:>5}개")
     print(f"   {'합계':<28} {len(feats):>5}개  "
-          f"(추정 B+C = {by['B']+by['C']}개, {(by['B']+by['C'])/len(feats)*100:.0f}%)")
+          f"(추정 B+C+ = {by['B']+by['C']+by['C+']}개, "
+          f"{(by['B']+by['C']+by['C+'])/len(feats)*100:.0f}%)")
 
     print("\n■ 동별")
     print(f"{'학교':<14}{'구분':<26}{'등급':<6}{'수광점':>6}  근거")

@@ -36,6 +36,7 @@ from daegyo_school_sunlight import (
     DAEGYO_JIBUN, HWARANG_JIBUN, apartment_prisms, load_named_buildings,
     resolved_height, school_label, school_parcel_rows,
 )
+import school_playground as PG
 from daegyo_school_hours import dong_labels, ground_receptors
 
 SCEN = {"S1": "대교 신축 + 화랑 기존", "S2": "대교 신축 + 화랑 신축(트랙B)"}
@@ -204,10 +205,18 @@ def build_points(schools: dict[str, list[dict[str, Any]]],
 
         # 운동장 지반(수평면)
         label = f"{school} 운동장"
+        pg_spec = PG.load_spec()
         if jibun in user_pg:
             pg = user_pg[jibun]
             rec = ground_receptors(pg, label, pg_step_m)
             src = "사용자 폴리곤"
+        elif jibun in pg_spec:
+            # 분석지점도 격자가 있는 학교 – 칸마다 한 점
+            area, _xy = approx[jibun]
+            if area is None:
+                continue
+            pg, rec, basis, _ = PG.build(jibun, area, pg_spec, label, pg_step_m)
+            src = basis
         else:
             pg, xy = approx[jibun]
             rec = [H.Receptor(x, y, 0.0, 180.0, label, 0, True) for x, y in xy]
