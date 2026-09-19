@@ -1003,6 +1003,11 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
                    help="채광 이격 배수(준주거 4배). 판정에만 쓰고 배제하지 않는다")
     p.add_argument("--budget", type=int, default=1800,
                    help="총 평가 예산(대략). 갈래별로 나눠 쓴다")
+    p.add_argument("--no-podium", action="store_true",
+                   help="저층부(포디움·별동) 갈래를 전부 빼고 순수 고층 "
+                        "단일/쌍둥이만 예산을 몰아서 훑는다")
+    p.add_argument("--az-step", type=float, default=15.0,
+                   help="1a 단계 방위 스캔 간격(도). 예산이 넉넉하면 좁힌다")
     return p.parse_args(argv)
 
 
@@ -1037,13 +1042,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     print(f"   참고(철거·미신축): 신규 불충족 {nf0} / 신규 충족 {ng0}\n")
 
     s = Search(ctx, args)
-    azimuths = [a * 15.0 for a in range(12)]
+    n_az = max(4, round(180.0 / args.az_step))
+    azimuths = [a * args.az_step for a in range(n_az)]
     floors_list = list(range(args.floors_min, args.floors_max + 1, 5))
     if args.floors_max not in floors_list:
         floors_list.append(args.floors_max)
 
-    # 갈래별 예산 배분. 저층부 갈래가 가장 넓어(저층부 크기·층수·위치 × 타워)
-    # 예산을 많이 준다.
     B = args.budget
     csv_path = args.outdir / "candidates.csv"
 
@@ -1051,33 +1055,51 @@ def main(argv: Sequence[str] | None = None) -> int:
         if s.rows:
             write_candidates(csv_path, s.rows)
 
-    # 1차 탐색에서 쌍둥이(2개동)가 단일보다 뚜렷이 나빠(49 대 34) 예산을 줄이고,
-    # 저층부 계열에 몰아 준다.
-    # 종전 검토('zero-newfail' 42층+저층부)를 씨앗으로 먼저 넣는다. 탐색이
-    # 그보다 못한 해를 내놓는 일이 없도록 하는 안전판이고, 미세조정 단계가
-    # 그 부근을 다시 훑게 하는 출발점이기도 하다.
-    prev = [Design("단일+저층부",
-                   (Tower(299.4, 3.906, 166.5, 194309.2, 546962.7, 42),),
-                   Podium(2800.0, 1.6, 52.0, 194295.2, 546944.7, 10))]
-    seeded = s.sweep("0 종전안", prev, 5)
-    single = family_single(s, azimuths, floors_list, int(B * 0.13)) + seeded
-    save()
-    pod = family_podium(s, single, floors_list, int(B * 0.24))
-    save()
-    det = family_detached(s, single, floors_list, int(B * 0.22))
-    save()
-    twin = family_twin(s, single, floors_list, int(B * 0.08))
-    save()
-    twinpod = family_twin_podium(s, twin, pod, int(B * 0.16))
-    save()
-    allrows = single + pod + det + twin + twinpod
-    if not allrows:
-        raise SystemExit("배치 가능한 후보가 없습니다.")
-    # 미세조정은 두 번 돈다 — 1차로 좋아진 해를 씨앗으로 다시 좁힌다.
-    allrows += refine(s, allrows, int(B * 0.11), n_seeds=4)
-    save()
-    allrows += refine(s, allrows, int(B * 0.06), n_seeds=2)
-    save()
+    if args.no_podium:
+        # 저층부를 아예 금지 — 순수 고층 단일/쌍둥이만 본다. 저층부 갈래가
+        # 먹던 예산을 전부 이쪽에 몰아주고, 미세조정도 세 번 돈다.
+        print("■ 저층부 금지 모드 — 단일·쌍둥이 고층안만 탐색")
+        single = family_single(s, azimuths, floors_list, int(B * 0.32))
+        save()
+        twin = family_twin(s, single, floors_list, int(B * 0.20))
+        save()
+        allrows = single + twin
+        if not allrows:
+            raise SystemExit("배치 가능한 후보가 없습니다.")
+        allrows += refine(s, allrows, int(B * 0.24), n_seeds=4)
+        save()
+        allrows += refine(s, allrows, int(B * 0.14), n_seeds=3)
+        save()
+        allrows += refine(s, allrows, int(B * 0.10), n_seeds=2)
+        save()
+    else:
+        # 1차 탐색에서 쌍둥이(2개동)가 단일보다 뚜렷이 나빠(49 대 34) 예산을
+        # 줄이고 저층부 계열에 몰아 준다.
+        # 종전 검토('zero-newfail' 42층+저층부)를 씨앗으로 먼저 넣는다. 탐색이
+        # 그보다 못한 해를 내놓는 일이 없도록 하는 안전판이고, 미세조정 단계가
+        # 그 부근을 다시 훑게 하는 출발점이기도 하다.
+        prev = [Design("단일+저층부",
+                       (Tower(299.4, 3.906, 166.5, 194309.2, 546962.7, 42),),
+                       Podium(2800.0, 1.6, 52.0, 194295.2, 546944.7, 10))]
+        seeded = s.sweep("0 종전안", prev, 5)
+        single = family_single(s, azimuths, floors_list, int(B * 0.13)) + seeded
+        save()
+        pod = family_podium(s, single, floors_list, int(B * 0.24))
+        save()
+        det = family_detached(s, single, floors_list, int(B * 0.22))
+        save()
+        twin = family_twin(s, single, floors_list, int(B * 0.08))
+        save()
+        twinpod = family_twin_podium(s, twin, pod, int(B * 0.16))
+        save()
+        allrows = single + pod + det + twin + twinpod
+        if not allrows:
+            raise SystemExit("배치 가능한 후보가 없습니다.")
+        # 미세조정은 두 번 돈다 — 1차로 좋아진 해를 씨앗으로 다시 좁힌다.
+        allrows += refine(s, allrows, int(B * 0.11), n_seeds=4)
+        save()
+        allrows += refine(s, allrows, int(B * 0.06), n_seeds=2)
+        save()
 
     # 갈래별 최우수
     print("\n" + "=" * 92)
