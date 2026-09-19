@@ -18,7 +18,8 @@
 | `hwarang_height_sweep.py` | 화랑 – 층수 40~120층 일조·조망 성능 스윕 | 〃 |
 | `hwarang_legal_optimum.py` | 화랑 – 채광 이격(준주거 4배) 충족 범위 내 일조 최적 | 〃 |
 | `hwarang_birdseye.py` | 화랑 확정안 조감도(축측투영, 동지일 그림자) | 〃 |
-| `hwarang_design_2026.py` | **[설계안 다안 비교]** 화랑 – 신규 불충족 최소 5갈래 탐색(`--no-podium`으로 순수 고층만) | [다안 비교](docs/hwarang_design_2026.md) · [순수 고층안](docs/hwarang_nopodium_2026.md) |
+| `hwarang_design_2026.py` | **[설계안 다안 비교]** 화랑 – 신규 불충족 최소 5갈래 탐색(`--no-podium` 순수 고층 · `--floors-max 20` 저층 · `--require-daylight` 채광이격 충족안만) | [다안 비교](docs/hwarang_design_2026.md) · [순수 고층안](docs/hwarang_nopodium_2026.md) · [20층 이하·최소 건폐율](docs/hwarang_20f_2026.md) |
+| `hwarang_lowrise_bcr.py` | 화랑 – 층수별 건폐율 산술 하한(용적률 400% 고정, 일조 계산 없음) | [20층 이하·최소 건폐율](docs/hwarang_20f_2026.md) |
 | `hwarang_plan_2026.py` | 화랑 설계안 배치도(산출 GeoJSON → SVG·PNG) | 〃 |
 | `apartment_attribution.py` | 대교·시범 신축+화랑 현상태 – 수광점 불충족 원인 아파트 세분화 | [원인 분해 보고서](docs/apartment_attribution.md) |
 | `school_site_map.py` | 학교 위치 배치도 좌표등록 → 운동장 해치영역 경계 추출 | [근거 등급 문서](docs/school_receptor_provenance.md) |
@@ -565,6 +566,43 @@ python3 apartment_attribution.py --buildings <AL_D010.gpkg>
 배치가 재건축 최적안보다 두 운동장에 더 나쁩니다.**
 
 [docs/apartment_attribution.md](docs/apartment_attribution.md) 참조.
+
+
+## 20층 이하 소규모재건축 – 최소 건폐율로 용적률 400%
+
+21층 이상이면 교육환경평가 대상이 되므로 **20층으로 고정**하고, 건폐율을
+최대한 낮추면서 용적률 400%를 채우는 안을 찾았습니다.
+
+```bash
+python3 hwarang_lowrise_bcr.py                      # 층수별 건폐율 하한
+python3 hwarang_design_2026.py --buildings <AL_D010.gpkg> --no-podium \
+    --floors-min 20 --floors-max 20 --floors-step 1 \
+    --aspects 1.5 2 2.5 3 4 5 6 7 --az-step 5 --budget 1500 \
+    --require-daylight --outdir outputs/hwarang_20f_legal_2026
+```
+
+**건폐율은 설계로 낮추는 게 아니라 층수가 정합니다.** 연면적이 37,580㎡로
+고정이면 20층에서 기준층이 1,879㎡ 이고, 여기에 둘레 여유(사방 0.5m)가
+붙어 건폐율은 **20.93~21.48% 안에서만** 움직입니다. 저층부를 두거나 2개동으로
+나누면 오히려 올라갑니다. 층수를 낮추면 하한이 그대로 올라갑니다(19층
+22.01%, 18층 23.21%).
+
+**권장안은 20층 단일동 50.8×37.0m(방위 54°) · 건폐율 20.95%** 입니다 —
+탐색한 충족 후보 1,069개의 최소치(20.94%)와 0.01%p 차이, 사실상 산술적
+하한입니다. 채광이격(높이의 1/4 = 15.75m)을 17.15m로 충족합니다.
+
+일조를 더 챙긴 배치(신규 불충족 54, 건폐율 21.01%)도 있지만 남동쪽 장변이
+대지경계에서 3.03m 밖에 안 떨어져 **채광이격을 못 지킵니다.** 20층 안은
+교육환경평가 대상외라 신규 불충족에 법적 구속력이 없고 채광이격에는 있으므로,
+권장안은 이격 충족안으로 했습니다 — 고층안에서 우선순위가 정반대였던 것과
+뒤집힙니다.
+
+이번에 **인동간격 검사**(`--dong-gap`, 건축법 시행령 86조 3항 2호)를 넣었습니다.
+검사 전에는 두 판을 **0.24m** 띄운 안이 '쌍둥이 최우수'로 뽑혔습니다 — 겹치지만
+않으면 통과였기 때문입니다. 63.0m 높이면 장변끼리 31.5m가 필요한데 대지 단변이
+76.5m라 나란히 세우는 2개동은 6.4m 모자라 성립하지 않습니다.
+
+[docs/hwarang_20f_2026.md](docs/hwarang_20f_2026.md) 참조.
 
 
 ---

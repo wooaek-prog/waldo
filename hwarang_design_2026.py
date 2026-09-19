@@ -292,6 +292,57 @@ def facade_gap(site: Polygon, mass, samples: int = 9) -> float:
     return 0.0 if worst == float("inf") else worst
 
 
+SIDE_WALL_GAP_M = 4.0       # 측벽과 측벽이 마주보는 경우
+BLIND_WALL_GAP_M = 8.0      # 채광창 없는 벽면과 측벽이 마주보는 경우
+
+
+def dong_gap(a, b, multiple: float) -> tuple[float, float, str]:
+    """두 동 사이의 실제 수평거리와 법정 최소거리.
+
+    건축법 시행령 제86조 제3항 제2호 — 같은 대지에서 두 동이 마주보는 경우
+    **채광창이 있는 벽면**(여기선 장변)끼리면 각 부분 높이의 0.5배,
+    측벽끼리면 4m, 채광창 없는 벽면과 측벽이면 8m 이상이다.
+
+    마주봄의 판정은 **장변 방향으로 서로 겹치는지**로 한다 — 나란히 선 두
+    판은 장변끼리 마주보고(0.5배), 일렬로 선 두 판은 측벽끼리 마주본다(4m).
+    방위가 15°를 넘게 다르면 어느 쪽이든 장변이 상대를 보게 되므로 0.5배를
+    적용한다(안전측).
+    """
+    oa, ob = a.outline(), b.outline()
+    dist = oa.distance(ob)
+    h = max(a.top_m(), b.top_m())
+    if abs((a.azimuth - b.azimuth + 90) % 180 - 90) > 15.0:
+        return dist, multiple * h, "장변 마주봄(방위 어긋남)"
+    az = math.radians(a.azimuth)
+    ux, uy = math.sin(az), math.cos(az)          # 장변 방향
+    vx, vy = math.cos(az), -math.sin(az)         # 단변 방향
+    def span(poly, px, py):
+        t = [x * px + y * py for x, y in poly.exterior.coords]
+        return min(t), max(t)
+    au, bu = span(oa, ux, uy), span(ob, ux, uy)
+    av, bv = span(oa, vx, vy), span(ob, vx, vy)
+    if min(au[1], bu[1]) - max(au[0], bu[0]) > 0.0:
+        return dist, multiple * h, "장변끼리 마주봄"
+    if min(av[1], bv[1]) - max(av[0], bv[0]) > 0.0:
+        return dist, SIDE_WALL_GAP_M, "측벽끼리 마주봄"
+    return dist, SIDE_WALL_GAP_M, "대각 배치"
+
+
+def dong_gap_ok(design: Design, multiple: float) -> bool:
+    if multiple <= 0.0:
+        return True
+    ms = design.masses()
+    for i in range(len(ms)):
+        for j in range(i + 1, len(ms)):
+            if design.podium is not None and not design.detached and (
+                    ms[i] is design.podium or ms[j] is design.podium):
+                continue                 # 타워가 저층부 위에 얹힌 경우는 한 동
+            dist, need, _ = dong_gap(ms[i], ms[j], multiple)
+            if dist < need - 1e-6:
+                return False
+    return True
+
+
 def daylight_ratio(site: Polygon, design: Design) -> float:
     """채광 이격 여유율 = min(이격 x 배수 / 높이). 1.0 이상이면 충족."""
     worst = float("inf")
@@ -420,7 +471,17 @@ class Search:
             a, b = d.towers[0].outline(), d.towers[1].outline()
             if a.intersects(b):
                 return False
+        # 안 겹치는 것만으로는 2개동이 되지 않는다 — 법정 인동간격을 본다.
+        # (이 검사가 없으면 0.2m 틈으로 갈라 놓은 한 덩어리가 '쌍둥이'로 뽑힌다)
+        if not dong_gap_ok(d, self.args.dong_gap):
+            return False
         if d.coverage_m2() > ctx["max_cover"]:
+            return False
+        if self.args.require_daylight and (
+                daylight_ratio(ctx["site"], d) * self.args.daylight_multiple
+                < 1.0):
+            # 채광이격을 랭킹에 맡기면 탐색이 거의 안 간다 — 충족안만 보고
+            # 싶을 땐 아예 걸러 낸다. 일조 계산 전이라 비용은 거의 없다.
             return False
         return True
 
@@ -493,8 +554,21 @@ class Search:
         return got
 
 
+RANK_MODE = "일조"
+
+
 def rank(r: dict[str, Any]) -> tuple:
-    """우선순위: ① 신규 불충족 최소 ② 층수 최대 ③ 평균 일조 최대."""
+    """후보 정렬 기준.
+
+    ``일조`` (기본)  ① 신규 불충족 최소 ② 층수 최대 ③ 평균 일조 최대
+    ``건폐율``       ① 건폐율 최소 ② 신규 불충족 최소 ③ 평균 일조 최대
+
+    층수 상한이 낮으면(예: 20층) 연면적이 고정이라 건폐율이 산술적으로 거의
+    한 점에 묶인다. 그때는 건폐율을 1순위로 두어도 동률이 잔뜩 생기므로,
+    2·3순위가 실제로 안을 고른다.
+    """
+    if RANK_MODE == "건폐율":
+        return (round(r["bcr_pct"], 2), r["new_fail"], -r["mean_total_h"])
     return (r["new_fail"], -r["top_floors"], -r["mean_total_h"])
 
 
@@ -504,8 +578,24 @@ def family_single(s: Search, azimuths, floors_list, budget: int
     """단일 타워. 방위·위치를 먼저 훑고, 그 부근에서 층수·세장비를 훑는다."""
     ctx, args = s.ctx, s.args
     print("■ 갈래 1 — 단일 타워")
-    probe_f, probe_a = 45, 2.5
+    # 탐침(1a)은 층수·세장비를 하나로 고정하고 방위·위치만 본다. 그 하나를
+    # 상수로 박아 두면 층수 상한이 낮은 탐색(예: 20층 이하)에서 탐침 자체가
+    # 성립하지 않아 후보가 0이 된다 — 반드시 실제 탐색 범위에서 고른다.
+    floors_sorted = sorted(floors_list)
+    probe_f = floors_sorted[len(floors_sorted) // 2]
+    asp_sorted = sorted(args.aspects)
+    probe_a = min(asp_sorted, key=lambda a: abs(
+        a - asp_sorted[len(asp_sorted) // 2]))
     plate = ctx["gfa"] / probe_f
+    if not tower_ok(plate, probe_a):
+        # 탐침 세장비로는 단변 하한을 못 넘는 경우(층수가 아주 낮아 기준층이
+        # 클 때는 반대로 세장비가 큰 쪽이 걸린다) 가능한 것 중 중앙값을 쓴다.
+        ok = [a for a in asp_sorted if tower_ok(plate, a)]
+        if not ok:
+            print("   탐침 가능한 세장비가 없습니다 — 단일 갈래 건너뜀")
+            return []
+        probe_a = ok[len(ok) // 2]
+    print(f"   탐침 {probe_f}층 · 기준층 {plate:,.0f}㎡ · 세장비 {probe_a:g}:1")
     a = s.sweep("1a 방위·위치", [
         Design("단일", (Tower(plate, probe_a, az, cx, cy, probe_f),))
         for az in azimuths
@@ -518,7 +608,7 @@ def family_single(s: Search, azimuths, floors_list, budget: int
         t0 = r["_d"].towers[0]
         for f in floors_list:
             p = ctx["gfa"] / f
-            for asp in (1.5, 2.0, 2.5, 3.0, 4.0, 5.0):
+            for asp in args.aspects:
                 if not tower_ok(p, asp):
                     continue
                 for daz in (-15.0, -7.5, 0.0, 7.5, 15.0):
@@ -599,11 +689,13 @@ def family_twin(s: Search, base_rows, floors_list, budget: int
                 for split in (0.5, 0.6, 0.7):    # 첫 동이 가져가는 연면적 비율
                     pa = ctx["gfa"] * split / fa
                     pb = ctx["gfa"] * (1 - split) / fb
-                    for asp in (1.6, 2.2, 3.0):
+                    for asp in (1.6, 2.2, 3.0, 4.0):
                         if not (tower_ok(pa, asp) and tower_ok(pb, asp)):
                             continue
                         for sep_az in (0.0, 30.0, 52.0, 90.0, 142.0):
-                            for sep in (28.0, 38.0, 50.0, 62.0):
+                            # 법정 인동간격을 지키려면 꽤 벌려야 한다. 층수가
+                            # 낮아 판이 커질수록 더 그렇다 — 넓게 훑는다.
+                            for sep in (28.0, 38.0, 50.0, 62.0, 74.0, 86.0):
                                 ux = math.sin(math.radians(sep_az)) * sep / 2
                                 uy = math.cos(math.radians(sep_az)) * sep / 2
                                 designs.append(Design("쌍둥이", (
@@ -996,11 +1088,25 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
                         "14=양면복도")
     p.add_argument("--floors-min", type=int, default=35)
     p.add_argument("--floors-max", type=int, default=60)
+    p.add_argument("--floors-step", type=int, default=5,
+                   help="층수 후보 간격. 범위가 좁으면 1로 줄인다")
+    p.add_argument("--aspects", type=float, nargs="*",
+                   default=[1.5, 2.0, 2.5, 3.0, 4.0, 5.0],
+                   help="타워 기준층 세장비(장변:단변) 후보. 판상형까지 보려면 "
+                        "6~8을 더한다")
+    p.add_argument("--rank", choices=["일조", "건폐율"], default="일조",
+                   help="후보 정렬 1순위. 건폐율=최소 건폐율 우선")
     p.add_argument("--podium-floors", type=int, nargs="*", default=[3, 5, 7, 10])
     p.add_argument("--podium-plates", type=float, nargs="*",
                    default=[1600.0, 2400.0, 3200.0, 4000.0, 4800.0])
+    p.add_argument("--dong-gap", type=float, default=0.5,
+                   help="동간거리 배수(건축법 시행령 86조 3항 2호, 장변끼리 "
+                        "마주볼 때 높이의 0.5배). 0 이면 검사하지 않는다")
     p.add_argument("--daylight-multiple", type=float, default=4.0,
                    help="채광 이격 배수(준주거 4배). 판정에만 쓰고 배제하지 않는다")
+    p.add_argument("--require-daylight", action="store_true",
+                   help="채광이격 미충족안을 후보에서 아예 뺀다. 탐색 예산을 "
+                        "전부 충족안에 쓰고 싶을 때")
     p.add_argument("--budget", type=int, default=1800,
                    help="총 평가 예산(대략). 갈래별로 나눠 쓴다")
     p.add_argument("--no-podium", action="store_true",
@@ -1012,9 +1118,10 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    global MIN_TOWER_PLATE, MIN_TOWER_SHORT
+    global MIN_TOWER_PLATE, MIN_TOWER_SHORT, RANK_MODE
     args = parse_args(argv)
     MIN_TOWER_PLATE, MIN_TOWER_SHORT = args.min_plate, args.min_short
+    RANK_MODE = args.rank
     args.outdir.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     if args.cache and args.cache.exists():
@@ -1044,7 +1151,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     s = Search(ctx, args)
     n_az = max(4, round(180.0 / args.az_step))
     azimuths = [a * args.az_step for a in range(n_az)]
-    floors_list = list(range(args.floors_min, args.floors_max + 1, 5))
+    floors_list = list(range(args.floors_min, args.floors_max + 1,
+                             max(1, args.floors_step)))
     if args.floors_max not in floors_list:
         floors_list.append(args.floors_max)
 
