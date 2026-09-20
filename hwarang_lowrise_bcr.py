@@ -96,6 +96,7 @@ def rows(site, gfa: float, site_area: float, setback: float,
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    global RESI_FLOOR_H
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--site", type=Path, default=SITE_GEOJSON)
     p.add_argument("--site-area", type=float, default=9395.0)
@@ -104,10 +105,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     p.add_argument("--daylight-multiple", type=float, default=4.0)
     p.add_argument("--floors-lo", type=int, default=15)
     p.add_argument("--floors-hi", type=int, default=20)
+    p.add_argument("--floor-h", type=float, default=RESI_FLOOR_H,
+                   help="주거 층고 m")
+    p.add_argument("--blocks", type=int, nargs="*", default=[1, 2, 3, 4, 5, 6],
+                   help="분동 수별 건폐율·실면적 비교표에 넣을 동 수")
+    p.add_argument("--block-aspect", type=float, default=4.0,
+                   help="분동 비교표에서 각 동에 쓸 세장비")
     p.add_argument("--out", type=Path,
                    default=Path("outputs/hwarang_20f_2026/건폐율하한.md"))
     a = p.parse_args(argv)
 
+    RESI_FLOOR_H = a.floor_h
     site = load_site(a.site)
     gfa = a.site_area * a.far / 100.0
     rs = rows(site, gfa, a.site_area, a.setback, a.floors_lo, a.floors_hi)
@@ -153,6 +161,35 @@ def main(argv: Sequence[str] | None = None) -> int:
         L.append(f"| {r['aspect']:g}:1 | {r['long_m']:.1f} × "
                  f"{r['short_m']:.1f}m | {r['cover_m2']:,.0f}㎡ | "
                  f"{r['bcr_pct']:.2f}% | {s} |")
+
+    # 분동 수별 — 건폐율은 조금 오르고 서비스면적(발코니)은 크게 는다.
+    # 발코니는 둘레에 비례하고, 둘레는 동 수의 제곱근에 비례해 커진다.
+    L += ["", f"## {a.floors_hi}층 분동 수별 – 건폐율 vs 실면적 "
+          f"(각 동 {a.block_aspect:g}:1)", "",
+          "| 동 수 | 동당 기준층 | 동당 치수 | 건축면적 | 건폐율 | "
+          "서비스면적 | 실면적 | 단일 대비 |",
+          "|---:|---:|---|---:|---:|---:|---:|---:|"]
+    print(f"\n{a.floors_hi}층 분동 수별 (세장비 {a.block_aspect:g}:1)")
+    print(f"{'동수':>4}{'동당기준층㎡':>13}{'건축면적㎡':>12}{'건폐율%':>9}"
+          f"{'서비스㎡':>10}{'실면적㎡':>11}{'단일대비':>10}")
+    e = BALCONY_M - COVERAGE_INSET_M
+    base_real = None
+    for n in a.blocks:
+        p_ = gfa / (n * a.floors_hi)
+        short = math.sqrt(p_ / a.block_aspect)
+        lng = p_ / short
+        cover = (lng + 2 * e) * (short + 2 * e) * n
+        serv = ((lng + 2 * BALCONY_M) * (short + 2 * BALCONY_M) - p_) \
+            * a.floors_hi * n
+        real = gfa + serv
+        if base_real is None:
+            base_real = real
+        print(f"{n:>4}{p_:>13,.0f}{cover:>12,.0f}"
+              f"{cover / a.site_area * 100:>9.2f}{serv:>10,.0f}{real:>11,.0f}"
+              f"{real - base_real:>+10,.0f}")
+        L.append(f"| {n}개동 | {p_:,.0f}㎡ | {lng:.1f} × {short:.1f}m | "
+                 f"{cover:,.0f}㎡ | {cover / a.site_area * 100:.2f}% | "
+                 f"{serv:,.0f}㎡ | {real:,.0f}㎡ | {real - base_real:+,.0f}㎡ |")
 
     need = (a.floors_hi * RESI_FLOOR_H + ROOFTOP_M) / a.daylight_multiple
     L += ["", "## 채광이격", "",

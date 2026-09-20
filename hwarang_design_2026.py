@@ -77,7 +77,9 @@ MIN_TOWER_PLATE = 280.0
 MIN_TOWER_SHORT = 8.5
 DEPTH_TIERS = ((8.5, "편복도형 극단"), (11.0, "편복도형 표준"),
                (14.0, "양면복도형"))
-FAMILIES = ("단일", "단일+저층부", "타워+저층별동", "쌍둥이", "쌍둥이+저층부")
+FAMILIES = ("단일", "단일+저층부", "타워+저층별동", "쌍둥이", "쌍둥이+저층부",
+            "2개동",
+            "3개동", "4개동", "5개동", "6개동")
 
 
 # --------------------------------------------------------------------------- #
@@ -328,19 +330,39 @@ def dong_gap(a, b, multiple: float) -> tuple[float, float, str]:
     return dist, SIDE_WALL_GAP_M, "대각 배치"
 
 
-def dong_gap_ok(design: Design, multiple: float) -> bool:
-    if multiple <= 0.0:
-        return True
+def dong_pairs(design: Design, multiple: float):
+    """설계안의 동 쌍마다 (실제거리, 법정거리, 판정문구)."""
     ms = design.masses()
     for i in range(len(ms)):
         for j in range(i + 1, len(ms)):
             if design.podium is not None and not design.detached and (
                     ms[i] is design.podium or ms[j] is design.podium):
                 continue                 # 타워가 저층부 위에 얹힌 경우는 한 동
-            dist, need, _ = dong_gap(ms[i], ms[j], multiple)
-            if dist < need - 1e-6:
-                return False
+            yield dong_gap(ms[i], ms[j], multiple)
+
+
+def dong_gap_ok(design: Design, multiple: float, floor_m: float = 0.0) -> bool:
+    """인동간격 판정.
+
+    ``multiple`` 이 0 이면 배수 규정(0.5H)을 적용하지 않는다 — 소규모주택
+    정비 특례로 완화를 받는 전제다. 그래도 **절대 하한**(``floor_m``)은
+    남겨야 한다. 안 그러면 두 판을 0.2m 띄운 '한 덩어리'가 다동안으로
+    뽑힌다(실제로 그런 일이 있었다).
+    """
+    for dist, need, _ in dong_pairs(design, multiple):
+        if dist < max(need if multiple > 0.0 else 0.0, floor_m) - 1e-6:
+            return False
     return True
+
+
+def dong_gap_stats(design: Design) -> tuple[float, float]:
+    """(최소 동간거리 m, 법정 0.5H 대비 비율). 1개동이면 (inf, inf)."""
+    worst, ratio = float("inf"), float("inf")
+    for dist, need, _ in dong_pairs(design, 0.5):
+        worst = min(worst, dist)
+        if need > 0:
+            ratio = min(ratio, dist / need)
+    return worst, ratio
 
 
 def daylight_ratio(site: Polygon, design: Design) -> float:
@@ -467,13 +489,15 @@ class Search:
                     # 내밀리는 건 캔틸레버로 성립하므로 3%까지 허용하고,
                     # 그만큼은 gfa_m2 가 타워 몫으로 정확히 되센다.
                     return False
-        if len(d.towers) == 2:
-            a, b = d.towers[0].outline(), d.towers[1].outline()
-            if a.intersects(b):
-                return False
+        if len(d.towers) > 1:
+            outs = [t.outline() for t in d.towers]
+            for i in range(len(outs)):
+                for j in range(i + 1, len(outs)):
+                    if outs[i].intersects(outs[j]):
+                        return False
         # 안 겹치는 것만으로는 2개동이 되지 않는다 — 법정 인동간격을 본다.
         # (이 검사가 없으면 0.2m 틈으로 갈라 놓은 한 덩어리가 '쌍둥이'로 뽑힌다)
-        if not dong_gap_ok(d, self.args.dong_gap):
+        if not dong_gap_ok(d, self.args.dong_gap, self.args.min_dong_gap):
             return False
         if d.coverage_m2() > ctx["max_cover"]:
             return False
@@ -516,6 +540,11 @@ class Search:
             "coverage_m2": round(d.coverage_m2()),
             "bcr_pct": round(d.coverage_m2() / self.args.site_area * 100, 2),
             "daylight_ratio": round(daylight_ratio(ctx["site"], d), 3),
+            "dong_gap_m": (None if len(d.masses()) < 2
+                           else round(dong_gap_stats(d)[0], 1)),
+            "dong_gap_ratio": (None if len(d.masses()) < 2
+                               else round(dong_gap_stats(d)[1], 2)),
+            "n_dong": len(d.masses()),
             "mean_total_h": round(
                 sum(r["total_h_08_16"] for r in res) / len(res), 3),
             "min_short_m": round(min(t.dims()[1] for t in d.towers), 2),
@@ -661,6 +690,93 @@ def family_podium(s: Search, base_rows, floors_list, budget: int,
                                 designs.append(Design(
                                     tag, (Tower(tp, asp, az, cx, cy, f),), pod))
     return s.sweep("2 저층부", designs, budget)
+
+
+def family_multi(s: Search, base_rows, floors_list, n: int, budget: int
+                 ) -> list[dict[str, Any]]:
+    """n개동(n≥3). 같은 층수·같은 기준층으로 나눠 줄 세우거나 격자로 놓는다.
+
+    연면적이 고정이라 동을 쪼갤수록 판이 얇아진다(4개동 20층이면 470㎡,
+    세장비 4:1 에서 43.4×10.8m). 얇아진 판은 그림자 폭이 좁아 학교에
+    유리하고, 둘레가 늘어 **발코니(서비스면적)가 크게 는다** — 대신 건축면적도
+    같이 늘어 건폐율이 조금 올라간다. 그 맞바꿈을 보려고 넣은 갈래다.
+
+    배치는 두 가지만 본다. 후보 수가 n 제곱으로 터지는 걸 막기 위해서다.
+      · 줄배치  — 분리축 위에 같은 간격(pitch)으로 일렬
+      · 격자배치 — n 이 짝수일 때 2줄 × (n/2)열
+    """
+    ctx, args = s.ctx, s.args
+    tag = f"{n}개동"
+    print(f"■ 갈래 — {tag}")
+    site_az, _ = H.site_axes(ctx["site"])
+    envelope = ctx["envelope"]
+    ecx, ecy = envelope.centroid.x, envelope.centroid.y
+    azimuths = sorted({round(site_az % 180, 1),
+                       round((site_az + 90) % 180, 1)}
+                      | {round(r["_d"].towers[0].azimuth, 1)
+                         for r in sorted(base_rows, key=rank)[:6]})
+    designs = []
+    for f in floors_list:
+        plate = ctx["gfa"] / (n * f)
+        if plate < MIN_TOWER_PLATE:
+            continue
+        for asp in args.aspects:
+            if not tower_ok(plate, asp):
+                continue
+            lng, sht = plate / math.sqrt(plate / asp), math.sqrt(plate / asp)
+            top_m = f * RESI_FLOOR_H + ROOFTOP_M
+            for az in azimuths:
+                for row_off in (0.0, 30.0, 60.0, 90.0, 120.0, 150.0):
+                    row_az = (az + row_off) % 180
+                    # 줄 방향으로 본 외형선 폭. 이걸 알아야 최소 피치를
+                    # 기하로 뽑을 수 있다 — 고정 목록으로 훑으면 맞는 값이
+                    # 목록 사이에 빠져 후보가 통째로 0이 된다(실제로 그랬다).
+                    th = math.radians(row_off)
+                    extent = (abs(math.cos(th)) * (lng + 2 * BALCONY_M)
+                              + abs(math.sin(th)) * (sht + 2 * BALCONY_M))
+                    broadside = abs(((row_off + 90) % 180) - 90) > 75.0
+                    need = max(args.min_dong_gap,
+                               args.dong_gap * top_m if broadside
+                               else SIDE_WALL_GAP_M)
+                    pitch0 = extent + need
+                    for dp in (0.3, 2.0, 5.0, 9.0, 15.0, 24.0):
+                        pitch = pitch0 + dp
+                        ux = math.sin(math.radians(row_az))
+                        uy = math.cos(math.radians(row_az))
+                        vx, vy = uy, -ux
+                        # 줄 전체를 대지 안에서 옆으로도 밀어 본다
+                        for sx in (-12.0, -6.0, 0.0, 6.0, 12.0):
+                            for sy in (-12.0, 0.0, 12.0):
+                                cx0 = ecx + vx * sx + ux * sy
+                                cy0 = ecy + vy * sx + uy * sy
+                                ts = tuple(
+                                    Tower(plate, asp, az,
+                                          cx0 + ux * (i - (n - 1) / 2) * pitch,
+                                          cy0 + uy * (i - (n - 1) / 2) * pitch,
+                                          f)
+                                    for i in range(n))
+                                designs.append(Design(tag, ts))
+                        if n < 4 or n % 2:
+                            continue
+                        # 격자배치 — 2줄 x (n/2)열
+                        cols = n // 2
+                        pitch_c = extent + need
+                        row_extent = (abs(math.sin(th)) * (lng + 2 * BALCONY_M)
+                                      + abs(math.cos(th))
+                                      * (sht + 2 * BALCONY_M))
+                        gap2 = row_extent + max(
+                            args.min_dong_gap,
+                            args.dong_gap * top_m if not broadside
+                            else SIDE_WALL_GAP_M) + dp
+                        ts = tuple(
+                            Tower(plate, asp, az,
+                                  ecx + ux * (c - (cols - 1) / 2) * pitch_c
+                                  + vx * r_ * gap2,
+                                  ecy + uy * (c - (cols - 1) / 2) * pitch_c
+                                  + vy * r_ * gap2, f)
+                            for r_ in (-0.5, 0.5) for c in range(cols))
+                        designs.append(Design(tag, ts))
+    return s.sweep(f"{tag}", designs, budget)
 
 
 def family_twin(s: Search, base_rows, floors_list, budget: int
@@ -1099,9 +1215,16 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     p.add_argument("--podium-floors", type=int, nargs="*", default=[3, 5, 7, 10])
     p.add_argument("--podium-plates", type=float, nargs="*",
                    default=[1600.0, 2400.0, 3200.0, 4000.0, 4800.0])
+    p.add_argument("--floor-h", type=float, default=RESI_FLOOR_H,
+                   help="주거 층고 m. 높이 = 층수 x 층고 + 옥탑 4m")
+    p.add_argument("--towers", type=int, nargs="*", default=[1, 2],
+                   help="탐색할 동 수. 예: 1 2 3 4")
     p.add_argument("--dong-gap", type=float, default=0.5,
                    help="동간거리 배수(건축법 시행령 86조 3항 2호, 장변끼리 "
-                        "마주볼 때 높이의 0.5배). 0 이면 검사하지 않는다")
+                        "마주볼 때 높이의 0.5배). 0 이면 배수 규정을 빼고 "
+                        "--min-dong-gap 만 본다(특례 완화 전제)")
+    p.add_argument("--min-dong-gap", type=float, default=4.0,
+                   help="동간거리 절대 하한 m. 배수 규정을 빼도 이건 남긴다")
     p.add_argument("--daylight-multiple", type=float, default=4.0,
                    help="채광 이격 배수(준주거 4배). 판정에만 쓰고 배제하지 않는다")
     p.add_argument("--require-daylight", action="store_true",
@@ -1118,10 +1241,11 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    global MIN_TOWER_PLATE, MIN_TOWER_SHORT, RANK_MODE
+    global MIN_TOWER_PLATE, MIN_TOWER_SHORT, RANK_MODE, RESI_FLOOR_H
     args = parse_args(argv)
     MIN_TOWER_PLATE, MIN_TOWER_SHORT = args.min_plate, args.min_short
     RANK_MODE = args.rank
+    RESI_FLOOR_H = args.floor_h
     args.outdir.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     if args.cache and args.cache.exists():
@@ -1166,19 +1290,33 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.no_podium:
         # 저층부를 아예 금지 — 순수 고층 단일/쌍둥이만 본다. 저층부 갈래가
         # 먹던 예산을 전부 이쪽에 몰아주고, 미세조정도 세 번 돈다.
-        print("■ 저층부 금지 모드 — 단일·쌍둥이 고층안만 탐색")
-        single = family_single(s, azimuths, floors_list, int(B * 0.32))
+        ns = sorted({n for n in args.towers if n >= 1})
+        print(f"■ 저층부 금지 모드 — 동 수 {ns} 만 탐색")
+        # 단일 갈래는 늘 먼저 돌린다. 다른 동 수의 방위·위치 씨앗이 여기서
+        # 나오기 때문이다(1개동이 탐색 목록에 없어도 마찬가지다).
+        single = family_single(s, azimuths, floors_list, int(B * 0.24))
         save()
-        twin = family_twin(s, single, floors_list, int(B * 0.20))
-        save()
-        allrows = single + twin
+        allrows = list(single) if 1 in ns else []
+        share = 0.44 / max(1, len([n for n in ns if n >= 2]))
+        for n in ns:
+            if n < 2:
+                continue
+            # 2개동도 family_multi 로 보낸다. family_twin 의 고정 간격 격자는
+            # 층수가 낮아 판이 커지면 맞는 간격이 목록 사이에 빠져 후보가
+            # 거의 안 남는다(2,160개 중 11개). family_multi 는 최소 간격을
+            # 기하로 뽑으므로 그 구멍이 없다.
+            got = family_multi(s, single, floors_list, n, int(B * share))
+            allrows += got
+            save()
+        if not allrows:
+            allrows = list(single)
         if not allrows:
             raise SystemExit("배치 가능한 후보가 없습니다.")
-        allrows += refine(s, allrows, int(B * 0.24), n_seeds=4)
+        allrows += refine(s, allrows, int(B * 0.16), n_seeds=6)
         save()
-        allrows += refine(s, allrows, int(B * 0.14), n_seeds=3)
+        allrows += refine(s, allrows, int(B * 0.09), n_seeds=4)
         save()
-        allrows += refine(s, allrows, int(B * 0.10), n_seeds=2)
+        allrows += refine(s, allrows, int(B * 0.07), n_seeds=3)
         save()
     else:
         # 1차 탐색에서 쌍둥이(2개동)가 단일보다 뚜렷이 나빠(49 대 34) 예산을
