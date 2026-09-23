@@ -100,7 +100,13 @@ def ground_shadow(solids: Sequence[Solid], azimuth: float,
 
 def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
            title: str, subtitle: str, sun: tuple[float, float] | None,
-           width: float = 1400.0) -> None:
+           width: float = 1400.0, legend: Sequence[tuple[str, str]] | None = None,
+           labels: bool = True, header: bool = True,
+           per_solid: bool = False) -> tuple[int, int]:
+    """축측투영 조감도 SVG. (폭, 높이) 픽셀을 돌려준다.
+
+    header/labels/legend 를 끄면 글자 없는 '원판'이 된다 — 조감도 렌더링
+    밑그림으로 쓰기 좋다."""
     cam = Camera(cam_az, cam_el)
     shadow = ground_shadow(solids, *sun) if sun else None
 
@@ -129,11 +135,12 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
            '<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'
            '<stop offset="0%" stop-color="#eef3f8"/>'
            '<stop offset="100%" stop-color="#fbfbf7"/></linearGradient></defs>',
-           f'<rect width="100%" height="100%" fill="url(#sky)"/>',
-           f'<text x="18" y="32" font-family="sans-serif" font-size="20" '
-           f'font-weight="bold" fill="#111">{title}</text>',
-           f'<text x="18" y="56" font-family="sans-serif" font-size="13" '
-           f'fill="#555">{subtitle}</text>']
+           f'<rect width="100%" height="100%" fill="url(#sky)"/>']
+    if header:
+        svg += [f'<text x="18" y="32" font-family="sans-serif" font-size="20" '
+                f'font-weight="bold" fill="#111">{title}</text>',
+                f'<text x="18" y="56" font-family="sans-serif" font-size="13" '
+                f'fill="#555">{subtitle}</text>']
 
     if shadow:
         gg = shadow.geoms if shadow.geom_type == "MultiPolygon" else [shadow]
@@ -151,6 +158,7 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
         svg.append(f'<polygon points="{pts}" fill="#00000010" stroke="none"/>')
 
     pieces: list[tuple[float, str]] = []
+    owners: list[int] = []
     for s in solids:
         roof, lit, dark, edge = PALETTE[s.kind]
         coords = list(s.footprint.exterior.coords)[:-1]
@@ -169,6 +177,7 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
             bearing = math.degrees(math.atan2(nx, ny)) % 360
             f = 0.80 + 0.28 * math.cos(math.radians(bearing - 170))
             pts = " ".join(f"{p[0]:.1f},{p[1]:.1f}" for p in quad)
+            owners.append(id(s))
             pieces.append((cam.depth(mx, my),
                            f'<polygon points="{pts}" fill="{shade(lit, f)}" '
                            f'stroke="{edge}" stroke-width="0.4" '
@@ -176,16 +185,40 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
         pts = " ".join(f"{proj(x, y, s.top_m)[0]:.1f},"
                        f"{proj(x, y, s.top_m)[1]:.1f}" for x, y in coords)
         c = s.footprint.centroid
+        owners.append(id(s))
         pieces.append((cam.depth(c.x, c.y) - 1e-6,
                        f'<polygon points="{pts}" fill="{roof}" stroke="{edge}" '
                        f'stroke-width="0.5" stroke-linejoin="round"/>'))
 
-    for _, frag in sorted(pieces, key=lambda t: -t[0]):
-        svg.append(frag)
+    if per_solid:
+        # 면 단위 정렬은 긴 벽(저층부 등)이 다른 건물과 섞일 때 앞뒤가
+        # 뒤집힌다. 건물 단위로 먼 것부터 그리고, 바닥이 겹치는 건물
+        # (저층부 위 타워 등)은 낮은 것을 먼저 그린다.
+        order = {id(s): cam.depth(s.footprint.centroid.x, s.footprint.centroid.y)
+                 for s in solids}
+        for a_ in solids:
+            for b_ in solids:
+                if (a_ is not b_ and a_.top_m > b_.top_m
+                        and a_.footprint.intersects(b_.footprint)
+                        and a_.footprint.intersection(b_.footprint).area > 1.0):
+                    order[id(a_)] = min(order[id(a_)], order[id(b_)] - 1e-3)
+        pieces_by: dict[int, list[tuple[float, str]]] = {}
+        for s in solids:
+            pieces_by[id(s)] = []
+        for (d_, frag), owner in zip(pieces, owners):
+            pieces_by[owner].append((d_, frag))
+        for s in sorted(solids, key=lambda s: -order[id(s)]):
+            frags = pieces_by[id(s)]          # 마지막 조각이 지붕이다
+            for _, frag in sorted(frags[:-1], key=lambda t: -t[0]):
+                svg.append(frag)
+            svg.append(frags[-1][1])
+    else:
+        for _, frag in sorted(pieces, key=lambda t: -t[0]):
+            svg.append(frag)
 
     # 라벨(높은 것만)
     for s in solids:
-        if not s.label:
+        if not s.label or not labels:
             continue
         c = s.footprint.centroid
         px, py = proj(c.x, c.y, s.top_m)
@@ -194,8 +227,9 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
                    f'fill="#111" stroke="#fff" stroke-width="3" '
                    f'paint-order="stroke">{s.label}</text>')
 
-    legend = [("hwarang", "화랑 신축(본 설계안)"), ("daegyo", "대교 신축안"),
-              ("school", "학교 교사동"), ("context", "기존 건물")]
+    if legend is None:
+        legend = [("hwarang", "화랑 신축(본 설계안)"), ("daegyo", "대교 신축안"),
+                  ("school", "학교 교사동"), ("context", "기존 건물")]
     for i, (kind, text) in enumerate(legend):
         x = 18 + i * 240
         y = height - 30
@@ -205,6 +239,7 @@ def render(path: Path, solids: Sequence[Solid], cam_az: float, cam_el: float,
                    f'font-size="12.5" fill="#111">{text}</text>')
     svg.append("</svg>")
     path.write_text("\n".join(svg), encoding="utf-8")
+    return int(width), int(height)
 
 
 # --------------------------------------------------------------------------- #

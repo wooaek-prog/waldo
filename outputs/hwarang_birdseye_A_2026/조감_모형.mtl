@@ -1,0 +1,42 @@
+newmtl hwarang
+Kd 0.239 0.420 0.647
+Ka 0 0 0
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl daegyo
+Kd 0.655 0.694 0.761
+Ka 0 0 0
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl school
+Kd 0.827 0.510 0.529
+Ka 0 0 0
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl context
+Kd 0.894 0.894 0.871
+Ka 0 0 0
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl old
+Kd 0.788 0.788 0.761
+Ka 0 0 0
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl sibeom
+Kd 0.788 0.635 0.494
+Ka 0 0 0
+Ks 0 0 0
+d 1
+illum 1
+

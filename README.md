@@ -25,6 +25,7 @@
 | `hwarang_daegyo_sibeom_scenarios.py` | **[최종 3안 비교]** 대교·시범 신축 고정, 화랑만 현재/고층안/20층이하안으로 바꿔 학교 일조 비교 | [3안 비교](docs/hwarang_3scenarios_2026.md) |
 | `hwarang_design_2026.py --sibeom --ref --far-strict` | **[고층안 재산출]** 38~55층·저층부 최소화·20층안보다 적게 침범 | [고층안 재산출](docs/hwarang_highrise_v2_2026.md) |
 | `hwarang_design_2026.py --rank 건물` · `hwarang_bld_pod11_search.py` | **[고층안 · 건물 우선]** 운동장은 허용, 교사동 창면 신규 불충족 최소 | [건물 우선 고층안](docs/hwarang_highrise_bld_2026.md) |
+| `hwarang_birdseye_2026.py` | 화랑 A안 조감도 밑그림 — 6방향 PNG/SVG(주석판·원판) + 3D 모형 OBJ | [A안 조감도](docs/hwarang_birdseye_A_2026.md) |
 | `hwarang_plan_2026.py` | 화랑 설계안 배치도(산출 GeoJSON → SVG·PNG) | 〃 |
 | `apartment_attribution.py` | 대교·시범 신축+화랑 현상태 – 수광점 불충족 원인 아파트 세분화 | [원인 분해 보고서](docs/apartment_attribution.md) |
 | `school_site_map.py` | 학교 위치 배치도 좌표등록 → 운동장 해치영역 경계 추출 | [근거 등급 문서](docs/school_receptor_provenance.md) |
@@ -754,6 +755,13 @@ python3 hwarang_daegyo_sibeom_scenarios.py --buildings <AL_D010.gpkg>
 "저층부 최소화"와 "건물 최소"가 충돌하는 지점이라 A와 B/B′ 중 선택이 필요합니다.
 
 [docs/hwarang_highrise_bld_2026.md](docs/hwarang_highrise_bld_2026.md) 참조.
+
+## A안 조감도 밑그림
+
+확정 방향 A안(51층 1개동, 172.3m)에 대교·시범 신축안, 학교, 주변 기존 건물(반경
+380m, 120개)을 세워 6방향 축측투영 이미지(검토용 주석판 + 글자 없는 원판)와
+SketchUp·Blender 용 3D 모형(OBJ)을 냈습니다. `outputs/hwarang_birdseye_A_2026/`,
+[docs/hwarang_birdseye_A_2026.md](docs/hwarang_birdseye_A_2026.md) 참조.
 
 
 ---
