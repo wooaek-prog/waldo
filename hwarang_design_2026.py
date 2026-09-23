@@ -535,19 +535,24 @@ class Search:
         res = H.evaluate(ctx["receptors"], d.prisms(), ctx["times"],
                          ctx["masks"], self.args.step_min)
         self.n_eval += 1
-        nf = ng = 0
-        for r, ok in zip(res, ctx["base_pass"]):
+        nf = ng = nf_b = ng_b = 0
+        for r, ok, pt in zip(res, ctx["base_pass"], ctx["points"]):
             now = pass_a(r)
+            bld = pt.kind != "운동장 지반"
             if ok and not now:
                 nf += 1
+                nf_b += bld
             elif not ok and now:
                 ng += 1
+                ng_b += bld
         row = {
             "family": d.family, "stage": stage,
             "floors": "+".join(str(t.floors) for t in d.towers),
             "top_floors": d.top_floors,
             "height_m": round(d.height_m, 2),
             "new_fail": nf, "new_ok": ng,
+            "new_fail_bld": nf_b, "new_ok_bld": ng_b,
+            "new_fail_pg": nf - nf_b,
             "gfa_m2": round(d.gfa_m2), "far_pct": round(
                 d.gfa_m2 / self.args.site_area * 100, 1),
             "service_m2": round(d.service_m2),
@@ -564,6 +569,16 @@ class Search:
                 sum(r["total_h_08_16"] for r in res) / len(res), 3),
             "min_short_m": round(min(t.dims()[1] for t in d.towers), 2),
             "label": d.label(),
+            # 설계 변수를 그대로 남겨 CSV 만으로 어느 후보든 다시 세울 수 있게 한다
+            "design": json.dumps({
+                "towers": [[round(t.plate, 2), round(t.aspect, 4),
+                            round(t.azimuth, 2), round(t.cx, 2), round(t.cy, 2),
+                            t.floors] for t in d.towers],
+                "podium": ([round(d.podium.plate, 2), round(d.podium.aspect, 4),
+                            round(d.podium.azimuth, 2), round(d.podium.cx, 2),
+                            round(d.podium.cy, 2), d.podium.floors]
+                           if d.podium else None),
+                "detached": d.detached}),
             "_d": d, "_res": res,
         }
         self.rows.append(row)
@@ -613,6 +628,10 @@ def rank(r: dict[str, Any]) -> tuple:
     """
     if RANK_MODE == "건폐율":
         return (round(r["bcr_pct"], 2), r["new_fail"], -r["mean_total_h"])
+    if RANK_MODE == "건물":
+        # 운동장은 침범해도 되고 **건물(교사동 창면)** 신규 불충족을 먼저
+        # 줄인다. 같으면 전체 신규 불충족, 그다음 평균 일조.
+        return (r["new_fail_bld"], r["new_fail"], -r["mean_total_h"])
     return (r["new_fail"], -r["top_floors"], -r["mean_total_h"])
 
 
@@ -1225,7 +1244,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
                    default=[1.5, 2.0, 2.5, 3.0, 4.0, 5.0],
                    help="타워 기준층 세장비(장변:단변) 후보. 판상형까지 보려면 "
                         "6~8을 더한다")
-    p.add_argument("--rank", choices=["일조", "건폐율"], default="일조",
+    p.add_argument("--rank", choices=["일조", "건폐율", "건물"], default="일조",
                    help="후보 정렬 1순위. 건폐율=최소 건폐율 우선")
     p.add_argument("--podium-floors", type=int, nargs="*", default=[3, 5, 7, 10])
     p.add_argument("--podium-plates", type=float, nargs="*",
@@ -1302,8 +1321,11 @@ def main(argv: Sequence[str] | None = None) -> int:
                         args.step_min)
         rnf = sum(1 for r, ok in zip(rr, base_pass) if ok and not pass_a(r))
         rng = sum(1 for r, ok in zip(rr, base_pass) if not ok and pass_a(r))
+        rnb = sum(1 for r, ok, pt in zip(rr, base_pass, ctx["points"])
+                  if ok and not pass_a(r) and pt.kind != "운동장 지반")
         refs.append((rp, rnf, rng, max(p.top_m for p in pr)))
-        print(f"   참고안 {rp.parent.name}: 신규 불충족 {rnf} / 신규 충족 {rng} "
+        print(f"   참고안 {rp.parent.name}: 신규 불충족 {rnf}(건물 {rnb}·운동장 "
+              f"{rnf-rnb}) / 신규 충족 {rng} "
               f"(최고 {max(p.top_m for p in pr):.1f}m)")
     args.ref_results = refs
     print()
