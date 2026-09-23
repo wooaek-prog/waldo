@@ -23,6 +23,7 @@
 | `hwarang_2x2_paired.py` | 화랑 – 20층 4개동 2x2(짝 붙이기 + 가운데 통로 최대화) | [2x2 짝+통로](docs/hwarang_2x2_paired_2026.md) |
 | `hwarang_street_2x2.py` | 화랑 – 20층 4개동, 남서–북동 보행로를 사이에 둔 2x2(일조 계산 없음) | [보행로형 2x2](docs/hwarang_street_2x2_2026.md) |
 | `hwarang_daegyo_sibeom_scenarios.py` | **[최종 3안 비교]** 대교·시범 신축 고정, 화랑만 현재/고층안/20층이하안으로 바꿔 학교 일조 비교 | [3안 비교](docs/hwarang_3scenarios_2026.md) |
+| `hwarang_design_2026.py --sibeom --ref --far-strict` | **[고층안 재산출]** 38~55층·저층부 최소화·20층안보다 적게 침범 | [고층안 재산출](docs/hwarang_highrise_v2_2026.md) |
 | `hwarang_plan_2026.py` | 화랑 설계안 배치도(산출 GeoJSON → SVG·PNG) | 〃 |
 | `apartment_attribution.py` | 대교·시범 신축+화랑 현상태 – 수광점 불충족 원인 아파트 세분화 | [원인 분해 보고서](docs/apartment_attribution.md) |
 | `school_site_map.py` | 학교 위치 배치도 좌표등록 → 운동장 해치영역 경계 추출 | [근거 등급 문서](docs/school_receptor_provenance.md) |
@@ -714,6 +715,25 @@ python3 hwarang_daegyo_sibeom_scenarios.py --buildings <AL_D010.gpkg>
 합니다.
 
 [docs/hwarang_3scenarios_2026.md](docs/hwarang_3scenarios_2026.md) 참조.
+
+## 고층안 재산출 — 38~55층 · 저층부 최소화
+
+조건: **20층안보다 새로 침범하는 곳(신규 불충족)이 적을 것**, 용적률 400%
+이내, 38~55층, 저층부 최소화. 기준선은 3안 비교와 같은 대교·시범 신축 +
+화랑 현재(844/230)이고, 같은 기준에서 20층안은 **100**, 종전 고층안은 57입니다.
+
+**결론: 48층 1개동, 저층부 없음 — 신규 불충족 62**(20층안보다 38개 적음).
+기준층 783㎡(46.4×16.9m), 높이 162.4m, 건폐율 9.02%, 실면적 47,126㎡.
+
+- **저층부는 아무것도 사지 못합니다** — 저층부를 둔 1,733개 후보 중 어느
+  것도 62를 넘지 못했고, 가장 큰 저층부(12,500㎡)를 깔아야 겨우 같은 62입니다.
+  종전 고층안(57)은 층고 2.95m 덕이었지 저층부 덕이 아니었습니다 — 같은 층고로
+  맞추면 이번 안이 이깁니다(2.95m: 48 대 57, 3.3m: 62 대 68).
+- **38~55층 전 구간이 20층안보다 낫습니다**(38층 85 ~ 48층 62 ~ 55층 72, U자형).
+- **침범 위치가 20층안과 완전히 다릅니다**(겹침 1점) — 20층안은 여의도중
+  체육관동(74), 48층안은 **여의도여고 본관동(26, 저층부 16점 전부)** 입니다.
+
+[docs/hwarang_highrise_v2_2026.md](docs/hwarang_highrise_v2_2026.md) 참조.
 
 
 ---

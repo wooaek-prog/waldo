@@ -395,9 +395,22 @@ def setup(args) -> dict[str, Any]:
     points, receptors, grounds, dropped = build_points(
         schools, buildings, spec_all, all_b, args.apron, {}, args.pg_step)
 
-    context, n_rec = build_context(buildings, d_centre, args.context_radius,
+    ctx_buildings = buildings
+    sibeom_new: list[H.Prism] = []
+    if getattr(args, "sibeom", None):
+        # 시범도 신축안이 지어진 전제로 깐다. 시범 대지(지번 50)의 기존
+        # 건물은 컨텍스트에서 빼야 신축안과 이중으로 가리지 않는다 —
+        # apartment_attribution.py·3안 비교와 같은 구성이다.
+        from apartment_attribution import SIBEOM_JIBUN, load_prisms_from_geojson
+        sibeom_new = load_prisms_from_geojson(args.sibeom, "시범",
+                                              layer_filter="신축동")
+        if not sibeom_new:
+            raise SystemExit(f"시범 신축 프리즘을 못 읽었다: {args.sibeom}")
+        ctx_buildings = [r for r in buildings if r["jibun"] != SIBEOM_JIBUN]
+    context, n_rec = build_context(ctx_buildings, d_centre, args.context_radius,
                                    spec_all)
     context = list(context) + list(daegyo_new)   # 대교 신축안은 지어진 전제
+    context += sibeom_new                         # (--sibeom) 시범 신축안도
     masks = H.build_context_masks(context, receptors, times)
     base = H.evaluate(receptors, apartment_prisms(buildings, HWARANG_JIBUN,
                                                   "화랑 기존"),
@@ -472,6 +485,8 @@ class Search:
         # 실제 용적률은 far_pct 열에 그대로 적는다.
         if abs(d.gfa_m2 - ctx["gfa"]) > max(1.0, 0.005 * ctx["gfa"]):
             return False
+        if self.args.far_strict and d.gfa_m2 > ctx["gfa"] + 1.0:
+            return False              # '용적률 400% 이내' — 넘는 안은 버린다
         for t in d.towers:
             if not tower_ok(t.plate, t.aspect):
                 return False
@@ -1215,6 +1230,14 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     p.add_argument("--podium-floors", type=int, nargs="*", default=[3, 5, 7, 10])
     p.add_argument("--podium-plates", type=float, nargs="*",
                    default=[1600.0, 2400.0, 3200.0, 4000.0, 4800.0])
+    p.add_argument("--sibeom", type=Path, default=None,
+                   help="시범 신축안 GeoJSON. 주면 시범 기존 건물(지번 50)을 "
+                        "컨텍스트에서 빼고 신축안을 깐다(대교·시범 신축 기준선)")
+    p.add_argument("--ref", type=Path, nargs="*", default=None,
+                   help="비교 기준 매싱 GeoJSON(예: 20층안). 같은 기준선에서 "
+                        "신규 불충족을 계산해 함께 보고한다")
+    p.add_argument("--far-strict", action="store_true",
+                   help="연면적이 목표(용적률)를 1㎡라도 넘는 안은 버린다")
     p.add_argument("--floor-h", type=float, default=RESI_FLOOR_H,
                    help="주거 층고 m. 높이 = 층수 x 층고 + 옥탑 4m")
     p.add_argument("--towers", type=int, nargs="*", default=[1, 2],
@@ -1270,7 +1293,20 @@ def main(argv: Sequence[str] | None = None) -> int:
                           args.step_min)
     nf0 = sum(1 for r, ok in zip(none_res, base_pass) if ok and not pass_a(r))
     ng0 = sum(1 for r, ok in zip(none_res, base_pass) if not ok and pass_a(r))
-    print(f"   참고(철거·미신축): 신규 불충족 {nf0} / 신규 충족 {ng0}\n")
+    print(f"   참고(철거·미신축): 신규 불충족 {nf0} / 신규 충족 {ng0}")
+    refs = []
+    for rp in args.ref or []:
+        from apartment_attribution import load_prisms_from_geojson
+        pr = load_prisms_from_geojson(rp, "참고")
+        rr = H.evaluate(ctx["receptors"], pr, ctx["times"], ctx["masks"],
+                        args.step_min)
+        rnf = sum(1 for r, ok in zip(rr, base_pass) if ok and not pass_a(r))
+        rng = sum(1 for r, ok in zip(rr, base_pass) if not ok and pass_a(r))
+        refs.append((rp, rnf, rng, max(p.top_m for p in pr)))
+        print(f"   참고안 {rp.parent.name}: 신규 불충족 {rnf} / 신규 충족 {rng} "
+              f"(최고 {max(p.top_m for p in pr):.1f}m)")
+    args.ref_results = refs
+    print()
 
     s = Search(ctx, args)
     n_az = max(4, round(180.0 / args.az_step))

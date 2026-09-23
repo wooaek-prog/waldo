@@ -53,6 +53,8 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
                    default=Path("outputs/sibeom/sibeom_epsg5186.geojson"))
     p.add_argument("--hwarang-highrise", type=Path, default=HIGHRISE_GEOJSON)
     p.add_argument("--hwarang-lowrise", type=Path, default=LOWRISE_GEOJSON)
+    p.add_argument("--highrise-label", type=str, default="41층+저층부 7층")
+    p.add_argument("--lowrise-label", type=str, default="20층 1개동")
     p.add_argument("--outdir", type=Path, default=Path("outputs/hwarang_3scenarios_2026"))
     p.add_argument("--date", type=str, default="12-22")
     p.add_argument("--school-radius", type=float, default=350.0)
@@ -128,6 +130,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
     args.outdir.mkdir(parents=True, exist_ok=True)
     ctx = aa_setup(args)
+    ctx["labels"] = (args.highrise_label, args.lowrise_label)
     print(f"수광점 {len(ctx['receptors'])}개")
 
     hwarang = {
@@ -168,9 +171,9 @@ def write_report(path: Path, ctx, res, hwarang) -> None:
          "|---|---|---:|---|",
          f"| **A** | 화랑 현재상태(기존 10층 3개동) | "
          f"{max(p.top_m for p in hwarang['A_화랑현재']):.1f}m | (기준선) |",
-         f"| **B** | 화랑 신축(고층) — 41층+저층부 7층 | "
+         f"| **B** | 화랑 신축(고층) — {ctx['labels'][0]} | "
          f"{max(p.top_m for p in hwarang['B_화랑고층안']):.1f}m | A 대비 |",
-         f"| **C** | 화랑 신축(20층 이하) — 20층 1개동 | "
+         f"| **C** | 화랑 신축(20층 이하) — {ctx['labels'][1]} | "
          f"{max(p.top_m for p in hwarang['C_화랑20층이하안']):.1f}m | A 대비 |",
          "", "## 전체 결과", "",
          "| 안 | 수광점 | 충족 | 불충족 | 충족률 |",
