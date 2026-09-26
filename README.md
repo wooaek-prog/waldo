@@ -26,6 +26,7 @@
 | `hwarang_design_2026.py --sibeom --ref --far-strict` | **[고층안 재산출]** 38~55층·저층부 최소화·20층안보다 적게 침범 | [고층안 재산출](docs/hwarang_highrise_v2_2026.md) |
 | `hwarang_design_2026.py --rank 건물` · `hwarang_bld_pod11_search.py` | **[고층안 · 건물 우선]** 운동장은 허용, 교사동 창면 신규 불충족 최소 | [건물 우선 고층안](docs/hwarang_highrise_bld_2026.md) |
 | `hwarang_birdseye_2026.py` | 화랑 A안 조감도 밑그림 — 6방향 PNG/SVG(주석판·원판) + 3D 모형 OBJ | [A안 조감도](docs/hwarang_birdseye_A_2026.md) |
+| `hwarang_tower_detail.py` · `hwarang_render_A.py` | **[A안 상세 폴리곤]** 유엔스튜디오 레퍼런스 적용 상세 모형(OBJ·GLB·GeoJSON) + 광선추적 미리보기 | [A안 상세 폴리곤](docs/hwarang_detail_A_2026.md) |
 | `hwarang_plan_2026.py` | 화랑 설계안 배치도(산출 GeoJSON → SVG·PNG) | 〃 |
 | `apartment_attribution.py` | 대교·시범 신축+화랑 현상태 – 수광점 불충족 원인 아파트 세분화 | [원인 분해 보고서](docs/apartment_attribution.md) |
 | `school_site_map.py` | 학교 위치 배치도 좌표등록 → 운동장 해치영역 경계 추출 | [근거 등급 문서](docs/school_receptor_provenance.md) |
@@ -762,6 +763,16 @@ python3 hwarang_daegyo_sibeom_scenarios.py --buildings <AL_D010.gpkg>
 380m, 120개)을 세워 6방향 축측투영 이미지(검토용 주석판 + 글자 없는 원판)와
 SketchUp·Blender 용 3D 모형(OBJ)을 냈습니다. `outputs/hwarang_birdseye_A_2026/`,
 [docs/hwarang_birdseye_A_2026.md](docs/hwarang_birdseye_A_2026.md) 참조.
+
+## A안 상세 폴리곤 (유엔스튜디오 레퍼런스)
+
+A안 매스를 조감도용 상세 폴리곤으로 만들었습니다. 적용한 요소는 블록 엇갈림
+적층(±0.8m), 서측 픽셀 발코니(1.35/0.85/0m), 동측 연속 발코니와 핀, 18·35층
+깎인 모서리 스카이가든, 열린 크라운, 아케이드 로비입니다. 모든 요소를 일조
+분석 외형선 안에 두었고 연면적 37,580㎡(용적률 400.00%)를 맞췄으므로, 일조
+결과(건물 33)는 그대로 유지됩니다. OBJ·GLB, 층별 GeoJSON, 미리보기 6시점과
+입면은 `outputs/hwarang_detail_A_2026/` 에 있습니다.
+[docs/hwarang_detail_A_2026.md](docs/hwarang_detail_A_2026.md) 참조.
 
 
 ---

@@ -1,0 +1,160 @@
+# 유리 커튼월
+newmtl glass
+Kd 0.460 0.550 0.620
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 0.55
+illum 2
+
+# 슬래브 밴드(샴페인 화이트)
+newmtl slab
+Kd 0.890 0.850 0.780
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 발코니 판
+newmtl balcony
+Kd 0.920 0.890 0.830
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 발코니·캐노피 하부(목재 톤)
+newmtl soffit
+Kd 0.690 0.510 0.350
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 유리 난간
+newmtl railing
+Kd 0.700 0.780 0.820
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 0.55
+illum 2
+
+# 수직 핀(브론즈 샴페인)
+newmtl fin
+Kd 0.820 0.740 0.600
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 커튼월 멀리언
+newmtl mullion
+Kd 0.740 0.700 0.630
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 크라운 프레임
+newmtl frame
+Kd 0.860 0.800 0.700
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 로비 기둥
+newmtl column
+Kd 0.880 0.860 0.820
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 플랜터
+newmtl planter
+Kd 0.620 0.590 0.540
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 식재
+newmtl green
+Kd 0.360 0.520 0.300
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 수간
+newmtl trunk
+Kd 0.400 0.300 0.220
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 대지 포장
+newmtl paving
+Kd 0.800 0.780 0.740
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 잔디
+newmtl lawn
+Kd 0.520 0.640 0.400
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 주변 건물(화이트 모델)
+newmtl context
+Kd 0.930 0.930 0.910
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 대교·시범 신축안(화이트 모델)
+newmtl context_new
+Kd 0.880 0.900 0.930
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 학교
+newmtl school
+Kd 0.930 0.880 0.860
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 주변 지면
+newmtl ground
+Kd 0.860 0.860 0.830
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 학교 운동장(인조잔디)
+newmtl field
+Kd 0.470 0.600 0.400
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 학교 운동장 트랙
+newmtl track
+Kd 0.660 0.400 0.320
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
