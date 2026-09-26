@@ -158,3 +158,43 @@ Ks 0.1 0.1 0.1
 d 1.0
 illum 2
 
+# 산책로
+newmtl path
+Kd 0.900 0.840 0.720
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 성큰 계단식 스탠드(목재)
+newmtl stand
+Kd 0.800 0.700 0.560
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 놀이마당 탄성포장
+newmtl play
+Kd 0.930 0.660 0.400
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 어린이집 수직 핀
+newmtl kg_fin
+Kd 0.960 0.800 0.360
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+
+# 주차 램프
+newmtl ramp
+Kd 0.420 0.420 0.420
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+d 1.0
+illum 2
+

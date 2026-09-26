@@ -27,6 +27,7 @@
 | `hwarang_design_2026.py --rank 건물` · `hwarang_bld_pod11_search.py` | **[고층안 · 건물 우선]** 운동장은 허용, 교사동 창면 신규 불충족 최소 | [건물 우선 고층안](docs/hwarang_highrise_bld_2026.md) |
 | `hwarang_birdseye_2026.py` | 화랑 A안 조감도 밑그림 — 6방향 PNG/SVG(주석판·원판) + 3D 모형 OBJ | [A안 조감도](docs/hwarang_birdseye_A_2026.md) |
 | `hwarang_tower_detail.py` · `hwarang_render_A.py` | **[A안 상세 폴리곤]** 유엔스튜디오 레퍼런스 적용 상세 모형(OBJ·GLB·GeoJSON) + 광선추적 미리보기 | [A안 상세 폴리곤](docs/hwarang_detail_A_2026.md) |
+| `hwarang_plans_A.py` · `hwarang_site_A.py` | **[A안 배치도·평면도]** 어린이집·성큰광장 배치 + 코어(E/V)·PT실·세대 평면 4개층 | [A안 배치·평면](docs/hwarang_plans_A_2026.md) |
 | `hwarang_plan_2026.py` | 화랑 설계안 배치도(산출 GeoJSON → SVG·PNG) | 〃 |
 | `apartment_attribution.py` | 대교·시범 신축+화랑 현상태 – 수광점 불충족 원인 아파트 세분화 | [원인 분해 보고서](docs/apartment_attribution.md) |
 | `school_site_map.py` | 학교 위치 배치도 좌표등록 → 운동장 해치영역 경계 추출 | [근거 등급 문서](docs/school_receptor_provenance.md) |
@@ -773,6 +774,17 @@ A안 매스를 조감도용 상세 폴리곤으로 만들었습니다. 적용한
 결과(건물 33)는 그대로 유지됩니다. OBJ·GLB, 층별 GeoJSON, 미리보기 6시점과
 입면은 `outputs/hwarang_detail_A_2026/` 에 있습니다.
 [docs/hwarang_detail_A_2026.md](docs/hwarang_detail_A_2026.md) 참조.
+
+## A안 배치도 · 평면도
+
+대지 남서부에 어린이집·유치원(지상 2층, 8.0m)과 놀이마당, 성큰광장(B1 −5.0m,
+계단식 스탠드)을 배치했습니다. 어린이집은 30개 위치 어디에 두어도 학교 신규
+불충족이 늘지 않음을 확인했습니다(건물 33 · 전체 73 그대로). 평면도는 네
+층입니다. 2층 주민공동시설(피트니스·PT실 3종·GX), 기준층 Ⅰ(4세대), 기준층
+Ⅱ(6세대), 18층(스카이가든·피난안전구역)이며, 코어 2개에 E/V 6대를 두었습니다.
+전체 244세대, 용적률 388.5%(주민공동시설·피난안전구역 제외).
+`outputs/hwarang_plans_A_2026/`,
+[docs/hwarang_plans_A_2026.md](docs/hwarang_plans_A_2026.md) 참조.
 
 
 ---

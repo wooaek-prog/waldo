@@ -53,6 +53,11 @@ ALBEDO = {
     "ground":   (0.80, 0.80, 0.77),
     "field":    (0.45, 0.58, 0.38),
     "track":    (0.66, 0.40, 0.32),
+    "path":     (0.90, 0.84, 0.72),
+    "stand":    (0.80, 0.70, 0.56),
+    "play":     (0.93, 0.66, 0.40),
+    "kg_fin":   (0.96, 0.80, 0.36),
+    "ramp":     (0.42, 0.42, 0.42),
 }
 GLASS, RAILING = "glass", "railing"
 TOWER_MATS = {"glass", "slab", "balcony", "soffit", "railing", "fin", "mullion",
@@ -73,6 +78,7 @@ class View:
     half_tan: float = 0.5
     ortho: float = 0.0    # >0 이면 직교 — 세로 폭(m)
     fog: float = 2600.0
+    yc: float | None = None   # 2점 투시 화면 중심 기울기(tan) — 비우면 target 으로
 
 
 def views() -> list[View]:
@@ -93,6 +99,30 @@ def views() -> list[View]:
              fog=6000),
         View("북서조감", "북서 조감 — 여의도중·여고 쪽에서",
              (-330, 400, 250), (0, 0, 60), (1800, 1200), (235, 34), fov=34),
+    ] + site_views()
+
+
+def site_views() -> list[View]:
+    """대지 프로그램(어린이집·성큰광장) 시점 — hwarang_site_A 대지 좌표로 잡는다."""
+    import hwarang_site_A as SA
+    F = SA.site_frame(SA.load_site()[0])
+    cx, cy = F.xy(40.0, 60.0)
+    ex, ey = F.xy(36.0, 42.5)
+    kx, ky = F.xy(57.0, 19.0)
+    sx, sy = F.xy(10.0, 27.0)
+    return [
+        View("배치평면", "위에서 본 배치(직교 평면) — 어린이집 · 놀이마당 · 성큰광장 · 산책로",
+             (cx, cy, 600), (cx, cy, 0), (1500, 1500), (200, 52), ortho=165.0,
+             fog=0.0),
+        View("배치조감", "배치 조감 — 남쪽 상공에서",
+             (cx - 20, cy - 150, 330), (cx, cy + 6, 0), (1600, 1300), (190, 50),
+             fov=36, fog=8000),
+        View("성큰광장", "성큰광장(B1 -5.0m) 안에서 올려다본 계단식 스탠드와 타워",
+             (ex, ey, -5.0 + 1.6), (0, 0, 40), (1600, 1300), (215, 38),
+             two_point=True, half_tan=0.78, yc=0.50, fog=8000),
+        View("어린이집", "놀이마당 건너편에서 본 어린이집(지상 2층)",
+             (sx, sy, 1.8), (kx, ky, 6.0), (1600, 1100), (160, 34),
+             two_point=True, half_tan=0.40, yc=0.22, fog=8000),
     ]
 
 
@@ -329,6 +359,17 @@ def camera_rays(v: View, W, H):
     sy = 1 - (ys + 0.5) / H * 2
     aspect = W / H
     fwd = tgt - eye
+    if v.ortho:
+        fwd /= np.linalg.norm(fwd)
+        ref = np.array([0, 1.0, 0]) if abs(fwd[2]) > 0.99 else np.array([0, 0, 1.0])
+        right = np.cross(fwd, ref)
+        right /= np.linalg.norm(right)
+        up = np.cross(right, fwd)
+        hh = v.ortho / 2
+        o = (eye[None, None] + (sx * hh * aspect)[..., None] * right
+             + (sy * hh)[..., None] * up).reshape(-1, 3)
+        d = np.broadcast_to(fwd, o.shape).copy()
+        return o, d
     if v.two_point:
         fh = fwd.copy()
         fh[2] = 0
@@ -336,7 +377,7 @@ def camera_rays(v: View, W, H):
         fh /= dist
         right = np.cross(fh, [0, 0, 1.0])
         up = np.array([0, 0, 1.0])
-        yc = (tgt[2] - eye[2]) / dist
+        yc = (tgt[2] - eye[2]) / dist if v.yc is None else v.yc
         ht = v.half_tan
         d = (fh[None, None] + (sx * ht * aspect)[..., None] * right
              + (yc + sy * ht)[..., None] * up)

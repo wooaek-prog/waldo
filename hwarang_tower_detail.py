@@ -110,6 +110,11 @@ MATERIALS = {   # 이름: (RGB 0~1, 설명)
     "ground":   ((0.86, 0.86, 0.83), "주변 지면"),
     "field":    ((0.47, 0.60, 0.40), "학교 운동장(인조잔디)"),
     "track":    ((0.66, 0.40, 0.32), "학교 운동장 트랙"),
+    "path":     ((0.90, 0.84, 0.72), "산책로"),
+    "stand":    ((0.80, 0.70, 0.56), "성큰 계단식 스탠드(목재)"),
+    "play":     ((0.93, 0.66, 0.40), "놀이마당 탄성포장"),
+    "kg_fin":   ((0.96, 0.80, 0.36), "어린이집 수직 핀"),
+    "ramp":     ((0.42, 0.42, 0.42), "주차 램프"),
 }
 
 
@@ -249,8 +254,19 @@ class Mesh:
               (5, 11, 4), (11, 10, 2), (10, 7, 6), (7, 1, 8), (3, 9, 4), (3, 4, 2),
               (3, 2, 6), (3, 6, 8), (3, 8, 9), (4, 9, 5), (2, 4, 11), (6, 2, 10),
               (8, 6, 7), (9, 8, 1)]
+        # 1회 세분(80면) — 수관이 둥글게 보이도록
+        c0 = np.array([cx, cy, cz])
+        sc = np.array([r, r, r * sz])
+
+        def proj(p):
+            q = (np.asarray(p) - c0) / sc
+            return tuple(c0 + q / np.linalg.norm(q) * sc)
         for a, b, c in fs:
-            self.tri(mat, vs[a], vs[b], vs[c], self.new_group())
+            A, B, C = (np.array(vs[a]), np.array(vs[b]), np.array(vs[c]))
+            ab, bc, ca = proj((A + B) / 2), proj((B + C) / 2), proj((C + A) / 2)
+            g = self.new_group()
+            for t in ((vs[a], ab, ca), (ab, vs[b], bc), (ca, bc, vs[c]), (ab, bc, ca)):
+                self.tri(mat, *t, g)
 
     def all_vertices(self) -> np.ndarray:
         return np.asarray(self.verts, dtype=float)
@@ -479,40 +495,76 @@ def add_tree(mesh: Mesh, x, y, z, h, r):
 
 def build_landscape(fr: Frame, site_w: Polygon, mesh: Mesh, gis: dict,
                     outline_w: Polygon) -> None:
-    site = affinity.translate(site_w, -fr.cx, -fr.cy)
-    outline = affinity.translate(outline_w, -fr.cx, -fr.cy)
-    mesh.prism(site, -0.3, 0.02, "paving")
-    lobby_side = fr.poly(box(-40, -30, 40, -6.3))     # 서측 전면 광장
-    lawn = (site.buffer(-3.5)
-            .difference(outline.buffer(9))
-            .difference(lobby_side.intersection(outline.buffer(26))))
-    for g in explode(lawn):
-        if g.area < 30:
-            continue
+    """대지 프로그램(hwarang_site_A) — 포장·잔디·산책로·성큰광장·어린이집·램프·수목."""
+    import hwarang_site_A as SA
+    PR = SA.program()
+    F = PR["frame"]
+    site, sunken = PR["site"], PR["sunken"]
+    D = SA.SUNKEN_DEPTH
+
+    mesh.prism(site.difference(sunken.buffer(0.3)), -0.3, 0.02, "paving")
+    mesh.prism(PR["path_poly"].difference(sunken.buffer(0.3)), 0.02, 0.06, "path")
+    for g in explode(PR["lawn"]):
         mesh.prism(g, 0.02, 0.25, "lawn", top="lawn")
         gis["landscape"].append(("지상 잔디·식재", g, 0.02))
-    # 잔디 가장자리 수림대 — 가운데는 열린 잔디로 남긴다
-    rng = np.random.default_rng(7)
-    for g in explode(lawn):
-        if g.area < 30:
-            continue
-        x0, y0, x1, y1 = g.bounds
-        for x in np.arange(x0 + 4, x1, 9.0):
-            for y in np.arange(y0 + 4, y1, 9.0):
-                p = Point(x + rng.uniform(-2.5, 2.5), y + rng.uniform(-2.5, 2.5))
-                if (g.buffer(-2.5).contains(p) and g.boundary.distance(p) < 8.0
-                        and outline.distance(p) > 12):
-                    h = rng.uniform(5.5, 8.0)
-                    add_tree(mesh, p.x, p.y, 0.25, h, h * 0.33)
-                    gis["trees"].append((p.x, p.y, 0.25, round(h, 1)))
-    ring = site.buffer(-2.2).exterior
-    n = int(ring.length // 8)
-    for k in range(n):
-        p = ring.interpolate(k * ring.length / n)
-        if outline.distance(p) < 14:
-            continue
-        add_tree(mesh, p.x, p.y, 0.02, 7.0, 2.4)
-        gis["trees"].append((p.x, p.y, 0.02, 7.0))
+
+    # 성큰광장 — 바닥 B1 −5.0, 계단식 스탠드, 직통계단, 옹벽·유리난간, B1 유리면
+    mesh.prism(sunken, -D - 0.3, -D, "paving")
+    n = SA.STAND_TIERS
+    for k, st in enumerate(PR["stand"]):
+        mesh.prism(st, -D, -D * k / n, "stand")          # 맨 위 단 = 지면
+    m = SA.STAIR_STEPS
+    run = 12.0 / m
+    for k in range(m):
+        st = F.rect(18.0, 21.5, 40.0 + k * run, 40.0 + (k + 1) * run)
+        mesh.prism(st.intersection(sunken.buffer(0.01)), -D - 0.01,
+                   -D * (k + 1) / m, "paving")
+    wall = sunken.buffer(0.3, join_style="mitre").difference(sunken)
+    glass_side = F.rect(45.8, 47.0, 41.0, 57.0)
+    stair_top = F.rect(17.0, 22.5, 38.0, 41.5)
+    mesh.prism(wall.difference(glass_side), -D, 0.02, "slab")
+    mesh.prism(wall.intersection(glass_side), -D, -0.3, "glass")
+    mesh.prism(wall.difference(stair_top), 0.02, 1.1, "railing")
+    gis["landscape"].append(("성큰광장(B1 −5.0m)", sunken, -D))
+
+    # 어린이집(유치원) — 지상 2층, 3.6m × 2 + 파라펫 0.8m = 8.0m
+    kg, H1 = PR["kg"], SA.KG_FLOOR_H
+    for f in range(SA.KG_FLOORS):
+        z0 = f * H1
+        mesh.prism(kg.buffer(-0.5), z0 + (0.4 if f else 0.0), z0 + H1, "glass",
+                   caps=False)
+        mesh.prism(kg.buffer(0.2), z0 + H1, z0 + H1 + 0.4, "slab", bottom="soffit")
+    mesh.prism(kg.buffer(0.2).difference(kg.buffer(-0.1)), 2 * H1 + 0.4,
+               SA.KG_HEIGHT, "slab")
+    mesh.prism(kg.buffer(-0.5), 2 * H1 + 0.4, 2 * H1 + 0.7, "green", top="green")
+    ring = orient(kg.buffer(-0.35), 1.0).exterior
+    nf = int(ring.length // 1.2)
+    for k in range(nf):
+        p = ring.interpolate(k * ring.length / nf)
+        mesh.prism(Point(p.x, p.y).buffer(0.09, quad_segs=2), H1 + 0.4, 2 * H1,
+                   "kg_fin")
+    gis["landscape"].append(("어린이집 지붕정원", kg.buffer(-0.5), 2 * H1 + 0.4))
+    yard = PR["kg_yard"]
+    mesh.prism(yard, 0.02, 0.06, "play")
+    mesh.prism(yard.buffer(0.06, join_style="mitre").difference(yard), 0.06, 1.2,
+               "railing")
+    for a, b, r, h in ((33, 14, 2.6, 0.6), (40, 24, 3.0, 0.9), (36, 28, 1.6, 0.4)):
+        x, y = F.xy(a, b)
+        mesh.prism(Point(x, y).buffer(r, quad_segs=6), 0.06, h, "lawn", top="lawn")
+    gis["landscape"].append(("어린이집 놀이마당", yard, 0.02))
+
+    # 지하주차장 진출입 램프
+    ramp = PR["ramp"]
+    mesh.prism(ramp, -0.3, 0.04, "ramp")
+    side_walls = ramp.buffer(0.25, join_style="mitre").difference(ramp).difference(
+        F.rect(-1.0, 12.0, 118.0, 124.0))
+    mesh.prism(side_walls, 0.04, 1.0, "slab")
+
+    lawn_u = PR["lawn"]
+    for x, y, h in PR["trees"]:
+        z = 0.25 if lawn_u.contains(Point(x, y)) else 0.02
+        add_tree(mesh, x, y, z, h, h * 0.33)
+        gis["trees"].append((x, y, z, h))
 
 
 # --------------------------------------------------------------------------- #
@@ -544,9 +596,12 @@ def build_context(args, fr: Frame, mesh: Mesh) -> int:
             args.radius + 150)
     step = 50.0
     xs = np.arange(g.bounds[0], g.bounds[2], step)
+    import hwarang_site_A as SA
+    site_l = SA.load_site()[0]          # 대지는 조경 쪽에서 깐다(성큰 구멍)
     for x in xs:
         for y in xs:
-            mesh.polygon_cap(box(x, y, x + step, y + step), -0.35, "ground", up=True)
+            for t in explode(box(x, y, x + step, y + step).difference(site_l)):
+                mesh.polygon_cap(t, -0.35, "ground", up=True)
     return n
 
 
