@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from vedit.media import ffprobe
+from vedit.media import ffprobe, hdr_kind
 from vedit.project import Project, write_json
 
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".mts", ".m2ts", ".mkv", ".avi", ".insv"}
@@ -99,6 +99,7 @@ def run(project: Project, stage: dict) -> None:
             "fps": _fps(video),
             "codec": video.get("codec_name"),
             "pix_fmt": video.get("pix_fmt"),
+            "hdr": hdr_kind(video),  # "HLG" / "PQ" / None — 프록시·렌더에서 SDR 톤매핑
             "rotation": _rotation(video),
             "has_audio": any(s.get("codec_type") == "audio" for s in info["streams"]),
             "created": created.isoformat(timespec="seconds"),
@@ -121,6 +122,9 @@ def run(project: Project, stage: dict) -> None:
         "days": days,
         "clips": clips,
     })
+    hdr = sum(1 for c in clips if c["hdr"])
+    if hdr:
+        project.log(f"  HDR 클립 {hdr}개 → SDR(BT.709)로 톤매핑해서 처리")
     no_time = sum(c["created_source"] == "file_mtime" for c in clips)
     project.log(f"  클립 {len(clips)}개, 총 {total / 60:.1f}분, {len(days)}일치"
                 + (f" (촬영시각 태그 없음 {no_time}개 → 파일 수정시각 사용)" if no_time else ""))

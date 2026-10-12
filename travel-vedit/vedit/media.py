@@ -47,3 +47,37 @@ def encoders() -> str:
 
 def has_encoder(name: str) -> bool:
     return any(line.split()[1:2] == [name] for line in encoders().splitlines() if line.strip())
+
+
+@functools.cache
+def _filters() -> str:
+    require("ffmpeg", "brew install ffmpeg")
+    return subprocess.run(["ffmpeg", "-hide_banner", "-filters"], capture_output=True, text=True).stdout
+
+
+def has_filter(name: str) -> bool:
+    return any(line.split()[1:2] == [name] for line in _filters().splitlines() if line.strip())
+
+
+# ---------------------------------------------------------------- HDR
+# 아이폰(기본 설정)은 HDR(HLG, 돌비비전은 HLG 기반)로 촬영한다. SDR 로 그냥 줄이면 색이 회색빛으로 바래므로
+# BT.2020 HDR → BT.709 SDR 톤매핑이 필요하다.
+HDR_TRANSFER = {"arib-std-b67": "HLG", "smpte2084": "PQ"}
+
+
+def hdr_kind(stream: dict) -> str | None:
+    return HDR_TRANSFER.get(stream.get("color_transfer", ""))
+
+
+def tonemap_filter(kind: str | None, cfg: dict | None = None) -> str | None:
+    """HDR → SDR 필터 체인 (zscale 필요). SDR 이면 None."""
+    if not kind:
+        return None
+    if not has_filter("zscale"):
+        raise ToolMissing("HDR 영상 톤매핑에 zscale 필터가 필요합니다 (brew install ffmpeg 기본 빌드에 포함)")
+    cfg = cfg or {}
+    tin = "arib-std-b67" if kind == "HLG" else "smpte2084"
+    npl = cfg.get("npl", 100)
+    algo = cfg.get("tonemap", "hable")
+    return (f"zscale=tin={tin}:pin=bt2020:min=bt2020nc:t=linear:npl={npl},format=gbrpf32le,"
+            f"zscale=p=bt709,tonemap=tonemap={algo}:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p")

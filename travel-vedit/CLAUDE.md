@@ -13,7 +13,10 @@
    - 모션 문구/배치 수정은 `motion_spec.json` 을 고친 뒤 `--only motion` (바뀐 것만 다시 렌더).
    - **새 모션 템플릿**은 `motion/README.md` 의 작성 규약을 따르고, `python -m vedit motion check <id>` 경고 0 +
      `motion stills` 로 확인한 뒤 사용자에게 승인받는다.
+   - 렌더 결과 수정(색감·자막 크기 등)은 `design/design_guide.json` 또는 `config/local.yaml` 의 `render` 를 고친 뒤
+     `--only render_preview` 로 확인 (컷 단위 캐시가 있어 바뀐 부분만 다시 인코딩).
    - 코드 수정 후에는 `python -m pytest -q` 를 돌린다.
+   - 진행 상황과 남은 할 일은 `HANDOFF.md` 를 먼저 읽는다.
 
 ## 절대 규칙
 - `source_dirs` 의 **원본 영상은 읽기만** 한다. 이동/삭제/덮어쓰기 금지.
@@ -26,4 +29,5 @@
 - `vedit/pipeline.py` 단계 실행/재개/승인, `vedit/engines.py` local·claude·antigravity·manual 엔진
 - `vedit/stages/` 로컬 단계 (새 단계는 `stages/__init__.py` REGISTRY 에 등록)
 - `vedit/motion.py` 모션 렌더러 (Playwright 프레임 캡처 → ffmpeg), `motion/` 템플릿과 공통 런타임
+- `vedit/stages/render.py` 최종 합성 (세그먼트 캐시 → concat → 모션·자막·BGM·음량), `vedit/luts.py` 기본 LUT 생성
 - 설정: `config/local.yaml`, `config/engines.yaml`, `config/pipeline.yaml`

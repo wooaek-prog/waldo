@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "유튜브 업로드 문구",
+  "type": "object",
+  "required": ["titles", "description", "tags", "hashtags"],
+  "properties": {
+    "titles": {"type": "array", "items": {"type": "string", "maxLength": 100}, "minItems": 3, "maxItems": 5},
+    "description": {"type": "string", "maxLength": 4000, "description": "설명란 본문 (챕터 목록은 프로그램이 뒤에 붙임)"},
+    "tags": {"type": "array", "items": {"type": "string"}, "maxItems": 25},
+    "hashtags": {"type": "array", "items": {"type": "string", "pattern": "^#\\S+$"}, "maxItems": 5},
+    "pinned_comment": {"type": "string"},
+    "thumbnail_texts": {"type": "array", "items": {"type": "string", "maxLength": 20}, "maxItems": 5}
+  }
+}

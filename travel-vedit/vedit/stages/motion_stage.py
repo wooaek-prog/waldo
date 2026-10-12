@@ -11,6 +11,7 @@ import hashlib
 import json
 import multiprocessing
 from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures.process import BrokenProcessPool
 from pathlib import Path
 
 from vedit import motion
@@ -104,11 +105,15 @@ def run(project: Project, stage: dict) -> None:
 
     if jobs:
         project.log(f"  모션 {len(jobs)}개 렌더 (동시 {min(workers, len(jobs))}개, {scale:g}배 해상도, {codec})")
+        results = None
         if workers > 1 and len(jobs) > 1:
-            ctx = multiprocessing.get_context("spawn")
-            with ProcessPoolExecutor(max_workers=min(workers, len(jobs)), mp_context=ctx) as pool:
-                results = list(pool.map(_render_job, jobs))
-        else:
+            try:
+                ctx = multiprocessing.get_context("spawn")
+                with ProcessPoolExecutor(max_workers=min(workers, len(jobs)), mp_context=ctx) as pool:
+                    results = list(pool.map(_render_job, jobs))
+            except BrokenProcessPool as e:  # 병렬 실행이 안 되는 환경(내장 실행 등) → 순서대로
+                project.log(f"  병렬 렌더 불가 ({e}) → 하나씩 렌더")
+        if results is None:
             results = [_render_job(j) for j in jobs]
         for job, res in zip(jobs, results):
             item = job["item"]

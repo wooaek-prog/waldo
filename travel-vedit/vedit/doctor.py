@@ -49,6 +49,13 @@ def run_doctor() -> bool:
         ok = False
         _line(FAIL, "ffmpeg", "brew install ffmpeg")
     _line(OK if shutil.which("ffprobe") else FAIL, "ffprobe")
+    if shutil.which("ffmpeg"):
+        from vedit.media import has_filter
+
+        for flt, note in [("zscale", "아이폰 HDR 영상 톤매핑"), ("subtitles", "자막 입히기 (libass)"),
+                          ("lut3d", "색보정 LUT"), ("loudnorm", "음량 정규화")]:
+            _line(OK if has_filter(flt) else FAIL, f"  필터 {flt}", note)
+            ok &= has_filter(flt)
     _line(OK if shutil.which("exiftool") else WARN, "exiftool (선택)", "" if shutil.which("exiftool") else "brew install exiftool")
 
     print("\n== 음성 인식 (whisper.cpp) ==")

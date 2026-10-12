@@ -4,8 +4,9 @@
 무거운 처리는 모두 로컬(무료)에서 하고, 판단이 필요한 단계만 구독 중인 AI CLI(Claude Code, Antigravity)를 호출합니다.
 
 - 대상 장비: iMac 2019 27" (i5-8500 3.0GHz 6코어, Radeon Pro 570X, 24GB, SSD, macOS)
-- 현재 범위: 설치, 전처리, 분석, 디자인 가이드, EDL 생성·검증, **모션 그래픽(HTML/CSS/SVG 템플릿 → 투명 영상)**
-- 다음 범위: 렌더(LUT·자막·BGM·모션 합성), 타이틀/썸네일 이미지 생성, 검수 루프, 유튜브 문구, 로컬 서버 + Tauri 2 앱
+- 현재 범위: 설치 → 전처리 → AI 분석 → 디자인 가이드 → EDL → 모션 그래픽 → **완성본 렌더** → 유튜브 업로드 문구
+- 다음 범위 (로컬에서 이어서): 실제 영상 튜닝, HDR 영상 처리, 썸네일 이미지 생성, 검수 루프, 로컬 서버 + Tauri 2 앱
+- **로컬 이어받기 안내: [HANDOFF.md](HANDOFF.md)**
 
 ## 구조
 
@@ -14,14 +15,14 @@
                                                                                                    │
            edl_check ◀─ edl(Claude) ◀─ [승인] moodboard ◀─ design(Claude) ◀─ snap ◀─ analyze(Antigravity)
               │
-            [승인] ─▶ motion_context ─▶ motion_spec(Claude) ─▶ [승인] motion ─▶ (다음: render / assets / review / publish)
+            [승인] ─▶ motion_context ─▶ motion_spec(Claude) ─▶ [승인] motion ─▶ [승인] render_preview ─▶ render ─▶ publish(Claude) ─▶ package
 ```
 
 | 엔진 | 담당 단계 | 비용 |
 |---|---|---|
-| local | ingest, proxy, scenes, quality, keyframes, stt(whisper.cpp), silence, palette, bundle, snap, moodboard, edl_check, motion_context, motion(헤드리스 크롬) | 무료 |
+| local | ingest, proxy, scenes, quality, keyframes, stt(whisper.cpp), silence, palette, bundle, snap, moodboard, edl_check, motion_context, motion(헤드리스 크롬), render_preview, render, package | 무료 |
 | antigravity | analyze (장면 이해, 장소/하이라이트 태깅) | 구독 |
-| claude | design (디자인 가이드), edl (스토리 구성), motion_spec (모션 배치·문구) | 구독 |
+| claude | design (디자인 가이드), edl (스토리 구성), motion_spec (모션 배치·문구), publish (제목·설명란·태그) | 구독 |
 | manual | AI 단계의 비상구: 프롬프트를 파일로 내보내고 응답 JSON 을 받아 이어감 | 0원 |
 
 단계 사이는 프로젝트 폴더의 **파일(JSON)** 로만 주고받습니다. 그래서 `pipeline.yaml` 에서 `engine:` 한 줄만 바꾸면 담당 AI 를 교체할 수 있고,
@@ -61,6 +62,17 @@ python -m vedit run kyoto_2026
 
 # 4) EDL 확인(edl.json, edl_report.json) → 승인
 python -m vedit approve kyoto_2026 edl_check
+python -m vedit run kyoto_2026
+
+# 5) 모션 확인(projects/kyoto_2026/motion/*.png) → 승인 → 720p 미리보기 렌더
+python -m vedit approve kyoto_2026 motion
+python -m vedit run kyoto_2026
+open projects/kyoto_2026/output/preview.mp4
+
+# 6) 미리보기 승인 → 원본 화질 최종 렌더(밤에) → 업로드 문구
+python -m vedit approve kyoto_2026 render_preview
+caffeinate -i python -m vedit run kyoto_2026     # 렌더 중 맥이 잠들지 않게
+open projects/kyoto_2026/output/
 
 # 다시 하고 싶을 때: 해당 단계부터 초기화
 python -m vedit reset kyoto_2026 design
@@ -89,6 +101,9 @@ AI 단계가 실패하면 `projects/<이름>/manual/<단계>.prompt.md` 가 생�
 | `edl.json`, `edl_report.json` | 편집 결정 목록 + 검증 결과 |
 | `motion_context.json`, `motion_spec.json` | 모션 배치용 타임라인 요약 → AI 가 정한 모션 배치·문구 |
 | `motion/*.webm`, `motion/*.png`, `motion/manifest.json` | 투명 모션 영상, 승인용 정지 이미지, 목록 |
+| `output/preview.mp4`, `output/<이름>_final.mp4` | 720p 미리보기, 최종본 (색보정·자막·모션·BGM·-14 LUFS) |
+| `output/subtitles.srt`, `output/chapters.txt`, `output/youtube.txt` | 유튜브 자막 업로드용, 챕터, 제목·설명란·태그 묶음 |
+| `output/render_report_*.json` | 렌더 결과 요약과 경고 |
 | `logs/` | 실행 로그, AI 호출 원문 |
 
 ## 모션 그래픽
@@ -101,6 +116,17 @@ python -m vedit motion list
 python -m vedit motion preview place_lower_third -p title=후시미이나리     # 브라우저 실시간 미리보기
 python -m vedit motion render opening_title --over 클립.mp4 --at 2.0       # 영상 위 합성 미리보기
 ```
+
+## 렌더 (완성본)
+
+- **BGM**: `projects/<이름>/music/` 에 음악 파일을 넣거나 `project.yaml` 에 `bgm: [경로]`. 원본 소리가 나오는 동안 자동으로 작아짐(사이드체인 덕킹).
+  저작권이 확인된 음원만 사용하세요 (YouTube 오디오 보관함 등).
+- **원본 소리**: EDL 컷의 `audio` — `keep`(그대로, 말하는 장면 기본) / `duck`(작게, 현장음) / `mute`. 속도를 바꾼 컷은 소리 없음.
+- **세로 영상**: 같은 영상을 흐리게 깔아 좌우를 채움.
+- **색보정**: 디자인 가이드의 LUT(`luts/`, 기본 4종 자동 생성) + 채도·대비·색온도.
+- **자막**: 말하는 컷의 음성 인식 결과를 영상에 입히고(`render.burn_subtitles`), 업로드용 `subtitles.srt` 도 생성.
+- **음량**: 2-pass 정규화로 유튜브 기준 -14 LUFS.
+- 컷 단위로 캐시하므로 자막·모션·BGM 만 바꾸면 마무리 합성만 다시 합니다.
 
 ## 설정 파일
 

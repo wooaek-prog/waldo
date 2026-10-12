@@ -7,3 +7,4 @@ projects/*
 luts/*.cube
 motion/fonts/*.woff2
 motion_out/
+motion/fonts/*.otf

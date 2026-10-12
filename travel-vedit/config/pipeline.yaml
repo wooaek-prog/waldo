@@ -57,10 +57,23 @@ stages:
     in: [motion_context.json, design/design_guide.json, analysis_snapped.json]
     schema: schemas/motion_spec.schema.json
     out: motion_spec.json
-  - {id: motion, engine: local, approve: true}           # motion/*.mov + *.png → 사람 승인
+  - {id: motion, engine: local, approve: true}           # motion/*.webm + *.png → 사람 승인
 
-  # ---------- 다음 단계에서 구현 (제작) ----------
+  # ---------- 렌더 ----------
+  # BGM: projects/<이름>/music/ 에 음악 파일을 넣거나 project.yaml 에 bgm: [경로] 지정 (저작권 확인된 음원만)
+  - {id: render_preview, engine: local, approve: true}   # output/preview.mp4 (720p, 프록시) → 보고 승인
+  - {id: render, engine: local}                          # output/<이름>_final.mp4 (원본, 목표 해상도)
+
+  # ---------- 유튜브 업로드 문구 ----------
+  - id: publish
+    engine: claude
+    fallback: manual
+    prompt: prompts/youtube_meta.md
+    in: [analysis_snapped.json, edl.json, output/chapters.txt, design/design_guide.json, project.yaml]
+    schema: schemas/youtube_meta.schema.json
+    out: youtube_meta.json
+  - {id: package, engine: local}                         # output/youtube.txt (제목·설명란·챕터·태그)
+
+  # ---------- 다음 단계 (로컬에서 이어서) ----------
   # - {id: assets,  engine: antigravity}   # 타이틀 카드/썸네일 이미지 생성
-  # - {id: render,  engine: local}         # ffmpeg 렌더 (LUT, ASS 자막, BGM 덕킹, motion 합성)
   # - {id: review,  engine: antigravity}   # 렌더 결과 검수 → edl 수정 루프
-  # - {id: publish, engine: claude}        # 챕터/설명란/제목 후보

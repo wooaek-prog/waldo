@@ -6,7 +6,7 @@ iMac 2019 는 4K HEVC 10bit 원본을 직접 다루면 느리므로 이후 모�
 
 from __future__ import annotations
 
-from vedit.media import has_encoder, run_ffmpeg
+from vedit.media import has_encoder, run_ffmpeg, tonemap_filter
 from vedit.project import Project
 
 
@@ -29,9 +29,11 @@ def run(project: Project, stage: dict) -> None:
             project.log(f"  프록시 {i}/{len(media['clips'])} {clip['file']}")
             part = out.with_suffix(".part")
             # 세로 영상도 짧은 변 기준이 아니라 높이 기준으로 축소 (회전은 ffmpeg 가 자동 적용)
+            tonemap = tonemap_filter(clip.get("hdr"), project.local.get("hdr"))
+            vf = f"scale=-2:'min({height},ih)',format=yuv420p"
             run_ffmpeg([
                 "-i", clip["path"],
-                "-vf", f"scale=-2:'min({height},ih)',format=yuv420p",
+                "-vf", f"{tonemap},{vf}" if tonemap else vf,
                 *_video_codec_args(height),
                 "-c:a", "aac", "-b:a", "96k", "-ac", "2",
                 "-movflags", "+faststart", "-f", "mp4", str(part),

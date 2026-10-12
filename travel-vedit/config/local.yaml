@@ -39,3 +39,20 @@ motion:
   workers: 2             # 모션 여러 개를 동시에 렌더할 개수 (i5 6코어 → 2~3)
   scale: null            # null 이면 project.yaml 목표 해상도 기준 (3840 → 2배)
   chromium: null         # 특정 크롬 실행 파일을 쓸 때만 경로 지정
+
+render:
+  preview_height: 720    # render_preview 해상도 (프록시 기반)
+  video_codec: auto      # auto = 맥 하드웨어 인코더(h264_videotoolbox) 우선 | libx264
+  bitrate_4k: 60M        # 하드웨어 인코더 사용 시
+  bitrate_hd: 20M
+  crf: 17                # libx264 사용 시 (낮을수록 고화질)
+  x264_preset: medium
+  duck_volume: 0.35      # EDL audio=duck 인 컷의 원본 소리 크기 (BGM 아래 깔리는 현장음)
+  bgm_volume_db: -16     # BGM 기본 크기 (원본 소리가 나오면 사이드체인으로 더 줄어듦)
+  loudness_lufs: -14     # 유튜브 기준 음량
+  burn_subtitles: true   # 말 자막을 영상에 입힘 (output/subtitles.srt 는 항상 생성 → 유튜브 자막 업로드용)
+  max_fade_sec: 1.0
+
+hdr:                     # 아이폰 HDR(HLG/돌비비전) 영상 → SDR 변환 (실제 영상으로 색감 확인 후 조정)
+  tonemap: hable         # hable(부드러움) | mobius(원본 색 유지 쪽) | reinhard
+  npl: 100               # 기준 밝기(nits). 결과가 어두우면 낮추고(예: 80), 하이라이트가 날아가면 높임
