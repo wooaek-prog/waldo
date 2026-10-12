@@ -48,8 +48,19 @@ stages:
 
   - {id: edl_check, engine: local, approve: true}        # edl_report.json → 사람 승인
 
+  # ---------- 모션 그래픽 (HTML/CSS/SVG 템플릿 → 투명 영상) ----------
+  - {id: motion_context, engine: local}                  # motion_context.json (타임라인 + 템플릿 목록)
+  - id: motion_spec
+    engine: claude
+    fallback: manual
+    prompt: prompts/motion_spec.md
+    in: [motion_context.json, design/design_guide.json, analysis_snapped.json]
+    schema: schemas/motion_spec.schema.json
+    out: motion_spec.json
+  - {id: motion, engine: local, approve: true}           # motion/*.mov + *.png → 사람 승인
+
   # ---------- 다음 단계에서 구현 (제작) ----------
   # - {id: assets,  engine: antigravity}   # 타이틀 카드/썸네일 이미지 생성
-  # - {id: render,  engine: local}         # ffmpeg 렌더 (LUT, ASS 자막, BGM 덕킹)
+  # - {id: render,  engine: local}         # ffmpeg 렌더 (LUT, ASS 자막, BGM 덕킹, motion 합성)
   # - {id: review,  engine: antigravity}   # 렌더 결과 검수 → edl 수정 루프
   # - {id: publish, engine: claude}        # 챕터/설명란/제목 후보

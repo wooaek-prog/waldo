@@ -1,0 +1,40 @@
+/* travel-vedit 모션 런타임 공통 스타일. 템플릿은 1920×1080 기준 px 로 작성한다. */
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/PretendardVariable.woff2") format("woff2");
+  font-weight: 45 920;
+  font-display: block;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;           /* 렌더 시 투명 배경 */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+/* 브라우저 미리보기: 투명 영역을 체커보드로 표시 */
+html.vedit-preview body {
+  background: repeating-conic-gradient(#2b2b2b 0 25%, #202020 0 50%) 0 0 / 48px 48px;
+}
+
+.stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+  font-family: var(--font-caption-family, "Pretendard"), "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+.is-empty { display: none !important; }
+
+/* 글자 하나씩 움직일 때 쓰는 공통 클래스 (runtime 밖의 builder 가 생성) */
+.char { display: inline-block; white-space: pre; }

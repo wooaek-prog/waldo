@@ -37,6 +37,17 @@ say "파이썬 패키지 설치"
 .venv/bin/pip install --upgrade pip >/dev/null
 .venv/bin/pip install -r requirements.txt
 
+# 3-1) 모션 그래픽: 헤드리스 크롬(Playwright) + Pretendard 폰트(OFL, 템플릿 기본 폰트)
+say "모션 그래픽용 Chromium 설치 (Playwright)"
+.venv/bin/python -m playwright install chromium
+if [[ ! -f motion/fonts/PretendardVariable.woff2 ]]; then
+  say "Pretendard 폰트 다운로드"
+  TMPD="$(mktemp -d)"
+  curl -L --fail -o "$TMPD/pretendard.zip" "https://github.com/orioncactus/pretendard/releases/download/v1.3.9/Pretendard-1.3.9.zip"
+  unzip -o -j -q "$TMPD/pretendard.zip" "web/variable/woff2/PretendardVariable.woff2" -d motion/fonts/
+  rm -rf "$TMPD"
+fi
+
 # 4) whisper 모델 (약 550MB)
 mkdir -p models
 if [[ ! -f "models/${MODEL_NAME}" ]]; then

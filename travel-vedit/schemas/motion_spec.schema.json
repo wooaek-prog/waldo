@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "모션 그래픽 배치 (motion_spec)",
+  "type": "object",
+  "required": ["overlays"],
+  "properties": {
+    "overlays": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "required": ["id", "template", "at_index", "params"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^M\\d{2,3}$"},
+          "template": {"type": "string", "description": "motion_context.templates[].id"},
+          "at_index": {"type": "integer", "minimum": 0, "description": "EDL timeline 의 index — 이 컷이 시작할 때 등장"},
+          "offset": {"type": "number", "minimum": 0, "maximum": 10, "description": "컷 시작 후 몇 초 뒤 등장 (기본 0)"},
+          "params": {"type": "object", "description": "문구 파라미터만. 색·폰트는 넣지 말 것"},
+          "reason": {"type": "string"}
+        }
+      }
+    }
+  }
+}

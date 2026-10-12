@@ -33,3 +33,9 @@ palette:
 
 snap:
   tolerance_sec: 1.5
+
+motion:
+  codec: vp9             # vp9 (파이프라인용, 작음) | prores4444 (DaVinci 등으로 내보낼 때, 큼) | png (무손실)
+  workers: 2             # 모션 여러 개를 동시에 렌더할 개수 (i5 6코어 → 2~3)
+  scale: null            # null 이면 project.yaml 목표 해상도 기준 (3840 → 2배)
+  chromium: null         # 특정 크롬 실행 파일을 쓸 때만 경로 지정

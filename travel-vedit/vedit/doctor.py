@@ -6,6 +6,7 @@ import importlib
 import platform
 import shutil
 import sys
+from pathlib import Path
 
 from vedit.project import CONFIG_DIR, PROJECTS_DIR, ROOT, load_yaml
 
@@ -58,6 +59,28 @@ def run_doctor() -> bool:
     model = ROOT / local["whisper"]["model"]
     _line(OK if model.exists() else FAIL, "모델 파일", str(model) if model.exists() else f"{model} 없음 → setup/install_mac.sh")
     ok &= bool(found) and model.exists()
+
+    print("\n== 모션 그래픽 ==")
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as pw:
+            exe = local.get("motion", {}).get("chromium") or pw.chromium.executable_path
+        found = Path(exe).exists()
+        _line(OK if found else FAIL, "Chromium (Playwright)", exe if found else "python -m playwright install chromium")
+        ok &= found
+    except ImportError:
+        ok = False
+        _line(FAIL, "playwright", "pip install -r requirements.txt")
+    font = ROOT / "motion/fonts/PretendardVariable.woff2"
+    _line(OK if font.exists() else WARN, "Pretendard 폰트", "" if font.exists() else "없음 → 시스템 폰트로 대체 (setup/install_mac.sh)")
+    if shutil.which("ffmpeg"):
+        from vedit.media import has_encoder
+
+        for enc, note in [("libvpx-vp9", "모션 중간 파일 (필수)"), ("prores_ks", "편집 프로그램 내보내기")]:
+            found_enc = has_encoder(enc)
+            ok &= found_enc or enc != "libvpx-vp9"
+            _line(OK if found_enc else FAIL, f"  인코더 {enc}", note)
 
     print("\n== AI CLI (구독) ==")
     engines = load_yaml(CONFIG_DIR / "engines.yaml")

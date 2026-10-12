@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>오프닝 타이틀</title>
+<script type="application/json" id="vedit-meta">
+{
+  "id": "opening_title",
+  "name": "오프닝 타이틀",
+  "description": "훅 몽타주 뒤 영상 제목. 모서리 프레임이 그려지고 제목이 한 글자씩 선명해지며 밑줄이 지나간다. 배경은 투명(영상 위에 얹음).",
+  "category": "title",
+  "duration": 5.0,
+  "hold": 2.8,
+  "params": {
+    "kicker":      {"type": "text",  "label": "윗줄 작은 글자", "default": "TRAVEL VLOG"},
+    "title":       {"type": "text",  "label": "제목", "default": "교토 단풍 3박4일"},
+    "subtitle":    {"type": "text",  "label": "아랫줄", "default": "2026.10.03 — 10.06 · KYOTO, JAPAN"},
+    "primary":     {"type": "color", "label": "그림자 색", "default": "#101418", "from": "palette.primary"},
+    "accent":      {"type": "color", "label": "강조색", "default": "#F2B880", "from": "palette.accent"},
+    "text":        {"type": "color", "label": "글자색", "default": "#FFFFFF", "from": "palette.text"},
+    "font_title":  {"type": "font",  "label": "제목 폰트", "default": "Pretendard Black", "from": "fonts.title"},
+    "font_caption":{"type": "font",  "label": "보조 폰트", "default": "Pretendard SemiBold", "from": "fonts.caption"},
+    "duration":    {"type": "number", "label": "길이(초)", "default": 5.0, "min": 3, "max": 9}
+  }
+}
+</script>
+<link rel="stylesheet" href="../runtime/runtime.css">
+<script src="../runtime/runtime.js"></script>
+<style>
+  .vignette {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--primary) 55%, transparent) 0%, transparent 62%);
+    animation: fade-in .8s ease-out both, fade-out .8s ease-in forwards;
+    animation-delay: 0s, calc(var(--duration) * 1s - .8s);
+  }
+  .frame path {
+    fill: none; stroke: var(--text); stroke-width: 3; stroke-linecap: square; opacity: .85;
+    stroke-dasharray: 180; stroke-dashoffset: 180;
+    animation: draw .7s cubic-bezier(.65, 0, .35, 1) forwards; animation-delay: .1s;
+  }
+  .frame { position: absolute; inset: 0; animation: fade-out .6s ease-in forwards; animation-delay: calc(var(--duration) * 1s - .7s); }
+  .center {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: var(--text); text-align: center;
+    animation: exit .7s cubic-bezier(.5, 0, .75, 0) forwards;
+    animation-delay: calc(var(--duration) * 1s - .7s);
+  }
+  .kicker {
+    font-family: var(--font-caption-family), "Pretendard", sans-serif; font-weight: 700;
+    font-size: 30px; letter-spacing: .5em; padding-left: .5em; color: var(--accent);
+    animation: track-in 1s cubic-bezier(.16, 1, .3, 1) both; animation-delay: .25s;
+  }
+  .title {
+    max-width: 1560px; white-space: nowrap; margin: 22px 0 6px;
+    font-family: var(--font-title-family), "Pretendard", "Apple SD Gothic Neo", sans-serif;
+    font-weight: var(--font-title-weight, 900);
+    font-size: 150px; line-height: 1.1; letter-spacing: -0.025em;
+    text-shadow: 0 6px 40px rgba(0, 0, 0, .35);
+  }
+  .title .char {
+    opacity: 0; filter: blur(14px); transform: translateY(24px);
+    animation: sharpen .7s cubic-bezier(.2, .8, .2, 1) both;
+    animation-delay: calc(.55s + var(--i) * .055s);
+  }
+  .underline path {
+    stroke: var(--accent); stroke-width: 6; fill: none; stroke-linecap: round;
+    stroke-dasharray: 900; stroke-dashoffset: 900;
+    animation: draw 1s cubic-bezier(.65, 0, .35, 1) forwards; animation-delay: 1.2s;
+  }
+  .subtitle {
+    margin-top: 22px;
+    font-family: var(--font-caption-family), "Pretendard", sans-serif;
+    font-weight: var(--font-caption-weight, 600);
+    font-size: 34px; letter-spacing: .12em; opacity: .92;
+    animation: rise .7s cubic-bezier(.2, .8, .2, 1) both; animation-delay: 1.5s;
+  }
+
+  @keyframes fade-in  { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes fade-out { from { opacity: 1 } to { opacity: 0 } }
+  @keyframes draw     { to { stroke-dashoffset: 0 } }
+  @keyframes track-in { from { opacity: 0; letter-spacing: 1.1em } to { opacity: 1; letter-spacing: .5em } }
+  @keyframes sharpen  { to { opacity: 1; filter: blur(0); transform: none } }
+  @keyframes rise     { from { opacity: 0; transform: translateY(16px) } to { opacity: .92; transform: none } }
+  @keyframes exit     { to { opacity: 0; transform: scale(.97); filter: blur(6px) } }
+</style>
+<script>
+  VEDIT.build(function (p) {
+    var el = document.querySelector(".title");
+    el.textContent = "";
+    Array.from(String(p.title || "")).forEach(function (ch, i) {
+      var s = document.createElement("span");
+      s.className = "char";
+      s.style.setProperty("--i", i);
+      s.textContent = ch;
+      el.appendChild(s);
+    });
+  });
+</script>
+</head>
+<body>
+<div class="stage">
+  <div class="vignette"></div>
+  <!-- 네 모서리 L자 프레임 -->
+  <svg class="frame" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <path d="M150 230 V150 H230"/>
+    <path d="M1690 150 H1770 V230"/>
+    <path d="M1770 850 V930 H1690"/>
+    <path d="M230 930 H150 V850"/>
+  </svg>
+  <div class="center">
+    <div class="kicker" data-param="kicker"></div>
+    <div class="title" data-param="title" data-fit data-fit-min="80"></div>
+    <svg class="underline" width="900" height="12" viewBox="0 0 900 12"><path d="M6 6 H894"/></svg>
+    <div class="subtitle" data-param="subtitle"></div>
+  </div>
+</div>
+</body>
+</html>

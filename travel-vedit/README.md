@@ -4,8 +4,8 @@
 무거운 처리는 모두 로컬(무료)에서 하고, 판단이 필요한 단계만 구독 중인 AI CLI(Claude Code, Antigravity)를 호출합니다.
 
 - 대상 장비: iMac 2019 27" (i5-8500 3.0GHz 6코어, Radeon Pro 570X, 24GB, SSD, macOS)
-- 현재 범위: **제작 전 단계** (설치, 전처리, 분석, 디자인 가이드, EDL 생성·검증)
-- 다음 범위: 렌더(LUT·자막·BGM), 타이틀/썸네일 이미지 생성, 검수 루프, 유튜브 문구
+- 현재 범위: 설치, 전처리, 분석, 디자인 가이드, EDL 생성·검증, **모션 그래픽(HTML/CSS/SVG 템플릿 → 투명 영상)**
+- 다음 범위: 렌더(LUT·자막·BGM·모션 합성), 타이틀/썸네일 이미지 생성, 검수 루프, 유튜브 문구, 로컬 서버 + Tauri 2 앱
 
 ## 구조
 
@@ -14,14 +14,14 @@
                                                                                                    │
            edl_check ◀─ edl(Claude) ◀─ [승인] moodboard ◀─ design(Claude) ◀─ snap ◀─ analyze(Antigravity)
               │
-            [승인] → (다음: render / assets / review / publish)
+            [승인] ─▶ motion_context ─▶ motion_spec(Claude) ─▶ [승인] motion ─▶ (다음: render / assets / review / publish)
 ```
 
 | 엔진 | 담당 단계 | 비용 |
 |---|---|---|
-| local | ingest, proxy, scenes, quality, keyframes, stt(whisper.cpp), silence, palette, bundle, snap, moodboard, edl_check | 무료 |
+| local | ingest, proxy, scenes, quality, keyframes, stt(whisper.cpp), silence, palette, bundle, snap, moodboard, edl_check, motion_context, motion(헤드리스 크롬) | 무료 |
 | antigravity | analyze (장면 이해, 장소/하이라이트 태깅) | 구독 |
-| claude | design (디자인 가이드), edl (스토리 구성) | 구독 |
+| claude | design (디자인 가이드), edl (스토리 구성), motion_spec (모션 배치·문구) | 구독 |
 | manual | AI 단계의 비상구: 프롬프트를 파일로 내보내고 응답 JSON 을 받아 이어감 | 0원 |
 
 단계 사이는 프로젝트 폴더의 **파일(JSON)** 로만 주고받습니다. 그래서 `pipeline.yaml` 에서 `engine:` 한 줄만 바꾸면 담당 AI 를 교체할 수 있고,
@@ -31,7 +31,7 @@
 
 ```bash
 git clone <이 저장소> && cd travel-vedit
-bash setup/install_mac.sh          # brew: ffmpeg, whisper-cpp, exiftool, python@3.12 / venv / whisper 모델
+bash setup/install_mac.sh          # brew: ffmpeg, whisper-cpp, exiftool, python@3.12 / venv / whisper 모델 / 크롬(Playwright) / Pretendard
 source .venv/bin/activate
 python -m vedit doctor             # 모든 항목 ✅ 확인
 ```
@@ -87,7 +87,20 @@ AI 단계가 실패하면 `projects/<이름>/manual/<단계>.prompt.md` 가 생�
 | `analysis.json` → `analysis_snapped.json` | AI 분석 결과 → 장면/발화 경계로 타임코드 보정 |
 | `design/design_guide.json`, `design/moodboard.html` | 이번 영상 디자인 가이드 + 승인용 미리보기 |
 | `edl.json`, `edl_report.json` | 편집 결정 목록 + 검증 결과 |
+| `motion_context.json`, `motion_spec.json` | 모션 배치용 타임라인 요약 → AI 가 정한 모션 배치·문구 |
+| `motion/*.webm`, `motion/*.png`, `motion/manifest.json` | 투명 모션 영상, 승인용 정지 이미지, 목록 |
 | `logs/` | 실행 로그, AI 호출 원문 |
+
+## 모션 그래픽
+
+장소 하단 자막, DAY 전환 카드, 오프닝 타이틀 3종이 기본 제공됩니다. 템플릿은 HTML 파일 하나이고,
+색·폰트는 디자인 가이드에서 자동으로 들어갑니다. 자세한 사용법과 **템플릿 작성 규약(새 템플릿을 AI 로 만들 때 포함)** 은 [motion/README.md](motion/README.md).
+
+```bash
+python -m vedit motion list
+python -m vedit motion preview place_lower_third -p title=후시미이나리     # 브라우저 실시간 미리보기
+python -m vedit motion render opening_title --over 클립.mp4 --at 2.0       # 영상 위 합성 미리보기
+```
 
 ## 설정 파일
 

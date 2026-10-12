@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>장소 하단 자막</title>
+<script type="application/json" id="vedit-meta">
+{
+  "id": "place_lower_third",
+  "name": "장소 하단 자막",
+  "description": "챕터 시작에 장소명과 도시·날짜를 왼쪽 아래에 표시. 세로 바가 자라고 글자가 밀려 나오는 형태.",
+  "category": "lower_third",
+  "duration": 4.5,
+  "hold": 2.2,
+  "params": {
+    "title":        {"type": "text",  "label": "장소명", "default": "기요미즈데라"},
+    "subtitle":     {"type": "text",  "label": "보조 문구", "default": "KYOTO · 2026.10.03"},
+    "index":        {"type": "text",  "label": "챕터 번호 (비우면 숨김)", "default": "01"},
+    "primary":      {"type": "color", "label": "바탕 그림자 색", "default": "#1B1B1F", "from": "palette.primary"},
+    "accent":       {"type": "color", "label": "강조색", "default": "#F2B880", "from": "palette.accent"},
+    "text":         {"type": "color", "label": "글자색", "default": "#FFFFFF", "from": "palette.text"},
+    "font_title":   {"type": "font",  "label": "제목 폰트", "default": "Pretendard Black", "from": "fonts.title"},
+    "font_caption": {"type": "font",  "label": "보조 폰트", "default": "Pretendard SemiBold", "from": "fonts.caption"},
+    "duration":     {"type": "number", "label": "길이(초)", "default": 4.5, "min": 2.5, "max": 8}
+  }
+}
+</script>
+<link rel="stylesheet" href="../runtime/runtime.css">
+<script src="../runtime/runtime.js"></script>
+<style>
+  /* 왼쪽 아래 그림자 막: 밝은 화면에서도 글자가 읽히도록 */
+  .scrim {
+    position: absolute; left: 0; bottom: 0; width: 1300px; height: 520px;
+    background: radial-gradient(ellipse at 0% 100%, color-mix(in srgb, var(--primary) 70%, transparent) 0%, transparent 70%);
+    opacity: 0;
+    animation: fade-in .6s ease-out both, fade-out .6s ease-in forwards;
+    animation-delay: 0s, calc(var(--duration) * 1s - .6s);
+  }
+  .group {
+    position: absolute; left: 132px; bottom: 150px;
+    display: flex; gap: 30px; align-items: stretch;
+    animation: exit .6s cubic-bezier(.5, 0, .75, 0) forwards;
+    animation-delay: calc(var(--duration) * 1s - .6s);
+  }
+  .bar {
+    width: 8px; border-radius: 4px; background: var(--accent);
+    transform-origin: 50% 100%;
+    animation: grow-y .45s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .texts { display: flex; flex-direction: column; justify-content: flex-end; }
+  .index {
+    font-family: var(--font-caption-family), "Pretendard", sans-serif;
+    font-weight: 700; font-size: 26px; letter-spacing: .32em; color: var(--accent);
+    margin-bottom: 6px;
+    animation: rise .5s cubic-bezier(.2, .8, .2, 1) both; animation-delay: .15s;
+  }
+  .title-mask { overflow: hidden; padding: 4px 12px 10px 0; }
+  .title {
+    display: block; max-width: 1400px; white-space: nowrap;
+    font-family: var(--font-title-family), "Pretendard", "Apple SD Gothic Neo", sans-serif;
+    font-weight: var(--font-title-weight, 900);
+    font-size: 96px; line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
+    text-shadow: 0 4px 24px rgba(0, 0, 0, .35);
+    animation: slide-in .7s cubic-bezier(.16, 1, .3, 1) both; animation-delay: .25s;
+  }
+  .sub-row { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 8px; }
+  .subtitle {
+    font-family: var(--font-caption-family), "Pretendard", sans-serif;
+    font-weight: var(--font-caption-weight, 600);
+    font-size: 32px; letter-spacing: .14em; color: var(--text); opacity: .92;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .4);
+    animation: rise .6s cubic-bezier(.2, .8, .2, 1) both; animation-delay: .6s;
+  }
+  .underline path {
+    stroke: var(--accent); stroke-width: 4; fill: none; stroke-linecap: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+    animation: draw .8s cubic-bezier(.65, 0, .35, 1) forwards; animation-delay: .75s;
+  }
+
+  @keyframes fade-in  { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes fade-out { from { opacity: 1 } to { opacity: 0 } }
+  @keyframes grow-y   { from { transform: scaleY(0) } to { transform: scaleY(1) } }
+  @keyframes slide-in { from { transform: translateX(-104%); } to { transform: translateX(0); } }
+  @keyframes rise     { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: none } }
+  @keyframes draw     { to { stroke-dashoffset: 0 } }
+  @keyframes exit     { to { opacity: 0; transform: translateX(-36px) } }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="scrim"></div>
+  <div class="group">
+    <div class="bar"></div>
+    <div class="texts">
+      <div class="index" data-param="index"></div>
+      <div class="title-mask"><span class="title" data-param="title" data-fit data-fit-min="56"></span></div>
+      <div class="sub-row">
+        <div class="subtitle" data-param="subtitle"></div>
+        <svg class="underline" width="420" height="8" viewBox="0 0 420 8"><path d="M2 4 H418"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

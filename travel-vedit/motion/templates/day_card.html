@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DAY 전환 카드</title>
+<script type="application/json" id="vedit-meta">
+{
+  "id": "day_card",
+  "name": "DAY 전환 카드",
+  "description": "날짜가 바뀔 때 전체 화면을 덮는 전환 카드. 원이 퍼지며 화면을 채우고 DAY 글자가 한 자씩 올라온다.",
+  "category": "transition",
+  "duration": 3.2,
+  "hold": 1.6,
+  "params": {
+    "day":         {"type": "text",  "label": "큰 글자", "default": "DAY 2"},
+    "date":        {"type": "text",  "label": "날짜", "default": "2026.10.04 SAT"},
+    "subtitle":    {"type": "text",  "label": "보조 문구 (장소 등)", "default": "아라시야마 · 교토"},
+    "primary":     {"type": "color", "label": "배경색", "default": "#1F2A36", "from": "palette.primary"},
+    "secondary":   {"type": "color", "label": "배경 그라데이션 색", "default": "#3A4C5E", "from": "palette.secondary"},
+    "accent":      {"type": "color", "label": "강조색", "default": "#F2B880", "from": "palette.accent"},
+    "text":        {"type": "color", "label": "글자색", "default": "#FFFFFF", "from": "palette.text"},
+    "font_title":  {"type": "font",  "label": "제목 폰트", "default": "Pretendard Black", "from": "fonts.title"},
+    "font_caption":{"type": "font",  "label": "보조 폰트", "default": "Pretendard SemiBold", "from": "fonts.caption"},
+    "duration":    {"type": "number", "label": "길이(초)", "default": 3.2, "min": 2, "max": 6}
+  }
+}
+</script>
+<link rel="stylesheet" href="../runtime/runtime.css">
+<script src="../runtime/runtime.js"></script>
+<style>
+  .bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 45%, var(--secondary) 0%, var(--primary) 70%);
+    clip-path: circle(0% at 50% 50%);
+    animation: open .7s cubic-bezier(.65, 0, .35, 1) both, close .6s cubic-bezier(.65, 0, .35, 1) forwards;
+    animation-delay: 0s, calc(var(--duration) * 1s - .6s);
+  }
+  .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: var(--text);
+    animation: fade-out .4s ease-in forwards;
+    animation-delay: calc(var(--duration) * 1s - .7s);
+  }
+  .day {
+    max-width: 1600px; white-space: nowrap; overflow: visible;
+    font-family: var(--font-title-family), "Pretendard", sans-serif;
+    font-weight: var(--font-title-weight, 900);
+    font-size: 220px; line-height: 1; letter-spacing: -0.01em;
+    padding-bottom: 8px; clip-path: inset(-20px -40px 0 -40px);
+  }
+  .day .char {
+    transform: translateY(110%);
+    animation: char-up .6s cubic-bezier(.16, 1, .3, 1) both;
+    animation-delay: calc(.35s + var(--i) * .06s);
+  }
+  .line {
+    width: 560px; height: 4px; margin: 28px 0 26px; border-radius: 2px;
+    background: var(--accent); transform: scaleX(0);
+    animation: grow-x .6s cubic-bezier(.65, 0, .35, 1) both; animation-delay: .7s;
+  }
+  .date, .subtitle {
+    font-family: var(--font-caption-family), "Pretendard", sans-serif;
+    font-weight: var(--font-caption-weight, 600);
+    animation: rise .5s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .date { font-size: 40px; letter-spacing: .3em; color: var(--accent); animation-delay: .85s; }
+  .subtitle { margin-top: 14px; font-size: 36px; letter-spacing: .06em; opacity: .9; animation-delay: 1s; }
+
+  @keyframes open     { to { clip-path: circle(75% at 50% 50%) } }
+  @keyframes close    { from { clip-path: circle(75% at 50% 50%) } to { clip-path: circle(0% at 50% 50%) } }
+  @keyframes char-up  { to { transform: translateY(0) } }
+  @keyframes grow-x   { to { transform: scaleX(1) } }
+  @keyframes rise     { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
+  @keyframes fade-out { to { opacity: 0 } }
+</style>
+<script>
+  // 큰 글자를 한 글자씩 span 으로 쪼개 순서대로 올라오게 한다
+  VEDIT.build(function (p) {
+    var el = document.querySelector(".day");
+    el.textContent = "";
+    Array.from(String(p.day || "")).forEach(function (ch, i) {
+      var s = document.createElement("span");
+      s.className = "char";
+      s.style.setProperty("--i", i);
+      s.textContent = ch;
+      el.appendChild(s);
+    });
+  });
+</script>
+</head>
+<body>
+<div class="stage">
+  <div class="bg"></div>
+  <div class="content">
+    <div class="day" data-param="day" data-fit data-fit-min="120"></div>
+    <div class="line"></div>
+    <div class="date" data-param="date"></div>
+    <div class="subtitle" data-param="subtitle"></div>
+  </div>
+</div>
+</body>
+</html>
