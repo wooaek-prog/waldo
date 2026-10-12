@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "편집 결정 목록 (EDL)",
+  "type": "object",
+  "required": ["title", "chapters", "timeline"],
+  "properties": {
+    "title": {"type": "string"},
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string", "description": "챕터/장소 타이틀 (예: Day1 · 기요미즈데라)"},
+          "place": {"type": "string"}
+        }
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["clip", "in", "out", "role"],
+        "properties": {
+          "clip": {"type": "string", "pattern": "^C\\d{4}$"},
+          "in": {"type": "number", "minimum": 0},
+          "out": {"type": "number", "minimum": 0},
+          "role": {"enum": ["hook", "intro", "establishing", "talk", "action", "food", "broll", "transit", "ending"]},
+          "chapter": {"type": ["string", "null"]},
+          "audio": {"enum": ["keep", "duck", "mute"], "description": "원본 소리: 유지 / BGM 아래로 / 제거"},
+          "speed": {"type": "number", "minimum": 0.25, "maximum": 8},
+          "caption": {"type": ["string", "null"], "description": "화면 텍스트 (자막과 별개)"},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "music_cues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["at_index", "mood"],
+        "properties": {"at_index": {"type": "integer", "minimum": 0}, "mood": {"type": "string"}}
+      }
+    }
+  }
+}

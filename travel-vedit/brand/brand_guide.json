@@ -1,0 +1,26 @@
+{
+  "_comment": "채널 고정 브랜드 가이드. fixed 는 모든 영상 공통, variable 은 영상마다 AI 가 범위 안에서 결정. 채널에 맞게 직접 수정하세요.",
+  "channel_name": "내 여행 채널",
+  "fixed": {
+    "fonts": {
+      "title": "Pretendard Black",
+      "caption": "Pretendard SemiBold",
+      "allowed_title_fonts": ["Pretendard Black", "Gmarket Sans Bold", "Noto Serif KR Bold"]
+    },
+    "logo": "brand/logo.png",
+    "intro": {"max_sec": 15, "style": "하이라이트 몽타주 + 제목 카드"},
+    "outro": {"sec": 8, "text": "구독과 좋아요 부탁드려요"},
+    "captions": {"position": "bottom", "max_chars_per_line": 18, "outline": true},
+    "thumbnail_layout": "인물/풍경 배경 + 좌측 큰 2단 텍스트 + 우측 하단 로고",
+    "resolution": "3840x2160",
+    "loudness_lufs": -14
+  },
+  "variable": {
+    "palette": "여행지 원본 색에서 추출, 텍스트 대비 확보",
+    "grade": {"saturation": [0.85, 1.15], "contrast": [0.9, 1.15], "warmth": [-0.5, 0.6]},
+    "available_luts": ["neutral_rec709.cube", "warm_film.cube", "cool_city.cube", "vivid_nature.cube"],
+    "location_title_styles": ["lower_left_slide", "center_fade", "typewriter", "minimal_corner"],
+    "chapter_transitions": ["cut", "fade_black_0.5", "fade_white_0.4", "dissolve_0.6", "whip"],
+    "music_bpm": [70, 130]
+  }
+}

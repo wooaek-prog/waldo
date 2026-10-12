@@ -1,0 +1,35 @@
+# 로컬 도구 설정 (iMac 2019 27" i5-8500 6코어 기준 기본값)
+
+proxy:
+  height: 720            # 분석/미리보기용 프록시 높이
+
+scenes:
+  threshold: 27          # PySceneDetect ContentDetector 민감도 (낮을수록 컷을 더 많이 찾음)
+  min_scene_sec: 1.0
+  max_scene_sec: 15      # 긴 롱테이크는 이 길이로 잘라 분석 단위를 고르게
+
+keyframes:
+  width: 480
+
+quality:                 # 처음 2~3편은 quality.json 을 보며 튜닝
+  sample_fps: 2
+  blurry_below: 60       # 라플라시안 분산
+  dark_below: 40         # 평균 밝기 0~255
+  overexposed_above: 215
+  shaky_above: 4.0       # 프레임 간 이동량 변화(px, 320px 폭 기준)
+
+whisper:
+  bin: whisper-cli       # brew install whisper-cpp (구버전은 whisper-cpp)
+  model: models/ggml-large-v3-turbo-q5_0.bin
+  language: auto         # 한국어만이면 ko 로 고정하면 더 정확
+  threads: 6             # i5-8500 = 6코어
+
+silence:
+  noise_db: -35
+  min_sec: 0.8
+
+palette:
+  colors: 6
+
+snap:
+  tolerance_sec: 1.5

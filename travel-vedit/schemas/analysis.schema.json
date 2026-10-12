@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "여행 영상 분석 결과",
+  "type": "object",
+  "required": ["trip_summary", "mood_tags", "places", "segments"],
+  "properties": {
+    "trip_summary": {"type": "string", "description": "여행 전체 요약 2~4문장"},
+    "mood_tags": {"type": "array", "items": {"type": "string"}, "maxItems": 8},
+    "places": {
+      "type": "array",
+      "description": "방문 장소 (등장 순서). 챕터 후보가 된다.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "clips"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^P\\d{2}$"},
+          "name": {"type": "string", "description": "장소명 (예: 기요미즈데라)"},
+          "city": {"type": "string"},
+          "clips": {"type": "array", "items": {"type": "string", "pattern": "^C\\d{4}$"}}
+        }
+      }
+    },
+    "segments": {
+      "type": "array",
+      "description": "편집에 쓸 만한 구간. 쓸모없는 구간은 넣지 않는다.",
+      "items": {
+        "type": "object",
+        "required": ["clip", "start", "end", "desc", "highlight", "role", "place"],
+        "properties": {
+          "clip": {"type": "string", "pattern": "^C\\d{4}$"},
+          "start": {"type": "number", "minimum": 0},
+          "end": {"type": "number", "minimum": 0},
+          "desc": {"type": "string", "description": "무엇이 보이고 들리는지 한 문장"},
+          "highlight": {"type": "number", "minimum": 0, "maximum": 1, "description": "하이라이트 가치 0~1"},
+          "role": {"enum": ["hook", "establishing", "talk", "action", "food", "broll", "transit", "ending"]},
+          "place": {"type": "string", "description": "places[].id"},
+          "tags": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# AI CLI 엔진 설정. CLI 플래그가 바뀌면 여기만 고치면 된다.
+# 프롬프트는 기본적으로 표준입력(stdin)으로 전달하고, 표준출력에서 JSON 을 꺼낸다.
+
+claude:
+  # Claude Code 헤드리스 모드. --output-format json 이면 {"result": "..."} 로 감싸져 나온다.
+  cmd: ["claude", "-p", "--output-format", "json"]
+  prompt_via: stdin      # stdin | arg
+  result_key: result
+  timeout: 900
+  retries: 3
+
+antigravity:
+  # ⚠️ 설치 후 `agy --help` 로 헤드리스(비대화) 실행 플래그를 확인하고 수정할 것.
+  #    출력이 JSON 래퍼라면 result_key 도 맞춰 줄 것.
+  cmd: ["agy", "-p"]
+  prompt_via: stdin
+  timeout: 1200
+  retries: 2

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "여행별 디자인 가이드 (렌더러가 그대로 읽어 적용)",
+  "type": "object",
+  "required": ["theme", "palette", "grade", "fonts", "captions", "location_title", "transitions", "music", "thumbnail"],
+  "properties": {
+    "theme": {"type": "string", "description": "한 줄 콘셉트 (예: 교토 가을 - 따뜻한 필름톤)"},
+    "palette": {
+      "type": "object",
+      "required": ["primary", "secondary", "accent", "text"],
+      "additionalProperties": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"}
+    },
+    "grade": {
+      "type": "object",
+      "required": ["lut", "saturation", "contrast", "warmth"],
+      "properties": {
+        "lut": {"type": ["string", "null"], "description": "luts/ 폴더의 .cube 파일명, 없으면 null"},
+        "saturation": {"type": "number", "minimum": 0.5, "maximum": 1.5},
+        "contrast": {"type": "number", "minimum": 0.7, "maximum": 1.3},
+        "warmth": {"type": "number", "minimum": -1, "maximum": 1, "description": "-1 차갑게 ~ +1 따뜻하게"}
+      }
+    },
+    "fonts": {
+      "type": "object",
+      "required": ["title", "caption"],
+      "properties": {"title": {"type": "string"}, "caption": {"type": "string"}}
+    },
+    "captions": {
+      "type": "object",
+      "required": ["size", "color", "outline_color", "outline", "position"],
+      "properties": {
+        "size": {"type": "integer", "minimum": 24, "maximum": 96},
+        "color": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"},
+        "outline_color": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"},
+        "outline": {"type": "integer", "minimum": 0, "maximum": 8},
+        "position": {"enum": ["bottom", "bottom_left", "top"]}
+      }
+    },
+    "location_title": {
+      "type": "object",
+      "required": ["style", "duration"],
+      "properties": {
+        "style": {"enum": ["lower_left_slide", "center_fade", "typewriter", "minimal_corner"]},
+        "duration": {"type": "number", "minimum": 1.5, "maximum": 6},
+        "show_city": {"type": "boolean"}
+      }
+    },
+    "transitions": {
+      "type": "object",
+      "required": ["default", "chapter"],
+      "properties": {
+        "default": {"enum": ["cut", "dissolve_0.3"]},
+        "chapter": {"enum": ["cut", "fade_black_0.5", "fade_white_0.4", "dissolve_0.6", "whip"]}
+      }
+    },
+    "music": {
+      "type": "object",
+      "required": ["moods", "bpm_range"],
+      "properties": {
+        "moods": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "bpm_range": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+        "duck_db": {"type": "number", "maximum": 0}
+      }
+    },
+    "pacing": {
+      "type": "object",
+      "properties": {
+        "hook_sec": {"type": "number"},
+        "broll_cut_sec": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}
+      }
+    },
+    "thumbnail": {
+      "type": "object",
+      "required": ["concept", "text", "image_prompt"],
+      "properties": {
+        "concept": {"type": "string"},
+        "text": {"type": "string", "description": "썸네일 큰 글자 (12자 이내 권장)"},
+        "subtext": {"type": "string"},
+        "base_frame": {"type": ["string", "null"], "description": "배경으로 쓸 keyframes/ 경로 추천"},
+        "image_prompt": {"type": "string", "description": "이미지 생성 AI 용 프롬프트 (영문)"}
+      }
+    },
+    "title_card_prompt": {"type": "string", "description": "타이틀/챕터 카드 배경 이미지 생성용 프롬프트 (영문)"},
+    "notes": {"type": "string"}
+  }
+}

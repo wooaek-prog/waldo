@@ -1,0 +1,55 @@
+# 파이프라인 기본 틀. `vedit init` 때 프로젝트 폴더로 복사되며, 프로젝트별로 수정 가능.
+#
+# engine : local | claude | antigravity | manual
+# fallback: 주 엔진 실패 시 대체 엔진 (구독 한도 소진 시 manual 로 이어가기)
+# approve : true 면 결과 확인 후 `vedit approve` 해야 다음 단계 진행
+# in/out  : 입력/출력 파일 (프로젝트 폴더 기준, 없으면 저장소 루트 기준)
+
+stages:
+  # ---------- 로컬 전처리 (무료, 밤에 돌려두기 좋음) ----------
+  - {id: ingest,    engine: local}                       # media.json
+  - {id: proxy,     engine: local}                       # proxy/*.mp4, audio/*.wav
+  - {id: scenes,    engine: local}                       # scenes.json
+  - {id: quality,   engine: local}                       # quality.json
+  - {id: keyframes, engine: local}                       # keyframes/*.jpg
+  - {id: stt,       engine: local}                       # transcript.json (가장 오래 걸림)
+  - {id: silence,   engine: local}                       # silence.json
+  - {id: palette,   engine: local}                       # palette.json
+  - {id: bundle,    engine: local}                       # analysis_input.json
+
+  # ---------- AI 판단 (구독 CLI) ----------
+  - id: analyze
+    engine: antigravity        # 영상/이미지 이해 → Gemini 계열
+    fallback: manual
+    prompt: prompts/analyze.md
+    in: [analysis_input.json, keyframes]
+    schema: schemas/analysis.schema.json
+    out: analysis.json
+
+  - {id: snap, engine: local}                            # analysis_snapped.json
+
+  - id: design
+    engine: claude             # 규칙 기반 구조화 → Claude
+    fallback: manual
+    prompt: prompts/design_guide.md
+    in: [analysis_snapped.json, palette.json, brand/brand_guide.json, project.yaml]
+    schema: schemas/design_guide.schema.json
+    out: design/design_guide.json
+
+  - {id: moodboard, engine: local, approve: true}        # design/moodboard.html → 사람 승인
+
+  - id: edl
+    engine: claude
+    fallback: manual
+    prompt: prompts/story_edl.md
+    in: [analysis_snapped.json, design/design_guide.json, project.yaml]
+    schema: schemas/edl.schema.json
+    out: edl.json
+
+  - {id: edl_check, engine: local, approve: true}        # edl_report.json → 사람 승인
+
+  # ---------- 다음 단계에서 구현 (제작) ----------
+  # - {id: assets,  engine: antigravity}   # 타이틀 카드/썸네일 이미지 생성
+  # - {id: render,  engine: local}         # ffmpeg 렌더 (LUT, ASS 자막, BGM 덕킹)
+  # - {id: review,  engine: antigravity}   # 렌더 결과 검수 → edl 수정 루프
+  # - {id: publish, engine: claude}        # 챕터/설명란/제목 후보

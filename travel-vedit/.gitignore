@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+models/*.bin
+projects/*
+!projects/.gitkeep
+luts/*.cube
