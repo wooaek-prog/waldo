@@ -1,0 +1,305 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1877" height="1022" viewBox="0 0 1877 1022" font-family="WenQuanYi Zen Hei, Noto Sans CJK KR, sans-serif">
+<rect width="100%" height="100%" fill="#fcfcfa"/>
+<text x="60.0" y="40.0" font-size="22" fill="#111" text-anchor="start" font-weight="bold" dominant-baseline="middle">화랑 A안 평면도 · 기준층 Ⅱ — A·C블록 6세대 (3–17 · 36–49층, 29개층)</text>
+<text x="60.0" y="72.0" font-size="13" fill="#555" text-anchor="start" font-weight="normal" dominant-baseline="middle">대표층 10층 · 층고 3.3m · 유리선(연면적선) 기준 개략 · 판 59.58 × 12.6m, 모서리 R2.0</text>
+<text x="60.0" y="94.0" font-size="13" fill="#555" text-anchor="start" font-weight="normal" dominant-baseline="middle">아래 = 서측(픽셀 발코니) · 위 = 동측(연속 발코니·공용복도) · 왼쪽 = 북 (방위 174°, 나침반 참조)</text>
+<path d="M278.6,582.9 L278.6,560.8 L196.8,560.8 L196.8,582.9 L278.6,582.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M448.7,595.9 L448.7,560.8 L366.8,560.8 L366.8,595.9 L448.7,595.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M533.7,582.9 L533.7,560.8 L451.8,560.8 L451.8,582.9 L533.7,582.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M703.7,595.9 L703.7,560.8 L621.8,560.8 L621.8,595.9 L703.7,595.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M788.7,582.9 L788.7,560.8 L706.8,560.8 L706.8,582.9 L788.7,582.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M958.7,595.9 L958.7,560.8 L876.8,560.8 L876.8,595.9 L958.7,595.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1043.7,582.9 L1043.7,560.8 L961.8,560.8 L961.8,582.9 L1043.7,582.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1213.7,595.9 L1213.7,560.8 L1131.8,560.8 L1131.8,595.9 L1213.7,595.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1298.7,582.9 L1298.7,560.8 L1216.8,560.8 L1216.8,582.9 L1298.7,582.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1468.7,595.9 L1468.7,560.8 L1386.8,560.8 L1386.8,595.9 L1468.7,595.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1553.7,582.9 L1553.7,560.8 L1471.8,560.8 L1471.8,582.9 L1553.7,582.9 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1640.3,233.2 L1640.3,217.6 L195.2,217.6 L195.2,233.2 L1640.3,233.2 Z" fill="#f3f0e8" fill-opacity="1.0" stroke="#8d8a80" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1696.2,508.8 L1696.1,509.3 L1694.4,522.8 L1694.1,523.8 L1688.9,536.3 L1688.4,537.2 L1680.1,547.9 L1679.4,548.7 L1668.7,556.9 L1667.8,557.4 L1655.2,562.6 L1654.2,562.9 L1640.8,564.7 L1640.3,564.7 L195.2,564.7 L194.7,564.7 L181.2,562.9 L180.2,562.6 L167.7,557.4 L166.8,556.9 L156.1,548.7 L155.3,547.9 L147.1,537.2 L146.6,536.3 L141.4,523.8 L141.1,522.8 L139.3,509.3 L139.3,508.8 L139.3,285.2 L139.3,284.7 L141.1,271.2 L141.4,270.2 L146.6,257.7 L147.1,256.8 L155.3,246.1 L156.1,245.3 L166.8,237.1 L167.7,236.6 L180.2,231.4 L181.2,231.1 L194.7,229.3 L195.2,229.3 L1640.3,229.3 L1640.8,229.3 L1654.2,231.1 L1655.2,231.4 L1667.8,236.6 L1668.7,237.1 L1679.4,245.3 L1680.1,246.1 L1688.4,256.8 L1688.9,257.7 L1694.1,270.2 L1694.4,271.2 L1696.1,284.7 L1696.2,285.2 L1696.2,508.8 Z" fill="none" fill-opacity="1.0" stroke="#9a978f" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M572.7,233.2 L572.7,287.8 L426.6,287.8 L426.6,233.2 L572.7,233.2 Z" fill="#efeee9" fill-opacity="1.0" stroke="#8a8880" stroke-width="0.6" fill-rule="evenodd" />
+<path d="M1450.5,233.2 L1450.5,287.8 L1304.4,287.8 L1304.4,233.2 L1450.5,233.2 Z" fill="#efeee9" fill-opacity="1.0" stroke="#8a8880" stroke-width="0.6" fill-rule="evenodd" />
+<path d="M765.1,560.8 L765.1,233.2 L938.5,233.2 L938.5,560.8 L765.1,560.8 Z" fill="#d6e6f5" fill-opacity="1.0" stroke="#222" stroke-width="3.0" fill-rule="evenodd" />
+<path d="M843.2,436.0 L843.2,560.8 L765.1,560.8 L765.1,436.0 L843.2,436.0 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="804.1" y="492.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실1</text>
+<text x="804.1" y="504.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">14㎡</text>
+<path d="M938.5,560.8 L843.2,560.8 L843.2,436.0 L938.5,436.0 L938.5,560.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="890.8" y="492.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">거실</text>
+<text x="890.8" y="504.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">18㎡</text>
+<path d="M843.2,368.4 L843.2,436.0 L765.1,436.0 L765.1,368.4 L843.2,368.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="804.1" y="402.2" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">드레스·욕실</text>
+<path d="M938.5,436.0 L843.2,436.0 L843.2,342.4 L938.5,342.4 L938.5,436.0 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="890.8" y="382.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">주방·식당</text>
+<text x="890.8" y="395.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">13㎡</text>
+<path d="M817.1,295.6 L817.1,368.4 L765.1,368.4 L765.1,295.6 L817.1,295.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="791.1" y="332.0" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">욕실</text>
+<path d="M938.5,342.4 L865.7,342.4 L865.7,233.2 L938.5,233.2 L938.5,342.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="902.1" y="281.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실2</text>
+<text x="902.1" y="294.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">12㎡</text>
+<path d="M865.7,311.2 L817.1,311.2 L817.1,233.2 L865.7,233.2 L865.7,311.2 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="841.4" y="272.2" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">알파룸</text>
+<path d="M813.7,287.8 L765.1,287.8 L765.1,233.2 L813.7,233.2 L813.7,287.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="789.4" y="260.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">현관</text>
+<circle cx="765.1" cy="260.5" r="6" fill="#c1121f"/>
+<rect x="796.8" y="615.4" width="110" height="26" rx="4" fill="#d6e6f5" stroke="#222" stroke-width="1.2"/>
+<text x="851.8" y="628.4" font-size="12.5" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">01호 · 84 · 84㎡</text>
+<path d="M938.5,560.8 L938.5,233.2 L1112.0,233.2 L1112.0,560.8 L938.5,560.8 Z" fill="#d6e6f5" fill-opacity="1.0" stroke="#222" stroke-width="3.0" fill-rule="evenodd" />
+<path d="M1112.0,560.8 L1033.9,560.8 L1033.9,436.0 L1112.0,436.0 L1112.0,560.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1072.9" y="492.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실1</text>
+<text x="1072.9" y="504.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">14㎡</text>
+<path d="M1033.9,436.0 L1033.9,560.8 L938.5,560.8 L938.5,436.0 L1033.9,436.0 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="986.2" y="492.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">거실</text>
+<text x="986.2" y="504.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">18㎡</text>
+<path d="M1112.0,436.0 L1033.9,436.0 L1033.9,368.4 L1112.0,368.4 L1112.0,436.0 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1072.9" y="402.2" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">드레스·욕실</text>
+<path d="M1033.9,342.4 L1033.9,436.0 L938.5,436.0 L938.5,342.4 L1033.9,342.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="986.2" y="382.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">주방·식당</text>
+<text x="986.2" y="395.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">13㎡</text>
+<path d="M1112.0,368.4 L1059.9,368.4 L1059.9,295.6 L1112.0,295.6 L1112.0,368.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1085.9" y="332.0" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">욕실</text>
+<path d="M1011.4,342.4 L938.5,342.4 L938.5,233.2 L1011.4,233.2 L1011.4,342.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="975.0" y="281.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실2</text>
+<text x="975.0" y="294.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">12㎡</text>
+<path d="M1059.9,311.2 L1011.4,311.2 L1011.4,233.2 L1059.9,233.2 L1059.9,311.2 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1035.7" y="272.2" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">알파룸</text>
+<path d="M1112.0,287.8 L1063.4,287.8 L1063.4,233.2 L1112.0,233.2 L1112.0,287.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1087.7" y="260.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">현관</text>
+<circle cx="1112.0" cy="260.5" r="6" fill="#c1121f"/>
+<rect x="970.2" y="615.4" width="110" height="26" rx="4" fill="#d6e6f5" stroke="#222" stroke-width="1.2"/>
+<text x="1025.2" y="628.4" font-size="12.5" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">02호 · 84 · 84㎡</text>
+<path d="M426.6,560.8 L426.6,287.8 L572.7,287.8 L572.7,560.8 L426.6,560.8 Z" fill="#d5ece4" fill-opacity="1.0" stroke="#222" stroke-width="3.0" fill-rule="evenodd" />
+<path d="M511.3,446.4 L511.3,560.8 L426.6,560.8 L426.6,446.4 L511.3,446.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="469.0" y="497.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">거실</text>
+<text x="469.0" y="509.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">14㎡</text>
+<path d="M572.7,560.8 L511.3,560.8 L511.3,446.4 L572.7,446.4 L572.7,560.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="542.0" y="497.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실1</text>
+<text x="542.0" y="509.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">10㎡</text>
+<path d="M511.3,373.6 L511.3,446.4 L426.6,446.4 L426.6,373.6 L511.3,373.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="469.0" y="403.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">주방</text>
+<text x="469.0" y="416.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">9㎡</text>
+<path d="M572.7,446.4 L511.3,446.4 L511.3,389.2 L572.7,389.2 L572.7,446.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="542.0" y="417.8" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">욕실</text>
+<path d="M507.0,373.6 L426.6,373.6 L426.6,287.8 L507.0,287.8 L507.0,373.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="466.8" y="324.4" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실2</text>
+<text x="466.8" y="337.0" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">10㎡</text>
+<path d="M572.7,334.6 L528.9,334.6 L528.9,287.8 L572.7,287.8 L572.7,334.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="550.8" y="311.2" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">현관</text>
+<circle cx="572.7" cy="287.8" r="6" fill="#c1121f"/>
+<rect x="444.7" y="615.4" width="110" height="26" rx="4" fill="#d5ece4" stroke="#222" stroke-width="1.2"/>
+<text x="499.7" y="628.4" font-size="12.5" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">03호 · 59 · 59㎡</text>
+<path d="M195.2,560.8 L181.7,559.0 L169.2,553.8 L158.4,545.6 L150.2,534.8 L145.0,522.3 L143.2,508.8 L143.2,285.2 L145.0,271.7 L150.2,259.2 L158.4,248.4 L169.2,240.2 L181.7,235.0 L195.2,233.2 L426.6,233.2 L426.6,560.8 L195.2,560.8 Z" fill="#efd9ea" fill-opacity="1.0" stroke="#222" stroke-width="3.0" fill-rule="evenodd" />
+<path d="M426.6,560.8 L324.6,560.8 L324.6,430.8 L426.6,430.8 L426.6,560.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="375.6" y="489.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실1</text>
+<text x="375.6" y="502.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">20㎡</text>
+<path d="M324.6,399.6 L324.6,560.8 L195.2,560.8 L181.7,559.0 L169.2,553.8 L158.4,545.6 L150.2,534.8 L145.0,522.3 L143.2,508.8 L143.2,399.6 L324.6,399.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="233.9" y="447.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">거실</text>
+<text x="233.9" y="460.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">42㎡</text>
+<path d="M426.6,430.8 L324.6,430.8 L324.6,358.0 L426.6,358.0 L426.6,430.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="375.6" y="388.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">드레스·욕실</text>
+<text x="375.6" y="400.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">11㎡</text>
+<path d="M279.2,316.4 L279.2,399.6 L143.2,399.6 L143.2,316.4 L279.2,316.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="211.2" y="351.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">주방·식당</text>
+<text x="211.2" y="364.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">17㎡</text>
+<path d="M256.6,316.4 L143.2,316.4 L143.2,285.2 L145.0,271.7 L150.2,259.2 L158.4,248.4 L169.2,240.2 L181.7,235.0 L195.2,233.2 L256.6,233.2 L256.6,316.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="200.3" y="272.2" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실3</text>
+<text x="200.3" y="284.8" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">13㎡</text>
+<path d="M341.6,321.6 L256.6,321.6 L256.6,233.2 L341.6,233.2 L341.6,321.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="299.1" y="271.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실2</text>
+<text x="299.1" y="283.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">11㎡</text>
+<path d="M386.9,321.6 L341.6,321.6 L341.6,233.2 L386.9,233.2 L386.9,321.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="364.3" y="277.4" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">욕실</text>
+<path d="M426.6,287.8 L386.9,287.8 L386.9,233.2 L426.6,233.2 L426.6,287.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="406.8" y="260.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">현관</text>
+<path d="M426.6,358.0 L386.9,358.0 L386.9,287.8 L426.6,287.8 L426.6,358.0 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="406.8" y="322.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">팬트리</text>
+<circle cx="426.6" cy="260.5" r="6" fill="#c1121f"/>
+<rect x="225.1" y="615.4" width="123" height="26" rx="4" fill="#efd9ea" stroke="#222" stroke-width="1.2"/>
+<text x="286.6" y="628.4" font-size="12.5" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">04호 · 135 · 136㎡</text>
+<path d="M1304.4,560.8 L1304.4,287.8 L1450.5,287.8 L1450.5,560.8 L1304.4,560.8 Z" fill="#d5ece4" fill-opacity="1.0" stroke="#222" stroke-width="3.0" fill-rule="evenodd" />
+<path d="M1450.5,560.8 L1365.7,560.8 L1365.7,446.4 L1450.5,446.4 L1450.5,560.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1408.1" y="497.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">거실</text>
+<text x="1408.1" y="509.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">14㎡</text>
+<path d="M1365.7,446.4 L1365.7,560.8 L1304.4,560.8 L1304.4,446.4 L1365.7,446.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1335.0" y="497.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실1</text>
+<text x="1335.0" y="509.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">10㎡</text>
+<path d="M1450.5,446.4 L1365.7,446.4 L1365.7,373.6 L1450.5,373.6 L1450.5,446.4 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1408.1" y="403.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">주방</text>
+<text x="1408.1" y="416.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">9㎡</text>
+<path d="M1365.7,389.2 L1365.7,446.4 L1304.4,446.4 L1304.4,389.2 L1365.7,389.2 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1335.0" y="417.8" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">욕실</text>
+<path d="M1450.5,373.6 L1370.1,373.6 L1370.1,287.8 L1450.5,287.8 L1450.5,373.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1410.3" y="324.4" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실2</text>
+<text x="1410.3" y="337.0" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">10㎡</text>
+<path d="M1348.2,334.6 L1304.4,334.6 L1304.4,287.8 L1348.2,287.8 L1348.2,334.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1326.3" y="311.2" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">현관</text>
+<circle cx="1304.4" cy="287.8" r="6" fill="#c1121f"/>
+<rect x="1322.4" y="615.4" width="110" height="26" rx="4" fill="#d5ece4" stroke="#222" stroke-width="1.2"/>
+<text x="1377.4" y="628.4" font-size="12.5" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">05호 · 59 · 59㎡</text>
+<path d="M1690.5,522.3 L1685.3,534.8 L1677.0,545.6 L1666.3,553.8 L1653.7,559.0 L1640.3,560.8 L1450.5,560.8 L1450.5,233.2 L1640.3,233.2 L1653.7,235.0 L1666.3,240.2 L1677.0,248.4 L1685.3,259.2 L1690.5,271.7 L1692.3,285.2 L1692.3,508.8 L1690.5,522.3 Z" fill="#e4dcf2" fill-opacity="1.0" stroke="#222" stroke-width="3.0" fill-rule="evenodd" />
+<path d="M1547.2,436.0 L1547.2,560.8 L1450.5,560.8 L1450.5,436.0 L1547.2,436.0 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1498.8" y="492.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실1</text>
+<text x="1498.8" y="504.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">18㎡</text>
+<path d="M1692.3,508.8 L1690.5,522.3 L1685.3,534.8 L1677.0,545.6 L1666.3,553.8 L1653.7,559.0 L1640.3,560.8 L1547.2,560.8 L1547.2,404.8 L1692.3,404.8 L1692.3,508.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1619.7" y="450.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">거실</text>
+<text x="1619.7" y="463.1" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">33㎡</text>
+<path d="M1547.2,363.2 L1547.2,436.0 L1450.5,436.0 L1450.5,363.2 L1547.2,363.2 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1498.8" y="393.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">드레스·욕실</text>
+<text x="1498.8" y="405.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">10㎡</text>
+<path d="M1692.3,404.8 L1583.5,404.8 L1583.5,321.6 L1692.3,321.6 L1692.3,404.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1637.9" y="356.9" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">주방·식당</text>
+<text x="1637.9" y="369.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">13㎡</text>
+<path d="M1692.3,321.6 L1583.5,321.6 L1583.5,233.2 L1640.3,233.2 L1653.7,235.0 L1666.3,240.2 L1677.0,248.4 L1685.3,259.2 L1690.5,271.7 L1692.3,285.2 L1692.3,321.6 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1637.4" y="272.2" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실3</text>
+<text x="1637.4" y="284.8" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">13㎡</text>
+<path d="M1583.5,326.8 L1503.7,326.8 L1503.7,233.2 L1583.5,233.2 L1583.5,326.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1543.6" y="273.7" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">침실2</text>
+<text x="1543.6" y="286.3" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">11㎡</text>
+<path d="M1503.7,287.8 L1503.7,363.2 L1450.5,363.2 L1450.5,287.8 L1503.7,287.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1477.1" y="325.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">욕실</text>
+<path d="M1503.7,287.8 L1450.5,287.8 L1450.5,233.2 L1503.7,233.2 L1503.7,287.8 Z" fill="none" fill-opacity="1.0" stroke="#666" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1477.1" y="260.5" font-size="10.5" fill="#444" text-anchor="middle" font-weight="normal" dominant-baseline="middle">현관</text>
+<circle cx="1450.5" cy="260.5" r="6" fill="#c1121f"/>
+<rect x="1508.2" y="615.4" width="123" height="26" rx="4" fill="#e4dcf2" stroke="#222" stroke-width="1.2"/>
+<text x="1569.7" y="628.4" font-size="12.5" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">06호 · 114 · 115㎡</text>
+<path d="M572.7,560.8 L572.7,233.2 L765.1,233.2 L765.1,560.8 L572.7,560.8 Z" fill="#e3e2dd" fill-opacity="1.0" stroke="#111" stroke-width="3.2" fill-rule="evenodd" />
+<path d="M765.1,560.8 L765.1,475.0 L572.7,475.0 L572.7,560.8 L765.1,560.8 Z" fill="#f4f3ef" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<line x1="604.2" y1="555.6" x2="604.2" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="612.3" y1="555.6" x2="612.3" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="620.4" y1="555.6" x2="620.4" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="628.5" y1="555.6" x2="628.5" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="636.6" y1="555.6" x2="636.6" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="644.7" y1="555.6" x2="644.7" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="652.7" y1="555.6" x2="652.7" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="660.8" y1="555.6" x2="660.8" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="668.9" y1="555.6" x2="668.9" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="677.0" y1="555.6" x2="677.0" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="685.1" y1="555.6" x2="685.1" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="693.2" y1="555.6" x2="693.2" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="701.3" y1="555.6" x2="701.3" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="709.4" y1="555.6" x2="709.4" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="717.5" y1="555.6" x2="717.5" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="725.5" y1="555.6" x2="725.5" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="733.6" y1="555.6" x2="733.6" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="596.1" y1="517.9" x2="741.7" y2="517.9" stroke="#555" stroke-width="1.2"/>
+<rect x="624.9" y="532.3" width="88" height="18" fill="#f4f3ef"/>
+<text x="668.9" y="541.3" font-size="10.5" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">특별피난계단</text>
+<path d="M765.1,475.0 L765.1,423.0 L710.5,423.0 L710.5,475.0 L765.1,475.0 Z" fill="#b9b7b0" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<text x="737.8" y="449.0" font-size="9.5" fill="#222" text-anchor="middle" font-weight="bold" dominant-baseline="middle">PS</text>
+<path d="M710.5,475.0 L710.5,423.0 L627.3,423.0 L627.3,475.0 L710.5,475.0 Z" fill="#ecebe6" fill-opacity="1.0" stroke="#111" stroke-width="1.0" fill-rule="evenodd" />
+<text x="668.9" y="449.0" font-size="9.5" fill="#222" text-anchor="middle" font-weight="normal" dominant-baseline="middle">부속실</text>
+<path d="M627.3,475.0 L627.3,423.0 L572.7,423.0 L572.7,475.0 L627.3,475.0 Z" fill="#b9b7b0" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<text x="600.0" y="449.0" font-size="9.5" fill="#222" text-anchor="middle" font-weight="bold" dominant-baseline="middle">EPS·TPS</text>
+<path d="M765.1,423.0 L765.1,355.4 L702.7,355.4 L702.7,423.0 L765.1,423.0 Z" fill="#ffffff" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<line x1="702.7" y1="423.0" x2="765.1" y2="355.4" stroke="#999" stroke-width="0.8"/>
+<line x1="702.7" y1="355.4" x2="765.1" y2="423.0" stroke="#999" stroke-width="0.8"/>
+<text x="733.9" y="383.5" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">E/V-1</text>
+<text x="733.9" y="394.9" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">승용</text>
+<path d="M765.1,355.4 L765.1,287.8 L702.7,287.8 L702.7,355.4 L765.1,355.4 Z" fill="#ffffff" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<line x1="702.7" y1="355.4" x2="765.1" y2="287.8" stroke="#999" stroke-width="0.8"/>
+<line x1="702.7" y1="287.8" x2="765.1" y2="355.4" stroke="#999" stroke-width="0.8"/>
+<text x="733.9" y="315.9" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">E/V-2</text>
+<text x="733.9" y="327.3" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">비상용 겸</text>
+<path d="M702.7,423.0 L702.7,287.8 L635.1,287.8 L635.1,423.0 L702.7,423.0 Z" fill="#ecebe6" fill-opacity="1.0" stroke="#111" stroke-width="1.0" fill-rule="evenodd" />
+<text x="668.9" y="355.4" font-size="9.5" fill="#222" text-anchor="middle" font-weight="normal" dominant-baseline="middle">승강장</text>
+<path d="M635.1,423.0 L635.1,355.4 L572.7,355.4 L572.7,423.0 L635.1,423.0 Z" fill="#b9b7b0" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<text x="603.9" y="389.2" font-size="9.5" fill="#222" text-anchor="middle" font-weight="bold" dominant-baseline="middle">AD</text>
+<path d="M635.1,355.4 L635.1,287.8 L572.7,287.8 L572.7,355.4 L635.1,355.4 Z" fill="#ffffff" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<line x1="572.7" y1="355.4" x2="635.1" y2="287.8" stroke="#999" stroke-width="0.8"/>
+<line x1="572.7" y1="287.8" x2="635.1" y2="355.4" stroke="#999" stroke-width="0.8"/>
+<text x="603.9" y="315.9" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">E/V-3</text>
+<text x="603.9" y="327.3" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">피난용 겸</text>
+<path d="M765.1,287.8 L765.1,233.2 L572.7,233.2 L572.7,287.8 L765.1,287.8 Z" fill="#ecebe6" fill-opacity="1.0" stroke="#111" stroke-width="1.0" fill-rule="evenodd" />
+<text x="668.9" y="260.5" font-size="9.5" fill="#222" text-anchor="middle" font-weight="normal" dominant-baseline="middle">전실·홀</text>
+<text x="668.9" y="183.8" font-size="12" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">코어 A(북)</text>
+<path d="M1112.0,560.8 L1112.0,233.2 L1304.4,233.2 L1304.4,560.8 L1112.0,560.8 Z" fill="#e3e2dd" fill-opacity="1.0" stroke="#111" stroke-width="3.2" fill-rule="evenodd" />
+<path d="M1304.4,560.8 L1304.4,475.0 L1112.0,475.0 L1112.0,560.8 L1304.4,560.8 Z" fill="#f4f3ef" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<line x1="1143.4" y1="555.6" x2="1143.4" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1151.5" y1="555.6" x2="1151.5" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1159.6" y1="555.6" x2="1159.6" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1167.7" y1="555.6" x2="1167.7" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1175.8" y1="555.6" x2="1175.8" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1183.9" y1="555.6" x2="1183.9" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1192.0" y1="555.6" x2="1192.0" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1200.1" y1="555.6" x2="1200.1" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1208.2" y1="555.6" x2="1208.2" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1216.2" y1="555.6" x2="1216.2" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1224.3" y1="555.6" x2="1224.3" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1232.4" y1="555.6" x2="1232.4" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1240.5" y1="555.6" x2="1240.5" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1248.6" y1="555.6" x2="1248.6" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1256.7" y1="555.6" x2="1256.7" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1264.8" y1="555.6" x2="1264.8" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1272.9" y1="555.6" x2="1272.9" y2="480.2" stroke="#aaa" stroke-width="0.7"/>
+<line x1="1135.4" y1="517.9" x2="1281.0" y2="517.9" stroke="#555" stroke-width="1.2"/>
+<rect x="1164.2" y="532.3" width="88" height="18" fill="#f4f3ef"/>
+<text x="1208.2" y="541.3" font-size="10.5" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">특별피난계단</text>
+<path d="M1166.6,475.0 L1166.6,423.0 L1112.0,423.0 L1112.0,475.0 L1166.6,475.0 Z" fill="#b9b7b0" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<text x="1139.3" y="449.0" font-size="9.5" fill="#222" text-anchor="middle" font-weight="bold" dominant-baseline="middle">PS</text>
+<path d="M1249.8,475.0 L1249.8,423.0 L1166.6,423.0 L1166.6,475.0 L1249.8,475.0 Z" fill="#ecebe6" fill-opacity="1.0" stroke="#111" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1208.2" y="449.0" font-size="9.5" fill="#222" text-anchor="middle" font-weight="normal" dominant-baseline="middle">부속실</text>
+<path d="M1304.4,475.0 L1304.4,423.0 L1249.8,423.0 L1249.8,475.0 L1304.4,475.0 Z" fill="#b9b7b0" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<text x="1277.1" y="449.0" font-size="9.5" fill="#222" text-anchor="middle" font-weight="bold" dominant-baseline="middle">EPS·TPS</text>
+<path d="M1174.4,423.0 L1174.4,355.4 L1112.0,355.4 L1112.0,423.0 L1174.4,423.0 Z" fill="#ffffff" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<line x1="1112.0" y1="423.0" x2="1174.4" y2="355.4" stroke="#999" stroke-width="0.8"/>
+<line x1="1112.0" y1="355.4" x2="1174.4" y2="423.0" stroke="#999" stroke-width="0.8"/>
+<text x="1143.2" y="383.5" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">E/V-1</text>
+<text x="1143.2" y="394.9" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">승용</text>
+<path d="M1174.4,355.4 L1174.4,287.8 L1112.0,287.8 L1112.0,355.4 L1174.4,355.4 Z" fill="#ffffff" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<line x1="1112.0" y1="355.4" x2="1174.4" y2="287.8" stroke="#999" stroke-width="0.8"/>
+<line x1="1112.0" y1="287.8" x2="1174.4" y2="355.4" stroke="#999" stroke-width="0.8"/>
+<text x="1143.2" y="315.9" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">E/V-2</text>
+<text x="1143.2" y="327.3" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">비상용 겸</text>
+<path d="M1242.0,423.0 L1242.0,287.8 L1174.4,287.8 L1174.4,423.0 L1242.0,423.0 Z" fill="#ecebe6" fill-opacity="1.0" stroke="#111" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1208.2" y="355.4" font-size="9.5" fill="#222" text-anchor="middle" font-weight="normal" dominant-baseline="middle">승강장</text>
+<path d="M1304.4,423.0 L1304.4,355.4 L1242.0,355.4 L1242.0,423.0 L1304.4,423.0 Z" fill="#b9b7b0" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<text x="1273.2" y="389.2" font-size="9.5" fill="#222" text-anchor="middle" font-weight="bold" dominant-baseline="middle">AD</text>
+<path d="M1304.4,355.4 L1304.4,287.8 L1242.0,287.8 L1242.0,355.4 L1304.4,355.4 Z" fill="#ffffff" fill-opacity="1.0" stroke="#111" stroke-width="1.6" fill-rule="evenodd" />
+<line x1="1242.0" y1="355.4" x2="1304.4" y2="287.8" stroke="#999" stroke-width="0.8"/>
+<line x1="1242.0" y1="287.8" x2="1304.4" y2="355.4" stroke="#999" stroke-width="0.8"/>
+<text x="1273.2" y="315.9" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">E/V-3</text>
+<text x="1273.2" y="327.3" font-size="9.5" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">피난용 겸</text>
+<path d="M1304.4,287.8 L1304.4,233.2 L1112.0,233.2 L1112.0,287.8 L1304.4,287.8 Z" fill="#ecebe6" fill-opacity="1.0" stroke="#111" stroke-width="1.0" fill-rule="evenodd" />
+<text x="1208.2" y="260.5" font-size="9.5" fill="#222" text-anchor="middle" font-weight="normal" dominant-baseline="middle">전실·홀</text>
+<text x="1208.2" y="183.8" font-size="12" fill="#111" text-anchor="middle" font-weight="bold" dominant-baseline="middle">코어 B(남)</text>
+<path d="M1692.3,508.8 L1690.5,522.3 L1685.3,534.8 L1677.0,545.6 L1666.3,553.8 L1653.7,559.0 L1640.3,560.8 L195.2,560.8 L181.7,559.0 L169.2,553.8 L158.4,545.6 L150.2,534.8 L145.0,522.3 L143.2,508.8 L143.2,285.2 L145.0,271.7 L150.2,259.2 L158.4,248.4 L169.2,240.2 L181.7,235.0 L195.2,233.2 L1640.3,233.2 L1653.7,235.0 L1666.3,240.2 L1677.0,248.4 L1685.3,259.2 L1690.5,271.7 L1692.3,285.2 L1692.3,508.8 Z" fill="none" fill-opacity="1.0" stroke="#1d3557" stroke-width="2.0" fill-rule="evenodd" />
+<line x1="143.2" y1="128.0" x2="572.7" y2="128.0" stroke="#555" stroke-width="0.9"/>
+<line x1="143.2" y1="122.0" x2="143.2" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<line x1="572.7" y1="122.0" x2="572.7" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<text x="358.0" y="117.0" font-size="11" fill="#333" text-anchor="middle" font-weight="normal" dominant-baseline="middle">16.52</text>
+<line x1="572.7" y1="128.0" x2="765.1" y2="128.0" stroke="#555" stroke-width="0.9"/>
+<line x1="572.7" y1="122.0" x2="572.7" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<line x1="765.1" y1="122.0" x2="765.1" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<text x="668.9" y="117.0" font-size="11" fill="#333" text-anchor="middle" font-weight="normal" dominant-baseline="middle">7.40</text>
+<line x1="765.1" y1="128.0" x2="1112.0" y2="128.0" stroke="#555" stroke-width="0.9"/>
+<line x1="765.1" y1="122.0" x2="765.1" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<line x1="1112.0" y1="122.0" x2="1112.0" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<text x="938.5" y="117.0" font-size="11" fill="#333" text-anchor="middle" font-weight="normal" dominant-baseline="middle">13.34</text>
+<line x1="1112.0" y1="128.0" x2="1304.4" y2="128.0" stroke="#555" stroke-width="0.9"/>
+<line x1="1112.0" y1="122.0" x2="1112.0" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<line x1="1304.4" y1="122.0" x2="1304.4" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<text x="1208.2" y="117.0" font-size="11" fill="#333" text-anchor="middle" font-weight="normal" dominant-baseline="middle">7.40</text>
+<line x1="1304.4" y1="128.0" x2="1692.3" y2="128.0" stroke="#555" stroke-width="0.9"/>
+<line x1="1304.4" y1="122.0" x2="1304.4" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<line x1="1692.3" y1="122.0" x2="1692.3" y2="134.0" stroke="#555" stroke-width="0.9"/>
+<text x="1498.3" y="117.0" font-size="11" fill="#333" text-anchor="middle" font-weight="normal" dominant-baseline="middle">14.92</text>
+<g transform="translate(1787.075858054553,100) rotate(-84.0)"><circle r="36" fill="#fff" stroke="#999"/><polygon points="0,-30 -9,8 0,2 9,8" fill="#c1121f"/></g>
+<text x="1739.3" y="95.0" font-size="14" fill="#c1121f" text-anchor="middle" font-weight="bold" dominant-baseline="middle">N</text>
+<line x1="60.0" y1="678.0" x2="320.0" y2="678.0" stroke="#111" stroke-width="2"/>
+<text x="328.0" y="678.0" font-size="11" fill="#111" text-anchor="start" font-weight="normal" dominant-baseline="middle">10 m</text>
+<text x="60.0" y="710.0" font-size="13" fill="#111" text-anchor="start" font-weight="bold" dominant-baseline="middle">호  타입  면적(㎡)  향 · 구성</text>
+<rect x="60.0" y="726.0" width="16" height="16" fill="#d6e6f5" stroke="#333"/>
+<text x="86.0" y="734.0" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal" dominant-baseline="middle">01호  84      84.0㎡  · 발코니  8.0㎡ · 동·서 맞통풍 · 방 3 · 욕실 2</text>
+<rect x="60.0" y="748.0" width="16" height="16" fill="#d6e6f5" stroke="#333"/>
+<text x="86.0" y="756.0" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal" dominant-baseline="middle">02호  84      84.0㎡  · 발코니  7.7㎡ · 동·서 맞통풍 · 방 3 · 욕실 2</text>
+<rect x="60.0" y="770.0" width="16" height="16" fill="#d5ece4" stroke="#333"/>
+<text x="86.0" y="778.0" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal" dominant-baseline="middle">03호  59      59.0㎡  · 발코니  3.8㎡ · 서향 · 방 2 · 욕실 1</text>
+<rect x="60.0" y="792.0" width="16" height="16" fill="#efd9ea" stroke="#333"/>
+<text x="86.0" y="800.0" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal" dominant-baseline="middle">04호  135    135.6㎡  · 발코니 11.1㎡ · 3면 개방(단부) · 방 3 · 욕실 2</text>
+<rect x="60.0" y="814.0" width="16" height="16" fill="#d5ece4" stroke="#333"/>
+<text x="86.0" y="822.0" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal" dominant-baseline="middle">05호  59      59.0㎡  · 발코니  3.3㎡ · 서향 · 방 2 · 욕실 1</text>
+<rect x="60.0" y="836.0" width="16" height="16" fill="#e4dcf2" stroke="#333"/>
+<text x="86.0" y="844.0" font-size="12.5" fill="#222" text-anchor="start" font-weight="normal" dominant-baseline="middle">06호  114    115.4㎡  · 발코니  8.0㎡ · 3면 개방(단부) · 방 3 · 욕실 2</text>
+<text x="60.0" y="872.0" font-size="12.5" fill="#111" text-anchor="start" font-weight="bold" dominant-baseline="middle">코어 2개 × E/V 3대(승용 · 비상용 겸 · 피난용 겸) · 특별피난계단 + 부속실 · PS · EPS/TPS · AD</text>
+<text x="60.0" y="896.0" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" dominant-baseline="middle">· 블록 A·C 는 장축으로 −0.8m 엇갈림 → 북측 단부 135, 남측 단부 114</text>
+<text x="60.0" y="918.0" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" dominant-baseline="middle">· 59㎡: 코어 옆 서향 1면, 동측 공용복도(자연채광)로 출입</text>
+<text x="60.0" y="940.0" font-size="12.5" fill="#444" text-anchor="start" font-weight="normal" dominant-baseline="middle">· 단부 세대: 복도 끝에서 출입, 서·동·단부 3면 개방</text>
+</svg>

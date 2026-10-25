@@ -1,0 +1,3655 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93403653,
+     37.52431518
+    ]
+   },
+   "properties": {
+    "pid": "여의도고등학교 ③(3층) 3층-5",
+    "school": "여의도고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도고등학교 ③(3층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93408046,
+     37.52434325
+    ]
+   },
+   "properties": {
+    "pid": "여의도고등학교 ③(3층) 3층-6",
+    "school": "여의도고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도고등학교 ③(3층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.0,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93412439,
+     37.52437131
+    ]
+   },
+   "properties": {
+    "pid": "여의도고등학교 ③(3층) 1층-7",
+    "school": "여의도고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도고등학교 ③(3층)",
+    "floor": 1,
+    "source": "일반식",
+    "z_m": 1.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.0,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93412439,
+     37.52437131
+    ]
+   },
+   "properties": {
+    "pid": "여의도고등학교 ③(3층) 2층-7",
+    "school": "여의도고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도고등학교 ③(3층)",
+    "floor": 2,
+    "source": "일반식",
+    "z_m": 4.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.0,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93421225,
+     37.52442746
+    ]
+   },
+   "properties": {
+    "pid": "여의도고등학교 ③(3층) 1층-9",
+    "school": "여의도고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도고등학교 ③(3층)",
+    "floor": 1,
+    "source": "일반식",
+    "z_m": 1.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.0,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93338827,
+     37.52475221
+    ]
+   },
+   "properties": {
+    "pid": "여의도고등학교 운동장-54",
+    "school": "여의도고등학교",
+    "kind": "운동장 지반",
+    "dong": "여의도고등학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93331911,
+     37.52482261
+    ]
+   },
+   "properties": {
+    "pid": "여의도고등학교 운동장-55",
+    "school": "여의도고등학교",
+    "kind": "운동장 지반",
+    "dong": "여의도고등학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93558907,
+     37.52408771
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 1층-11",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.4,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93561483,
+     37.52406259
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 1층-12",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.4,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93565345,
+     37.52402489
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 1층-13",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.4,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93567921,
+     37.52399976
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 1층-14",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.4,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93567921,
+     37.52399976
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 2층-16",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 6.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93574359,
+     37.52393694
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 1층-16",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.4,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93574359,
+     37.52393694
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 2층-18",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 6.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93574359,
+     37.52393694
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 3층-18",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.9,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93574359,
+     37.52393694
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 4층-18",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.5,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93578221,
+     37.52389925
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 1층-17",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.4,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93578221,
+     37.52389925
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 2층-19",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 6.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93578221,
+     37.52389925
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 3층-19",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.9,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93580796,
+     37.52387412
+    ]
+   },
+   "properties": {
+    "pid": "본관(5층) 2층-20",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "본관(5층)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 6.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93568568,
+     37.52342359
+    ]
+   },
+   "properties": {
+    "pid": "체육관동(정보화센타) 3층-2",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동(정보화센타)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.55,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.33,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93568568,
+     37.52342359
+    ]
+   },
+   "properties": {
+    "pid": "체육관동(정보화센타) 4층-2",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동(정보화센타)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.15,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.5,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93580092,
+     37.52333778
+    ]
+   },
+   "properties": {
+    "pid": "체육관동(정보화센타) 3층-5",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동(정보화센타)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.55,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.17,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93584247,
+     37.523334
+    ]
+   },
+   "properties": {
+    "pid": "체육관동(정보화센타) 3층-6",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동(정보화센타)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.55,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.67,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93584247,
+     37.523334
+    ]
+   },
+   "properties": {
+    "pid": "체육관동(정보화센타) 4층-6",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동(정보화센타)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.15,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93540066,
+     37.52326256
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 4층-2",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.15,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.33,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93542711,
+     37.52321826
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 3층-3",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.55,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.0,
+    "cont_h": 0.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93542711,
+     37.52321826
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 4층-3",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.15,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.83,
+    "cont_h": 1.0,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93545077,
+     37.52319121
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 1층-4",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.05,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.67,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93545077,
+     37.52319121
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 2층-4",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 5.95,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.67,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93545077,
+     37.52319121
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 3층-4",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.55,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.83,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93545077,
+     37.52319121
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 4층-4",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.15,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93548937,
+     37.52315351
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 1층-5",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.05,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93548937,
+     37.52315351
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 2층-5",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 5.95,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93548937,
+     37.52315351
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 3층-5",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.55,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.33,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93548937,
+     37.52315351
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 4층-5",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.15,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9355151,
+     37.52312836
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 1층-6",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.05,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9355151,
+     37.52312836
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 2층-6",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 5.95,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9355151,
+     37.52312836
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 3층-6",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.55,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.5,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9355151,
+     37.52312836
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 4층-6",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.15,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9355537,
+     37.52309065
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 2층-7",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 5.95,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9355537,
+     37.52309065
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 3층-7",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.55,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.5,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9355537,
+     37.52309065
+    ]
+   },
+   "properties": {
+    "pid": "체육관동 부속(원형부) 4층-7",
+    "school": "여의도중학교",
+    "kind": "교사동 창면",
+    "dong": "체육관동 부속(원형부)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.15,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93560432,
+     37.52377261
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-3",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.5,
+    "cont_h": 0.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93554172,
+     37.52383634
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-4",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93557512,
+     37.52365168
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-14",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.0,
+    "cont_h": 1.0,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93551251,
+     37.5237154
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-15",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93544991,
+     37.52377913
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-16",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.17,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93538732,
+     37.52384285
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-17",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93532472,
+     37.52390657
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-18",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93526213,
+     37.5239703
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-19",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93519953,
+     37.52403402
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-20",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93513692,
+     37.52409774
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-21",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.83,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93542071,
+     37.5236582
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-27",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93535811,
+     37.52372192
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-28",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93529551,
+     37.52378564
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-29",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93523291,
+     37.52384937
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-30",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.33,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93517032,
+     37.52391309
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-31",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.33,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93510772,
+     37.52397681
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-32",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93504513,
+     37.52404054
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-33",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.17,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93498252,
+     37.52410426
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-34",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93491992,
+     37.52416798
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-35",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93485733,
+     37.52423171
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-36",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93526631,
+     37.52366471
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-41",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.5,
+    "cont_h": 0.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9352037,
+     37.52372843
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-42",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.17,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93514111,
+     37.52379216
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-43",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.17,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93507851,
+     37.52385588
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-44",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93501592,
+     37.5239196
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-45",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93495332,
+     37.52398333
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-46",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.5,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93489071,
+     37.52404705
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-47",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93482812,
+     37.52411077
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-48",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93476552,
+     37.5241745
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-49",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93470292,
+     37.52423822
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-50",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9350493,
+     37.52373495
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-56",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9349867,
+     37.52379867
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-57",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93492411,
+     37.5238624
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-58",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.5,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93486151,
+     37.52392612
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-59",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.17,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93479892,
+     37.52398984
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-60",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.17,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93473631,
+     37.52405357
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-61",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.17,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93467371,
+     37.52411729
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-62",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.0,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93461112,
+     37.52418101
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-63",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.33,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9349575,
+     37.52367774
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-69",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.17,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93489491,
+     37.52374146
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-70",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9348323,
+     37.52380519
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-71",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.17,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9347697,
+     37.52386891
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-72",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.67,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93470711,
+     37.52393263
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-73",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.67,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93464451,
+     37.52399636
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-74",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.5,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93458191,
+     37.52406008
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-75",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.5,
+    "cont_h": 1.0,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93451931,
+     37.52412381
+    ]
+   },
+   "properties": {
+    "pid": "여의도중학교 운동장-76",
+    "school": "여의도중학교",
+    "kind": "운동장 지반",
+    "dong": "여의도중학교 운동장",
+    "floor": 0,
+    "source": "배치도 경계(래스터 계측) + 분석지점도 격자",
+    "z_m": 0.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.67,
+    "cont_h": 1.0,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93499989,
+     37.52299073
+    ]
+   },
+   "properties": {
+    "pid": "본관동 고층부(5층) 1층-10",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "본관동 고층부(5층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.0,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93499989,
+     37.52299073
+    ]
+   },
+   "properties": {
+    "pid": "본관동 고층부(5층) 2층-10",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "본관동 고층부(5층)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 5.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93499989,
+     37.52299073
+    ]
+   },
+   "properties": {
+    "pid": "본관동 고층부(5층) 3층-10",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "본관동 고층부(5층)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 9.4,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.33,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93499989,
+     37.52299073
+    ]
+   },
+   "properties": {
+    "pid": "본관동 고층부(5층) 4층-10",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "본관동 고층부(5층)",
+    "floor": 4,
+    "source": "도면기준",
+    "z_m": 13.1,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.33,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93499989,
+     37.52299073
+    ]
+   },
+   "properties": {
+    "pid": "본관동 고층부(5층) 5층-10",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "본관동 고층부(5층)",
+    "floor": 5,
+    "source": "도면기준",
+    "z_m": 16.8,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.33,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93547622,
+     37.5225809
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남동면 1층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93547622,
+     37.5225809
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남동면 2층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 6.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93551636,
+     37.52260584
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남동면 1층-2",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93551636,
+     37.52260584
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남동면 2층-2",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 2,
+    "source": "도면기준",
+    "z_m": 6.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.9355565,
+     37.52263077
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남동면 1층-3",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 1,
+    "source": "도면기준",
+    "z_m": 2.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93531615,
+     37.52270551
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남서면 3층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 10.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.5,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93536973,
+     37.52265082
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남서면 3층-2",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 10.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.33,
+    "cont_h": 1.67,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93542331,
+     37.52259612
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남서면 3층-3",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 10.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93548202,
+     37.52258451
+    ]
+   },
+   "properties": {
+    "pid": "A동(3층) A동 남동면 3층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "A동(3층)",
+    "floor": 3,
+    "source": "도면기준",
+    "z_m": 10.3,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93508143,
+     37.52316416
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 1층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 1,
+    "source": "일반식",
+    "z_m": 1.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93508143,
+     37.52316416
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 2층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 2,
+    "source": "일반식",
+    "z_m": 4.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93508143,
+     37.52316416
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 3층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93508143,
+     37.52316416
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93508143,
+     37.52316416
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-1",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93511616,
+     37.5231283
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 1층-2",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 1,
+    "source": "일반식",
+    "z_m": 1.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93511616,
+     37.5231283
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 2층-2",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 2,
+    "source": "일반식",
+    "z_m": 4.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93511616,
+     37.5231283
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 3층-2",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93511616,
+     37.5231283
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-2",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93511616,
+     37.5231283
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-2",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93515089,
+     37.52309244
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 1층-3",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 1,
+    "source": "일반식",
+    "z_m": 1.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93515089,
+     37.52309244
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 2층-3",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 2,
+    "source": "일반식",
+    "z_m": 4.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93515089,
+     37.52309244
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 3층-3",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93515089,
+     37.52309244
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-3",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93515089,
+     37.52309244
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-3",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93518563,
+     37.52305657
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 1층-4",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 1,
+    "source": "일반식",
+    "z_m": 1.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93518563,
+     37.52305657
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 2층-4",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 2,
+    "source": "일반식",
+    "z_m": 4.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93518563,
+     37.52305657
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 3층-4",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93518563,
+     37.52305657
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-4",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93518563,
+     37.52305657
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-4",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93522037,
+     37.52302071
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 1층-5",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 1,
+    "source": "일반식",
+    "z_m": 1.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.17,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93522037,
+     37.52302071
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 2층-5",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 2,
+    "source": "일반식",
+    "z_m": 4.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93522037,
+     37.52302071
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 3층-5",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93522037,
+     37.52302071
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-5",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93522037,
+     37.52302071
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-5",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.67,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93525511,
+     37.52298485
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 2층-6",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 2,
+    "source": "일반식",
+    "z_m": 4.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93525511,
+     37.52298485
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 3층-6",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93525511,
+     37.52298485
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-6",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93525511,
+     37.52298485
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-6",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93528983,
+     37.522949
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 3층-7",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93528983,
+     37.522949
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-7",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93528983,
+     37.522949
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-7",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.0,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93532457,
+     37.52291313
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 3층-8",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 3,
+    "source": "일반식",
+    "z_m": 8.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93532457,
+     37.52291313
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-8",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93532457,
+     37.52291313
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-8",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93535931,
+     37.52287727
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-9",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93535931,
+     37.52287727
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-9",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.33,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93539298,
+     37.52286569
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-10",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93539298,
+     37.52286569
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-10",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.67,
+    "cont_h": 1.83,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93540994,
+     37.52286045
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-11",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 2.83,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93540994,
+     37.52286045
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 5층-11",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 5,
+    "source": "일반식",
+    "z_m": 15.2,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 3.5,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93546295,
+     37.52286802
+    ]
+   },
+   "properties": {
+    "pid": "여의도여자고등학교 ②(5층) 4층-12",
+    "school": "여의도여자고등학교",
+    "kind": "교사동 창면",
+    "dong": "여의도여자고등학교 ②(5층)",
+    "floor": 4,
+    "source": "일반식",
+    "z_m": 11.7,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.5,
+    "cont_h": 1.17,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.93689051,
+     37.52302575
+    ]
+   },
+   "properties": {
+    "pid": "별관(5층) 5층-12",
+    "school": "여의도초등학교",
+    "kind": "교사동 창면",
+    "dong": "별관(5층)",
+    "floor": 5,
+    "source": "도면기준",
+    "z_m": 14.75,
+    "base_pass_a": true,
+    "plan_pass_a": false,
+    "total_h": 1.5,
+    "cont_h": 1.5,
+    "change_cd": "new_fail",
+    "변화": "신규 불충족"
+   }
+  }
+ ]
+}

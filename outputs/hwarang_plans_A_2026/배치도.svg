@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1583" height="1281" viewBox="0 0 1583 1281" font-family="WenQuanYi Zen Hei, Noto Sans CJK KR, sans-serif">
+<rect width="100%" height="100%" fill="#fcfcfa"/>
+<text x="30.0" y="42.0" font-size="23" fill="#111" text-anchor="start" font-weight="bold" dominant-baseline="middle">화랑 A안 배치도 — 어린이집 · 성큰광장 · 산책로</text>
+<text x="30.0" y="74.0" font-size="13" fill="#555" text-anchor="start" font-weight="normal" dominant-baseline="middle">51층 1개동(172.3m) · 대지 9,395㎡ · 위가 북 · 타워 중심 E194,327.70 N546,974.70 (EPSG:5186)</text>
+<text x="30.0" y="96.0" font-size="13" fill="#555" text-anchor="start" font-weight="normal" dominant-baseline="middle">주변 건물 = 수치지도 건물(AL_D010) · 학교 운동장 = 배치도 해치 경계 · 대지 둘레 도로는 확인 전(진출입 위치 조정 가능)</text>
+<defs><clipPath id="c"><rect x="30.0" y="120.0" width="1143" height="1101"/></clipPath><pattern id="hs" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#8a7f6c" stroke-width="1"/></pattern></defs>
+<g clip-path="url(#c)">
+<rect x="30.0" y="120.0" width="1143" height="1101" fill="#f1f0ec"/>
+<path d="M-620.9,-1099.6 L-303.4,-693.1 L-36.5,-901.5 L-354.1,-1308.0 L-620.9,-1099.6 Z" fill="#cfe0c3" fill-opacity="1.0" stroke="#a86a55" stroke-width="2.0" fill-rule="evenodd" />
+<path d="M91.9,-491.6 L465.6,-13.2 L718.9,-211.1 L345.2,-689.5 L91.9,-491.6 Z" fill="#cfe0c3" fill-opacity="1.0" stroke="#a86a55" stroke-width="2.0" fill-rule="evenodd" />
+<path d="M52.0,442.5 L226.9,666.4 L550.7,413.4 L375.7,189.5 L52.0,442.5 Z" fill="#cfe0c3" fill-opacity="1.0" stroke="#a86a55" stroke-width="2.0" fill-rule="evenodd" />
+<path d="M710.6,182.5 L943.0,479.9 L1233.5,253.0 L1001.1,-44.5 L710.6,182.5 Z" fill="#cfe0c3" fill-opacity="1.0" stroke="#a86a55" stroke-width="2.0" fill-rule="evenodd" />
+<path d="M109.2,898.8 L169.9,974.4 L99.1,1031.3 L38.4,955.8 L109.2,898.8 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="104.2" y="965.1" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">131m</text>
+<path d="M169.9,974.4 L207.9,1021.6 L151.2,1067.1 L113.3,1019.9 L169.9,974.4 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="160.6" y="1020.7" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">131m</text>
+<path d="M38.4,955.8 L84.0,1012.4 L36.7,1050.4 L-8.8,993.7 L38.4,955.8 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="37.6" y="1003.1" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">104m</text>
+<path d="M-345.9,52.3 L367.6,939.9 L277.9,1012.0 L-435.6,124.4 L-345.9,52.3 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M-46.7,946.5 L116.4,1149.5 L26.7,1221.6 L-136.4,1018.6 L-46.7,946.5 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M639.3,1173.4 L676.3,1144.2 L688.7,1152.4 L702.1,1123.8 L725.5,1153.3 L732.8,1147.5 L705.8,1120.9 L761.2,1077.1 L790.4,1114.1 L760.0,1144.0 L747.6,1135.9 L765.1,1158.0 L735.6,1181.3 L743.5,1199.0 L725.1,1213.6 L745.5,1239.5 L733.6,1254.8 L713.2,1229.0 L721.4,1216.5 L668.1,1156.7 L639.3,1173.4 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="715.8" y="1165.7" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">46m</text>
+<path d="M872.0,989.7 L886.8,978.0 L895.5,989.1 L908.9,960.5 L923.5,979.0 L914.6,998.0 L926.4,982.7 L961.4,1027.0 L921.6,1052.4 L952.3,1076.1 L940.4,1091.5 L908.3,1050.9 L909.9,1037.7 L922.3,1045.8 L905.6,1017.1 L896.1,1012.6 L903.3,1036.9 L872.0,989.7 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="933.0" y="1022.0" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">36m</text>
+<path d="M924.9,1109.8 L961.8,1080.6 L974.2,1088.8 L994.7,1114.6 L979.9,1126.3 L1017.8,1174.3 L1032.6,1162.6 L1055.1,1198.8 L1018.2,1227.9 L974.5,1172.6 L1019.0,1221.3 L1033.7,1209.7 L952.9,1099.7 L937.3,1117.9 L968.6,1165.2 L924.9,1109.8 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="990.0" y="1144.5" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">46m</text>
+<path d="M986.5,1127.1 L1016.0,1103.7 L1048.1,1144.4 L1018.6,1167.7 L986.5,1127.1 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="1017.3" y="1135.7" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">46m</text>
+<path d="M971.7,910.9 L1046.9,869.5 L1038.2,858.4 L1108.3,803.0 L1125.8,825.2 L1114.7,833.9 L1126.4,848.7 L1115.3,857.4 L1127.0,872.2 L1121.9,858.2 L1138.1,863.5 L1187.6,926.2 L1147.0,958.3 L1107.0,900.0 L1045.7,936.4 L1027.5,920.8 L1053.3,900.4 L1047.5,893.0 L1031.9,911.3 L1017.4,892.8 L973.1,927.8 L989.8,956.6 L969.4,930.7 L971.7,910.9 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1161.6,976.8 L1191.1,953.4 L1201.3,981.4 L1216.0,969.8 L1233.5,991.9 L1244.6,983.2 L1227.1,961.0 L1245.6,946.4 L1274.1,959.8 L1250.8,930.3 L1309.9,883.6 L1383.6,969.4 L1243.3,1080.2 L1205.4,1032.2 L1231.2,1011.8 L1237.0,1019.1 L1238.6,1005.9 L1232.8,998.5 L1202.4,1028.5 L1161.6,976.8 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M1048.9,1251.6 L1078.5,1228.3 L1093.0,1246.8 L1085.7,1252.6 L1106.1,1278.5 L1092.3,1253.4 L1103.3,1244.6 L1123.8,1270.5 L1134.8,1261.7 L1114.4,1235.9 L1139.5,1222.1 L1134.4,1208.1 L1196.4,1165.1 L1231.4,1209.4 L1213.7,1217.4 L1238.0,1210.2 L1267.2,1247.1 L1181.5,1320.8 L1156.0,1281.0 L1152.3,1283.9 L1175.7,1313.4 L1130.6,1355.0 L1092.7,1307.0 L1114.8,1289.5 L1139.7,1305.9 L1115.6,1282.9 L1089.7,1303.3 L1048.9,1251.6 Z" fill="#d9dde6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M854.1,-40.9 L856.4,-28.6 L841.7,-20.1 L833.1,29.1 L814.5,68.2 L679.9,183.6 L634.3,128.6 L714.8,58.2 L721.2,65.5 L758.0,28.0 L749.4,-5.9 L749.4,-40.0 L735.8,-35.5 L697.2,-44.9 L676.2,-60.8 L664.3,-87.9 L661.2,-118.4 L668.1,-143.9 L682.4,-163.3 L706.0,-176.8 L733.8,-180.8 L784.9,-164.8 L816.8,-125.2 L841.7,-47.5 L854.1,-40.9 Z" fill="#e9d6d3" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M312.4,94.8 L358.6,153.3 L173.6,298.7 L127.2,239.7 L201.4,181.3 L215.4,199.1 L287.9,141.9 L274.5,124.8 L312.4,94.8 Z" fill="#e9d6d3" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="269.1" y="190.2" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">20m</text>
+<path d="M174.6,301.2 L52.5,396.9 L30.3,363.6 L21.1,369.7 L-1.8,338.1 L123.9,236.5 L174.6,301.2 Z" fill="#e9d6d3" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="86.1" y="319.7" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">15m</text>
+<path d="M419.7,21.4 L440.6,47.7 L458.9,35.1 L552.2,156.3 L534.6,170.1 L574.6,221.9 L544.1,245.6 L531.5,231.2 L522.6,239.1 L379.0,52.7 L419.7,21.4 Z" fill="#e9d6d3" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M699.4,295.1 L556.1,406.6 L482.4,312.1 L626.2,200.9 L699.4,295.1 Z" fill="#e9d6d3" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="590.9" y="297.9" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">여의도여자고</text>
+<text x="590.9" y="309.3" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">13m</text>
+<path d="M1334.4,289.9 L1018.0,537.1 L979.6,488.0 L1297.0,240.0 L1334.4,289.9 Z" fill="#e9d6d3" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<text x="1157.0" y="383.2" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">여의도초</text>
+<text x="1157.0" y="394.6" font-size="9.5" fill="#666" text-anchor="middle" font-weight="normal" dominant-baseline="middle">16m</text>
+<path d="M1149.9,120.9 L1127.8,137.5 L1106.5,109.3 L1128.6,92.6 L1149.9,120.9 Z" fill="#e9d6d3" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M714.7,43.1 L617.4,122.1 L537.9,17.3 L527.0,-24.9 L532.6,-57.3 L542.2,-69.4 L559.0,-74.9 L613.5,-64.0 L644.8,-38.2 L714.7,43.1 Z" fill="#dedcd6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M182.6,1220.3 L-57.0,1407.4 L-112.9,1336.0 L126.9,1148.8 L182.6,1220.3 Z" fill="#dedcd6" fill-opacity="1.0" stroke="#a5a39d" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M472.4,1024.0 L227.5,710.1 L730.8,317.5 L975.6,631.4 L472.4,1024.0 Z" fill="#f7f6f2" fill-opacity="1.0" stroke="none" stroke-width="0" fill-rule="evenodd" />
+<path d="M599.8,832.2 L591.8,838.4 L591.5,838.4 L590.4,837.2 L590.2,837.2 L587.6,838.0 L585.8,838.4 L584.0,838.6 L582.2,838.7 L579.5,838.7 L577.7,838.7 L575.9,838.5 L574.1,838.1 L571.5,837.4 L569.7,836.9 L568.1,836.2 L566.4,835.4 L564.1,834.0 L562.5,833.1 L561.1,832.0 L559.7,830.7 L557.8,828.8 L556.0,826.8 L479.2,728.4 L477.7,726.2 L476.3,723.8 L475.5,722.2 L474.8,720.6 L474.2,718.8 L473.5,716.2 L473.1,714.4 L472.8,712.6 L472.7,710.8 L472.7,708.1 L472.8,706.3 L473.0,704.5 L473.4,702.7 L474.1,700.1 L474.6,698.4 L475.3,696.7 L476.1,695.1 L477.4,692.7 L477.6,692.5 L477.3,692.2 L573.3,483.6 L674.9,404.3 L698.0,434.0 L673.5,436.5 L673.2,436.6 L673.0,436.6 L672.7,436.7 L672.5,436.8 L672.3,437.0 L672.1,437.1 L671.9,437.3 L671.7,437.5 L671.6,437.7 L671.5,437.9 L671.3,438.1 L671.3,438.4 L671.2,438.6 L671.2,438.9 L671.2,439.1 L671.2,439.4 L703.9,751.0 L657.2,787.4 L657.2,787.4 L599.8,832.2 L599.8,832.2 Z M847.0,624.9 L848.4,638.3 L783.1,689.2 L765.4,520.3 L847.0,624.9 Z" fill="#e7e2d6" fill-opacity="1.0" stroke="#c9c1ae" stroke-width="0.6" fill-rule="evenodd" />
+<path d="M425.6,625.2 L563.2,505.4 L477.3,692.2 L477.6,692.5 L477.4,692.7 L476.1,695.1 L475.3,696.7 L474.6,698.4 L474.1,700.1 L473.4,702.7 L473.0,704.5 L472.8,706.3 L472.7,708.1 L472.7,710.8 L472.8,712.6 L473.1,714.4 L473.5,716.2 L474.2,718.8 L474.8,720.6 L475.5,722.2 L476.3,723.8 L477.7,726.2 L479.2,728.4 L556.0,826.8 L557.8,828.8 L559.7,830.7 L561.1,832.0 L562.5,833.1 L564.1,834.0 L566.4,835.4 L568.1,836.2 L569.7,836.9 L571.5,837.4 L574.1,838.1 L575.9,838.5 L577.7,838.7 L579.5,838.7 L582.2,838.7 L584.0,838.6 L585.8,838.4 L587.6,838.0 L590.2,837.2 L590.4,837.2 L591.5,838.4 L591.8,838.4 L599.8,832.2 L599.8,832.2 L657.2,787.4 L657.2,787.4 L701.5,752.9 L702.5,762.7 L702.6,763.2 L702.7,763.7 L702.9,764.2 L703.1,764.7 L703.4,765.1 L703.7,765.5 L704.1,765.9 L704.4,766.2 L704.9,766.5 L705.3,766.8 L705.8,767.0 L706.2,767.2 L706.7,767.3 L707.2,767.4 L707.7,767.4 L708.3,767.4 L786.4,759.2 L475.1,1002.1 L269.1,738.1 L425.0,625.6 L425.6,625.2 Z M341.8,805.9 L341.5,806.3 L341.1,806.6 L340.8,807.0 L340.5,807.5 L340.3,807.9 L340.1,808.4 L340.0,808.9 L339.9,809.4 L339.8,809.9 L339.9,810.4 L339.9,810.9 L340.0,811.4 L340.2,811.9 L340.4,812.4 L340.6,812.8 L340.9,813.2 L406.5,897.3 L406.8,897.7 L407.2,898.0 L407.6,898.3 L408.0,898.6 L408.5,898.8 L409.0,899.0 L409.5,899.1 L410.0,899.2 L410.5,899.3 L411.0,899.3 L411.5,899.2 L412.0,899.1 L412.5,898.9 L412.9,898.7 L413.4,898.5 L413.8,898.2 L520.4,815.0 L520.8,814.7 L521.1,814.3 L521.5,813.9 L521.7,813.5 L522.0,813.0 L522.1,812.5 L522.3,812.0 L522.4,811.5 L522.4,811.0 L522.4,810.5 L522.3,810.0 L522.2,809.5 L522.1,809.0 L521.9,808.6 L521.6,808.1 L521.3,807.7 L455.7,723.7 L455.4,723.3 L455.0,722.9 L454.6,722.6 L454.2,722.3 L453.7,722.1 L453.3,721.9 L452.8,721.8 L452.3,721.7 L451.8,721.7 L451.3,721.7 L450.7,721.7 L450.2,721.8 L449.8,722.0 L449.3,722.2 L448.9,722.5 L448.4,722.8 L436.1,732.4 L436.9,731.7 L439.8,728.8 L440.2,728.3 L440.6,727.7 L441.0,727.1 L443.0,723.6 L443.3,723.0 L443.6,722.4 L443.8,721.7 L444.8,717.8 L444.9,717.1 L445.0,716.4 L445.0,715.8 L445.0,711.7 L445.0,711.0 L444.9,710.3 L444.7,709.7 L443.6,705.7 L443.4,705.1 L443.1,704.5 L442.8,703.9 L440.8,700.4 L440.2,699.5 L414.6,666.7 L413.9,666.0 L411.0,663.1 L410.5,662.6 L410.0,662.2 L409.4,661.9 L405.9,659.9 L405.2,659.6 L404.6,659.3 L404.0,659.1 L400.0,658.1 L399.4,657.9 L398.7,657.8 L398.0,657.8 L393.9,657.9 L393.3,657.9 L392.6,658.0 L391.9,658.1 L388.0,659.2 L387.3,659.4 L386.7,659.7 L386.1,660.0 L382.6,662.1 L381.8,662.7 L353.1,685.0 L351.5,683.0 L318.7,708.6 L320.3,710.6 L299.8,726.6 L299.0,727.3 L296.1,730.2 L295.7,730.7 L295.3,731.3 L294.9,731.8 L292.9,735.4 L292.6,736.0 L292.3,736.6 L292.1,737.3 L291.1,741.2 L291.0,741.9 L290.9,742.6 L290.9,743.2 L290.9,747.3 L290.9,748.0 L291.0,748.7 L291.2,749.3 L292.3,753.2 L292.5,753.9 L292.7,754.5 L293.1,755.1 L295.1,758.6 L295.7,759.5 L321.3,792.3 L322.0,793.0 L324.9,795.9 L325.4,796.3 L325.9,796.8 L326.5,797.1 L330.0,799.1 L330.7,799.4 L331.3,799.7 L331.9,799.9 L335.9,800.9 L336.5,801.1 L337.2,801.1 L337.9,801.2 L342.0,801.1 L342.6,801.1 L343.3,801.0 L344.0,800.8 L347.9,799.8 L348.6,799.6 L349.2,799.3 L349.8,799.0 L353.3,796.9 L354.1,796.3 L341.8,805.9 Z M830.0,672.5 L829.7,672.9 L829.4,673.3 L829.2,673.8 L829.0,674.3 L828.9,674.8 L828.8,675.3 L828.8,675.8 L828.8,676.3 L828.8,676.8 L829.0,677.3 L829.1,677.8 L829.3,678.2 L829.6,678.7 L829.9,679.1 L852.3,707.8 L852.3,707.8 L792.5,754.4 L792.5,754.3 L792.5,753.8 L792.5,753.3 L785.5,687.3 L848.4,638.3 L847.0,624.9 L768.4,524.2 L758.5,430.2 L758.4,429.7 L758.3,429.2 L758.1,428.7 L757.9,428.3 L757.7,427.8 L757.3,427.4 L757.0,427.1 L756.6,426.7 L756.2,426.4 L755.8,426.2 L755.3,425.9 L754.8,425.8 L754.3,425.7 L753.8,425.6 L753.3,425.6 L752.8,425.6 L696.1,431.5 L678.5,409.0 L744.0,359.9 L928.1,595.9 L830.8,671.8 L830.4,672.1 L830.0,672.5 Z M635.8,421.6 L635.3,422.0 L415.6,613.2 L259.5,725.8 L249.4,712.8 L728.1,339.4 L734.4,347.6 L635.8,421.6 Z" fill="#cfe3b8" fill-opacity="1.0" stroke="#a3bd88" stroke-width="0.6" fill-rule="evenodd" />
+<path d="M415.6,613.2 L635.3,422.0 L635.8,421.6 L747.0,338.1 L756.4,350.6 L645.4,433.9 L425.6,625.2 L425.0,625.6 L256.2,747.4 L247.1,734.7 L415.6,613.2 Z" fill="#efe4cf" fill-opacity="1.0" stroke="#c7b48f" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M410.6,894.1 L345.0,810.0 L451.6,726.9 L517.2,810.9 L410.6,894.1 Z" fill="#f6d7a9" fill-opacity="1.0" stroke="#c98a2e" stroke-width="1.4" fill-rule="evenodd" />
+<polyline points="410.6,894.1 345.0,810.0 451.6,726.9 517.2,810.9 410.6,894.1" fill="none" stroke="#9a5b12" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="424.2" cy="843.9" r="13.5" fill="#fff4e0" stroke="#c98a2e" stroke-width="1"/>
+<circle cx="442.8" cy="783.2" r="15.6" fill="#fff4e0" stroke="#c98a2e" stroke-width="1"/>
+<circle cx="472.0" cy="786.8" r="8.3" fill="#fff4e0" stroke="#c98a2e" stroke-width="1"/>
+<path d="M349.3,790.2 L345.8,792.2 L341.9,793.3 L337.8,793.4 L333.9,792.3 L330.3,790.3 L327.4,787.5 L301.9,754.7 L299.8,751.2 L298.7,747.2 L298.7,743.2 L299.7,739.2 L301.7,735.7 L304.6,732.8 L386.6,668.8 L390.1,666.7 L394.0,665.7 L398.1,665.6 L402.0,666.6 L405.6,668.7 L408.5,671.5 L434.0,704.3 L436.1,707.8 L437.2,711.7 L437.2,715.8 L436.2,719.8 L434.2,723.3 L431.3,726.2 L349.3,790.2 Z" fill="#ffd166" fill-opacity="1.0" stroke="#7a5200" stroke-width="2.4" fill-rule="evenodd" />
+<path d="M325.1,716.8 L318.7,708.6 L351.5,683.0 L357.9,691.2 L325.1,716.8 Z" fill="#e7e2d6" fill-opacity="1.0" stroke="#7a5200" stroke-width="1.0" fill-rule="evenodd" />
+<path d="M588.3,817.5 L588.0,817.6 L585.7,819.0 L585.5,819.1 L585.4,819.1 L585.2,819.2 L582.6,819.9 L582.4,820.0 L582.2,820.0 L582.1,820.0 L579.3,820.0 L579.2,820.0 L579.0,820.0 L578.8,820.0 L576.2,819.3 L576.0,819.2 L575.8,819.2 L575.7,819.1 L573.3,817.7 L573.1,817.6 L573.0,817.5 L572.9,817.4 L570.9,815.5 L570.8,815.3 L494.0,716.9 L493.8,716.7 L492.5,714.3 L492.4,714.2 L492.3,714.0 L492.2,713.8 L491.5,711.2 L491.5,711.0 L491.5,710.9 L491.4,710.7 L491.4,708.0 L491.4,707.8 L491.5,707.6 L491.5,707.4 L492.2,704.8 L492.2,704.6 L492.3,704.5 L492.4,704.3 L493.7,701.9 L493.8,701.8 L493.9,701.6 L494.0,701.5 L495.9,699.6 L496.2,699.4 L553.5,654.6 L553.8,654.4 L556.1,653.1 L556.3,653.0 L556.4,652.9 L556.6,652.9 L559.2,652.1 L559.4,652.1 L559.6,652.1 L559.8,652.1 L562.5,652.0 L562.7,652.0 L562.8,652.1 L563.0,652.1 L565.7,652.8 L565.8,652.8 L566.0,652.9 L566.2,653.0 L568.5,654.3 L568.7,654.4 L568.8,654.5 L568.9,654.7 L570.9,656.6 L571.1,656.8 L647.8,755.2 L648.0,755.4 L649.4,757.7 L649.4,757.9 L649.5,758.1 L649.6,758.2 L650.3,760.8 L650.3,761.0 L650.4,761.2 L650.4,761.4 L650.4,764.1 L650.4,764.3 L650.4,764.5 L650.3,764.6 L649.6,767.3 L649.6,767.4 L649.5,767.6 L649.4,767.8 L648.1,770.1 L648.0,770.3 L647.9,770.4 L647.8,770.6 L645.9,772.5 L645.7,772.7 L588.3,817.5 Z" fill="none" fill-opacity="1.0" stroke="#444" stroke-width="2.4" fill-rule="evenodd" />
+<path d="M587.0,815.8 L584.7,817.2 L582.0,817.9 L579.3,817.9 L576.7,817.3 L574.3,815.9 L572.4,814.0 L495.6,715.6 L494.3,713.3 L493.5,710.7 L493.5,707.9 L494.2,705.3 L495.5,703.0 L497.4,701.0 L554.8,656.2 L557.2,654.9 L559.8,654.1 L562.5,654.1 L565.1,654.8 L567.5,656.1 L569.4,658.0 L646.2,756.4 L647.6,758.8 L648.3,761.4 L648.3,764.1 L647.6,766.7 L646.3,769.1 L644.4,771.0 L587.0,815.8 Z" fill="#d8d3c6" fill-opacity="1.0" stroke="#555" stroke-width="1.0" fill-rule="evenodd" />
+<path d="M639.1,752.1 L560.8,651.6 L563.0,649.8 L641.4,750.3 L639.1,752.1 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M636.9,753.8 L558.5,653.4 L560.8,651.6 L639.1,752.1 L636.9,753.8 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M634.6,755.6 L556.3,655.1 L558.5,653.4 L636.9,753.8 L634.6,755.6 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M632.4,757.3 L554.0,656.9 L556.3,655.1 L634.6,755.6 L632.4,757.3 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M630.1,759.1 L551.8,658.6 L554.0,656.9 L632.4,757.3 L630.1,759.1 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M627.9,760.8 L549.5,660.4 L551.8,658.6 L630.1,759.1 L627.9,760.8 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M625.6,762.6 L547.2,662.2 L549.5,660.4 L627.9,760.8 L625.6,762.6 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M623.4,764.4 L545.0,663.9 L547.2,662.2 L625.6,762.6 L623.4,764.4 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M621.1,766.1 L542.7,665.7 L545.0,663.9 L623.4,764.4 L621.1,766.1 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M618.8,767.9 L540.5,667.4 L542.7,665.7 L621.1,766.1 L618.8,767.9 Z" fill="#e9e4d8" fill-opacity="1.0" stroke="#8a8373" stroke-width="0.8" fill-rule="evenodd" />
+<path d="M578.8,822.2 L567.6,807.9 L616.8,769.5 L628.0,783.8 L578.8,822.2 Z" fill="url(#hs)" fill-opacity="1.0" stroke="#555" stroke-width="1.0" fill-rule="evenodd" />
+<polyline points="489.2,707.4 563.0,649.8" fill="none" stroke="#1d65b5" stroke-width="4.0"/>
+<path d="M856.4,704.6 L834.0,675.9 L936.5,595.9 L958.9,624.6 L856.4,704.6 Z" fill="#9b9b98" fill-opacity="1.0" stroke="#333" stroke-width="1.4" fill-rule="evenodd" />
+<path d="M707.7,762.2 L787.3,753.8 L753.3,430.8 L673.8,439.1 L707.7,762.2 Z" fill="none" fill-opacity="1.0" stroke="#1d3557" stroke-width="1.0" fill-rule="evenodd" stroke-dasharray="5 4" />
+<path d="M683.3,446.7 L684.7,444.4 L686.6,442.5 L689.0,441.3 L691.7,440.6 L736.1,435.9 L738.9,436.0 L741.5,436.8 L743.8,438.2 L745.6,440.2 L746.9,442.6 L747.6,445.2 L748.0,449.3 L768.5,644.0 L777.1,726.5 L778.7,740.9 L778.6,743.6 L777.8,746.2 L776.4,748.5 L774.4,750.4 L772.0,751.7 L769.4,752.3 L724.9,757.0 L722.2,756.9 L719.6,756.2 L717.3,754.8 L715.4,752.8 L714.1,750.4 L713.5,747.8 L713.1,743.6 L713.1,743.6 L685.0,476.9 L682.4,452.0 L682.5,449.3 L683.3,446.7 Z" fill="#2b4c7e" fill-opacity="1.0" stroke="#0b1d33" stroke-width="1.8" fill-rule="evenodd" />
+<path d="M734.0,744.0 L731.3,744.0 L728.7,743.2 L726.4,741.8 L724.5,739.8 L723.2,737.4 L722.6,734.8 L694.0,462.9 L694.1,460.1 L694.8,457.5 L696.3,455.2 L698.2,453.4 L700.6,452.1 L703.3,451.4 L737.4,447.8 L740.1,447.9 L742.7,448.7 L745.0,450.1 L746.9,452.1 L748.2,454.5 L748.8,457.1 L777.4,729.0 L777.3,731.7 L776.6,734.3 L775.1,736.6 L773.2,738.5 L770.8,739.8 L768.1,740.4 L734.0,744.0 Z" fill="none" fill-opacity="1.0" stroke="#ffffff" stroke-width="1.4" fill-rule="evenodd" stroke-dasharray="6 4" />
+<path d="M694.3,565.4 L759.5,558.6 L755.5,520.3 L690.3,527.1 L694.3,565.4 Z" fill="#1b2f4f" fill-opacity="1.0" stroke="#0b1d33" stroke-width="1.0" fill-rule="evenodd" />
+<path d="M705.6,672.7 L770.8,665.8 L766.7,627.5 L701.6,634.4 L705.6,672.7 Z" fill="#1b2f4f" fill-opacity="1.0" stroke="#0b1d33" stroke-width="1.0" fill-rule="evenodd" />
+<circle cx="474.2" cy="1009.4" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="448.1" cy="976.0" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="422.1" cy="942.6" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="396.1" cy="909.2" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="370.0" cy="875.9" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="344.0" cy="842.5" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="318.0" cy="809.1" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="291.9" cy="775.8" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="245.1" cy="709.7" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="278.4" cy="683.6" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="311.8" cy="657.6" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="345.2" cy="631.5" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="378.6" cy="605.5" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="411.9" cy="579.5" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="445.3" cy="553.4" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="478.7" cy="527.4" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="512.0" cy="501.4" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="545.4" cy="475.3" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="578.8" cy="449.3" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="612.2" cy="423.3" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="678.9" cy="371.2" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="712.3" cy="345.2" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="820.1" cy="448.9" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="846.1" cy="482.3" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="872.2" cy="515.7" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="898.2" cy="549.1" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="924.2" cy="582.4" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="841.3" cy="723.0" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="707.8" cy="827.1" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="674.4" cy="853.1" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="641.0" cy="879.2" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="607.7" cy="905.2" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="574.3" cy="931.3" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="540.9" cy="957.3" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="507.5" cy="983.3" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="454.7" cy="927.3" r="17.0" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="468.0" cy="897.5" r="18.1" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="469.1" cy="622.9" r="16.6" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="517.5" cy="929.0" r="15.7" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="506.8" cy="589.4" r="18.8" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="557.2" cy="894.8" r="18.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="601.8" cy="844.5" r="16.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="645.3" cy="816.5" r="17.5" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="842.7" cy="564.2" r="18.1" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="820.7" cy="513.3" r="15.4" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="864.0" cy="601.0" r="15.7" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="867.7" cy="547.5" r="17.0" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="427.2" cy="864.6" r="16.0" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="460.0" cy="839.0" r="16.0" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<circle cx="492.8" cy="813.5" r="16.0" fill="#7fae6a" fill-opacity="0.75" stroke="#4d7a3c" stroke-width="0.8"/>
+<path d="M472.4,1024.0 L227.5,710.1 L730.8,317.5 L975.6,631.4 L472.4,1024.0 Z" fill="none" fill-opacity="1.0" stroke="#c1121f" stroke-width="2.2" fill-rule="evenodd" stroke-dasharray="12 5 3 5" />
+</g>
+<line x1="367.9" y1="729.5" x2="247.9" y2="879.5" stroke="#7a5200" stroke-width="1"/>
+<circle cx="367.9" cy="729.5" r="2.5" fill="#7a5200"/>
+<rect x="8.9" y="848.5" width="239.0" height="62.0" rx="4" fill="#fff" fill-opacity="0.93" stroke="#7a5200" stroke-width="1"/>
+<text x="15.9" y="864.5" font-size="12.5" fill="#7a5200" text-anchor="start" font-weight="normal" dominant-baseline="middle">어린이집·유치원</text>
+<text x="15.9" y="879.5" font-size="12.5" fill="#7a5200" text-anchor="start" font-weight="normal" dominant-baseline="middle">지상 2층 · 높이 8.0m</text>
+<text x="15.9" y="894.5" font-size="12.5" fill="#7a5200" text-anchor="start" font-weight="normal" dominant-baseline="middle">바닥 356㎡ × 2 = 712㎡</text>
+<line x1="431.1" y1="810.5" x2="571.1" y2="960.5" stroke="#9a5b12" stroke-width="1"/>
+<circle cx="431.1" cy="810.5" r="2.5" fill="#9a5b12"/>
+<rect x="571.1" y="938.5" width="189.0" height="44.0" rx="4" fill="#fff" fill-opacity="0.93" stroke="#9a5b12" stroke-width="1"/>
+<text x="578.1" y="953.0" font-size="12.5" fill="#9a5b12" text-anchor="start" font-weight="normal" dominant-baseline="middle">전용 놀이마당(남동향)</text>
+<text x="578.1" y="968.0" font-size="12.5" fill="#9a5b12" text-anchor="start" font-weight="normal" dominant-baseline="middle">533㎡ · 울타리·그늘목</text>
+<line x1="570.9" y1="736.0" x2="760.9" y2="796.0" stroke="#333" stroke-width="1"/>
+<circle cx="570.9" cy="736.0" r="2.5" fill="#333"/>
+<rect x="760.9" y="765.0" width="239.0" height="62.0" rx="4" fill="#fff" fill-opacity="0.93" stroke="#333" stroke-width="1"/>
+<text x="767.9" y="781.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">성큰광장 B1 FL −5.0m</text>
+<text x="767.9" y="796.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">500㎡ · 계단식 스탠드 10단</text>
+<text x="767.9" y="811.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">B1 카페·작은도서관(파란 선)</text>
+<line x1="597.8" y1="795.9" x2="717.8" y2="865.9" stroke="#333" stroke-width="1"/>
+<circle cx="597.8" cy="795.9" r="2.5" fill="#333"/>
+<rect x="717.8" y="852.9" width="64.0" height="26.0" rx="4" fill="#fff" fill-opacity="0.93" stroke="#333" stroke-width="1"/>
+<text x="724.8" y="865.9" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">직통계단</text>
+<line x1="896.4" y1="650.3" x2="906.4" y2="865.3" stroke="#333" stroke-width="1"/>
+<circle cx="896.4" cy="650.3" r="2.5" fill="#333"/>
+<rect x="906.4" y="843.3" width="239.0" height="44.0" rx="4" fill="#fff" fill-opacity="0.93" stroke="#333" stroke-width="1"/>
+<text x="913.4" y="857.8" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">지하주차장 진출입 램프</text>
+<text x="913.4" y="872.8" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">(폭 7m, 도로 확인 후 조정)</text>
+<line x1="497.7" y1="549.2" x2="347.7" y2="509.2" stroke="#8a6d3b" stroke-width="1"/>
+<circle cx="497.7" cy="549.2" r="2.5" fill="#8a6d3b"/>
+<rect x="146.2" y="487.2" width="201.5" height="44.0" rx="4" fill="#fff" fill-opacity="0.93" stroke="#8a6d3b" stroke-width="1"/>
+<text x="153.2" y="501.7" font-size="12.5" fill="#8a6d3b" text-anchor="start" font-weight="normal" dominant-baseline="middle">남서–북동 산책로(폭 3m)</text>
+<text x="153.2" y="516.7" font-size="12.5" fill="#8a6d3b" text-anchor="start" font-weight="normal" dominant-baseline="middle">대교 쪽 → 여의도초 쪽</text>
+<line x1="730.5" y1="544.5" x2="670.5" y2="329.5" stroke="#0b1d33" stroke-width="1"/>
+<circle cx="730.5" cy="544.5" r="2.5" fill="#0b1d33"/>
+<rect x="356.5" y="298.5" width="314.0" height="62.0" rx="4" fill="#fff" fill-opacity="0.93" stroke="#0b1d33" stroke-width="1"/>
+<text x="363.5" y="314.5" font-size="12.5" fill="#0b1d33" text-anchor="start" font-weight="normal" dominant-baseline="middle">화랑 A안 51층 · 172.3m</text>
+<text x="363.5" y="329.5" font-size="12.5" fill="#0b1d33" text-anchor="start" font-weight="normal" dominant-baseline="middle">기준층 747㎡ · 코어 2개(E/V 6대)</text>
+<text x="363.5" y="344.5" font-size="12.5" fill="#0b1d33" text-anchor="start" font-weight="normal" dominant-baseline="middle">흰 파선 = 1층 로비(서측 아케이드)</text>
+<line x1="673.2" y1="537.5" x2="513.2" y2="467.5" stroke="#6b5d3e" stroke-width="1"/>
+<circle cx="673.2" cy="537.5" r="2.5" fill="#6b5d3e"/>
+<rect x="299.2" y="454.5" width="214.0" height="26.0" rx="4" fill="#fff" fill-opacity="0.93" stroke="#6b5d3e" stroke-width="1"/>
+<text x="306.2" y="467.5" font-size="12.5" fill="#6b5d3e" text-anchor="start" font-weight="normal" dominant-baseline="middle">로비 광장(서측 아케이드 앞)</text>
+<g transform="translate(1125,180)"><circle r="34" fill="#fff" fill-opacity="0.85" stroke="#999"/><polygon points="0,-28 -9,6 0,0 9,6" fill="#c1121f"/><text y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">N</text></g>
+<rect x="48.0" y="1199.4995819216288" width="52.0" height="7" fill="#111" stroke="#111"/>
+<rect x="100.0" y="1199.4995819216288" width="52.0" height="7" fill="#fff" stroke="#111"/>
+<rect x="152.0" y="1199.4995819216288" width="52.0" height="7" fill="#111" stroke="#111"/>
+<rect x="204.0" y="1199.4995819216288" width="52.0" height="7" fill="#fff" stroke="#111"/>
+<rect x="256.0" y="1199.4995819216288" width="52.0" height="7" fill="#111" stroke="#111"/>
+<text x="48.0" y="1189.5" font-size="11" fill="#111" text-anchor="start" font-weight="normal" dominant-baseline="middle">0</text>
+<text x="308.0" y="1189.5" font-size="11" fill="#111" text-anchor="middle" font-weight="normal" dominant-baseline="middle">50 m</text>
+<rect x="1185.130777121854" y="108.0" width="350.0" height="465" fill="#fff" stroke="#bbb"/>
+<text x="1197.1" y="130.0" font-size="15" fill="#111" text-anchor="start" font-weight="bold" dominant-baseline="middle">개요</text>
+<text x="1197.1" y="158.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">대지면적</text>
+<text x="1521.1" y="158.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">9,395㎡</text>
+<text x="1197.1" y="183.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">건축면적</text>
+<text x="1521.1" y="183.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">1,123㎡</text>
+<text x="1197.1" y="208.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">  타워(기준층 투영)</text>
+<text x="1521.1" y="208.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="normal" dominant-baseline="middle">767㎡</text>
+<text x="1197.1" y="233.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">  어린이집</text>
+<text x="1521.1" y="233.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="normal" dominant-baseline="middle">356㎡</text>
+<text x="1197.1" y="258.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">건폐율</text>
+<text x="1521.1" y="258.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">11.96%</text>
+<text x="1197.1" y="283.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">연면적(지상)</text>
+<text x="1521.1" y="283.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">38,292㎡</text>
+<text x="1197.1" y="308.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">  타워</text>
+<text x="1521.1" y="308.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="normal" dominant-baseline="middle">37,580㎡</text>
+<text x="1197.1" y="333.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">  어린이집(2층)</text>
+<text x="1521.1" y="333.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="normal" dominant-baseline="middle">712㎡</text>
+<text x="1197.1" y="358.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">용적률 산정 연면적</text>
+<text x="1521.1" y="358.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">36,497㎡</text>
+<text x="1197.1" y="383.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">용적률</text>
+<text x="1521.1" y="383.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">388.5% (≤400%)</text>
+<text x="1197.1" y="408.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">  제외: 주민공동시설</text>
+<text x="1521.1" y="408.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="normal" dominant-baseline="middle">2층 747 · 어린이집 712㎡</text>
+<text x="1197.1" y="433.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">  제외: 피난안전구역</text>
+<text x="1521.1" y="433.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="normal" dominant-baseline="middle">18·35층 336㎡</text>
+<text x="1197.1" y="458.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">세대수</text>
+<text x="1521.1" y="458.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">244세대</text>
+<text x="1197.1" y="483.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">최고 높이</text>
+<text x="1521.1" y="483.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">51층 · 172.3m</text>
+<text x="1197.1" y="508.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">성큰광장</text>
+<text x="1521.1" y="508.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">500㎡ (B1 −5.0m)</text>
+<text x="1197.1" y="533.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">놀이마당</text>
+<text x="1521.1" y="533.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">533㎡</text>
+<text x="1197.1" y="558.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="bold" dominant-baseline="middle">조경(잔디·식재)</text>
+<text x="1521.1" y="558.0" font-size="12.5" fill="#111" text-anchor="end" font-weight="bold" dominant-baseline="middle">3,043㎡ · 수목 50</text>
+<rect x="1197.130777121854" y="605.0" width="18" height="16" fill="#2b4c7e" stroke="#555"/>
+<text x="1225.1" y="613.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">타워 기준층 투영 (진한 = 코어)</text>
+<rect x="1197.130777121854" y="629.0" width="18" height="16" fill="#ffd166" stroke="#555"/>
+<text x="1225.1" y="637.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">어린이집·유치원</text>
+<rect x="1197.130777121854" y="653.0" width="18" height="16" fill="#f6d7a9" stroke="#555"/>
+<text x="1225.1" y="661.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">놀이마당</text>
+<rect x="1197.130777121854" y="677.0" width="18" height="16" fill="#d8d3c6" stroke="#555"/>
+<text x="1225.1" y="685.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">성큰광장</text>
+<rect x="1197.130777121854" y="701.0" width="18" height="16" fill="#e7e2d6" stroke="#555"/>
+<text x="1225.1" y="709.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">포장 광장</text>
+<rect x="1197.130777121854" y="725.0" width="18" height="16" fill="#cfe3b8" stroke="#555"/>
+<text x="1225.1" y="733.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">잔디·식재</text>
+<rect x="1197.130777121854" y="749.0" width="18" height="16" fill="#efe4cf" stroke="#555"/>
+<text x="1225.1" y="757.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">산책로</text>
+<rect x="1197.130777121854" y="773.0" width="18" height="16" fill="#9b9b98" stroke="#555"/>
+<text x="1225.1" y="781.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">주차 램프</text>
+<rect x="1197.130777121854" y="797.0" width="18" height="16" fill="#e9d6d3" stroke="#555"/>
+<text x="1225.1" y="805.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">학교</text>
+<rect x="1197.130777121854" y="821.0" width="18" height="16" fill="#cfe0c3" stroke="#555"/>
+<text x="1225.1" y="829.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">학교 운동장</text>
+<line x1="1197.130777121854" y1="853.0" x2="1215.130777121854" y2="853.0" stroke="#c1121f" stroke-width="2" stroke-dasharray="6 3 2 3"/>
+<text x="1225.1" y="853.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">대지경계</text>
+<line x1="1197.130777121854" y1="877.0" x2="1215.130777121854" y2="877.0" stroke="#1d3557" stroke-dasharray="5 4"/>
+<text x="1225.1" y="877.0" font-size="12.5" fill="#333" text-anchor="start" font-weight="normal" dominant-baseline="middle">일조 분석 외형선</text>
+<text x="1197.1" y="913.0" font-size="12" fill="#555" text-anchor="start" font-weight="normal" dominant-baseline="middle">어린이집을 남서부 30개 위치에 두어</text>
+<text x="1197.1" y="933.0" font-size="12" fill="#555" text-anchor="start" font-weight="normal" dominant-baseline="middle">검사 — 어느 위치든 학교 신규 불충족</text>
+<text x="1197.1" y="953.0" font-size="12" fill="#555" text-anchor="start" font-weight="normal" dominant-baseline="middle">추가 0 (건물 33 · 전체 73 그대로)</text>
+</svg>

@@ -1,0 +1,19 @@
+{
+ "family": "단일",
+ "stage": "5 미세조정",
+ "floors": "46",
+ "top_floors": 46,
+ "height_m": 139.7,
+ "new_fail": 28,
+ "new_ok": 34,
+ "gfa_m2": 37580,
+ "far_pct": 400.0,
+ "service_m2": 9087,
+ "real_m2": 46667,
+ "coverage_m2": 881,
+ "bcr_pct": 9.38,
+ "daylight_ratio": 0.022,
+ "mean_total_h": 4.1,
+ "min_short_m": 18.36,
+ "label": "46층 817㎡(44.5×18.4m)"
+}

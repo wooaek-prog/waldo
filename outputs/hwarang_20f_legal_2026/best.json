@@ -1,0 +1,19 @@
+{
+ "family": "단일",
+ "stage": "5 미세조정",
+ "floors": "20",
+ "top_floors": 20,
+ "height_m": 63.0,
+ "new_fail": 83,
+ "new_ok": 28,
+ "gfa_m2": 37580,
+ "far_pct": 400.0,
+ "service_m2": 5447,
+ "real_m2": 43027,
+ "coverage_m2": 1968,
+ "bcr_pct": 20.95,
+ "daylight_ratio": 0.272,
+ "mean_total_h": 3.858,
+ "min_short_m": 37.0,
+ "label": "20층 1879㎡(50.8×37.0m)"
+}

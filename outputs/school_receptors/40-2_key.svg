@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1083" height="880" viewBox="0 0 1083 880">
+<rect width="100%" height="100%" fill="#fcfcfa"/>
+<text x="18" y="34" font-family="sans-serif" font-size="20" font-weight="bold" fill="#111">40-2 여의도여자고등학교 – 건물 폴리곤 식별도</text>
+<text x="18" y="58" font-family="sans-serif" font-size="12.5" fill="#555">각 동의 면적 / AL_D010 층수·실측높이 / 방위별 외벽 길이. 상단이 북.</text>
+<text x="18" y="78" font-family="sans-serif" font-size="12.5" fill="#555">s = 방위 52° 축(블록 장축) 위 위치(m). 정면도 전개 길이와 대조하는 데 씁니다.</text>
+<text x="18" y="98" font-family="sans-serif" font-size="12.5" fill="#b23a48">층수·높이가 0 인 동은 AL_D010 에 값이 없는 것입니다(도면으로 복원해야 함).</text>
+<polygon points="968.3,615.5 793.8,751.4 704.1,636.2 765.4,588.5 879.1,500.9 947.5,588.6 968.3,615.5" fill="#f4a261" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="836.2" y="608.0" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">A  805㎡</text>
+<text x="836.2" y="622.0" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">5층 · 13.00m</text>
+<text x="836.2" y="636.0" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=77~112m</text>
+<text x="836.2" y="650.0" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 35 / 남서 23</text>
+<polygon points="627.7,282.4 653.2,314.4 675.5,299.1 789.0,446.6 767.6,463.4 816.3,526.5 779.2,555.3 763.9,537.8 753.0,547.4 578.2,320.5 627.7,282.4" fill="#2a9d8f" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="701.4" y="394.7" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">B  602㎡</text>
+<text x="701.4" y="408.7" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">0층 · 19.95m</text>
+<text x="701.4" y="422.7" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=91~106m</text>
+<text x="701.4" y="436.7" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 14 / 남서 49</text>
+<polygon points="497.1,371.7 553.3,443.0 368.4,588.3 328.1,620.0 303.1,588.2 271.7,548.2 362.0,477.1 379.1,498.7 467.3,429.0 450.9,408.3 497.1,371.7" fill="#e9c46a" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="412.1" y="483.4" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">C  575㎡</text>
+<text x="412.1" y="497.4" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">5층 · 19.95m</text>
+<text x="412.1" y="511.4" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=31~77m</text>
+<text x="412.1" y="525.4" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 45 / 남서 19</text>
+<polygon points="329.4,623.1 180.7,739.6 153.6,699.0 142.5,706.4 114.6,668.0 267.6,544.2 329.4,623.1" fill="#8ecae6" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="223.2" y="624.8" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">D  473㎡</text>
+<text x="223.2" y="638.8" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">4층 · 15.00m</text>
+<text x="223.2" y="652.8" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=0~31m</text>
+<text x="223.2" y="666.8" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 32 / 남서 15</text>
+<polygon points="647.5,206.6 726.8,306.2 726.9,309.4 726.1,313.4 723.8,317.6 719.5,319.8 714.0,319.7 709.7,318.0 707.1,314.9 685.8,287.5 653.6,312.3 599.8,244.6 647.5,206.6" fill="#e76f51" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="659.2" y="247.4" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">E  155㎡</text>
+<text x="659.2" y="261.4" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">0층 · 19.95m</text>
+<text x="659.2" y="275.4" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=102~112m</text>
+<text x="659.2" y="289.4" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 8 / 남서 20</text>
+<polygon points="497.1,371.7 559.4,311.7 616.6,267.5 627.0,281.0 577.5,319.4 521.2,376.7 521.4,381.5 521.1,385.3 519.7,388.4 514.2,393.1 497.1,371.7" fill="#bdb2ff" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="557.7" y="311.0" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">F  75㎡</text>
+<text x="557.7" y="325.0" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">0층 · 15.00m</text>
+<text x="557.7" y="339.0" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=77~102m</text>
+<text x="557.7" y="353.0" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 24 / 남서 4</text>
+<polygon points="614.7,267.1 548.8,318.2 531.8,295.1 597.2,244.4 614.7,267.1" fill="#ffb4a2" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="573.1" y="263.2" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">G  59㎡</text>
+<text x="573.1" y="277.2" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">0층 · 15.00m</text>
+<text x="573.1" y="291.2" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=88~102m</text>
+<text x="573.1" y="305.2" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 13 / 남서 5</text>
+<polygon points="756.0,595.6 715.9,625.9 706.1,612.9 728.3,596.2 734.0,594.0 741.5,593.1 747.8,593.1 752.9,593.9 756.0,595.6" fill="#a8dadc" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="728.7" y="588.9" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">H  17㎡</text>
+<text x="728.7" y="602.9" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">0층 · 15.00m</text>
+<text x="728.7" y="616.9" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=79~87m</text>
+<text x="728.7" y="630.9" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 8 / 남서 3</text>
+<polygon points="826.5,541.1 813.0,551.5 802.5,537.8 816.0,527.5 826.5,541.1" fill="#c8b6a6" fill-opacity="0.55" stroke="#333" stroke-width="1.3"/>
+<text x="814.5" y="521.5" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">I  7㎡</text>
+<text x="814.5" y="535.5" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">0층 · 19.95m</text>
+<text x="814.5" y="549.5" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">s=99~101m</text>
+<text x="814.5" y="563.5" font-family="sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#111">남동 3 / 남서 3</text>
+<g transform="translate(1025,124)"><line x1="0" y1="40" x2="0" y2="6" stroke="#111" stroke-width="2"/><polygon points="0,0 -6,12 6,12" fill="#111"/><text x="0" y="56" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#111">N</text></g>
+</svg>
