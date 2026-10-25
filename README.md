@@ -28,6 +28,7 @@
 | `hwarang_birdseye_2026.py` | 화랑 A안 조감도 밑그림 — 6방향 PNG/SVG(주석판·원판) + 3D 모형 OBJ | [A안 조감도](docs/hwarang_birdseye_A_2026.md) |
 | `hwarang_tower_detail.py` · `hwarang_render_A.py` | **[A안 상세 폴리곤]** 유엔스튜디오 레퍼런스 적용 상세 모형(OBJ·GLB·GeoJSON) + 광선추적 미리보기 | [A안 상세 폴리곤](docs/hwarang_detail_A_2026.md) |
 | `hwarang_plans_A.py` · `hwarang_site_A.py` | **[A안 배치도·평면도]** 어린이집·성큰광장 배치 + 코어(E/V)·PT실·세대 평면 4개층 | [A안 배치·평면](docs/hwarang_plans_A_2026.md) |
+| `hwarang_consultant_check.py` | **[업체·설계사 자료 대비 검토]** 진태양시·학교급 시간대·운동장 별도 기준으로 판정만 바꿔 재계산 | [보완 검토](docs/hwarang_consultant_review_2026.md) |
 | `hwarang_plan_2026.py` | 화랑 설계안 배치도(산출 GeoJSON → SVG·PNG) | 〃 |
 | `apartment_attribution.py` | 대교·시범 신축+화랑 현상태 – 수광점 불충족 원인 아파트 세분화 | [원인 분해 보고서](docs/apartment_attribution.md) |
 | `school_site_map.py` | 학교 위치 배치도 좌표등록 → 운동장 해치영역 경계 추출 | [근거 등급 문서](docs/school_receptor_provenance.md) |
